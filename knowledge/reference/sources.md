@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: "2026-10-27T23:03:43+00:00"
+  at: "2026-10-27T23:19:11+00:00"
 sources:
 - id: official
   resource: https://universgen.gitbook.io/shader-world
@@ -74,6 +74,10 @@ Dateigrößen und SHA-256-Hashes stehen im [Bildmanifest](../evidence/image-mani
 ## Neue CityBasics-Belege
 
 Der [CityBasics-Bericht](../evidence/citybasics-report.json) enthält bereinigte native Kollisionsproben und tatsächliche CharacterMovement-Durchfahrten. Die [Waldstraße](../assets/images/citybasics-road.png) und [Portalzufahrt](../assets/images/citybasics-portal-approach.png) sind unveränderte native **CaptureEditorImage**-Aufnahmen vom 28. Oktober 2026 mit sichtbarer Editoroberfläche. Sie zeigen den spielbaren Prototyp; Fahrbahn, Portal und Testbuggy sind noch einfache Laborgeometrie. Größen und Hashes stehen im [Manifest](../evidence/image-manifest.json).
+
+## Küsten-, Biom- und Straßenprüfung
+
+Die [lesende Prüfung vom 28. Oktober 2026](../evidence/coast-biome-road-inspection.json) hält aktuelle PIE-Parameter, die Wassermaterial-Verkabelung, Pflanzen-Höhenintervalle und die tatsächliche Straßenherkunft fest. Sie enthält außerdem getrennte Asset-/Codebefunde und noch nicht ausgeführte Testvorschläge. Der vom Nutzer gemeldete Wellendurchbruch wurde dabei nicht reproduziert oder behoben.
 
 ## OKF
 

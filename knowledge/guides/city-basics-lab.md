@@ -6,12 +6,15 @@ tags: [shaderworld, citybuilder, terrain, biome, brushes, tunnels, collision]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-27T23:03:43+00:00" }
+generated: { by: codex/gpt-6, at: "2026-10-27T23:19:11+00:00" }
 evidence_scope:
   implementation: CityBasics-Karte aufgebaut; CharacterMovement-Testbuggy und Fußmodus implementiert und kompiliert; installierte Brush- und Kollisionsimplementierung gelesen
   practical_status: Editoransicht gemeinsam angesehen; zwei frische eigenständige Spielprozesse bestanden jeweils 65 Kollisionsproben und eine bodengebundene Durchfahrt
   not_tested: Manuelle F-/Maus-Bedienung des Fußmodus, Laufzeit-Speicherung von Berg/Löchern/Biomkonfiguration, dauerhafte Vegetationsentfernung, Chaos-Fahrzeug, Navigation und verpackter Build
 sources:
+  - id: coast-biome-inspection
+    resource: ../evidence/coast-biome-road-inspection.json
+    title: Lesende Küsten-, Biom- und Straßenprüfung vom 28. Oktober 2026
   - id: basics-proof
     resource: ../evidence/citybasics-report.json
     title: Zwei eigenständige CityBasics-Kollisions- und Durchfahrtsprüfungen
@@ -65,6 +68,16 @@ Der Inselgenerator lässt die zentrale Fläche bis zu einem Radius von **220 m**
 Für die Strandzuordnung wurde das Reference-Material **M_HeightLayer** in **M_Basics_BiomeLayer** kopiert. Öffne diese Kopie im Material Editor und suche die Parameter **Ocean Height** und **Add Sand to beach**. Im Labor sind ihre Werte **0** und **100**. Übernimm sie nicht ungeprüft in eine Welt mit anderer Meereshöhe: Materialgrenze und tatsächlicher Wasserstand müssen zusammenpassen. Anschließend **Apply** und **Save** ausführen und die Layer-Producers prüfen.
 
 Die vorhandene Material Collection und **SW_GreenBiom** liefern die Boden- und Vegetationsbausteine. Das ist noch kein selbst entworfenes Biom und kein Nachweis, dass Vegetationsänderungen gespeichert werden. Küste und Vegetation gehören zur gemeinsam angesehenen Editorlandschaft. Eine genaue Abnahme der Strandgrenzen und Vegetationswirkung nach erneuter Erzeugung steht noch aus.
+
+### Warum noch Waldpflanzen im Meer stehen
+
+Die Meereshöhe wurde für CityBasics auf **0 cm** und der tiefe Meeresboden auf **−1800 cm** verlegt. Die übernommenen Wald-Spawnables behalten jedoch ihre alten Höhenintervalle: **SW_Tree ab −9150 cm**, **SW_Grass_Close** und **SW_Grass_Distant_mixed ab −9550 cm**. Diese Werte wurden im laufenden PIE ausgelesen. Der neue Meeresboden liegt innerhalb dieser erlaubten Bereiche. Der Ozean selbst hat keine Biome; der Bewuchs kommt vom Ground und dessen **SW_GreenBiom**. Die Umstellung der Meereshöhe hat die Pflanzenfilter also noch nicht mit umgestellt.[^coast-biome-inspection]
+
+Im installierten Beispielbestand gibt es **SW_BiomOceanMap**. Es verwendet aber ebenfalls Black-Alder-Bäume, gewöhnliches Gras und Felsen, keine mitgelieferte Seegras-/Korallensammlung. Seine Waldvarianten beginnen erst bei **450 beziehungsweise 600 cm**. Sie unverändert einzusetzen würde auch unser nur **300 cm** hohes Plateau von diesem Bewuchs ausschließen.
+
+**Noch ungeprüfter nächster Versuch:** Kopiere **SW_GreenBiom** und seine Baum-/Gras-Spawnable-Assets in den Projektordner. Öffne die kopierten Spawnables und setze unter **Altitude Range → Min** beispielsweise **150 cm**; Max bleibt erhalten. Ersetze im kopierten Biom die Baum-/Grasverweise durch diese Projektkopien und weise das Biom dem Ground zu. Felsen können ihr eigenes Höhenintervall behalten. Nach Speichern und erneutem Vegetationsaufbau prüfen, dass auf dem 3-m-Plateau weiterhin Wald wächst und unter Wasser keine Waldpflanzen mehr stehen. Die Plugin-Originale dabei als Vorlage erhalten. Dieser Vorschlag wurde noch nicht angewendet oder praktisch abgenommen.
+
+Ein eigenes Meeresbiom kann anschließend andere Spawnables und Höhen-/Dichtemasken für Seegras, Steine oder Korallen verwenden. Die passenden Pflanzenmeshes und Regeln müssen wir selbst bereitstellen. Für Wellen unter Land und trockene Ausschlussbereiche siehe [Ozean und Küste](ocean-waves-and-foam.md).
 
 ## Den Berg als eigenen Brush verstehen
 
@@ -180,3 +193,5 @@ Weitere Versuche betreffen dauerhafte Vegetationsänderungen, Chaos-Fahrzeugphys
 [^basics-implementation]: Projektlokale Einrichtung und nativer Testbuggy im ursprünglichen **UnrealMcpTest**. Die oben genannten Dateien werden nicht mit diesem öffentlichen Wissens-Repository ausgeliefert.
 [^installed-brush-source]: Gelesene native ShaderWorld-4.1-Dateien zu HoleMesh, Brush-Komponenten, Terrainkollision, SplineRoad und Vertex-Factory; separat lizenziert und hier nicht mitgeliefert. Codebefunde und die separat ausgewiesenen praktischen Fahrtests haben unterschiedliche Prüfumfänge.
 [^basics-proof]: [Bereinigter CityBasics-Bericht mit zwei bestandenen eigenständigen Kollisions- und Durchfahrtsläufen](../evidence/citybasics-report.json).
+
+[^coast-biome-inspection]: [Lesende Küsten-, Biom- und Straßenprüfung](../evidence/coast-biome-road-inspection.json). Live-Parameter und Asset-/Codebefunde sind von noch nicht ausgeführten Korrekturversuchen getrennt.

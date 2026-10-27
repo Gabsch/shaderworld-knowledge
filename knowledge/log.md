@@ -2,6 +2,10 @@
 
 ## 2026-10-28
 
+- Küsten-/Biomfragen lesend untersucht: Ground/Ocean-Verknüpfung vorhanden, Restwellendämpfung und vorbereitete Air-Pocket-Materialmaske dokumentiert; gemeldeter Wellendurchbruch noch nicht reproduziert.
+- Alte negative Pflanzen-Höhenfilter nach der Meereshöhenänderung als Ursache für erlaubten Wald unter Wasser eingeordnet; OceanMap-Biom als Landvegetation erklärt.
+- Straßenherkunft präzisiert: native ShaderWorld-Drecktrassen, eigene Asphalt-/Markierungsmeshes, Road-Creator-Kopplung weiterhin offen.
+
 - Zufahrten korrigiert: Nach direkten JSON-Splineänderungen fehlte die passende Längentabelle; Tangenten und vollständige Weglängen nun gemeinsam erzeugt.
 - Zwei native PIE-Editorbilder mit freier Dreckstraße und Portalzufahrt ergänzt.
 - Neue CityBasics-Kollisions- und Durchfahrtsbelege mit Quellen und offenen Bedien-/Cook-/SaveGame-Grenzen verknüpft.

@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-27T23:03:43+00:00"
+  at: "2026-10-27T23:19:11+00:00"
 sources:
 - id: terrain
   resource: evidence/terrain-report.json
@@ -70,6 +70,8 @@ Stand: **28. Oktober 2026**, Unreal **5.8.4**, ShaderWorld **4.1**. Die Statusan
 Beim Persistenztest lag der größte ursprüngliche Gelände-Höhenfehler bei rund **0,949 cm**, nach Änderungen bei rund **0,630 cm**; die Toleranz betrug **3 cm**. IDs, Kontrollpunkte und Änderungsreihenfolge wurden zwischen Erzeugen und Laden verglichen. Wiederholtes Laden erzeugte keine Duplikate, ein fehlender Slot und eine falsche Speicherformatversion ließen die vorhandene Stadt erhalten. Generator-/Seed-Konflikte werden im Code geprüft, wurden aber nicht als eigene Negativversuche abgenommen. Im JSON bedeuten `false`-Checks in nicht zuständigen Phasen **nicht anwendbar**; die Gesamt- und Phasenurteile sind separat angegeben.
 
 Nach der Korrektur der Zufahrts-Längentabellen bestand die gespeicherte Endfassung am **28. Oktober 2026** eine zusätzliche Prüfung: nochmals **65/65 Proben**, **133/133 Fahrproben am Boden** und **259,35 m** tatsächliche Durchfahrt. Die zwei ursprünglichen Läufe und die abschließende Kontrolle sind im [CityBasics-Bericht](evidence/citybasics-report.json) getrennt erhalten.
+
+Die [Küsten-/Biomprüfung vom 28. Oktober](evidence/coast-biome-road-inspection.json) ist eine lesende Parameter-, Material-, Asset- und Codeprüfung. Sie bestätigt die vorhandene Ground/Ocean-Verbindung und den angeschlossenen Water-Exclusion-Materialknoten. Die alten Pflanzen-Minimalhöhen erlauben den neuen Meeresboden als Waldstandort. Eine Korrektur dieser Filter, ein eigener Air-Pocket-Versuch und die Reproduktion des gemeldeten Wellendurchbruchs stehen noch aus.
 
 ## Nächste Abnahmen für den City Builder
 
