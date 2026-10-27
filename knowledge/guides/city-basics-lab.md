@@ -6,12 +6,15 @@ tags: [shaderworld, citybuilder, terrain, biome, brushes, tunnels, collision]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-27T23:19:11+00:00" }
+generated: { by: codex/gpt-6, at: "2026-10-27T23:43:59+00:00" }
 evidence_scope:
   implementation: CityBasics-Karte aufgebaut; CharacterMovement-Testbuggy und Fußmodus implementiert und kompiliert; installierte Brush- und Kollisionsimplementierung gelesen
   practical_status: Editoransicht gemeinsam angesehen; zwei frische eigenständige Spielprozesse bestanden jeweils 65 Kollisionsproben und eine bodengebundene Durchfahrt
   not_tested: Manuelle F-/Maus-Bedienung des Fußmodus, Laufzeit-Speicherung von Berg/Löchern/Biomkonfiguration, dauerhafte Vegetationsentfernung, Chaos-Fahrzeug, Navigation und verpackter Build
 sources:
+  - id: coast-correction
+    resource: ../evidence/coast-correction-report.json
+    title: Gespeicherte Pflanzenfilter und Tunnel-Wasserausschluss mit PIE-Readback
   - id: coast-biome-inspection
     resource: ../evidence/coast-biome-road-inspection.json
     title: Lesende Küsten-, Biom- und Straßenprüfung vom 28. Oktober 2026
@@ -75,7 +78,9 @@ Die Meereshöhe wurde für CityBasics auf **0 cm** und der tiefe Meeresboden auf
 
 Im installierten Beispielbestand gibt es **SW_BiomOceanMap**. Es verwendet aber ebenfalls Black-Alder-Bäume, gewöhnliches Gras und Felsen, keine mitgelieferte Seegras-/Korallensammlung. Seine Waldvarianten beginnen erst bei **450 beziehungsweise 600 cm**. Sie unverändert einzusetzen würde auch unser nur **300 cm** hohes Plateau von diesem Bewuchs ausschließen.
 
-**Noch ungeprüfter nächster Versuch:** Kopiere **SW_GreenBiom** und seine Baum-/Gras-Spawnable-Assets in den Projektordner. Öffne die kopierten Spawnables und setze unter **Altitude Range → Min** beispielsweise **150 cm**; Max bleibt erhalten. Ersetze im kopierten Biom die Baum-/Grasverweise durch diese Projektkopien und weise das Biom dem Ground zu. Felsen können ihr eigenes Höhenintervall behalten. Nach Speichern und erneutem Vegetationsaufbau prüfen, dass auf dem 3-m-Plateau weiterhin Wald wächst und unter Wasser keine Waldpflanzen mehr stehen. Die Plugin-Originale dabei als Vorlage erhalten. Dieser Vorschlag wurde noch nicht angewendet oder praktisch abgenommen.
+**Die Höhenfilter sind inzwischen im Projekt korrigiert.** Der Ground verwendet unter **Biomes Manager → Biomes** die Projektkopie **SW_Basics_LandBiome**. Darin verweisen Baum, nahes und fernes Gras auf **SW_Basics_Tree**, **SW_Basics_GrassClose** und **SW_Basics_GrassDistant**. Alle drei haben **Altitude Range → Min = 150 cm**; die bisherigen Maximalhöhen und Dichtematerialien bleiben erhalten. Felsen behalten ihr eigenes Höhenintervall. Die Plugin-Originale wurden unverändert zurückgelesen.[^coast-correction]
+
+Zum Nachvollziehen öffne die drei Spawnable-Assets unter **Content → ShaderWorldCityBasics → Spawnables** und prüfe jeweils **Altitude Range**. Öffne danach das neue Biom und kontrolliere seine Spawnable-Verweise sowie die Zuweisung im Ground-Biomes-Manager. Im aktuellen 4.1-Aufbau ist dieser Manager maßgeblich; das alte `Bioms`-Array ist schreibgeschützt. Nach eigenen Änderungen speichern und die Vegetation neu aufbauen. Die gespeicherten Assetwerte sind geprüft; die vollständige Sichtprüfung aller Unterwasserpflanzen und die Auswertung sämtlicher Instanzpositionen stehen noch aus.
 
 Ein eigenes Meeresbiom kann anschließend andere Spawnables und Höhen-/Dichtemasken für Seegras, Steine oder Korallen verwenden. Die passenden Pflanzenmeshes und Regeln müssen wir selbst bereitstellen. Für Wellen unter Land und trockene Ausschlussbereiche siehe [Ozean und Küste](ocean-waves-and-foam.md).
 
@@ -117,6 +122,14 @@ Die Stempel heißen **Basics_PortalHole_West** und **Basics_PortalHole_East**. I
 5. Prüfe beim übernommenen Oberflächenmaterial, ob es Terrainlöcher auswertet: **Masked** und **Vertex Color → R** als **Opacity Mask**. Ändere dafür bei Bedarf eine Projektkopie.
 
 Die native Komponente projiziert die Mesh-Dreiecke auf **XY**. Die Z-Position des Stempels begrenzt keinen unterirdischen Hohlraum. Deshalb werden nur die beiden Hangdurchtritte gelocht; eine Schablone über der ganzen Strecke würde auch den Bergkamm öffnen. Die [Loch- und Tunnelgrundlagen](holes-and-mountain-tunnels.md) erläutern diese Grenze genauer.[^installed-brush-source]
+
+### Warum Wasser gerade an den Portalen durchkam
+
+Die Dämpfung steht inzwischen auf **1,0**, auch im laufenden PIE bestätigt. Laut Nutzer traten Wellen trotzdem am Tunnel auf. Der gelesene Plugin-Code erklärt einen passenden Mechanismus: Holebrushes schreiben einen sehr tiefen Lochwert in den Höhen-Cache. Der Ozean wertet diesen Wert als tiefes Wasser aus; die eigene Tunnelplatte ist kein Bestandteil dieser Terrainabfrage. Deshalb kann die Küstendämpfung an den Portalöffnungen volle Wellen zulassen. Das ist ein Codebefund, kein abgeschlossener GPU-Messversuch am konkreten Fehlerort.[^coast-correction]
+
+Der Actor **Basics_Tunnel_AirPocket** enthält jetzt eine native **ShaderWorld Air Pocket Box**. Sein Mittelpunkt liegt bei **(0,0,0)**, Rotation null und Skalierung eins. **Box Extent = (9000,800,2000) cm** sind Halbausdehnungen: insgesamt **180 m Länge, 16 m Breite und 40 m Höhe**. Dieser großzügige Laborbereich deckt Tunnel und beide Portalöffnungen ab. Das vorhandene Ozeanmaterial hat den nötigen Water-Exclusion-Knoten bereits in seiner Opacity-Mask-Kette.
+
+Der Bereich ist gespeichert und seine Eigenschaften wurden nach einem neuen PIE-Start zurückgelesen. Die Form ist im Spiel unsichtbar und erzeugt keine feste Kollision. Der Nutzer meldete danach an der betroffenen Stelle **„Bisher trocken“**. Das ist eine erste Sichtbestätigung; ein längerer Test über weitere Wellenphasen und Kamerafahrten bleibt offen. Weitere Schritte und Grenzen stehen unter [Ozean und Wasserausschlüsse](ocean-waves-and-foam.md).
 
 ## Boden, Wände und Decke sind eigene Geometrie
 
@@ -195,3 +208,5 @@ Weitere Versuche betreffen dauerhafte Vegetationsänderungen, Chaos-Fahrzeugphys
 [^basics-proof]: [Bereinigter CityBasics-Bericht mit zwei bestandenen eigenständigen Kollisions- und Durchfahrtsläufen](../evidence/citybasics-report.json).
 
 [^coast-biome-inspection]: [Lesende Küsten-, Biom- und Straßenprüfung](../evidence/coast-biome-road-inspection.json). Live-Parameter und Asset-/Codebefunde sind von noch nicht ausgeführten Korrekturversuchen getrennt.
+
+[^coast-correction]: [Korrekturbericht mit Projektassets, Originalwerten und neuer PIE-Box](../evidence/coast-correction-report.json). Gespeicherte Werte, Nutzerbeobachtung und noch fehlende Sicht-/GPU-Prüfungen sind getrennt ausgewiesen.

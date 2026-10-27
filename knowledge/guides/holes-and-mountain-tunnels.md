@@ -6,12 +6,15 @@ tags: [shaderworld, terrain, holes, tunnels, collision, editor]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-27T23:03:43+00:00" }
+generated: { by: codex/gpt-6, at: "2026-10-27T23:46:24Z" }
 evidence_scope:
   inspected: Holebrush-Beispiele der Heightmap-Karte im Editor und installierter ShaderWorld-4.1-Quellcode
-  derived: Bauweise eines Bergtunnels aus Portalöffnungen und eigenen Tunnelmeshes
-  tested: Eigene CityBasics-Portale, Bergkamm, Tunnelmeshkollision und bodengebundene Durchfahrt in zwei getrennten Spielprozessen
-  not_tested: Speichern eigener Tunnel, Navigation und verpackter Build
+  derived: Bauweise eines Bergtunnels aus Portalöffnungen und eigenen Tunnelmeshes;
+    Hole-Sentinel als plausibler Auslöser voller Ozeanwellen am Portal
+  tested: Eigene CityBasics-Portale, Bergkamm, Tunnelmeshkollision und bodengebundene Durchfahrt in zwei getrennten Spielprozessen;
+    native Air-Pocket-Box gespeichert und in neuem PIE ausgelesen, erster Nutzer-Sichttest Bisher trocken
+  not_tested: Speichern eigener Tunnel, Navigation und verpackter Build; gültige GPU-Höhenmessung
+    am Wasserfehler, vollständige Wasserabfragen und Langzeitabnahme des Air-Pocket-Wasserausschlusses
 sources:
   - id: basics-proof
     resource: ../evidence/citybasics-report.json
@@ -31,6 +34,12 @@ sources:
   - id: installed-tunnel-source
     resource: "Lizenzierte ShaderWorld-4.1-Installation: SWSplineRoadComponent.h, ShaderWorldSplineRoads.usf, ShaderWorldAirPocketComponents.h/.cpp und ShaderWorldVoxelActor.cpp; nicht im Bundle enthalten"
     title: Lokale Prüfung der Tunnel-, AirPocket- und Voxel-Grenzen
+  - id: coast-correction
+    resource: ../evidence/coast-correction-report.json
+    title: Gespeicherte Air-Pocket-Box, PIE-Readback und erster Nutzer-Sichttest
+  - id: installed-hole-ocean-source
+    resource: "Lizenzierte ShaderWorld-4.1-Installation: Source/ShaderWorld/Private/Brushes/SW_HoleMeshBrushComponent.cpp und Shaders/Private/ShaderWorldComputeProducers.usf; nicht im Bundle enthalten"
+    title: Hole-Höhenwert und seine Verarbeitung in der Ozean-Küstendämpfung
 ---
 # Löcher im Gelände und Eingänge für Bergtunnel
 
@@ -97,6 +106,18 @@ Diese Bauweise wurde im [CityBasics-Labor](city-basics-lab.md) mit einem einfach
 
 Diese Abgrenzungen ergeben sich aus dem installierten Code und den Beispielassets.[^installed-tunnel-source] Der Hersteller führt Terrainlöcher und die Unterwasser-Glastunneldemo ebenfalls als getrennte Funktionen auf.[^shaderworld-product]
 
+## Wenn Wasser an einer Portalöffnung erscheint
+
+Vor Einbau der Ausschlussbox meldete der Nutzer Wellen **nur am Tunnel**. Der Ozean liest die Höhen des ShaderWorld-Terrains; unsere eigene Tunnel-Fahrbahn aus Static Meshes ersetzt diese Höhen nicht. **Shallow Attenuation = 1** wurde bereits gespeichert und in PIE bestätigt. Das allein ist noch kein Nachweis für einen trockenen Tunnel.[^coast-correction]
+
+Der gelesene Code zeigt einen wichtigen Sonderfall: **SW_HoleMeshBrushComponent** schreibt in den geöffneten Bereichen **−7.000.000 cm (−70 km)** in den Höhen-Cache. Der Ozean-Shader decodiert diesen Wert als normale vorzeichenbehaftete Höhe, ohne den Hole-Sonderfall abzufangen. Für seine Küstendämpfung wird das Portal damit zu sehr tiefem Wasser. Bei dieser Tiefe liefert die Dämpfungsfunktion volle Wellenstärke, auch wenn **Shallow Attenuation** auf **1** steht.[^installed-hole-ocean-source]
+
+Dieser Codepfad passt plausibel zur auf den Tunnel begrenzten Beobachtung. Er ist noch keine gültige GPU-Messung an der betroffenen Stelle: Der erste Abfrageaufruf meldete `valid = 0` und lieferte damit keinen belastbaren Nachweis des tatsächlichen Cache-Inhalts.[^coast-correction] Die Öffnung einfach wieder mit Terrain zu schließen würde außerdem den benötigten Durchgang beseitigen; die eigene Fahrbahn bleibt ein separates Mesh.
+
+Die native **ShaderWorld Air Pocket Box** ist inzwischen am Actor **Basics_Tunnel_AirPocket** eingerichtet und mit der Karte gespeichert. Eine neu gestartete PIE-Sitzung enthält die Komponente mit Mittelpunkt **(0, 0, 0) cm**, Rotation **0**, Skalierung **1** und **Box Extent = (9000, 800, 2000) cm**. Das sind Halbausdehnungen von **90 m längs**, **8 m quer** und **20 m vertikal**; die Box umfasst Tunnel und Portalbereiche. **Hidden in Game** ist eingeschaltet. Das Ozeanmaterial enthält bereits den erforderlichen Water-Exclusion-Anschluss.[^coast-correction]
+
+Nach dem Neustart der Vorschau meldete der Nutzer an der zuvor betroffenen Stelle **„Bisher trocken“**. Damit liegt eine erste Sichtbestätigung vor. Sie ersetzt keine Langzeitprüfung über verschiedene Wellenphasen und keine vollständigen GPU- oder Wasserabfragen. Die [Ozeananleitung](ocean-waves-and-foam.md) beschreibt den aktuellen Box-Aufbau und trennt diese Nachweise. Der vorhandene Durchfahrtsbericht bestätigt feste Tunnelkollision und Bewegung; er prüft keine Wasserfreiheit. Auch ein Laufzeit-SaveGame mit der neuen Box wurde noch nicht geprüft.[^coast-correction]
+
 ## Häufige Ursachen für ein falsches Ergebnis
 
 | Beobachtung | Als Nächstes prüfen |
@@ -107,6 +128,7 @@ Diese Abgrenzungen ergeben sich aus dem installierten Code und den Beispielasset
 | Spieler springt auf den Berg zurück | Prevent Falling Under Terrain am Spieler prüfen. |
 | Loch funktioniert im Editor, später nicht | Allow CPU Access des Schablonenmeshes vor dem Cook prüfen. |
 | Bergdecke verschwindet über der ganzen Trasse | Holebrush auf die Portale begrenzen und den Tunnelkörper separat bauen. |
+| Wellen werden am Portal sichtbar, obwohl Shallow Attenuation 1 ist | Hole-Höhenwert im Ozean-Datenpfad und gezielten Air-Pocket-Ausschluss prüfen; die Tunnel-Fahrbahn liefert dem Ozean keine Terrainhöhe. |
 
 Speicherbare Tunnel brauchen später eigene Daten für Trasse, Profil, Portalformen und Mesh-Auswahl. Das bestehende [Spielstandlabor](save-and-load.md) speichert bisher nur Bauplätze und Straßentrassen.
 
@@ -116,3 +138,5 @@ Speicherbare Tunnel brauchen später eigene Daten für Trasse, Profil, Portalfor
 [^shaderworld-product]: [Offizielle ShaderWorld-Produktbeschreibung](https://www.fab.com/listings/ee4bcbaf-36ea-4dd9-aade-068e1a8a4794).
 [^installed-hole-source]: Lokale Quellcodeprüfung von ShaderWorld 4.1: `SW_HoleMeshBrushComponent.h/.cpp`, `ShaderWorldActor_Collision.cpp`, `SWPatchVertexFactory.ush` und das Heightmap-Oberflächenmaterial. Die lizenzierten Plugin-Dateien werden nicht mit diesem Bundle verteilt.
 [^installed-tunnel-source]: Lokale Quellcode- und Assetprüfung von ShaderWorld 4.1: `SWSplineRoadComponent.h`, `ShaderWorldSplineRoads.usf`, `ShaderWorldAirPocketComponents.h/.cpp`, `ShaderWorldVoxelActor.cpp` und die Tunnelbeispiele. Die lizenzierten Plugin-Dateien werden nicht mit diesem Bundle verteilt.
+[^coast-correction]: [Küsten-/Tunnelkorrektur vom 28. Oktober 2026](../evidence/coast-correction-report.json). Box mit der Karte gespeichert und im neu gestarteten PIE ausgelesen; erste Nutzerantwort „Bisher trocken“. Kein Langzeitnachweis oder vollständiger GPU-Messbericht.
+[^installed-hole-ocean-source]: Gelesene ShaderWorld-4.1-Quellen: `Source/ShaderWorld/Private/Brushes/SW_HoleMeshBrushComponent.cpp`, Zeilen 206–235, und `Shaders/Private/ShaderWorldComputeProducers.usf`, Zeilen 95–130. Die lizenzierten Dateien werden nicht mitgeliefert; der Codebefund ersetzt keine GPU-Messung im aktuellen Spielprozess.

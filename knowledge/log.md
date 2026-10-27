@@ -2,6 +2,10 @@
 
 ## 2026-10-28
 
+- Waldfilter über eigenes Landbiom und drei Spawnable-Kopien auf Min 150 cm gesetzt; Plugin-Originale unverändert. Wellendämpfung 1,0 gespeichert und im laufenden PIE bestätigt.
+- Nutzer grenzte verbleibende Wellen auf den Tunnel ein: Hole-Sentinel wird vom Ozean als große Wassertiefe gelesen; eigene Fahrbahn ist nicht Teil der Terrainquelle.
+- Native Air-Pocket-Box für Tunnel und Portale gespeichert und nach PIE-Neustart zurückgelesen; Nutzer meldete anschließend an der betroffenen Stelle „Bisher trocken“. Langzeit-/GPU-Prüfung weiterhin offen.
+
 - Küsten-/Biomfragen lesend untersucht: Ground/Ocean-Verknüpfung vorhanden, Restwellendämpfung und vorbereitete Air-Pocket-Materialmaske dokumentiert; gemeldeter Wellendurchbruch noch nicht reproduziert.
 - Alte negative Pflanzen-Höhenfilter nach der Meereshöhenänderung als Ursache für erlaubten Wald unter Wasser eingeordnet; OceanMap-Biom als Landvegetation erklärt.
 - Straßenherkunft präzisiert: native ShaderWorld-Drecktrassen, eigene Asphalt-/Markierungsmeshes, Road-Creator-Kopplung weiterhin offen.

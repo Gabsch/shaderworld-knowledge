@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-27T23:19:11+00:00"
+  at: "2026-10-27T23:43:59+00:00"
 sources:
 - id: terrain
   resource: evidence/terrain-report.json
@@ -71,7 +71,7 @@ Beim Persistenztest lag der größte ursprüngliche Gelände-Höhenfehler bei ru
 
 Nach der Korrektur der Zufahrts-Längentabellen bestand die gespeicherte Endfassung am **28. Oktober 2026** eine zusätzliche Prüfung: nochmals **65/65 Proben**, **133/133 Fahrproben am Boden** und **259,35 m** tatsächliche Durchfahrt. Die zwei ursprünglichen Läufe und die abschließende Kontrolle sind im [CityBasics-Bericht](evidence/citybasics-report.json) getrennt erhalten.
 
-Die [Küsten-/Biomprüfung vom 28. Oktober](evidence/coast-biome-road-inspection.json) ist eine lesende Parameter-, Material-, Asset- und Codeprüfung. Sie bestätigt die vorhandene Ground/Ocean-Verbindung und den angeschlossenen Water-Exclusion-Materialknoten. Die alten Pflanzen-Minimalhöhen erlauben den neuen Meeresboden als Waldstandort. Eine Korrektur dieser Filter, ein eigener Air-Pocket-Versuch und die Reproduktion des gemeldeten Wellendurchbruchs stehen noch aus.
+Die [Küsten-/Biomprüfung vom 28. Oktober](evidence/coast-biome-road-inspection.json) ist eine lesende Parameter-, Material-, Asset- und Codeprüfung. Sie bestätigt die vorhandene Ground/Ocean-Verbindung und den angeschlossenen Water-Exclusion-Materialknoten. Die alten Pflanzen-Minimalhöhen erlauben den neuen Meeresboden als Waldstandort. Die [Korrektur](evidence/coast-correction-report.json) ist inzwischen gespeichert: eigenes Landbiom mit drei Pflanzenfiltern ab 150 cm, Dämpfung 1,0 und native Tunnel-Air-Pocket-Box. Assetwerte, unveränderte Plugin-Originale und die Box nach PIE-Neustart wurden zurückgelesen. Der Nutzer berichtete weiterhin Wellen bei Dämpfung 1,0 am Tunnel; der gelesene Hole-Cache-Pfad erklärt dort fehlende Küstendämpfung. Nach dem Einbau bestätigte der Nutzer an der betroffenen Tunnelstelle **„Bisher trocken“**. Eine längere Sichtprüfung, die Unterwasservegetation und gültige GPU-Höhenmessungen bleiben gesondert offen.
 
 ## Nächste Abnahmen für den City Builder
 
