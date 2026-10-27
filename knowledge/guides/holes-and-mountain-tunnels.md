@@ -5,13 +5,17 @@ description: Die mitgelieferten Holebrushes ansehen und verstehen, was für eine
 tags: [shaderworld, terrain, holes, tunnels, collision, editor]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-status: draft
-generated: { by: codex/gpt-6, at: "2026-10-27T21:49:03Z" }
+status: stable
+generated: { by: codex/gpt-6, at: "2026-10-27T23:03:43+00:00" }
 evidence_scope:
   inspected: Holebrush-Beispiele der Heightmap-Karte im Editor und installierter ShaderWorld-4.1-Quellcode
   derived: Bauweise eines Bergtunnels aus Portalöffnungen und eigenen Tunnelmeshes
-  not_tested: Vollständiger Bergtunnel, Fahrbetrieb, Navigation und verpackter Build
+  tested: Eigene CityBasics-Portale, Bergkamm, Tunnelmeshkollision und bodengebundene Durchfahrt in zwei getrennten Spielprozessen
+  not_tested: Speichern eigener Tunnel, Navigation und verpackter Build
 sources:
+  - id: basics-proof
+    resource: ../evidence/citybasics-report.json
+    title: Eigener Bergtunnel mit zwei geprüften Durchfahrten
   - id: heightmap-view
     resource: ../assets/images/heightmap-holes.png
     title: Holebrush-Beispiele der Heightmap-Demo
@@ -32,7 +36,7 @@ sources:
 
 ShaderWorld kann eine Fläche aus dem Gelände ausschneiden und dort auch die Terrainkollision entfernen. Ein solcher Ausschnitt ist ein Baustein für einen Tunneleingang. Den befahrbaren Tunnel mit Boden, Wänden und Decke musst du zusätzlich als Geometrie anlegen.[^installed-hole-source]
 
-Die Holebrush-Beispiele wurden in der mitgelieferten Heightmap-Karte angesehen. Die nachfolgende Tunnelbauweise ist aus der Implementierung abgeleitet; ein vollständiger Bergtunnel wurde in diesem Versuch noch nicht gebaut oder durchfahren.
+Die Holebrush-Beispiele wurden in der mitgelieferten Heightmap-Karte angesehen. Anschließend wurde die Bauweise im eigenen [CityBasics-Labor](city-basics-lab.md) umgesetzt: Zwei getrennte Spielprozesse bestanden je 65 Kollisionsproben und eine rund 259,48 m lange bodengebundene Durchfahrt. Die Fahrbahn, Wände und Decke sind eigene Meshes; zwei Terrainproben belegen die Portalöffnungen, eine weitere den erhaltenen Bergkamm.[^basics-proof]
 
 ![Holebrush-Beispiele in der Heightmap-Demo](../assets/images/heightmap-holes.png)
 
@@ -68,7 +72,7 @@ Für die Physik prüfst du am Terrain-Actor, in dieser Karte **BP_SWHeightmap**,
 
 Falls dein Spieler eine **SW_Collision**-Komponente trägt, prüfe dort **Prevent Falling Under Terrain**. Für unterirdische Wege muss diese Einstellung aus sein: Sie kann einen Spieler unter der Oberfläche sonst wieder nach oben teleportieren. Der aktuelle native Standard ist aus; ältere Demo-Hinweistexte beschreiben noch ein anderes Standardverhalten.
 
-Erfolgreich ist der Versuch erst, wenn die Öffnung sichtbar ist und dort keine unsichtbare Terrainfläche blockiert. Für eine genaue Abnahme müssen Bodenabfragen außerhalb der Öffnung das Terrain treffen und innerhalb der Öffnung dessen Kollision verfehlen. Ein darunterliegendes Tunnel- oder Bodenmesh darf dabei natürlich einen eigenen Treffer liefern. Solche Kollisionsproben und ein Fahrtest sind für den geplanten Bergtunnel noch offen.
+Erfolgreich ist der Versuch erst, wenn die Öffnung sichtbar ist und dort keine unsichtbare Terrainfläche blockiert. Für eine genaue Abnahme müssen Bodenabfragen außerhalb der Öffnung das Terrain treffen und innerhalb der Öffnung dessen Kollision verfehlen. Ein darunterliegendes Tunnel- oder Bodenmesh darf dabei natürlich einen eigenen Treffer liefern. Im [CityBasics-Bericht](../evidence/citybasics-report.json) wurden reine Terrainstrahlen von den Fahrbahn-/Wand-/Deckenprüfungen getrennt. Die Bodenproben treffen den eigenen Tunnelboden, nicht eine von ShaderWorld erzeugte unterirdische Terrainfläche.
 
 ## Einen Eingang in einen Berg planen
 
@@ -79,10 +83,10 @@ Ein daraus abgeleiteter Aufbau für einen City Builder ist:
 1. Lege die Trasse und die gewünschte Einfahrtshöhe fest. Führe die Zufahrt bis zum Hang und ebne dort nur den benötigten Vorplatz.
 2. Öffne mit einem kleinen Holebrush den Grundriss am Hangdurchtritt. Prüfe die Öffnung aus der späteren Fahrperspektive, nicht nur von oben.
 3. Setze einen Portalrahmen und das erste Tunnelstück so ein, dass sie die ausgeschnittenen Terrainränder überdecken. Passe Form und Überdeckung gemeinsam an.
-4. Verlängere den Tunnel mit eigenen Meshes für Wände, Decke und Fahrbahn. Diese brauchen passende Kollision. Unterirdische Straßensegmente sollen die Geländeoberfläche darüber nicht nach unten ziehen; deaktiviere dort bei einer nativen ShaderWorld-Straßenkomponente **Deform Terrain**.
+4. Verlängere den Tunnel mit eigenen Meshes für Wände, Decke und Fahrbahn. Diese brauchen passende Kollision. Unterirdische Straßensegmente sollen die Geländeoberfläche darüber nicht nach unten ziehen; **Deform Terrain** muss aus sein. Eine Datenlayer-Ausgabe kann dennoch Material und Vegetation oben auf dem Berg verändern: Im Labor wurde der durchgehende unterirdische Maskenspline deshalb vollständig deaktiviert.
 5. Wiederhole die Portalöffnung am Ausgang. Prüfe Fahrzeugdurchfahrt, Kollision und Navigation auf beiden Übergängen sowie im Tunnel.
 
-Diese Schritte sind ein Bauvorschlag, keine bereits getestete Komplettlösung.
+Diese Bauweise wurde im [CityBasics-Labor](city-basics-lab.md) mit einem einfachen Tunnelprofil umgesetzt und zweimal bodengebunden durchfahren. Das ersetzt keine Prüfung anderer Portalformen oder Fahrzeuggrößen.
 
 | Ähnlich benannte Funktion | Was sie für den Tunnel leistet |
 | --- | --- |
@@ -106,6 +110,7 @@ Diese Abgrenzungen ergeben sich aus dem installierten Code und den Beispielasset
 
 Speicherbare Tunnel brauchen später eigene Daten für Trasse, Profil, Portalformen und Mesh-Auswahl. Das bestehende [Spielstandlabor](save-and-load.md) speichert bisher nur Bauplätze und Straßentrassen.
 
+[^basics-proof]: [Bereinigte CityBasics-Kollisions- und Durchfahrtsprüfung](../evidence/citybasics-report.json).
 [^heightmap-view]: [Aufnahme der untersuchten Heightmap-Beispiele](../assets/images/heightmap-holes.png).
 [^brush-docs]: [ShaderWorld: Blueprint Brush System – Landmass](https://universgen.gitbook.io/shader-world/fundamentals/kick-start/blueprint-brush-system-landmass).
 [^shaderworld-product]: [Offizielle ShaderWorld-Produktbeschreibung](https://www.fab.com/listings/ee4bcbaf-36ea-4dd9-aade-068e1a8a4794).

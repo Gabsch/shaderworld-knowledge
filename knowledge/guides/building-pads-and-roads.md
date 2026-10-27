@@ -13,7 +13,7 @@ evidence_scope: Straßenactor im Editor inspiziert; CityLab-Form und Kollision i
   und PIE geprüft
 generated:
   by: codex/gpt-6
-  at: '2026-10-27T21:54:08Z'
+  at: "2026-10-27T23:03:43+00:00"
 sources:
 - id: map-inspection
   resource: ../reference/example-maps.md
@@ -80,7 +80,7 @@ P/R/Q/E sind eigene CityLab-Bindings.[^persistence-proof] Das Plugin bringt dies
 
 Der [CityLab-Bericht](../evidence/citylab-report.json) prüft je 14 Kollisionsproben in sechs Phasen: Editor, PIE, Straße verschoben, Bauplatz verschoben, Rücksetzung und erneut geladene Karte. Die größte gemessene Abweichung lag bei rund 0,82 cm bei 3 cm Toleranz. Die [Persistenzprüfung](../evidence/persistence-report.json) ergänzt später den Test über getrennte Spielprozesse.
 
-Für Road Creator Pro gibt es eine sichtbare Teststraße in der flachen Karte. Seine automatische Zusammenarbeit mit ShaderWorld wurde noch nicht geprüft. Navigation, Verkehr und ein sichtbares Asphaltmesh sind weitere Schritte.
+Für Road Creator Pro gibt es eine sichtbare Teststraße in der flachen Karte. Seine automatische Zusammenarbeit mit ShaderWorld wurde noch nicht geprüft. Navigation und Verkehr bleiben weitere Schritte. Das eigene [CityBasics-Labor](city-basics-lab.md) ergänzt inzwischen eine feste Asphaltfahrbahn im Tunnel und prüft deren Kollision; das ist kein automatisch von der nativen SplineRoad erzeugtes Straßenmesh.
 
 [^map-inspection]: [Einordnung der inspizierten Beispielwelten](../reference/example-maps.md).
 [^citylab-proof]: [Bereinigter CityLab-Prüfbericht](../evidence/citylab-report.json).

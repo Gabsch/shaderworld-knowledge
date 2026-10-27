@@ -6,3 +6,5 @@
 - [Speichern und Laden](save-and-load.md) – Änderungen über einen Neustart erhalten.
 - [Löcher und Bergtunnel](holes-and-mountain-tunnels.md) – Beispielbrushes und Grenzen des Höhenfelds.
 - [Fehlerdiagnose](troubleshooting.md) – vom sichtbaren Fehler zur passenden Einstellung.
+
+- [CityBasics mit Insel, Berg und Tunnel](city-basics-lab.md).

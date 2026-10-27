@@ -56,6 +56,22 @@
       "modified": false,
       "bytes": 439318,
       "sha256": "7e18e90795417a5919b83c8e5df95e4604a365e91359f5640ee421c7d4bb1cdc"
+    },
+    {
+      "file": "assets/images/citybasics-road.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, PIE",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1263099,
+      "sha256": "3ab0931f9baae1753a685a3ce2f79e0a91505c052b927408e9c08301fc62a5d3"
+    },
+    {
+      "file": "assets/images/citybasics-portal-approach.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, PIE",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1175881,
+      "sha256": "80c9ce5ab546c2c71507e4e43d63e26a7dbd795fc594ac5a694a054218b65daf"
     }
   ]
 }

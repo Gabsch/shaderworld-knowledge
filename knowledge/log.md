@@ -1,7 +1,16 @@
 # Änderungen an der Wissensbasis
 
+## 2026-10-28
+
+- Zufahrten korrigiert: Nach direkten JSON-Splineänderungen fehlte die passende Längentabelle; Tangenten und vollständige Weglängen nun gemeinsam erzeugt.
+- Zwei native PIE-Editorbilder mit freier Dreckstraße und Portalzufahrt ergänzt.
+- Neue CityBasics-Kollisions- und Durchfahrtsbelege mit Quellen und offenen Bedien-/Cook-/SaveGame-Grenzen verknüpft.
+
 ## 2026-10-27
 
+- Eigenes CityBasics-Labor mit Reference-Bodenmaterialien/Biom, Insel, Ozean, Bergbrush, Portalstempeln und Tunnelkörper angelegt.
+- Datenmaskenfehler am Berg dokumentiert: Ein unterirdischer Spline mit deaktivierter Höhenverformung schreibt weiterhin Material-/Biomwerte auf die obere Terrainfläche; die durchgehende Maske wurde deaktiviert.
+- Eigene Buggy-/Laufbedienung ergänzt; den tatsächlichen Nachweis hält die CityBasics-Anleitung fest.
 - OKF-0.2-Wissensbasis für Unreal 5.8.4 und ShaderWorld 4.1 im Projekt angelegt.
 - Anleitungen für Terrain/Kollision, Beispielwelten, Pads/Straßen, SaveGame, Löcher/Tunnel und Ozean zusammengeführt.
 - Sieben unveränderte Viewport-Aufnahmen und sechs bereinigte Nachweis-/Manifestdateien aufgenommen.

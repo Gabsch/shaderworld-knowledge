@@ -13,7 +13,7 @@ evidence_scope: Native MCP-Verbindung und Editoraktionen geprüft; kein Herstell
   nachgewiesen
 generated:
   by: codex/gpt-6
-  at: '2026-10-27T21:55:15Z'
+  at: "2026-10-27T23:03:43+00:00"
 sources:
 - id: epic
   resource: https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor
@@ -42,6 +42,7 @@ Diese Dateien gehören zum ursprünglichen Unreal-Testprojekt, nicht zum öffent
 | setup_citylab.py / verify_citylab.py | Hügel, Bauplatz und native Straßentrasse vorbereiten und prüfen |
 | setup_persistence.py / verify_persistence.py | Separates Spielstandlabor und zwei unabhängige Spielprozesse |
 | tour_shaderworld.py | Demo-Maps als Projektkopien laden, Actors lesen und Viewport aufnehmen |
+| setup_basics.py / verify_basics.py | Farbiges CityBasics-Labor und tatsächliche bodengebundene Durchfahrt prüfen |
 | mcp_client.py | Verbindung zur lokalen Unreal-MCP-Schnittstelle |
 
 Die bekannte lokale Adresse lautet `http://127.0.0.1:8000/mcp`. Ob dein Editor denselben Port verwendet, musst du an seiner MCP-Konfiguration prüfen. Die Skripte können Maps laden sowie PIE starten und beenden; eigene offene Versuche vorher speichern.
@@ -52,6 +53,9 @@ Die bekannte lokale Adresse lautet `http://127.0.0.1:8000/mcp`. Ob dein Editor d
 - Nach dem Anheften einer Komponente kann eine zuvor bestehende Weltskalierung als relative Skalierung weiterwirken. Die CityLab-Straße brauchte explizit `(1,1,1)`.
 - Die generische JSON-Zuweisung einer RootComponent an einen leeren Actor blockierte in unserem Versuch den Editor. Das Einrichtungsskript verwendet deshalb einen Actor mit vorhandener Scene-Root.
 - GPU-Terrain und Kollisionsgenerierung arbeiten asynchron. Eine erfolgreiche API-Antwort ist noch kein Beleg für eine fertige Physikkollision.
+
+- Eine direkte JSON-Zuweisung von `SplineCurves` aktualisierte in unserem UE-5.8-Versuch die Längentabelle nicht. Native `UpdateSpline` beziehungsweise die normalen Editor-Splinewerkzeuge berechnen diese Daten gemeinsam. Das Labskript liefert konsistente Tangenten und Längentabellen; nur die sichtbare Kontrolllinie zu prüfen reicht nicht aus.
+- `CaptureViewport` zeigte während PIE in unserem Versuch die Editor-Szene ohne das laufend generierte Spielterrain. Für den tatsächlichen PIE-Bildstand wurde `CaptureEditorImage` verwendet; eine solche Aufnahme enthält die Editoroberfläche.
 
 Das sind Befunde unserer Werkzeugversion und unseres Projekts. Sie müssen bei Änderungen am Unreal-MCP erneut geprüft werden.
 

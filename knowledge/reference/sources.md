@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: '2026-10-27T21:55:15Z'
+  at: "2026-10-27T23:03:43+00:00"
 sources:
 - id: official
   resource: https://universgen.gitbook.io/shader-world
@@ -70,6 +70,10 @@ Alle sieben Startbilder sind unveränderte native Viewport-Aufnahmen aus dem eig
 Aufnahmen vor/nach dem Ozeanversuch haben unterschiedliche Kamerawinkel; sie dienen als Ergebnisansichten, nicht als maßstäblicher Vergleich. Rote Lumen-Meldungen und sichtbare Hilfskästen wurden nicht retuschiert. Die Bilder enthalten keine Bestätigung einer fertigen Renderer-Konfiguration.
 
 Dateigrößen und SHA-256-Hashes stehen im [Bildmanifest](../evidence/image-manifest.json).
+
+## Neue CityBasics-Belege
+
+Der [CityBasics-Bericht](../evidence/citybasics-report.json) enthält bereinigte native Kollisionsproben und tatsächliche CharacterMovement-Durchfahrten. Die [Waldstraße](../assets/images/citybasics-road.png) und [Portalzufahrt](../assets/images/citybasics-portal-approach.png) sind unveränderte native **CaptureEditorImage**-Aufnahmen vom 28. Oktober 2026 mit sichtbarer Editoroberfläche. Sie zeigen den spielbaren Prototyp; Fahrbahn, Portal und Testbuggy sind noch einfache Laborgeometrie. Größen und Hashes stehen im [Manifest](../evidence/image-manifest.json).
 
 ## OKF
 
