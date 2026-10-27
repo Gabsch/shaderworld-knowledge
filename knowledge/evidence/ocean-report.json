@@ -1,0 +1,33 @@
+{
+  "tested_date": "2026-10-27",
+  "map": "/Game/Maps/ShaderWorldTour_Map_OceanOnly",
+  "before": {
+    "windSpeed": 10,
+    "bFoam": false,
+    "choppiness": 1.600000023841858,
+    "foamCoverage": 0.6000000238418579,
+    "foamStrength": 10,
+    "foamDecaySeconds": 4,
+    "timeScale": 1
+  },
+  "after": {
+    "windSpeed": 18,
+    "bFoam": true,
+    "choppiness": 1.600000023841858,
+    "foamCoverage": 0.6000000238418579,
+    "foamStrength": 10,
+    "foamDecaySeconds": 4,
+    "timeScale": 1
+  },
+  "verified_after_rebuild": {
+    "windSpeed": 18,
+    "bFoam": true
+  },
+  "visual_foam_confirmed": true,
+  "rebuild_completed": true,
+  "scope": "Editor viewport, parameter readback and visual inspection. No buoyancy, packaged build or multiplayer test.",
+  "images": [
+    "../assets/images/ocean-before.png",
+    "../assets/images/ocean-foam-wind18.png"
+  ]
+}

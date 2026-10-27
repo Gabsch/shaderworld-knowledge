@@ -1,0 +1,722 @@
+{
+  "export_date": "2026-10-27",
+  "source_report": "Saved/McpDiagnostics/citylab-test.json",
+  "privacy_note": "Local filesystem paths and process identifiers omitted. Measurements retained.",
+  "report": {
+    "tested_at_utc": "2026-10-27T18:38:04.775667+00:00",
+    "map": "/Game/Maps/ShaderWorldCityLab",
+    "scope": "Editor and in-process PIE; no packaged build, navmesh or game-save validation",
+    "passed": true,
+    "editor": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "pie": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "pie_actors": {
+      "road": {
+        "refPath": "/Game/Maps/UEDPIE_0_ShaderWorldCityLab.ShaderWorldCityLab:PersistentLevel.TargetPoint_0"
+      },
+      "pad": {
+        "refPath": "/Game/Maps/UEDPIE_0_ShaderWorldCityLab.ShaderWorldCityLab:PersistentLevel.BP_BrushDemo_C_0"
+      }
+    },
+    "pie_road_moved": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "pie_pad_moved": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 200,
+          "actual_z_cm": 199.99951171875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 500,
+          "actual_z_cm": 499.9921875,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "pie_restored": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "editor_after_reload": {
+      "passed": true,
+      "probes": [
+        {
+          "kind": "road",
+          "x_cm": -2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 0,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "road",
+          "x_cm": 2000,
+          "y_cm": -2000,
+          "expected_z_cm": 100,
+          "actual_z_cm": 99.99267578125,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2000,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2500,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 2000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 1500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "pad",
+          "x_cm": 3000,
+          "y_cm": 2500,
+          "expected_z_cm": 300,
+          "actual_z_cm": 299.978515625,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": -2500,
+          "y_cm": 1000,
+          "expected_z_cm": -226.3593297738981,
+          "actual_z_cm": -226.01953125,
+          "passed": true
+        },
+        {
+          "kind": "generator",
+          "x_cm": 5000,
+          "y_cm": 4000,
+          "expected_z_cm": 735.7916401793893,
+          "actual_z_cm": 734.9765625,
+          "passed": true
+        }
+      ]
+    },
+    "completed_at_utc": "2026-10-27T18:38:23.867672+00:00"
+  }
+}

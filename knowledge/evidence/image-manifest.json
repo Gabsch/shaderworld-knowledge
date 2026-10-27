@@ -1,0 +1,61 @@
+{
+  "created_date": "2026-10-27",
+  "images": [
+    {
+      "file": "assets/images/reference-overview.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 2104339,
+      "sha256": "d843dfed6ca942a1eb61e5cb19be4ca91e2bacdde29c548cda2adccbbc174174"
+    },
+    {
+      "file": "assets/images/reference-road.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 2234666,
+      "sha256": "92690a5d6f84dad3cdc9f43eff642cd17a9e3b71410867f449d764da89fabc48"
+    },
+    {
+      "file": "assets/images/heightmap-holes.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 911520,
+      "sha256": "580ab112c935e72a3a5864d6006a08acefd926d5d571111fa9e7d90e7996b795"
+    },
+    {
+      "file": "assets/images/ocean-before.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 1630953,
+      "sha256": "ae337936300b81ee97209c45b22efac59fdcb7bff6c41d69a9b6e6c4f88d5192"
+    },
+    {
+      "file": "assets/images/ocean-foam-wind18.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 803633,
+      "sha256": "5fdfd34f06db8532e4345ce641619c64c5388215e1a8c2a34a5063831f63292d"
+    },
+    {
+      "file": "assets/images/citylab-terrain.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 2140784,
+      "sha256": "912efadee3d8b3f3a792a2218db52297b660d56b22e10badcec3451165ef0f5f"
+    },
+    {
+      "file": "assets/images/flat-terrain.png",
+      "origin": "Native Unreal viewport capture from own local test project",
+      "captured_date": "2026-10-27",
+      "modified": false,
+      "bytes": 439318,
+      "sha256": "7e18e90795417a5919b83c8e5df95e4604a365e91359f5640ee421c7d4bb1cdc"
+    }
+  ]
+}

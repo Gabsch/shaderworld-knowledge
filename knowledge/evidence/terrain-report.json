@@ -1,0 +1,138 @@
+{
+  "export_date": "2026-10-27",
+  "source_report": "Saved/McpDiagnostics/native-sm6-test.json",
+  "privacy_note": "Local filesystem paths and process identifiers omitted. Measurements retained.",
+  "report": {
+    "tested_at_utc": "2026-10-27T18:06:31.935Z",
+    "native_tools": [
+      "mcp__unreal_mcp__list_toolsets",
+      "mcp__unreal_mcp__call_tool"
+    ],
+    "used_python_http_helper": false,
+    "map": "/Game/Maps/ShaderWorldTest",
+    "editor": {
+      "actor": {
+        "refPath": "/Game/Maps/ShaderWorldTest.ShaderWorldTest:PersistentLevel.ShaderWorldActor_0"
+      },
+      "settings": {
+        "generateCollision": true,
+        "worldSize": 1000,
+        "boundedWorld": true,
+        "material": {
+          "refPath": "/ShaderWorld/Demo_Blank/Material/M_Blank_Material.M_Blank_Material"
+        },
+        "producers": [
+          {
+            "layerName": "Height",
+            "materialToGenerateLayer": {
+              "refPath": "/ShaderWorld/Demo_Blank/Material/M_Blank_Generator.M_Blank_Generator"
+            },
+            "computeProducer": "None",
+            "layerFiltering": "TF_Nearest",
+            "layerFormat": "RTF_RGBA8",
+            "getParentCache": false
+          }
+        ],
+        "rendertargetMemoryBudgetMB": 141.2449951171875,
+        "lOD_Num": 2
+      },
+      "generated_mesh_components": 256,
+      "passed": true
+    },
+    "started_pie": true,
+    "pie": {
+      "actor": {
+        "refPath": "/Game/Maps/UEDPIE_0_ShaderWorldTest.ShaderWorldTest:PersistentLevel.ShaderWorldActor_0"
+      },
+      "settings": {
+        "generateCollision": true,
+        "worldSize": 1000,
+        "boundedWorld": true,
+        "material": {
+          "refPath": "/ShaderWorld/Demo_Blank/Material/M_Blank_Material.M_Blank_Material"
+        },
+        "producers": [
+          {
+            "layerName": "Height",
+            "materialToGenerateLayer": {
+              "refPath": "/ShaderWorld/Demo_Blank/Material/M_Blank_Generator.M_Blank_Generator"
+            },
+            "computeProducer": "None",
+            "layerFiltering": "TF_Nearest",
+            "layerFormat": "RTF_RGBA8",
+            "getParentCache": false
+          }
+        ],
+        "rendertargetMemoryBudgetMB": 141.2449951171875,
+        "lOD_Num": 2
+      },
+      "generated_mesh_components": 256,
+      "collision_probes": [
+        {
+          "x": 0,
+          "y": -1500,
+          "distance_cm": 5000
+        },
+        {
+          "x": -1000,
+          "y": -1000,
+          "distance_cm": 5000
+        },
+        {
+          "x": 1000,
+          "y": -1000,
+          "distance_cm": 5000
+        },
+        {
+          "x": 3000,
+          "y": 2000,
+          "distance_cm": 5000
+        }
+      ],
+      "passed": true
+    },
+    "pie_stopped": true,
+    "passed": true,
+    "renderer": "PCD3D_SM6 (confirmed by parent from restarted editor log)",
+    "completed_at_utc": "2026-10-27T18:10:27.002Z",
+    "native_operations": [
+      "list_toolsets",
+      "editor_toolset.toolsets.scene.SceneTools.get_current_level",
+      "editor_toolset.toolsets.scene.SceneTools.find_actors",
+      "editor_toolset.toolsets.object.ObjectTools.get_properties",
+      "editor_toolset.toolsets.actor.ActorTools.get_components",
+      "EditorToolset.EditorAppToolset.IsPIERunning",
+      "EditorToolset.EditorAppToolset.StartPIE",
+      "editor_toolset.toolsets.scene.SceneTools.trace_world",
+      "EditorToolset.EditorAppToolset.StopPIE",
+      "EditorToolset.EditorAppToolset.CaptureViewport"
+    ],
+    "final_restart_verified": {
+      "passed": true,
+      "tested_at_utc": "2026-10-27T18:11:40.928Z",
+      "map": "/Game/Maps/ShaderWorldTest",
+      "is_pie_running": false,
+      "game_feature_data_rule": {
+        "primaryAssetType": "GameFeatureData",
+        "assetBaseClass": {
+          "refPath": "/Script/GameFeatures.GameFeatureData"
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "directories": [],
+        "specificAssets": [],
+        "rules": {
+          "priority": -1,
+          "chunkId": -1,
+          "bApplyRecursively": true,
+          "cookRule": "AlwaysCook"
+        }
+      },
+      "retained_primary_asset_types": [
+        "Map",
+        "PrimaryAssetLabel",
+        "GameFeatureData"
+      ]
+    }
+  }
+}

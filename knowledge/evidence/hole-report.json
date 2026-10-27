@@ -1,0 +1,36 @@
+{
+  "inspected_date": "2026-10-27",
+  "engine": "5.8.4",
+  "plugin": "4.1",
+  "map": "/Game/Maps/ShaderWorldTour_Map_Heightmap",
+  "scope": [
+    "Example actors and components inspected in editor",
+    "Heightmap demonstration visually inspected",
+    "Native implementation read for rendering/collision semantics"
+  ],
+  "actors": [
+    {
+      "label": "BP_HoleBrush",
+      "component": "SW_HoleMeshBrush",
+      "mode": "StaticMeshComponent",
+      "enabled": true,
+      "mesh": "SkullMesh"
+    },
+    {
+      "label": "SplineHoleBrush",
+      "component": "ProceduralHoleMeshComponent",
+      "enabled": true
+    }
+  ],
+  "code_findings": [
+    "Hole mesh triangles are projected on XY; this is a heightfield hole, not a volumetric cave",
+    "Rendering and collision contain hole handling",
+    "PreventFallingUnderTerrain native default is false; older in-world demo sign differs"
+  ],
+  "not_tested": [
+    "Own mountain tunnel entrance",
+    "Walking/driving through a finished tunnel",
+    "Independent collision trace test isolating the example hole from meshes below it",
+    "Cooked build for custom hole static mesh"
+  ]
+}

@@ -1,0 +1,25 @@
+name: Validate knowledge
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install validator dependency
+        run: python -m pip install -r requirements.txt
+      - name: Validate OKF project profile and links
+        run: python tools/validate_knowledge.py
