@@ -17,7 +17,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [CityBasics: Insel, Wald, Berg und Tunnel](guides/city-basics-lab.md) – den farbigen Laboraufbau und den bodengebundenen Testbuggy verstehen.
 - [Wind und Schaum einstellen](guides/ocean-waves-and-foam.md) – den Ozean von 10 auf 18 m/s Wind umstellen und Schaum sichtbar machen.
 - [Bauplätze und Straßen verändern](guides/building-pads-and-roads.md) – die Lernkarte bedienen und Gelände, Material und Straßenmesh unterscheiden.
-- [Straßen zur Laufzeit bauen und speichern](guides/runtime-roads.md) – RoadLab mit gemeinsamer Terrain-/Mesh-Spline; Neustart, Kollision und Pflanzenursprünge geprüft.
+- [Straßen zur Laufzeit bauen und speichern](guides/runtime-roads.md) – RoadLab mit gemeinsamer Terrain-/Mesh-Spline; Neustart, Kollision, Pflanzenursprünge und die POM-Nahsichtkorrektur verstehen.
 - [Änderungen speichern und laden](guides/save-and-load.md) – unsere CityLab-Spielstände einschließlich eines echten Neustarts prüfen.
 - [Löcher und Bergtunnel verstehen](guides/holes-and-mountain-tunnels.md) – Holebrush-Beispiele ansehen und einen Tunneleingang planen.
 - [Tunnelkomponente mit eingebautem Wasserausschluss](guides/reusable-tunnel-component.md) – eigener Baustein mit bestandenen nativen API-Tests; gespeicherte Karte, neues PIE und frische Durchfahrt geprüft.

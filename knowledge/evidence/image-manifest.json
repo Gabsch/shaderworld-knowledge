@@ -104,6 +104,46 @@
       "modified": false,
       "bytes": 1469774,
       "sha256": "b4b15ebdc36438f7362d268d0ff851ae6e07e5fd20c88aa020f6bc8ca64d7caa"
+    },
+    {
+      "file": "assets/images/road-pom-before-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1512621,
+      "sha256": "f55e54afc05552beb23a57e708c23100972cce18dcece03cc7aa4b04988bf351"
+    },
+    {
+      "file": "assets/images/road-pom-after-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1522923,
+      "sha256": "f0ff9c14f12e4030e565b058de37b89fd7da533d08b7eb4566ca15a9fdb364b7"
+    },
+    {
+      "file": "assets/images/road-pom-after-3m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1587453,
+      "sha256": "d18184ef019ee6178342055166f4a77e99fa1fdf07b9c09a9880814e6f9ec436"
+    },
+    {
+      "file": "assets/images/road-pom-after-100m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1592564,
+      "sha256": "2f137ecb8515e39cbc9feb64b06a6d7a88d0dfe5335a1e3f1ea1ead5d4ef1653"
+    },
+    {
+      "file": "assets/images/road-pom-reloaded-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1507524,
+      "sha256": "04db8a1e8e1e560ae242b6fe65b8c75773c993c23e832e55f47a8b759b0e8468"
     }
   ]
 }

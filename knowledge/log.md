@@ -2,6 +2,8 @@
 
 ## 2026-10-28
 
+- Kameraabhängigen Bodenfleck durch RoadLab-Asphalt auf den aktiven POM-Pfad eingegrenzt: 6-cm-Anhebung bleibt bei kleiner Bildschirmparallaxe ohne Tiefenversatz sichtbar. Eigene MI_RoadLab_Terrain mit **POM: Reference Plane = 1,0**, POM/Relief weiter aktiv, bestand den reversiblen 30-m-Bildvergleich und zusätzliche 3-/100-m-Sichtproben. Gespeicherte Actor-Zuweisung nach echtem Kartenneuladen/neuem PIE mit drei geladenen Straßen bestätigt; gleicher Editorprozess, kein Standalone-/Cook-Test. Bloßen Instanzsave von dauerhafter Kartenzuweisung unterschieden. Frühere Legacy-Displacement-Hypothese verworfen, erfolglose 1-cm-Overrides entfernt. Gescheiterte Live-MID-/Graphdiagnosen getrennt erfasst; Kollisionsprüfungen erfassen diese Materialeffekte nicht.
+
 - Native Slate-Bedienprobe im RoadLab bestanden: R/Enter, Backspace, X, Q/E, K/L und normales PIE-Autoload mit identischen IDs, Splinepunkten/Tangenten und Einstellungen. Kamera per ActorTools versetzt; Bewegungstasten, Maustasten/Zoom und F5/F9 bleiben offen. Neue normale Auto-Load-Aufnahme ins Manifest aufgenommen. Unabhängige Bauplatz-/Terrainstraßen-Regression mit Format 2 und zwei frischen Prozessen bestanden.
 
 - RoadLab-Zwei-Prozess-Nachweis bestanden: 18/18 und 19/19 Checks, je 72/72 Kollisionsproben, identische zwei Straßen/16 Meshsegmente. Gemessene Pflanzenursprünge 999 → 0 → 999 → 0 bei 8615 Referenzen und drei gleichen Matrix-Fingerprints je Phase. Bereinigten Bericht und zweite native Aufnahme mit Herkunft/Hash ergänzt; synthetisches Format-1-Fixture, fehlende UI-/Cook-/Überhang-/GPU-Abnahme getrennt benannt.

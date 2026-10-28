@@ -7,7 +7,7 @@ status: stable
 tags: [shaderworld, citylab, roads, runtime, savegame, spline]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T01:55:41Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T02:45:00Z" }
 evidence_scope:
   implementation: Eigener nativer RoadLab-Prototyp gebaut; gemeinsamer ShaderWorld-Spline
     und eigene SplineMesh-Straßenoberfläche
@@ -19,6 +19,9 @@ evidence_scope:
     normaler PIE-Neustart mit identischem Auto-Load bestanden, Kamera per ActorTools versetzt
   regression: Frühere Bauplatz-/Terraintrassenprüfung in zwei frischen Prozessen mit Format 2 bestanden
   visual: Drei native Frames inspiziert, darunter normale PIE-Ansicht nach Auto-Load
+  relief: Nahsichtfehler nativ reproduziert; POM-Referenzebene von 0.75 auf 1.0
+    in eigener RoadLab-Instanz; reversibler 30-m-Bildvergleich und korrigierte Ansichten
+    bei 3 und 100 m geprüft, Actor-Zuweisung nach Kartenneuladen und neuem PIE bestätigt
   not_tested: WASD, rechte Maustaste, Mausrad und F5/F9-Aliasse; Cook und Shipping
 sources:
   - id: road-proof
@@ -33,6 +36,12 @@ sources:
   - id: test-gates
     resource: "UE 5.8.4 HierarchicalInstancedStaticMeshComponent.h:331–332; ShaderWorld 4.1 SWHISMComponent.cpp, SWBuiltTreeReception/NewRender; eigene CityLabRoadVerification.cpp und CityLabPersistence.cpp; zwei frühere Create-Diagnosen vom 28. Oktober 2026. Quellcode und private Rohberichte nicht mitgeliefert"
     title: Korrigiertes Pflanzen-Testgate und eigene Pad-Shader-Abhängigkeit
+  - id: terrain-relief
+    resource: "ShaderWorld 4.1: aktiver POM-WPO-/PDO-Pfad in M_Reference_Material, MF_ReferenceMaterial und MFC_POM_Array einschließlich POM: Reference Plane und MinParallaxPixels gelesen; ältere DisplacementManage-Parameter vom aktiven Ausgang unterschieden. Eigene RoadLab-Materialinstanz im ursprünglichen UnrealMcpTest; lizenzierte Assets und Projektcode nicht mitgeliefert"
+    title: Aktiver POM-Pfad, Referenzebene und kleine Bildschirmparallaxe
+  - id: pom-proof
+    resource: ../evidence/road-pom-render-report.json
+    title: Bereinigter Parameter- und Sichtvergleich für die RoadLab-POM-Korrektur
   - id: first-frame
     resource: ../assets/images/runtime-road-first-pie.png
     title: Erster inspizierter PIE-Frame mit einer Beispielstraße
@@ -102,6 +111,48 @@ Die Projektkopie **SM_CityLab_RCP_TwoLane** liegt unter `/Game/ShaderWorldRoadLa
 
 **Biom ID 3 ist keine allgemeine Baumfällung.** Sie braucht den passenden Layer und die Reference-Spawnkonfiguration. Beliebige selbst platzierte Bäume sind nicht erfasst.[^terrain-road-basics]
 
+## Nahsicht: Boden erscheint durch den Asphalt
+
+Der orangefarbene Fleck wurde auch in einer nativen PIE-Aufnahme aus rund **30 m Kamerahöhe über der Straße** reproduziert. Die Ursache liegt im aktiven **POM-/Reliefpfad des Reference-Terrainmaterials**: Dieser kombiniert eine Anhebung der Oberfläche mit einer optischen Tiefenberechnung. Bei fast senkrechtem Blick wird diese Tiefenberechnung für sehr kleine Parallaxe ausgeblendet; die Anhebung bleibt jedoch bestehen. So kann Boden oberhalb unseres nur **3 cm** höher liegenden Asphalts sichtbar werden. Der Fleck hängt dadurch vom Blick und Bildmaßstab ab. Die bestandenen Kollisionstests erfassen diese zusätzlichen Materialeffekte nicht.[^terrain-relief][^pom-proof]
+
+![Bodenfleck im Asphalt vor der Korrektur aus der 30-m-Ansicht](../assets/images/road-pom-before-30m.png)
+
+![Geschlossener Asphalt mit POM-Referenzebene 1 in derselben 30-m-Ansicht](../assets/images/road-pom-after-30m.png)
+
+*Native PIE-Vergleichsaufnahmen vom 28. Oktober 2026 aus derselben 30-m-Ansicht: Referenzebene 0,75 mit Fleck, Referenzebene 1,0 ohne Fleck. Zusätzliche korrigierte Ansichten bei 3 und 100 m wurden inspiziert. Das sind konkrete Sichtproben, keine vollständige Prüfung aller Entfernungen und Blickwinkel.*[^pom-proof][^image-manifest]
+
+### POM-Referenzebene im RoadLab korrigieren
+
+Die eigene Instanz **MI_RoadLab_Terrain** unter `/Game/ShaderWorldRoadLab/Materials` setzt **POM: Reference Plane = 1,0** statt des Reference-Standardwerts **0,75**. Dadurch entfällt die zusätzliche Anhebung; das POM-Relief bleibt unterhalb der nominellen Terrainoberfläche. **EnablePOM** und **EnableReliefDepth** bleiben eingeschaltet. Die Korrektur betrifft das **Terrainmaterial der gesamten RoadLab-Karte**, auch neben den Straßen. Eine ausschließlich auf Straßen begrenzte Maske ist damit nicht implementiert.[^terrain-relief][^pom-proof]
+
+1. Beende **Play** und öffne **Content → Maps → ShaderWorldRoadLab**.
+2. Wähle den kollisionsführenden Terrainactor **BP_SWGround**. Unter **Material** muss die eigene **MI_RoadLab_Terrain** liegen. **Material LOD1PLUS** behält **M_Reference_NO_PDO_WPO**.
+3. Öffne **MI_RoadLab_Terrain**. Aktiviere den skalaren Override **POM: Reference Plane** und setze ihn auf **1,0**. Kontrolliere **EnablePOM = true** und **EnableReliefDepth = true**. Die ursprünglichen ShaderWorld-Assets werden dafür nicht geändert.
+4. Speichere Instanz und RoadLab-Karte. Falls du die Actor-Zuweisung geändert hast, löse am Terrainactor **Rebuild** aus und warte auf die Fertigstellung.
+5. Lade die gespeicherte Karte tatsächlich neu und kontrolliere erneut **BP_SWGround → Material → MI_RoadLab_Terrain**. Ein gespeicherter Instanzwert allein beweist noch nicht, dass die Karte diese Instanz dauerhaft verwendet.
+6. Starte **Play**, warte auf die geladenen Straßen und betrachte dieselbe Asphaltstelle fast senkrecht von oben, beim Heranzoomen und aus einem schrägen Blickwinkel. Erwartet wird durchgehender Asphalt bei weiterhin sichtbarer POM-Bodenstruktur neben der Straße.
+7. Zum Rücksetzen **Material** am Terrainactor wieder auf **M_Reference_Material** setzen, **Rebuild** auslösen und die Karte speichern.
+
+Der reversible Vergleich aus **derselben 30-m-Ansicht** zeigte mit **Reference Plane = 0,75** den Fleck und mit **1,0** geschlossenen Asphalt. Die korrigierten Ansichten bei **3 und 100 m** blieben ebenfalls geschlossen. Nach echtem **Kartenneuladen und neuem PIE** wurde die gespeicherte Materialzuweisung am Terrainactor bestätigt; im normalen PIE waren drei Straßen geladen. Das war ein Neustart der Vorschau **im selben Editorprozess**, kein neuer eigenständiger Spielprozess. Die Materialkorrektur ändert keine Kollisionshöhen oder Saveformatversion; die früheren Zwei-Prozess-Kollisionsprüfungen wurden dafür nicht erneut ausgeführt.[^pom-proof]
+
+### Warum diese Einstellung hilft
+
+**Code-/Assetbefund:** Der aktive POM-Pfad berechnet die Anhebung aus **(1 − Referenzebene) × Relieftiefe**. Auf ebenem Boden ergeben die gelesenen Werte **0,12 × 200 cm = 24 cm Relieftiefe** und bei Referenzebene 0,75 daher **6 cm Anhebung**. Das überragt die nominelle Asphaltzugabe von 3 cm. Die POM-Funktion verwendet außerdem **MinParallaxPixels = 0,5**: Ist die seitliche Projektion des Blickstrahls kleiner als diese Bildschirmschwelle, fällt der Tiefenversatz aus. Bei fast senkrechtem Blick ist diese Projektion nahe null. Mit Referenzebene 1 wird die zusätzliche Anhebung null; die optischen Details dürfen weiter in den Boden reichen.[^terrain-relief]
+
+Die zuerst gelesenen älteren **DisplacementAmount-/DisplacementManage**-Parameter speisen in diesem Mastermaterial **nicht den aktiven WPO-Ausgang**. Ihre 30-/50-cm-Werte oder der dort gefundene 18-m-Radius erklären den Fleck daher nicht. Das wurde im Verlauf der Eingrenzung korrigiert. Die tatsächlichen Parametervergleiche bleiben erhalten:
+
+| Vergleich in eigener RoadLab-Materialinstanz | Ergebnis und Bedeutung |
+| --- | --- |
+| **DisplacementAmount = 1**, **DisplacementAmountSlope = 1** | Fleck blieb. Diese gesetzten Legacy-Overrides steuern den aktiven POM-WPO-Pfad nicht; sie wurden aus der endgültigen Instanz entfernt. |
+| **EnableReliefDepth = false** | 30-m-Vergleichsbild ohne Fleck, schaltet aber den Reliefpfad ab. Diese breite Änderung wurde für die endgültige Lösung nicht beibehalten. |
+| **POM: Reference Plane = 1**, beide Effekte eingeschaltet | Reversibler 30-m-Vergleich und zusätzliche korrigierte 3-/100-m-Ansichten ohne Fleck; gespeicherte Actor-Zuweisung nach Kartenneuladen/neuem PIE bestätigt. |
+
+**Alpha bleibt unverändert:** Dieser Kanal enthält im vorhandenen Biomgenerator bereits Werte von 0,5 bis 1. Er wurde nicht als vermeintlich freier Straßenmaskenkanal umbelegt. Eine spätere unabhängige Straßenmaske braucht eine ausdrücklich reservierte Datenbelegung.[^terrain-relief]
+
+Beim automatisierten Speichern war zunächst nur die Instanz dauerhaft gespeichert, die Materialzuweisung in der Karte jedoch noch nicht. Erst das tatsächliche Kartenneuladen machte diesen Unterschied sichtbar. Nach Korrektur der Kartenspeicherung wurde die Actor-Zuweisung nochmals zurückgelesen; dieser zusätzliche Nachweis ist im Bericht getrennt erhalten.[^pom-proof]
+
+Zwei frühere Diagnoseversuche endeten mit Abstürzen: ein direkter Parentwechsel an einer aktiven Terrain-Materialinstanz im D3D12-Pfad und danach ein Materialgraph-Kopierversuch mit einer HLSL-Translator-Assertion im **ShaderWorldLayerSample**-Pfad. Beide speicherten keine neue Karten-/Materialfassung und gelten nicht als bestandene Vergleiche. Die endgültige Korrektur verwendet eine reguläre Materialinstanz ohne solche Parent- oder Graphänderungen. Eine vor dem Absturz ungespeicherte dritte Straße wurde anhand zuvor ausgelesener Punkte neu aufgebaut, gespeichert und wieder geladen; ihre historische ID wurde dabei nicht erhalten. Cook und verpackter Build bleiben offen.[^pom-proof]
+
 ## Was tatsächlich geprüft wurde
 
 Der [bereinigte Bericht](../evidence/runtime-roads-report.json) ist **passed_with_limits**: Zwei Prozesse bestanden **18/18 beziehungsweise 19/19 Checks**. IDs, Kontrollpunkte, Stil und Glättung waren identisch; beide stellten **zwei Straßen mit 16 Meshsegmenten** her.
@@ -137,6 +188,7 @@ Wiederholtes Laden erzeugte keine Duplikate. Fehlender Slot, falsche Formatversi
 | Terrain ohne Asphalt | Vorbereitete Meshkopie, CPU-Zugriff, Buildfehler |
 | Nach Neustart nur Beispiel | Speichermeldung für **CityLabRoads**, dieselbe Karte |
 | Bewuchs auf der Trasse | Layer/Biom und Neuerzeugung; keine allgemeine Rodung erwarten |
+| Bodenfleck beim Heranzoomen | [POM-Referenzebene und RoadLab-Materialinstanz](#nahsicht-boden-erscheint-durch-den-asphalt); reine Kollisionsprüfung reicht nicht |
 
 Zwei frühere Timeouts hatten konkrete Ursachen: **IsTreeFullyBuilt** war im untersuchten ShaderWorld-NewRender-Pfad kein passendes Fertigsignal. Unser Verifier verwendet nun **IsAsyncBuilding plus drei stabile Matrix-Fingerprints** und liest gemeinsame Instanzdaten unter **DataLock**, statt nur **GetInstanceCount**. Danach blockierte unser Manager ohne Pad-Instanz an **PadMaterial->IsComplete()**; diese Abfrage startet keine Kompilierung. Die eigene Integration prüft den Pad-Shader nun nur bei **PadActors.Num() > 0**. Der anschließende Zwei-Prozess-Test bestand; daraus folgt kein allgemeiner ShaderWorld-Fehlerbefund.[^test-gates]
 
@@ -151,3 +203,6 @@ Der Prototyp enthält **keine Kreuzungen, Verkehrssimulation, Brücken-/Tunnelge
 [^image-manifest]: [Bildherkunft, Dateigröße und SHA-256](../evidence/image-manifest.json).
 [^terrain-road-basics]: [Geländeform, Bodentextur und Straßenmesh](building-pads-and-roads.md).
 [^autoload-frame]: [Native CaptureEditorImage-Aufnahme nach normalem PIE-Autoload](../assets/images/runtime-road-normal-autoload-pie.png), ein inspizierter Frame nach der Slate-Bedienprobe; kein separater Prozess- oder Langzeitnachweis.
+
+[^terrain-relief]: Aktiven ShaderWorld-4.1-POM-WPO-/PDO-Pfad, POM: Reference Plane und MinParallaxPixels in den installierten Materialgraphen/Funktionen gelesen; Legacy-DisplacementManage vom tatsächlich angeschlossenen Ausgang unterschieden.
+[^pom-proof]: [Bereinigter POM-Renderbericht](../evidence/road-pom-render-report.json): Parametervergleich, native Bilder, gescheiterte Diagnoseversuche und Grenzen der Materialkorrektur.
