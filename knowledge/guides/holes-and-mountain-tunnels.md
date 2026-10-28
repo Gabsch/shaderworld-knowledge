@@ -6,7 +6,7 @@ tags: [shaderworld, terrain, holes, tunnels, collision, editor]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-27T23:46:24Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T00:08:51Z" }
 evidence_scope:
   inspected: Holebrush-Beispiele der Heightmap-Karte im Editor und installierter ShaderWorld-4.1-Quellcode
   derived: Bauweise eines Bergtunnels aus Portalöffnungen und eigenen Tunnelmeshes;
@@ -108,13 +108,15 @@ Diese Abgrenzungen ergeben sich aus dem installierten Code und den Beispielasset
 
 ## Wenn Wasser an einer Portalöffnung erscheint
 
+Ein Tunnelasset, das im ShaderWorld-Ozean trocken bleiben soll, braucht einen ausdrücklich eingerichteten Wasserausschluss. Die eigene [CityLab-Tunnelkomponente](reusable-tunnel-component.md) integriert ihn laut Projektcode fest und berechnet ihn aus den Passagemaßen. Ihre nativen API-Tests, gespeicherte Karte, PIE-Eigenschaften und frische Durchfahrt sind inzwischen geprüft; ein neuer PIE-Frame zeigt den sichtbaren Innenraum trocken. Die unten dokumentierte Box ist der bisherige separate Aufbau.
+
 Vor Einbau der Ausschlussbox meldete der Nutzer Wellen **nur am Tunnel**. Der Ozean liest die Höhen des ShaderWorld-Terrains; unsere eigene Tunnel-Fahrbahn aus Static Meshes ersetzt diese Höhen nicht. **Shallow Attenuation = 1** wurde bereits gespeichert und in PIE bestätigt. Das allein ist noch kein Nachweis für einen trockenen Tunnel.[^coast-correction]
 
 Der gelesene Code zeigt einen wichtigen Sonderfall: **SW_HoleMeshBrushComponent** schreibt in den geöffneten Bereichen **−7.000.000 cm (−70 km)** in den Höhen-Cache. Der Ozean-Shader decodiert diesen Wert als normale vorzeichenbehaftete Höhe, ohne den Hole-Sonderfall abzufangen. Für seine Küstendämpfung wird das Portal damit zu sehr tiefem Wasser. Bei dieser Tiefe liefert die Dämpfungsfunktion volle Wellenstärke, auch wenn **Shallow Attenuation** auf **1** steht.[^installed-hole-ocean-source]
 
 Dieser Codepfad passt plausibel zur auf den Tunnel begrenzten Beobachtung. Er ist noch keine gültige GPU-Messung an der betroffenen Stelle: Der erste Abfrageaufruf meldete `valid = 0` und lieferte damit keinen belastbaren Nachweis des tatsächlichen Cache-Inhalts.[^coast-correction] Die Öffnung einfach wieder mit Terrain zu schließen würde außerdem den benötigten Durchgang beseitigen; die eigene Fahrbahn bleibt ein separates Mesh.
 
-Die native **ShaderWorld Air Pocket Box** ist inzwischen am Actor **Basics_Tunnel_AirPocket** eingerichtet und mit der Karte gespeichert. Eine neu gestartete PIE-Sitzung enthält die Komponente mit Mittelpunkt **(0, 0, 0) cm**, Rotation **0**, Skalierung **1** und **Box Extent = (9000, 800, 2000) cm**. Das sind Halbausdehnungen von **90 m längs**, **8 m quer** und **20 m vertikal**; die Box umfasst Tunnel und Portalbereiche. **Hidden in Game** ist eingeschaltet. Das Ozeanmaterial enthält bereits den erforderlichen Water-Exclusion-Anschluss.[^coast-correction]
+Im bisherigen Aufbau war eine separate native **ShaderWorld Air Pocket Box** am Actor **Basics_Tunnel_AirPocket** eingerichtet und mit der Karte gespeichert. In einer danach neu gestarteten PIE-Sitzung wurden Mittelpunkt **(0, 0, 0) cm**, Rotation **0**, Skalierung **1** und **Box Extent = (9000, 800, 2000) cm** zurückgelesen. Das sind Halbausdehnungen von **90 m längs**, **8 m quer** und **20 m vertikal**; die Box umfasst Tunnel und Portalbereiche. **Hidden in Game** ist eingeschaltet. Das Ozeanmaterial enthält bereits den erforderlichen Water-Exclusion-Anschluss.[^coast-correction]
 
 Nach dem Neustart der Vorschau meldete der Nutzer an der zuvor betroffenen Stelle **„Bisher trocken“**. Damit liegt eine erste Sichtbestätigung vor. Sie ersetzt keine Langzeitprüfung über verschiedene Wellenphasen und keine vollständigen GPU- oder Wasserabfragen. Die [Ozeananleitung](ocean-waves-and-foam.md) beschreibt den aktuellen Box-Aufbau und trennt diese Nachweise. Der vorhandene Durchfahrtsbericht bestätigt feste Tunnelkollision und Bewegung; er prüft keine Wasserfreiheit. Auch ein Laufzeit-SaveGame mit der neuen Box wurde noch nicht geprüft.[^coast-correction]
 

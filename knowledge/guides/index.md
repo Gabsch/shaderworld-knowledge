@@ -5,6 +5,7 @@
 - [Bauplätze und Straßen verändern](building-pads-and-roads.md) – CityLab bedienen und Geländeform verstehen.
 - [Speichern und Laden](save-and-load.md) – Änderungen über einen Neustart erhalten.
 - [Löcher und Bergtunnel](holes-and-mountain-tunnels.md) – Beispielbrushes und Grenzen des Höhenfelds.
+- [Wiederverwendbare Tunnelkomponente](reusable-tunnel-component.md) – integrierter Wasserausschluss, native API getestet; Karten-/PIE-Eigenschaften und frische Durchfahrt geprüft.
 - [Fehlerdiagnose](troubleshooting.md) – vom sichtbaren Fehler zur passenden Einstellung.
 
 - [CityBasics mit Insel, Berg und Tunnel](city-basics-lab.md).

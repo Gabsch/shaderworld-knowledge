@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: "2026-10-27T23:43:59+00:00"
+  at: "2026-10-28T00:08:51Z"
 sources:
 - id: official
   resource: https://universgen.gitbook.io/shader-world
@@ -80,6 +80,10 @@ Der [CityBasics-Bericht](../evidence/citybasics-report.json) enthält bereinigte
 Die [lesende Prüfung vom 28. Oktober 2026](../evidence/coast-biome-road-inspection.json) hält aktuelle PIE-Parameter, die Wassermaterial-Verkabelung, Pflanzen-Höhenintervalle und die tatsächliche Straßenherkunft fest. Sie enthält außerdem getrennte Asset-/Codebefunde und noch nicht ausgeführte Testvorschläge. Der vom Nutzer gemeldete Wellendurchbruch wurde dabei nicht reproduziert oder behoben.
 
 Der [Korrekturbericht](../evidence/coast-correction-report.json) ergänzt die anschließend gespeicherten Projektfilter, Dämpfung 1,0 und den nativen Tunnel-Wasserausschluss. Er enthält Original-/Projektwerte sowie die Boxeigenschaften nach PIE-Neustart. Nutzerangabe zum Tunnel, Codebefund zum Hole-Sentinel und die erste Rückmeldung „Bisher trocken“ nach dem Fix sind getrennt erfasst; Langzeit- und gültige GPU-Prüfung fehlen weiterhin.
+
+## Wiederverwendbare Tunnelkomponente
+
+Der [Komponentenbericht](../evidence/tunnel-component-report.json) enthält den erfolgreichen nativen Build, zwei bestandene Automationtests und Eigenschaften der neuen **CityLab Tunnel (Dry)**-Komponente im Editor, nach tatsächlichem Kartenladen und im neu gestarteten PIE. Die API-Tests verwenden **NullRHI** und einen kontrollierten Wasserprovider im echten WaterSubsystem. Ihr Archive-/PostLoad-Test ist von der zusätzlichen echten Kartenladung getrennt. Ein frischer Spielprozess bestand danach 65/65 Kollisionsproben und rund 259,44 m bodengebundene Durchfahrt; der Gesamtbericht ist **passed_with_limits**. Die [neue native PIE-Aufnahme](../assets/images/citybasics-dry-tunnel-component.png) zeigt den sichtbaren Innenraum trocken; ein inspizierter Frame ist keine Langzeitabnahme. Herkunft und Hash stehen im [Bildmanifest](../evidence/image-manifest.json). Die frühere Nutzerantwort „Bisher trocken“ betrifft weiterhin die vorherige separate Box.
 
 ## OKF
 

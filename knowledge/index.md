@@ -19,6 +19,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Bauplätze und Straßen verändern](guides/building-pads-and-roads.md) – die Lernkarte bedienen und Gelände, Material und Straßenmesh unterscheiden.
 - [Änderungen speichern und laden](guides/save-and-load.md) – unsere CityLab-Spielstände einschließlich eines echten Neustarts prüfen.
 - [Löcher und Bergtunnel verstehen](guides/holes-and-mountain-tunnels.md) – Holebrush-Beispiele ansehen und einen Tunneleingang planen.
+- [Tunnelkomponente mit eingebautem Wasserausschluss](guides/reusable-tunnel-component.md) – eigener Baustein mit bestandenen nativen API-Tests; gespeicherte Karte, neues PIE und frische Durchfahrt geprüft.
 
 ## Nachschlagen
 

@@ -41,7 +41,7 @@ sources:
   title: Gelesene Küstendämpfung, Wasserausschlüsse und Grenzen der CPU-Wasserabfragen
 generated:
   by: codex/gpt-6
-  at: '2026-10-27T23:46:24Z'
+  at: '2026-10-28T00:08:51Z'
 engine_version: 5.8.4
 plugin_version: '4.1'
 evidence_scope: 'Editorversuch an einer Projektkopie von Map_OceanOnly: Parameter
@@ -129,6 +129,8 @@ Außerhalb des Terrain-Caches können ebenfalls volle Wellen entstehen. Für die
 
 ## Wasser im Tunnel gezielt ausschließen
 
+Für künftige Tunnelassets gilt: **Ein im ShaderWorld-Ozean trocken geplanter Tunnel bringt seinen Wasserausschluss mit.** Die eigene [CityLab-Tunnelkomponente](reusable-tunnel-component.md) integriert die native Air Pocket laut Projektcode fest und leitet sie aus den Tunnelmaßen ab. Ihre nativen API-Tests, gespeicherte Karte, PIE-Eigenschaften und eine frische Durchfahrt sind inzwischen geprüft; ein neuer PIE-Frame zeigt den sichtbaren Innenraum trocken. Der folgende frühere Nachweis betrifft weiterhin die zuvor separat eingerichtete Box.
+
 ShaderWorld 4.1 enthält dafür Komponenten namens **ShaderWorld Air Pocket Box**, **ShaderWorld Air Pocket Capsule** und **ShaderWorld Air Pocket Spline Tube**. Eine Box eignet sich als Ausgangspunkt für einen geraden Raum, die Spline Tube für einen gekrümmten Tunnel. Die Komponenten beschreiben einen Bereich, in dem Wasser ausgeschlossen werden soll; sie erzeugen keine Tunnelwände und ersetzen keine Kollision.[^coast-water-code]
 
 Zwei Wirkungen müssen getrennt geprüft werden:
@@ -138,12 +140,16 @@ Zwei Wirkungen müssen getrennt geprüft werden:
 
 Am aktuell verwendeten **M_Ocean_Material** wurde der Anschluss geprüft: Das Material ist **Masked** und verwendet **Material Attributes**. Der Knoten **ShaderWorldWaterExclusion_0** ist über **Multiply_0** mit **Opacity Mask** in **MakeMaterialAttributes_0** verbunden; dessen Attribute gehen an den Materialausgang. Die erforderliche Materialanbindung ist damit bereits vorhanden.[^coast-inspection]
 
-Im CityBasics-Labor ist die native Box inzwischen **eingebaut und mit der Karte gespeichert**. Eine anschließend neu gestartete PIE-Sitzung enthält die Komponente mit den gespeicherten Eigenschaften. So lässt sich der Aufbau nachvollziehen:
+Der bisherige praktische Nachweis stammt aus dem Aufbau mit einer **separaten nativen Box**, die mit der Karte gespeichert und nach einem neuen PIE-Start ausgelesen wurde. Diese damaligen Werte bleiben als Beleg erhalten:
 
-1. Öffne `/Game/Maps/ShaderWorldCityBasics` und suche im **Outliner** nach **Basics_Tunnel_AirPocket**.
-2. Prüfe die native **ShaderWorld Air Pocket Box** am Actor. Mittelpunkt und Rotation sind **0**, die Skalierung ist **1**.
-3. Die **Box Extent**-Werte sind **X = 9000**, **Y = 800**, **Z = 2000 cm**. Das sind **Halbausdehnungen**; die gesamte Box misst **180 × 16 × 40 m**. Sie deckt den Tunnel und die Portalbereiche ab.
-4. **Hidden in Game** ist eingeschaltet. Das versteckt die Hilfsform im Spiel und deaktiviert nicht ihren Wasserausschluss. Die Objekteigenschaften wurden im neu gestarteten PIE erneut ausgelesen.[^coast-correction]
+| Eigenschaft der bisherigen Box | Nachgewiesener Wert |
+| --- | --- |
+| Actor in `/Game/Maps/ShaderWorldCityBasics` | **Basics_Tunnel_AirPocket** |
+| Box-Mittelpunkt / Rotation / Skalierung | **(0, 0, 0) cm** / **0** / **1** |
+| **Box Extent**, also Halbausdehnungen | **(9000, 800, 2000) cm**, insgesamt **180 × 16 × 40 m** |
+| **Hidden in Game** | **Ein**; Hilfsform im Spiel unsichtbar |
+
+Die neue [Tunnelkomponente](reusable-tunnel-component.md) integriert den zuvor getrennten Aufbau und berechnet den Ausschluss aus dem Tunnelprofil. Ihre Mitte liegt im freien Querschnitt bei **Z = 600 cm**. Das ist eine andere Platzierung; der frühere Boxbericht ist deshalb kein Test der neuen Komponente.[^coast-correction]
 
 Der erste Sichttest des Nutzers an der zuvor betroffenen Stelle lautet: **„Bisher trocken“**.[^coast-correction] Das ist eine erste praktische Bestätigung nach Einbau der Box. Eine längere Beobachtung über verschiedene Wellenphasen, sämtliche Kamerapositionen, vollständige Wasserabfragen innerhalb und außerhalb der Box sowie ein verpackter Build stehen weiterhin aus. Auch die neue Box wurde noch nicht über die eigene Laufzeit-SaveGame-Funktion gespeichert und in einem getrennten Spielprozess rekonstruiert.
 

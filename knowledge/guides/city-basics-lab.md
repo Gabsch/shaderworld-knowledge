@@ -6,12 +6,17 @@ tags: [shaderworld, citybuilder, terrain, biome, brushes, tunnels, collision]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-27T23:43:59+00:00" }
+generated: { by: codex/gpt-6, at: "2026-10-28T00:08:51Z" }
 evidence_scope:
   implementation: CityBasics-Karte aufgebaut; CharacterMovement-Testbuggy und Fußmodus implementiert und kompiliert; installierte Brush- und Kollisionsimplementierung gelesen
-  practical_status: Editoransicht gemeinsam angesehen; zwei frische eigenständige Spielprozesse bestanden jeweils 65 Kollisionsproben und eine bodengebundene Durchfahrt
+  practical_status: Editoransicht gemeinsam angesehen; zwei frische eigenständige Spielprozesse bestanden jeweils 65 Kollisionsproben und eine bodengebundene Durchfahrt;
+    neue Tunnelkomponente nativ getestet, gespeicherte Karte und PIE-Eigenschaften geprüft, ein neuer trockener PIE-Frame inspiziert;
+    zusätzliche frische Durchfahrt nach dem Komponentenwechsel mit 65 Kollisionsproben und 134 Bodenkontakt-Samples bestanden
   not_tested: Manuelle F-/Maus-Bedienung des Fußmodus, Laufzeit-Speicherung von Berg/Löchern/Biomkonfiguration, dauerhafte Vegetationsentfernung, Chaos-Fahrzeug, Navigation und verpackter Build
 sources:
+  - id: tunnel-component
+    resource: ../evidence/tunnel-component-report.json
+    title: Neue CityLab-Tunnelkomponente; native Tests, Karten-/PIE-Eigenschaften und frische Durchfahrt geprüft
   - id: coast-correction
     resource: ../evidence/coast-correction-report.json
     title: Gespeicherte Pflanzenfilter und Tunnel-Wasserausschluss mit PIE-Readback
@@ -127,9 +132,17 @@ Die native Komponente projiziert die Mesh-Dreiecke auf **XY**. Die Z-Position de
 
 Die Dämpfung steht inzwischen auf **1,0**, auch im laufenden PIE bestätigt. Laut Nutzer traten Wellen trotzdem am Tunnel auf. Der gelesene Plugin-Code erklärt einen passenden Mechanismus: Holebrushes schreiben einen sehr tiefen Lochwert in den Höhen-Cache. Der Ozean wertet diesen Wert als tiefes Wasser aus; die eigene Tunnelplatte ist kein Bestandteil dieser Terrainabfrage. Deshalb kann die Küstendämpfung an den Portalöffnungen volle Wellen zulassen. Das ist ein Codebefund, kein abgeschlossener GPU-Messversuch am konkreten Fehlerort.[^coast-correction]
 
-Der Actor **Basics_Tunnel_AirPocket** enthält jetzt eine native **ShaderWorld Air Pocket Box**. Sein Mittelpunkt liegt bei **(0,0,0)**, Rotation null und Skalierung eins. **Box Extent = (9000,800,2000) cm** sind Halbausdehnungen: insgesamt **180 m Länge, 16 m Breite und 40 m Höhe**. Dieser großzügige Laborbereich deckt Tunnel und beide Portalöffnungen ab. Das vorhandene Ozeanmaterial hat den nötigen Water-Exclusion-Knoten bereits in seiner Opacity-Mask-Kette.
+Der bisherige Aufbau am Actor **Basics_Tunnel_AirPocket** verwendete eine separate native **ShaderWorld Air Pocket Box**. Ihr Mittelpunkt lag bei **(0,0,0)**, Rotation null und Skalierung eins. **Box Extent = (9000,800,2000) cm** sind Halbausdehnungen: insgesamt **180 m Länge, 16 m Breite und 40 m Höhe**. Dieser großzügige Laborbereich deckte Tunnel und beide Portalöffnungen ab. Das vorhandene Ozeanmaterial hat den nötigen Water-Exclusion-Knoten bereits in seiner Opacity-Mask-Kette.
 
-Der Bereich ist gespeichert und seine Eigenschaften wurden nach einem neuen PIE-Start zurückgelesen. Die Form ist im Spiel unsichtbar und erzeugt keine feste Kollision. Der Nutzer meldete danach an der betroffenen Stelle **„Bisher trocken“**. Das ist eine erste Sichtbestätigung; ein längerer Test über weitere Wellenphasen und Kamerafahrten bleibt offen. Weitere Schritte und Grenzen stehen unter [Ozean und Wasserausschlüsse](ocean-waves-and-foam.md).
+Dieser bisherige Bereich wurde gespeichert und seine Eigenschaften nach einem neuen PIE-Start zurückgelesen. Die Form ist im Spiel unsichtbar und erzeugt keine feste Kollision. Der Nutzer meldete danach an der betroffenen Stelle **„Bisher trocken“**. Das ist eine erste Sichtbestätigung; ein längerer Test über weitere Wellenphasen und Kamerafahrten bleibt offen. Weitere Schritte und Grenzen stehen unter [Ozean und Wasserausschlüsse](ocean-waves-and-foam.md).
+
+### Die eigene Tunnelkomponente übernimmt künftig den Ausschluss
+
+Die eigene **CityLab Tunnel (Dry)**-Komponente erbt direkt von der nativen Air-Pocket-Box und berechnet deren Größe aus Passage und Zugaben. Sie erzeugt keine Tunnelmeshes oder Portalöffnungen. Der native Build und zwei API-/WaterSubsystem-Tests sind bestanden; sie liefen ohne gerenderten Ozean mit einem kontrollierten Wasserprovider.[^tunnel-component]
+
+Im Labor hat die neue Instanz **Tunnel** die alte **DryTunnel**-Box ersetzt. Der Actor bleibt bei **(0,0,0)**; **Tunnel → Relative Location = (0,0,600) cm** legt die Mitte zwischen Fahrbahn **300 cm** und Decke **900 cm**. Aus **17000 × 800 × 600 cm** Passage sowie den Zugaben entstehen erneut **(9000,800,2000) cm** Halbausdehnungen. Die Karte ist gespeichert und tatsächlich erneut geladen; die Eigenschaften wurden im Editor, nach dem Laden und im neu gestarteten PIE bestätigt. Es gibt genau eine neue Tunnelkomponente und keine alte DryTunnel-Box mehr. Nach dieser Umstellung bestand ein frischer Spielprozess nochmals **65/65 Kollisionsproben**, **134/134 Bewegungs-Samples am Boden** und rund **259,44 m** bodengebundene Durchfahrt ohne Teleport während der Fahrt.[^tunnel-component] Die frühere Aussage „Bisher trocken“ wird nicht auf diese neue Platzierung übertragen. Eine **neue native PIE-Aufnahme** zeigt inzwischen den sichtbaren Innenraum mit Boden, Wänden und Buggy trocken. Sie ist ein einzelner inspizierter Frame, keine Langzeit- oder GPU-Wasserhöhenmessung.[^tunnel-component]
+
+Die [Anleitung zur wiederverwendbaren Tunnelkomponente](reusable-tunnel-component.md) beschreibt die Editor-Schritte, **Configure Tunnel**, die schreibgeschützte Größenanzeige und den aktuellen Prüfumfang.
 
 ## Boden, Wände und Decke sind eigene Geometrie
 
@@ -210,3 +223,4 @@ Weitere Versuche betreffen dauerhafte Vegetationsänderungen, Chaos-Fahrzeugphys
 [^coast-biome-inspection]: [Lesende Küsten-, Biom- und Straßenprüfung](../evidence/coast-biome-road-inspection.json). Live-Parameter und Asset-/Codebefunde sind von noch nicht ausgeführten Korrekturversuchen getrennt.
 
 [^coast-correction]: [Korrekturbericht mit Projektassets, Originalwerten und neuer PIE-Box](../evidence/coast-correction-report.json). Gespeicherte Werte, Nutzerbeobachtung und noch fehlende Sicht-/GPU-Prüfungen sind getrennt ausgewiesen.
+[^tunnel-component]: [Neuer Komponentenbericht](../evidence/tunnel-component-report.json): native Tests sowie gespeicherte Karte nach erneutem Laden und Eigenschaften im neuen PIE geprüft; frische Durchfahrt mit 65/65 Kollisionsproben und rund 259,44 m bestanden. Ein neuer PIE-Frame zeigt den sichtbaren Innenraum trocken; kein Langzeit-/GPU-Nachweis.

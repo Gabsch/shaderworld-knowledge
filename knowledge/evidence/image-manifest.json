@@ -72,6 +72,14 @@
       "modified": false,
       "bytes": 1175881,
       "sha256": "80c9ce5ab546c2c71507e4e43d63e26a7dbd795fc594ac5a694a054218b65daf"
+    },
+    {
+      "file": "assets/images/citybasics-dry-tunnel-component.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, new CityLabTunnelComponent in PIE; one inspected frame, no endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 770013,
+      "sha256": "e07d75466492a1f123e5cecf5cbb2e2662617e3e458c10778edc155a0c28523a"
     }
   ]
 }

@@ -2,6 +2,9 @@
 
 ## 2026-10-28
 
+- Neue native PIE-Aufnahme nach Komponentenwechsel und Kartenneuladen inspiziert: sichtbarer Tunnelinnenraum trocken, nur ein Frame; Langzeit-/GPU-Prüfung offen.
+- Eigenen Guide zur CityLab-Tunnelkomponente mit integriertem Air Pocket angelegt: Editor-Bedienung, Passagemaße und Platzierung beschrieben. Eigene Komponente implementiert, Build und zwei native Automationtests bestanden; Gespeicherte Karte tatsächlich neu geladen und Eigenschaften im neuen PIE bestätigt; frischer Spielprozess bestand 65/65 Proben und rund 259,44 m bodengebundene Durchfahrt. Bisherige separate Box bleibt als früherer Sichtnachweis erhalten.
+
 - Waldfilter über eigenes Landbiom und drei Spawnable-Kopien auf Min 150 cm gesetzt; Plugin-Originale unverändert. Wellendämpfung 1,0 gespeichert und im laufenden PIE bestätigt.
 - Nutzer grenzte verbleibende Wellen auf den Tunnel ein: Hole-Sentinel wird vom Ozean als große Wassertiefe gelesen; eigene Fahrbahn ist nicht Teil der Terrainquelle.
 - Native Air-Pocket-Box für Tunnel und Portale gespeichert und nach PIE-Neustart zurückgelesen; Nutzer meldete anschließend an der betroffenen Stelle „Bisher trocken“. Langzeit-/GPU-Prüfung weiterhin offen.
