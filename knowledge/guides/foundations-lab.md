@@ -8,7 +8,7 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T14:09:00Z"
+  at: "2026-10-28T15:02:42Z"
 evidence_scope:
   implementation: Projektcode und native APIs gelesen; acht kontrollierte native Automationtests mit NullRHI erfolgreich, darunter Backendmigration; sechs ohne und zwei mit erwarteten beziehungsweise erklärten Warnungen
   visual: Native PIE-Aufnahmen des geschlossenen Dachs sowie aktueller Snow-Vorher-/Lade- und geschützter Grundstücksvergleich inspiziert; kompiliertes Black-Backend ohne nachträgliche Brushparameteränderung
@@ -19,8 +19,8 @@ sources:
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabFoundationsGameMode.h/.cpp und CityLabLoopGameMode.h/.cpp; Projektdateien nicht im öffentlichen Wissensbundle enthalten"
     title: Vorgesehene Foundations-Karte, Eingaben, HUD und eigener Save-Slot
   - id: camera-input
-    resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabRoadGameMode.cpp und Config/DefaultInput.ini; native Foundations-PIE-Kamera-/Input-Readbacks und inspizierte CaptureEditorImage-Aufnahme vom 28. Oktober 2026. Projektdateien und Rohreadbacks nicht im öffentlichen Bundle enthalten"
-    title: Baukamera, Rechtsmausdrehen und bestätigte dreifache Mauskonfiguration; kein gemessener Mausstreckentest
+    resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabRoadGameMode.cpp und Config/DefaultInput.ini; native InputSettings-CDO-/Dateireadbacks sowie frühere Foundations-PIE-Kamera-Readbacks und inspizierte CaptureEditorImage-Aufnahme vom 28. Oktober 2026. Projektdateien und Rohreadbacks nicht im öffentlichen Bundle enthalten"
+    title: Baukamera, Rechtsmausdrehen und zweifache Mauskonfiguration ab nächstem Play; keine Bedienabnahme des neuen Werts
   - id: vegetation
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabVegetationState.h/.cpp und CityLabVegetationTests.cpp; Projektdateien nicht im öffentlichen Wissensbundle enthalten"
     title: Logischer Rodungszustand, stabile Ressourcenkennungen und Regenerationsfilter mit nativen Tests
@@ -100,9 +100,9 @@ Der Setupbericht bestätigt nach einem echten Kartenneuladen die fünf Managerzu
 
 ## Die Baukamera bewegen
 
-**WASD** verschiebt die Kamera parallel zum Boden. Halte die **rechte Maustaste** gedrückt und bewege die Maus, um die Blickrichtung zu drehen. Mit dem **Mausrad** bewegst du dich entlang der Blickrichtung näher heran oder weiter weg. Die aktuelle Foundations-Ansicht wurde wieder schräg auf den Baubereich gestellt, bei 85 m Welthöhe und 48° Blickneigung nach unten. Eine native Editorfenster-Aufnahme zeigte dabei wie beabsichtigt Straßen, Haus und Küste; das Bild wird hier nicht veröffentlicht.[^camera-input]
+**WASD** verschiebt die Kamera parallel zum Boden. Halte die **rechte Maustaste** gedrückt und bewege die Maus, um die Blickrichtung zu drehen. Mit dem **Mausrad** bewegst du dich entlang der Blickrichtung näher heran oder weiter weg. Die zuletzt gezeigte Foundations-Ansicht wurde schräg auf den Baubereich gestellt, bei 85 m Welthöhe und 48° Blickneigung nach unten. Eine native Editorfenster-Aufnahme zeigte dabei wie beabsichtigt Straßen, Haus und Küste; das Bild wird hier nicht veröffentlicht.[^camera-input]
 
-Die **projektweite Mausachsen-Konfiguration** für das Drehen wurde von **0,07 auf 0,21**, also auf den **dreifachen Konfigurationswert**, erhöht, in der laufenden Sitzung angewendet und dauerhaft in `DefaultInput.ini` hinterlegt. Die Werte sind zurückgelesen; eine gleich lange reale Mausbewegung und das Bediengefühl wurden noch nicht geprüft. WASD bleibt laut Code bei **25 m/s**, der Mausradschritt bei **6 m**; diese Werte wurden nicht mit verdreifacht. Für diese Einstellung war kein Build oder Neustart nötig.[^camera-input]
+Die **projektweite Mausachsen-Konfiguration** steht jetzt auf **0,14**, also dem **zweifachen ursprünglichen Wert 0,07**. Der Nutzer fand den vorherigen 3×-Wert 0,21 etwas zu schnell. Die neuen Werte sind für MouseX, MouseY und Mouse2D im InputSettings-Standardobjekt zurückgelesen und dauerhaft in `DefaultInput.ini` hinterlegt. **Sie gelten ab dem nächsten Play.** PIE war bei dieser Änderung bereits gestoppt; es gab keinen Live-PlayerInput-Aufruf und keinen neuen Spielstart. Das Gefühl mit 2× und ein neuer Editor-/Paketstart sind noch nicht geprüft. WASD bleibt laut Code bei **25 m/s**, der Mausradschritt bei **6 m**. Das vorhandene Development-Paket wurde für diese Konfigurationsänderung nicht neu gebaut.[^camera-input]
 
 ## Das geschlossene Testhausdach ansehen
 
@@ -223,7 +223,7 @@ Bei Tunneln gilt weiterhin: Die trockene Komponente beschreibt einen Wasseraussc
 Vor einer größeren Welt hat deshalb die Verringerung des periodischen visuellen Vollscans Vorrang. Ein bloßes Überspringen wäre verfrüht: Native `RestoreInstance`-Aufrufe können den visuellen Transform außerhalb der vorhandenen Publishfilter ändern. Zuerst muss dieser Vertrag mit unserer eigenen Zustandsverwaltung geklärt werden. Initiale Rodung, älterer Restore, Indexwechsel und Kollisionsnachlauf müssen dabei erhalten bleiben. Diese Optimierung ist noch nicht eingebaut. Mehrspielerbetrieb, echte Maschinenarbeit und Materialmengen bleiben weitere eigene Aufgaben.
 
 [^controls]: Projektlokaler Code `CityLabFoundationsGameMode.h/.cpp` und `CityLabLoopGameMode.h/.cpp`, oben als beschreibende Quelle erfasst; nicht im öffentlichen Bundle enthalten.
-[^camera-input]: Projektlokaler Kameracode und `Config/DefaultInput.ini`; MouseX/MouseY/Mouse2D jeweils 0,21 sowie laufendes `SetMouseSensitivity 0.21` nativ bestätigt. Codewerte: 2500 cm/s Verschiebung und 600 cm je Scrollschritt. Die schräge Bauübersicht wurde im nativen Editorfenster-Capture angesehen; keine gemessene Mausstrecke oder manuelle Kamerafahrt abgenommen.
+[^camera-input]: Projektlokaler Kameracode und `Config/DefaultInput.ini`; MouseX/MouseY/Mouse2D jeweils 0,14 per InputSettings-CDO- und Dateireadback bestätigt, bei gestopptem PIE ohne Live-PlayerInput-Exec. Codewerte: 2500 cm/s Verschiebung und 600 cm je Scrollschritt. Frühere schräge Bauübersicht im nativen Editorfenster-Capture angesehen; neuer 2×-Spielstart, Mausgefühl und neues Paket nicht abgenommen.
 [^vegetation]: Projektlokaler Code `CityLabVegetationState.h/.cpp` und `CityLabVegetationTests.cpp`, oben als beschreibende Quelle erfasst; Laufzeitwirkung für den geprüften Umfang zusätzlich im öffentlichen Bericht.
 [^biomes]: Projektlokales Skript `Tools/setup_city_biomes.py`, oben als beschreibende Quelle erfasst; Profile, Höhen-/Hangregeln und Zielzuweisung.
 [^setup-readback]: [Bereinigter Bericht, Abschnitt setup_readback](../evidence/foundations-report.json): fünf Profile und 19 Assets nach echtem Kartenneuladen; Eigenschaftsprüfung getrennt vom Laufzeittest.
