@@ -6,7 +6,7 @@ status: draft
 tags: [shaderworld, citylab, city-builder, roadmap]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T04:06:00Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T04:17:04Z" }
 evidence_scope: Vereinbarte Planung vom 28. Oktober 2026; keine Abnahme der hier vorgeschlagenen Funktionen.
 sources:
   - id: verification
@@ -34,6 +34,16 @@ Diese Liste hält die gemeinsam besprochenen nächsten Themen fest. **Die anschl
 Eine Straße zur Laufzeit ziehen, daneben ein Grundstück ebnen und roden, ein Testhaus setzen und einen Bürger zum Haus laufen lassen. Nach Speichern und einem echten Spielneustart sollen Straße, Grundstück, Haus und Bürgerzustand wiederhergestellt sein. Die [Spielschleifen-Anleitung](../guides/city-builder-loop.md) beschreibt Aufbau und tatsächlichen Prüfstand.
 
 Dafür genügen zunächst die vorhandenen Road-Creator-Assets, ShaderWorld und einfache UE-Grundformen für Haus und Bürger. Weitere Assetpakete sind für die Funktionsprüfung nicht vorgesehen. Gebäudevarianten, Figurenmodell und Animationen können später die Platzhalter ersetzen.
+
+## Vorgemerkte Grundlagen vor der Bauwelt
+
+Der Nutzer hat diese drei Themen erneut als mögliche Vorarbeiten für die baugetriebene Terraforming-Welt vorgemerkt. **Das ist Kontext für die nächste Planung, noch kein Umsetzungsauftrag.** Welche Teile zuerst oder später parallel durch Subagenten bearbeitet werden, ist noch nicht entschieden.
+
+1. **Eigene Biomvorlagen und dauerhafte Rodung:** Wald, Wiese, Fels, Strand und Meeresboden mit nachvollziehbaren Höhen-, Hang- und Bebauungsregeln. Einzelne gefällte Bäume benötigen gespeicherte Zustände über erneute Generierung und Neustart hinweg. Die bisher dokumentierte Bookkeeping-Grenze und die Herstellerquelle stehen in der [Fähigkeitenübersicht](versions-and-capabilities.md#biome-und-vegetation-für-die-stadt); eine flächige NoGrowth-Maske ersetzt diese Einzelzustände nicht.
+2. **Einheitliche Terraforming-Werkzeuge:** Anheben, Absenken, Ebnen und Material auftragen mit Vorschau, Rückgängig und Speicherung als zusammenhängenden Werkzeugwunsch erhalten. Die ShaderWorld-Brushes bilden die technische Grundlage; eigene Bedienung und Änderungsverwaltung kommen hinzu. Wie Vorschau und Rückgängig mit Bauaufträgen, bereits geleisteter Arbeit und Materialbilanz zusammenspielen, ist noch abzustimmen. Die gesetzte Trennung von Sollplanung und tatsächlicher Weltänderung aus dem [Baukonzept](construction-and-terrain-architecture.md) bleibt bestehen. Herstellerquelle: [Brush-System](https://universgen.gitbook.io/shader-world/fundamentals/kick-start/blueprint-brush-system-landmass).
+3. **Baukamera, Navigation und größere Welten absichern:** Bauabfragen weit über dem Boden, Bürgerwege nach Geländeänderungen und anschließend früh einen verpackten Spielbuild mit vielen Straßen und Brushes prüfen. Dabei korrekte Kollision, Erreichbarkeit, Speicherverhalten und Leistung getrennt bewerten.
+
+Diese Vormerkung ändert keinen vorhandenen Prüfstatus. Auch die unten vorgeschlagene Baugrube ist dadurch nicht zur Umsetzung freigegeben; zuerst bei der nächsten Arbeitsplanung die Grundlagen und Abhängigkeiten gemeinsam einordnen.
 
 ## Danach erhaltene Themen
 
