@@ -1,0 +1,410 @@
+{
+  "report_version": 1,
+  "date": "2026-10-29",
+  "tested_at": "2026-10-28T23:07:03Z",
+  "status": "passed_with_limits",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "scope": "Own isolated hybrid chamber under an unchanged ShaderWorld heightfield. Two rendered packaged Development game processes, six-face mesh collision, a capsule sweep, exact separate profile persistence, and two native data tests. No volumetric terrain removal.",
+  "source_assessment": {
+    "heightfield": "A hole projects an XY footprint; it does not subtract a bounded underground volume while preserving its top surface.",
+    "installed_voxel_actor": "The read ShaderWorld 4.1 VoxelActor source describes volumetric texture data and explicitly no isosurface extraction at the inspected stage. This is not evidence of a finished diggable 3D terrain backend.",
+    "licensed_source_published": false
+  },
+  "isolation": {
+    "map_loaded_readonly": "/Game/Maps/ShaderWorldConstructionLab",
+    "game_mode_override": "/Script/Engine.GameModeBase",
+    "separate_uuid_user_directory": true,
+    "separate_slot_prefix": "UndergroundProbe_",
+    "normal_map_saved_or_modified": false,
+    "normal_slots_used": false,
+    "live_editor_controlled": false,
+    "native_mcp_port": 8104
+  },
+  "offline_harness": {
+    "python_syntax": "passed",
+    "dry_run": "passed",
+    "valid_fixture_accepted": true,
+    "corrupted_or_stale_fixtures_rejected": 10
+  },
+  "native_automation": {
+    "renderer_scope": "NullRHI CPU/data tests; no ocean or terrain render evidence",
+    "tests": [
+      {
+        "fullTestPath": "CityLab.UndergroundProbe.BoundedProfile",
+        "state": "Success",
+        "duration": 0.0036704987287521362,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundProbe.ProfileSerialization",
+        "state": "Success",
+        "duration": 0.00734180212020874,
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "succeeded": 2,
+    "failed": 0,
+    "warnings": 0,
+    "whole_separate_suite": {
+      "succeeded_clean": 34,
+      "succeeded_with_known_warnings": 2,
+      "failed": 0,
+      "total": 36
+    }
+  },
+  "packaged_two_process": {
+    "success": true,
+    "cooked": true,
+    "run": "1d84d3302feb47ef90d84d5e67db6465",
+    "configuration": "Development",
+    "rendering": "RenderOffscreen, DX12/SM6",
+    "phases": [
+      {
+        "success": true,
+        "mode": "create",
+        "process_id": 80540,
+        "source_process_id": 0,
+        "elapsed_seconds": 33.35129879787564,
+        "cooked": true,
+        "profile_hash": "2e2f1983625e90ba6054dc8b03937c4c",
+        "profile": {
+          "center_x_cm": -17000,
+          "center_y_cm": 10000,
+          "center_z_cm": -350,
+          "clear_length_cm": 1600,
+          "clear_width_cm": 600,
+          "clear_height_cm": 400,
+          "wall_cm": 50,
+          "surface_heights_cm": [
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300
+          ]
+        },
+        "checks": {
+          "six_mesh_shell": true,
+          "air_pocket_profile": true,
+          "collision_ProbeFloor": true,
+          "collision_ProbeRoof": true,
+          "collision_ProbeLeft": true,
+          "collision_ProbeRight": true,
+          "collision_ProbeBack": true,
+          "collision_ProbeFront": true,
+          "free_capsule_route_13m": true,
+          "nine_surface_heights_unchanged": true,
+          "profile_saved_exactly": true,
+          "surface_image_written": true,
+          "interior_image_written": true
+        },
+        "physics_samples": [
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          }
+        ],
+        "own_shell_hit_identity": "Native checks require the hit actor to be the new probe shell and the hit component name to match the named face."
+      },
+      {
+        "success": true,
+        "mode": "resume",
+        "process_id": 122428,
+        "source_process_id": 80540,
+        "elapsed_seconds": 33.022296600043774,
+        "cooked": true,
+        "profile_hash": "2e2f1983625e90ba6054dc8b03937c4c",
+        "profile": {
+          "center_x_cm": -17000,
+          "center_y_cm": 10000,
+          "center_z_cm": -350,
+          "clear_length_cm": 1600,
+          "clear_width_cm": 600,
+          "clear_height_cm": 400,
+          "wall_cm": 50,
+          "surface_heights_cm": [
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300,
+            300
+          ]
+        },
+        "checks": {
+          "cold_process": true,
+          "six_mesh_shell": true,
+          "air_pocket_profile": true,
+          "collision_ProbeFloor": true,
+          "collision_ProbeRoof": true,
+          "collision_ProbeLeft": true,
+          "collision_ProbeRight": true,
+          "collision_ProbeBack": true,
+          "collision_ProbeFront": true,
+          "free_capsule_route_13m": true,
+          "nine_surface_heights_unchanged": true,
+          "profile_rebuilt_from_checkpoint": true,
+          "surface_image_written": true,
+          "interior_image_written": true
+        },
+        "physics_samples": [
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFloor",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeRoof",
+            "expected_cm": 200,
+            "actual_cm": 200,
+            "matches": true
+          },
+          {
+            "label": "ProbeLeft",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeRight",
+            "expected_cm": 300,
+            "actual_cm": 300,
+            "matches": true
+          },
+          {
+            "label": "ProbeBack",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          },
+          {
+            "label": "ProbeFront",
+            "expected_cm": 800,
+            "actual_cm": 800,
+            "matches": true
+          }
+        ],
+        "own_shell_hit_identity": "Native checks require the hit actor to be the new probe shell and the hit component name to match the named face."
+      }
+    ],
+    "profile_equal_across_processes": true,
+    "profile_hash_equal_across_processes": true,
+    "cold_process_identity_matches_checkpoint": true,
+    "surface_sample_count_per_stable_pass": 9,
+    "stable_passes_per_process": 3,
+    "surface_tolerance_cm": 2,
+    "own_shell_faces_per_pass": 6,
+    "capsule_clear_route_cm": 1300,
+    "capsule_radius_cm": 35,
+    "capsule_half_height_cm": 88,
+    "initial_sandbox_attempt": "One earlier in-sandbox child ended during engine PreInit without a native report; the harness correctly rejected it. The complete elevated host rerun above passed. No C++ repair was needed."
+  },
+  "visual_review": {
+    "reviewer": "codex/gpt-6 parent agent using native view_image",
+    "reviewed_phase": "create",
+    "images_written_total": 4,
+    "images_reviewed_total": 2,
+    "surface_image": "assets/images/underground-surface.png",
+    "interior_image": "assets/images/underground-interior.png",
+    "observed_surface": "Vegetated surface remains visible above the chamber; beach and ocean are visible to the right; no chamber-sized surface opening visible in this view.",
+    "observed_interior": "Bright checkerboard rectangular interior appears closed, with floor, walls and ceiling, dry in the inspected frame and without obvious gaps.",
+    "water_scope": "One inspected interior frame only; no water query, water simulation, wave-phase or long-term exclusion test.",
+    "resume_images_reviewed": false
+  },
+  "limits": [
+    "A mesh shell was placed in the pre-existing space below a heightfield; no physical soil volume was removed and no excavation material was created.",
+    "Nine surface probes are samples, not continuous minimum-cover proof over arbitrary terrain.",
+    "No portal, entrance traversal, curved tunnel, citizen navigation or geological inventory was tested.",
+    "Air-pocket dimensions were checked; rendered water exclusion across waves, CPU water queries and hydrology remain untested.",
+    "Separate probe SaveGame only; no integration with normal construction saves or machine-executed excavation.",
+    "No uncooked gameplay run, Shipping configuration, multiplayer test, large-world performance or arbitrary 3D terrain claim."
+  ],
+  "sanitization": "Public summary excludes absolute user paths, raw logs, hardware/host names, Unreal assets, raw save files and licensed plugin source. Only own report fields and bounded observations retained."
+}

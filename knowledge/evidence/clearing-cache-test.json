@@ -1,0 +1,1176 @@
+{
+  "date": "2026-10-29",
+  "prepared_at_utc": "2026-10-28T23:11:29Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_explicit_measurement_limits",
+  "scope": "One isolated rendered cooked Windows Development process. Synchronous game-thread ReapplyClearedResources and native FindResourceAlongRay CPU call times in the existing fixed-camera lab. Native buffer/ledger tests are separate. No new GPU/pixel, full UI, normal-save, frame-capacity or large-world acceptance.",
+  "provenance": {
+    "evidence_origin": "Explicit field whitelist from a validated private native benchmark report and the final native automation report. Absolute paths, run/process identifiers, host name, normal saves, licensed assets and plugin sources omitted.",
+    "measured_start_utc": "2026-10-28T23:07:30.587Z",
+    "measured_finish_utc": "2026-10-28T23:09:12.797Z",
+    "requires_cooked_data": true,
+    "isolated_rendered_process_count": 1,
+    "other_project_builds_render_games_and_editor_closed_before_host_measurement": true,
+    "host_process_inventory_observed_one_game_no_editor": true,
+    "native_process_id_matched_observed_host_game": true,
+    "executable": {
+      "kind": "Explicitly launched inner native packaged Windows Development executable",
+      "sha256": "b4a73da5dd634d13021535abbda9085c26570a5c5f7be48b247f4c5d8e34b84b",
+      "hash_scope": "Hash of the explicitly launched executable after process completion; no intervening build by this agent."
+    },
+    "project_local_source_files": [
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabVegetationState.h",
+        "sha256": "664df7d74567af5fd5caea7e80dbc33896e37a193973e42dd44aaff54f41b291"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabVegetationState.cpp",
+        "sha256": "f3147b3ea8b49a5b056277e7bb06b273474ca498b6962d529096e6b80673adef"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabVegetationTests.cpp",
+        "sha256": "9f578d167a584d892182598b7a6913faffece7f36a9f69345314a1d417ebdc2b"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabClearingBenchmark.cpp",
+        "sha256": "f4ddcc06a869c88dcac6df851c9b88e68b057bad6ff2e8bb0824a14696a6c528"
+      },
+      {
+        "project_relative_source": "Tools/benchmark_clearing.py",
+        "sha256": "a0a04034869cca56c45b9c6900adcf27a72f169bbc2821b0e655534c33e3f658"
+      }
+    ],
+    "source_fingerprint_scope": "Current own project source bytes after the run; not an embedded build fingerprint."
+  },
+  "configuration": {
+    "record_counts": [
+      0,
+      1,
+      10,
+      100
+    ],
+    "modes": [
+      "reapply_only",
+      "reapply_plus_ray_5hz"
+    ],
+    "phase_seconds_requested": 8,
+    "phase_count": 8,
+    "fixed_visitor_range_meters": 200,
+    "target_reapply_hz": 4,
+    "target_ray_hz": 5,
+    "frame_cap_console_setting": 48,
+    "scheduling": "Start-to-start, at most one call of each type per tick, no catch-up bursts; actual rates are recorded.",
+    "installation": "One bulk RestoreRecords(prefix) per record count; not 100 sequential user C commands.",
+    "normal_city_save_accessed": false
+  },
+  "baseline_inventory": {
+    "visual_pools": 1,
+    "collision_pools": 1,
+    "visual_slots": 152881,
+    "collision_slots": 2116,
+    "nonzero_visible_instances": 1410,
+    "active_nonzero_collision_instances": 1410,
+    "async_building_pools": 0
+  },
+  "baseline_control": {
+    "cleared_live_visual_matches": 0,
+    "cleared_active_collision_matches": 0,
+    "control_live_visual_matches": 1,
+    "control_active_collision_matches": 1,
+    "control_transform_preserved": true,
+    "async_building_pools": 0
+  },
+  "readiness_seconds_excluded": 15.353859700262547,
+  "total_seconds_including_readiness_settle_restore": 102.2090725004673,
+  "timing_scope": {
+    "included": "Synchronous CPU wall time including locks, compact/fallback reads, matching, native dispatch and possible scheduling; ray includes its occlusion query and bounds selection.",
+    "excluded": "Record installation, readiness/settle, independent full-buffer content probes and final restoration are outside steady measurement windows.",
+    "not_measured": "GPU completion, complete input/preview path, isolated hardware cycles, unconstrained frame capacity, driving/streaming, large-world scaling."
+  },
+  "counter_semantics": {
+    "marker": "compact_live_candidates.v1",
+    "native_scanned_instances": "Live candidates visited by Reapply, not the complete reserved slot counts in the historical baseline.",
+    "native_snapshot_source_slots": "Raw slots read while rebuilding a Reapply snapshot or performing a conservative collision/legacy fallback read.",
+    "native_snapshot_cache_hits": "Visual snapshots reused during Reapply.",
+    "native_snapshot_rebuilds": "Project visual Resource-HISM snapshots created during Reapply.",
+    "ray_counter_limit": "Source/cache counters cover Reapply only. A separate ray cache miss contributes to ray_call_ms, not these Reapply counters."
+  },
+  "phases": [
+    {
+      "record_count": 0,
+      "mode": "reapply_only",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.006354101002216,
+      "bulk_install_ms_excluded": 0,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.0008977949619293213,
+        "mean": 0.0010970379075696392,
+        "p50": 0.0010021030902862549,
+        "p95": 0.0014007091522216797,
+        "max": 0.0018998980522155762
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.000500003807246685,
+        "mean": 0.0007903224961351484,
+        "p50": 0.000700005330145359,
+        "p95": 0.0010999938240274787,
+        "max": 0.0011999945854768157
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 0
+      },
+      "actual_reapply_hz": 3.871924674942805,
+      "actual_ray_hz": 0,
+      "ray_hits": 0,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 6.21270015835762,
+        "mean": 20.7957231185653,
+        "p50": 20.83129808306694,
+        "p95": 21.43920212984085,
+        "max": 23.086298257112503
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.833821608296905,
+        "p50": 20.83349972963333,
+        "p95": 20.83360031247139,
+        "max": 20.876001566648483
+      },
+      "observed_tick_hz_including_cap": 48.08680644687032,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1410,
+        "active_nonzero_collision_instances": 1410,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 0,
+      "mode": "reapply_plus_ray_5hz",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.006880301982164,
+      "bulk_install_ms_excluded": 0,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.0008977949619293213,
+        "mean": 0.0012032687664031982,
+        "p50": 0.0010989606380462646,
+        "p95": 0.0014007091522216797,
+        "max": 0.003602355718612671
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.0005999900167807937,
+        "mean": 0.0008741936330953913,
+        "p50": 0.0007999915396794677,
+        "p95": 0.001200009137392044,
+        "max": 0.0032999960239976645
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 39,
+        "min": 0.20360201597213745,
+        "mean": 0.4101483485637567,
+        "p50": 0.29629841446876526,
+        "p95": 0.3506988286972046,
+        "max": 5.150999873876572
+      },
+      "actual_reapply_hz": 3.87167021746606,
+      "actual_ray_hz": 4.870810918747624,
+      "ray_hits": 39,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 6.351999938488007,
+        "mean": 20.797088055254576,
+        "p50": 20.795300602912903,
+        "p95": 21.588198840618134,
+        "max": 22.265300154685974
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.834020571783185,
+        "p50": 20.83349972963333,
+        "p95": 20.836498588323593,
+        "max": 20.889200270175934
+      },
+      "observed_tick_hz_including_cap": 48.08364624917527,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1410,
+        "active_nonzero_collision_instances": 1410,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 1,
+      "mode": "reapply_only",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.00516340136528,
+      "bulk_install_ms_excluded": 28.741098940372467,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.7166005671024323,
+        "mean": 1.1053934933677796,
+        "p50": 1.1213980615139008,
+        "p95": 1.2970007956027985,
+        "max": 1.4107003808021545
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.716199996531941,
+        "mean": 1.1047903235228131,
+        "p50": 1.120700006140396,
+        "p95": 1.2962999899173155,
+        "max": 1.4100000116741285
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2818,
+        "mean": 2818,
+        "p50": 2818,
+        "p95": 2818,
+        "max": 2818
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 0
+      },
+      "actual_reapply_hz": 3.8725005906454015,
+      "actual_ray_hz": 0,
+      "ray_hits": 0,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 4.308201372623444,
+        "mean": 20.792629347219094,
+        "p50": 20.851697772741318,
+        "p95": 21.524399518966675,
+        "max": 22.75810018181801
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.8351820280465,
+        "p50": 20.83349972963333,
+        "p95": 20.835600793361664,
+        "max": 21.141700446605682
+      },
+      "observed_tick_hz_including_cap": 48.09395894833805,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1409,
+        "active_nonzero_collision_instances": 1409,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 1,
+      "mode": "reapply_plus_ray_5hz",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.008316602557898,
+      "bulk_install_ms_excluded": 28.741098940372467,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.5735978484153748,
+        "mean": 0.8157997602416623,
+        "p50": 0.8233003318309784,
+        "p95": 0.9962990880012512,
+        "max": 1.1074990034103394
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.5732999998144805,
+        "mean": 0.8153548382500547,
+        "p50": 0.8227999933296815,
+        "p95": 0.9958000009646639,
+        "max": 1.1069999891333282
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2818,
+        "mean": 2818,
+        "p50": 2818,
+        "p95": 2818,
+        "max": 2818
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 39,
+        "min": 0.2655014395713806,
+        "mean": 0.3150540093580882,
+        "p50": 0.28999894857406616,
+        "p95": 0.3948993980884552,
+        "max": 0.3972984850406647
+      },
+      "actual_reapply_hz": 3.870975829064805,
+      "actual_ray_hz": 4.869937333339593,
+      "ray_hits": 39,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 8.421000093221664,
+        "mean": 20.80082026394931,
+        "p50": 20.833399146795273,
+        "p95": 21.314501762390137,
+        "max": 21.630801260471344
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.833827341751505,
+        "p50": 20.83349972963333,
+        "p95": 20.83360031247139,
+        "max": 20.88719978928566
+      },
+      "observed_tick_hz_including_cap": 48.07502239322419,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1409,
+        "active_nonzero_collision_instances": 1409,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 10,
+      "mode": "reapply_only",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.006635997444391,
+      "bulk_install_ms_excluded": 27.825098484754562,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.9729005396366119,
+        "mean": 1.2511772013479663,
+        "p50": 1.2116990983486176,
+        "p95": 1.6353987157344818,
+        "max": 1.639101654291153
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.9725999989314005,
+        "mean": 1.2506032264002809,
+        "p50": 1.2110999959986657,
+        "p95": 1.6347000055247918,
+        "max": 1.6382000030716881
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2800,
+        "mean": 2800,
+        "p50": 2800,
+        "p95": 2800,
+        "max": 2800
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 0
+      },
+      "actual_reapply_hz": 3.871788352798201,
+      "actual_ray_hz": 0,
+      "ray_hits": 0,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 6.424799561500549,
+        "mean": 20.796455065538357,
+        "p50": 20.84299921989441,
+        "p95": 21.573901176452637,
+        "max": 22.054098546504974
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.83403229092558,
+        "p50": 20.83349972963333,
+        "p95": 20.83360031247139,
+        "max": 20.891502499580383
+      },
+      "observed_tick_hz_including_cap": 48.08511341378411,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1400,
+        "active_nonzero_collision_instances": 1400,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 10,
+      "mode": "reapply_plus_ray_5hz",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.002625800669193,
+      "bulk_install_ms_excluded": 27.825098484754562,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.863298773765564,
+        "mean": 1.2348414428772465,
+        "p50": 1.1951997876167297,
+        "p95": 1.5684999525547028,
+        "max": 1.6032010316848755
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.8626999915577471,
+        "mean": 1.2342354832893057,
+        "p50": 1.1947999882977456,
+        "p95": 1.5676000039093196,
+        "max": 1.6021000046748668
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2800,
+        "mean": 2800,
+        "p50": 2800,
+        "p95": 2800,
+        "max": 2800
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 39,
+        "min": 0.41780248284339905,
+        "mean": 0.5014285636253846,
+        "p50": 0.5058981478214264,
+        "p95": 0.5823001265525818,
+        "max": 0.6004981696605682
+      },
+      "actual_reapply_hz": 3.8737285451242425,
+      "actual_ray_hz": 4.87340042773695,
+      "ray_hits": 39,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 2.019498497247696,
+        "mean": 20.786036879985364,
+        "p50": 20.815398544073105,
+        "p95": 21.51690050959587,
+        "max": 21.91689983010292
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.834155206102878,
+        "p50": 20.83349972963333,
+        "p95": 20.83439752459526,
+        "max": 20.90580016374588
+      },
+      "observed_tick_hz_including_cap": 48.10920935073656,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1400,
+        "active_nonzero_collision_instances": 1400,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 100,
+      "mode": "reapply_only",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.005536697804928,
+      "bulk_install_ms_excluded": 67.08799675107002,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.9198002517223358,
+        "mean": 1.178912938602509,
+        "p50": 1.1507011950016022,
+        "p95": 1.4302991330623627,
+        "max": 1.477900892496109
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.9191999997710809,
+        "mean": 1.1783354838694176,
+        "p50": 1.150299998698756,
+        "p95": 1.4293999993242323,
+        "max": 1.4774000010220334
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2620,
+        "mean": 2620,
+        "p50": 2620,
+        "p95": 2620,
+        "max": 2620
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 0
+      },
+      "actual_reapply_hz": 3.8723200167828873,
+      "actual_ray_hz": 0,
+      "ray_hits": 0,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 4.991699010133743,
+        "mean": 20.79359921929124,
+        "p50": 20.841997116804123,
+        "p95": 21.44540101289749,
+        "max": 22.136900573968887
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.83429764995041,
+        "p50": 20.83349972963333,
+        "p95": 20.83369717001915,
+        "max": 21.03229984641075
+      },
+      "observed_tick_hz_including_cap": 48.09171633746489,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1310,
+        "active_nonzero_collision_instances": 1310,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    },
+    {
+      "record_count": 100,
+      "mode": "reapply_plus_ray_5hz",
+      "max_fps_console_setting_during_window": 48,
+      "elapsed_seconds": 8.002764001488686,
+      "bulk_install_ms_excluded": 67.08799675107002,
+      "reapply_call_ms": {
+        "count": 31,
+        "min": 0.9020008146762848,
+        "mean": 1.1847127349145952,
+        "p50": 1.1861994862556458,
+        "p95": 1.3689994812011719,
+        "max": 1.609601080417633
+      },
+      "native_last_scan_ms": {
+        "count": 31,
+        "min": 0.9015999967232347,
+        "mean": 1.1840516127713565,
+        "p50": 1.1855000047944486,
+        "p95": 1.3682999997399747,
+        "max": 1.6089999990072101
+      },
+      "native_scanned_instances": {
+        "count": 31,
+        "min": 2620,
+        "mean": 2620,
+        "p50": 2620,
+        "p95": 2620,
+        "max": 2620
+      },
+      "native_scanned_components": {
+        "count": 31,
+        "min": 2,
+        "mean": 2,
+        "p50": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "native_snapshot_source_slots": {
+        "count": 31,
+        "min": 2116,
+        "mean": 2116,
+        "p50": 2116,
+        "p95": 2116,
+        "max": 2116
+      },
+      "native_snapshot_cache_hits": {
+        "count": 31,
+        "min": 1,
+        "mean": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "native_snapshot_rebuilds": {
+        "count": 31,
+        "min": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "ray_call_ms": {
+        "count": 39,
+        "min": 0.44159963726997375,
+        "mean": 0.5480920275052389,
+        "p50": 0.5428977310657501,
+        "p95": 0.6358027458190918,
+        "max": 0.6382018327713013
+      },
+      "actual_reapply_hz": 3.8736616491793754,
+      "actual_ray_hz": 4.87331626832244,
+      "ray_hits": 39,
+      "observed_tick_interval_ms": {
+        "count": 385,
+        "min": 2.4579018354415894,
+        "mean": 20.786396888169374,
+        "p50": 20.800497382879257,
+        "p95": 21.46649733185768,
+        "max": 22.064201533794403
+      },
+      "world_delta_ms": {
+        "count": 384,
+        "min": 20.833399146795273,
+        "mean": 20.83376146038063,
+        "p50": 20.83349972963333,
+        "p95": 20.83369717001915,
+        "max": 20.85699886083603
+      },
+      "observed_tick_hz_including_cap": 48.108378546259985,
+      "render_refresh_requests": 0,
+      "end_inventory_outside_window": {
+        "visual_pools": 1,
+        "collision_pools": 1,
+        "visual_slots": 152881,
+        "collision_slots": 2116,
+        "nonzero_visible_instances": 1310,
+        "active_nonzero_collision_instances": 1310,
+        "async_building_pools": 0
+      },
+      "end_cpu_invariants": {
+        "cleared_live_visual_matches": 0,
+        "cleared_active_collision_matches": 0,
+        "control_live_visual_matches": 1,
+        "control_active_collision_matches": 1,
+        "control_transform_preserved": true,
+        "async_building_pools": 0
+      },
+      "cpu_content_invariants_passed": true
+    }
+  ],
+  "comparison_to_previous": {
+    "baseline_evidence": "clearing-performance-test.json",
+    "same_lab_inventory_and_settings": true,
+    "comparison_limit": "One ascending pass in each run, no repeat-run uncertainty interval. Old/new candidate counters have different semantics; CPU wall times and raw source-slot reads are explained separately.",
+    "phases": [
+      {
+        "record_count": 0,
+        "mode": "reapply_only",
+        "old_reapply_mean_ms": 0.0010650725133957402,
+        "new_reapply_mean_ms": 0.0010970379075696392,
+        "old_reapply_p95_ms": 0.001300126314163208,
+        "new_reapply_p95_ms": 0.0014007091522216797,
+        "old_full_source_slot_visits_mean": 0,
+        "new_live_candidate_visits_mean": 0,
+        "new_raw_source_slots_read_by_reapply_mean": 0
+      },
+      {
+        "record_count": 0,
+        "mode": "reapply_plus_ray_5hz",
+        "old_reapply_mean_ms": 0.0010440126061439514,
+        "new_reapply_mean_ms": 0.0012032687664031982,
+        "old_reapply_p95_ms": 0.001300126314163208,
+        "new_reapply_p95_ms": 0.0014007091522216797,
+        "old_full_source_slot_visits_mean": 0,
+        "new_live_candidate_visits_mean": 0,
+        "new_raw_source_slots_read_by_reapply_mean": 0,
+        "old_ray_mean_ms": 21.024864453535812,
+        "new_ray_mean_ms": 0.4101483485637567,
+        "old_ray_p95_ms": 23.44449982047081,
+        "new_ray_p95_ms": 0.3506988286972046,
+        "observed_ray_mean_ratio_old_over_new": 51.26160943268443
+      },
+      {
+        "record_count": 1,
+        "mode": "reapply_only",
+        "old_reapply_mean_ms": 19.850409356877208,
+        "new_reapply_mean_ms": 1.1053934933677796,
+        "old_reapply_p95_ms": 23.44059944152832,
+        "new_reapply_p95_ms": 1.2970007956027985,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2818,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 17.95777655285393
+      },
+      {
+        "record_count": 1,
+        "mode": "reapply_plus_ray_5hz",
+        "old_reapply_mean_ms": 20.437165396288037,
+        "new_reapply_mean_ms": 0.8157997602416623,
+        "old_reapply_p95_ms": 24.296801537275314,
+        "new_reapply_p95_ms": 0.9962990880012512,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2818,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 25.051693310419687,
+        "old_ray_mean_ms": 20.43255771461286,
+        "new_ray_mean_ms": 0.3150540093580882,
+        "old_ray_p95_ms": 23.902900516986847,
+        "new_ray_p95_ms": 0.3948993980884552,
+        "observed_ray_mean_ratio_old_over_new": 64.85414280631915
+      },
+      {
+        "record_count": 10,
+        "mode": "reapply_only",
+        "old_reapply_mean_ms": 21.328562288545072,
+        "new_reapply_mean_ms": 1.2511772013479663,
+        "old_reapply_p95_ms": 44.4348007440567,
+        "new_reapply_p95_ms": 1.6353987157344818,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2800,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 17.046795822019906
+      },
+      {
+        "record_count": 10,
+        "mode": "reapply_plus_ray_5hz",
+        "old_reapply_mean_ms": 21.46754367277026,
+        "new_reapply_mean_ms": 1.2348414428772465,
+        "old_reapply_p95_ms": 27.842700481414795,
+        "new_reapply_p95_ms": 1.5684999525547028,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2800,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 17.384858433929573,
+        "old_ray_mean_ms": 20.84251610856307,
+        "new_ray_mean_ms": 0.5014285636253846,
+        "old_ray_p95_ms": 24.65290203690529,
+        "new_ray_p95_ms": 0.5823001265525818,
+        "observed_ray_mean_ratio_old_over_new": 41.56627208842941
+      },
+      {
+        "record_count": 100,
+        "mode": "reapply_only",
+        "old_reapply_mean_ms": 22.060765651986003,
+        "new_reapply_mean_ms": 1.178912938602509,
+        "old_reapply_p95_ms": 25.809600949287415,
+        "new_reapply_p95_ms": 1.4302991330623627,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2620,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 18.71280306596429
+      },
+      {
+        "record_count": 100,
+        "mode": "reapply_plus_ray_5hz",
+        "old_reapply_mean_ms": 21.715315873734653,
+        "new_reapply_mean_ms": 1.1847127349145952,
+        "old_reapply_p95_ms": 25.481998920440674,
+        "new_reapply_p95_ms": 1.3689994812011719,
+        "old_full_source_slot_visits_mean": 154997,
+        "new_live_candidate_visits_mean": 2620,
+        "new_raw_source_slots_read_by_reapply_mean": 2116,
+        "observed_reapply_mean_ratio_old_over_new": 18.329604497161153,
+        "old_ray_mean_ms": 20.98520982422327,
+        "new_ray_mean_ms": 0.5480920275052389,
+        "old_ray_p95_ms": 24.43849667906761,
+        "new_ray_p95_ms": 0.6358027458190918,
+        "observed_ray_mean_ratio_old_over_new": 38.287748719393086
+      }
+    ]
+  },
+  "native_automation": {
+    "total_tests": 36,
+    "passed_without_warnings": 34,
+    "passed_with_known_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "duration_seconds": 2.0683839321136475,
+    "known_warning_scopes": [
+      "Existing world-context cleanup warning",
+      "Intentional rejection of historical applied-paint records"
+    ],
+    "vegetation_tests": [
+      {
+        "fullTestPath": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "duration": 0.00825440138578415,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "duration": 0.008354801684617996,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.LedgerRestoresOriginalTransformWithSnapshot",
+        "state": "Success",
+        "duration": 0.012884899973869324,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.SparseVisualSnapshotInvalidation",
+        "state": "Success",
+        "duration": 0.015366598963737488,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "duration": 0.00787370279431343,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.UnversionedLegacyFallback",
+        "state": "Success",
+        "duration": 0.0074838995933532715,
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "native_collectable_rotation_observation": {
+      "fixture_original_yaw_degrees": 34,
+      "native_restored_yaw_degrees": 0,
+      "cache_matches_fresh_native_buffer_at_tolerance": 1e-06,
+      "meaning": "SW4.1 native collectable restoration keeps former scale, not the complete original rotation. This is an observed native API limit, not repaired by the cache."
+    },
+    "citylab_ledger_restore": {
+      "passed": true,
+      "scope": "In-memory RestoreRecords({tree}) hides a real fixture slot, then RestoreRecords({}) restores complete original location/rotation/scale from the saved logical record; independent nonuniformly scaled control and held immutable snapshot preserved.",
+      "normal_serialized_slot_restart_test": false
+    }
+  },
+  "final_restoration": {
+    "all_101_selected_visual_resources_restored_cpu": true,
+    "call_ms_excluded": 71.49479910731316,
+    "settle_seconds_excluded": 3.053872499614954,
+    "scope": "Three consecutive independent observations require all 101 selected visual resources and the preserved control transform. Final collision of every restored resource and GPU pixels are not a separate success gate."
+  },
+  "observations": [
+    "Every positive-record steady Reapply sample reused one visual snapshot, rebuilt zero visual snapshots and freshly read only the 2116-slot collision buffer.",
+    "Live candidate visits were 2818, 2800 and 2620 for 1, 10 and 100 records; these counts combine visual and collision candidates.",
+    "All eight windows preserved cleared visual/collision CPU invariants and the independent control transform. All 156 native ray calls hit a live tree.",
+    "A ray maximum of about 5.151 ms occurred in the zero-record ray window. Cold-build cost was not separately instrumented; mean/p95 values do not promise a maximum latency.",
+    "No new render refresh was requested in the steady windows; publishing/clearing cost belongs to excluded installation/settle and separate native tests."
+  ],
+  "initial_sandbox_attempt": {
+    "valid_measurement": false,
+    "result": "Immediate exit code zero without native log/report; contributes no timing samples.",
+    "recovery": "Reran the approved isolated benchmark as a host process. Host inventory confirmed one game process and no lingering sandbox game."
+  },
+  "limits": [
+    "One machine, fixed camera, 200 m visitor, only up to 100 logical cleared resources, eight seconds per window and one ascending pass; no confidence intervals.",
+    "A cache miss still scans the full visual buffer under its data lock. Regeneration/streaming and mass edits can cause new rebuilds.",
+    "Cache reads and ordinary world/component/ledger edits have a game-thread contract. Atomic revisions do not authorize arbitrary concurrent native writes.",
+    "Direct overwrites of public plugin buffers outside covered virtual methods must explicitly invalidate the project snapshot; same-address/same-count writes cannot be inferred.",
+    "Native proximity collision remains a fresh-read periodic fallback. Temporary invisible tree collision is possible; 0.25 s is an interval, not a maximum guarantee.",
+    "Native collectable RestoreInstance rotation loss remains a ShaderWorld-4.1 limit; our logical ledger complete-transform restoration is a separate tested contract.",
+    "No new normal C-input/GPU pixel, normal-save hash, serialized ledger restart, driving/streaming or large-world test is claimed by this evidence."
+  ]
+}

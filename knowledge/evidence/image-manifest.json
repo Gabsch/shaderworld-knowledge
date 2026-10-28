@@ -295,6 +295,38 @@
       "modified": false,
       "bytes": 26589,
       "sha256": "084c376e78b88995c042b6e3d55c1a80077d2dd5a2edb8f708c0b100f135ccd9"
+    },
+    {
+      "file": "assets/images/underground-surface.png",
+      "origin": "Unmodified screenshot from isolated cooked hybrid underground create process. Agent visually inspected: vegetated surface with beach/ocean; absence of surface deformation tested separately by nine probes.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2633906,
+      "sha256": "604409ce70cd373bbadc6a063dfa13929634ccb26ac53b1d2c31618c54a71391"
+    },
+    {
+      "file": "assets/images/underground-interior.png",
+      "origin": "Unmodified screenshot from isolated cooked hybrid underground create process. Agent visually inspected: lit enclosed checkerboard chamber with continuous visible floor, walls and ceiling. Separate collision test, no portal or water-simulation claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1510320,
+      "sha256": "695eee0e4279ee1886389dac663c2a5fd93f5ebbcc3e65b64576bfc9044cfdce"
+    },
+    {
+      "file": "assets/images/planner-preview.png",
+      "origin": "Normal PlannerLab PIE: fixed green N2/0.75m preview, 48m3/86.4t, forest present and no committed job. Native Slate widget screenshot visually inspected. No physical input acceptance.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2954548,
+      "sha256": "2c54f9c0a85b49b7dca0e8df8cfb2c0c835ecd11e9fea926a3804b70502d7fae"
+    },
+    {
+      "file": "assets/images/planner-pair-paused.png",
+      "origin": "Normal PlannerLab PIE after controller-API confirmation/save and three exact loads: source and fill still unworked, zero material transfers, forest present and work/transport buttons available. Native Slate widget screenshot visually inspected; no physical input acceptance.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2956319,
+      "sha256": "7d248920de5a2d508c596f9644bd55db6a5770aa2d9153d9e014cd1c8604f822"
     }
   ]
 }

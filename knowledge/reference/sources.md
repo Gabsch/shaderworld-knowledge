@@ -32,6 +32,14 @@ sources:
 
 # Quellen und Bildherkunft
 
+## Aktuelle eigene Planer-, Rodungs- und Untergrundnachweise
+
+- [Baustellenplaner](../evidence/construction-planner-test.json): 36 native Tests, je vier neue uncooked/cooked Neustarts, normale Controller-Speicherprobe; Eingabe- und Karten-Cookgrenzen getrennt.
+- [Rodungscache](../evidence/clearing-cache-test.json): Quellen-/Snapshotvertrag, nativer Rotationsverlust versus eigener Ledgerrestore und acht isolierte cooked CPU-Messfenster mit historischem Vergleich.
+- [Untergrund-Hybrid](../evidence/underground-hybrid-test.json): eigene Huelle, unveraenderte Oberflaeche, Kollision, Profil-Neustart und getrennte Sichtbelege. Keine Behauptung frei grabbarer 3D-ShaderWorld-Geologie.
+- Die neuen Bilder zeigen eigene Laboraufnahmen. Herkunft, Sichtpruefung und unveraenderte Dateihashes stehen im [Bildverzeichnis](../evidence/image-manifest.json). Projekt-/Pluginquellen, lizenzierte Kartenassets und Rohspielstaende sind nicht im Bundle enthalten.
+
+
 ## Offizielle Einstiege
 
 | Quelle | Wofür sie hier verwendet wird |

@@ -51,6 +51,12 @@ sources:
 ---
 # Nächste City-Builder-Bausteine
 
+## Aktueller Slice und verbindlicher Folgeschritt, 29. Oktober 2026
+
+Der [Baustellenplaner](../guides/construction-planner.md) setzt Grube und Aufschuettung mit Vorschau und Speicherung; je vier uncooked/cooked Prozesse pruefen ungearbeitete Plaene und laufende beladene Transporte. Die native Suite besteht aktuell aus 36 erfolgreichen Tests. Rodungscache und der getrennte [Untergrundversuch](../guides/underground-hybrid-probe.md) werden mit eigenen Nachweisen dokumentiert.
+
+**Danach alle Scaping-Werkzeuge anbinden:** Eine Gelaendeaenderung erzeugt zuerst einen gespeicherten Sollplan; Maschinen bearbeiten ihn schrittweise. Anheben, Absenken und Ebnen verwenden Materialkonten und Transport. Materialauftrag benoetigt eine passende fachliche Ressourcen-/Arbeitsdefinition. Vorschau, Bestaetigung, Pause/Stornierung ungearbeiteter Auftraege, Ist-Fortschritt und Neustart bleiben getrennt. Bestehende Foundations-F6-Sofortwerkzeuge werden erst in diesem Folgeslice ersetzt oder als ausdrueckliche Debugwerkzeuge abgegrenzt. Weitere Baustellenpaare, Hangmengen, freie Fahrzeugrouten und Wasserhaltung bleiben eigene Arbeiten.
+
 Foundations besitzt Planwerkzeuge, fünf Biomprofile und Einzelrodungszustände. **Die Black-/Zero-Flow-Grundlage bestand je 29/29 und 12/12 Checks in zwei frischen uncooked und zwei frischen cooked Prozessen.** Die gesonderte Baumkorrektur ergänzte zwölf native Tests, erneute cooked Datenprozesse und getrennte normale PIE-Backendbilder; der Nutzer bestätigte anschließend die ausprobierte korrigierte Rodung; Vorschau-/Fokusdetails bleiben separat offen.[^tree-clearing] Im normalen PIE blieb Snow nach T/F6/K/L sichtbar; das geschützte Grundstück blieb Sand und ohne nachgewachsenen Bewuchs im Bild. Frühere Spline-NoGrowth- und White-Datamap-Fehler sind getrennt dokumentiert. Diese Ergebnisse sind keine Cook-Abnahme anderer Karten und kein Großwelt- oder Leistungsnachweis.[^foundations]
 
 ## Vorhandene Grundlagen und aktueller Testbedarf

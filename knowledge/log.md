@@ -1,5 +1,14 @@
 # Änderungen an der Wissensbasis
 
+## 2026-10-29
+
+Platzierbarer Baustellenplaner, Rodungscache und Untergrund-Hybrid.
+
+Planer mit fluechtiger Formvorschau, Mengen-/Konfliktanzeige, pausierter Bestaetigung, Stornierung ungearbeiteter Auftraege und eigenem Slot dokumentiert. Je vier frische uncooked/cooked Starts prueften ungearbeitete Einzelgrube/Paar und beladene Teilfahrt; 86,4 t Einbau, 0 g Bilanzfehler. Normales PIE mit API-Bestaetigung und drei exakten Loads; nativer Click/Key-Delivery nicht als physische Abnahme gewertet. Alte Construction-Daten vollstaendig wiederhergestellt, 16 andere Slots unveraendert. Neue PlannerLab-Karte gespeichert; eigener Karten-Cook bleibt offen.
+
+Parallele Nachweise: kompakter visueller Rodungscache mit neuem isoliertem cooked Benchmark (Nachlauf0,82–1,25ms, Ray0,32–0,55ms; keine FPS-Zusage). Native Pluginrotation und eigener vollstaendiger Ledgerrestore getrennt; final36/36 native Tests. Hybridkammer unter intaktem Terrain mit Kollision, AirPocket und cooked Profilneustart; kein frei grabbares 3D-Erdreich. Drei neue Anleitungen, drei bereinigte Pruefberichte und visuell gepruefte Bilder hinzugefuegt. Folgeslice verbindlich festgehalten: alle Scaping-Werkzeuge erzeugen Maschinenauftraege, breite Integration noch offen.
+
+
 ## 2026-10-28
 
 - Unerwartete Projektkonvertierung auf abweichende lokale Enginekennungen zurückgeführt: Projekt `5.8`, dieselbe UE-5.8.4-Installation unter automatisch erzeugter GUID, kein entsprechender Engineeintrag im Launcherbestand. Vorhandenen Registryeintrag nach Sicherung auf `5.8` korrigiert; Enginepfad und Projektdatei unverändert, SHA-256 der Projektdatei gleich. Frischer Windows-Projektbrowser erkannte Engine `5.8`; nach ergänztem Suchordner zeigte die native Projektkachel **Current**. Unveränderte Widgetaufnahme samt Herkunft aufgenommen; kein Open ausgelöst und keine Konvertierung durchgeführt. Nach Beendigung alter Instanzen Suchordner dauerhaft übernommen und nach neuem Editorstart erneut vorhanden. Separate normale Windows-Dateiöffnung über UnrealVersionSelector bestand ohne Konvertierung; vollständige Baustellenrecords und Kamera wiederhergestellt, 16 andere Saves bytegleich, Arbeit/Transport zurückgestellt. Früher Cache-Überschreibungsfall dokumentiert. [Bereinigter Neustartnachweis](evidence/engine-registration-test.json). [Fehlerhilfe](guides/troubleshooting.md#projekt-fehlt-oder-verlangt-unerwartet-eine-konvertierung).

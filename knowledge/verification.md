@@ -15,6 +15,15 @@ generated:
   by: codex/gpt-6
   at: "2026-10-28T21:08:00Z"
 sources:
+- id: planner-current
+  resource: evidence/construction-planner-test.json
+  title: 36 native Tests und je vier gerenderte Planer-Neustarts uncooked/cooked
+- id: clearing-cache-current
+  resource: evidence/clearing-cache-test.json
+  title: Kompakte Live-Snapshots und acht neue isolierte cooked CPU-Messfenster
+- id: underground-current
+  resource: evidence/underground-hybrid-test.json
+  title: Getrennte unterirdische Huelle mit zwei nativen und zwei cooked Prozessnachweisen
 - id: fill-cycle
   resource: evidence/fill-cycle-test.json
   title: 29 native Tests und geschlossener Kreislauf in uncooked und cooked Neustarts
@@ -82,6 +91,16 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## Neuer Stand: Baustellenplaner und parallele Grundlagen, 29. Oktober 2026
+
+- **Native Regression:** 36/36 erfolgreich, 34 ohne und zwei mit bekannten Warnungen. Neue Planermengen-/Reichweitentests, Cacheinvalidierung, echter nativer Collectable-Restore, vollstaendiger eigener Ledgerrestore und Hybridprofilvalidierung sind enthalten.
+- **Planer:** je vier frische gerenderte uncooked/cooked Prozesse. Ungearbeitete Einzelgrube und Paar, dann beladener Lager-Lkw mit Teilaufschuettung exakt gespeichert und fortgesetzt. Abschluss **86,4 t Einbau / 0 g Bilanzfehler**, drei zusaetzliche Loads, lokale volle Probensets mit 5-cm-Gate. Maximaler passender Messfehler rund 3,002 cm. Normales PlannerLab ueber Controller-APIs bestaetigt/gespeichert/dreimal geladen; 16 andere Slots unveraendert. Native Slate-Vorschau visuell geprueft; Klick-/Tastensimulation ohne nachgewiesene Bestaetigung, deshalb **physische Eingabeabnahme offen**. Neue Karte im Editor gespeichert; kein eigener neuer Karten-Cook behauptet. [Planerbericht](evidence/construction-planner-test.json), [Anleitung](guides/construction-planner.md).
+- **Rodungscache:** eigener visueller Cache implementiert, kein Pluginpatch. Neues isoliertes cooked Messfensterpaket mit 0/1/10/100 Records: positiver Nachlaufmittelwert 0,816–1,251ms statt historisch 19,85–22,06 ms, Ray 0,315–0,548 ms statt 20,43–21,02 ms. Pro positivem Nachlauf 1 visueller Cachehit / 0 Rebuilds / 2.116 rohe Kollisionsslots. Kontrollen und vollstaendige CPU-Wiederherstellung bestanden; keine FPS-/GPU-/Grossweltgarantie. Native Plugin-Restore-Rotation geht verloren; der eigene Ledgerrestore erhaelt den Originaltransform. [Cachebericht](evidence/clearing-cache-test.json), [Anleitung](guides/clearing-cache-and-performance.md).
+- **Untergrund-Hybrid:** zwei saubere native Tests und zwei neue cooked Prozesse mit 13/13 + 14/14 Checks. Neun Oberflaechenproben bleiben unveraendert, sechs Huellekollisionen und 13-m-Kapselweg geprueft, Profil identisch wiederhergestellt. Create-Oberflaeche/Innenraum visuell geprueft. Keine Portale, frei ausgrabbare Voxel oder hydrologische Simulation ableiten. [Hybridbericht](evidence/underground-hybrid-test.json), [Anleitung](guides/underground-hybrid-probe.md).
+
+Die folgenden Abschnitte halten die aelteren Abnahmen und ihre jeweiligen Grenzen fest. **Naechster beauftragter Entwurfsschritt:** alle Scaping-Eingaben in gespeicherte Maschinenplaene ueberfuehren; diese breite Integration ist noch nicht implementiert.
+
 
 Stand: **28. Oktober 2026**, Unreal **5.8.4**, ShaderWorld **4.1**. Die Statusangaben beschreiben den jeweiligen Versuch. Eine schöne Ansicht bestätigt weder dauerhafte Speicherung noch Physikkollision oder Leistung einer großen Welt.
 
@@ -246,9 +265,9 @@ Ein eigener uncooked Spielprozess bestand **11/11 Checks in 40,9 s**: Ein Bürge
 
 Der Nachweis hat eine ausdrückliche Grenze: Der Harness ruft den Bürger kontrolliert selbst auf. Während das echte Managergate aussteht, darf sein Fortschritt nicht wachsen; nach dessen Freigabe hält der Harness weitere **zehn Ticks** bewusst an, bis seine unabhängigen erwarteten Höhenproben stabil sind. Das ist **keine automatische Produktions-Fertigmeldung** für beliebige ShaderWorld-Kollision und keine globale NavMesh-Abnahme. Gerendertes Warten vor der breiten Grube und Fortsetzen sind belegt; schmale-Gruben-Umwege besitzen kontrollierte native Tests, keinen zusätzlichen gerenderten Fall aus diesem Lauf.[^navigation-proof]
 
-## Rodungsbenchmark: tatsächliche CPU-Aufrufzeiten, keine FPS-Zusage
+## Historischer Rodungsbenchmark vor dem Cache: CPU-Aufrufzeiten, keine FPS-Zusage
 
-Der [bereinigte Leistungsbericht](evidence/clearing-performance-test.json) bestätigt einen isolierten gerenderten **cooked Windows-Development-Prozess** mit fester Kamera und 200-m-Visitor. Der gestartete native EXE-Hash wurde geprüft; andere Projektbuilds und Rendergames waren vorher geschlossen. Nach **15,4 s** echter Bereitschaft folgten **acht Fenster à rund 8 s** für **0/1/10/100 reale Records**, jeweils Reapply allein und Reapply plus native Rayabfrage mit Zielrate 5 Hz. Insgesamt wurden **255 Reapply- und 153 Rayaufrufe** gemessen; alle Rayaufrufe fanden einen lebenden Baum. Die Prüfung ist bestanden, die nächste Optimierung noch nicht umgesetzt.[^clearing-benchmark]
+Der [bereinigte Leistungsbericht](evidence/clearing-performance-test.json) bestätigt einen isolierten gerenderten **cooked Windows-Development-Prozess** mit fester Kamera und 200-m-Visitor. Der gestartete native EXE-Hash wurde geprüft; andere Projektbuilds und Rendergames waren vorher geschlossen. Nach **15,4 s** echter Bereitschaft folgten **acht Fenster à rund 8 s** für **0/1/10/100 reale Records**, jeweils Reapply allein und Reapply plus native Rayabfrage mit Zielrate 5 Hz. Insgesamt wurden **255 Reapply- und 153 Rayaufrufe** gemessen; alle Rayaufrufe fanden einen lebenden Baum. Die damalige Pruefung war bestanden; der oben beschriebene kompakte Cache war zu diesem Messzeitpunkt noch nicht umgesetzt.[^clearing-benchmark]
 
 | Records | Rayabfrage | Reapply ms, Mittel / p95 | Ray ms, Mittel / p95 | Besuchte Reapply-Slots je Aufruf |
 | --- | --- | --- | --- | --- |

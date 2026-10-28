@@ -51,6 +51,12 @@ sources:
 ---
 # Bauarbeit, Gelände und Material als gemeinsames System
 
+## Aktueller Stand am 29. Oktober 2026
+
+Der [platzierbare Baustellenplaner](../guides/construction-planner.md) erprobt jetzt diese Trennung zwischen Sollplan und Ist-Arbeit: Vorschau bleibt fluechtig, Bestaetigung speichert pausierte Auftraege, Maschinen/Transport bewegen anschliessend echte Konten und Hoehen. Ungearbeitete Einzelgrube, Paar und beladene Teilfahrt wurden in je vier frischen uncooked/cooked Prozessen wiederhergestellt. Der Folgeslice verbindet alle Scaping-Eingaben mit solchen Maschinenauftraegen; diese breite Werkzeugumstellung ist noch nicht implementiert.
+
+Der [Untergrund-Hybridversuch](../guides/underground-hybrid-probe.md) belegt eine getrennt rekonstruierte Huelle unter intakter Hoehenfeldoberflaeche. Daraus keine frei ausgrabbaren ShaderWorld-Voxel oder bereits angeschlossenen Portale ableiten. Die folgenden Architekturabschnitte enthalten die historische Herleitung und weiterhin offene Produktionsfragen.
+
 **Unser Ziel ist eine Stadt, deren Landschaft durch Bauarbeit entsteht.** Der Spieler plant eine Straße oder Baugrube. Maschinen erreichen den Ort, arbeiten dort und bewegen Material. Die Welt zeigt den erreichten Bauzustand, auch wenn die Baustelle unterbrochen und das Spiel neu gestartet wird.
 
 Diese Seite leitet aus dem bereitgestellten Nutzerdesign eine technische Richtung ab. **„Gesetzte Regel“** bezeichnet eine Nutzeranforderung, **„Vorschlag“** unsere noch zu erprobende Umsetzung. Die Versionsangaben nennen die technische Prüfbasis; sie versprechen keine fertige Baustellensimulation im Plugin. Der erste abgegrenzte Maschinen-/Materialkreislauf im [ConstructionLab](../guides/construction-lab.md) ist implementiert und bis zum vollständigen Abschluss nach cooked Prozessneustart geprüft. Weitergehende Architekturthemen bleiben Vorschläge; die normale vollständige Bedienrunde ist davon getrennt.[^construction-proof] Die [Foundations-Anleitung](../guides/foundations-lab.md) beschreibt seine vorhandenen Vorarbeiten und die aktuellen abgegrenzten Nachweise nach zwei unterschiedlichen Paintfehlern.[^user-design][^foundations]

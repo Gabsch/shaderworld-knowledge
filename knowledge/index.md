@@ -14,6 +14,10 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Baustellen selbst planen](guides/construction-planner.md) – Grube/Aufschuettung mit Formvorschau, Mengen, ausdruecklichem Arbeitsstart und je vier gerenderten Neustartprozessen uncooked/cooked.
+- [Rodungscache und Messgrenzen](guides/clearing-cache-and-performance.md) – weniger visuelle Instanzscans, stabile Baumkennungen und getrennte native/CityLab-Wiederherstellung.
+- [Unterirdische Hybridkammer](guides/underground-hybrid-probe.md) – eigener Hohlraum unter unveraenderter Oberflaeche; getrennte Kollisions-/Neustartabnahme, kein freies 3D-Graben.
+
 - [CityBasics: Insel, Wald, Berg und Tunnel](guides/city-basics-lab.md) – den farbigen Laboraufbau und den bodengebundenen Testbuggy verstehen.
 - [Wind und Schaum einstellen](guides/ocean-waves-and-foam.md) – den Ozean von 10 auf 18 m/s Wind umstellen und Schaum sichtbar machen.
 - [Bauplätze und Straßen verändern](guides/building-pads-and-roads.md) – die Lernkarte bedienen und Gelände, Material und Straßenmesh unterscheiden.
@@ -34,7 +38,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.
-- [Prüfstand und offene Tests](verification.md) – aktuelle 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
+- [Prüfstand und offene Tests](verification.md) – aktuelle 36 native Tests sowie Planer/Cache/Hybridnachweise; historische 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
 
 ## Wissensbasis pflegen
 
