@@ -144,6 +144,30 @@
       "modified": false,
       "bytes": 1507524,
       "sha256": "04db8a1e8e1e560ae242b6fe65b8c75773c993c23e832e55f47a8b759b0e8468"
+    },
+    {
+      "file": "assets/images/cityloop-midroute.png",
+      "origin": "Native FScreenshotRequest from own CityLoop rendered uncooked game; create phase; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2377436,
+      "sha256": "9913df408ca3c0a054ee8b5936ba609f2148d258663104e28363ecad5275359c"
+    },
+    {
+      "file": "assets/images/cityloop-restarted-arrival.png",
+      "origin": "Native FScreenshotRequest from own CityLoop rendered uncooked game; arrived phase; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2386747,
+      "sha256": "477da29ba6a572578abac4bd0c3b4e379e6015ce9e4a2f7c3b1f322f14588f63"
+    },
+    {
+      "file": "assets/images/cityloop-normal-autoload-house.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityLoop project, normal PIE after native R/Enter/P/L, automatic saving and normal stop/play auto-load; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1412717,
+      "sha256": "b63d33f5de943ca7cb6b3cdb4ee8fb72819f6bd68121bbed6d97de173de19199"
     }
   ]
 }

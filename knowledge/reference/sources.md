@@ -93,6 +93,16 @@ Die [erste PIE-Aufnahme](../assets/images/runtime-road-first-pie.png) zeigt eine
 
 Der Bericht enthält außerdem die zusätzliche native Slate-Bedienprobe für R/Enter, Entwurfskorrektur, Q/E, K/L und normales PIE-Autoload sowie die frische Format-2-Regression der alten Bauplatzkarte. Kamerabewegung per ActorTools ist von ungeprüften WASD-/Maus-Eingaben getrennt; die PIE-Bedienprobe ist kein eigener Kaltstartprozess.
 
+## Zusammenhängende CityLoop-Spielschleife
+
+Der [CityLoop-Bericht](../evidence/cityloop-report.json) ist ein bereinigter Export dreier getrennter gerenderter Spielprozesse mit Format 3. Er trennt den gespeicherten Wegfortschritt, das Weiterlaufen nach Neustart und die erhaltene Ankunft nach einem weiteren Neustart. Terrainhöhe, sichtbare HISM-Instanzursprünge und Bodenkontakt der Figur sind gemessen; allgemeine NavMesh-Navigation und Cook sind offen. Persönliche Dateipfade, Slot-/Laufkennungen, Objekt-GUIDs und Prozessnummern fehlen im öffentlichen Export.
+
+Die [Aufnahme unterwegs](../assets/images/cityloop-midroute.png) und [Ankunft nach erneutem Neustart](../assets/images/cityloop-restarted-arrival.png) sind unveränderte native **FScreenshotRequest**-Frames vom 28. Oktober 2026. Beide wurden visuell inspiziert. Der erste Frame zeigt die für den Speichervorgang pausierte Figur; die Vorbereitungsmeldung im HUD gehört zum Testmodus. Haus, freier Bauplatz, Zugang und Straße sind sichtbar. Herkunft, Bytes und Hashes stehen im [Bildmanifest](../evidence/image-manifest.json).
+
+Der [gesonderte Regressionsbericht](../evidence/cityloop-regression-report.json) hält die erneuten RoadLab- und älteren Bauplatztests mit Speicherformat 3 fest. Insgesamt vier frische gerenderte Spielprozesse bestanden. Die vorherigen Format-2-Belege bleiben als frühere Abnahmen erhalten.
+
+Die zusätzliche [normale CityLoop-PIE-Aufnahme](../assets/images/cityloop-normal-autoload-house.png) zeigt das zweite Testhaus mit blauem Bürger nach nativem R/Enter/P/L, automatischem Speichern ohne K und normalem Stop/Play-Autoload. Zwei Grundstücks-IDs und zwei angekommene Bürger wurden dabei zurückgelesen. Dieses inspizierte CaptureEditorImage ist unverändert; sichtbare Editor-Diagnosehinweise wurden nicht retuschiert und gelten nicht als gelöst.
+
 ## OKF
 
 Der [Google-Artikel](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/?hl=en) erläutert das Was und Warum von OKF anhand von v0.1. Für das Dateiformat dieser Wissensbasis gilt die [kanonische Spezifikation v0.2](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md). Die Formatversion ist im Wurzelindex festgehalten.

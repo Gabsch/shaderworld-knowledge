@@ -1,0 +1,124 @@
+{
+  "report_version": 1,
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_limits",
+  "scope": "Existing RoadLab and pad/terrain-road labs re-run after adding lots/citizens and save format 3; fresh rendered uncooked game processes, no packaged build.",
+  "road_lab": {
+    "success": true,
+    "two_distinct_processes": true,
+    "cold_source_matches": true,
+    "phases": [
+      {
+        "phase": "create",
+        "format": 3,
+        "checks": {
+          "original_ground_300_verified": true,
+          "vegetation_before_roads_core_and_reference_positive": true,
+          "runtime_created": true,
+          "records_and_surface_settings_verified": true,
+          "terrain_and_surface_physics_verified": true,
+          "vegetation_after_roads_core_empty_reference_positive": true,
+          "save_round_trip_records_ids_styles_smooth": true,
+          "repeated_load_no_actor_mesh_duplicates": true,
+          "missing_preserves_city": true,
+          "wrong_version_preserves_city": true,
+          "invalid_surface_style_preserves_city": true,
+          "surface_build_failure_preserves_city": true,
+          "legacy_v1_migrates_to_terrain_only_linear_roads": true,
+          "clear_city_removes_meshes_and_terrain_deformation": true,
+          "vegetation_after_clear_core_regrows_reference_positive": true,
+          "final_reload_restores_records_meshes_collision": true,
+          "vegetation_final_reload_core_empty_reference_positive": true,
+          "screenshot_saved": true
+        },
+        "collision_probes": {
+          "baseline_probes": 13,
+          "road_probes": 23,
+          "cleared_probes": 13,
+          "final_probes": 23
+        },
+        "all_probes_passed": true,
+        "road_count": 2,
+        "surface_meshes": 16
+      },
+      {
+        "phase": "load",
+        "format": 3,
+        "checks": {
+          "original_ground_300_verified": true,
+          "vegetation_before_roads_core_and_reference_positive": true,
+          "missing_preserves_empty": true,
+          "cold_process_verified": true,
+          "records_and_surface_settings_verified": true,
+          "terrain_and_surface_physics_verified": true,
+          "vegetation_after_roads_core_empty_reference_positive": true,
+          "save_round_trip_records_ids_styles_smooth": true,
+          "repeated_load_no_actor_mesh_duplicates": true,
+          "missing_preserves_city": true,
+          "wrong_version_preserves_city": true,
+          "invalid_surface_style_preserves_city": true,
+          "surface_build_failure_preserves_city": true,
+          "legacy_v1_migrates_to_terrain_only_linear_roads": true,
+          "clear_city_removes_meshes_and_terrain_deformation": true,
+          "vegetation_after_clear_core_regrows_reference_positive": true,
+          "final_reload_restores_records_meshes_collision": true,
+          "vegetation_final_reload_core_empty_reference_positive": true,
+          "screenshot_saved": true
+        },
+        "collision_probes": {
+          "baseline_probes": 13,
+          "road_probes": 23,
+          "cleared_probes": 13,
+          "final_probes": 23
+        },
+        "all_probes_passed": true,
+        "road_count": 2,
+        "surface_meshes": 16
+      }
+    ]
+  },
+  "pad_lab": {
+    "success": true,
+    "two_distinct_processes": true,
+    "cold_source_matches": true,
+    "phases": [
+      {
+        "phase": "create",
+        "format": 3,
+        "checks": {
+          "initial_city_empty": true,
+          "baseline_collision_verified": true,
+          "runtime_edits_created": true,
+          "records_geometry_ids_sequences_verified": true,
+          "edited_and_unchanged_collision_verified": true,
+          "save_exists": true,
+          "missing_load_preserves_empty": false,
+          "missing_load_preserves_city": false,
+          "repeated_load_idempotent": false,
+          "wrong_version_preserves_city": false
+        },
+        "scope": "Two pads, two terrain-only roads; 26 original and 26 modified native terrain collision probes."
+      },
+      {
+        "phase": "load",
+        "format": 3,
+        "checks": {
+          "initial_city_empty": true,
+          "baseline_collision_verified": true,
+          "runtime_edits_created": false,
+          "records_geometry_ids_sequences_verified": true,
+          "edited_and_unchanged_collision_verified": true,
+          "save_exists": true,
+          "missing_load_preserves_empty": true,
+          "missing_load_preserves_city": true,
+          "repeated_load_idempotent": true,
+          "wrong_version_preserves_city": true
+        },
+        "scope": "Two pads, two terrain-only roads; 26 original and 26 modified native terrain collision probes."
+      }
+    ],
+    "checks_note": "The older verifier uses false for checks not applicable to that phase; overall success and cold-process comparison are separate. No failed phase is accepted."
+  }
+}

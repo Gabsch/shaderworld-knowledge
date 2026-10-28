@@ -24,6 +24,9 @@ evidence_scope:
     bei 3 und 100 m geprüft, Actor-Zuweisung nach Kartenneuladen und neuem PIE bestätigt
   not_tested: WASD, rechte Maustaste, Mausrad und F5/F9-Aliasse; Cook und Shipping
 sources:
+  - id: format-three-regression
+    resource: ../evidence/cityloop-regression-report.json
+    title: Erneute RoadLab- und Bauplatzprüfung mit Format 3
   - id: road-proof
     resource: ../evidence/runtime-roads-report.json
     title: Bereinigte Create-/Load-Nachweise mit Kollisions- und Pflanzenmessung
@@ -174,7 +177,9 @@ Die unabhängige Regression der älteren **ShaderWorldPersistenceLab**-Karte bes
 
 ## Spielstand und Fehlerfälle
 
-Das logische **Format 2** speichert Kontrollpunkte, Maße, Reihenfolge, **RCP_TwoLane** und **bSmoothSpline**. Meshsegmente entstehen neu; beliebige Assetpfade sind keine erlaubten Stile. Der Loader prüft Karten-/Generator-/Terrainidentität und Datensätze, bereitet Ersatzobjekte vor und übernimmt sie erst nach erfolgreicher Vorbereitung.[^roadlab-code]
+Die ursprüngliche RoadLab-Abnahme verwendete **Format 2**. Es speichert Kontrollpunkte, Maße, Reihenfolge, **RCP_TwoLane** und **bSmoothSpline**. Meshsegmente entstehen neu; beliebige Assetpfade sind keine erlaubten Stile. Der Loader prüft Karten-/Generator-/Terrainidentität und Datensätze, bereitet Ersatzobjekte vor und übernimmt sie erst nach erfolgreicher Vorbereitung.[^roadlab-code]
+
+Die aktuelle CityLoop-Erweiterung schreibt **Format 3** mit zusätzlichen Grundstücks-/Bürgerdaten und lädt die alten Formate 1/2 weiter. Der Straßenablauf und sein Slot bleiben getrennt. RoadLab bestand nach dieser Erweiterung erneut zwei frische Prozesse mit 144/144 Kollisionsproben und denselben Freiräum-/Nachwachsprüfungen; die alte Bauplatzkarte bestand ebenfalls zwei frische Prozesse. Den neuen verbundenen Ablauf beschreibt [CityLoop](city-builder-loop.md).[^format-three-regression]
 
 Wiederholtes Laden erzeugte keine Duplikate. Fehlender Slot, falsche Formatversion, ungültiger Stil und erzwungener Oberflächen-Baufehler ließen die bestehende Stadt erhalten. **Format 1** wurde mit einer **synthetischen Testdatei** als lineare Terraintrasse ohne Mesh eingelesen; eine archivierte Datei aus einer alten ausführbaren Spielversion wurde nicht getestet. Separate Generator-/Seed-Konflikte bleiben Codebefunde.[^road-proof]
 

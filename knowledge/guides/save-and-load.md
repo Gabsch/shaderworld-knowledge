@@ -111,7 +111,7 @@ Eine erfolgreiche Ladebestätigung bedeutet zunächst, dass die Daten übernomme
 | L meldet inkompatiblen Spielstand | Karte, Generator, Seeds oder Terrainkonfiguration mit der gespeicherten Basis vergleichen. Die aktuelle Stadt wird bei Ablehnung nicht ersetzt. |
 | Gelände sieht geladen aus, Bodenhit stimmt noch nicht | Weitere gerenderte Frames und Kollisionsaktualisierung abwarten. |
 
-Gebäude, entfernte Vegetation, Verkehrsnetz, Navigation, Tunnel und Multiplayerzustand gehören noch nicht zu diesem kleinen Spielstandmodell. Sie benötigen eigene gespeicherte Daten und eigene Abnahmen. Für die geometrischen Grenzen eines Tunnels siehe [Löcher im Gelände und Bergtunnel](holes-and-mountain-tunnels.md).
+Die hier beschriebene ältere Laborabnahme enthält keine Gebäude, Bewuchsfreistellung, Verkehrsnetz-Navigation, Tunnel oder Multiplayerzustände. Die inzwischen ergänzte [CityLoop-Spielschleife](city-builder-loop.md) besitzt eigene Format-3-Daten und Neustartnachweise für Grundstück, flächige Bewuchsfreistellung, Testhaus und Bürgerroute. Einzelne gefällte Bäume, allgemeine Navigation und Tunnelpersistenz bleiben offen. Für die geometrischen Grenzen eines Tunnels siehe [Löcher im Gelände und Bergtunnel](holes-and-mountain-tunnels.md).
 
 [^persistence-proof]: [Bereinigter Bericht des Neustarttests](../evidence/persistence-report.json), mit ausgewählten Prüfungen und Messwerten aus dem ursprünglichen Testprojekt.
 [^citylab-view]: [Illustration der CityLab-Geländeversuche](../assets/images/citylab-terrain.png); andere Karte als das Persistenzlabor.
