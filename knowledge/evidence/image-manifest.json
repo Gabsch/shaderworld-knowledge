@@ -287,6 +287,14 @@
       "modified": false,
       "bytes": 1302794,
       "sha256": "9ef0797d3a1f982cb8de0c89eb22650a46102cb9f31f9dbfa5b1c4cf823dc7a3"
+    },
+    {
+      "file": "assets/images/project-browser-current.png",
+      "origin": "Unmodified native SlateInspector widget capture of the project tile in a fresh Windows-backend Unreal 5.8.4 Project Browser after engine registration and search-path correction. Visually inspected: UnrealMcpTest and Current. Not an OS-window visibility check or an actual Open action.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 26589,
+      "sha256": "084c376e78b88995c042b6e3d55c1a80077d2dd5a2edb8f708c0b100f135ccd9"
     }
   ]
 }

@@ -10,7 +10,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 - [Terrain und Kollision einrichten](guides/setup-terrain.md) – eine flache Welt anzeigen und begehbaren Boden vorbereiten.
 - [Beispielwelten vergleichen](reference/example-maps.md) – Reference, Heightmap und OceanOnly finden und sinnvoll nutzen.
-- [Fehler gezielt eingrenzen](guides/troubleshooting.md) – leere Vorschau, fehlende Kollision, Lumen-Meldung und ausbleibender Schaum.
+- [Fehler gezielt eingrenzen](guides/troubleshooting.md) – Projektzuordnung und Konvertierungsdialog, leere Vorschau, fehlende Kollision, Lumen-Meldung und ausbleibender Schaum.
 
 ## Ausprobieren und bauen
 

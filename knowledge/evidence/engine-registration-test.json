@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "captured_date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_limits",
+  "scope": "Local Windows engine association and project discovery; separate normal project-file launch and ConstructionLab restoration. No project conversion.",
+  "diagnosis": {
+    "project_engine_association": "5.8",
+    "registered_installation_identifier_before": "automatically generated GUID",
+    "registered_root_was_correct": true,
+    "launcher_UE_5_8_engine_entry_present": false,
+    "missing_project_search_parent": true,
+    "recent_project_list_alone_was_sufficient": false
+  },
+  "repair": {
+    "backed_up_affected_registration_and_editor_settings": true,
+    "renamed_existing_registration_to": "5.8",
+    "engine_root_unchanged": true,
+    "project_file_sha256_unchanged": true,
+    "launcher_installation_metadata_changed": false,
+    "added_project_parent_search_path": true,
+    "existing_search_path_preserved": true,
+    "search_paths_present_after_editor_restart": 2
+  },
+  "native_browser_probe": {
+    "fresh_process": true,
+    "platform_backend": "Windows",
+    "engine_installation_identifier": "5.8",
+    "project_tile": "UnrealMcpTest",
+    "tile_status": "Current",
+    "open_action_invoked": false,
+    "image": "../assets/images/project-browser-current.png",
+    "image_scope": "Unmodified native Slate widget capture; visually inspected. Does not prove OS-window visibility."
+  },
+  "normal_file_open": {
+    "route": "Windows .uproject file association -> registered UnrealVersionSelector /editor",
+    "new_editor_engine_version": "5.8.4",
+    "startup_map": "/Game/Maps/ShaderWorldFoundations",
+    "then_loaded_map": "/Game/Maps/ShaderWorldConstructionLab",
+    "new_pie_running": true,
+    "conversion_performed": false
+  },
+  "restoration": {
+    "complete_saved_construction_records_export_text_and_hash_equal": true,
+    "camera_restored": true,
+    "previous_paused_value": false,
+    "previous_transport_enabled_value": true,
+    "previous_work_and_transport_values_restored_and_saved": true,
+    "unrelated_save_files_checked": 16,
+    "unrelated_save_file_sha256_unchanged": true,
+    "cycle_placed_mass_grams": 172800000,
+    "cycle_model_balance_error_grams": 0,
+    "completed_cycle_rolled_back": false
+  },
+  "recovery_notes": [
+    "An early QuitEditor request while PIE was active asserted. The backed-up old process was ended; the later normal file-association launch and saved-state restoration succeeded. No clean initial shutdown is claimed.",
+    "The old EditorSettings cache overwrote an external search-path edit. The final saved setting was applied after old instances ended and was verified again after the new launch."
+  ],
+  "limits": [
+    "No project-browser Open action was invoked; normal file-association opening was tested separately.",
+    "Native widget capture is not an OS-window visibility test.",
+    "Launcher engine installation metadata was not reconstructed; only the existing per-user registration and project search path were repaired.",
+    "No additional cooked-game, terrain-volume, GPU-performance or full UI-input verification was performed in this registration task."
+  ]
+}
