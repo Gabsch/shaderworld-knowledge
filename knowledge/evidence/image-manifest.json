@@ -247,6 +247,38 @@
       "modified": false,
       "bytes": 10237314,
       "sha256": "f0800e59a634124838ce7c5d158f413fca415f878d76bba811a928549cc82e68"
+    },
+    {
+      "file": "assets/images/construction-midwork.png",
+      "origin": "Native FScreenshotRequest capture from own rendered packaged ConstructionLab create game process, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2806134,
+      "sha256": "31298198b7b5f71830d1f35f9f4f701bb69f64ebf26019dce0e52592ef7abdfb"
+    },
+    {
+      "file": "assets/images/construction-complete.png",
+      "origin": "Native FScreenshotRequest capture from own rendered packaged ConstructionLab resume game process, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2804393,
+      "sha256": "0e23d1bf49681558d3ea68fb99ff36bcff52bbad99583c647df2d17604dadfd0"
+    },
+    {
+      "file": "assets/images/construction-ui-buffer.png",
+      "origin": "Normal PIE full 18-tonne buffer, transport off; native Slate screenshot visually inspected.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2642673,
+      "sha256": "98cc9f4f56b11ab78909ad6fa141f5e5af8dabf09ef23c62faede25b98608772"
+    },
+    {
+      "file": "assets/images/construction-ui-paused.png",
+      "origin": "Normal PIE after exact checkpoint restore,60 t removed,12 buffer/12 truck/36 stored; native Slate screenshot visually inspected.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 9224517,
+      "sha256": "758e0dc0188e7d735ba40466ccaeb7eec128df52b77b413e6035dbc37938cc66"
     }
   ]
 }

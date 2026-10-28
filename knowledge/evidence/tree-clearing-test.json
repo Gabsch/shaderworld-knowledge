@@ -197,7 +197,7 @@
     ]
   },
   "limits": [
-    "The real C key and yellow target-preview interaction still require a manual pass in the live viewport.",
+    "Subsequent user feedback confirms trying the corrected clearing; the native screenshot probe itself did not exercise C or yellow preview. Preview-specific details and focus/occlusion edge cases remain unverified.",
     "Tree mesh bounds approximate leaves and may contain empty crown space; no exact per-leaf silhouette picking.",
     "RenderRefreshRequests counts requests, not a GPU fence or guaranteed latency.",
     "The preview additionally scans tree pools at up to 5 Hz. Large-world or large-clearing performance is unmeasured; existing periodic rescan optimization remains planned.",
@@ -206,5 +206,16 @@
   "publication": {
     "only_sanitized_report_and_own_screenshots": true,
     "local_paths_save_slots_resource_ids_credentials_not_included": true
+  },
+  "user_confirmation": {
+    "date": "2026-10-28",
+    "source": "Direct user feedback in the active project conversation after the corrected clearing was provided.",
+    "quote": "Awesome. getested. 👍",
+    "scope": "The user confirms having tried the corrected clearing. This is subsequent human feedback, separate from the earlier native backend screenshot probe.",
+    "corrected_clearing_tried_and_confirmed": true,
+    "individual_C_key_sequence_independently_recorded": false,
+    "yellow_preview_explicitly_confirmed": false,
+    "all_focus_and_occlusion_edges_verified": false,
+    "limitations": "No detailed input trace, preview-specific statement, exhaustive focus/occlusion pass, performance measurement, or packaged pixel acceptance can be inferred from this short confirmation."
   }
 }

@@ -13,11 +13,26 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T17:05:22Z"
+  at: "2026-10-28T19:29:12Z"
 sources:
+- id: construction-lab
+  resource: guides/construction-lab.md
+  title: Eigenes Baugrubenlabor mit Bedienung und begrenztem cooked Neustartabschluss
+- id: construction-proof
+  resource: evidence/construction-lab-test.json
+  title: 22 finale native Tests, cooked Baugrubenabschluss und begrenzte normale PIE-Bedien-/Speicherproben
+- id: navigation-proof
+  resource: evidence/terrain-navigation-test.json
+  title: Elf bestandene gerenderte Navigationschecks mit zusätzlichen bewussten Harness-Warteticks
+- id: height-quantization
+  resource: "Separat lizenzierter ShaderWorld-4.1-Code: Shaders/Private/ShaderWorldUtilities.usf, GetShaderWorldHeight-Ausgabe um Zeile 760 mit int-Konvertierung; eigener CityLabConstruction.cpp/CityLabConstructionVerification.cpp-Source jetzt mit explizitem 5-cm-Höhengate und Kollisionsretry. Quellen gelesen; kompilierte cooked Abnahme im Baugrubenbericht bestanden, Code nicht im Bundle enthalten"
+  title: Ganzzahlige Höhenkodierung als Scopegrenze der neuen Baugruben-Höhenprüfung
+- id: clearing-benchmark
+  resource: evidence/clearing-performance-test.json
+  title: Acht erfolgreiche isolierte cooked CPU-Messfenster für Rodungsnachlauf und native Rayabfragen
 - id: tree-fix
   resource: evidence/tree-clearing-test.json
-  title: Neue Builds, zwölf native Tests, cooked Datenregression und separate normale PIE-Backendbilder; C-Bedienung offen
+  title: Neue Builds, zwölf native Tests, cooked Datenregression und separate normale PIE-Backendbilder und nachträgliche Nutzerbestätigung der korrigierten Rodung
 - id: build-controls
   resource: evidence/build-controls-test.json
   title: Neue Kamera- und Panelprüfungen mit normalem PIE und getrennten nativen Codeverträgen
@@ -29,7 +44,7 @@ sources:
   title: Foundations mit zwei gerenderten uncooked Spielprozessen, Asset-Readback und getrennten nativen Tests
 - id: construction-design
   resource: reference/construction-and-terrain-architecture.md
-  title: Noch nicht implementiertes Architekturkonzept für Baufortschritt und Materialbilanz
+  title: Weitergehendes Architekturkonzept; kleiner Baugrubenkreislauf mit eigenem cooked Nachweis
 - id: cityloop
   resource: evidence/cityloop-report.json
   title: Drei Spielprozesse für Grundstück, Haus und Bürgerzustand
@@ -97,6 +112,11 @@ Stand: **28. Oktober 2026**, Unreal **5.8.4**, ShaderWorld **4.1**. Die Statusan
 | Foundations-Biomprofile und Testhausdach | Fünf Profile und 19 eigene Assets nach gespeichertem Kartenneuladen zurückgelesen; [Dach-Nahaufnahme](assets/images/foundations-roof.png) in tatsächlichem PIE inspiziert | Assetwerte sind keine vollständige visuelle Abnahme aller Biome; das Dachbild ist ein einzelner Frame |
 | Begrenzte Bürgerumwege, Bauabfragen und Backendmigration | Acht erfolgreiche native Automationtests unter NullRHI, darunter Umweg-Wiederherstellung, falsche Endanker und sichere v1-Backendmigration; sechs ohne Warnung, zwei mit protokollierter Warnung | Lokale Hindernisse und analytischer Testboden; keine allgemeine NavMesh-Navigation; reale Hochkamera-Planbedienung separat geprüft |
 | Foundations: finale Material-Sichtprobe | Native T/F6/K/L-Eingaben in normalem PIE; Snow nach Ausführung und nach Laden sichtbar; übermalter Bauplatz behält Sand, sichtbare Freistellung und 500 cm Bodenhöhe; [drei Frames](reference/sources.md#foundations-neue-geländeplanung-und-dauerhafte-einzelrodung) | Ausgewählte qualitative Spielbilder im selben Editorprozess; kein Pixelgleichheitstest und keine separate verpackte Materialbild-Abnahme |
+| Aktuelle native Baustellen-/Navigationssuite | [Construction-Bericht](evidence/construction-lab-test.json): nach letztem Fix 22/22 Tests in 0,357 s, 20 ohne und zwei mit bekannten Warnungen, 0 fehlgeschlagen | NullRHI-Logik-/API-Tests; gerenderter Baugrubenabschluss separat geprüft |
+| ConstructionLab: vollständiger cooked Arbeits-/Speicherlauf | [Bericht](evidence/construction-lab-test.json): zwei frische cooked Prozesse, Create 14/14 in 24,7 s und Resume 15/15 in 113,8 s; exakter Hashrestore, drei Loads und Abschluss mit 172,8 t Lager/0 g Modellbilanzfehler | Physischer Maximalfehler 2,000778 cm im lokalen 5-cm-/Drei-Pass-Gate; kein unabhängiges Meshvolumen oder vollständiger korrigierter uncooked Pair; begrenzte normale PIE-Probe separat unten |
+| ConstructionLab: normale PIE-Bedienung und Autosave-Schutz | Automatischer pausierter Nullplan samt Save, Arbeit/Transport und eine Pause per nativer Slate-Aktion bestätigt; 18-t-Puffer über 57 weitere Takte stabil; 60-t-Zwischenstand nach Stop/Play gleich; fremdgebundener Stand abgewiesen und bytegleich erhalten | Finale Pause zusätzlich über Controller-API; F5-Injektion ohne bestätigten Callback, keine pauschale Tastatur-/Fokus-/menschliche Bedienabnahme oder automatischer Pixelvergleich[^construction-proof] |
+| Bürger vor neuer tatsächlicher Grube | [Navigationsbericht](evidence/terrain-navigation-test.json): 11/11 Checks in 40,9 s, 81 bestätigte native Groundhits, Wiederaufnahme und Ankunft nach Reparatur | Harness hält nach Managerbereitschaft zusätzlich zehn Ticks bis zur unabhängigen Höhenprüfung an; keine automatische Produktions-Fence/NavMesh-Abnahme |
+| Rodungsbenchmark: 0/1/10/100 Records | [CPU-Bericht](evidence/clearing-performance-test.json): acht isolierte cooked Messfenster, 255 Reapply-/153 Rayaufrufe, CPU-Restore aller 101 gewählten visuellen Ressourcen | Feste Kamera, maximal 100 Records, acht Sekunden je Fenster; 48er Cap ist kein FPS-/GPU-Leistungsnachweis, vollständige UI-Vorschau und finaler Kollisions-Restore separat offen |
 | Terrainlöcher | [Lochbericht](evidence/hole-report.json), Demoansicht, Komponenten und Implementierung gelesen | Eigene Bergportale und Tunnelkörper im CityBasics-Bericht geprüft; Verpackung offen |
 | DX12/SM6 | Nanite-Warnung im Basistest behoben | Lumen-Konfiguration in Demoansichten weiterhin offen |
 
@@ -162,7 +182,7 @@ Für eine spätere automatische Materialdatenprobe ist in ShaderWorld **4.1** ei
 - **Abfragefrische:** Stabile Treffer allein sind keine globale Revisions-Fertigmeldung nach beliebigen Brushes; bei bekanntem Höhenziel prüfen die Abnahmen zusätzlich die tatsächliche erwartete Höhe.
 - **Größere Anwendung:** viele dauerhaft gerodete Ressourcen, durchgehende Biom-Sichtprüfung, globale Wegfindung, Multiplayer sowie Maschinenarbeit und Materialbilanz benötigen eigene Versuche.
 
-### Einzelbaum-Korrektur: Backend sichtbar geprüft, C-Bedienung offen
+### Einzelbaum-Korrektur: Backendbild und nachträgliche Nutzerbestätigung
 
 Eine spätere Nutzermeldung zeigte eine Prüflücke: **C meldete eine Rodung, während der Baum im Spielbild stehen blieb.** Der alte Verifier las `SWPerInstanceSMData` beziehungsweise `PerInstanceSMData` und zählte nicht-null skalierte CPU-Transforms. Seine Felder `visible_visual_matches` und `single_tree_visual_and_collision_cleared_control_unchanged` beweisen daher keinen bereits aktualisierten GPU-Instanzpuffer. Auch löste der Test Rodung direkt an einer bekannten Stammposition aus; er prüfte keine Auswahl des gemeinten Baums durch den Mauszeiger.[^tree-fix]
 
@@ -172,11 +192,11 @@ Editor- und Gamebuild bestanden; **12/12 native Tests** liefen erfolgreich, zehn
 
 Eine getrennte normale PIE-Bildprobe verwendete **native Konsole und Backend-API**, keine tatsächliche C-Taste oder Mauspreview. Der exakt bestimmte erste Ray-Baum wurde orange am Stamm markiert, ein Kontrollnachbar blau. Im Aufblick war die Zielkrone vorher vorhanden und nach Rodung sowie erneutem Backendladen sichtbar entfernt; die Kontrollkrone blieb erhalten. [Vorher](assets/images/tree-clearing-before.png), [nach Backendrodung](assets/images/tree-clearing-after.png) und [nach Backendladen](assets/images/tree-clearing-loaded.png) sind unveränderte native PNGs. `InspectResource` liefert bei nicht gerodeten IDs nur Defaultwerte; die Kontrolle wurde separat über `FindNearestResource`, identische ID/Transformation und Bild geprüft.
 
-**RenderRefreshRequests = 1** in der ersten A/B-Probe zählt eine native `SWUpdateTree`-Anforderung, keinen fertigen GPU-Commit. Die sichtbare Wirkung folgt aus den Bildern. Die tatsächliche **C-/Gelbpreview-Bedienung**, reale Verdeckung/Leerklick/UI-Sperre und ein gezielter Bildtest älterer Zustände mit weniger Rodungen bleiben offen; der Harness konnte den nötigen Viewportfokus nicht etablieren. Der normale Nutzerstand mit 13 Rodungen wurde wiederhergestellt, der gespeicherte Spielstand blieb byteidentisch. Computer Use blieb aus. Die bestehende Produktionsgrenze des getrennten Kollisionsnachlaufs bleibt bestehen; zusätzliche 5-Hz-Treepool-Scans der Preview sind noch nicht leistungsgemessen.[^tree-fix]
+**RenderRefreshRequests = 1** in der ersten A/B-Probe zählt eine native `SWUpdateTree`-Anforderung, keinen fertigen GPU-Commit. Die sichtbare Wirkung folgt aus den Bildern. Der Nutzer hat die korrigierte Rodung anschließend ausprobiert und mit **„Awesome, getestet“** bestätigt. Diese Rückmeldung ist von der vorherigen nativen Backendbildprobe getrennt. Gelbe Vorschau, sämtliche Verdeckungs-/Leerklick-/UI-Fokusrandfälle und ein gezielter Bildtest älterer Zustände mit weniger Rodungen sind nicht einzeln bestätigt; der vorherige Harness hatte den nötigen Viewportfokus nicht etabliert. Der normale Nutzerstand mit 13 Rodungen wurde wiederhergestellt, der gespeicherte Spielstand blieb byteidentisch. Computer Use blieb aus. Die bestehende Produktionsgrenze des getrennten Kollisionsnachlaufs bleibt bestehen; die Kosten der nativen 5-Hz-Rayabfrage sind jetzt im getrennten CPU-Benchmark unten gemessen; vollständige Eingabe/Slate-/Vorschauzeichnung sind nicht Teil davon.[^tree-fix]
 
 ## Neue Baukamera und Werkzeugleiste
 
-Die [Bedienanleitung](guides/build-controls.md) erklärt die neue kompilierte Kamera und native Slate-Werkzeugleiste. Die **damaligen elf nativen CityLab-Tests** bestanden: neun ohne und zwei mit den bereits oben erklärten Warnungen; die neueste Zwölf-Test-Abnahme steht im Rodungsabschnitt. Dazu gehören jetzt Kameramathematik mit Boden-/Wertebereichsgrenzen, ein isolierter INI-Roundtrip ohne Änderung echter Benutzervorgaben und die Klickisolierung. Diese NullRHI-Tests sind kein gerenderter Mausnachweis.[^build-controls]
+Die [Bedienanleitung](guides/build-controls.md) erklärt die neue kompilierte Kamera und native Slate-Werkzeugleiste. Die **damaligen elf nativen CityLab-Tests** bestanden: neun ohne und zwei mit den bereits oben erklärten Warnungen; die damalige Zwölf-Test-Abnahme steht im Rodungsabschnitt; die jetzige Baustellen-/Navigationssuite mit 22 Tests folgt unten. Dazu gehören jetzt Kameramathematik mit Boden-/Wertebereichsgrenzen, ein isolierter INI-Roundtrip ohne Änderung echter Benutzervorgaben und die Klickisolierung. Diese NullRHI-Tests sind kein gerenderter Mausnachweis.[^build-controls]
 
 Normales gerendertes PIE mit tatsächlichen nativen Slate-Klicks und Tasten bestätigte beide Regler, die Weltkürzelsperre bei Reglerfokus und zweimaliges Bestätigen desselben **ungearbeiteten Plans** ohne neue angewandte Datensätze. Enter bei einem Entwurf mit zwei kontrolliert vorbereiteten Straßenpunkten baute keine Straße; einer der Punkte war eine gezielt ergänzte Propertyfixture. Escape entfernte den Entwurf, ließ die vorhandenen Straßen und die laufende Vorschau bestehen. Ein per Weltklick gewählter Hausstandort erzeugte nur eine gelbe Vorschau; Abbrechen ließ Stadt und Pläne unverändert. Nach Stop/Start von PIE blieben die Testplan-ID und beide persönlichen Kamerawerte erhalten. Die Prüfung läuft im selben Editorprozess; der native INI-Test und die getrennten Paketprozesse sind eigene Nachweise.[^build-controls]
 
@@ -186,13 +206,54 @@ Nach dem reinen Layoutfix wurden Editor und Game erneut gebaut und das Developme
 
 **Praktische Grenze:** Der native synthetische Harness trat wegen nicht bestätigter echter Fokus-/Vordergrundvoraussetzungen nicht in den RMB-Capturepfad ein. Das bestätigt weder erfolgreiche relative Maussteuerung noch einen Kamerafehler. Länger gehaltenes physisches WASD/Shift/RMB, echtes Alt-Tab und das persönliche Mausgefühl benötigen noch eine manuelle Spielprobe. Der Code enthält die entsprechenden Fokus-/Freigabepfade; Quellprüfung und Kameramathematik ersetzen diese Probe nicht.[^build-controls]
 
-## Baukonzept: Festgehalten, noch nicht implementiert
+## ConstructionLab: vollständiger cooked Kreislauf mit lokalen Grenzen
 
-Das [Architekturkonzept für Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) dokumentiert die bestätigte Nutzeranforderung und unsere Vorschläge. Es ist **kein neuer Laufzeitnachweis**. Der bestandene CityLoop ist ein Sofortbau-Test; er bestätigt weder Maschinenarbeit noch schrittweisen Aushub, Massenerhaltung, unterbrochene Baustellen oder 3D-Erdreich. Vorgeschlagen sind eine kleine Baugrube mit begrenzter Aushublogistik und Neustart sowie ein getrennter Untergrund-Machbarkeitsversuch. Die dortigen Abnahmekriterien sind offen.
+Die eigene Karte **`/Game/Maps/ShaderWorldConstructionLab`** verwendet den getrennten Labor-Slot **CityLabConstruction** und schreibt **SaveGame-Format 5**. Der Code unterstützt ältere Formate 1–4 weiter innerhalb der jeweiligen Feature- und Welt-/Generator-/Terrainprofilprüfungen; das ist keine universelle Migration. [Die Anleitung](guides/construction-lab.md) beschreibt vier **400-cm-Zellen**, schrittweisen Aushub, animierte Bagger-/Laster-Grundformen, **18 t Puffer**, **12 t Laster** und **500 t Lager**. Bei angenommenen 1800 kg/m³ gewachsenem Boden entspricht der normale 1,5-m-Plan analytisch **96 m³/172,8 t**. Materialkonten und Transfers verwenden ganze Gramm; Höhenfeld und Modellbilanz werden getrennt geprüft.[^construction-lab][^construction-proof]
+
+Die nach dem letzten Initialisierungsfix wiederholte native Suite bestand **22/22 Tests in 0,357113 s**, davon **20 ohne und zwei mit bekannten Warnungen**, **0 fehlgeschlagen**. Diese kontrollierten NullRHI-Tests prüfen Logik-/API-Verträge einschließlich Materialbilanz und Serialisierung. Zusätzlich bestand die tatsächlich verpackte Fassung in **zwei frischen cooked Prozessen**: **Create 14/14 Checks in 24,705998 s**, **Resume 15/15 in 113,845061 s**. Pausierte Planung blieb inert; der volle Puffer stoppte den Aushub, ein beladener Laster transportierte Material, und der echte Zwischenstand wurde gespeichert. Der neue Prozess stellte den vollständigen serialisierten Modellhash vor weiterer Simulation identisch wieder her; **drei wiederholte Loads** bewahrten Zustand und Backendanzahl. Anschließend wurden alle vier Zellen fertig ausgehoben und vollständig abtransportiert. Im Lager lagen exakt **172800000 g = 172,8 t**; **Restboden, Puffer und Laster enthielten jeweils 0 g**, der **Modellbilanzfehler betrug 0 g**. Das ausdrücklich beschleunigte Prüfprofil verwendet 6 t Aushub und 12 t Laden/Entladen je Modellschritt; es ist vom normalen Bedienprofil getrennt und keine realistische Maschinenleistung.[^construction-proof]
+
+Der physische Nachweis verwendet **5 cm Höhentoleranz**, **neun tatsächliche Bodenpunkte und drei stabile Durchläufe**, bei **100 cm Kollisionsauflösung und 129 Vertices je Patch**. Für kalten Restore und drei weitere Loads liegen **108 passende Groundhits** vor; für den Abschluss weitere **27**. Beim Modellziel **150 cm** lagen die tatsächlichen Endhöhen zwischen **147,999222 und 148,998444 cm**, der größte gemessene Fehler betrug **2,000778 cm**. Das 5-cm-Gate ist die akzeptierte lokale Toleranz, kein gemessener Maximalfehler und keine allgemeine Genauigkeitszusage. Im nativen Materialausgang wird Höhe je Pass in ganze Zentimeter konvertiert. Exakte Gramm im analytischen Modell sind deshalb **keine unabhängige Massenmessung des quantisierten Meshvolumens**. Die aktuelle Fassung fordert eine abweichende Kollisionsregion alle zwei Sekunden erneut an; die native Abnahme ist je Phase auf 300 Sekunden begrenzt.[^height-quantization][^construction-proof]
+
+**Historischer Fehlversuch:** Der frühere uncooked Erzeugenlauf bestand 14/14 Checks in 76,4 s und sein Zwischenstandrestore samt drei Loads war erfolgreich. Die Fortsetzung mit dem damaligen **2-cm-Gate** blieb jedoch bei Schritt 76 und 96 t Aushub auf ausstehender Kollision stehen und endete nach 180 s im Timeout. Der spätere cooked PASS mit 5-cm-Gate, weiteren Freiraum-/Retrykorrekturen und Diagnosen ersetzt diesen historischen Befund nicht; der gemeinsame Retest isoliert keine einzelne Ursache des alten Stillstands.[^construction-proof]
+
+**Getrennte normale PIE-Probe:** Ohne Verifierflag entstand nach bereitem Boden automatisch ein **pausierter Plan mit 0 g Aushub**, Transport aus; der automatische Save wurde bestätigt. Native Slate-Aktionen bestätigten **Arbeit starten**, **Transport einschalten** und **eine Pause**; die finale Pause wurde zusätzlich über die kompilierte Controller-API ausgeführt. Bei ausgeschaltetem Transport blieben **18 t Puffer und sämtliche Zellhöhen über 57 weitere Arbeitstakte identisch**. Später standen **60 t Aushub = 12 t Puffer + 12 t Lkw + 36 t Lager** in einem pausierten Zwischenstand. Stop/Play stellte alle serialisierten Baustellenfelder identisch wieder her, die lokale Kollision war wieder dreimal stabil passend. Das ist ein PIE-Weltneustart im Editor; der echte Prozessneustart ist der cooked Nachweis oben.[^construction-proof]
+
+**Abgewiesenen Save geschützt:** Ein absichtlich fremdgebundener Construction-Spielstand wurde abgewiesen. Nach **10 s Warmup und weiteren 4 s Wartezeit** blieb seine Datei bytegleich; der gültige gesicherte Stand wurde danach wiederhergestellt und sein vollständiger Auftrag identisch geladen. Der vorherige normale Foundations-Spielstand blieb ebenfalls bytegleich und wurde von der Probe nicht beschrieben. Das bestätigt die abgegrenzten Initialisierungs-/Autosave-Schutzfälle.[^construction-proof]
+
+Vier unveränderte native Aufnahmen sind im Bericht und [in der Anleitung](guides/construction-lab.md) verknüpft: cooked Zwischenstand/Abschluss sowie normaler voller Puffer/pausierter Restore. Sie wurden visuell geprüft; es gibt **keinen automatischen Pixelvergleich**. Die **F5-Injektion bestätigte keinen Callback**. Alle Tastatur-/Fokusvarianten, eine pauschale menschliche Bedienabnahme und eine vollständige korrigierte uncooked Zwei-Prozess-Runde werden deshalb nicht behauptet. Der weitergehende [Architekturentwurf](reference/construction-and-terrain-architecture.md) enthält zusätzliche Produktionsaufträge, Wiederverwendung/Einbau und Untergrundthemen. Der kleine feste Prüfaufbau beweist keine freie Fahrzeugphysik, Maschinenwegfindung oder allgemeine Logistikwirtschaft.
+
+## Gerenderte Navigation nach tatsächlicher Geländeänderung
+
+Ein eigener uncooked Spielprozess bestand **11/11 Checks in 40,9 s**: Ein Bürger lief auf einem realen freien Plateau, eine breite **3 m tiefe** Grube änderte die native ShaderWorld-Kollision, der Bürger wartete unterstützt, nach Entfernen der Änderung erreichte derselbe Bürger das Ende seiner **20-m-Route**. **81 bestätigte Groundhits** decken ursprünglichen Boden, Grube und reparierten Boden mit je drei Durchläufen à neun Punkten ab; größter gemessener Grubenhöhenfehler rund **0,0027 cm**.[^navigation-proof]
+
+Der Nachweis hat eine ausdrückliche Grenze: Der Harness ruft den Bürger kontrolliert selbst auf. Während das echte Managergate aussteht, darf sein Fortschritt nicht wachsen; nach dessen Freigabe hält der Harness weitere **zehn Ticks** bewusst an, bis seine unabhängigen erwarteten Höhenproben stabil sind. Das ist **keine automatische Produktions-Fertigmeldung** für beliebige ShaderWorld-Kollision und keine globale NavMesh-Abnahme. Gerendertes Warten vor der breiten Grube und Fortsetzen sind belegt; schmale-Gruben-Umwege besitzen kontrollierte native Tests, keinen zusätzlichen gerenderten Fall aus diesem Lauf.[^navigation-proof]
+
+## Rodungsbenchmark: tatsächliche CPU-Aufrufzeiten, keine FPS-Zusage
+
+Der [bereinigte Leistungsbericht](evidence/clearing-performance-test.json) bestätigt einen isolierten gerenderten **cooked Windows-Development-Prozess** mit fester Kamera und 200-m-Visitor. Der gestartete native EXE-Hash wurde geprüft; andere Projektbuilds und Rendergames waren vorher geschlossen. Nach **15,4 s** echter Bereitschaft folgten **acht Fenster à rund 8 s** für **0/1/10/100 reale Records**, jeweils Reapply allein und Reapply plus native Rayabfrage mit Zielrate 5 Hz. Insgesamt wurden **255 Reapply- und 153 Rayaufrufe** gemessen; alle Rayaufrufe fanden einen lebenden Baum. Die Prüfung ist bestanden, die nächste Optimierung noch nicht umgesetzt.[^clearing-benchmark]
+
+| Records | Rayabfrage | Reapply ms, Mittel / p95 | Ray ms, Mittel / p95 | Besuchte Reapply-Slots je Aufruf |
+| --- | --- | --- | --- | --- |
+| 0 | Aus | 0,001 / 0,001 | – | 0 |
+| 0 | An | 0,001 / 0,001 | 21,02 / 23,44 | 0 |
+| 1 | Aus | 19,85 / 23,44 | – | 154997 |
+| 1 | An | 20,44 / 24,30 | 20,43 / 23,90 | 154997 |
+| 10 | Aus | 21,33 / 44,43 | – | 154997 |
+| 10 | An | 21,47 / 27,84 | 20,84 / 24,65 | 154997 |
+| 100 | Aus | 22,06 / 25,81 | – | 154997 |
+| 100 | An | 21,72 / 25,48 | 20,99 / 24,44 | 154997 |
+
+**Slots sind hier keine Baumzahl.** Der visuelle Pool hatte **152881 Slots**, aber zu Beginn nur **1410 nicht-null skalierte visuelle Instanzen**. Der Kollisionspool hatte 2116 Slots mit ebenfalls 1410 aktiven nicht-null Transforms. Bei positiven Recordzahlen besuchte Reapply beide vollständigen Pools, insgesamt **154997 Slots**, unabhängig davon, ob 1 oder 100 Records vorhanden waren. Die native Rayabfrage lief auch ohne Records teuer; sie liest laut Code den visuellen Puffer. Ihr tatsächlicher Rhythmus lag bei **4,74–4,85 Hz**, der Reapply-Rhythmus bei etwa 4 Hz. Eine interne Kostenaufteilung auf Kopie, Transformzerlegung, Ledger- und Boxtest fehlt; der Befund rechtfertigt eine gezielte Untersuchung von Live-/Raumindex, Poolfilter und konservativer Broadphase.[^clearing-benchmark]
+
+In jedem Fenster blieben die gerodeten Ziele CPU-visuell und in aktiver Kollision bei **0/0**, der unabhängige Kontrollbaum bei **1/1** und gleichem Transform. Nach dem Versuch verlangte das native Erfolgsgate in drei aufeinanderfolgenden Beobachtungen die Rückkehr aller **101 ausgewählten visuellen Ressourcen** und die erhaltene Kontrolltransformation. Das ist ein visueller **CPU-Restore**, kein neuer GPU-Bildbeleg; die abschließende Kollision jedes zurückgeholten Baums wurde nicht gesondert als Erfolgskriterium protokolliert. Der eigene GameMode nutzt keine normale Stadt-Save-API; das native Flag bestätigt **normal_city_save_accessed = false**. Ein Vergleich der normalen Save-Dateihashes war nicht Teil dieses Fixtures.[^clearing-benchmark]
+
+Gemessen wurde die **synchrone Game-Thread-Warte-/Aufrufzeit** einschließlich Pufferkopie, Locks, Dispatch und möglicher Betriebssystemplanung, keine Hardware-CPU-Zyklen oder GPU-Fertigzeit. Die gerenderten Tickintervalle entstanden mit **t.MaxFPS = 48**; sie sind keine Zusage erreichbarer FPS. Installation per einmaligem Record-Präfix, Bereitschaft, Inhaltsprüfungen und Restore lagen außerhalb der stationären Messfenster. Das ist kein Test von 100 nacheinander gedrückten C-Tasten; in den Messfenstern entstanden keine neuen Renderrefreshrequests. Vollständige Eingabe, Vorschauzeichnung, Bewegung/Streaming und Großweltlast sind ebenfalls nicht abgedeckt.[^clearing-benchmark]
+
+Der frühere Startfehler durch einen Ground-Klassennamefilter lieferte vor Readiness/Messung **keine Werte** und wurde durch die Auswahl genau eines **GenerateCollision=true**-Actors korrigiert. Die jetzt gewonnenen Werte stammen ausschließlich aus dem anschließenden erfolgreichen Lauf. Eine Optimierung ist noch offen: volle Pufferdurchläufe reduzieren, ohne externen Restore, Regeneration, Indexwechsel und den gesonderten Kollisionsnachlauf zu verlieren; danach denselben Versuch wiederholen.
 
 ## Nächste Abnahmen für den City Builder
 
-1. Die fünf Foundations-Biomprofile im vollständigen Spielbild vergleichen und Rodungsverwaltung mit großen Beständen messen; Einzelrodung und echte Regeneration sind jetzt im begrenzten Labor geprüft.
+1. Nach bestandenem cooked Baugrubenabschluss und begrenzten normalen Schaltflächen-/Restore-/Autosave-Proben die übrigen Tastatur-/Fokusfälle gezielt prüfen; F5 und vollständige physische Eingaben bleiben offen. Die jetzt gemessenen vollen Rodungspool-Durchläufe gezielt optimieren und denselben isolierten Benchmark wiederholen, ohne Restore-/Kollisionsverträge zu verlieren. Die fünf Foundations-Biomprofile im vollständigen Spielbild vergleichen und Rodungsverwaltung mit großen Beständen messen; Einzelrodung und echte Regeneration sind jetzt im begrenzten Labor geprüft.
 2. Manuelle F-/Mausbedienung des Laufmodus, weitere Fahrzeugprofile und speicherbare Tunnel.
 3. Auftrieb mit einem definierten Physikobjekt und kontrollierten Wellenbedingungen.
 4. Allgemeine Navigation nach Bauflächen-, Straßen- und Gebäudeänderungen; die getesteten lokalen Bürgerumwege ersetzen diese Abnahme nicht.
@@ -204,4 +265,10 @@ Neue Versuche ergänzen die jeweilige Anleitung und ihren Beleg. Die Anleitung [
 
 [^build-controls]: Bereinigter [Kamera-/Werkzeugleistenbericht](evidence/build-controls-test.json), UE 5.8.4 und ShaderWorld 4.1, 28. Oktober 2026.
 
-[^tree-fix]: [Bereinigter Rodungsbericht](evidence/tree-clearing-test.json): erfolgreiche Builds/zwölf native Tests, zwei neue cooked Datenprozesse und getrennte normale PIE-Backendbilder. Die tatsächliche C-/Mauspreview-Abnahme und Paket-Pixelprüfung bleiben offen; CPU-Matches und Refreshanforderungen sind keine GPU-Fertigmeldung.
+[^tree-fix]: [Bereinigter Rodungsbericht](evidence/tree-clearing-test.json): erfolgreiche Builds/zwölf native Tests, zwei neue cooked Datenprozesse und getrennte normale PIE-Backendbilder. Nachträgliche Nutzerbestätigung der ausprobierten korrigierten Rodung liegt vor; gelbe Vorschau/Fokusdetails und Paket-Pixelprüfung bleiben getrennt offen; CPU-Matches und Refreshanforderungen sind keine GPU-Fertigmeldung.
+
+[^construction-lab]: [Baugrubenanleitung](guides/construction-lab.md); eigenes kleines Labor mit getrenntem Spielstand und expliziten Modellannahmen.
+[^construction-proof]: [Bereinigter Baugrubenbericht](evidence/construction-lab-test.json); nach letztem Fix native 22/22, cooked 14/14 und 15/15, normale abgegrenzte Schaltflächen-/Puffer-/Restore-/Autosave-Schutzproben und vier visuell geprüfte Originalbilder. Historischer 2-cm-Fehlversuch und offene Tastatur-/Fokusgrenzen sind separat erhalten.
+[^navigation-proof]: [Gerenderter Navigationsnachweis mit Harnessgrenze](evidence/terrain-navigation-test.json).
+[^height-quantization]: Gelesene native ShaderWorld-4.1-Höhenkodierung gemäß Quellenbeschreibung und im [Baugrubenbericht](evidence/construction-lab-test.json) gemessene Endhöhen; lokales 5-cm-Gate mit drei stabilen Durchläufen.
+[^clearing-benchmark]: [Bereinigter CPU-Rodungsbenchmark](evidence/clearing-performance-test.json): acht erfolgreiche isolierte cooked Fenster und CPU-Restore mit klar getrennten Frame-/GPU-/Eingabegrenzen.

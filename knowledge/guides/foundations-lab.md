@@ -8,18 +8,18 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T17:05:22Z"
+  at: "2026-10-28T18:02:41Z"
 evidence_scope:
   implementation: Projektcode und native APIs gelesen; frühere Foundations-Suite mit acht und Kamera-/Toolbar-Suite mit elf erfolgreichen kontrollierten Tests; aktuelle Suite einschließlich Mausstrahl-Geometrie auf zwölf erweitert; getrennte Nachweise beachten
   visual: Native PIE-Aufnahmen des geschlossenen Dachs sowie aktueller Snow-Vorher-/Lade- und geschützter Grundstücksvergleich inspiziert; kompiliertes Black-Backend ohne nachträgliche Brushparameteränderung
   practical_status: Frühere Black-/Zero-Flow-Fassung in je zwei frischen gerenderten uncooked und cooked Prozessen mit jeweils 29/29 und 12/12 Checks geprüft; Rodung dabei über CPU-Instanzdaten geprüft, nicht als verschwundener Einzelbaum im Spielbild; normale T/F6/K/L-Snow-Bilder bleiben getrennt bestätigt
-  tree_fix_status: Editor-/Gamebuild, zwölf native Tests und erneute cooked CPU-/Physik-/Save-/Regenerationsprüfung bestanden; separate normale PIE-Backendbildprobe zeigt ausgewählten Baum nach Rodung und erneutem Laden weg, Kontrolle erhalten; tatsächliche C-/Gelbpreview-Bedienung offen
+  tree_fix_status: Editor-/Gamebuild, zwölf native Tests und erneute cooked CPU-/Physik-/Save-/Regenerationsprüfung bestanden; separate normale PIE-Backendbildprobe zeigt ausgewählten Baum nach Rodung und erneutem Laden weg, Kontrolle erhalten; anschließende Nutzerbestätigung der ausprobierten korrigierten Rodung; gelbe Vorschau und Fokus-/Verdeckungsrandfälle nicht gesondert bestätigt
   controls_status: Frühere Kamera-/Toolbarintegration mit elf nativen Tests, Sliderfokusschutz, inerter Planbestätigung, Esc-Abbruch, Bauplatzvorschau und PIE-Preferences-Restore geprüft; finales UI-Bild lesbar und verpackte Regression nach finalem Layoutbuild mit 29/29 und 12/12 Checks erfolgreich
-  not_tested: Tatsächliche C-Taste und gelbe Mauszielvorschau, länger gehaltene reale WASD/Shift/RMB-/Alt-Tab-Bedienung, persönliche Paket-Persistenz, erneute verpackte Pixelabnahme, Reichweitenfahrt, älterer physischer Rodungszustand, Skalierung und globale Navigation
+  not_tested: Gesonderter Nachweis der gelben Mauszielvorschau und sämtlicher Fokus-/Verdeckungsrandfälle, länger gehaltene reale WASD/Shift/RMB-/Alt-Tab-Bedienung, persönliche Paket-Persistenz, erneute verpackte Pixelabnahme, Reichweitenfahrt, älterer physischer Rodungszustand, Skalierung und globale Navigation
 sources:
   - id: tree-fix
     resource: ../evidence/tree-clearing-test.json
-    title: Zwölf native Tests, cooked Datenregression und separate normale PIE-Backendbildprobe; C-Bedienung offen
+    title: Zwölf native Tests, cooked Datenregression, separate normale PIE-Backendbildprobe und anschließende Nutzerbestätigung der Rodung
   - id: tree-before
     resource: ../assets/images/tree-clearing-before.png
     title: Ausgewählter erster Ray-Baum mit sichtbarer Krone vor Backendrodung
@@ -113,7 +113,9 @@ Der Nutzer meldete: **C zeigt eine erfolgreiche Rodung, aber der Baum steht noch
 
 **Die Korrektur ist gebaut und ihr Backend sichtbar geprüft.** Editor und Game wurden erfolgreich gebaut; **12/12 native Tests** bestanden, zehn ohne und zwei mit den bekannten Warnungen. Das Development-Paket wurde mit bereits gekochten Assets neu verpackt; zwei frische cooked Spielprozesse bestanden **29/29 Checks in 120,5 s** und **12/12 in 70,8 s**. Diese Paketläufe prüfen CPU-Zustand, Physik, Regeneration und Speichern/Laden, keine Einzelbaum-Pixel.[^tree-fix]
 
-So ist die neue Rodung vorgesehen; **C-Eingabe und gelbe Mausvorschau sind noch praktisch abzunehmen**:
+**Der Nutzer hat die korrigierte Rodung anschließend ausprobiert und mit „Awesome, getestet“ bestätigt.** Diese Rückmeldung bestätigt den korrigierten Ablauf aus Nutzersicht. Sie enthält keine gesonderte Aussage zur gelben Zielvorschau oder zu allen Fokus- und Verdeckungsrandfällen. Die zuvor erstellte Bildprobe bleibt ein getrennter Backendnachweis.[^tree-fix]
+
+So bedienst du die korrigierte Rodung:
 
 1. Wähle **Roden** und bewege den Zeiger in den Spielbereich außerhalb der Leiste.
 2. Richte ihn auf die gewünschte Baumkrone. Der Code wählt den nächsten Mausstrahl-Eintritt gegen die **transformierte Meshbox** eines vorhandenen getaggten Baums, begrenzt durch einen vorgeschalteten Visibility-Blocker. Ein 8-m-Bodenfallback entfällt.
@@ -171,7 +173,7 @@ Die Planung speichert einen gewünschten Eingriff und zeigt eine Vorschau. Sie e
 | **U / Strg+Z** | Letzte Planbearbeitung zurücknehmen; bereits ausgeführte Welt bleibt bestehen |
 | **Entf** | Einen noch unbearbeiteten Plan stornieren |
 | **F6** | Aktiven Plan ausdrücklich und sofort als Lab-Debug anwenden |
-| **C** | Einen getaggten Baum frisch am Mausstrahl gegen seine Meshbox auswählen und ausdrücklich roden; kein 8-m-Bodenfallback. Geometrie-/Backendbildprobe bestanden, tatsächliche C-/Preview-Bedienung offen |
+| **C** | Einen getaggten Baum frisch am Mausstrahl gegen seine Meshbox auswählen und ausdrücklich roden; kein 8-m-Bodenfallback. Geometrie-/Backendbildprobe bestanden; korrigierte Rodung anschließend vom Nutzer ausprobiert und bestätigt, Vorschau-/Fokusdetails nicht gesondert bestätigt |
 | **R** | Straßenwerkzeug wählen und einen Entwurfspunkt hinzufügen; Enter bestätigt das jeweils aktive Werkzeug |
 | **P** | Geerbtes Testhaus-Laborwerkzeug bedienen |
 | **K oder F5 / L oder F9** | Im eigenen Foundations-Slot speichern/laden |
@@ -230,7 +232,7 @@ An den exakten Höhengrenzen bleiben die Spawnable-Intervalle maßgeblich; das S
 
 ## Was die Einzelrodung speichert
 
-**C** ist ein ausdrücklich ausgelöster Debugeingriff. Der Code sucht nur Baum-Spawnables mit dem Projekt-Tag **CityLab.TreeResource**. Gras und Felsen sind keine auswählbaren Holzressourcen. Ein gerodeter Baum erhält einen gespeicherten logischen Datensatz. Der frühere native API-Weg bestand den CPU-Instanz-/Regenerations- und Neustarttest. Das bestätigte weder die Wahl des am Bildschirm gemeinten Baums noch seine Entfernung aus dem tatsächlich gezeichneten Puffer. Die neue Geometrie-/Backendkorrektur ist geprüft; die tatsächliche C-/Preview-Bedienung bleibt offen; Holzproduktion, Werkzeugverschleiß und Maschinenarbeit fehlen.[^vegetation][^controls][^foundations-proof]
+**C** ist ein ausdrücklich ausgelöster Debugeingriff. Der Code sucht nur Baum-Spawnables mit dem Projekt-Tag **CityLab.TreeResource**. Gras und Felsen sind keine auswählbaren Holzressourcen. Ein gerodeter Baum erhält einen gespeicherten logischen Datensatz. Der frühere native API-Weg bestand den CPU-Instanz-/Regenerations- und Neustarttest. Das bestätigte weder die Wahl des am Bildschirm gemeinten Baums noch seine Entfernung aus dem tatsächlich gezeichneten Puffer. Die neue Geometrie-/Backendkorrektur ist geprüft; die korrigierte Rodung wurde anschließend vom Nutzer ausprobiert und bestätigt; Vorschau-/Fokusdetails sind nicht gesondert bestätigt; Holzproduktion, Werkzeugverschleiß und Maschinenarbeit fehlen.[^vegetation][^controls][^foundations-proof]
 
 ShaderWorld kann beim Weiterlaufen, bei Reichweitenwechseln oder bei einem Neuaufbau andere Laufzeitindizes vergeben. Deshalb speichert CityLab keine HISM-Indexnummer als dauerhafte Ressourcenkennung. Die eigene Kennung verwendet Welt-, Generator- und Terrainprofilidentität, Spawnable- und Meshasset sowie den ursprünglichen, auf 10 cm gerasterten XY-Stammort. Eine geänderte Geländehöhe allein soll die Identität erhalten. Bei der Zuordnung sind bis zu 25 cm XY-Abweichung für erneut berechnete, gepackte Koordinaten vorgesehen. Diese Toleranz ist eine Implementierungsentscheidung, noch kein für alle Weltgrößen bestätigter Grenzwert.[^vegetation]
 
@@ -250,7 +252,7 @@ Die **acht damaligen Foundations-Automationtests** sind erfolgreich: drei für B
 | Native Automation | Aktuell 12/12 einschließlich Kamera/Toolbar und Mausstrahl-Boxgeometrie, zehn ohne und zwei mit bekannten Warnungen | Kontrollierte Code-/API-Tests; echte C-/Preview-Bedienung und Backendbilder bleiben getrennte Nachweise[^tree-fix] |
 | Aktuelle uncooked Fassung | 29/29 und 12/12 Checks in 2 frischen gerenderten Prozessen; rund 127,1 und 70,1 s | Native Projekt-API-Abnahme mit Black-Datamap; keine vollständige manuelle Bedienrunde |
 | NoGrowth-Überlappung | Ausgangs-Core: uncooked 436 Pflanzenursprünge/3 Bäume, cooked 442/3; Seite 29 beziehungsweise 31. Nach Maskierung, Paint/Regeneration und je 3 Loads beide Bereiche jeweils 0 | Separate native Testmasken werden je Prozess neu erzeugt, nicht als zusätzliche Spielstandrecords gespeichert |
-| Wald- und Einzelbaumkontrolle | Frühere CPU-Pools: Kontrolle 1/1, Rodung 0/0; neue normale PIE-Backendbilder zeigen markierte Zielkrone nach Rodung/Laden weg, Kontrolle erhalten | Tatsächliche C-/Mauspreview und Paket-Pixel offen; Kollisionsnachlauf bleibt Produktionsgrenze[^tree-fix] |
+| Wald- und Einzelbaumkontrolle | Frühere CPU-Pools: Kontrolle 1/1, Rodung 0/0; neue normale PIE-Backendbilder zeigen markierte Zielkrone nach Rodung/Laden weg, Kontrolle erhalten | Korrigierte Rodung vom Nutzer ausprobiert und bestätigt; Vorschau-/Fokusdetails und Paket-Pixel offen; Kollisionsnachlauf bleibt Produktionsgrenze[^tree-fix] |
 | Hohe Baukamera | Normale PIE-Probe etwa 5 km über Boden: 9 Proben, 4 stabile Durchläufe, inerte Planung möglich | Gleicher Editorprozess, vor Paintbackendwechsel; keine globale Bereitschaftsgarantie[^normal-ui] |
 | Aktuelle verpackte Fassung | 29/29 und 12/12 Checks in 2 frischen cooked Spielprozessen; rund 118,6 und 66,1 s | Tatsächliches natives Game-Programm mit CookedData und Black-Datamap; nur aktuelle Foundations-Fassung |
 | Vorhandenes CityLoop | Format-4-Regression mit 24/24 Checks in 3 Prozessen | Getrennte Karte, keine neue Cook-Abnahme anderer Karten |
@@ -292,7 +294,7 @@ Die Mauszielvorschau ergänzt bis zu fünf weitere Treepool-Scans pro Sekunde; d
 [^tunnel]: [Trockene Tunnelkomponente und ihre Grenzen](reusable-tunnel-component.md).
 [^save]: [Spielstände und Neustartprüfungen](save-and-load.md).
 
-[^tree-fix]: [Bereinigter Rodungsbericht](../evidence/tree-clearing-test.json): erfolgreiche Builds, 12/12 native Tests, zwei cooked Daten-/Physik-/Speicherprozesse und getrennte normale PIE-Bildprobe per nativer Konsole/Backend-API. Keine ausgeführte C-/Mauspreview-Abnahme, kein Paket-Pixelbeleg; Refreshzähler ist keine GPU-Fertigmeldung.
+[^tree-fix]: [Bereinigter Rodungsbericht](../evidence/tree-clearing-test.json): erfolgreiche Builds, 12/12 native Tests, zwei cooked Daten-/Physik-/Speicherprozesse und getrennte normale PIE-Bildprobe per nativer Konsole/Backend-API. Die native Bildprobe ist keine C-/Mauspreview-Aufzeichnung. Anschließend bestätigte der Nutzer die ausprobierte korrigierte Rodung mit „Awesome, getestet“; keine gesonderte Vorschau-/Fokusrandfall- oder Paket-Pixelabnahme. Refreshzähler ist keine GPU-Fertigmeldung.
 [^tree-before]: [Unveränderte native PIE-Aufnahme vor Backendrodung](../assets/images/tree-clearing-before.png).
 [^tree-after]: [Unveränderte native PIE-Aufnahme nach Backendrodung](../assets/images/tree-clearing-after.png).
 [^tree-loaded]: [Unveränderte native PIE-Aufnahme nach erneutem Backendladen](../assets/images/tree-clearing-loaded.png).

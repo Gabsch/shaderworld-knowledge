@@ -1,0 +1,1256 @@
+{
+  "date": "2026-10-28",
+  "prepared_at_utc": "2026-10-28T19:28:18Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "save_format_version": 5,
+  "construction_model_version": 1,
+  "status": "passed_with_explicit_limits",
+  "scope": "Bounded project-local excavation laboratory with placeholder digger/truck meshes, explicit integer-gram material accounting, real ShaderWorld collision probes and an exact saved mid-haul model. Native automation and rendered runtime results are separate evidence.",
+  "evidence_origin": "Whitelisted summaries of private native reports. Raw reports, save files, licensed assets and machine identifiers are not distributed.",
+  "source_state": {
+    "status": "final_source_built_packaged_core_and_bounded_normal_ui_passed",
+    "fingerprint_algorithm": "SHA256",
+    "fingerprint_scope": "SHA256 of current project-local source bytes at report update after the final deferred-initialization build. This is a source snapshot, not a build-embedded whole-source-tree fingerprint. The actual tested executable SHA256 is recorded separately.",
+    "files": [
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.h",
+        "sha256": "61fe1d67cc0a3f133173d088111522e972dc86f492232b80e346fa16045c6789"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.cpp",
+        "sha256": "4db9d6113cdf1aafcb1fd0f0e1f2cb27fe8b6f52090b13770d260559946808b7"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.h",
+        "sha256": "a85e44c9d47b7ac26f3c3a72b638441fd8fc84aef78d9cde2863f89556e4b1a8"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.cpp",
+        "sha256": "f6b9ca6b3083c9bf67126b21637bfac3b964a60afe30a5ee640efd317b76e5d3"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.h",
+        "sha256": "d50cb6a67e2057556351b1fb9994ab1e5658507175bfe6a37a07ce8c434e31d2"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.cpp",
+        "sha256": "89f603bda920ee6a80f09bfa0f04efcc0029e2bcd3037e6490eed5d9bda74bc1"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.h",
+        "sha256": "375359c4bb70d1edc1a00b511c393fb918b33094e3c9c4a5281c1abdf4e8aa9a"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.cpp",
+        "sha256": "39f8ccbc88efbfbcce3e9cc40cc29f5c708a595ac867dbea8bbac5ddc95c0a4f"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionTests.cpp",
+        "sha256": "6509a702b3a4059988160adcdcfc358e239b674950341262afbe8c6a11909dcc"
+      },
+      {
+        "project_relative_source": "Tools/verify_construction.py",
+        "sha256": "a22417e242dd504adb3551eca8988c651f4c2bbfe3fd8b328da7651605d4693c"
+      },
+      {
+        "project_relative_source": "Tools/setup_construction_lab.py",
+        "sha256": "bfdad09966aa1352029dcc784c4fab353b96c2a8eb249eb0fbf0ca655086c03f"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.h",
+        "sha256": "36e14e22ed0a8aa2fbb17b90e22c08c9f0003c40d8a7a83335c150a8215f150e"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.cpp",
+        "sha256": "34476ef3f66b05aa2e60f6a28af2f89d6c6e480fddaa5a6583f63671ae4fa605"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabWorldEditVersionTests.cpp",
+        "sha256": "fe4547bec1713e3215b47c9261ec3bd038700d3224ea4abdf16317b81a83122b"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabLoopGameMode.h",
+        "sha256": "dae2fcaa0f518683bbfd94956cab3fbffba69dba36d240a87e2e208129e82e2a"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabLoopGameMode.cpp",
+        "sha256": "c26b24fa61c5f47554052c48e695efa19c94ab479acb6a04ebe1127c716f29c5"
+      }
+    ],
+    "changes_before_final_acceptance": [
+      "Clear the bounded digger/truck access corridor when work begins; no clearance during planning.",
+      "Adjusted observation camera and ground-collision retry path.",
+      "Report concrete collision sample mismatches and allow a 300-second bounded phase timeout.",
+      "Use a documented 5 cm physical-height tolerance for the four integer-centimeter brush passes; retain three stable nine-point checks and stop work while collision is pending."
+    ],
+    "startup_guard_changes": "Fresh initialization stays deferred until the initial plan exists; both automatic save paths remain disabled for a rejected existing save. Normal PIE verified fresh paused planning, automatic reload of all serialized fields, and unchanged rejected-save bytes across the autosave window."
+  },
+  "native_automation": {
+    "status": "passed_after_final_deferred_initialization_fix",
+    "runtime": "Unreal editor automation with NullRHI; logical/native contracts, not rendered terrain proof",
+    "test_count": 22,
+    "succeeded_without_warnings": 20,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "duration_seconds": 0.3571130335330963,
+    "tests": [
+      {
+        "name": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.AdjacentWorkAndCompleteConservation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.AtomicRejectAndBinding",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.MidWorkSerializationDeterminism",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.PlanAndBoundedBuffer",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.TransportAndStorageLimit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.CitizenDetoursNewNarrowPit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.CitizenWaitsForPitAndRaisedStepRepair",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.DynamicCollisionProbeGate",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.RefreshPauseAndGroundRevalidation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "known_warnings": [
+      {
+        "test": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "summary": "Existing synthetic-world actor cleanup has no world context."
+      },
+      {
+        "test": "CityLab.WorldEdits.BackendMigration",
+        "summary": "Intentional rejection of incompatible old applied spline-paint records; live city is preserved."
+      }
+    ],
+    "scope_note": "All 22 native tests rerun after the last deferred-initialization fix: 20 clean, two known warnings, zero failed/not-run. NullRHI checks logical/native contracts; rendered core and normal PIE are separate."
+  },
+  "laboratory_assumptions": {
+    "cells_per_side": 2,
+    "cell_spacing_meters": 4,
+    "effective_area_per_cell_m2": 16,
+    "total_effective_area_m2": 64,
+    "target_depth_meters": 1.5,
+    "projection": "Separable triangular cell basis: max(1-abs(dx)/spacing,0) * max(1-abs(dy)/spacing,0); integral is spacing squared. Four cells sum into a flat central pit with tapered surroundings.",
+    "in_situ_density_kg_m3": 1800,
+    "loose_density_kg_m3": 1400,
+    "fixed_step_seconds": 0.5,
+    "test_excavation_kg_per_step": 6000,
+    "test_buffer_capacity_kg": 18000,
+    "test_truck_capacity_kg": 12000,
+    "test_load_unload_kg_per_step": 12000,
+    "test_truck_speed_meters_per_second": 20,
+    "scope": "Explicit accelerated laboratory rates and assumed densities; no engineering geology or realistic vehicle-rate claim.",
+    "test_storage_capacity_kg": 500000,
+    "test_digger_reach_meters": 20,
+    "test_digger_stand_off_meters": 3,
+    "test_digger_travel_meters_per_second": 1.2
+  },
+  "historical_first_rendered_attempt": {
+    "status": "failed_to_complete",
+    "requires_cooked_data": false,
+    "distinct_processes": true,
+    "process_count": 2,
+    "native_timeout_seconds": 180,
+    "create": {
+      "status": "passed",
+      "elapsed_seconds": 76.383089,
+      "check_count": 14,
+      "checks": {
+        "height_backend_shader_ready": true,
+        "flat_baseline_real_ground": true,
+        "test_profile_is_explicit_and_bounded": true,
+        "paused_plan_is_inert": true,
+        "buffer_full_stops_earth_over_multiple_steps": true,
+        "transport_moves_loaded_truck_and_delivers_mass": true,
+        "midwork_save_matches_complete_model_hash": true,
+        "midwork_checkpoint_has_remaining_soil_and_loaded_truck": true,
+        "midwork_actual_ground_matches_executed_state": true,
+        "target_plan_unchanged": true,
+        "native_backends_unique": true,
+        "screenshot_saved": true,
+        "collision_settled_at_finish": true,
+        "snapshot_binding_matches_world": true
+      },
+      "buffer_plateau": {
+        "sample_count": 10,
+        "duration_seconds": 2.566146,
+        "first_step": 4,
+        "last_step": 8
+      },
+      "checkpoint": {
+        "step_count": 22,
+        "truck_phase": "ToStorage",
+        "truck_route_distance_cm": 1000,
+        "initial_soil_mass_kg": 172800.0,
+        "excavated_mass_kg": 42000.0,
+        "remaining_soil_mass_kg": 130800.0,
+        "buffer_mass_kg": 18000.0,
+        "truck_mass_kg": 12000.0,
+        "storage_mass_kg": 12000.0,
+        "balance_error_grams": 0
+      },
+      "actual_ground": [
+        {
+          "phase": "baseline",
+          "sample_count": 162,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 0
+        },
+        {
+          "phase": "buffer_full",
+          "sample_count": 27,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 1.000732433
+        },
+        {
+          "phase": "buffer_plateau",
+          "sample_count": 27,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 1.000732433
+        },
+        {
+          "phase": "midwork_checkpoint",
+          "sample_count": 27,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 1.000289921
+        },
+        {
+          "phase": "paused_plan",
+          "sample_count": 27,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 0
+        }
+      ],
+      "native_projection_counts": [
+        {
+          "phase": "paused_plan",
+          "brushes": 4,
+          "enabled_brushes": 0,
+          "visuals": 1,
+          "masks": 0
+        },
+        {
+          "phase": "midwork_checkpoint",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        },
+        {
+          "phase": "final",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        }
+      ]
+    },
+    "resume": {
+      "status": "failed_timeout_after_successful_restore",
+      "elapsed_seconds": 180.108584,
+      "checks": {
+        "different_process_checkpoint": true,
+        "height_backend_shader_ready": true,
+        "cold_baseline_before_restore": true,
+        "restored_full_model_hash_identical_before_advance": true,
+        "restored_positions_phase_cargo_and_targets_identical": true,
+        "three_repeated_loads_no_duplicates_or_model_drift": true,
+        "collision_settled_at_finish": false,
+        "snapshot_binding_matches_world": true
+      },
+      "repeated_load_count": 3,
+      "full_model_hash_identical_to_create_before_advance": true,
+      "hash_method": "MD5 of complete SaveGame USTRUCT serialization, including plan, cells, capacities, exact material ledgers, positions/progress and work/transport flags. Concrete snapshot identifiers are omitted.",
+      "actual_ground_before_advance": [
+        {
+          "phase": "baseline",
+          "sample_count": 27,
+          "hit_count": 27,
+          "matching_sample_count": 27,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 0
+        },
+        {
+          "phase": "restored_checkpoint",
+          "sample_count": 108,
+          "hit_count": 108,
+          "matching_sample_count": 108,
+          "last_stable_sample_count": 27,
+          "last_stable_nine_point_passes": 3,
+          "last_stable_distinct_xy_points": 9,
+          "last_stable_all_match": true,
+          "last_stable_max_abs_error_cm": 1.000289921
+        }
+      ],
+      "native_projection_counts": [
+        {
+          "phase": "restored_checkpoint",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        },
+        {
+          "phase": "restored_checkpoint",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        },
+        {
+          "phase": "restored_checkpoint",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        },
+        {
+          "phase": "restored_checkpoint",
+          "brushes": 4,
+          "enabled_brushes": 1,
+          "visuals": 1,
+          "masks": 1
+        }
+      ],
+      "stall": {
+        "last_observed_step": 76,
+        "last_observed_elapsed_seconds": 49.307999,
+        "excavated_mass_kg": 96000.0,
+        "remaining_soil_mass_kg": 76800.0,
+        "buffer_mass_kg": 12000.0,
+        "truck_mass_kg": 12000.0,
+        "storage_mass_kg": 72000.0,
+        "balance_error_grams": 0,
+        "collision_refresh_pending": true,
+        "reported_state": "Waiting for real ShaderWorld collision to match the executed geometry. Work remained stopped.",
+        "diagnostic_limit": "The old mismatch message lacked per-point details; do not claim a confirmed single root cause from this run.",
+        "later_resolution_scope": "Later source adds corridor clearance, better observation/retry diagnostics and the documented 5 cm quantization-aware gate. The final cooked pair passes; the multi-change retest does not isolate each contribution to the older stall."
+      },
+      "completion_saved": false
+    },
+    "conclusion": "Real partial digging, buffer stop, loaded hauling/delivery and exact cold restore were observed. The required complete post-restart excavation and final ledger/terrain acceptance did not pass."
+  },
+  "current_rendered_acceptance": {
+    "status": "passed_with_explicit_limits",
+    "runtime_retest_pending": false,
+    "packaged_retest_pending": false,
+    "packaged_complete_pass": true,
+    "uncooked_complete_pass": false,
+    "uncooked_scope": "The earlier uncooked 2 cm attempt failed after a successful checkpoint restore. No later complete uncooked pair is claimed here; final acceptance is the actual cooked pair below.",
+    "manual_ui_and_pixels_pending": true,
+    "packaged_runtime": {
+      "status": "passed",
+      "requires_cooked_data": true,
+      "process_count": 2,
+      "distinct_processes": true,
+      "native_timeout_seconds_per_phase": 300,
+      "create": {
+        "status": "passed",
+        "elapsed_seconds": 24.705998,
+        "check_count": 14,
+        "checks": {
+          "height_backend_shader_ready": true,
+          "flat_baseline_real_ground": true,
+          "test_profile_is_explicit_and_bounded": true,
+          "paused_plan_is_inert": true,
+          "buffer_full_stops_earth_over_multiple_steps": true,
+          "transport_moves_loaded_truck_and_delivers_mass": true,
+          "midwork_save_matches_complete_model_hash": true,
+          "midwork_checkpoint_has_remaining_soil_and_loaded_truck": true,
+          "midwork_actual_ground_matches_executed_state": true,
+          "target_plan_unchanged": true,
+          "native_backends_unique": true,
+          "screenshot_saved": true,
+          "collision_settled_at_finish": true,
+          "snapshot_binding_matches_world": true
+        },
+        "checkpoint_step": 22,
+        "checkpoint_truck_phase": "ToStorage",
+        "checkpoint_route_distance_cm": 1000,
+        "checkpoint_material_accounts": {
+          "initial_mass_grams": 172800000,
+          "total_excavated_mass_grams": 42000000,
+          "remaining_mass_grams": 130800000,
+          "buffer_mass_grams": 18000000,
+          "truck_mass_grams": 12000000,
+          "storage_mass_grams": 12000000,
+          "total_loaded_mass_grams": 24000000,
+          "total_delivered_mass_grams": 12000000,
+          "balance_error_grams": 0
+        },
+        "checkpoint_cells": [
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 42000000,
+            "current_height_cm": 154.16666666666666
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 0,
+            "current_height_cm": 300
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 0,
+            "current_height_cm": 300
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 0,
+            "current_height_cm": 300
+          }
+        ],
+        "buffer_plateau": {
+          "sample_count": 10,
+          "duration_seconds": 2.60096,
+          "first_step": 3,
+          "last_step": 8
+        },
+        "observed_loaded_truck_motion": true,
+        "observed_storage_delivery": true,
+        "actual_ground": [
+          {
+            "phase": "baseline",
+            "sample_count": 45,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 0,
+            "all_hit_max_abs_error_cm": 0
+          },
+          {
+            "phase": "buffer_full",
+            "sample_count": 27,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 1.000732433,
+            "all_hit_max_abs_error_cm": 1.000732433
+          },
+          {
+            "phase": "buffer_plateau",
+            "sample_count": 27,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 1.000732433,
+            "all_hit_max_abs_error_cm": 1.000732433
+          },
+          {
+            "phase": "final_diagnostic",
+            "sample_count": 9,
+            "hit_count": 9,
+            "matching_sample_count": 9,
+            "last_observed_sample_count": 9,
+            "last_observed_nine_point_passes": 1,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 1.000289921,
+            "all_hit_max_abs_error_cm": 1.000289921
+          },
+          {
+            "phase": "midwork_checkpoint",
+            "sample_count": 27,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 1.000289921,
+            "all_hit_max_abs_error_cm": 1.000289921
+          },
+          {
+            "phase": "paused_plan",
+            "sample_count": 27,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 0,
+            "all_hit_max_abs_error_cm": 0
+          }
+        ],
+        "independent_ground_sample_count": 162,
+        "backend_ground_probe_count": 216,
+        "native_projection_counts": [
+          {
+            "phase": "paused_plan",
+            "brushes": 4,
+            "enabled_brushes": 0,
+            "visuals": 1,
+            "masks": 0
+          },
+          {
+            "phase": "midwork_checkpoint",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          },
+          {
+            "phase": "final",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          }
+        ],
+        "collision_refresh_pending_at_finish": false
+      },
+      "resume": {
+        "status": "passed",
+        "elapsed_seconds": 113.845061,
+        "check_count": 15,
+        "checks": {
+          "different_process_checkpoint": true,
+          "height_backend_shader_ready": true,
+          "cold_baseline_before_restore": true,
+          "restored_full_model_hash_identical_before_advance": true,
+          "restored_positions_phase_cargo_and_targets_identical": true,
+          "three_repeated_loads_no_duplicates_or_model_drift": true,
+          "transport_and_work_complete_after_restart": true,
+          "final_mass_conserved_and_storage_exact": true,
+          "final_actual_ground_matches_targets": true,
+          "completed_save_matches_complete_model_hash": true,
+          "target_plan_unchanged": true,
+          "native_backends_unique": true,
+          "screenshot_saved": true,
+          "collision_settled_at_finish": true,
+          "snapshot_binding_matches_world": true
+        },
+        "repeated_load_count": 3,
+        "full_serialized_model_hash_identical_before_any_advance": true,
+        "checkpoint_positions_phases_cargo_and_targets_preserved": true,
+        "immutable_target_plan_preserved_through_completion": true,
+        "final_step": 174,
+        "final_digger_phase": "Completed",
+        "final_truck_phase": "Completed",
+        "final_material_accounts": {
+          "initial_mass_grams": 172800000,
+          "total_excavated_mass_grams": 172800000,
+          "remaining_mass_grams": 0,
+          "buffer_mass_grams": 0,
+          "truck_mass_grams": 0,
+          "storage_mass_grams": 172800000,
+          "total_loaded_mass_grams": 172800000,
+          "total_delivered_mass_grams": 172800000,
+          "balance_error_grams": 0
+        },
+        "final_cells": [
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 43200000,
+            "current_height_cm": 150
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 43200000,
+            "current_height_cm": 150
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 43200000,
+            "current_height_cm": 150
+          },
+          {
+            "initial_mass_grams": 43200000,
+            "excavated_mass_grams": 43200000,
+            "current_height_cm": 150
+          }
+        ],
+        "all_model_targets_cm": [
+          150,
+          150,
+          150,
+          150
+        ],
+        "completed_state_saved": true,
+        "actual_ground": [
+          {
+            "phase": "baseline",
+            "sample_count": 36,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 0,
+            "all_hit_max_abs_error_cm": 0
+          },
+          {
+            "phase": "completed",
+            "sample_count": 27,
+            "hit_count": 27,
+            "matching_sample_count": 27,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 2.00077821,
+            "all_hit_max_abs_error_cm": 2.00077821
+          },
+          {
+            "phase": "final_diagnostic",
+            "sample_count": 9,
+            "hit_count": 9,
+            "matching_sample_count": 9,
+            "last_observed_sample_count": 9,
+            "last_observed_nine_point_passes": 1,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 2.00077821,
+            "all_hit_max_abs_error_cm": 2.00077821
+          },
+          {
+            "phase": "restored_checkpoint",
+            "sample_count": 108,
+            "hit_count": 108,
+            "matching_sample_count": 108,
+            "last_observed_sample_count": 27,
+            "last_observed_nine_point_passes": 3,
+            "last_observed_distinct_xy_points": 9,
+            "last_observed_all_match": true,
+            "last_observed_max_abs_error_cm": 1.000289921,
+            "all_hit_max_abs_error_cm": 1.000289921
+          }
+        ],
+        "independent_ground_sample_count": 180,
+        "backend_ground_probe_count": 864,
+        "native_projection_counts": [
+          {
+            "phase": "restored_checkpoint",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          },
+          {
+            "phase": "restored_checkpoint",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          },
+          {
+            "phase": "restored_checkpoint",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          },
+          {
+            "phase": "restored_checkpoint",
+            "brushes": 4,
+            "enabled_brushes": 1,
+            "visuals": 1,
+            "masks": 1
+          },
+          {
+            "phase": "final",
+            "brushes": 4,
+            "enabled_brushes": 4,
+            "visuals": 1,
+            "masks": 1
+          }
+        ],
+        "collision_refresh_pending_at_finish": false
+      },
+      "physical_height_summary": {
+        "collision_resolution_cm": 100,
+        "collision_vertices_per_patch": 129,
+        "accepted_height_tolerance_cm": 5,
+        "stable_ground_passes_required": 3,
+        "points_per_pass": 9,
+        "cold_plus_three_reloads_matching_ground_samples": 108,
+        "completion_matching_ground_samples": 27,
+        "all_actual_hit_max_abs_error_cm": 2.00077821,
+        "final_expected_height_cm": 150,
+        "final_actual_height_min_cm": 147.99922179,
+        "final_actual_height_max_cm": 148.99844358,
+        "final_max_abs_error_cm": 2.00077821
+      },
+      "hash_scope": "Complete SaveGame USTRUCT serialization (MD5), not selected JSON fields. Create/cold-resume/repeated restores matched before advancement; concrete model IDs/digests are omitted.",
+      "screenshot_scope": "The native PNG files existed and the strict runner checked their signatures. This JSON does not claim an automated pixel comparison or publish unreviewed images.",
+      "runner_default_timeout_seconds_per_phase": 360,
+      "scope": "Latest passed cooked core pair using the final deferred-initialization build. Opt-in verification disables normal automatic city initialization/saving, so normal UI startup remains a separately evaluated path."
+    },
+    "normal_startup_ui_regression": {
+      "status": "passed_in_normal_pie_after_fix",
+      "core_verification_flag_is_separate": true,
+      "observed_issue": "On normal first start, initialization could be marked complete before PlanPit succeeded, allowing an empty automatic save before retry.",
+      "scope": "Normal controller without opt-in flag, tested separately from packaged core pair.",
+      "correction_built": "Deferred first planning until local collision exists; protected inherited arrival autosave and new construction autosave after rejected initialization."
+    },
+    "remaining_ui_scope": "No blanket all-key/all-focus human UI acceptance or automatic pixel comparison is claimed. Bounded native UI actions, automatic load/rejection and visually inspected captures passed.",
+    "normal_ui": {
+      "status": "passed_with_explicit_limits",
+      "runtime": "Normal rendered editor PIE, compiled controller, normal Construction slot, no verification flag",
+      "fresh_start": {
+        "automatic_paused_plan": true,
+        "transport_enabled": false,
+        "excavated_mass_grams": 0,
+        "automatic_save_confirmed": true
+      },
+      "confirmed_slate_actions": [
+        "Work start",
+        "Transport enable",
+        "One pause action; final pause additionally invoked through native controller UFUNCTION"
+      ],
+      "bounded_buffer": {
+        "capacity_grams": 18000000,
+        "mass_and_cell_geometry_stable_for_additional_steps": 57,
+        "transport_disabled": true
+      },
+      "normal_profile": {
+        "excavation_grams_per_step": 1500000,
+        "loading_grams_per_step": 3000000,
+        "unloading_grams_per_step": 3000000,
+        "truck_cm_per_second": 600
+      },
+      "paused_checkpoint": {
+        "total_excavated_mass_grams": 60000000,
+        "buffer_mass_grams": 12000000,
+        "truck_mass_grams": 12000000,
+        "storage_mass_grams": 36000000,
+        "paused": true,
+        "transport_enabled": true,
+        "truck_route_distance_cm": 0.0,
+        "balance_error_grams": 0
+      },
+      "normal_pie_stop_start": {
+        "complete_serialized_job_equal": true,
+        "ground_settled": true,
+        "stable_ground_passes": 3,
+        "scope": "PIE world restart; actual process restart proved separately by packaged pair"
+      },
+      "rejected_existing_save": {
+        "different_world_rejected": true,
+        "save_bytes_unchanged_after_10_second_warmup_and_4_second_wait": true,
+        "valid_backup_restored": true,
+        "complete_job_restored_equal": true
+      },
+      "existing_foundations_save": {
+        "byte_identical_to_pre_task_backup": true,
+        "normal_slot_not_written_by_test": true
+      },
+      "limits": [
+        "Native Slate click injection unreliable at small viewport scaling; successful actions confirmed by controller/model state.",
+        "F5 injection did not confirm its callback; no new blanket keyboard-path acceptance.",
+        "Final pause through compiled controller method, no human acceptance or automatic pixel comparison."
+      ]
+    }
+  },
+  "reproduce": {
+    "project_local_tools_not_bundled": [
+      "Tools/setup_construction_lab.py",
+      "Tools/verify_construction.py"
+    ],
+    "prerequisites": [
+      "Licensed Unreal 5.8.4 and ShaderWorld 4.1 project with the ConstructionLab map/material installed.",
+      "Build the current native project code; do not infer a successful build from the source manifest.",
+      "Coordinate native game/editor runs and use an unused MCP port."
+    ],
+    "rendered_uncooked_command": "python Tools/verify_construction.py",
+    "rendered_packaged_command": "python Tools/verify_construction.py --executable <inner-game-executable> --report-dir <isolated-root>/Saved/McpDiagnostics",
+    "isolation": "The runner generates a new Construction_ test slot and a shared isolated UserDir for create/resume. Normal city slots are not the test target.",
+    "success_criteria": [
+      "Create saves an actual partial excavation with a loaded truck mid-route and exact full-model hash.",
+      "A fresh process restores the exact checkpoint before any simulation, and three more loads create no duplicate brushes, visual actors or clearance masks.",
+      "Resume must finish all four cells, deliver all initial mass to storage, leave buffer/truck empty, preserve target geometry, and independently match actual terrain.",
+      "Both native reports, actual distinct processes, strict runner validation and screenshots must succeed."
+    ]
+  },
+  "limits": [
+    "No physical tracked-vehicle or truck simulation, autonomous pathfinding, general logistics or arbitrary terrain/soil model.",
+    "Integer grams are conserved exactly in the model; initial geometric mass rounding is at most half a gram per cell.",
+    "Native CPU transform/projection counts and screenshots are different evidence; no automated GPU-pixel comparison is claimed.",
+    "The passed release NullRHI tests and final cooked pair do not rewrite the historical 2 cm failure.",
+    "A full corrected uncooked pair, blanket all-key/all-focus UI acceptance and automatic pixel comparison are not claimed. Bounded normal-PIE checks and visually inspected native images are documented separately.",
+    "The model is mass-exact; the quantized physical collision surface is accepted within a documented local tolerance, without a separate mesh-volume mass integration."
+  ],
+  "images": [
+    {
+      "file": "assets/images/construction-midwork.png",
+      "scope": "Inspected native historical passed packaged create frame, unchanged."
+    },
+    {
+      "file": "assets/images/construction-complete.png",
+      "scope": "Inspected native historical passed packaged resume frame, unchanged."
+    },
+    {
+      "file": "assets/images/construction-ui-buffer.png",
+      "scope": "Inspected native normal PIE full 18 t buffer, transport off, unchanged."
+    },
+    {
+      "file": "assets/images/construction-ui-paused.png",
+      "scope": "Inspected native normal PIE after paused restore: 60 t removed,12 buffer/12 truck/36 stored, unchanged."
+    }
+  ],
+  "builds": {
+    "editor": {
+      "status": "passed",
+      "duration_seconds": 52.17
+    },
+    "game_development": {
+      "status": "passed",
+      "duration_seconds": 89.29
+    },
+    "full_cook_stage_archive": {
+      "status": "passed",
+      "automation_exit_code": 0,
+      "duration_seconds": 96.05,
+      "cook_seconds": 78.39,
+      "stage_seconds": 12.18,
+      "archive_seconds": 2.56
+    },
+    "final_code_restage_archive": {
+      "status": "passed",
+      "automation_exit_code": 0,
+      "method": "SkipCook after native code update, using the successful full cook; not a new cook.",
+      "duration_seconds": 14.73,
+      "stage_seconds": 11.16,
+      "archive_seconds": 1.85
+    },
+    "game_and_packaged_inner_executable_identical": true,
+    "executable_sha256": "22386bc7835ab26041b31614a9042dc7ad7de1c960047ba0323909866f36b115",
+    "executable_size_bytes": 343935488,
+    "evidence_scope": "Successful private native build/UAT logs and byte hashes inspected. Engine/game binaries and raw build logs are not distributed.",
+    "artifact_scope": "Built game executable and packaged inner executable were read and matched this SHA256 after the deferred-initialization build. This is the binary used by the latest core pair."
+  },
+  "physical_height_and_mass_contract": {
+    "model_mass_unit": "integer grams",
+    "final_initial_soil_mass_tonnes": 172.8,
+    "final_storage_mass_tonnes": 172.8,
+    "final_buffer_truck_remaining_mass_grams": 0,
+    "final_balance_error_grams": 0,
+    "model_mass_conserved_exactly": true,
+    "physical_height_is_quantized": true,
+    "physical_mesh_volume_independently_integrated": false,
+    "explanation": "The ledger follows the continuous, integral-normalized triangular cell model. Native ShaderWorld brush output truncates heights to integer centimeters across sequential passes, and the collision mesh samples that result. The checked final surface differs from the 150 cm model target by up to 2.000778210 cm. Exact model grams are not an independent measurement of the quantized mesh volume.",
+    "gate": "Work waits for three stable nine-point collision passes within 5 cm. A mismatching region is requested again every 2 seconds. The acceptance phase is bounded to 300 seconds.",
+    "scope_limit": "This tolerance was selected for four brushes in this laboratory. It is not a universal error bound or completion guarantee for an arbitrary brush stack, world size, terrain profile or collision resolution."
+  },
+  "historical_passed_cooked_runs": [
+    {
+      "status": "passed_core_runtime_before_later_startup_guards",
+      "requires_cooked_data": true,
+      "distinct_processes": true,
+      "process_count": 2,
+      "create_elapsed_seconds": 25.181392,
+      "create_check_count": 14,
+      "resume_elapsed_seconds": 114.139276,
+      "resume_check_count": 15,
+      "repeated_load_count": 3,
+      "full_model_restore_identical": true,
+      "final_material_accounts": {
+        "initial_mass_grams": 172800000,
+        "total_excavated_mass_grams": 172800000,
+        "remaining_mass_grams": 0,
+        "buffer_mass_grams": 0,
+        "truck_mass_grams": 0,
+        "storage_mass_grams": 172800000,
+        "total_loaded_mass_grams": 172800000,
+        "total_delivered_mass_grams": 172800000,
+        "balance_error_grams": 0
+      },
+      "physical_height_summary": {
+        "collision_resolution_cm": 100,
+        "collision_vertices_per_patch": 129,
+        "accepted_height_tolerance_cm": 5,
+        "stable_ground_passes_required": 3,
+        "points_per_pass": 9,
+        "cold_plus_three_reloads_matching_ground_samples": 108,
+        "completion_matching_ground_samples": 27,
+        "all_actual_hit_max_abs_error_cm": 2.00077821,
+        "final_expected_height_cm": 150,
+        "final_actual_height_min_cm": 147.99922179,
+        "final_actual_height_max_cm": 148.99844358,
+        "final_max_abs_error_cm": 2.00077821
+      },
+      "builds": {
+        "editor": {
+          "status": "passed",
+          "duration_seconds": 66.56
+        },
+        "game_development": {
+          "status": "passed",
+          "duration_seconds": 107.08
+        },
+        "full_cook_stage_archive": {
+          "status": "passed",
+          "automation_exit_code": 0,
+          "duration_seconds": 96.05,
+          "cook_seconds": 78.39,
+          "stage_seconds": 12.18,
+          "archive_seconds": 2.56
+        },
+        "final_code_restage_archive": {
+          "status": "passed",
+          "automation_exit_code": 0,
+          "method": "SkipCook after native code update, using the successful full cook; not a new cook.",
+          "duration_seconds": 49.7,
+          "stage_seconds": 45.83,
+          "archive_seconds": 1.75
+        },
+        "game_and_packaged_inner_executable_identical": true,
+        "executable_sha256": "2314f1a94ee7983ce6637712b51de26628f5ff816690101034f83431f83f3a0c",
+        "executable_size_bytes": 343934464,
+        "evidence_scope": "Successful private native build/UAT logs and byte hashes inspected. Engine/game binaries and raw build logs are not distributed."
+      },
+      "source_snapshot": [
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.h",
+          "sha256": "61fe1d67cc0a3f133173d088111522e972dc86f492232b80e346fa16045c6789"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.cpp",
+          "sha256": "4db9d6113cdf1aafcb1fd0f0e1f2cb27fe8b6f52090b13770d260559946808b7"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.h",
+          "sha256": "a85e44c9d47b7ac26f3c3a72b638441fd8fc84aef78d9cde2863f89556e4b1a8"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.cpp",
+          "sha256": "f6b9ca6b3083c9bf67126b21637bfac3b964a60afe30a5ee640efd317b76e5d3"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.h",
+          "sha256": "d50cb6a67e2057556351b1fb9994ab1e5658507175bfe6a37a07ce8c434e31d2"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.cpp",
+          "sha256": "89f603bda920ee6a80f09bfa0f04efcc0029e2bcd3037e6490eed5d9bda74bc1"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.h",
+          "sha256": "375359c4bb70d1edc1a00b511c393fb918b33094e3c9c4a5281c1abdf4e8aa9a"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.cpp",
+          "sha256": "39f8ccbc88efbfbcce3e9cc40cc29f5c708a595ac867dbea8bbac5ddc95c0a4f"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionTests.cpp",
+          "sha256": "6509a702b3a4059988160adcdcfc358e239b674950341262afbe8c6a11909dcc"
+        },
+        {
+          "project_relative_source": "Tools/verify_construction.py",
+          "sha256": "a22417e242dd504adb3551eca8988c651f4c2bbfe3fd8b328da7651605d4693c"
+        },
+        {
+          "project_relative_source": "Tools/setup_construction_lab.py",
+          "sha256": "bfdad09966aa1352029dcc784c4fab353b96c2a8eb249eb0fbf0ca655086c03f"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.h",
+          "sha256": "36e14e22ed0a8aa2fbb17b90e22c08c9f0003c40d8a7a83335c150a8215f150e"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.cpp",
+          "sha256": "cabdc5ab795a883ab92a946403d554981e2cb6da4475dfc8f1163a4e436cdf8e"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabWorldEditVersionTests.cpp",
+          "sha256": "fe4547bec1713e3215b47c9261ec3bd038700d3224ea4abdf16317b81a83122b"
+        }
+      ],
+      "scope": "Historical passed cooked core run before startup/autosave guard updates. Its 14+15 checks did not test normal first-start UI initialization.",
+      "source_snapshot_scope": "Project source snapshot at the preceding report update; not a build-embedded whole-source-tree fingerprint."
+    },
+    {
+      "status": "passed_core_runtime_before_final_deferred_initialization_fix",
+      "requires_cooked_data": true,
+      "distinct_processes": true,
+      "process_count": 2,
+      "create_elapsed_seconds": 25.665541,
+      "create_check_count": 14,
+      "resume_elapsed_seconds": 113.781341,
+      "resume_check_count": 15,
+      "repeated_load_count": 3,
+      "full_model_restore_identical": true,
+      "final_material_accounts": {
+        "initial_mass_grams": 172800000,
+        "total_excavated_mass_grams": 172800000,
+        "remaining_mass_grams": 0,
+        "buffer_mass_grams": 0,
+        "truck_mass_grams": 0,
+        "storage_mass_grams": 172800000,
+        "total_loaded_mass_grams": 172800000,
+        "total_delivered_mass_grams": 172800000,
+        "balance_error_grams": 0
+      },
+      "physical_height_summary": {
+        "collision_resolution_cm": 100,
+        "collision_vertices_per_patch": 129,
+        "accepted_height_tolerance_cm": 5,
+        "stable_ground_passes_required": 3,
+        "points_per_pass": 9,
+        "cold_plus_three_reloads_matching_ground_samples": 108,
+        "completion_matching_ground_samples": 27,
+        "all_actual_hit_max_abs_error_cm": 2.00077821,
+        "final_expected_height_cm": 150,
+        "final_actual_height_min_cm": 147.99922179,
+        "final_actual_height_max_cm": 148.99844358,
+        "final_max_abs_error_cm": 2.00077821
+      },
+      "builds": {
+        "editor": {
+          "status": "passed",
+          "duration_seconds": 71.33
+        },
+        "game_development": {
+          "status": "passed",
+          "duration_seconds": 89.16
+        },
+        "full_cook_stage_archive": {
+          "status": "passed",
+          "automation_exit_code": 0,
+          "duration_seconds": 96.05,
+          "cook_seconds": 78.39,
+          "stage_seconds": 12.18,
+          "archive_seconds": 2.56
+        },
+        "final_code_restage_archive": {
+          "status": "passed",
+          "automation_exit_code": 0,
+          "method": "SkipCook after native code update, using the successful full cook; not a new cook.",
+          "duration_seconds": 48.99,
+          "stage_seconds": 43.77,
+          "archive_seconds": 2.21
+        },
+        "game_and_packaged_inner_executable_identical": true,
+        "executable_sha256": "a81961146084baace5807d9daab034840363d73f5b341a237dcb542a457702f3",
+        "executable_size_bytes": 343934464,
+        "evidence_scope": "Successful private native build/UAT logs and byte hashes inspected. Engine/game binaries and raw build logs are not distributed.",
+        "artifact_scope": "Built game executable and packaged inner executable were read and matched this SHA256 before the subsequent normal-startup source correction. This is the binary used by the historical core pair."
+      },
+      "source_snapshot": [
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.h",
+          "sha256": "61fe1d67cc0a3f133173d088111522e972dc86f492232b80e346fa16045c6789"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionModel.cpp",
+          "sha256": "4db9d6113cdf1aafcb1fd0f0e1f2cb27fe8b6f52090b13770d260559946808b7"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.h",
+          "sha256": "a85e44c9d47b7ac26f3c3a72b638441fd8fc84aef78d9cde2863f89556e4b1a8"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstruction.cpp",
+          "sha256": "f6b9ca6b3083c9bf67126b21637bfac3b964a60afe30a5ee640efd317b76e5d3"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.h",
+          "sha256": "d50cb6a67e2057556351b1fb9994ab1e5658507175bfe6a37a07ce8c434e31d2"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionVerification.cpp",
+          "sha256": "89f603bda920ee6a80f09bfa0f04efcc0029e2bcd3037e6490eed5d9bda74bc1"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.h",
+          "sha256": "375359c4bb70d1edc1a00b511c393fb918b33094e3c9c4a5281c1abdf4e8aa9a"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabPersistence.cpp",
+          "sha256": "39f8ccbc88efbfbcce3e9cc40cc29f5c708a595ac867dbea8bbac5ddc95c0a4f"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionTests.cpp",
+          "sha256": "6509a702b3a4059988160adcdcfc358e239b674950341262afbe8c6a11909dcc"
+        },
+        {
+          "project_relative_source": "Tools/verify_construction.py",
+          "sha256": "a22417e242dd504adb3551eca8988c651f4c2bbfe3fd8b328da7651605d4693c"
+        },
+        {
+          "project_relative_source": "Tools/setup_construction_lab.py",
+          "sha256": "bfdad09966aa1352029dcc784c4fab353b96c2a8eb249eb0fbf0ca655086c03f"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.h",
+          "sha256": "36e14e22ed0a8aa2fbb17b90e22c08c9f0003c40d8a7a83335c150a8215f150e"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabConstructionGameMode.cpp",
+          "sha256": "34476ef3f66b05aa2e60f6a28af2f89d6c6e480fddaa5a6583f63671ae4fa605"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabWorldEditVersionTests.cpp",
+          "sha256": "fe4547bec1713e3215b47c9261ec3bd038700d3224ea4abdf16317b81a83122b"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabLoopGameMode.h",
+          "sha256": "dae2fcaa0f518683bbfd94956cab3fbffba69dba36d240a87e2e208129e82e2a"
+        },
+        {
+          "project_relative_source": "Source/UnrealMcpTest/CityLabLoopGameMode.cpp",
+          "sha256": "c26b24fa61c5f47554052c48e695efa19c94ab479acb6a04ebe1127c716f29c5"
+        }
+      ],
+      "source_snapshot_scope": "SHA256 of current project-local source bytes at report update. Subsequent normal-startup source edits may already be present, so this snapshot is not asserted to be an exact source manifest embedded in the a819 core-test binary. The tested executable SHA256 is recorded separately.",
+      "scope": "Historical passed a819 cooked core run before the final deferred normal-initialization fix. Its opt-in core checks did not establish the normal first-start UI path."
+    }
+  ]
+}

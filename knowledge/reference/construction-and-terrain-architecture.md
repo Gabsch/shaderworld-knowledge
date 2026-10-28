@@ -1,13 +1,13 @@
 ---
 type: Playbook
 title: Bauarbeit, Gelände und Material als gemeinsames System
-description: Das Nutzerdesign für echten Baufortschritt in eine vorgeschlagene Architektur und einen kleinen überprüfbaren Baustellenversuch übersetzen.
+description: Das Nutzerdesign für echten Baufortschritt mit dem geprüften kleinen Baugrubenkreislauf verbinden und weitere Architekturarbeit abgrenzen.
 status: draft
 tags: [shaderworld, citylab, city-builder, construction, terraforming, logistics, underground]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T13:44:36Z" }
-evidence_scope: Nutzerdesign mit Foundations-Vorläufer; aktuelle Black-Fassung uncooked/cooked mit je zwei Prozessen und normale PIE-Paint-/Ladebilder geprüft. Maschinen-/Materialkreislauf nicht implementiert; keine separate verpackte Pixelabnahme.
+generated: { by: codex/gpt-6, at: "2026-10-28T19:08:21Z" }
+evidence_scope: Nutzerdesign mit Foundations-Vorläufer; kleiner ConstructionLab-Kreislauf mit 14/14 und 15/15 Checks in zwei cooked Prozessen vollständig abgeschlossen, Modellbilanz und lokale physische Höhen getrennt geprüft. 22 native Tests, gerenderte Navigation mit Harnessgrenze und acht CPU-Rodungsmessfenster belegt. Ausgewählte Baugruben-Standbilder geprüft; vollständige normale UI-Prüfung und Produktionswirtschaft bleiben offen.
 sources:
   - id: user-design
     resource: "Vom Nutzer am 28. Oktober 2026 bereitgestellter Designauszug zu Geländeverformung, physischem Bau, Materiallogistik und Untergrund; private Vorlage nicht im öffentlichen Bundle enthalten"
@@ -17,7 +17,19 @@ sources:
     title: Implementierter Sofortbau im CityLoop und sein abgegrenzter Neustartnachweis
   - id: foundations
     resource: ../guides/foundations-lab.md
-    title: Eigene Planungs-, Biom- und Ressourcenverwaltung mit historischen Nachweisen und aktuellem Paint-Retest
+    title: Eigene Planungs-, Biom- und Ressourcenverwaltung mit begrenzten Daten- und Bildnachweisen
+  - id: construction-lab
+    resource: ../guides/construction-lab.md
+    title: Kleine Baugrube mit Testbagger, begrenztem Puffer, Lkw und Format-5-Spielstand
+  - id: construction-proof
+    resource: ../evidence/construction-lab-test.json
+    title: 22 native Tests und vollständiger cooked Baugrubenabschluss mit exakter Modellbilanz
+  - id: navigation-proof
+    resource: ../evidence/terrain-navigation-test.json
+    title: Gerenderter Bürger-Grubenversuch mit zusätzlicher bewusster Harness-Wartezeit
+  - id: clearing-cpu
+    resource: ../evidence/clearing-performance-test.json
+    title: Acht isolierte cooked CPU-Messfenster und Slot-/Liveumfang der Rodung
   - id: saves
     resource: ../guides/save-and-load.md
     title: Bisheriges logisches Speichermodell
@@ -38,7 +50,7 @@ sources:
 
 **Unser Ziel ist eine Stadt, deren Landschaft durch Bauarbeit entsteht.** Der Spieler plant eine Straße oder Baugrube. Maschinen erreichen den Ort, arbeiten dort und bewegen Material. Die Welt zeigt den erreichten Bauzustand, auch wenn die Baustelle unterbrochen und das Spiel neu gestartet wird.
 
-Diese Seite leitet aus dem bereitgestellten Nutzerdesign eine technische Richtung ab. **„Gesetzte Regel“** bezeichnet eine Nutzeranforderung, **„Vorschlag“** unsere noch zu erprobende Umsetzung. Die Versionsangaben nennen die technische Prüfbasis; sie versprechen keine fertige Baustellensimulation im Plugin. Der vorgeschlagene Maschinen-/Materialversuch ist nicht implementiert. Die [Foundations-Anleitung](../guides/foundations-lab.md) beschreibt seine vorhandenen Vorarbeiten und die aktuellen abgegrenzten Nachweise nach zwei unterschiedlichen Paintfehlern.[^user-design][^foundations]
+Diese Seite leitet aus dem bereitgestellten Nutzerdesign eine technische Richtung ab. **„Gesetzte Regel“** bezeichnet eine Nutzeranforderung, **„Vorschlag“** unsere noch zu erprobende Umsetzung. Die Versionsangaben nennen die technische Prüfbasis; sie versprechen keine fertige Baustellensimulation im Plugin. Der erste abgegrenzte Maschinen-/Materialkreislauf im [ConstructionLab](../guides/construction-lab.md) ist implementiert und bis zum vollständigen Abschluss nach cooked Prozessneustart geprüft. Weitergehende Architekturthemen bleiben Vorschläge; die normale vollständige Bedienrunde ist davon getrennt.[^construction-proof] Die [Foundations-Anleitung](../guides/foundations-lab.md) beschreibt seine vorhandenen Vorarbeiten und die aktuellen abgegrenzten Nachweise nach zwei unterschiedlichen Paintfehlern.[^user-design][^foundations]
 
 ## Gesetzte Regeln und offene Entscheidungen
 
@@ -59,12 +71,14 @@ Unterschiedliche Volumenzustände für gewachsenen Boden, lockeren Aushub und ve
 | --- | --- | --- |
 | Laufzeitstraße mit Road-Creator-Meshes | Gemeinsame Spline mit ShaderWorld-Terrain und Bewuchsmaske; eigener Neustart- und Kollisionsversuch | Geplante Trasse von tatsächlich fertiggestellten Abschnitten trennen |
 | Grundstück, Haus und Bürger | CityLoop speichert Änderungen und Bürgerfortschritt über getrennte Spielprozesse | Räumlicher Arbeitsfortschritt, Baustoffe, Maschinen und Bauzustände |
-| Freigeräumte Bauflächen | Gemessene Pflanzenursprünge im geprüften Kern werden entfernt und nach Laden wieder freigehalten | Rodung als Arbeitsphase, einzelne Baumzustände und gegebenenfalls verwertbares Material |
+| Freigeräumte Bauflächen und Einzelrodung | Maskenkerne bleiben nach Laden frei; stabile Einzelbaumzustände, CPU-/Physikpersistenz und getrennte normale PIE-Baumbilder geprüft | Rodung als Maschinenarbeit, Holzgewinnung, Kollisionsnachlauf und Lastbegrenzung |
+| Kleine Baugrube mit Materialkreislauf | Vier Arbeitszellen, Pufferstopp, beladener Transport, vollständiger Zwischenstandrestore und Abschluss in zwei cooked Prozessen; 172,8 t im Lager, 0 g Modellbilanzfehler | Freie Aufträge, dynamische Maschinenanreise, Wiedereinbau, mehrere Materialien und allgemeine Logistik[^construction-proof] |
+| Bürger vor verändertem Gelände | Gerenderter Gruben-/Reparaturversuch mit 11/11 Checks und 81 Groundhits | Der Harness hielt zusätzlich zehn Ticks an; keine allgemeine Produktions-Fence oder NavMesh-Abnahme[^navigation-proof] |
 | Bergtunnel und Air Pocket | Eigene Tunnelmeshes, Portalöffnungen, Kollision und abgegrenzte Durchfahrt geprüft | Gespeicherter räumlicher Aushub, Bauabschnitte, Geologie und alle drei Tunnelverfahren |
 
 Der aktuelle CityLoop baut mit **R/Enter** eine Straße und mit **P** ein gerodetes Grundstück samt Haus sofort. Er bleibt als Entwicklungs- und Prüflabor nützlich. Der spätere Spielablauf soll daraus zunächst **Bauaufträge** machen. Eine bereits sichtbare fertige Straße ist noch kein Nachweis physischer Bauarbeit.[^loop][^roads][^dry-tunnel]
 
-Die getrennte Foundations-Karte implementiert einen Vorläufer der Soll-/Ist-Trennung: Planrecords, Undo/Cancel ungearbeiteter Planung und ausdrückliche Debugausführung. Fünf Biomprofile sind eingerichtet. Nach einem NoGrowth-Überlappungsfehler des alten Paint-Splinebackends wurde auf einen quadratischen LayerMask-Brush umgestellt. Eine weitere Sichtprobe entdeckte einen falschen White-Flow-Selektor; der aktuelle Code verwendet Black für Zero-Flow. Diese Fassung bestand jeweils 29/29 und 12/12 Checks in zwei gerenderten uncooked und zwei echten cooked Prozessen; reale Kern-/Seitenvegetation blieb nach Paint, Regeneration und wiederholtem Laden entfernt, die Waldkontrolle erhalten. Acht native Automationtests und die normale kompilierte PIE-Paint-/Ladebildprüfung sind erfolgreich. Maschinen, Materialkonten, Arbeitsraten und räumliche Teilbauzustände fehlen.[^foundations]
+Die getrennte Foundations-Karte implementiert einen Vorläufer der Soll-/Ist-Trennung: Planrecords, Undo/Cancel ungearbeiteter Planung und ausdrückliche Debugausführung. Fünf Biomprofile sind eingerichtet. Nach einem NoGrowth-Überlappungsfehler des alten Paint-Splinebackends wurde auf einen quadratischen LayerMask-Brush umgestellt. Eine weitere Sichtprobe entdeckte einen falschen White-Flow-Selektor; der aktuelle Code verwendet Black für Zero-Flow. Diese Fassung bestand jeweils 29/29 und 12/12 Checks in zwei gerenderten uncooked und zwei echten cooked Prozessen; reale Kern-/Seitenvegetation blieb nach Paint, Regeneration und wiederholtem Laden entfernt, die Waldkontrolle erhalten. Die damaligen acht nativen Foundations-Tests und die normale kompilierte PIE-Paint-/Ladebildprüfung waren erfolgreich; die erweiterte native Gesamtsuite umfasst inzwischen 22 bestandene Tests, 20 ohne und zwei mit bekannten Warnungen. Das [ConstructionLab](../guides/construction-lab.md) ergänzt den tatsächlich abgeschlossenen kleinen Bagger-/Puffer-/Lkw-Kreislauf. Zwei frische cooked Prozesse bestanden 14/14 Checks in 24,705998 s und 15/15 in 113,845061 s. Das sind getrennte Nachweise mit unterschiedlichen Aufgaben.[^foundations][^construction-proof]
 
 Für die Architektur ist eine Rangfolge der Masken nötig: Freie Materialmalerei darf strukturelle Straßen-/Pad-Daten nicht verdrängen. Der Brush setzt Material R vor dem Road-/Pad-Pass; spätere Strukturregeln behalten Material und NoGrowth in Kern und Seitenbereich. Uncooked und cooked prüfen diese Wirkung mit zuvor bewachsenem Gelände. Die nativen Maskentestactors werden je Prozess neu erzeugt und nicht zusätzlich gespeichert. Die Datamap steuert hier die Wahl zwischen Ground- und Flow-Material, nicht die Flächendeckung. Black wählt Ground; White hatte trotz passender Actorwerte keine sichtbare Farbe erzeugt. GPU-Pixel, Datenparameter und beliebige Maskenpersistenz benötigen deshalb getrennte Nachweise.[^foundations]
 
@@ -103,7 +117,7 @@ Dafür müssen nicht alle Erdkörner als Physikobjekte simuliert werden. Als Vor
 
 Vorgeschlagene Materialkonten sind Boden im Arbeitsgebiet, Maschinenpuffer, Fahrzeugladung, Zwischenlager, eingebautes Material und dokumentierte Abgänge durch Verkauf oder Entsorgung. Jeder Transfer hat Herkunft, Ziel, Materialart und Menge. Ein Abgang aus der Welt muss nachvollziehbar verbucht sein.
 
-Beim Aushub wandert Masse aus dem gewachsenen Boden in den Puffer; beim Einbau aus einer Lieferung in die Aufschüttung. Volumen ergibt sich je Materialzustand aus Masse und angenommener Dichte. **Wir legen hier noch keine Dichten oder Umrechnungsfaktoren fest.** Geometrische Rasterung und Rundung benötigen eine definierte Toleranz samt Restmengen, damit viele kleine Schritte keine Erde erzeugen oder verlieren.
+Beim Aushub wandert Masse aus dem gewachsenen Boden in den Puffer; beim Einbau aus einer Lieferung in die Aufschüttung. Volumen ergibt sich je Materialzustand aus Masse und angenommener Dichte. **Für eine allgemeine Produktionswelt sind Materialklassen und Dichten weiter offen.** Das kleine Labor verwendet ausdrücklich angenommene **1800 kg/m³ gewachsen** und **1400 kg/m³ locker**. Sein kontinuierliches Zellmodell ergibt **96 m³/172,8 t**; diese Grammkonten stimmen exakt, das quantisierte ShaderWorld-Meshvolumen wurde nicht unabhängig integriert.[^construction-proof] Geometrische Rasterung und Rundung benötigen eine definierte Toleranz samt Restmengen, damit viele kleine Schritte keine Erde erzeugen oder verlieren.
 
 Die Sollmenge bleibt eine Prognose. Die Bilanz zählt ausgeführte Arbeit. So kann Aushub aus Projekt A einen Damm in Projekt B versorgen, ohne denselben Vorrat mehrfach zu verplanen.
 
@@ -111,7 +125,7 @@ Die Sollmenge bleibt eine Prognose. Die Bilanz zählt ausgeführte Arbeit. So ka
 
 Nur bearbeitete Bereiche erhalten eine Geländeänderung oder Rodungsmaske. Asphalt und feste Gebäudeteile werden erst mit ihrer Bauphase sichtbar und nutzbar. Ein Abbruch lässt die erreichten Höhen und verbrauchten Materialien bestehen. Das Stornieren ungearbeiteter Planung und ein späterer Rückbau sind unterschiedliche Vorgänge; bereits ausgeführte Erdarbeit verlangt einen neuen Arbeitsauftrag.
 
-Terrain, Vegetation und Kollision können zeitversetzt aktualisiert werden. Wir brauchen deshalb eine erkennbare Bereitschaft je geändertem Bereich und Tests, dass Maschinen und Bürger keine veraltete Kollision verwenden. Ein bloß gestarteter GPU- oder Brush-Update gilt nicht als Nachweis fertiger Physik.
+Terrain, Vegetation und Kollision können zeitversetzt aktualisiert werden. Wir brauchen deshalb eine erkennbare Bereitschaft je geändertem Bereich und Tests, dass Maschinen und Bürger keine veraltete Kollision verwenden. Ein bloß gestarteter GPU- oder Brush-Update gilt nicht als Nachweis fertiger Physik. Das Vier-Brush-Labor wartet tatsächlich auf **neun passende Bodenpunkte in drei stabilen Durchläufen** bei **5 cm Toleranz**, mit **100 cm Kollisionsauflösung und 129 Vertices je Patch**. Am Ende wich die Oberfläche maximal **2,000778 cm** vom 150-cm-Modellziel ab. Der native Ausgang quantisiert Höhe je Pass auf ganze Zentimeter; dieses lokale Gate ist deshalb keine universelle Genauigkeits- oder Bereitschaftszusage. Eine abweichende Kollisionsregion wird alle zwei Sekunden erneut angefordert.[^construction-proof]
 
 Vorschlag für die Lastbegrenzung: Arbeit logisch in festen Schritten buchen, benachbarte Änderungen zusammenfassen und ShaderWorld nur betroffene Bereiche aktualisieren lassen. Ob wir verdichtete Höhenänderungen, Brush-Daten oder ein begrenztes Änderungsjournal speichern, entscheidet ein kleiner Leistungstest. Eine neue dauerhaft aktive Brush pro Schaufel wäre zunächst nur eine zu untersuchende Variante.
 
@@ -119,7 +133,7 @@ Vorschlag für die Lastbegrenzung: Arbeit logisch in festen Schritten buchen, be
 
 Ein Arbeitsschritt braucht eine stabile Kennung beziehungsweise Reihenfolge. Ist-Geometrie, Auftragsfortschritt und Materialtransfer müssen einen gemeinsamen Speicherstand bilden. Beim erneuten Laden darf derselbe Schritt weder Material erneut erzeugen noch erneut verbrauchen. Ein bekannter vollständiger Stand muss erhalten bleiben, wenn ein neuer Speichervorgang scheitert.
 
-Zu speichern wären mindestens Aufträge und Planrevisionen, ausgeführte räumliche Arbeit, Materialkonten und Reservierungen, Maschinen-/Fahrzeugpositionen und -ladungen, aktive Arbeits-/Transportzustände, laufende Übergaben, Bearbeitungsreihenfolge sowie Generator-/Datenversion. Sichtbare Brushes und Meshes sollen daraus wiederherstellbar sein. Das projektlokale **Spielstandformat 4** ergänzt Straßen-, Bauflächen- und Bürgerdaten um Plan-/Änderungsrecords und Einzelrodungszustände. Es ist **noch kein fertiger Maschinen-/Materialspielstand**; Konten, Ladungen und räumliche Arbeitsphasen fehlen. CityLoop besitzt einen getrennten Neustartnachweis. Die aktuelle Black-/Zero-Flow-Foundations-Fassung bestand passende native Persistenz- und Maskenprüfungen uncooked und cooked; die aktuelle kompilierte GPU-Wirkung ist zusätzlich in ausgewählten normalen PIE-Frames mit Laden geprüft. Das ersetzt keine separate verpackte Pixelabnahme.[^saves][^loop][^foundations]
+Zu speichern wären mindestens Aufträge und Planrevisionen, ausgeführte räumliche Arbeit, Materialkonten und Reservierungen, Maschinen-/Fahrzeugpositionen und -ladungen, aktive Arbeits-/Transportzustände, laufende Übergaben, Bearbeitungsreihenfolge sowie Generator-/Datenversion. Sichtbare Brushes und Meshes sollen daraus wiederherstellbar sein. Das frühere projektlokale **Spielstandformat 4** ergänzte Straßen-, Bauflächen- und Bürgerdaten um Plan-/Änderungsrecords und Einzelrodungszustände. **Format 5** enthält zusätzlich das begrenzte Baustellenmodell mit Zellfortschritt, Materialkonten, Ladung, Positionen und Maschinen-/Transportphasen. Im ConstructionLab wurden der vollständige serialisierte Modellhash vor jedem Weiterarbeiten und drei wiederholte Loads identisch bestätigt; anschließend endete der Auftrag mit exakt **172800000 g im Lager**, **0 g Restboden/Puffer/Laster und 0 g Modellbilanzfehler**. Das ist ein eigener Maschinen-/Materialspielstand für einen festen Laborauftrag, noch kein allgemeines Auftrags- und Logistiksystem.[^construction-proof] CityLoop besitzt einen getrennten Neustartnachweis. Die aktuelle Black-/Zero-Flow-Foundations-Fassung bestand passende native Persistenz- und Maskenprüfungen uncooked und cooked; die aktuelle kompilierte GPU-Wirkung ist zusätzlich in ausgewählten normalen PIE-Frames mit Laden geprüft. Das ersetzt keine separate verpackte Pixelabnahme.[^saves][^loop][^foundations]
 
 Ändert der Spieler einen laufenden Plan, bleibt die bereits ausgeführte Arbeit real vorhanden. Die neue Planrevision muss die verbleibenden Mengen und erforderlichen Gegenarbeiten neu bestimmen. Verhalten bei konkurrierenden Aufträgen und Speicherfehlern gehört zu den offenen Tests.
 
@@ -143,40 +157,46 @@ Ein Tunnelbaustein sollte Trasse, Profil, Portalöffnung, Körper, Kollision und
 
 Bauzüge sollen nach dem Nutzerdesign gewöhnliche Güterzüge mit tatsächlichen Betriebsbedingungen sein: Spurweite, Lichtraum, Stromversorgung, Zugsicherung, Länge und zulässige Fracht bestimmen die Nutzbarkeit. Zeitfenster auf betriebenen Strecken sind eine spätere Erweiterung. Leitungsnetze bekommen echte Positionen, Konfliktprüfungen und gegebenenfalls provisorische Anschlüsse; das Werkzeug kann bequem an Straßenmitte oder Gehweg einrasten. Dafür ist noch keine Netz- oder Zugimplementierung nachgewiesen.[^user-design]
 
-## Nächster Vorschlag: Eine kleine Baustelle als vollständiger Kreislauf
+## Erster Kreislauf bestanden, Wiedereinbau als nächste Erweiterung
 
-Der erste Versuch sollte **eine Baugrube, einen einfachen Baggerplatzhalter, einen begrenzten Aushubpuffer und einen Abtransport** enthalten. UE-Grundformen genügen als Darstellung. Neue Fahrzeugpakete lösen die Fragen nach Mengen, Teilfortschritt und konsistentem Speichern noch nicht; sie sind für diesen Versuch keine Voraussetzung.
+Das [ConstructionLab](../guides/construction-lab.md) setzt den ersten kleinen Versuch bereits um: eine Baugrube, einen animierten Bagger aus UE-Grundformen, einen begrenzten Puffer, einen Lkw auf fester geprüfter Route und ein Lager. Die vier 400-cm-Zellen besitzen einen auslaufenden 12 × 12 m Fußabdruck mit 4 × 4 m Kern. Die normale maximale Absenkung beträgt 150 cm. **18 t Puffer**, **12 t Lkw** und **500 t Lager** begrenzen die Arbeit; der eigene Slot **CityLabConstruction** bleibt von Foundations und CityLoop getrennt.[^construction-lab]
 
-1. **Planen:** Eine flache Baugrube auswählen. Sollfläche und geschätzte Menge erscheinen, das Ist-Gelände und der Bewuchs bleiben zunächst erhalten.
-2. **Erschließen und roden:** Eine erreichbare Arbeitsposition prüfen; benötigten Bewuchs als eigene Arbeit entfernen. Für diesen ersten Versuch kann die Zufahrt vorgegeben sein. Ein freier Teleport ersetzt später keine Maschinenanreise.
-3. **Arbeiten:** Der Baggerplatzhalter verändert erreichbare Teilflächen in begrenzten Schritten. Die Grube wächst sichtbar, der zugehörige Puffer füllt sich.
-4. **Anhalten:** Bei vollem Puffer stoppt die Erdarbeit mit verständlichem Grund. Ohne Abtransport darf kein weiterer Boden verschwinden.
-5. **Transportieren:** Ein einfaches Fahrzeug übernimmt verbuchte Ladung und bringt sie zu einem begrenzten Lager; freier Puffer erlaubt neue Arbeit. Zunächst genügt eine feste geprüfte Route.
-6. **Unterbrochen neu starten:** Während der halb fertigen Grube mit gefülltem Puffer und/oder beladenem Fahrzeug speichern, den Spielprozess beenden und neu starten. Form, Bewuchs, Mengen, Maschinen-/Fahrzeugpositionen, Ladung und aktiver Arbeits-/Transportschritt müssen wiederkehren.
-7. **Wiederverwenden:** Einen Teil des gelagerten Materials in einer kleinen Testaufschüttung einbauen. Damit prüfen wir auch den Rückweg vom Lager ins Gelände; danach bis zum geplanten Zustand weiterarbeiten.
+1. **Planen:** Ein noch fehlender Beispielauftrag erscheint pausiert und mit ausgeschaltetem Transport. Planung allein verändert weder Gelände noch Bewuchs oder Konten.
+2. **Arbeitsbereich freistellen:** Erst begonnene Arbeit aktiviert die begrenzte NoGrowth-Maske samt festem Maschinen-/Transportkorridor. Das Labor gewinnt dabei kein Holz; allgemeine Rodungsarbeit und Maschinenanreise fehlen.
+3. **Arbeiten:** Begrenzte Modellschritte verändern die tatsächlich ausgeführte Grubenform. Der Puffer füllt sich; der nächste Schritt wartet auf die lokale physische Höhenprüfung.
+4. **Anhalten und transportieren:** Bei 18 t Puffer stoppt der Aushub. Freigegebener Transport übernimmt höchstens 12 t und liefert zum Lager. Eine feste Route und Bodenprüfungen ersetzen keine freie Fahrzeugnavigation oder Fahrzeugphysik.
+5. **Unterbrochen neu starten:** Ein realer Zwischenstand mit **42 t Aushub = 18 t Puffer + 12 t fahrender Lkw + 12 t Lager** wurde gespeichert. Der neue cooked Prozess stellte alle Modellfelder identisch wieder her, lud dreimal zusätzlich und arbeitete vollständig fertig.
+6. **Abschließen:** Alle **172,8 t** lagen im Lager; Restboden, Puffer und Fahrzeug waren leer. Der unveränderte Zielplan und die tatsächliche Endoberfläche bestanden die getrennten Prüfungen.[^construction-proof]
+7. **Noch zu ergänzen: Wiederverwenden.** Einen Teil des gelagerten Materials in einer kleinen Testaufschüttung einbauen. Damit fehlt noch der Rückweg vom Lager ins Gelände; ebenso mehrere Aufträge und materialübergreifende Logistik.
 
-### Woran wir diesen Versuch abnehmen würden
+### Was belegt ist und was wir zusätzlich prüfen müssen
 
-| Probe | Erwartetes Ergebnis, noch nicht getestet |
-| --- | --- |
-| Nur planen oder ungearbeiteten Plan stornieren | Keine Gelände-/Rodungsänderung und kein Materialertrag |
-| Arbeitsreichweite oder freie Zufahrt fehlt | Kein Fortschritt außerhalb der tatsächlich erreichbaren Arbeitsfläche |
-| Puffer oder Ziellager voll | Fortschritt stoppt; keine verschwundene oder doppelt gezählte Masse |
-| Teilweise gebaut und neu gestartet | Dieselben räumlichen Zwischenstände, Auftrags-IDs, Maschinen-/Fahrzeugpositionen, Ladungen und Materialkonten; Weiterarbeit im richtigen Arbeits-/Transportschritt |
-| Denselben gespeicherten Stand mehrfach laden | Keine doppelten Baustellen, Transfers oder fertigen Abschnitte |
-| Aushub anschließend wieder einbauen | Gesamtbilanz inklusive nachvollziehbarer Restmengen innerhalb vorher festgelegter Toleranz |
-| Bereich verlassen und zurückkehren | Unfertige Form und bearbeiteter Bewuchs bleiben erhalten; keine automatische Fertigstellung durch Streaming |
-| Kollision baut verzögert neu auf | Maschinen/Bürger warten oder werden sicher geführt; keine Fahrt auf veralteter Geometrie |
-| Plan nach Teilbau ändern | Ausgeführte Arbeit bleibt; Restbedarf und Gegenarbeiten beziehen sich auf den tatsächlichen Zustand |
-| Neuen Speicherstand nicht vollständig schreiben | Letzter vollständiger Stand bleibt ladbar; kein gemischter Stand aus alter Erde und neuer Ladung |
+| Probe | Aktueller begrenzter Nachweis | Verbleibende Grenze |
+| --- | --- | --- |
+| Nur planen | Pausierter Plan ohne Höhen-/Masken-/Kontenänderung im cooked Versuch | Weitere Planformen, Storno und Umplanung laufender Arbeit separat prüfen |
+| Arbeitsreichweite oder Zufahrt fehlt | Beispielauftrag schließt überlagernde Straßen/Bauflächen aus und nutzt eine feste Route | Keine beliebige Maschinenanreise oder allgemeine Erreichbarkeitsprüfung |
+| Puffer oder Ziellager voll | 18-t-Puffer stoppt echten Aushub; native Modelltests prüfen Kapazitätsregeln | Voller Ziellagerfall im normalen gerenderten Spiel separat prüfen |
+| Teilweise gebaut und neu gestartet | Zwei cooked Prozesse mit identischem vollständigem Modellhash vor Weiterarbeit; Abschluss bestanden | Keine vollständige korrigierte uncooked Zwei-Prozess-Runde aus diesem Bericht ableiten |
+| Denselben Stand mehrfach laden | Drei zusätzliche Loads ohne Modellabweichung oder doppelte Backends | Mehrere Aufträge und konkurrierende Transfers fehlen |
+| Aushub wieder einbauen | Noch nicht implementiert | Aufschüttung und gemeinsames Gegenkonto prüfen |
+| Bereich verlassen und zurückkehren | Nicht Teil dieser Baugruben-Abnahme | Reichweiten-/Streamingfahrt und unfertigen Bewuchs prüfen |
+| Kollision baut verzögert neu auf | Baugrube wartet auf drei passende Neun-Punkt-Durchläufe; Bürger-Grubenversuch getrennt bestanden | Dessen zusätzlicher Harness-Halt ist keine allgemeine Produktions-Fence |
+| Plan nach Teilbau ändern | Zielplan blieb während der geprüften Arbeit unverändert | Restbedarf und Gegenarbeiten bei echter Revision fehlen |
+| Startupretry und Autosave-Schutz | Normaler pausierter Erstplan automatisch erzeugt; weltfremder Stand abgewiesen und über das Autosavefenster bytegleich; gültiger gesicherter Stand danach exakt wiederhergestellt | Begrenzte normale PIE-Fehlerfallprobe bestanden; keine pauschale Tastatur-/Fokusabnahme |
 
-Die Ergebnisse gehören später mit getrennten Nachweisen für Datenbilanz, sichtbares Gelände, Kollision und echten Neustart in den [Prüfstand](../verification.md). Eine erfolgreiche Dokuprüfung bestätigt nur diese Beschreibung.
+**Historisch fehlgeschlagen** bleibt der frühere uncooked Fortsetzungsversuch mit **2-cm-Gate**: Nach erfolgreichem Zwischenstandrestore blieb er auf Kollision hängen. Die spätere cooked Abnahme mit lokalem **5-cm-Gate** und weiteren Freiraum-/Retrykorrekturen bestand vollständig. Sie isoliert keine einzelne Ursache des früheren Stillstands. Die Zahlen und ausgewählten eigenen Standbilder sind im [Baugrubenbericht](../evidence/construction-lab-test.json) abgegrenzt; normale Erstplanung, Pufferstopp, Transport und exaktes pausiertes PIE-Wiederladen sind zusätzlich geprüft. Eine pauschale Abnahme aller Tastatur-/Fokusfälle oder ein automatischer Pixelvergleich bleibt offen.[^construction-proof]
+
+### Vor größerem Ausbau: Rodungskosten begrenzen
+
+Ein getrennter isolierter cooked Benchmark bestand **acht 8-s-Fenster** für **0/1/10/100 Rodungsrecords**, jeweils mit und ohne native Rayabfrage. Reapply kostete bei null Records rund **0,001 ms**, bei positiven Recordzahlen im Mittel **19,85–22,06 ms je Aufruf**. Die native Rayabfrage kostete schon ohne Records etwa **21 ms**, insgesamt **20,43–21,02 ms**. Sie lief tatsächlich etwa 4,74–4,85 Hz. Das sind synchrone CPU-Aufrufzeiten, keine GPU- oder FPS-Abnahme; der 48er Cap ist nur eine Rahmenbedingung.[^clearing-cpu]
+
+**152881 visuelle Slots sind keine 152881 lebenden Bäume:** Zu Beginn waren nur **1410 visuelle Transforms** und ebenso viele Kollisionsinstanzen aktiv. Bei positiven Records besuchte Reapply trotzdem alle **154997 Slots** beider Pools. Als nächster Schritt sind sicher invalidierte Live-/Raumindizes beziehungsweise Publish-Snapshots, Poolfilter und konservative Broadphase zu untersuchen. Restore-/Indexwechsel-/Regenerationsverträge und der getrennte Kollisionsnachlauf müssen erhalten bleiben. Keine solche Optimierung ist bisher eingebaut; die genaue interne Kostenaufteilung wurde nicht gemessen.
 
 ## Empfohlene Reihenfolge
 
-1. Nach bestandenen uncooked/cooked und begrenzten normalen PIE-/Paintprüfungen nun visuelle Vollscans unter geklärtem Restore-Vertrag begrenzen. Erst anschließend größere Welt und Baustellenkreislauf belasten; separate verpackte Pixel-/Bedienproben bleiben eigene Aufgaben. Sofortbau als gesonderten Entwicklermodus erhalten.
+1. Nach dem cooked Baugrubenabschluss die normale Bedien-/Bildrunde ergänzen und die gemessenen Rodungsvollscans unter geklärtem Restore-Vertrag begrenzen. Erst anschließend größere Welt und mehrere Baustellen belasten. Sofortbau als gesonderten Entwicklermodus erhalten.
 2. Parallel früh einen kleinen **3D-Untergrundversuch** durchführen: begrenzten Hohlraum unter intakter Oberfläche anlegen, aus zwei Perspektiven ansehen, Kollision und Wiederherstellung prüfen. Das ist die Entscheidungsvorlage für Tunneltechnik, keine bereits zugesagte ShaderWorld-Funktion.
-3. Früh Cook/verpackten Start und viele kleine Geländeänderungen messen: Physikverzögerung, Framezeit, Speicher und Größe des Spielstands. Daraus die Datenauflösung und Aktualisierungsstrategie wählen.
+3. Den bereits bestandenen Cook/verpackten Neustart bei Erweiterungen erhalten; zusätzlich viele kleine Geländeänderungen messen: Physikverzögerung, Framezeit, Speicher und Größe des Spielstands. Der aktuelle einzelne CPU-Rodungsbenchmark ist kein Gesamtleistungsnachweis. Daraus die Datenauflösung und Aktualisierungsstrategie wählen.
 4. Den gleichen Auftrags-/Materialablauf auf Straßenabschnitte und Hausbau übertragen; erst bearbeitete Abschnitte räumen, formen und fertigstellen.
 5. Maschinenvielfalt, projektübergreifende Erdlogistik, geologische Erkundung, Tunnelverfahren und präzise Versorgungsnetze auf dieser Grundlage ergänzen.
 
@@ -190,3 +210,8 @@ Die erhaltenen Themen zu Biomen, Navigation, Wasser und größeren Welten stehen
 [^holes]: [Höhenfeld, Portalöffnungen und eigene Tunnelkörper](../guides/holes-and-mountain-tunnels.md).
 [^dry-tunnel]: [Umfang der vorhandenen trockenen Tunnelkomponente](../guides/reusable-tunnel-component.md).
 [^capabilities]: [Versions- und Fähigkeitenübersicht mit Voxelgrenze](versions-and-capabilities.md).
+
+[^construction-lab]: [Baugrubenlabor mit Testbagger, Puffer und Abtransport](../guides/construction-lab.md).
+[^construction-proof]: [Bereinigter Baugrubenbericht](../evidence/construction-lab-test.json): 22 native Tests, cooked 14/14 und 15/15 Checks, vollständiger Zwischenstandrestore und lokale Höhen-/Modellbilanzgrenzen.
+[^navigation-proof]: [Gerenderter Navigationsversuch](../evidence/terrain-navigation-test.json): 11/11 Checks, 81 Groundhits und zusätzlicher Harness-Halt.
+[^clearing-cpu]: [Bereinigter CPU-Rodungsbenchmark](../evidence/clearing-performance-test.json): acht Fenster, reale Slot-/Aktivzahlen und getrennte CPU-/GPU-Grenzen.

@@ -1,0 +1,278 @@
+{
+  "date": "2026-10-28",
+  "prepared_at_utc": "2026-10-28T18:36:58Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_explicit_harness_limits",
+  "scope": "One opt-in rendered uncooked game process on an actual free ShaderWorld plateau: moving citizen, wide terrain excavation, supported waiting, terrain restoration and arrival of the same citizen. Harness-managed collision readiness is explicit.",
+  "evidence_origin": "Whitelisted private native report and runner summary. No raw report, machine name, process identifier, save data or licensed asset is distributed.",
+  "source_state": {
+    "fingerprint_algorithm": "SHA256",
+    "fingerprint_scope": "Project-local source bytes at preparation time; not an embedded fingerprint from the tested binary.",
+    "files": [
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabNavigationVerification.h",
+        "sha256": "126673c2a9af2f95e764c19346c530017e56f33f5fb4e367a9f37c9ea82f3b8a"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabNavigationVerification.cpp",
+        "sha256": "423533dc7ee25164d175ebdeb22b8d5caaf786342c92fb8aa2711d71fdbbcffc"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabTerrainNavigationTests.cpp",
+        "sha256": "de6796d0c3abb0248e2a8c54a63984e07b6718e1239dce81bad754bb4a8e2632"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabBuildQueries.h",
+        "sha256": "58ba87265e99363e5cb53aa6d0f9b729e17fb1aed7ceface52b854aff1d8869e"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabBuildQueries.cpp",
+        "sha256": "0f58145cc2f67a1ccccb65da25347498f68aa649a674693ed9c5d2de33c1a4ff"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabSettlement.h",
+        "sha256": "f0c41f333f1b2556c41f8c085c3f4332203b7ec7a3c5d5b65ed47afe710ab063"
+      },
+      {
+        "project_relative_source": "Source/UnrealMcpTest/CityLabSettlement.cpp",
+        "sha256": "6bc4c1678b70061b877d6def490766451ba91cd70a6b2aa10b05884e7a12f190"
+      },
+      {
+        "project_relative_source": "Tools/verify_terrain_navigation.py",
+        "sha256": "860a20a72eaef31757daf123ce4248891c18340394e4e325ceafc713386b0b7d"
+      }
+    ]
+  },
+  "rendered_uncooked": {
+    "status": "passed",
+    "requires_cooked_data": false,
+    "process_count": 1,
+    "elapsed_seconds": 40.851485,
+    "check_count": 11,
+    "checks": {
+      "isolated_no_normal_save_or_native_roads": true,
+      "actual_height_backend_ready": true,
+      "baseline_actual_free_terrain_corridor": true,
+      "baseline_nine_actual_hits": true,
+      "citizen_moving_before_edit": true,
+      "excavated_nine_actual_hits": true,
+      "pending_apply_stops_progress": true,
+      "verified_wide_pit_response_is_safe_wait": true,
+      "restored_nine_actual_hits": true,
+      "pending_remove_stops_progress": true,
+      "same_citizen_resumes_and_arrives": true
+    },
+    "normal_save_files_unchanged": true,
+    "route_length_meters": 20,
+    "pit_half_size_meters": 4,
+    "pit_depth_meters": 3,
+    "actual_ground": [
+      {
+        "phase": "baseline",
+        "sample_count": 27,
+        "hit_count": 27,
+        "matching_sample_count": 27,
+        "last_stable_sample_count": 27,
+        "last_stable_nine_point_passes": 3,
+        "last_stable_distinct_xy_points": 9,
+        "last_stable_all_match": true,
+        "last_stable_max_abs_error_cm": 0
+      },
+      {
+        "phase": "excavated",
+        "sample_count": 27,
+        "hit_count": 27,
+        "matching_sample_count": 27,
+        "last_stable_sample_count": 27,
+        "last_stable_nine_point_passes": 3,
+        "last_stable_distinct_xy_points": 9,
+        "last_stable_all_match": true,
+        "last_stable_max_abs_error_cm": 0.002685588
+      },
+      {
+        "phase": "restored",
+        "sample_count": 27,
+        "hit_count": 27,
+        "matching_sample_count": 27,
+        "last_stable_sample_count": 27,
+        "last_stable_nine_point_passes": 3,
+        "last_stable_distinct_xy_points": 9,
+        "last_stable_all_match": true,
+        "last_stable_max_abs_error_cm": 0
+      }
+    ],
+    "expected_height_query_gates": [
+      {
+        "phase": "baseline",
+        "probe_count": 9,
+        "stable_passes": 3,
+        "expected_z": 300
+      },
+      {
+        "phase": "baseline",
+        "probe_count": 9,
+        "stable_passes": 4,
+        "expected_z": 300
+      },
+      {
+        "phase": "baseline",
+        "probe_count": 9,
+        "stable_passes": 5,
+        "expected_z": 300
+      },
+      {
+        "phase": "excavated",
+        "probe_count": 9,
+        "stable_passes": 3,
+        "expected_z": 0
+      },
+      {
+        "phase": "excavated",
+        "probe_count": 9,
+        "stable_passes": 4,
+        "expected_z": 0
+      },
+      {
+        "phase": "excavated",
+        "probe_count": 9,
+        "stable_passes": 5,
+        "expected_z": 0
+      },
+      {
+        "phase": "restored",
+        "probe_count": 9,
+        "stable_passes": 3,
+        "expected_z": 300
+      },
+      {
+        "phase": "restored",
+        "probe_count": 9,
+        "stable_passes": 4,
+        "expected_z": 300
+      },
+      {
+        "phase": "restored",
+        "probe_count": 9,
+        "stable_passes": 5,
+        "expected_z": 300
+      }
+    ],
+    "citizen_observation": [
+      {
+        "phase": "actual_pit_response",
+        "sample_count": 29,
+        "navigation_states": {
+          "0": 2,
+          "1": 6,
+          "3": 21
+        },
+        "all_checks_passed": true,
+        "max_distance_moved_per_observed_tick_cm": 23.000151,
+        "minimum_progress_cm": 447.176727,
+        "maximum_progress_cm": 585.17749,
+        "max_abs_foot_ground_error_cm": 0
+      },
+      {
+        "phase": "after_repair",
+        "sample_count": 64,
+        "navigation_states": {
+          "0": 2,
+          "1": 61,
+          "4": 1
+        },
+        "all_checks_passed": true,
+        "max_distance_moved_per_observed_tick_cm": 30.988693,
+        "minimum_progress_cm": 585.17749,
+        "maximum_progress_cm": 2000,
+        "max_abs_foot_ground_error_cm": 0
+      },
+      {
+        "phase": "apply_pending",
+        "sample_count": 4,
+        "navigation_states": {
+          "0": 4
+        },
+        "all_checks_passed": true,
+        "max_distance_moved_per_observed_tick_cm": 0,
+        "minimum_progress_cm": 447.176727,
+        "maximum_progress_cm": 447.176727,
+        "max_abs_foot_ground_error_cm": 0
+      },
+      {
+        "phase": "before_edit",
+        "sample_count": 35,
+        "navigation_states": {
+          "0": 2,
+          "1": 9,
+          "2": 24
+        },
+        "all_checks_passed": true,
+        "max_distance_moved_per_observed_tick_cm": 31.766795,
+        "minimum_progress_cm": 0,
+        "maximum_progress_cm": 447.176727,
+        "max_abs_foot_ground_error_cm": 0
+      },
+      {
+        "phase": "remove_pending",
+        "sample_count": 5,
+        "navigation_states": {
+          "0": 5
+        },
+        "all_checks_passed": true,
+        "max_distance_moved_per_observed_tick_cm": 0,
+        "minimum_progress_cm": 585.17749,
+        "maximum_progress_cm": 585.17749,
+        "max_abs_foot_ground_error_cm": 0
+      }
+    ],
+    "apply_pending_sample_count": 4,
+    "remove_pending_sample_count": 5,
+    "additional_independent_collision_wait_ticks_withheld_by_harness": 10,
+    "citizen_detours_planned": 1,
+    "same_citizen_reached_original_route_end": true
+  },
+  "readiness_contract": {
+    "production_transient_gate_tested": true,
+    "movement_during_manager_pending_cm": 0,
+    "harness_withholds_citizen_ticks_after_transient_gate_until_independent_expected_height_probes_stabilize": true,
+    "automatic_production_gpu_collision_completion_fence_proven": false,
+    "explanation": "During apply/remove pending the citizen must not advance. Once that short gate clears, this acceptance harness deliberately stops simulation until nine independent expected-height collision points stabilize. The following wide-pit waiting and repair/arrival checks therefore run on measured terrain; they do not prove that production readiness automatically supplies the same fence."
+  },
+  "native_logical_navigation_tests": {
+    "status": "passed",
+    "count": 4,
+    "names": [
+      "CityLab.Navigation.CitizenDetoursNewNarrowPit",
+      "CityLab.Navigation.CitizenWaitsForPitAndRaisedStepRepair",
+      "CityLab.Navigation.DynamicCollisionProbeGate",
+      "CityLab.Navigation.RefreshPauseAndGroundRevalidation"
+    ],
+    "scope": "Controlled native fixtures for narrow-pit detours, pit/raised-step waiting and repair, dynamic collision gates and refresh pauses. Separate from the one rendered wide-pit run.",
+    "whole_citylab_automation_summary": {
+      "succeeded_without_warnings": 20,
+      "succeeded_with_warnings": 2,
+      "failed": 0,
+      "not_run": 0
+    }
+  },
+  "reproduce": {
+    "project_local_tool_not_bundled": "Tools/verify_terrain_navigation.py",
+    "command": "python Tools/verify_terrain_navigation.py",
+    "isolation": "Own opt-in game mode, temporary citizen and terrain edit; no native road bridge and no normal city save changes.",
+    "expected_behavior": "Citizen moves on the free plateau, pauses during changes, safely waits before the verified wide excavation, then resumes to the original goal after actual ground restoration."
+  },
+  "pending": {
+    "packaged_rendered_test": true,
+    "narrow_pit_rendered_detour_test": true,
+    "automatic_production_collision_fence": true,
+    "manual_ui_and_pixel_acceptance": true
+  },
+  "limits": [
+    "No global NavMesh, general city navigation or automatic adaptation to arbitrary changed route heights.",
+    "A planned detour counter does not prove a successful rendered bypass of this wide pit; the accepted behavior here is safe waiting.",
+    "Ground/capsule observations are sampled native physics data, not a general continuous-safety guarantee.",
+    "No save/restart acceptance is claimed by this single-process navigation test."
+  ],
+  "images": []
+}
