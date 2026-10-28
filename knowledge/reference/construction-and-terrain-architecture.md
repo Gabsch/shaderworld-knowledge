@@ -6,9 +6,12 @@ status: draft
 tags: [shaderworld, citylab, city-builder, construction, terraforming, logistics, underground]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T19:08:21Z" }
-evidence_scope: Nutzerdesign mit Foundations-Vorläufer; kleiner ConstructionLab-Kreislauf mit 14/14 und 15/15 Checks in zwei cooked Prozessen vollständig abgeschlossen, Modellbilanz und lokale physische Höhen getrennt geprüft. 22 native Tests, gerenderte Navigation mit Harnessgrenze und acht CPU-Rodungsmessfenster belegt. Ausgewählte Baugruben-Standbilder geprüft; vollständige normale UI-Prüfung und Produktionswirtschaft bleiben offen.
+generated: { by: codex/gpt-6, at: "2026-10-28T21:08:00Z" }
+evidence_scope: Nutzerdesign mit Foundations-Vorläufer; kleiner ConstructionLab-Kreislauf mit 14/14 und 15/15 Checks in zwei cooked Prozessen vollständig abgeschlossen, Modellbilanz und lokale physische Höhen getrennt geprüft. Historisch 22 native Tests; neuer Wiedereinbau mit 29 nativen Tests und separaten uncooked/cooked Prozesspaaren bestanden. Gerenderte Navigation mit Harnessgrenze und acht CPU-Rodungsmessfenster belegt. Ausgewählte Baugruben-Standbilder geprüft; vollständige normale UI-Prüfung und Produktionswirtschaft bleiben offen.
 sources:
+  - id: fill-cycle
+    resource: ../guides/closed-material-cycle.md
+    title: Geprüfter Wiedereinbau mit zweitem Lkw, gemeinsamen Grammkonten und Neustart
   - id: user-design
     resource: "Vom Nutzer am 28. Oktober 2026 bereitgestellter Designauszug zu Geländeverformung, physischem Bau, Materiallogistik und Untergrund; private Vorlage nicht im öffentlichen Bundle enthalten"
     title: Vom Nutzer bestätigte Designrichtung des City Planners
@@ -157,7 +160,7 @@ Ein Tunnelbaustein sollte Trasse, Profil, Portalöffnung, Körper, Kollision und
 
 Bauzüge sollen nach dem Nutzerdesign gewöhnliche Güterzüge mit tatsächlichen Betriebsbedingungen sein: Spurweite, Lichtraum, Stromversorgung, Zugsicherung, Länge und zulässige Fracht bestimmen die Nutzbarkeit. Zeitfenster auf betriebenen Strecken sind eine spätere Erweiterung. Leitungsnetze bekommen echte Positionen, Konfliktprüfungen und gegebenenfalls provisorische Anschlüsse; das Werkzeug kann bequem an Straßenmitte oder Gehweg einrasten. Dafür ist noch keine Netz- oder Zugimplementierung nachgewiesen.[^user-design]
 
-## Erster Kreislauf bestanden, Wiedereinbau als nächste Erweiterung
+## Aushub und anschließender Wiedereinbau bestanden
 
 Das [ConstructionLab](../guides/construction-lab.md) setzt den ersten kleinen Versuch bereits um: eine Baugrube, einen animierten Bagger aus UE-Grundformen, einen begrenzten Puffer, einen Lkw auf fester geprüfter Route und ein Lager. Die vier 400-cm-Zellen besitzen einen auslaufenden 12 × 12 m Fußabdruck mit 4 × 4 m Kern. Die normale maximale Absenkung beträgt 150 cm. **18 t Puffer**, **12 t Lkw** und **500 t Lager** begrenzen die Arbeit; der eigene Slot **CityLabConstruction** bleibt von Foundations und CityLoop getrennt.[^construction-lab]
 
@@ -167,7 +170,7 @@ Das [ConstructionLab](../guides/construction-lab.md) setzt den ersten kleinen Ve
 4. **Anhalten und transportieren:** Bei 18 t Puffer stoppt der Aushub. Freigegebener Transport übernimmt höchstens 12 t und liefert zum Lager. Eine feste Route und Bodenprüfungen ersetzen keine freie Fahrzeugnavigation oder Fahrzeugphysik.
 5. **Unterbrochen neu starten:** Ein realer Zwischenstand mit **42 t Aushub = 18 t Puffer + 12 t fahrender Lkw + 12 t Lager** wurde gespeichert. Der neue cooked Prozess stellte alle Modellfelder identisch wieder her, lud dreimal zusätzlich und arbeitete vollständig fertig.
 6. **Abschließen:** Alle **172,8 t** lagen im Lager; Restboden, Puffer und Fahrzeug waren leer. Der unveränderte Zielplan und die tatsächliche Endoberfläche bestanden die getrennten Prüfungen.[^construction-proof]
-7. **Noch zu ergänzen: Wiederverwenden.** Einen Teil des gelagerten Materials in einer kleinen Testaufschüttung einbauen. Damit fehlt noch der Rückweg vom Lager ins Gelände; ebenso mehrere Aufträge und materialübergreifende Logistik.
+7. **Wiederverwenden inzwischen ergänzt:** Ein zweiter Lkw liefert vom gemeinsamen Lager zum Aufschüttpuffer; nur angelieferte Masse hebt das zweite Arbeitsfeld. Uncooked und cooked bestanden jeweils zwei Prozesse mit gespeicherter beladener Fahrt, drei weiteren Loads und vollständigem Wiedereinbau von 172,8 t bei 0 g Modellbilanzfehler. Die [Kreislaufanleitung](../guides/closed-material-cycle.md) beschreibt Bedienung, Höhenmessungen und Grenzen. Mehrere frei zugewiesene Aufträge und materialübergreifende Logistik fehlen weiterhin.
 
 ### Was belegt ist und was wir zusätzlich prüfen müssen
 
@@ -178,7 +181,7 @@ Das [ConstructionLab](../guides/construction-lab.md) setzt den ersten kleinen Ve
 | Puffer oder Ziellager voll | 18-t-Puffer stoppt echten Aushub; native Modelltests prüfen Kapazitätsregeln | Voller Ziellagerfall im normalen gerenderten Spiel separat prüfen |
 | Teilweise gebaut und neu gestartet | Zwei cooked Prozesse mit identischem vollständigem Modellhash vor Weiterarbeit; Abschluss bestanden | Keine vollständige korrigierte uncooked Zwei-Prozess-Runde aus diesem Bericht ableiten |
 | Denselben Stand mehrfach laden | Drei zusätzliche Loads ohne Modellabweichung oder doppelte Backends | Mehrere Aufträge und konkurrierende Transfers fehlen |
-| Aushub wieder einbauen | Noch nicht implementiert | Aufschüttung und gemeinsames Gegenkonto prüfen |
+| Aushub wieder einbauen | Zweiter Standort mit Zielpuffer und Lager-Lkw, exakte Grammbilanz, uncooked/cooked Neustart und vollständiger Abschluss bestanden | Feste Routen, angenommene gemeinsame Einbaudichte; keine Verdichtung, freie Zuweisung oder stadtweite Logistik |
 | Bereich verlassen und zurückkehren | Nicht Teil dieser Baugruben-Abnahme | Reichweiten-/Streamingfahrt und unfertigen Bewuchs prüfen |
 | Kollision baut verzögert neu auf | Baugrube wartet auf drei passende Neun-Punkt-Durchläufe; Bürger-Grubenversuch getrennt bestanden | Dessen zusätzlicher Harness-Halt ist keine allgemeine Produktions-Fence |
 | Plan nach Teilbau ändern | Zielplan blieb während der geprüften Arbeit unverändert | Restbedarf und Gegenarbeiten bei echter Revision fehlen |

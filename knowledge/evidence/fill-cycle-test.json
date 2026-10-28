@@ -1,0 +1,646 @@
+{
+  "status": "passed",
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "scope": "Own bounded ConstructionLab implementation; two sites, one shared warehouse and one truck per route. Not a general ShaderWorld logistics feature.",
+  "builds": {
+    "game_seconds": 49.64,
+    "editor_seconds": 118.51,
+    "skip_cook_repackage_seconds": 29.65,
+    "all_succeeded": true,
+    "cook_scope": "Existing unchanged cooked assets staged with rebuilt Development executable; no new full cook or Shipping test.",
+    "local_build_repair": "Installed Fab 0.0.22 source declared FabToolset missing from installed engine precompiled UE5Rules. Project-local copy of the installed plugin built successfully; engine originals unchanged; licensed contents not published."
+  },
+  "native": {
+    "succeeded": 27,
+    "succeededWithWarnings": 2,
+    "failed": 0,
+    "notRun": 0,
+    "inProcess": 0,
+    "totalDuration": 1.6434004306793213,
+    "tests": [
+      {
+        "fullTestPath": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success",
+        "duration": 0.007619600743055344,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "duration": 0.05368630215525627,
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "duration": 0.019685301929712296,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "duration": 0.014757800847291946,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionIgnoreBudgetFailsClosed",
+        "state": "Success",
+        "duration": 0.03109939768910408,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionIgnoresOnlyTaggedShaderWorldTrees",
+        "state": "Success",
+        "duration": 0.016757898032665253,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionPreservesSolidsBehindTrees",
+        "state": "Success",
+        "duration": 0.016164299100637436,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success",
+        "duration": 0.0038124993443489075,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success",
+        "duration": 0.01753930002450943,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.AdjacentWorkAndCompleteConservation",
+        "state": "Success",
+        "duration": 0.00745750218629837,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.AtomicRejectAndBinding",
+        "state": "Success",
+        "duration": 0.01118599995970726,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.FillClosedCycleConservation",
+        "state": "Success",
+        "duration": 0.022004298865795135,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.FillMidHaulSerialization",
+        "state": "Success",
+        "duration": 1.1751629114151,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.FillRejectsCorruptionAtomically",
+        "state": "Success",
+        "duration": 0.008609600365161896,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.FillStarvationPartialLoadsAndBackpressure",
+        "state": "Success",
+        "duration": 0.07440169900655746,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.MidWorkSerializationDeterminism",
+        "state": "Success",
+        "duration": 0.026494096964597702,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.PlanAndBoundedBuffer",
+        "state": "Success",
+        "duration": 0.007760897278785706,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.TransportAndStorageLimit",
+        "state": "Success",
+        "duration": 0.00802839919924736,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.CitizenDetoursNewNarrowPit",
+        "state": "Success",
+        "duration": 0.013593502342700958,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.CitizenWaitsForPitAndRaisedStepRepair",
+        "state": "Success",
+        "duration": 0.016977399587631226,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.DynamicCollisionProbeGate",
+        "state": "Success",
+        "duration": 0.012646298855543137,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.RefreshPauseAndGroundRevalidation",
+        "state": "Success",
+        "duration": 0.013359297066926956,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "duration": 0.007810201495885849,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "duration": 0.008431501686573029,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "duration": 0.01229500025510788,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "duration": 0.008490897715091705,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "duration": 0.008453000336885452,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "duration": 0.008633799850940704,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "duration": 0.010481402277946472,
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "known_warnings": [
+      "Existing bounded citizen detour world-context cleanup warning.",
+      "Intentional rejection of unsupported legacy paint migration."
+    ]
+  },
+  "uncooked": {
+    "success": true,
+    "cooked": false,
+    "distinct_processes": true,
+    "checkpoint_all_fields_identical": true,
+    "phases": [
+      {
+        "mode": "create",
+        "success": true,
+        "elapsed_seconds": 54.792091596871614,
+        "repeat_loads": 0,
+        "checkpoint_hash": "b2db6fc5cc53c4f13572e18938f1d8a3",
+        "checkpoint": {
+          "hash": "b2db6fc5cc53c4f13572e18938f1d8a3",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "final": {
+          "hash": "b2db6fc5cc53c4f13572e18938f1d8a3",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "plan_hash": "f819006288d65f95ef20809ca14f98b0",
+        "fill_plan_hash": "e22c1162068efbf26fcf83f8511f3760",
+        "ground_tolerance_cm": 5,
+        "checks": {
+          "plans_inert": true,
+          "two_sites_unique": true,
+          "immutable_plans": true,
+          "warehouse_and_loaded_fill_motion": true,
+          "checkpoint_ground_both_sites": true,
+          "saved_complete_model": true
+        },
+        "physics_by_phase": {
+          "planned": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 0
+          },
+          "checkpoint": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 1.5021972991526127
+          }
+        }
+      },
+      {
+        "mode": "resume",
+        "success": true,
+        "elapsed_seconds": 223.6688612997532,
+        "repeat_loads": 3,
+        "checkpoint_hash": "b2db6fc5cc53c4f13572e18938f1d8a3",
+        "checkpoint": {
+          "hash": "b2db6fc5cc53c4f13572e18938f1d8a3",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "final": {
+          "hash": "96fc8f5d3b1fd19f02310a1f8b6a9859",
+          "record_version": 2,
+          "step": 323,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 172800000,
+          "source_remaining_g": 0,
+          "source_buffer_g": 0,
+          "source_truck_g": 0,
+          "warehouse_g": 0,
+          "fill_truck_g": 0,
+          "fill_buffer_g": 0,
+          "placed_g": 172800000,
+          "fill_remaining_g": 0,
+          "withdrawn_g": 172800000,
+          "fill_delivered_g": 172800000,
+          "source_delivered_g": 172800000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "Completed",
+          "fill_truck_distance_cm": 0,
+          "fill_heights_cm": [
+            450,
+            450,
+            450,
+            450
+          ]
+        },
+        "plan_hash": "f819006288d65f95ef20809ca14f98b0",
+        "fill_plan_hash": "e22c1162068efbf26fcf83f8511f3760",
+        "ground_tolerance_cm": 5,
+        "checks": {
+          "fresh_process_has_no_sites": true,
+          "different_process": true,
+          "loaded_fill_truck_checkpoint": true,
+          "immutable_plans": true,
+          "complete_model_restored": true,
+          "no_projection_duplicates": true,
+          "all_soil_reused": true,
+          "final_ground_both_sites": true,
+          "final_projection_unique": true,
+          "completed_model_saved": true
+        },
+        "physics_by_phase": {
+          "restored": {
+            "samples": 216,
+            "hits": 216,
+            "matches": 216,
+            "max_error_cm": 1.5021972991526127
+          },
+          "completed": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 2.0045929655898362
+          }
+        }
+      }
+    ]
+  },
+  "cooked": {
+    "success": true,
+    "cooked": true,
+    "distinct_processes": true,
+    "checkpoint_all_fields_identical": true,
+    "phases": [
+      {
+        "mode": "create",
+        "success": true,
+        "elapsed_seconds": 30.943260699510574,
+        "repeat_loads": 0,
+        "checkpoint_hash": "6a2a70c507822cb79b74615ce384f8b9",
+        "checkpoint": {
+          "hash": "6a2a70c507822cb79b74615ce384f8b9",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "final": {
+          "hash": "6a2a70c507822cb79b74615ce384f8b9",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "plan_hash": "2efa2c6214212ded616c1f655f51a369",
+        "fill_plan_hash": "fddea802fa73418b6f53246556cde00e",
+        "ground_tolerance_cm": 5,
+        "checks": {
+          "plans_inert": true,
+          "two_sites_unique": true,
+          "immutable_plans": true,
+          "warehouse_and_loaded_fill_motion": true,
+          "checkpoint_ground_both_sites": true,
+          "saved_complete_model": true
+        },
+        "physics_by_phase": {
+          "planned": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 0
+          },
+          "checkpoint": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 1.5021972991526127
+          }
+        }
+      },
+      {
+        "mode": "resume",
+        "success": true,
+        "elapsed_seconds": 213.30441399663687,
+        "repeat_loads": 3,
+        "checkpoint_hash": "6a2a70c507822cb79b74615ce384f8b9",
+        "checkpoint": {
+          "hash": "6a2a70c507822cb79b74615ce384f8b9",
+          "record_version": 2,
+          "step": 31,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 54000000,
+          "source_remaining_g": 118800000,
+          "source_buffer_g": 18000000,
+          "source_truck_g": 0,
+          "warehouse_g": 12000000,
+          "fill_truck_g": 12000000,
+          "fill_buffer_g": 0,
+          "placed_g": 12000000,
+          "fill_remaining_g": 160800000,
+          "withdrawn_g": 24000000,
+          "fill_delivered_g": 12000000,
+          "source_delivered_g": 36000000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "ToStorage",
+          "fill_truck_distance_cm": 1000,
+          "fill_heights_cm": [
+            341.6666666666667,
+            300,
+            300,
+            300
+          ]
+        },
+        "final": {
+          "hash": "bea8119d54f0e11a9d12ccd514b4f72c",
+          "record_version": 2,
+          "step": 323,
+          "paused": false,
+          "transport": true,
+          "excavated_g": 172800000,
+          "source_remaining_g": 0,
+          "source_buffer_g": 0,
+          "source_truck_g": 0,
+          "warehouse_g": 0,
+          "fill_truck_g": 0,
+          "fill_buffer_g": 0,
+          "placed_g": 172800000,
+          "fill_remaining_g": 0,
+          "withdrawn_g": 172800000,
+          "fill_delivered_g": 172800000,
+          "source_delivered_g": 172800000,
+          "balance_error_g": 0,
+          "fill_truck_phase": "Completed",
+          "fill_truck_distance_cm": 0,
+          "fill_heights_cm": [
+            450,
+            450,
+            450,
+            450
+          ]
+        },
+        "plan_hash": "2efa2c6214212ded616c1f655f51a369",
+        "fill_plan_hash": "fddea802fa73418b6f53246556cde00e",
+        "ground_tolerance_cm": 5,
+        "checks": {
+          "fresh_process_has_no_sites": true,
+          "different_process": true,
+          "loaded_fill_truck_checkpoint": true,
+          "immutable_plans": true,
+          "complete_model_restored": true,
+          "no_projection_duplicates": true,
+          "all_soil_reused": true,
+          "final_ground_both_sites": true,
+          "final_projection_unique": true,
+          "completed_model_saved": true
+        },
+        "physics_by_phase": {
+          "restored": {
+            "samples": 216,
+            "hits": 216,
+            "matches": 216,
+            "max_error_cm": 1.5021972991526127
+          },
+          "completed": {
+            "samples": 54,
+            "hits": 54,
+            "matches": 54,
+            "max_error_cm": 2.0045929655898362
+          }
+        }
+      }
+    ]
+  },
+  "normal_pie": {
+    "success": true,
+    "checks": {
+      "old_v1_full_record_autoload": true,
+      "old_warehouse_and_pause_preserved": true,
+      "second_site_planned_no_material_spent": true,
+      "normal_save_load_all_record_fields": true,
+      "record_unchanged_after_collision_settled": true
+    },
+    "warehouse_g": 172800000,
+    "placed_g": 0,
+    "paused": true,
+    "user_camera_restored": true,
+    "unrelated_saves_checked": 16,
+    "unrelated_saves_byte_identical": true,
+    "construction_slot": "Normal save intentionally upgraded to paired record version 2. Old source-only backup retained locally; no byte identity asserted for this file.",
+    "input_scope": "Controller PlanFillExample invoked through native Unreal Python, same callback as button. Actual mouse/button focus and keyboard acceptance not claimed."
+  },
+  "limits": [
+    "Acceptance uses accelerated 6 t work and 12 t load/unload steps; normal play retains its existing profile.",
+    "All mass accounts integer grams. Analytic 96 cubic metres per site at assumed 1800 kg/cubic metre, not independently integrated quantized mesh volume.",
+    "18 independent collision points across both sites, 5 cm tolerance, three stable passes; not a global GPU fence or automated pixel test.",
+    "Fixed validated routes and basic-shape vehicles; no traffic, free pathfinding, vehicle physics, compaction, distinct soil types or large-world performance acceptance.",
+    "No human confirmation of the new loop yet."
+  ],
+  "source_sha256": {
+    "Source/UnrealMcpTest/CityLabConstructionModel.h": "cf0e1cdab7a045c5c203d65d929e6758ce14029b5e007dec8480c5d0123e4a9d",
+    "Source/UnrealMcpTest/CityLabConstructionModel.cpp": "86e3879bc356508280f1d084de1e8b3f12e0fcc8375d07f62bf651db52adc243",
+    "Source/UnrealMcpTest/CityLabConstructionTests.cpp": "d74ce41b1ca7bb9b9868bf909cf676fdb15835f5ff5e11a0ca8172804aee7ac7",
+    "Source/UnrealMcpTest/CityLabConstruction.h": "b161c24e7c0a2e55f80eaa1f814a781e24e60da188ca1186af237b0ce92d07d3",
+    "Source/UnrealMcpTest/CityLabConstruction.cpp": "edc6e2d2981f02f5431d2fa7a925dbb6af30b43a6fe987f932cc4af06f35412c",
+    "Source/UnrealMcpTest/CityLabConstructionGameMode.h": "e8fdb367b2aa7911a6678a2635e1deff2648e7474d8450bfdb75fe506d3340b1",
+    "Source/UnrealMcpTest/CityLabConstructionGameMode.cpp": "82c1352280b2e699fee189d447914ade55039208fd82e8fb6dac9a1acc6cd107",
+    "Source/UnrealMcpTest/CityLabFillVerification.h": "f755015d9cd37fcfd4271a4e1b67e81779a91ce3758b03c45ab2321bbceaf52d",
+    "Source/UnrealMcpTest/CityLabFillVerification.cpp": "25b4e436682bb4c58b94910338e6dcd8e14bca3903137bfe79cc323bb6a412b9",
+    "Source/UnrealMcpTest/CityLabBuildPanel.cpp": "40dcd98942f0b6e9fb940331f085fcd5f2b7bacf8331c8711afc0eb11468602d",
+    "Tools/verify_fill_cycle.py": "f2da51d08bb8771daa78939c56e57b234f8ae7c76cbd91c374f8033e51d33400"
+  }
+}

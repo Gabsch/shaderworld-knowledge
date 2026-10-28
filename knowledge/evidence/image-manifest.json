@@ -279,6 +279,14 @@
       "modified": false,
       "bytes": 9224517,
       "sha256": "758e0dc0188e7d735ba40466ccaeb7eec128df52b77b413e6035dbc37938cc66"
+    },
+    {
+      "file": "assets/images/fill-cycle-planned.png",
+      "origin": "Unmodified native Unreal Slate screenshot of own ConstructionLab after normal save/load; excavation completed, warehouse stocked, second site planned and paused, vegetation at unworked target still present. Agent visually inspected. No automated final-surface pixel comparison.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1302794,
+      "sha256": "9ef0797d3a1f982cb8de0c89eb22650a46102cb9f31f9dbfa5b1c4cf823dc7a3"
     }
   ]
 }

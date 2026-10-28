@@ -8,13 +8,16 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T19:28:18Z"
+  at: "2026-10-28T21:08:00Z"
 evidence_scope:
   runtime_status: Zwei echte cooked Spielprozesse mit 14/14 und 15/15 Checks bestanden; vollständiger Modellhash und drei Wiederholungsloads, fortgesetzte Arbeit und exakte Endkonten
   geometry: Neun tatsächliche ShaderWorld-Kollisionshöhen pro Durchlauf, drei stabile Durchläufe; lokales 5-cm-Gate, Abschluss maximal 2.001 cm Abweichung
   images: Native unveränderte Aufnahmen des gespeicherten Zwischenstands und des Abschlusses visuell geprüft; kein automatischer Pixelvergleich
   limits: Grundform-Maschinen, feste Route, analytisches Modellvolumen und begrenzte Lab-Freistellung; keine Fahrzeugphysik, allgemeine Logistik oder beliebige Untergrundgeologie
 sources:
+  - id: fill-cycle
+    resource: closed-material-cycle.md
+    title: Neue zweite Baustelle mit Lagertransport und gespeichertem Wiedereinbau
   - id: acceptance
     resource: ../evidence/construction-lab-test.json
     title: Bereinigte Baugruben-, Bilanz-, Kollisions- und Zwei-Prozess-Abnahme einschließlich historischem Fehlversuch
@@ -52,16 +55,18 @@ sources:
 
 # Baugrube mit Testbagger, Puffer und Abtransport erproben
 
+**Erweiterung:** Der [geschlossene Materialkreislauf](closed-material-cycle.md) ergänzt die hier dokumentierte Baugrube um eine zweite Aufschüttbaustelle. Alter Lagerbestand bleibt nutzbar; der neue Bericht belegt Wiedereinbau, gemeinsamen Materialhaushalt und Neustart während der Lagerfahrt.
+
 **Dieses Labor zeigt einen kleinen vollständigen Arbeitskreislauf:** Ein Testbagger verändert den Boden schrittweise, Erde füllt einen begrenzten Puffer, und ein Lkw bringt sie zum Lager. Ein echter Neustart mitten in einer beladenen Fahrt und die anschließende Fertigstellung sind im verpackten Spiel geprüft. Die Maschinen bestehen aus Unreal-Grundformen; externe Assets sind dafür nicht nötig.[^acceptance]
 
 ## Starten und ausprobieren
 
 1. Öffne im Content Browser unter **Content → Maps** die Karte **ShaderWorldConstructionLab**. Unter **World Settings → GameMode Override** muss **CityLabConstructionGameMode** stehen. Fehlt die Karte im ursprünglichen Testprojekt, erstellt **Tools/setup_construction_lab.py** bei gestopptem PIE eine eigene Kartenkopie samt eigenem Höhenmaterial. Das öffentliche Doku-Repository enthält das Unreal-Projekt und lizenzierte Assets nicht.
 2. Starte **Play** und warte auf Gelände, Material und lokale Kollision. Die Kamera schaut auf das Baufeld bei **X = −12000 cm, Y = −5000 cm**, ursprünglich **Z = 300 cm**. Ohne Spielstand entsteht der Beispielplan **pausiert**, der **Transport bleibt aus**. Ein vorhandener Stand wird geladen.
-3. Oben links findest du **Baugrube im Baufeld planen**, **Arbeit starten / pausieren** und **Abtransport an / aus**. Die Plan-Schaltfläche dient zum Anlegen eines noch fehlenden Beispielauftrags. Es gibt vorerst genau eine Grube.
+3. Oben links findest du **Baugrube im Baufeld planen**, **Arbeit starten / pausieren** und **Lkw-Transport an / aus** (früher Abtransport). Die Plan-Schaltfläche dient zum Anlegen eines noch fehlenden Beispielauftrags. Es gibt vorerst genau eine Grube.
 4. Drücke **Arbeit starten / pausieren**. Der Bagger arbeitet außerhalb des Grubenrandes. Erst die tatsächlich begonnene Arbeit gibt die begrenzte Baustelle samt Maschinen-/Transportkorridor über eine NoGrowth-Maske frei. Das ist eine Laborvereinfachung und erzeugt **kein Holz**.
 5. Lasse den **Transport zunächst aus**. Bei **18 t Pufferinhalt** wartet der Bagger. Der Boden darf ab diesem Zeitpunkt nicht weiter sinken.
-6. Drücke **Abtransport an / aus**. Der blaue Lkw lädt höchstens **12 t**, fährt die feste Zufahrt, entlädt ins **500-t-Lager** und kehrt zurück. Sobald Puffer frei ist, arbeitet der Bagger weiter.
+6. Drücke **Lkw-Transport an / aus** (früher Abtransport). Der blaue Lkw lädt höchstens **12 t**, fährt die feste Zufahrt, entlädt ins **500-t-Lager** und kehrt zurück. Sobald Puffer frei ist, arbeitet der Bagger weiter.
 7. **Arbeit starten / pausieren** hält bei Bedarf den gesamten Arbeits-/Transportfortschritt an. Nur den Transport abzuschalten erhält Ladung und Fahrzeugposition ebenfalls.[^lab-integration][^acceptance]
 
 ![Normale Laboroberfläche mit vollem 18-t-Puffer und wartendem Bagger](../assets/images/construction-ui-buffer.png)
@@ -88,9 +93,11 @@ Die native Aufnahme zeigt den gespeicherten Zwischenstand: **42 t ausgehoben = 1
 
 Die allgemeine Modellklasse hat kleinere Standardkapazitäten; die normale Planerstellung setzt ausdrücklich die hier genannten **18/12/500 t**. Der automatische Abnahmelauf beschleunigt Arbeit auf **6 t je Schritt**, Laden/Entladen auf **12 t je Schritt** und die Fahrt auf **20 m/s**. Er prüft denselben Bilanz-/Speichermechanismus, beweist aber keinen normalen realen Baudurchsatz.[^acceptance]
 
-Jeder der vier dreieckigen Zellbeiträge hat das Flächenintegral **Zellmaß² = 16 m²**. Vier Beiträge mit 1,5 m Absenkung ergeben analytisch 96 m³. Das ist eine auslaufende Grube, keine senkrecht ausgeschnittene Quaderform. Die drei Konten erfüllen jederzeit:
+Jeder der vier dreieckigen Zellbeiträge hat das Flächenintegral **Zellmaß² = 16 m²**. Vier Beiträge mit 1,5 m Absenkung ergeben analytisch 96 m³. Das ist eine auslaufende Grube, keine senkrecht ausgeschnittene Quaderform. Ohne geplante zweite Baustelle erfüllen die drei Konten jederzeit:
 
 **Ausgehobene Masse = Puffer + Lkw-Ladung + Lager.**
+
+Mit geplantem zweiten Standort kommen Lager-Lkw, Zielpuffer und eingebauter Boden zur Bilanz hinzu; verwende dann die [erweiterte Gleichung](closed-material-cycle.md#wo-die-erde-gerade-ist).
 
 Transfers sind auf ganze Gramm und die jeweils freie Kapazität begrenzt. Dieselben 172,8 t entsprechen bei der lockereren Dichte etwa **123,43 m³**. Der sichtbare Haufen veranschaulicht die Menge; sein Meshvolumen wurde nicht unabhängig vermessen.[^construction-model][^acceptance]
 
@@ -126,7 +133,7 @@ Im automatisierten Test wurde während einer beladenen Fahrt gespeichert. Der zw
 - **Noch kein Plan/Boden nicht bereit:** Rendering, lokale Kollision und Shaderkompilierung abwarten. Die Plan-Schaltfläche darf erst auf fertigem, freiem, flachem Boden erfolgreich sein. Straßen, Grundstücke und ausgeführte Terraforming-Änderungen werden für das Beispiel ausgeschlossen.
 - **Bagger arbeitet nicht:** Pause, Transportfreigabe und Pufferstand prüfen. Bei unpassender Kollision nennt die Anzeige Ist-/Soll-Höhen und hält weitere Arbeit an.
 - **Lkw entlädt nicht:** Transport muss an und die Arbeit unpausiert sein. Ein volles Lager stoppt das Entladen; Material bleibt auf dem Fahrzeug.
-- **Neue Grube an beliebigem Ort:** Dieses erste Labor besitzt einen festen Auftrag und eine feste geprüfte Route. Allgemeine Auftragsvergabe, freie Fahrzeugnavigation, Aufschüttung, geologische Materialschichten, Böschungsstabilität und Wasserhaltung fehlen noch.
+- **Neue Grube an beliebigem Ort:** Dieses erste Labor besitzt einen festen Auftrag und eine feste geprüfte Route. Eine feste zweite Aufschüttbaustelle ist inzwischen als [geschlossener Kreislauf](closed-material-cycle.md) ergänzt und separat geprüft. Allgemeine Auftragsvergabe, freie Fahrzeugnavigation, geologische Materialschichten, Böschungsstabilität und Wasserhaltung fehlen weiterhin.
 - **Viele Bäume oder große Welt:** Der getrennte Rodungstest fand etwa **20–22 ms CPU je Nachlauf-/Auswahlaufruf** in seiner Szene. Der volle Instanzscan braucht vor größerem Ausbau einen Index-/Poolfilter. Das ist keine FPS- oder GPU-Leistungszusage.[^clearing-cpu]
 - **Bürger an neuer Grube:** Ein getrennter Versuch bestätigt sicheres Warten und Weiterlaufen nach Reparatur. Während der unabhängigen Kollisionsprüfung hielt dessen Testharness den Bürger zusätzlich fest. Daraus folgt keine allgemeine NavMesh-Wegfindung oder globale Produktionsbereitschaft.[^navigation]
 

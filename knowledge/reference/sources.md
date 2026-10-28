@@ -126,6 +126,10 @@ Die [Ausgangsaufnahme](../assets/images/foundations-paint-before.png), [Snow nac
 
 Der eigene [Rodungsbericht](../evidence/tree-clearing-test.json) trennt den neuen Mausstrahl-/Renderbaum-Codebefund, zwölf bestandene native Tests, zwei neue cooked Spielprozesse (29/29 und 12/12) und einen tatsächlichen normalen PIE-Bildvergleich per Backend-API. Der Zielbaum verschwindet im gerenderten Bild und bleibt nach Laden entfernt; ein markierter Kontrollbaum bleibt erhalten. Die drei unveränderten eigenen Bilder stehen im [Bildmanifest](../evidence/image-manifest.json). Die Konsole/API-Abnahme ist keine beobachtete C-Tasten-/Gelbpreview-Bedienung.
 
+## Geschlossener Materialkreislauf
+
+Die [Kreislaufanleitung](../guides/closed-material-cycle.md) und ihr [bereinigter Bericht](../evidence/fill-cycle-test.json) stammen aus der eigenen ConstructionLab-Erweiterung. Native 29er-Suite, zwei uncooked und zwei cooked Prozesse, exakte Modellhashes und unabhängige Kollisionsproben sind getrennt geführt. Die [pausierte Übersicht](../assets/images/fill-cycle-planned.png) ist eine unveränderte native Slate-Aufnahme aus normalem PIE, visuell vom Agenten geprüft: vorhandenes Lager, fertige Grube und noch ungerodeter Zielbereich. Sie zeigt keinen fertig aufgeschütteten Boden und ersetzt keinen Pixelvergleich. Herkunft und Hash stehen im [Bildmanifest](../evidence/image-manifest.json).
+
 ## OKF
 
 Der [Google-Artikel](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/?hl=en) erläutert das Was und Warum von OKF anhand von v0.1. Für das Dateiformat dieser Wissensbasis gilt die [kanonische Spezifikation v0.2](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md). Die Formatversion ist im Wurzelindex festgehalten.

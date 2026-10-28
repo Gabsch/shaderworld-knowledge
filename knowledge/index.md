@@ -21,6 +21,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Baukamera und Werkzeugleiste bedienen](guides/build-controls.md) – geprüfte Regler/Planbestätigung und neuer selektiver Baum-Kamerafilter mit 25/25 nativen Tests; bisherige Toolbar-/Restorebelege getrennt. Normales ConstructionLab-Wiederladen mit passendem Boden und Kamerapose zusätzlich belegt; physische Kameraeingaben und aktuelle cooked Kamerafahrt bleiben offen.
 - [Foundations: planen, Biome und Einzelrodung](guides/foundations-lab.md) – aktuelle Black-/Zero-Flow-Fassung mit uncooked und verpacktem Neustartnachweis; sichtbares Snow nach normalem PIE-Laden und geschütztes Grundstück mit Bildern belegt; Rodungsfix mit separater Vorher-/Nachher-/Ladebildprobe, Rodung vom Nutzer nach dem Fix ausprobiert und bestätigt; gezielte Abnahme aller Vorschau-/Fokusfälle bleibt offen.
 - [Baugrube, Testbagger und Materialkreislauf](guides/construction-lab.md) – schrittweise Erdarbeit mit 18-t-Puffer, 12-t-Lkw und eigenem Spielstand; cooked Neustart und Abschluss mit 172,8 t im Lager/0 g Modellbilanzfehler bestanden. Lokale Höhenprüfung, normale Erstplanung/Puffer/Transport und exaktes PIE-Wiederladen belegt; Tastatur-/Fokusfälle und Pixelvergleich bleiben begrenzt.
+- [Aushub wieder einbauen: geschlossener Materialkreislauf](guides/closed-material-cycle.md) – zweiter Standort, Lager-Lkw und Zielpuffer; 29 native Tests, uncooked/cooked Neustart während beladener Fahrt und vollständiger Wiedereinbau mit 0 g Bilanzfehler bestanden.
 - [Straßen zur Laufzeit bauen und speichern](guides/runtime-roads.md) – RoadLab mit gemeinsamer Terrain-/Mesh-Spline; Neustart, Kollision, Pflanzenursprünge und die POM-Nahsichtkorrektur verstehen.
 - [Änderungen speichern und laden](guides/save-and-load.md) – unsere CityLab-Spielstände einschließlich eines echten Neustarts prüfen.
 - [Löcher und Bergtunnel verstehen](guides/holes-and-mountain-tunnels.md) – Holebrush-Beispiele ansehen und einen Tunneleingang planen.
@@ -33,7 +34,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.
-- [Prüfstand und offene Tests](verification.md) – aktuelle 25 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss und acht CPU-Rodungsmessfenster mit ihren Grenzen.
+- [Prüfstand und offene Tests](verification.md) – aktuelle 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
 
 ## Wissensbasis pflegen
 
