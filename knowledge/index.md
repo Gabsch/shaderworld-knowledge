@@ -18,6 +18,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Wind und Schaum einstellen](guides/ocean-waves-and-foam.md) – den Ozean von 10 auf 18 m/s Wind umstellen und Schaum sichtbar machen.
 - [Bauplätze und Straßen verändern](guides/building-pads-and-roads.md) – die Lernkarte bedienen und Gelände, Material und Straßenmesh unterscheiden.
 - [Vom Straßenbau zum bewohnten Testhaus](guides/city-builder-loop.md) – verbundene Spielschleife mit Grundstück, Haus, Bürger und bestandenem Drei-Prozess-Neustartnachweis.
+- [Baukamera und Werkzeugleiste bedienen](guides/build-controls.md) – persönliche Kamera-/Werkzeugregler mit geprüfter Planbestätigung, UI-Fokusschutz und PIE-Restore; Esc-Abbruch, Bauplatzvorschau, finale lesbare Leiste und verpackte Regression nach Layoutbuild belegt; längere reale Kameraeingaben offen.
 - [Foundations: planen, Biome und Einzelrodung](guides/foundations-lab.md) – aktuelle Black-/Zero-Flow-Fassung mit uncooked und verpacktem Neustartnachweis; sichtbares Snow nach normalem PIE-Laden und geschütztes Grundstück mit Bildern belegt.
 - [Straßen zur Laufzeit bauen und speichern](guides/runtime-roads.md) – RoadLab mit gemeinsamer Terrain-/Mesh-Spline; Neustart, Kollision, Pflanzenursprünge und die POM-Nahsichtkorrektur verstehen.
 - [Änderungen speichern und laden](guides/save-and-load.md) – unsere CityLab-Spielstände einschließlich eines echten Neustarts prüfen.

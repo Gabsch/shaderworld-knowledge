@@ -8,19 +8,23 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T15:02:42Z"
+  at: "2026-10-28T16:15:52Z"
 evidence_scope:
-  implementation: Projektcode und native APIs gelesen; acht kontrollierte native Automationtests mit NullRHI erfolgreich, darunter Backendmigration; sechs ohne und zwei mit erwarteten beziehungsweise erklärten Warnungen
+  implementation: Projektcode und native APIs gelesen; bisherige Foundations-Suite mit acht erfolgreichen kontrollierten Tests, neue Kamera-/Toolbar-Suite auf elf erfolgreiche Tests erweitert; getrennte Nachweise beachten
   visual: Native PIE-Aufnahmen des geschlossenen Dachs sowie aktueller Snow-Vorher-/Lade- und geschützter Grundstücksvergleich inspiziert; kompiliertes Black-Backend ohne nachträgliche Brushparameteränderung
   practical_status: Aktuelle Black-/Zero-Flow-Fassung in je zwei frischen gerenderten uncooked und cooked Prozessen mit jeweils 29/29 und 12/12 Checks geprüft; normale T/F6/K/L-Eingaben und sichtbare Snow-Fläche nach Laden im PIE bestätigt
-  not_tested: Separate verpackte GPU-Pixel-/Bedienabnahme, Reichweitenfahrt, älterer physischer Rodungszustand, Skalierung und globale Navigation
+  controls_status: Neue Kamera-/Toolbarintegration mit elf nativen Tests, Sliderfokusschutz, inerter Planbestätigung, Esc-Abbruch, Bauplatzvorschau und PIE-Preferences-Restore geprüft; finales UI-Bild lesbar und verpackte Regression nach finalem Layoutbuild mit 29/29 und 12/12 Checks erfolgreich
+  not_tested: Längere reale WASD/Shift/RMB-/Alt-Tab-Bedienung, persönliche Paket-Persistenz, erneute verpackte Pixelabnahme, Reichweitenfahrt, älterer physischer Rodungszustand, Skalierung und globale Navigation
 sources:
   - id: controls
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabFoundationsGameMode.h/.cpp und CityLabLoopGameMode.h/.cpp; Projektdateien nicht im öffentlichen Wissensbundle enthalten"
     title: Vorgesehene Foundations-Karte, Eingaben, HUD und eigener Save-Slot
+  - id: build-controls
+    resource: build-controls.md
+    title: Neue Baukamera und Werkzeugleiste mit begrenzter Abnahme und offenen Langbedienungsgrenzen
   - id: camera-input
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabRoadGameMode.cpp und Config/DefaultInput.ini; native InputSettings-CDO-/Dateireadbacks sowie frühere Foundations-PIE-Kamera-Readbacks und inspizierte CaptureEditorImage-Aufnahme vom 28. Oktober 2026. Projektdateien und Rohreadbacks nicht im öffentlichen Bundle enthalten"
-    title: Baukamera, Rechtsmausdrehen und zweifache Mauskonfiguration ab nächstem Play; keine Bedienabnahme des neuen Werts
+    title: Früherer projektweiter Mausachsen-Readback und schräge Bauübersicht als Ausgangsbasis
   - id: vegetation
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabVegetationState.h/.cpp und CityLabVegetationTests.cpp; Projektdateien nicht im öffentlichen Wissensbundle enthalten"
     title: Logischer Rodungszustand, stabile Ressourcenkennungen und Regenerationsfilter mit nativen Tests
@@ -88,27 +92,29 @@ sources:
 
 Die getrennte Lernkarte **`/Game/Maps/ShaderWorldFoundations`** ist eine Kopie der vorhandenen CityLoop-Grundlage. Ihr eigener Spielmodus heißt **CityLabFoundationsGameMode**, ihr Spielstand-Slot **CityLabFoundations**. Die [bisherige CityLoop-Karte](city-builder-loop.md) und ihr Slot bleiben getrennt. Das öffentliche Wissensbundle enthält die Anleitungen, aber nicht das native Unreal-Projekt und seine Kartenassets.[^controls]
 
+**Neue Bedienfassung mit begrenzter Abnahme:** Die [Baukamera-/Toolbar-Anleitung](build-controls.md) zeigt die finale lesbare Leiste und erklärt persönliche Regler sowie kontextbezogenes Bestätigen. Elf native Tests, normale Slate-Fokus-/Planbestätigung, Esc-Abbruch, Bauplatzvorschau und PIE-Wiederherstellung sind erfolgreich. Die verpackte Regression nach finalem Layoutbuild bestand in zwei frischen Prozessen mit 29/29 Checks in 115,8 s und 12/12 in 69,0 s. Längeres reales WASD/Shift/RMB und Alt-Tab bleiben offen; die nachfolgenden älteren Bilder bleiben ihre eigenen Nachweise.[^build-controls]
+
 ## Die eingerichtete Karte öffnen
 
 1. Öffne im ursprünglichen Projekt den Content Browser und suche **Content → Maps → ShaderWorldFoundations**. Fehlt die Karte, ist die neue Einrichtung noch nicht abgeschlossen.
 2. Öffne **World Settings** und kontrolliere **GameMode Override = CityLabFoundationsGameMode**.
 3. Suche im World Outliner **BP_SWGround** und **BP_SWOcean**. Für dieses Labor liegen Ground und Wasserbezug auf **Z = 0 cm**; das zentrale Inselplateau liegt bei **Z = 300 cm**. Aktiviere einen Echtzeit-Viewport und warte auf Shader- und Geländeaufbau.
 4. Unter **Content → CityLab → Biomes** liegen die fünf eigenen Biomassets **SW_Biom_Wald**, **SW_Biom_Wiese**, **SW_Biom_Fels**, **SW_Biom_Strand** und **SW_Biom_Meeresboden**. Im Ground findest du unter **Biomes Manager → Biomes** deren Zuweisung. Im alten, schreibgeschützten **Bioms**-Array richtet man ShaderWorld 4.1 nicht ein.
-5. Starte **Play**. Die vorgesehene HUD-Überschrift lautet **CityLab Grundlagen**. Während eine Bauabfrage auf lokale Bodenkollision wartet, warte auf deren Statusmeldung, bevor du weiterplanst.
+5. Starte **Play**. Im neuen Quellstand ersetzt die Leiste **CITYLAB | BAUWERKZEUGE** den bisherigen Text-HUD. Die bisherige Abnahme und offenen Bediengrenzen stehen in [Baukamera und Werkzeugleiste](build-controls.md). Während eine Bauabfrage auf lokale Bodenkollision wartet, warte auf deren Statusmeldung, bevor du weiterplanst.
 
 Der Setupbericht bestätigt nach einem echten Kartenneuladen die fünf Managerzuweisungen, acht Spawnable-Kopien, fünf Dichtematerialien und das eigene Biom-Layermaterial: insgesamt **19 eigene Assets**. Die Assets wurden vor der Kartenzuweisung gespeichert; die Einrichtung fordert keinen gleichzeitigen Live-Rebuild an. Dieser Readback prüft Eigenschaften und Materialgraph, noch keine vollständige sichtbare Verteilung oder Baumkollision. Die [CityBasics-Anleitung](city-basics-lab.md) erklärt die Ausgangslandschaft und deren frühere, getrennte Tests.[^setup-readback][^basics][^controls][^biomes]
 
-## Die Baukamera bewegen
+## Die Baukamera und Werkzeugleiste verwenden
 
-**WASD** verschiebt die Kamera parallel zum Boden. Halte die **rechte Maustaste** gedrückt und bewege die Maus, um die Blickrichtung zu drehen. Mit dem **Mausrad** bewegst du dich entlang der Blickrichtung näher heran oder weiter weg. Die zuletzt gezeigte Foundations-Ansicht wurde schräg auf den Baubereich gestellt, bei 85 m Welthöhe und 48° Blickneigung nach unten. Eine native Editorfenster-Aufnahme zeigte dabei wie beabsichtigt Straßen, Haus und Küste; das Bild wird hier nicht veröffentlicht.[^camera-input]
+Die neue [Bedienanleitung](build-controls.md) führt durch **WASD**, relative Rechtsmaussteuerung, höhenabhängigen Zoom und die persönlichen Regler **Bewegung** (0,25–4×) und **Mausblick** (0,25–3×). Mausblick 1× baut auf der vorhandenen Engine-Mauseinstellung **0,14** auf; die Werte gehören in persönliche GameUserSettings und nicht in den Stadtspielstand. **Shift** beschleunigt die Bewegung zusätzlich um 3×. Die frühere feste Bewegung mit 25 m/s und der feste 6-m-Scrollschritt beschreiben diese neue Fassung nicht mehr.[^build-controls]
 
-Die **projektweite Mausachsen-Konfiguration** steht jetzt auf **0,14**, also dem **zweifachen ursprünglichen Wert 0,07**. Der Nutzer fand den vorherigen 3×-Wert 0,21 etwas zu schnell. Die neuen Werte sind für MouseX, MouseY und Mouse2D im InputSettings-Standardobjekt zurückgelesen und dauerhaft in `DefaultInput.ini` hinterlegt. **Sie gelten ab dem nächsten Play.** PIE war bei dieser Änderung bereits gestoppt; es gab keinen Live-PlayerInput-Aufruf und keinen neuen Spielstart. Das Gefühl mit 2× und ein neuer Editor-/Paketstart sind noch nicht geprüft. WASD bleibt laut Code bei **25 m/s**, der Mausradschritt bei **6 m**. Das vorhandene Development-Paket wurde für diese Konfigurationsänderung nicht neu gebaut.[^camera-input]
+Die zuletzt geprüfte schräge Bauübersicht zeigte Straßen, Haus und Küste. Die neue Kamera-/Toolbarintegration bestand normale Slider-, Fokus-, Planbestätigungs- und PIE-Restore-Prüfungen; eine längere reale Kamerafahrt beziehungsweise Rechtsmausbedienung ist noch offen. Geländeplan-Bestätigung und **F6** bleiben getrennt: Bestätigen speichert die Planung; F6 führt sie ausdrücklich als sofortigen Lab-Debug aus. Straßen- und Testhausbestätigung bleiben gesondert beschrifteter Lab-Sofortbau.[^camera-input][^build-controls]
 
 ## Das geschlossene Testhausdach ansehen
 
 ![Foundations-Testhaus mit geschlossenem orangem Satteldach und Bürger](../assets/images/foundations-roof.png)
 
-Die native **PIE-Spielaufnahme über `FScreenshotRequest` per Konsole** vom **28. Oktober 2026 um 11:24 UTC** zeigt das Testhaus, sein geschlossenes oranges Satteldach und den Bürger am Eingang. Die aktuelle native Suite umfasst **acht erfolgreiche Automationtests**, darunter **ClosedGableRoof**; sie lief kontrolliert mit NullRHI und ersetzt keine gerenderte Bildprüfung. Die Dachfläche wurde zusätzlich in dieser unveränderten Aufnahme geprüft. Das Bild ist kein Editorfenster-Capture und bestätigt weder alle Kamerawinkel noch die spätere Paintdarstellung.[^roof-frame][^image-manifest][^native-tests]
+Die native **PIE-Spielaufnahme über `FScreenshotRequest` per Konsole** vom **28. Oktober 2026 um 11:24 UTC** zeigt das Testhaus, sein geschlossenes oranges Satteldach und den Bürger am Eingang. Die frühere Foundations-Suite umfasst **acht erfolgreiche Automationtests**, darunter **ClosedGableRoof**; sie lief kontrolliert mit NullRHI und ersetzt keine gerenderte Bildprüfung. Die Dachfläche wurde zusätzlich in dieser unveränderten Aufnahme geprüft. Das Bild ist kein Editorfenster-Capture und bestätigt weder alle Kamerawinkel noch die spätere Paintdarstellung.[^roof-frame][^image-manifest][^native-tests]
 
 ## Erst planen, dann ausdrücklich ausführen
 
@@ -118,15 +124,17 @@ Die Planung speichert einen gewünschten Eingriff und zeigt eine Vorschau. Sie e
 | --- | --- |
 | **1 / 2 / 3 / 4** | Anheben / Absenken / Ebnen / Oberflächenmaterial für einen neuen Plan auswählen; vorhandene Pläne bleiben erhalten |
 | **Tab** | Offene Pläne der Reihe nach auswählen, auch nach dem Laden |
-| **T** | Plan an der Bodenposition unter der Maus setzen oder den aktiven Plan dorthin verschieben |
+| **Linksklick / T** | Im Geländewerkzeug nur den Plan setzen/verschieben; im Straßen-/Testhauswerkzeug gilt der in der neuen Bedienanleitung beschriebene Kontext |
+| **Enter / Bestätigen** | Geländeplan speichern, keine Erdarbeit; Straße/Testhaus dagegen ausdrücklich als Lab-Sofortbau bestätigen |
+| **Esc** | Aktiven Entwurf/Vorschau verwerfen oder ungearbeiteten Geländeplan stornieren; Entwurf bleibt von gebauter Welt getrennt |
 | **Bild auf / Bild ab** | Höhe beziehungsweise Ebenen-Offset in 0,5-m-Schritten ändern |
 | **Komma / Punkt** | Werkzeuggröße verkleinern/vergrößern; 1 bis 40 m, anfangs 8 m; bei Höhen- und Paintbrushes ist dies die halbe Kantenlänge des quadratischen Bereichs |
 | **N** | Oberflächenmaterial durchschalten: Slope, Grass, Sand, RedGround, Snow |
-| **U** | Letzte Planbearbeitung zurücknehmen; bereits ausgeführte Welt bleibt bestehen |
+| **U / Strg+Z** | Letzte Planbearbeitung zurücknehmen; bereits ausgeführte Welt bleibt bestehen |
 | **Entf** | Einen noch unbearbeiteten Plan stornieren |
 | **F6** | Aktiven Plan ausdrücklich und sofort als Lab-Debug anwenden |
 | **C** | Einen eigenen, getaggten Baum im horizontalen 8-m-Auswahlkreis um die Maus-Bodenposition ausdrücklich roden |
-| **R / Enter** | Geerbtes Straßen-Laborwerkzeug bedienen |
+| **R** | Straßenwerkzeug wählen und einen Entwurfspunkt hinzufügen; Enter bestätigt das jeweils aktive Werkzeug |
 | **P** | Geerbtes Testhaus-Laborwerkzeug bedienen |
 | **K oder F5 / L oder F9** | Im eigenen Foundations-Slot speichern/laden |
 
@@ -196,12 +204,12 @@ Der Save-Slot verwendet das projektlokale **Spielstandformat 4**. Der aktuelle T
 
 ## Bestandene Prüfungen und bekannte Grenzen
 
-Die **acht nativen Automationtests** sind erfolgreich: drei für Bauabfragen/Umwege/Dach, zwei für Tunnelprofil/Wasserregistrierung, zwei für Vegetationskennung/-puffer und einer für Backendmigration. Sechs liefen ohne Warnung. Der Umwegtest meldete die bekannte Warnung beim Aufräumen ohne World Context; der Migrationstest warnte bei der absichtlich geprüften Ablehnung eines alten ausgeführten Paintrecords. Es gab keine Fehler oder nicht ausgeführten Tests. Diese NullRHI-Code-/API-Tests bleiben vom gerenderten Zwei-Prozess-Test getrennt.[^native-tests]
+Die **acht damaligen Foundations-Automationtests** sind erfolgreich: drei für Bauabfragen/Umwege/Dach, zwei für Tunnelprofil/Wasserregistrierung, zwei für Vegetationskennung/-puffer und einer für Backendmigration. Sechs liefen ohne Warnung. Der Umwegtest meldete die bekannte Warnung beim Aufräumen ohne World Context; der Migrationstest warnte bei der absichtlich geprüften Ablehnung eines alten ausgeführten Paintrecords. Es gab keine Fehler oder nicht ausgeführten Tests. Diese NullRHI-Code-/API-Tests bleiben vom gerenderten Zwei-Prozess-Test getrennt.[^native-tests]
 
 | Prüfung | Tatsächlich belegter Stand | Grenze |
 | --- | --- | --- |
 | Biominstallation | 5 Profile und 19 Assets nach echtem Kartenneuladen zurückgelesen | Nicht sämtliche sichtbaren Biomgrenzen abgenommen |
-| Aktuelle native Automation | 8 Tests erfolgreich, davon 2 mit erklärten Warnungen | Kontrolliert mit NullRHI; keine GPU-Abnahme |
+| Native Automation | Bisherige Foundations-Suite 8 erfolgreich, neu auf 11 einschließlich Kamera/Toolbar erweitert | Kontrollierte Code-/API-Tests; neue Abnahme separat in der Bedienanleitung |
 | Aktuelle uncooked Fassung | 29/29 und 12/12 Checks in 2 frischen gerenderten Prozessen; rund 127,1 und 70,1 s | Native Projekt-API-Abnahme mit Black-Datamap; keine vollständige manuelle Bedienrunde |
 | NoGrowth-Überlappung | Ausgangs-Core: uncooked 436 Pflanzenursprünge/3 Bäume, cooked 442/3; Seite 29 beziehungsweise 31. Nach Maskierung, Paint/Regeneration und je 3 Loads beide Bereiche jeweils 0 | Separate native Testmasken werden je Prozess neu erzeugt, nicht als zusätzliche Spielstandrecords gespeichert |
 | Wald- und Einzelbaumkontrolle | Waldkontrolle sichtbar/kollidierbar/Transform erhalten, gerodeter Baum entfernt; 55 Regenerationssamples über 30,04 s uncooked, 56 über 30,25 s cooked | Testpositionen statt ganzer Welt; Kollisionsnachlauf bleibt Produktionsgrenze |
@@ -223,7 +231,8 @@ Bei Tunneln gilt weiterhin: Die trockene Komponente beschreibt einen Wasseraussc
 Vor einer größeren Welt hat deshalb die Verringerung des periodischen visuellen Vollscans Vorrang. Ein bloßes Überspringen wäre verfrüht: Native `RestoreInstance`-Aufrufe können den visuellen Transform außerhalb der vorhandenen Publishfilter ändern. Zuerst muss dieser Vertrag mit unserer eigenen Zustandsverwaltung geklärt werden. Initiale Rodung, älterer Restore, Indexwechsel und Kollisionsnachlauf müssen dabei erhalten bleiben. Diese Optimierung ist noch nicht eingebaut. Mehrspielerbetrieb, echte Maschinenarbeit und Materialmengen bleiben weitere eigene Aufgaben.
 
 [^controls]: Projektlokaler Code `CityLabFoundationsGameMode.h/.cpp` und `CityLabLoopGameMode.h/.cpp`, oben als beschreibende Quelle erfasst; nicht im öffentlichen Bundle enthalten.
-[^camera-input]: Projektlokaler Kameracode und `Config/DefaultInput.ini`; MouseX/MouseY/Mouse2D jeweils 0,14 per InputSettings-CDO- und Dateireadback bestätigt, bei gestopptem PIE ohne Live-PlayerInput-Exec. Codewerte: 2500 cm/s Verschiebung und 600 cm je Scrollschritt. Frühere schräge Bauübersicht im nativen Editorfenster-Capture angesehen; neuer 2×-Spielstart, Mausgefühl und neues Paket nicht abgenommen.
+[^build-controls]: [Neue Baukamera-/Toolbaranleitung mit finalem Leistenbild](build-controls.md): elf native Tests, begrenzte normale Slate-/PIE-Abnahme und getrennte Paketregression; längere reale Kameraeingaben bleiben offen.
+[^camera-input]: Früherer Datei-/CDO-Readback der projektweiten MouseX-/MouseY-/Mouse2D-Basis 0,14 bei gestopptem PIE sowie inspizierte schräge Bauübersicht. Die früheren festen 2500 cm/s und 600 cm je Scrollschritt beschreiben die neue höhenabhängige Kamera nicht; diese und ihre persönlichen Regler werden separat geprüft.
 [^vegetation]: Projektlokaler Code `CityLabVegetationState.h/.cpp` und `CityLabVegetationTests.cpp`, oben als beschreibende Quelle erfasst; Laufzeitwirkung für den geprüften Umfang zusätzlich im öffentlichen Bericht.
 [^biomes]: Projektlokales Skript `Tools/setup_city_biomes.py`, oben als beschreibende Quelle erfasst; Profile, Höhen-/Hangregeln und Zielzuweisung.
 [^setup-readback]: [Bereinigter Bericht, Abschnitt setup_readback](../evidence/foundations-report.json): fünf Profile und 19 Assets nach echtem Kartenneuladen; Eigenschaftsprüfung getrennt vom Laufzeittest.

@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T13:47:03Z"
+  at: "2026-10-28T16:13:30Z"
 sources:
+- id: build-controls
+  resource: evidence/build-controls-test.json
+  title: Neue Kamera- und Panelprüfungen mit normalem PIE und getrennten nativen Codeverträgen
 - id: region-layer-api
   resource: "ShaderWorld 4.1: Public/Data/ShaderWorldTerrainRegion.h, Private/Actor/ShaderWorldActor_Cache.cpp, Public/SWorldSubsystem.h, Private/Utilities/ReadBackManager.cpp und Shaders/Private/ShaderWorldRegionExport.usf; separat lizenzierter Plugin-Quellcode, nicht mitgeliefert"
   title: Quellenprüfung des nativen Terrainregion-Exports und asynchronen Layer-Readbacks; kein Laufzeittest
@@ -156,6 +159,18 @@ Für eine spätere automatische Materialdatenprobe ist in ShaderWorld **4.1** ei
 - **Abfragefrische:** Stabile Treffer allein sind keine globale Revisions-Fertigmeldung nach beliebigen Brushes; bei bekanntem Höhenziel prüfen die Abnahmen zusätzlich die tatsächliche erwartete Höhe.
 - **Größere Anwendung:** viele dauerhaft gerodete Ressourcen, durchgehende Biom-Sichtprüfung, globale Wegfindung, Multiplayer sowie Maschinenarbeit und Materialbilanz benötigen eigene Versuche.
 
+## Neue Baukamera und Werkzeugleiste
+
+Die [Bedienanleitung](guides/build-controls.md) erklärt die neue kompilierte Kamera und native Slate-Werkzeugleiste. Die **elf nativen CityLab-Tests** bestanden: neun ohne und zwei mit den bereits oben erklärten Warnungen. Dazu gehören jetzt Kameramathematik mit Boden-/Wertebereichsgrenzen, ein isolierter INI-Roundtrip ohne Änderung echter Benutzervorgaben und die Klickisolierung. Diese NullRHI-Tests sind kein gerenderter Mausnachweis.[^build-controls]
+
+Normales gerendertes PIE mit tatsächlichen nativen Slate-Klicks und Tasten bestätigte beide Regler, die Weltkürzelsperre bei Reglerfokus und zweimaliges Bestätigen desselben **ungearbeiteten Plans** ohne neue angewandte Datensätze. Enter bei einem Entwurf mit zwei kontrolliert vorbereiteten Straßenpunkten baute keine Straße; einer der Punkte war eine gezielt ergänzte Propertyfixture. Escape entfernte den Entwurf, ließ die vorhandenen Straßen und die laufende Vorschau bestehen. Ein per Weltklick gewählter Hausstandort erzeugte nur eine gelbe Vorschau; Abbrechen ließ Stadt und Pläne unverändert. Nach Stop/Start von PIE blieben die Testplan-ID und beide persönlichen Kamerawerte erhalten. Die Prüfung läuft im selben Editorprozess; der native INI-Test und die getrennten Paketprozesse sind eigene Nachweise.[^build-controls]
+
+Das [Panelbild](assets/images/build-controls-panel.png) stammt unverändert aus dem final kompilierten normalen PIE. Die Sichtprüfung fand und korrigierte abgeschnittene Beschriftungen. Anschließend wurden ursprünglicher Stadtspielstand byteidentisch und persönliche Faktoren **1×/1×** wiederhergestellt. Computer Use wurde für diese Prüfung nicht aktiviert.[^build-controls]
+
+Nach dem reinen Layoutfix wurden Editor und Game erneut gebaut und das Development-Paket mit bereits gekochten Assets neu gestagt/archiviert (**15 s**, Exit 0; vorheriger vollständiger Cook/Stage/Archive **58 s**, Exit 0). Die finale verpackte Fassung bestand wieder in zwei frischen Betriebssystemprozessen: **29/29 Checks in 115,8 s** beim Erzeugen, **12/12 in 69,0 s** beim Wiederherstellen, jeweils mit gekochten Daten. Diese kontrollierte Regression prüft Gelände, Rodung, Regeneration und wiederholtes Laden; sie ersetzt keine physische Mausbedienung oder Pixelabnahme der Leiste im Paket.[^build-controls]
+
+**Praktische Grenze:** Der native synthetische Harness trat wegen nicht bestätigter echter Fokus-/Vordergrundvoraussetzungen nicht in den RMB-Capturepfad ein. Das bestätigt weder erfolgreiche relative Maussteuerung noch einen Kamerafehler. Länger gehaltenes physisches WASD/Shift/RMB, echtes Alt-Tab und das persönliche Mausgefühl benötigen noch eine manuelle Spielprobe. Der Code enthält die entsprechenden Fokus-/Freigabepfade; Quellprüfung und Kameramathematik ersetzen diese Probe nicht.[^build-controls]
+
 ## Baukonzept: Festgehalten, noch nicht implementiert
 
 Das [Architekturkonzept für Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) dokumentiert die bestätigte Nutzeranforderung und unsere Vorschläge. Es ist **kein neuer Laufzeitnachweis**. Der bestandene CityLoop ist ein Sofortbau-Test; er bestätigt weder Maschinenarbeit noch schrittweisen Aushub, Massenerhaltung, unterbrochene Baustellen oder 3D-Erdreich. Vorgeschlagen sind eine kleine Baugrube mit begrenzter Aushublogistik und Neustart sowie ein getrennter Untergrund-Machbarkeitsversuch. Die dortigen Abnahmekriterien sind offen.
@@ -171,3 +186,5 @@ Das [Architekturkonzept für Bauarbeit, Gelände und Material](reference/constru
 Neue Versuche ergänzen die jeweilige Anleitung und ihren Beleg. Die Anleitung [Wissen pflegen](maintenance.md) beschreibt diesen Ablauf.
 
 [^region-layer-api]: Separat lizenzierter ShaderWorld-4.1-Code gemäß Quellenbeschreibung; native API am 28. Oktober 2026 gelesen. Noch kein implementierter Layerpixel-Test.
+
+[^build-controls]: Bereinigter [Kamera-/Werkzeugleistenbericht](evidence/build-controls-test.json), UE 5.8.4 und ShaderWorld 4.1, 28. Oktober 2026.

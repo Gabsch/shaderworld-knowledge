@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_limits",
+  "scope": "Kamera, persoenliche Preferences und native Bauwerkzeugleiste im Foundations-Labor. Code-/Dateitests, echte normale PIE-Slate-Eingaben und getrennte verpackte Regression bleiben eigene Nachweise.",
+  "native_automation": {
+    "status": "passed",
+    "rhi": "NullRHI",
+    "passed": 11,
+    "with_warnings": 2,
+    "failed": 0,
+    "tests": [
+      {
+        "name": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success"
+      },
+      {
+        "name": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success"
+      }
+    ],
+    "warning_scope": "Bekannte Testwelt-Cleanupwarnung und absichtlich abgewiesener alter ausgefuehrter Paintrecord; keine neue Kamerawarnung."
+  },
+  "normal_pie_slate": {
+    "status": "passed_for_listed_checks",
+    "computer_use_activated": false,
+    "slider_changes_and_restart": {
+      "move": 2.2250030040740967,
+      "look": 1.5750023126602173,
+      "same_values_after_pie_restart": true,
+      "user_original_values_restored": {
+        "move": 1,
+        "look": 1
+      },
+      "scope": "Neue PIE-Welt im selben Editorprozess; zusaetzlicher isolierter INI-Roundtrip im nativen Test."
+    },
+    "slider_focus_world_shortcut_isolation": {
+      "keys": [
+        "R",
+        "P",
+        "T",
+        "F6",
+        "C",
+        "U",
+        "Ctrl+Z"
+      ],
+      "unchanged": [
+        "roads",
+        "lots",
+        "cleared_trees",
+        "world_edit_records",
+        "camera_location",
+        "camera_rotation"
+      ],
+      "road_count": 2,
+      "lot_count": 1,
+      "cleared_tree_count": 1
+    },
+    "terrain_confirm_twice": {
+      "same_records_id_center_revision_and_state": true,
+      "record_count": 5,
+      "planned_count": 1,
+      "debug_applied_count": 4,
+      "no_new_applied_records": true,
+      "scope": "Logische Readbacks desselben Plans und unveraenderter Stadtbestand; kein neuer Pixel- oder Terrainphysikvergleich dieses Confirmknopfs."
+    },
+    "road_draft_slider_enter": {
+      "points_before": 2,
+      "points_after": 2,
+      "roads_before": 2,
+      "roads_after": 2,
+      "keys": [
+        "Enter",
+        "Right",
+        "Enter",
+        "Enter"
+      ],
+      "fixture": "Ein echter Welteingabepunkt, zweiter Punkt gezielt als kontrollierte Propertyfixture ergaenzt; keine neue Strasse gebaut."
+    },
+    "escape": {
+      "draft_points_after": 0,
+      "built_roads_after": 2,
+      "pie_still_running": true
+    },
+    "original_city_save_restored_byte_identically": true,
+    "lot_preview_cancel": {
+      "status": "passed",
+      "preview_confirm_button_enabled_before_cancel": true,
+      "no_new_house_or_groundwork": "Lot, tree, road and world-edit records unchanged after preview/cancel",
+      "restored_baseline_record_count": 4
+    },
+    "final_restored_state": {
+      "road_count": 2,
+      "lot_count": 1,
+      "cleared_tree_count": 1,
+      "world_edit_record_count": 4,
+      "camera_preferences": [
+        1,
+        1
+      ],
+      "original_save_byte_identical": true
+    }
+  },
+  "capture_status": {
+    "status": "not_verified",
+    "reason": "Der synthetische native Harness konnte die echten Fokus-/Vordergrund-Voraussetzungen des Capturepfads nicht bestaetigen und trat nicht in CameraLook ein. Kein Capture-PASS und kein daraus abgeleiteter Produktionsfehler.",
+    "code_contract": "Viewportfokus, relative RMB-Eingabe, Freigabe bei UI-/Appfokusverlust; Mathematik und Wertebereiche kontrolliert getestet."
+  },
+  "limits": [
+    "Laenger gehaltenes physisches WASD/Shift/RMB und echter Alt-Tab noch praktisch zu pruefen.",
+    "Keine komplette Navigation, Maschinenarbeit, Materialbilanz oder Grosswelt-Leistungsabnahme.",
+    "Keine automatische Pixelgleichheit oder erneute vollstaendige Biom-Sichtpruefung."
+  ],
+  "final_layout_image": {
+    "file": "assets/images/build-controls-panel.png",
+    "status": "visually_inspected",
+    "labels_not_clipped": true,
+    "scope": "Final compiled normal PIE, no synthetic image changes"
+  },
+  "builds": {
+    "editor": "passed",
+    "game_development": "passed",
+    "full_cook_stage_archive": "passed",
+    "full_cook_uat_wall_seconds": 58,
+    "layout_only_final_stage_archive": "passed",
+    "final_stage_uat_wall_seconds": 15,
+    "note": "Finaler reiner Slate-Layoutfix erneut fuer Editor und Game gebaut; gekochte Assets beim abschliessenden Staging wiederverwendet."
+  },
+  "packaged_regression": {
+    "status": "passed",
+    "configuration": "Windows Development",
+    "separate_fresh_os_processes": 2,
+    "requires_cooked_data": true,
+    "scope": "Render-, Terrain-/Physik-, Inertplan-, Rodungs-/Regenerations- und Save-/Load-Regression nach finalem Layoutbuild; keine physische Maus- oder Pixelvergleichsabnahme der Leiste.",
+    "phases": [
+      {
+        "mode": "create",
+        "success": true,
+        "elapsed_wall_seconds": 115.8,
+        "checks": {
+          "height_backend_ready_before_execution_and_restore": true,
+          "baseline_real_collision_and_vegetation": true,
+          "preview_uses_real_terrain": true,
+          "revise_keeps_stable_id_and_sequence": true,
+          "undo_restores_unworked_plan": true,
+          "foreign_binding_and_duplicate_ids_rejected": true,
+          "planning_spawns_no_backends": true,
+          "planning_undo_cancel_leave_actual_world_unchanged": true,
+          "same_edit_cannot_apply_twice": true,
+          "executed_edit_cannot_plan_undo_revise_cancel": true,
+          "raise_changes_actual_collision_height": true,
+          "lower_changes_actual_collision_height": true,
+          "flatten_sets_absolute_actual_collision_height": true,
+          "actual_execution_order_independent_of_plan_order": true,
+          "native_material_paint_layer_only_registered_id_and_height": true,
+          "paint_fixture_core_side_and_forest_initially_vegetated": true,
+          "physical_core_and_side_masks_clear_actual_vegetation": true,
+          "paint_preserves_physical_core_and_side_no_growth": true,
+          "paint_keeps_separate_forest_control_unchanged": true,
+          "tagged_tree_and_control_initially_visible_and_collidable": true,
+          "single_tree_visual_and_collision_cleared_control_unchanged": true,
+          "cleared_tree_stays_absent_after_real_instance_regeneration": true,
+          "vegetation_rebuild_observed_stable_30_seconds": true,
+          "logical_format4_snapshot_complete": true,
+          "invalid_identity_snapshot_rejected_atomically": true,
+          "paint_core_side_masks_and_forest_preserved_across_loads": true,
+          "restored_planned_and_cancelled_records_create_no_backends": true,
+          "three_repeated_loads_do_not_duplicate_records_or_backends": true,
+          "screenshot_saved": true
+        },
+        "physics_sample_count": 306,
+        "repeated_loads": 3,
+        "save_format_version": 4,
+        "requires_cooked_data": true
+      },
+      {
+        "mode": "resume",
+        "success": true,
+        "elapsed_wall_seconds": 69.0,
+        "checks": {
+          "height_backend_ready_before_execution_and_restore": true,
+          "cold_world_has_original_terrain_and_tree_before_load": true,
+          "paint_fixture_core_side_and_forest_initially_vegetated": true,
+          "physical_core_and_side_masks_clear_actual_vegetation": true,
+          "paint_preserves_physical_core_and_side_no_growth": true,
+          "paint_keeps_separate_forest_control_unchanged": true,
+          "paint_core_side_masks_and_forest_preserved_across_loads": true,
+          "restored_planned_and_cancelled_records_create_no_backends": true,
+          "different_process_restores_actual_edits_and_tree_state": true,
+          "invalid_identity_snapshot_rejected_atomically": true,
+          "three_repeated_loads_do_not_duplicate_records_or_backends": true,
+          "screenshot_saved": true
+        },
+        "physics_sample_count": 297,
+        "repeated_loads": 3,
+        "save_format_version": 4,
+        "requires_cooked_data": true
+      }
+    ]
+  }
+}

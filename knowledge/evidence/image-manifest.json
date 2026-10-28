@@ -215,6 +215,14 @@
       "height": 1096,
       "visible_check": "Structural pad stays sandy and visibly free of vegetation after overlapping Snow paint.",
       "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/build-controls-panel.png",
+      "origin": "Unmodified native SlateInspector Screenshot of the immersive normal Foundations PIE viewport; final compiled toolbar layout and personal camera values 1x, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 5161880,
+      "sha256": "2808b6964d72638b0374a65390a85b8300ea8cabe0de58b3d16f0f687625a8c2"
     }
   ]
 }

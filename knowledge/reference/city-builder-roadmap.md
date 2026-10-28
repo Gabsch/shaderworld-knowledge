@@ -6,7 +6,7 @@ status: draft
 tags: [shaderworld, citylab, city-builder, roadmap]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T13:44:36Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T16:15:52Z" }
 evidence_scope: Aktuelle Black-/Zero-Flow-Fassung uncooked und cooked mit je 29/29 und 12/12 Checks geprüft; normale kompilierte PIE-Paintbedienung mit Speichern/Laden und geschütztem Grundstück sichtbar geprüft. Keine separate verpackte Pixelabnahme oder Cook-Abnahme anderer Karten.
 sources:
   - id: verification
@@ -15,6 +15,9 @@ sources:
   - id: foundations
     resource: ../guides/foundations-lab.md
     title: Aktueller Backendstand, historische Paintfehler und abgegrenzte native/PIE-Nachweise
+  - id: build-controls
+    resource: ../guides/build-controls.md
+    title: Geprüfte Kamera-/Werkzeugleiste mit getrennten offenen Langbedienungsgrenzen
   - id: loop
     resource: ../guides/city-builder-loop.md
     title: Bestehende Stadtspielschleife mit eigenem Neustartnachweis
@@ -36,14 +39,15 @@ Foundations besitzt Planwerkzeuge, fünf Biomprofile und Einzelrodungszustände.
 
 | Baustein | Stand | Noch offen |
 | --- | --- | --- |
+| Kamera und Werkzeugleiste | Elf native Tests, normale Slider-/Fokus-/Planbestätigung, Esc-Abbruch, Bauplatzvorschau, PIE-Preferences-Restore und finale lesbare Leiste belegt; verpackte Regression nach finalem Layoutbuild mit 29/29 und 12/12 Checks bestanden | Längere reale WASD/Shift/RMB-/Alt-Tab-Bedienung, persönliche Paket-Persistenz und neuer Paket-Pixeltest offen; Straßenentwurf teilweise Fixture[^build-controls] |
 | Bestehendes CityLoop | Straße, gerodetes Grundstück, Haus und Bürger; erneute Format-4-Regression mit 24 Checks in drei frischen Prozessen | Allgemeine Stadtnavigation und Maschinen-/Materialwirtschaft |
 | Fünf eigene Biome | Wald, Wiese, Fels, Strand, Meeresboden; fünf Profile und 19 Assets nach gespeichertem Kartenneuladen zurückgelesen | Alle sichtbaren Biomgrenzen und größere Welt; Meeresboden verwendet vorhandene Felsen statt neuer Meeresflora |
 | Einzelrodung | Stabile Ressourcenkennung; früherer ausgewählter Baum nach echter Regeneration und Neustart entfernt, Kontrollbaum erhalten | Produktionsgrenze des Kollisionsnachlaufs, Reichweitenfahrt, viele Rodungen, Erträge und Rekultivierung |
-| Planwerkzeuge | Anheben/Absenken/Ebnen/Material; inerte Planung und Wiederherstellung geprüft; acht aktuelle native Automationtests erfolgreich | Vollständige Eingabenrunde und Stadtsimulation; normale geprüfte T/F6/K/L-Paintbedienung ist ein begrenzter Ausschnitt |
+| Planwerkzeuge | Anheben/Absenken/Ebnen/Material; inerte Planung und Wiederherstellung geprüft; frühere acht Foundations-Tests erfolgreich, neue Bedien-Suite insgesamt elf | Vollständige Eingabenrunde und Stadtsimulation; normale geprüfte T/F6/K/L-Paintbedienung ist ein begrenzter Ausschnitt |
 | Materialmalerei | Quadratischer Black-Zero-Flow-Brush; native Kern-/Seitenmasken bleiben nach Paint, Regeneration und Laden frei; Snow nach normalem PIE-Laden sichtbar, geschütztes Grundstück bleibt Sand | Separate verpackte Pixelabnahme; Maskentestactors werden je Prozess neu erzeugt |
 | Verpacktes Spiel | Aktuelle Fassung mit Cook/Stage und zwei echten cooked Prozessen geprüft; 29/29 und 12/12 Checks | Separate verpackte Pixel-/Bedienabnahme und größere Last |
 
-Die getrennte Karte **`/Game/Maps/ShaderWorldFoundations`** verwendet den Slot **CityLabFoundations**. CityLoop und sein Slot bleiben erhalten. Acht aktuelle native Automationtests ergänzen die praktischen Nachweise, ersetzen aber weder die neue Paintprüfung noch sämtliche Tastatur-/Mausabläufe.[^loop][^foundations]
+Die getrennte Karte **`/Game/Maps/ShaderWorldFoundations`** verwendet den Slot **CityLabFoundations**. CityLoop und sein Slot bleiben erhalten. Die bisherige Acht-Test-Suite wurde für Kamera/Toolbar auf elf erfolgreiche native Tests erweitert; diese ersetzen weder sämtliche Tastatur-/Mausabläufe noch verpackte Pixelprüfungen.[^loop][^foundations]
 
 ## Abgeschlossen: Paintwirkung und normale Bedienung im geprüften Umfang
 
@@ -52,6 +56,14 @@ Der alte Paintbackend verwendete eine R-only-Spline. In einer normalen PIE-Probe
 Der neue `USW_LayerMaskBrushComponent` läuft vor dem strukturellen Road-/Pad-Pass. Seine Größe definiert den quadratischen Wirkbereich: 8 m bedeutet eine halbe Kantenlänge von 8 m, insgesamt 16 × 16 m. **Engine Black** ist ein konstanter Zero-Flow-Selektor, keine Flächenmaske. White wählte den deaktivierten Flow-Zweig und erzeugte keinen sichtbaren Snow-Auftrag; beide aktuellen Neustartprüfungen verlangen deshalb ausdrücklich Black. Straßen-/Pad-Material und NoGrowth haben in Kern **und** Seitenbereichen Vorrang. Uncooked und cooked blieben die geprüften NoGrowth-Bereiche nach Paint, echter Regeneration und je drei Loads frei. Die native Testmaske wird je Prozess neu erzeugt; dies beweist keine beliebige zusätzliche Maskenactorpersistenz. Die finale normale PIE-Probe bestätigte die kompilierte Fassung mit sichtbarem Snow nach Speichern und Laden sowie unverändert sandigem, bewuchsfreiem Grundstück im Bild.[^foundations]
 
 Eine normale PIE-Probe bestätigte inerte Planung aus etwa 5 km Höhe, neun Bodenproben mit vier stabilen Durchläufen, Undo, getrennte Planauswahl und absolute Zielhöhe nach PIE-Neustart. Die aktuelle kompilierte Paintfassung bestand normale T/F6/K/L-Eingaben ohne nachträgliche Brushparameteränderung und einen qualitativen GPU-Sichtvergleich. Das ersetzt keine vollständige Tasten-/Mausprüfung oder gesonderte verpackte Pixelabnahme.[^foundations]
+
+## Nach Kamera/Toolbar: begrenzte Bauarbeit statt sofortiger Weltvergrößerung
+
+Die neue [Bedienfassung](../guides/build-controls.md) besitzt erste reale Eingabe-/Restore-Nachweise mit getrennten Plan-/Debugaktionen. Finale Leistenaufnahme und abgegrenzte Esc-/Straßenentwurfs-/Bauplatzproben sind geprüft. Die verpackte Regression bestand auch nach dem finalen Layoutbuild. Längere reale Kamerabedienung, persönliche Einstellungen im neuen Paketprozess und ein neuer Paket-Pixeltest bleiben getrennte offene Schritte. Danach ist folgende Reihenfolge ein Vorschlag, keine bereits implementierte Produktionsfunktion:[^build-controls][^construction]
+
+1. **Ressourcenverwaltung absichern:** Den externen Restore-Vertrag und den Kollisionsnachlauf klären, dann visuelle Vollscans begrenzen. Initiale Rodung, Laden älterer Zustände, Indexwechsel und Kontrollbestand müssen korrekt bleiben.
+2. **Kleinen Arbeits-/Materialkreislauf bauen:** Eine begrenzte Baugrube mit Baggerplatzhalter, erreichbaren Arbeitsschritten, endlichem Puffer, Transport auf vorgegebener Route, Lager und anschließender Aufschüttung. Planung bleibt inert; nur ausgeführte Arbeit verändert Ist-Gelände und Materialkonten gemeinsam. Dichten, Rasterung, Arbeitsraten und Bilanzierung sind noch zu entwerfen.
+3. **Den halbfertigen Zustand neu starten:** Mit gefülltem Puffer oder beladenem Fahrzeug speichern und in einem neuen Prozess fortsetzen; mehrfaches Laden darf weder Masse noch Arbeitsschritte verdoppeln. Erst danach die Menge an Bauflächen, Rodungen und Brushes mit gemessenen Kosten erhöhen.
 
 ## Vor größerer Welt: den Rodungsnachlauf reduzieren
 
@@ -82,6 +94,7 @@ Ein eigener früher 3D-Untergrundversuch bleibt nötig: Höhenfeld und Portalöf
 
 [^verification]: [Tatsächlicher Prüfstand](../verification.md).
 [^foundations]: [Foundations: aktuelle Anleitung und Prüfgrenzen](../guides/foundations-lab.md).
+[^build-controls]: [Neue Baukamera und Werkzeugleiste: aktueller Entwurf und ausstehende Abnahmen](../guides/build-controls.md).
 [^loop]: [Bestehende CityLoop-Spielschleife](../guides/city-builder-loop.md).
 [^construction]: [Zielarchitektur für Bauarbeit und Material](construction-and-terrain-architecture.md).
 [^capabilities]: [Pluginfähigkeiten und Grenzen](versions-and-capabilities.md).
