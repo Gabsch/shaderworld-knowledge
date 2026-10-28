@@ -18,7 +18,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Wind und Schaum einstellen](guides/ocean-waves-and-foam.md) – den Ozean von 10 auf 18 m/s Wind umstellen und Schaum sichtbar machen.
 - [Bauplätze und Straßen verändern](guides/building-pads-and-roads.md) – die Lernkarte bedienen und Gelände, Material und Straßenmesh unterscheiden.
 - [Vom Straßenbau zum bewohnten Testhaus](guides/city-builder-loop.md) – verbundene Spielschleife mit Grundstück, Haus, Bürger und bestandenem Drei-Prozess-Neustartnachweis.
-- [Baukamera und Werkzeugleiste bedienen](guides/build-controls.md) – persönliche Kamera-/Werkzeugregler mit geprüfter Planbestätigung, UI-Fokusschutz und PIE-Restore; Esc-Abbruch, Bauplatzvorschau, finale lesbare Leiste und verpackte Regression nach Layoutbuild belegt; längere reale Kameraeingaben offen.
+- [Baukamera und Werkzeugleiste bedienen](guides/build-controls.md) – geprüfte Regler/Planbestätigung und neuer selektiver Baum-Kamerafilter mit 25/25 nativen Tests; bisherige Toolbar-/Restorebelege getrennt. Normales ConstructionLab-Wiederladen mit passendem Boden und Kamerapose zusätzlich belegt; physische Kameraeingaben und aktuelle cooked Kamerafahrt bleiben offen.
 - [Foundations: planen, Biome und Einzelrodung](guides/foundations-lab.md) – aktuelle Black-/Zero-Flow-Fassung mit uncooked und verpacktem Neustartnachweis; sichtbares Snow nach normalem PIE-Laden und geschütztes Grundstück mit Bildern belegt; Rodungsfix mit separater Vorher-/Nachher-/Ladebildprobe, Rodung vom Nutzer nach dem Fix ausprobiert und bestätigt; gezielte Abnahme aller Vorschau-/Fokusfälle bleibt offen.
 - [Baugrube, Testbagger und Materialkreislauf](guides/construction-lab.md) – schrittweise Erdarbeit mit 18-t-Puffer, 12-t-Lkw und eigenem Spielstand; cooked Neustart und Abschluss mit 172,8 t im Lager/0 g Modellbilanzfehler bestanden. Lokale Höhenprüfung, normale Erstplanung/Puffer/Transport und exaktes PIE-Wiederladen belegt; Tastatur-/Fokusfälle und Pixelvergleich bleiben begrenzt.
 - [Straßen zur Laufzeit bauen und speichern](guides/runtime-roads.md) – RoadLab mit gemeinsamer Terrain-/Mesh-Spline; Neustart, Kollision, Pflanzenursprünge und die POM-Nahsichtkorrektur verstehen.
@@ -33,7 +33,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.
-- [Prüfstand und offene Tests](verification.md) – 22 native Tests, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss und acht CPU-Rodungsmessfenster mit ihren Grenzen.
+- [Prüfstand und offene Tests](verification.md) – aktuelle 25 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss und acht CPU-Rodungsmessfenster mit ihren Grenzen.
 
 ## Wissensbasis pflegen
 

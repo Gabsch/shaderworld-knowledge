@@ -8,11 +8,12 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T17:05:22Z"
+  at: "2026-10-28T20:06:43Z"
 evidence_scope:
   implementation: Aktuellen projektlokalen Kameracode, persönliche Einstellungen, Slate-Panel und kontextbezogene Eingaben gelesen; API und Beschriftungen im abgestimmten Quellstand
   runtime_status: Frühere Kamera-/Toolbar-Abnahme mit Editor-/Gamebuild, vollständigem Cook/Stage/Archive und elf nativen Tests bestanden; normale Slate-Slider-/Fokus-/Planbestätigung und PIE-Restore geprüft; erneuter verpackter Foundations-Neustart mit 29/29 und 12/12 Checks in zwei Prozessen bestanden
-  tree_fix_status: Neue Builds, zwölf native Tests, cooked CPU-/Physik-/Save-Regression und getrennte normale PIE-Backendbildprobe bestanden; tatsächliche C-/Gelbpreview-Bedienung offen
+  camera_collision_fix: Editor-/Gamebuild und SkipCook-Repackage bestanden; 25/25 native Tests mit 23 ohne und zwei bekannten Warnungen, darunter drei echte Kamera-Kollisionsprüfungen. Normales ConstructionLab-PIE-Restore mit vollständigem Baustellenmodell, passendem Boden und Kamerapose bestätigt; keine physische WASD- oder aktuelle cooked Gameplay-Abnahme
+  tree_fix_status: Frühere Baumkorrektur mit damaligen Builds und zwölf nativen Tests, cooked CPU-/Physik-/Save-Regression und getrennte normale PIE-Backendbildprobe bestanden; tatsächliche C-/Gelbpreview-Bedienung offen
   remaining_tests: Tatsächliche C-Taste und gelbe Mauszielvorschau; längeres physisches WASD/Shift/RMB, echter Alt-Tab und erneuter verpackter Pixeltest offen; persönliche Paket-Persistenz nicht gesondert geprüft
 sources:
   - id: tree-fix
@@ -30,6 +31,9 @@ sources:
   - id: image-manifest
     resource: ../evidence/image-manifest.json
     title: Herkunft und Prüfsumme der nativen Leistenaufnahme
+  - id: camera-collision
+    resource: ../evidence/camera-tree-test.json
+    title: Geprüfter selektiver Kamera-Kollisionsfilter, 25 native Tests und getrennte verbleibende Spielgrenzen
   - id: camera
     resource: "Originales Testprojekt UnrealMcpTest: Source/UnrealMcpTest/CityLabCamera.h/.cpp und CityLabCameraTests.cpp; Projektcode nicht im öffentlichen Wissensbundle enthalten"
     title: Höhenabhängige Kameramathematik und persönliche Move-/Look-Einstellungen
@@ -54,7 +58,7 @@ sources:
 ---
 # Baukamera und Werkzeugleiste bedienen
 
-**Die neue Bedienfassung ist im beschriebenen Umfang geprüft.** Persönliche Regler, UI-Fokusschutz, inerte Planbestätigung, Entwurfsabbruch, Bauplatzvorschau und PIE-Wiederherstellung bestanden die normalen Slate-Prüfungen. Die aktuelle Suite mit zwölf nativen Tests und die verpackte Foundations-Datenregression nach der Baumkorrektur sind erfolgreich. Die finale Leiste ist vollständig lesbar im normalen PIE-Bild geprüft. Längeres reales Rechtsmausdrehen, WASD/Shift und Alt-Tab bleiben offen. Verwende **`/Game/Maps/ShaderWorldFoundations`** mit **CityLabFoundationsGameMode**.[^controls-acceptance][^packaged-acceptance][^panel-image]
+**Die neue Bedienfassung ist im beschriebenen Umfang geprüft.** Persönliche Regler, UI-Fokusschutz, inerte Planbestätigung, Entwurfsabbruch, Bauplatzvorschau und PIE-Wiederherstellung bestanden die normalen Slate-Prüfungen. Die damalige Zwölf-Test-Suite und die verpackte Foundations-Datenregression nach der Baumkorrektur waren erfolgreich. Der neue Kamerafilter bestand jetzt die erweiterte native Suite mit 25/25 Tests; der getrennte normale ConstructionLab-Start stellte Modell, Boden und Kamerapose wieder her.[^camera-collision] Die finale Leiste ist vollständig lesbar im normalen PIE-Bild geprüft. Längeres reales Rechtsmausdrehen, WASD/Shift und Alt-Tab bleiben offen. Verwende **`/Game/Maps/ShaderWorldFoundations`** mit **CityLabFoundationsGameMode**.[^controls-acceptance][^packaged-acceptance][^panel-image]
 
 ![Foundations mit lesbarer Bauwerkzeugleiste, persönlichen Kamerareglern und Küstenübersicht](../assets/images/build-controls-panel.png)
 
@@ -70,6 +74,18 @@ Die unveränderte Aufnahme zeigt die kompilierte Leiste im normalen PIE. **Anheb
 4. Mit dem **Mausrad** zoomst du zum verfügbaren Bodenpunkt unter der Maus. Fehlt dieser Punkt, verwendet der Code die Blickrichtung. Zoomschritt und Bewegung hängen von der Kamerahöhe und der persönlichen Geschwindigkeit ab; der frühere feste 6-m-Scrollschritt gilt für diese Fassung nicht mehr.[^camera][^road-camera]
 
 Bodenschutz und eine Prüfung des Bewegungswegs sind vorgesehen. Fehlt eine brauchbare lokale Bodenkollision, kann eine Bewegung zum Boden warten beziehungsweise ausbleiben. Das ist keine Zusage, dass sämtliche asynchronen ShaderWorld-Arbeiten beendet sind; Terrain, Straßen, Bäume und Gebäude brauchen weiterhin ihre eigenen Kollisionsnachweise.[^road-camera]
+
+### Kamera und Baumkollision: native Tests bestanden
+
+Der Nutzer meldete, dass die Baukamera in einen Baum geraten und danach feststecken kann. ShaderWorld kann Kollisionsinstanzen in Kameranähe nachträglich erzeugen. Der bisherige Bewegungspfad brach bei einer bereits überlappenden Startposition ab; dadurch konnte auch ein Weg aus dem Baum blockieren. Der neue **Kamerafilter** überspringt deshalb für die Baukamera ausschließlich getroffene **ShaderWorld-HISM-Komponenten mit dem Tag `CityLab.TreeResource`**. Er ignoriert diese Komponenten für die einzelne Kameraabfrage, niemals den gesamten Terrainactor.[^camera-collision]
+
+Der Bewegungsweg wird mit einer **50-cm-Kugel** auf dem Visibility-Kanal geprüft, mit höchstens **32 Versuchen** beim Überspringen solcher Baumpools. Gelände, Straßen, Häuser und unmarkierte Hindernisse wie Felsen sollen weiterhin blockieren. Auch eine nachträgliche Höhenkorrektur für Bodenabstand wird erneut auf Hindernisse geprüft, damit sie nicht durch eine Wand oder ein Dach versetzt. Das ist ein kameraeigener Filter; die Baumkollision für andere Spielfiguren wird dadurch nicht abgeschaltet.[^camera-collision]
+
+**Tatsächlicher neuer Nachweis:** Editor- und Gamebuild sowie SkipCook-Repackage bestanden. Die finale Suite bestand **25/25 native Tests in 0,460 s**, **23 ohne und zwei mit bekannten Warnungen**; die drei neuen Kamera-Kollisionsprüfungen liefen fehlerfrei. Eine echte Query-Physikwelt prüft das Durchqueren markierter ShaderWorld-Pools, ein nachträglich publiziertes tatsächliches Startüberlappen, weiter blockierende fremde/unmarkierte Komponenten und das sichere Abbrechen bei ausgeschöpftem Versuchslimit. Die Fixtures verwenden einfache Würfel-/Boxgeometrie, keine menschliche Kamerafahrt durch den Wald.[^camera-collision]
+
+Der erste Lauf hatte einen **Fixturefehler**: Der Start lag an der Rückseite einer einseitigen komplexen Fläche und bestätigte keine echte Startüberlappung. Die korrigierte Fixture erzeugt 25 cm Vorderseitenüberlappung und prüft die erneut publizierte Geometrie zusätzlich ungefiltert. Die strenge Penetrationsprüfung blieb erhalten; der Produktionsfilter wurde dafür nicht geändert. **Normales PIE-Wiederladen ist getrennt bestätigt:** ConstructionLab startete ohne Verifierflag mit einem pausierten Auftrag und exakt gleichem vollständigem Baustellenrecord wie der gesicherte Stand. **172,8 t Lager, 0 g Restboden/Puffer/Lkw**, neun passende lokale Bodenpunkte, drei stabile Controllerprüfungen und die innerhalb **0,01 cm** wiederhergestellte Kameraposition wurden zurückgelesen. Von 17 geprüften vorhandenen Spielständen blieben **16 unbeteiligte byteidentisch**. Der normale Construction-Slot wurde beim Start neu geschrieben; sein Modell ist exakt gleich, seine Datei wird **nicht** als byteidentisch bezeichnet.[^camera-collision]
+
+Diese Probe verwendete kein Computer Use und keine physischen Eingaben. Physisches WASD/RMB, Fahrt in einen Baum, persönliche Bedienabnahme und aktuelle cooked Kamerafahrt bleiben offen. Die Query-Physiktests bestätigen die eigentliche Baumfilter-/Overlaplogik; der normale PIE-Start bestätigt zusätzlich die Integration und Wiederherstellung. Frühere Regler-/Fokus-/Speicherproben bleiben getrennte Nachweise.
 
 ## Empfindlichkeit selbst einstellen
 
@@ -114,12 +130,14 @@ Während der Zeiger über der Leiste steht, ein Regler gezogen wird oder die Lei
 | Prüfung | Tatsächlich belegter Stand | Grenze |
 | --- | --- | --- |
 | Build und Verpackung | Finale Editor-/Gamebuilds erfolgreich; vollständiger Cook/Stage/Archive rund 58 s, abschließendes Layout-Staging/Archive rund 15 s erfolgreich | Beim letzten Staging wurden gekochte Assets wiederverwendet; Paket-Bedienung und Pixelwirkung sind getrennte Prüfungen[^packaged-acceptance] |
-| Native Tests | Aktuell 12 erfolgreich, davon 10 ohne und 2 mit den bekannten Warnungen; Camera-/Preference-, WorldClickIsolation- und Mausstrahl-Boxgeometrie enthalten | Kontrollierte Code-/API-Tests, kein längeres reales Mausziehen oder tatsächliche C-/Previewprobe[^packaged-acceptance] |
+| Native Tests | Aktuell 25/25 erfolgreich, 23 ohne und zwei bekannte Warnungen; drei neue echte Kamera-Kollisionsprüfungen zusätzlich zu den früheren 12er-/22er-Suiten | Kontrollierte Query-Physik-/Code-/API-Tests, keine physische WASD-Fahrt oder vollständige Eingabeabnahme[^camera-collision] |
+| Neuer Kamerafilter: Builds und Verpackung | Finaler Editor-Testbuild 45,71 s, Gamebuild 111,13 s; SkipCook-Repackage 18,77 s/Exit 0 | Keine neue volle Cook- oder aktuelle cooked Gameplay-Abnahme; normales PIE-Wiederladen separat geprüft[^camera-collision] |
+| Normales Wiederladen nach Kamerafix | ConstructionLab ohne Verifierflag: vollständige Baustellenrecords, lokale Bodenhöhe und Kameraposition wiederhergestellt; 16 unbeteiligte Spielstände bytegleich | Construction-Datei beim Start neu geschrieben, Modell exakt gleich; keine physische WASD-/Baumfahrt[^camera-collision] |
 | Slider und UI-Fokus | Normale Slate-Klicks sowie Enter-/Rechts-/Links-Tasten geprüft; R/P/T/F6/C/U/Strg+Z bei Sliderfokus ohne Welt-/Kameradelta | Ausgewählte Eingaben, keine vollständige Langbedienung |
 | Geländeplan bestätigen | Zweimal bestätigt: gleiche Plan-ID, Revision 1, Position und Recordzahl; Plan blieb ungearbeitet, kein weiterer ausgeführter Eingriff | Logischer Readback, kein zusätzlicher Physik-/Pixelvergleich dieses Knopfs |
 | Straßenentwurf und Escape | Enter-/Pfeiltasten bei Sliderfokus ließen zwei Entwurfspunkte und zwei Straßen unverändert; Esc nach Welt-Refokus leerte nur den Entwurf, PIE lief weiter | Ein Punkt per echter Weltaktion, zweiter Punkt kontrolliert als Fixture ergänzt; keine neue Straße gebaut |
 | Persönliche Werte und PIE-Restore | Move rund 2,225 und Look rund 1,575 nach Stop/Start identisch geladen; dieselbe Plan-ID; anschließend persönliche Werte 1/1 wiederhergestellt | Gleicher Editorprozess; persönliche Paket-Persistenz nicht gesondert geprüft |
-| Aktuelle verpackte Regression | Nach Baumkorrektur und erfolgreichem SkipCook-Repackage zwei frische cooked Spielprozesse: 29/29 Checks in 120,5 s, danach 12/12 in 70,8 s | CPU-/Physik-/Save-/Regenerationsnachweis, keine physische Maus- oder verpackte Pixelabnahme[^packaged-acceptance] |
+| Frühere verpackte Regression vor Kamerafix | Nach Baumkorrektur und erfolgreichem SkipCook-Repackage zwei frische cooked Spielprozesse: 29/29 Checks in 120,5 s, danach 12/12 in 70,8 s | CPU-/Physik-/Save-/Regenerationsnachweis, keine physische Maus- oder verpackte Pixelabnahme[^packaged-acceptance] |
 | Bauplatzvorschau und Abbrechen | Echter Welt-Linksklick aktivierte die Bestätigung; Abbrechen ließ vorhandene Straßen, Grundstück, Einzelrodung, vier Records und Kamerapose unverändert | Keine neue Hauserrichtung in dieser Vorschauprobe |
 | Finale Leistenaufnahme | Alle Labels nach Layoutfix lesbar, persönliche Werte wieder 1/1 | Einzelner normaler PIE-Frame, keine verpackte Bildabnahme |
 | Einzelbaum-Geometrie und Backenddarstellung | Ray-/Meshbox-Test erfolgreich; normale PIE-Konsole/Backend-API: markierte Zielkrone nach Rodung und erneutem Laden sichtbar weg, blauer Kontrollnachbar erhalten | Keine tatsächliche C-/Mauspreview-Bedienung; CPU-Scale 0 und Refreshanforderung sind kein GPU-Fertigzähler[^tree-fix] |
@@ -132,10 +150,10 @@ Der Straßenkontexttest hat ausdrücklich keinen Straßenneubau geprüft: Ein Pu
 Die Produktionsgrenzen aus dem [Foundations-Labor](foundations-lab.md#bestandene-prüfungen-und-bekannte-grenzen) bleiben bestehen: periodischer Rodungsscan, möglicher Kollisionsnachlauf, lokale Kollisionsheuristik und begrenzte Bürgernavigation. Komfortable Bedienung macht daraus keine große, abgeschlossene Baustellensimulation.[^foundations]
 
 [^controls-acceptance]: [Bereinigter Bedienbericht](../evidence/build-controls-test.json): elf native Tests, echte normale Slate-/PIE-Readbacks, logische inerte Planbestätigung und klar begrenzte Kamera-/Fixtureprüfung.
-[^packaged-acceptance]: [Aktueller bereinigter Rodungsbericht](../evidence/tree-clearing-test.json): Editor-/Gamebuild, zwölf native Tests, erfolgreiches Repackage mit bereits gekochten Assets und neue cooked 29/12-Prozesse. Die frühere vollständige Cook-/Layoutabnahme steht getrennt im [Bedienbericht](../evidence/build-controls-test.json); kein neuer Paket-Pixeltest.
+[^packaged-acceptance]: [Früherer bereinigter Rodungsbericht](../evidence/tree-clearing-test.json): Editor-/Gamebuild, zwölf native Tests, erfolgreiches Repackage mit bereits gekochten Assets und neue cooked 29/12-Prozesse. Die frühere vollständige Cook-/Layoutabnahme steht getrennt im [Bedienbericht](../evidence/build-controls-test.json); kein neuer Paket-Pixeltest.
 [^panel-image]: [Finale native PIE-Ansicht der Bauwerkzeugleiste](../assets/images/build-controls-panel.png), unverändert und visuell auf lesbare Labels geprüft.
 [^image-manifest]: [Bildherkunft und Prüfsumme](../evidence/image-manifest.json).
-[^camera]: Projektlokale `CityLabCamera.h/.cpp` und `CityLabCameraTests.cpp`: Wertebereiche, begrenzte Kameramathematik und persönliche Konfiguration; die beiden neuen nativen Tests sind bestanden.
+[^camera]: Projektlokale `CityLabCamera.h/.cpp` und `CityLabCameraTests.cpp`: Wertebereiche, begrenzte Kameramathematik und persönliche Konfiguration; die damaligen Mathematik-/Preferences-Tests sind bestanden.
 [^road-camera]: Projektlokale `CityLabRoadGameMode.h/.cpp`: Kamera- und Eingabepfad; Build und begrenzte Integration geprüft, längere reale Capture-/WASD-Bedienung offen.
 [^panel]: Projektlokale `CityLabBuildPanel.h/.cpp`: Slate-Labels, Slider und Kontextaktionen; normale Slider-/Fokus-/Bestätigungseingaben, Esc-Abbruch und Bauplatzvorschau geprüft. Finale Labels zusätzlich im normalen PIE-Bild inspiziert.
 [^foundations-input]: Projektlokale `CityLabFoundationsGameMode.h/.cpp`: Planbestätigung getrennt von F6-Debugarbeit; zweimalige Bestätigung im normalen PIE blieb ohne zusätzliche Debugausführung.
@@ -144,3 +162,5 @@ Die Produktionsgrenzen aus dem [Foundations-Labor](foundations-lab.md#bestandene
 [^saves]: [Stadtspielstände und Neustartgrenzen](save-and-load.md).
 
 [^tree-fix]: [Aktueller Rodungsbefund und getrennte Abnahmen](foundations-lab.md#aktueller-rodungsbefund-datenzustand-und-spielbild-trennen): geprüfter Mausstrahl-/Boxalgorithmus, native Renderrefresh-Anforderung und Backend-Bild-/Ladeprobe; tatsächliche C-/Mauspreview-Bedienung offen.
+
+[^camera-collision]: [Bereinigter Kamerabaum-Bericht](../evidence/camera-tree-test.json): Builds, SkipCook-Repackage, 25/25 native Tests samt drei Query-Physikfällen und historischer Fixturekorrektur. Zweiter Sweep der Höhenkorrektur im Controllercode gelesen; normale ConstructionLab-PIE-Wiederherstellung separat bestätigt, keine physische WASD- oder aktuelle cooked Gameplay-Abnahme.
