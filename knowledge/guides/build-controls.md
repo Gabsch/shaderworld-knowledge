@@ -8,17 +8,21 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T16:15:52Z"
+  at: "2026-10-28T17:05:22Z"
 evidence_scope:
   implementation: Aktuellen projektlokalen Kameracode, persönliche Einstellungen, Slate-Panel und kontextbezogene Eingaben gelesen; API und Beschriftungen im abgestimmten Quellstand
-  runtime_status: Editor-/Gamebuild, vollständiger Cook/Stage/Archive und elf native Tests bestanden; normale Slate-Slider-/Fokus-/Planbestätigung und PIE-Restore geprüft; erneuter verpackter Foundations-Neustart mit 29/29 und 12/12 Checks in zwei Prozessen bestanden
-  remaining_tests: Längeres physisches WASD/Shift/RMB, echter Alt-Tab und erneuter verpackter Pixeltest offen; persönliche Paket-Persistenz nicht gesondert geprüft
+  runtime_status: Frühere Kamera-/Toolbar-Abnahme mit Editor-/Gamebuild, vollständigem Cook/Stage/Archive und elf nativen Tests bestanden; normale Slate-Slider-/Fokus-/Planbestätigung und PIE-Restore geprüft; erneuter verpackter Foundations-Neustart mit 29/29 und 12/12 Checks in zwei Prozessen bestanden
+  tree_fix_status: Neue Builds, zwölf native Tests, cooked CPU-/Physik-/Save-Regression und getrennte normale PIE-Backendbildprobe bestanden; tatsächliche C-/Gelbpreview-Bedienung offen
+  remaining_tests: Tatsächliche C-Taste und gelbe Mauszielvorschau; längeres physisches WASD/Shift/RMB, echter Alt-Tab und erneuter verpackter Pixeltest offen; persönliche Paket-Persistenz nicht gesondert geprüft
 sources:
+  - id: tree-fix
+    resource: foundations-lab.md#aktueller-rodungsbefund-datenzustand-und-spielbild-trennen
+    title: Geprüfte Geometrie-/Backendkorrektur und ausdrücklich offene C-/Mauspreview-Bedienung
   - id: controls-acceptance
     resource: ../evidence/build-controls-test.json
     title: Bereinigte native Tests, normale Slate-/PIE-Prüfung und ausdrücklich offene lange Kameraeingaben
   - id: packaged-acceptance
-    resource: ../evidence/build-controls-test.json
+    resource: ../evidence/tree-clearing-test.json
     title: Bestätigte Builds und erneute verpackte Regression mit 29/29 und 12/12 Checks
   - id: panel-image
     resource: ../assets/images/build-controls-panel.png
@@ -50,11 +54,13 @@ sources:
 ---
 # Baukamera und Werkzeugleiste bedienen
 
-**Die neue Bedienfassung ist im beschriebenen Umfang geprüft.** Persönliche Regler, UI-Fokusschutz, inerte Planbestätigung, Entwurfsabbruch, Bauplatzvorschau und PIE-Wiederherstellung bestanden die normalen Slate-Prüfungen. Elf native Tests und die verpackte Foundations-Regression nach dem finalen Layoutbuild sind erfolgreich. Die finale Leiste ist vollständig lesbar im normalen PIE-Bild geprüft. Längeres reales Rechtsmausdrehen, WASD/Shift und Alt-Tab bleiben offen. Verwende **`/Game/Maps/ShaderWorldFoundations`** mit **CityLabFoundationsGameMode**.[^controls-acceptance][^packaged-acceptance][^panel-image]
+**Die neue Bedienfassung ist im beschriebenen Umfang geprüft.** Persönliche Regler, UI-Fokusschutz, inerte Planbestätigung, Entwurfsabbruch, Bauplatzvorschau und PIE-Wiederherstellung bestanden die normalen Slate-Prüfungen. Die aktuelle Suite mit zwölf nativen Tests und die verpackte Foundations-Datenregression nach der Baumkorrektur sind erfolgreich. Die finale Leiste ist vollständig lesbar im normalen PIE-Bild geprüft. Längeres reales Rechtsmausdrehen, WASD/Shift und Alt-Tab bleiben offen. Verwende **`/Game/Maps/ShaderWorldFoundations`** mit **CityLabFoundationsGameMode**.[^controls-acceptance][^packaged-acceptance][^panel-image]
 
 ![Foundations mit lesbarer Bauwerkzeugleiste, persönlichen Kamerareglern und Küstenübersicht](../assets/images/build-controls-panel.png)
 
 Die unveränderte Aufnahme zeigt die kompilierte Leiste im normalen PIE. **Anheben** ist ausgewählt, aber noch kein Planort gesetzt; deshalb sind Planbestätigung und F6-Ausführung im Bild deaktiviert. Straßen, Testhaus und Küste gehören zur vorhandenen Laborkarte.[^panel-image][^image-manifest]
+
+**Bei C bleibt der Prüfumfang wichtig:** Die frühere Erfolgsmeldung konnte einen weiterhin sichtbaren Baum betreffen; „sichtbare Matches = 0“ waren nur CPU-Transforms. Neue Boxauswahl und nativer Renderrefresh sind gebaut. Zwölf native Tests, eine erneute cooked Datenregression und ein separater normaler PIE-Bildvergleich per Konsole/Backend-API bestanden. **Die tatsächliche C-Taste und gelbe Mauszielvorschau sind noch nicht praktisch abgenommen.** Das [Bilderpaar mit erneutem Laden](foundations-lab.md#aktueller-rodungsbefund-datenzustand-und-spielbild-trennen) zeigt den Backend-Erfolg, keine C-Bedienfolge.[^tree-fix]
 
 ## Kamera: bewegen, schauen und zoomen
 
@@ -87,11 +93,11 @@ Die Werkzeugleiste heißt **CITYLAB | BAUWERKZEUGE**. Ihre Schaltflächen wähle
 | **Strasse** | Fügt einen Entwurfspunkt hinzu; mindestens zwei Punkte nötig | **Strasse bauen [Enter]** baut sofort als Laborfunktion |
 | **Bauplatz + Haus** | Fixiert zunächst nur eine gelbe Standortvorschau | **LAB-DEBUG: Testhaus sofort bauen** ebnet/rodet das Grundstück und baut das Testhaus |
 | **Anheben / Absenken / Ebnen / Material** | Erstellt oder verschiebt einen ungearbeiteten Plan | **Plan bestaetigen und speichern [Enter]** speichert nur die Planung; Boden und Bewuchs bleiben unverändert |
-| **Roden** | Keine Klickrodung | **C** rodet ausdrücklich einen getaggten Baum am aktuellen Weltzeiger als Lab-Debug; kein Holzertrag |
+| **Roden** | Keine Klickrodung; laut Code eine gelbe Meshbox-/Stammvorschau am Mausstrahl | **C** wählt frisch den nächsten Box-Treffer eines getaggten Baums; kein 8-m-Bodenfallback und kein Holzertrag. C-/Mauspreview-Abnahme offen |
 
 **Bestätigen eines Geländeplans führt keine Erdarbeit aus.** Nur **F6 | LAB-DEBUG: Plan sofort ausfuehren** verändert Gelände beziehungsweise Material sofort. Bestätigen einer Straße oder eines Testhauses bleibt dagegen ausdrücklich beschrifteter Sofortbau des Labors. Arbeitskräfte, Maschinen, Materialkonten und Bauzeit sind noch nicht implementiert.[^foundations-input][^panel]
 
-Eine Schaltfläche übernimmt einen zuvor in der Welt gesetzten Standort oder die ausgewählte Plan-ID. Sie soll keinen neuen Zielpunkt unter der Werkzeugleiste abfragen. Für Rodung gibt es keinen versteckten Ersatz durch einen alten Zielpunkt. Bewege den Zeiger dafür ausdrücklich auf den gewünschten Weltbereich und drücke **C**. Gras und Felsen sind keine getaggten Baumressourcen.[^foundations-input]
+Eine Schaltfläche übernimmt einen zuvor in der Welt gesetzten Standort oder die ausgewählte Plan-ID. Sie soll keinen neuen Zielpunkt unter der Werkzeugleiste abfragen. Für Rodung gibt es keinen versteckten Ersatz durch einen alten Zielpunkt. Der Code zeichnet im Rodenmodus ungefähr mit 5 Hz eine gelbe transformierte Meshbox, einen Stammring und den Strahleintritt. Bewege den Zeiger auf die gewünschte Baum-Box und drücke **C**; C berechnet den Treffer erneut. Ein vorgeschalteter Visibility-Blocker begrenzt den Strahl, ein radialer Bodenfallback entfällt. Dies ist kein pixelgenaues Blatt- oder Dreieckspicking. Gras und Felsen sind keine getaggten Baumressourcen; der Radiusregler steuert diese Auswahl nicht. Die Geometrie und der sichtbare Backendpfad sind getrennt geprüft; echte Vorschau-/C-Eingabe bleibt offen.[^foundations-input]
 
 ## Parameter, Abbrechen und Tastenkürzel
 
@@ -108,14 +114,15 @@ Während der Zeiger über der Leiste steht, ein Regler gezogen wird oder die Lei
 | Prüfung | Tatsächlich belegter Stand | Grenze |
 | --- | --- | --- |
 | Build und Verpackung | Finale Editor-/Gamebuilds erfolgreich; vollständiger Cook/Stage/Archive rund 58 s, abschließendes Layout-Staging/Archive rund 15 s erfolgreich | Beim letzten Staging wurden gekochte Assets wiederverwendet; Paket-Bedienung und Pixelwirkung sind getrennte Prüfungen[^packaged-acceptance] |
-| Native Tests | 11 erfolgreich, davon 9 ohne und 2 mit den bekannten Warnungen; neue Camera-Mathe-/Preference- und WorldClickIsolation-Tests enthalten | Kontrollierte Code-/API-Tests, kein längeres reales Mausziehen |
+| Native Tests | Aktuell 12 erfolgreich, davon 10 ohne und 2 mit den bekannten Warnungen; Camera-/Preference-, WorldClickIsolation- und Mausstrahl-Boxgeometrie enthalten | Kontrollierte Code-/API-Tests, kein längeres reales Mausziehen oder tatsächliche C-/Previewprobe[^packaged-acceptance] |
 | Slider und UI-Fokus | Normale Slate-Klicks sowie Enter-/Rechts-/Links-Tasten geprüft; R/P/T/F6/C/U/Strg+Z bei Sliderfokus ohne Welt-/Kameradelta | Ausgewählte Eingaben, keine vollständige Langbedienung |
 | Geländeplan bestätigen | Zweimal bestätigt: gleiche Plan-ID, Revision 1, Position und Recordzahl; Plan blieb ungearbeitet, kein weiterer ausgeführter Eingriff | Logischer Readback, kein zusätzlicher Physik-/Pixelvergleich dieses Knopfs |
 | Straßenentwurf und Escape | Enter-/Pfeiltasten bei Sliderfokus ließen zwei Entwurfspunkte und zwei Straßen unverändert; Esc nach Welt-Refokus leerte nur den Entwurf, PIE lief weiter | Ein Punkt per echter Weltaktion, zweiter Punkt kontrolliert als Fixture ergänzt; keine neue Straße gebaut |
 | Persönliche Werte und PIE-Restore | Move rund 2,225 und Look rund 1,575 nach Stop/Start identisch geladen; dieselbe Plan-ID; anschließend persönliche Werte 1/1 wiederhergestellt | Gleicher Editorprozess; persönliche Paket-Persistenz nicht gesondert geprüft |
-| Finale verpackte Regression | Zwei frische Spielprozesse mit tatsächlichem CookedData: 29/29 Checks in 115,8 s, danach 12/12 in 69,0 s; 306 beziehungsweise 297 Physikproben und je drei Loads | Nach finalem Layoutbuild; keine neue physische Maus- oder verpackte Pixelabnahme[^packaged-acceptance] |
+| Aktuelle verpackte Regression | Nach Baumkorrektur und erfolgreichem SkipCook-Repackage zwei frische cooked Spielprozesse: 29/29 Checks in 120,5 s, danach 12/12 in 70,8 s | CPU-/Physik-/Save-/Regenerationsnachweis, keine physische Maus- oder verpackte Pixelabnahme[^packaged-acceptance] |
 | Bauplatzvorschau und Abbrechen | Echter Welt-Linksklick aktivierte die Bestätigung; Abbrechen ließ vorhandene Straßen, Grundstück, Einzelrodung, vier Records und Kamerapose unverändert | Keine neue Hauserrichtung in dieser Vorschauprobe |
 | Finale Leistenaufnahme | Alle Labels nach Layoutfix lesbar, persönliche Werte wieder 1/1 | Einzelner normaler PIE-Frame, keine verpackte Bildabnahme |
+| Einzelbaum-Geometrie und Backenddarstellung | Ray-/Meshbox-Test erfolgreich; normale PIE-Konsole/Backend-API: markierte Zielkrone nach Rodung und erneutem Laden sichtbar weg, blauer Kontrollnachbar erhalten | Keine tatsächliche C-/Mauspreview-Bedienung; CPU-Scale 0 und Refreshanforderung sind kein GPU-Fertigzähler[^tree-fix] |
 | Reales langes RMB/WASD und Fokus-Capture | Offen | Kein Erfolg für physisch längeres Halten/Bewegen behauptet |
 
 Die UI-Fokusprobe verwendete einen konkreten vorhandenen Stand mit **zwei Straßen, einem Grundstück, einer gespeicherten Einzelrodung und fünf Änderungsrecords**, davon ein ungearbeiteter Plan. Diese Zahlen blieben bei den geprüften Fokusbefehlen unverändert. Sie sind nicht die acht gespeicherten Records des getrennten Foundations-Regressionslaufs.[^controls-acceptance]
@@ -125,7 +132,7 @@ Der Straßenkontexttest hat ausdrücklich keinen Straßenneubau geprüft: Ein Pu
 Die Produktionsgrenzen aus dem [Foundations-Labor](foundations-lab.md#bestandene-prüfungen-und-bekannte-grenzen) bleiben bestehen: periodischer Rodungsscan, möglicher Kollisionsnachlauf, lokale Kollisionsheuristik und begrenzte Bürgernavigation. Komfortable Bedienung macht daraus keine große, abgeschlossene Baustellensimulation.[^foundations]
 
 [^controls-acceptance]: [Bereinigter Bedienbericht](../evidence/build-controls-test.json): elf native Tests, echte normale Slate-/PIE-Readbacks, logische inerte Planbestätigung und klar begrenzte Kamera-/Fixtureprüfung.
-[^packaged-acceptance]: [Bereinigter Bedienbericht](../evidence/build-controls-test.json), Abschnitte `builds` und `packaged_regression`: finale Editor-/Gamebuilds, vollständiger Cook und abschließendes Layout-Staging sowie zwei frische verpackte Foundations-Prozesse mit CookedData, 29/29 und 12/12 Checks; kein erneuter verpackter Pixeltest.
+[^packaged-acceptance]: [Aktueller bereinigter Rodungsbericht](../evidence/tree-clearing-test.json): Editor-/Gamebuild, zwölf native Tests, erfolgreiches Repackage mit bereits gekochten Assets und neue cooked 29/12-Prozesse. Die frühere vollständige Cook-/Layoutabnahme steht getrennt im [Bedienbericht](../evidence/build-controls-test.json); kein neuer Paket-Pixeltest.
 [^panel-image]: [Finale native PIE-Ansicht der Bauwerkzeugleiste](../assets/images/build-controls-panel.png), unverändert und visuell auf lesbare Labels geprüft.
 [^image-manifest]: [Bildherkunft und Prüfsumme](../evidence/image-manifest.json).
 [^camera]: Projektlokale `CityLabCamera.h/.cpp` und `CityLabCameraTests.cpp`: Wertebereiche, begrenzte Kameramathematik und persönliche Konfiguration; die beiden neuen nativen Tests sind bestanden.
@@ -135,3 +142,5 @@ Die Produktionsgrenzen aus dem [Foundations-Labor](foundations-lab.md#bestandene
 [^engine-input]: Bisheriger Datei-/CDO-Readback für MouseX, MouseY und Mouse2D: 0,14; keine subjektive Abnahme des neuen persönlichen Mausblickreglers.
 [^foundations]: [Foundations: Karte, Biome, Rodung und abgegrenzte bisherige Nachweise](foundations-lab.md).
 [^saves]: [Stadtspielstände und Neustartgrenzen](save-and-load.md).
+
+[^tree-fix]: [Aktueller Rodungsbefund und getrennte Abnahmen](foundations-lab.md#aktueller-rodungsbefund-datenzustand-und-spielbild-trennen): geprüfter Mausstrahl-/Boxalgorithmus, native Renderrefresh-Anforderung und Backend-Bild-/Ladeprobe; tatsächliche C-/Mauspreview-Bedienung offen.

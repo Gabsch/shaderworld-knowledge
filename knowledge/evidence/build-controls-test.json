@@ -146,7 +146,8 @@
   "limits": [
     "Laenger gehaltenes physisches WASD/Shift/RMB und echter Alt-Tab noch praktisch zu pruefen.",
     "Keine komplette Navigation, Maschinenarbeit, Materialbilanz oder Grosswelt-Leistungsabnahme.",
-    "Keine automatische Pixelgleichheit oder erneute vollstaendige Biom-Sichtpruefung."
+    "Keine automatische Pixelgleichheit oder erneute vollstaendige Biom-Sichtpruefung.",
+    "Historische Baumchecks mit visual/visible im Namen lesen CPU-Transformskalierungen, keine gerenderten Pixel. InspectResource liefert bei nicht gespeicherten Ressourcen Defaultnullen; daraus keine Abwesenheit ableiten. Die tatsächliche Zielauswahl der C-Mausbedienung und GPU-Publikation waren dadurch nicht belegt. Spätere separate Backend-Bildprobe und aktueller Prüfstand: tree-clearing-test.json."
   ],
   "final_layout_image": {
     "file": "assets/images/build-controls-panel.png",
@@ -168,7 +169,7 @@
     "configuration": "Windows Development",
     "separate_fresh_os_processes": 2,
     "requires_cooked_data": true,
-    "scope": "Render-, Terrain-/Physik-, Inertplan-, Rodungs-/Regenerations- und Save-/Load-Regression nach finalem Layoutbuild; keine physische Maus- oder Pixelvergleichsabnahme der Leiste.",
+    "scope": "Terrain-/Physik-, Inertplan-, CPU-Instanz-/Rodungs-/Regenerations- und Save-/Load-Regression in gerenderten Prozessen nach finalem Layoutbuild; keine physische Maus- oder Pixelvergleichsabnahme der Leiste oder Einzelbäume.",
     "phases": [
       {
         "mode": "create",
@@ -234,5 +235,11 @@
         "requires_cooked_data": true
       }
     ]
+  },
+  "tree_measurement_scope_correction": {
+    "date": "2026-10-28",
+    "historical_values_preserved": true,
+    "note": "Historische Baumchecks mit visual/visible im Namen lesen CPU-Transformskalierungen, keine gerenderten Pixel. InspectResource liefert bei nicht gespeicherten Ressourcen Defaultnullen; daraus keine Abwesenheit ableiten. Die tatsächliche Zielauswahl der C-Mausbedienung und GPU-Publikation waren dadurch nicht belegt. Spätere separate Backend-Bildprobe und aktueller Prüfstand: tree-clearing-test.json.",
+    "superseding_report": "tree-clearing-test.json"
   }
 }

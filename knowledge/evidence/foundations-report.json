@@ -394,7 +394,7 @@
       "query_sample_count_total": 67
     },
     "vegetation": {
-      "method": "Getaggte echte ShaderWorld-Bauminstanzen in visuellen und aktivierten Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform.",
+      "method": "CPU-Transformpuffer getaggter ShaderWorld-Bauminstanzen und aktive Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform. Keine Bildauswertung einzelner Baumkronen.",
       "initial_removed_tree": {
         "visible_visual_matches": 1,
         "active_collision_matches": 1
@@ -457,7 +457,8 @@
       "Planung und sofortige F6-Debugausführung sind getrennt; keine Maschinenarbeit, Arbeitsraten, Aushub-/Holzerträge oder Materialbilanz.",
       "Materialmalerei prueft native LayerMask-Einstellungen, registrierte Material-ID, unveraenderte Hoehe und erhaltene physische Core-/Side-NoGrowth-Instanzen. GPU-Farbauftrag braucht die getrennte Sichtabnahme.",
       "Ein gerodeter Baum und ein unveränderter Kontrollbaum wurden geprüft; große Rodungsbestände und Reichweitenwechsel sind damit nicht abgenommen.",
-      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe."
+      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe.",
+      "Historische Baumchecks mit visual/visible im Namen lesen CPU-Transformskalierungen, keine gerenderten Pixel. InspectResource liefert bei nicht gespeicherten Ressourcen Defaultnullen; daraus keine Abwesenheit ableiten. Die tatsächliche Zielauswahl der C-Mausbedienung und GPU-Publikation waren dadurch nicht belegt. Spätere separate Backend-Bildprobe und aktueller Prüfstand: tree-clearing-test.json."
     ],
     "tested_backend_is_current": true,
     "paint_structure_overlap_tested": true,
@@ -1132,7 +1133,7 @@
       "query_sample_count_total": 66
     },
     "vegetation": {
-      "method": "Getaggte echte ShaderWorld-Bauminstanzen in visuellen und aktivierten Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform.",
+      "method": "CPU-Transformpuffer getaggter ShaderWorld-Bauminstanzen und aktive Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform. Keine Bildauswertung einzelner Baumkronen.",
       "initial_removed_tree": {
         "visible_visual_matches": 1,
         "active_collision_matches": 1
@@ -1195,7 +1196,8 @@
       "Materialmalerei prueft native LayerMask-Einstellungen, registrierte Material-ID, unveraenderte Hoehe und erhaltene physische Core-/Side-NoGrowth-Instanzen. GPU-Farbauftrag braucht die getrennte Sichtabnahme.",
       "Planung und sofortige F6-Debugausführung sind getrennt; keine Maschinenarbeit, Arbeitsraten, Aushub-/Holzerträge oder Materialbilanz.",
       "Ein gerodeter Baum und ein unveränderter Kontrollbaum wurden geprüft; große Rodungsbestände und Reichweitenwechsel sind damit nicht abgenommen.",
-      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe."
+      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe.",
+      "Historische Baumchecks mit visual/visible im Namen lesen CPU-Transformskalierungen, keine gerenderten Pixel. InspectResource liefert bei nicht gespeicherten Ressourcen Defaultnullen; daraus keine Abwesenheit ableiten. Die tatsächliche Zielauswahl der C-Mausbedienung und GPU-Publikation waren dadurch nicht belegt. Spätere separate Backend-Bildprobe und aktueller Prüfstand: tree-clearing-test.json."
     ],
     "cook_passed": true,
     "packaged_acceptance_passed": true,
@@ -1894,5 +1896,11 @@
     "house_camera_restored": true,
     "ui_observer_stopped": true,
     "background_throttling_restored": true
+  },
+  "tree_measurement_scope_correction": {
+    "date": "2026-10-28",
+    "historical_values_preserved": true,
+    "note": "Historische Baumchecks mit visual/visible im Namen lesen CPU-Transformskalierungen, keine gerenderten Pixel. InspectResource liefert bei nicht gespeicherten Ressourcen Defaultnullen; daraus keine Abwesenheit ableiten. Die tatsächliche Zielauswahl der C-Mausbedienung und GPU-Publikation waren dadurch nicht belegt. Spätere separate Backend-Bildprobe und aktueller Prüfstand: tree-clearing-test.json.",
+    "superseding_report": "tree-clearing-test.json"
   }
 }

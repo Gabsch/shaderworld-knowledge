@@ -223,6 +223,30 @@
       "modified": false,
       "bytes": 5161880,
       "sha256": "2808b6964d72638b0374a65390a85b8300ea8cabe0de58b3d16f0f687625a8c2"
+    },
+    {
+      "file": "assets/images/tree-clearing-before.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10225056,
+      "sha256": "30bc8945fff934f503bb6607fc30d5ea6cceefdea01048392b802c76dcd5ac0f"
+    },
+    {
+      "file": "assets/images/tree-clearing-after.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10232128,
+      "sha256": "a5f00a7f42677f01a2310e659c8715be1611939bcedc4f21557850abe9b777b3"
+    },
+    {
+      "file": "assets/images/tree-clearing-loaded.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10237314,
+      "sha256": "f0800e59a634124838ce7c5d158f413fca415f878d76bba811a928549cc82e68"
     }
   ]
 }
