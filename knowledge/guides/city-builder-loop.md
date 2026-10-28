@@ -6,7 +6,7 @@ status: stable
 tags: [shaderworld, citylab, city-builder, buildings, citizens, savegame]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T03:54:02Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T04:06:00Z" }
 evidence_scope:
   implementation: Eigene Erweiterung gebaut; gespeicherte Karte mit GameMode und korrigierter Terrainmaterialzuweisung nach tatsächlichem Kartenneuladen zurückgelesen
   runtime: Drei getrennte gerenderte uncooked Spielprozesse bestanden; Erzeugen, nach 14.29 m gespeichertem Fortschritt zum Haus weiterlaufen und angekommenen Zustand nach weiterem Neustart wiederherstellen
@@ -43,6 +43,9 @@ sources:
   - id: persistence
     resource: save-and-load.md
     title: Logisches Speichern und tatsächlichen Spielneustart unterscheiden
+  - id: construction
+    resource: ../reference/construction-and-terrain-architecture.md
+    title: Vorgeschlagener Übergang vom Sofortbau zu tatsächlicher Bauarbeit
   - id: roadmap
     resource: ../reference/city-builder-roadmap.md
     title: Geplante nächste City-Builder-Bausteine
@@ -56,6 +59,8 @@ Die kleine Spielschleife hat **drei getrennte gerenderte Spielprozesse bestanden
 *Native Aufnahme aus dem Erzeugen-Lauf: Der Bürger wurde nach rund 14,29 m Fortschritt gespeichert. Haus und Bürger verwenden UE-Grundformen. Die Aufnahme wurde visuell inspiziert; sie belegt keine manuelle Tasteneingabe.*[^midroute-frame][^image-manifest]
 
 In der normalen Bedienung zeichnest du eine Straße während des Spiels, lässt daneben ein Grundstück ebnen und roden und setzt damit zugleich ein Testhaus samt Bürger. Die folgende Anleitung beschreibt diese implementierte Bedienung. Die eigentlichen Neustart-, Terrain- und Bürgernachweise sind weiter unten separat angegeben.
+
+**Einordnung für das spätere Spiel:** Dieser Sofortbau ist unser Entwicklungs-/Prüflabor. Nach dem bestätigten [Baukonzept](../reference/construction-and-terrain-architecture.md) soll die Spielerplanung zunächst Bauaufträge erzeugen; Gelände, Bewuchs und Infrastruktur ändern sich entsprechend geleisteter Arbeit am Ort. Maschinen, Teilbaustellen und Materialbilanz sind hier noch nicht implementiert.
 
 ## Was benötigt wird
 

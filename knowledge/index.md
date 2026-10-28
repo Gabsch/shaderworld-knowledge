@@ -25,7 +25,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Nachschlagen
 
-- [Nächste City-Builder-Bausteine](reference/city-builder-roadmap.md) – vereinbarte Roadmap, offene Abnahmen und zurückgestelltes Terraforming.
+- [Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) – gesetzte Designregeln, Architekturvorschlag und nächster Baustellenversuch; noch nicht implementiert.
+- [Nächste City-Builder-Bausteine](reference/city-builder-roadmap.md) – erhaltene Themen, Baufortschritt statt freiem Terraforming und offene Abnahmen.
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.

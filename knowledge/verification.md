@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T03:41:40Z"
+  at: "2026-10-28T04:06:00Z"
 sources:
+- id: construction-design
+  resource: reference/construction-and-terrain-architecture.md
+  title: Noch nicht implementiertes Architekturkonzept für Baufortschritt und Materialbilanz
 - id: cityloop
   resource: evidence/cityloop-report.json
   title: Drei Spielprozesse für Grundstück, Haus und Bürgerzustand
@@ -102,11 +105,15 @@ Die neue Karte **ShaderWorldCityLoop** erweitert die getrennten Laborversuche um
 
 An sechs wiederholt abgefragten Messpunkten lagen ursprünglicher Boden bei **300 cm** und geebnete Grundstücks-, Zugangs- und Straßenterrainhöhe bei **500 cm**, bei **5 cm** Toleranz. Diese Proben isolieren Terrainkollision; die frühere Asphalt-Meshphysik hat einen separaten RoadLab-Nachweis. Im Grundstückskern von 10 m Radius wechselten die gemessenen sichtbaren HISM-Instanzursprünge in jedem Prozess von **252 auf 0**. **2374** Referenzursprünge blieben erhalten; je Zustand lagen drei identische vollständige Matrix-Fingerprints vor. Das bestätigt Ursprungsfreistellung, keine Blatt-/Überhangfreiheit oder GPU-Maskenpixel.
 
-Wiederholtes Laden erzeugte keine zusätzlichen Häuser oder Bürger. Ein ungültiges Grundstück im Testspielstand wurde ohne Verlust der bestehenden Stadt abgewiesen; ein überlappendes neues Grundstück wurde wegen seiner Lage abgelehnt. Die neue eigene Speicherversion **3** enthält Grundstück, Hauszuordnung, Route, Fortschritt und Ankunft. Build und gespeicherte GameMode-/Materialzuweisung nach tatsächlichem Kartenreload sind bestätigt. Die [Anleitung](guides/city-builder-loop.md) grenzt weitere Bedienungs- und Cook-Nachweise ab. Die übrigen vereinbarten Themen bleiben in der [Roadmap](reference/city-builder-roadmap.md), einschließlich des ausdrücklich zurückgestellten allgemeinen Terraformings.
+Wiederholtes Laden erzeugte keine zusätzlichen Häuser oder Bürger. Ein ungültiges Grundstück im Testspielstand wurde ohne Verlust der bestehenden Stadt abgewiesen; ein überlappendes neues Grundstück wurde wegen seiner Lage abgelehnt. Die neue eigene Speicherversion **3** enthält Grundstück, Hauszuordnung, Route, Fortschritt und Ankunft. Build und gespeicherte GameMode-/Materialzuweisung nach tatsächlichem Kartenreload sind bestätigt. Die [Anleitung](guides/city-builder-loop.md) grenzt weitere Bedienungs- und Cook-Nachweise ab. Die übrigen vereinbarten Themen bleiben in der [Roadmap](reference/city-builder-roadmap.md). Die inzwischen eingebrachte Nutzeridee für baugetriebene Geländeveränderung ist im folgenden Konzeptabschnitt eingeordnet.
 
 Die zusätzliche native Slate-Bedienprobe bestätigte **R/Enter**, **P** und **L** in der normalen Vorschau. Ohne manuelles K wurden eine zweite Straße und ein zweites Grundstück gespeichert; nach normalem Stop/Play erschienen beide Grundstücke mit gleichen IDs und zwei angekommenen Bürgern wieder. Kamera per ActorTools versetzt; WASD-/Mauseingaben und F5/F9 bleiben offen. Der [CityLoop-Bericht](evidence/cityloop-report.json) trennt diese Bedienprobe vom Drei-Prozess-Kaltstartnachweis.
 
 Die [zusätzliche Regression mit Speicherversion 3](evidence/cityloop-regression-report.json) bestand anschließend in vier weiteren frischen Spielprozessen: RoadLab mit **18/18 und 19/19 Checks**, insgesamt **144/144** Terrain-/Asphalt-Kollisionsproben sowie Freiräumen und Nachwachsen; danach das ältere Pad-/Terrainstraßenlabor mit zwei Bauplätzen, zwei Trassen und je **26 ursprünglichen plus 26 geänderten** Terrainproben pro Prozess. Diese Wiederholung bestätigt die vorhandenen Wege nach der Speichererweiterung; sie ersetzt keine Prüfung eines verpackten Spiels.
+
+## Baukonzept: Festgehalten, noch nicht implementiert
+
+Das [Architekturkonzept für Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) dokumentiert die bestätigte Nutzeranforderung und unsere Vorschläge. Es ist **kein neuer Laufzeitnachweis**. Der bestandene CityLoop ist ein Sofortbau-Test; er bestätigt weder Maschinenarbeit noch schrittweisen Aushub, Massenerhaltung, unterbrochene Baustellen oder 3D-Erdreich. Vorgeschlagen sind eine kleine Baugrube mit begrenzter Aushublogistik und Neustart sowie ein getrennter Untergrund-Machbarkeitsversuch. Die dortigen Abnahmekriterien sind offen.
 
 ## Nächste Abnahmen für den City Builder
 
