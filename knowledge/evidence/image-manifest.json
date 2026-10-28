@@ -168,6 +168,53 @@
       "modified": false,
       "bytes": 1412717,
       "sha256": "b63d33f5de943ca7cb6b3cdb4ee8fb72819f6bd68121bbed6d97de173de19199"
+    },
+    {
+      "file": "assets/images/foundations-roof.png",
+      "origin": "Native PIE game screenshot via console FScreenshotRequest from own Foundations project, 11:24 UTC; closed orange gable roof, house and citizen visually inspected by Codex; one frame, no complete Foundations-runtime acceptance",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 4768238,
+      "sha256": "d3b33b2f951eb3e4416327995170058e2e6de84731194c5438c9eae4b4b0f520"
+    },
+    {
+      "file": "assets/images/foundations-paint-before.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:35:15+00:00",
+      "modified": false,
+      "bytes": 5367242,
+      "sha256": "03750cee63dcedd83229d08b7377f8b5cc32bcc2979bc8bcd2aec7643fc860d9",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Free coastal terrain before material painting.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/foundations-paint-reloaded.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:41:38+00:00",
+      "modified": false,
+      "bytes": 5336203,
+      "sha256": "003fc9b6f83d4ae64825091d31835687d3d1d767c2d37e669b3467d68cc05849",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Snow square visibly retained after native K save and L restore in normal PIE.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/foundations-protected-pad.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:41:45+00:00",
+      "modified": false,
+      "bytes": 5082283,
+      "sha256": "1ee7ce8fbd9959e237e690d8a85a116b7950ba0162d369e8aa33bcea41ac01cc",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Structural pad stays sandy and visibly free of vegetation after overlapping Snow paint.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
     }
   ]
 }

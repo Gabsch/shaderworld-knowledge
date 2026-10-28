@@ -1,73 +1,88 @@
 ---
 type: Playbook
 title: Nächste City-Builder-Bausteine
-description: Die vereinbarten nächsten Funktionen und ihre noch offenen Abnahmen nach dem ersten Straßen- und Tunnelversuch festhalten.
+description: Die geprüften Foundations-Grundlagen von späteren Skalierungs-, Bauarbeits- und Produktionsaufgaben unterscheiden.
 status: draft
 tags: [shaderworld, citylab, city-builder, roadmap]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T04:17:04Z" }
-evidence_scope: Vereinbarte Planung vom 28. Oktober 2026; keine Abnahme der hier vorgeschlagenen Funktionen.
+generated: { by: codex/gpt-6, at: "2026-10-28T13:44:36Z" }
+evidence_scope: Aktuelle Black-/Zero-Flow-Fassung uncooked und cooked mit je 29/29 und 12/12 Checks geprüft; normale kompilierte PIE-Paintbedienung mit Speichern/Laden und geschütztem Grundstück sichtbar geprüft. Keine separate verpackte Pixelabnahme oder Cook-Abnahme anderer Karten.
 sources:
   - id: verification
     resource: ../verification.md
-    title: Tatsächlicher Prüfstand und offene Tests
-  - id: capabilities
-    resource: versions-and-capabilities.md
-    title: Gelesene Pluginfähigkeiten und Grenzen
+    title: Prüfstand und getrennte Abnahmen
+  - id: foundations
+    resource: ../guides/foundations-lab.md
+    title: Aktueller Backendstand, historische Paintfehler und abgegrenzte native/PIE-Nachweise
   - id: loop
     resource: ../guides/city-builder-loop.md
-    title: Erste zusammenhängende Spielschleife
+    title: Bestehende Stadtspielschleife mit eigenem Neustartnachweis
   - id: construction
     resource: construction-and-terrain-architecture.md
-    title: Nutzerdesign und vorgeschlagene Architektur für Bauarbeit, Gelände und Material
+    title: Nutzerdesign und vorgeschlagener Maschinen-/Materialkreislauf
+  - id: capabilities
+    resource: versions-and-capabilities.md
+    title: Pluginfähigkeiten und Bookkeeping-Grenze
   - id: tunnel
     resource: ../guides/reusable-tunnel-component.md
-    title: Vorhandene Tunnelkomponente mit Wasserausschluss
+    title: Vorhandene trockene Tunnelkomponente
 ---
 # Nächste City-Builder-Bausteine
 
-Diese Liste hält die gemeinsam besprochenen nächsten Themen fest. **Die anschließenden Ausbauschritte sind geplant oder offen.** Die erste kleine Spielschleife hat inzwischen ihren abgegrenzten Drei-Prozess-Nachweis bestanden. Die vorhandenen Nachweise stehen im [Prüfstand](../verification.md); eine Empfehlung ist keine bereits verfügbare Spielfunktion.
+Foundations besitzt Planwerkzeuge, fünf Biomprofile und Einzelrodungszustände. **Die aktuelle Black-/Zero-Flow-Fassung bestand je 29/29 und 12/12 Checks in zwei frischen uncooked und zwei frischen cooked Prozessen.** Im normalen PIE blieb Snow nach T/F6/K/L sichtbar; das geschützte Grundstück blieb Sand und ohne nachgewachsenen Bewuchs im Bild. Frühere Spline-NoGrowth- und White-Datamap-Fehler sind getrennt dokumentiert. Diese Ergebnisse sind keine Cook-Abnahme anderer Karten und kein Großwelt- oder Leistungsnachweis.[^foundations]
 
-## Vorhanden: Eine zusammenhängende kleine Spielschleife
+## Vorhandene Grundlagen und aktueller Testbedarf
 
-Eine Straße zur Laufzeit ziehen, daneben ein Grundstück ebnen und roden, ein Testhaus setzen und einen Bürger zum Haus laufen lassen. Nach Speichern und einem echten Spielneustart sollen Straße, Grundstück, Haus und Bürgerzustand wiederhergestellt sein. Die [Spielschleifen-Anleitung](../guides/city-builder-loop.md) beschreibt Aufbau und tatsächlichen Prüfstand.
+| Baustein | Stand | Noch offen |
+| --- | --- | --- |
+| Bestehendes CityLoop | Straße, gerodetes Grundstück, Haus und Bürger; erneute Format-4-Regression mit 24 Checks in drei frischen Prozessen | Allgemeine Stadtnavigation und Maschinen-/Materialwirtschaft |
+| Fünf eigene Biome | Wald, Wiese, Fels, Strand, Meeresboden; fünf Profile und 19 Assets nach gespeichertem Kartenneuladen zurückgelesen | Alle sichtbaren Biomgrenzen und größere Welt; Meeresboden verwendet vorhandene Felsen statt neuer Meeresflora |
+| Einzelrodung | Stabile Ressourcenkennung; früherer ausgewählter Baum nach echter Regeneration und Neustart entfernt, Kontrollbaum erhalten | Produktionsgrenze des Kollisionsnachlaufs, Reichweitenfahrt, viele Rodungen, Erträge und Rekultivierung |
+| Planwerkzeuge | Anheben/Absenken/Ebnen/Material; inerte Planung und Wiederherstellung geprüft; acht aktuelle native Automationtests erfolgreich | Vollständige Eingabenrunde und Stadtsimulation; normale geprüfte T/F6/K/L-Paintbedienung ist ein begrenzter Ausschnitt |
+| Materialmalerei | Quadratischer Black-Zero-Flow-Brush; native Kern-/Seitenmasken bleiben nach Paint, Regeneration und Laden frei; Snow nach normalem PIE-Laden sichtbar, geschütztes Grundstück bleibt Sand | Separate verpackte Pixelabnahme; Maskentestactors werden je Prozess neu erzeugt |
+| Verpacktes Spiel | Aktuelle Fassung mit Cook/Stage und zwei echten cooked Prozessen geprüft; 29/29 und 12/12 Checks | Separate verpackte Pixel-/Bedienabnahme und größere Last |
 
-Dafür genügen zunächst die vorhandenen Road-Creator-Assets, ShaderWorld und einfache UE-Grundformen für Haus und Bürger. Weitere Assetpakete sind für die Funktionsprüfung nicht vorgesehen. Gebäudevarianten, Figurenmodell und Animationen können später die Platzhalter ersetzen.
+Die getrennte Karte **`/Game/Maps/ShaderWorldFoundations`** verwendet den Slot **CityLabFoundations**. CityLoop und sein Slot bleiben erhalten. Acht aktuelle native Automationtests ergänzen die praktischen Nachweise, ersetzen aber weder die neue Paintprüfung noch sämtliche Tastatur-/Mausabläufe.[^loop][^foundations]
 
-## Vorgemerkte Grundlagen vor der Bauwelt
+## Abgeschlossen: Paintwirkung und normale Bedienung im geprüften Umfang
 
-Der Nutzer hat diese drei Themen erneut als mögliche Vorarbeiten für die baugetriebene Terraforming-Welt vorgemerkt. **Das ist Kontext für die nächste Planung, noch kein Umsetzungsauftrag.** Welche Teile zuerst oder später parallel durch Subagenten bearbeitet werden, ist noch nicht entschieden.
+Der alte Paintbackend verwendete eine R-only-Spline. In einer normalen PIE-Probe wurde ein Hausgrundstück weiß, während Bäume und Gras im bemalten Bereich zurückkehrten. Der native Straßen-Layer-Pass wählte einen einzigen Road-Gewinner für alle Kanäle; dadurch wurde die NoGrowth-Maske verdrängt. Der Fehler lag nicht an einer falschen Biomkanalwahl im Dichtematerial.
 
-1. **Eigene Biomvorlagen und dauerhafte Rodung:** Wald, Wiese, Fels, Strand und Meeresboden mit nachvollziehbaren Höhen-, Hang- und Bebauungsregeln. Einzelne gefällte Bäume benötigen gespeicherte Zustände über erneute Generierung und Neustart hinweg. Die bisher dokumentierte Bookkeeping-Grenze und die Herstellerquelle stehen in der [Fähigkeitenübersicht](versions-and-capabilities.md#biome-und-vegetation-für-die-stadt); eine flächige NoGrowth-Maske ersetzt diese Einzelzustände nicht.
-2. **Einheitliche Terraforming-Werkzeuge:** Anheben, Absenken, Ebnen und Material auftragen mit Vorschau, Rückgängig und Speicherung als zusammenhängenden Werkzeugwunsch erhalten. Die ShaderWorld-Brushes bilden die technische Grundlage; eigene Bedienung und Änderungsverwaltung kommen hinzu. Wie Vorschau und Rückgängig mit Bauaufträgen, bereits geleisteter Arbeit und Materialbilanz zusammenspielen, ist noch abzustimmen. Die gesetzte Trennung von Sollplanung und tatsächlicher Weltänderung aus dem [Baukonzept](construction-and-terrain-architecture.md) bleibt bestehen. Herstellerquelle: [Brush-System](https://universgen.gitbook.io/shader-world/fundamentals/kick-start/blueprint-brush-system-landmass).
-3. **Baukamera, Navigation und größere Welten absichern:** Bauabfragen weit über dem Boden, Bürgerwege nach Geländeänderungen und anschließend früh einen verpackten Spielbuild mit vielen Straßen und Brushes prüfen. Dabei korrekte Kollision, Erreichbarkeit, Speicherverhalten und Leistung getrennt bewerten.
+Der neue `USW_LayerMaskBrushComponent` läuft vor dem strukturellen Road-/Pad-Pass. Seine Größe definiert den quadratischen Wirkbereich: 8 m bedeutet eine halbe Kantenlänge von 8 m, insgesamt 16 × 16 m. **Engine Black** ist ein konstanter Zero-Flow-Selektor, keine Flächenmaske. White wählte den deaktivierten Flow-Zweig und erzeugte keinen sichtbaren Snow-Auftrag; beide aktuellen Neustartprüfungen verlangen deshalb ausdrücklich Black. Straßen-/Pad-Material und NoGrowth haben in Kern **und** Seitenbereichen Vorrang. Uncooked und cooked blieben die geprüften NoGrowth-Bereiche nach Paint, echter Regeneration und je drei Loads frei. Die native Testmaske wird je Prozess neu erzeugt; dies beweist keine beliebige zusätzliche Maskenactorpersistenz. Die finale normale PIE-Probe bestätigte die kompilierte Fassung mit sichtbarem Snow nach Speichern und Laden sowie unverändert sandigem, bewuchsfreiem Grundstück im Bild.[^foundations]
 
-Diese Vormerkung ändert keinen vorhandenen Prüfstatus. Auch die unten vorgeschlagene Baugrube ist dadurch nicht zur Umsetzung freigegeben; zuerst bei der nächsten Arbeitsplanung die Grundlagen und Abhängigkeiten gemeinsam einordnen.
+Eine normale PIE-Probe bestätigte inerte Planung aus etwa 5 km Höhe, neun Bodenproben mit vier stabilen Durchläufen, Undo, getrennte Planauswahl und absolute Zielhöhe nach PIE-Neustart. Die aktuelle kompilierte Paintfassung bestand normale T/F6/K/L-Eingaben ohne nachträgliche Brushparameteränderung und einen qualitativen GPU-Sichtvergleich. Das ersetzt keine vollständige Tasten-/Mausprüfung oder gesonderte verpackte Pixelabnahme.[^foundations]
+
+## Vor größerer Welt: den Rodungsnachlauf reduzieren
+
+Die aktuelle Black-uncooked-Probe erfasst 55 Samples über 30,04 s. Der zuletzt gemeldete Rodungsscan kostete 0,9/15,9/39,4 ms (Minimum/Stichprobenmittel/Maximum) bei bis zu 153939 Instanzen. Die 56 cooked Samples über 30,25 s ergaben 2,6/15,2/23,1 ms. Der Verifier scannt zusätzlich selbst. Eine frühere Messung mit parallelem C++-Build hatte 177,9 ms Maximum. Diese Werte sind einzelne Scandiagnosen, keine vollständigen Framezeiten oder FPS-/Großweltbenchmarks.[^foundations]
+
+Vor dem Überspringen periodischer visueller Vollscans muss der Vertrag für externe native `RestoreInstance`-Aufrufe geklärt werden: Sie können einen visuellen Transform außerhalb der Publishfilter ändern. Initiales Räumen, älterer Restore, Indexwechsel und Kollisionsnachlauf müssen erhalten bleiben. Diese Optimierung ist nicht eingebaut. Erst anschließend viele Rodungen, Straßen und Brushes sowie Speicher und Spielstandgröße belasten.
 
 ## Danach erhaltene Themen
 
-| Thema | Geplantes Ergebnis | Woran wir es prüfen wollen |
+| Thema | Geplantes Ergebnis | Abnahmeidee |
 | --- | --- | --- |
-| Eigene Biomvorlagen | Verständliche Vorlagen für Wald, Wiese, Fels, Strand und Meeresboden; Höhen-, Hang- und Bebauungsmasken nachvollziehbar einstellen | Passende Vegetation über und unter Wasser, freie Bauflächen und unveränderte Referenzbereiche nach Neustart |
-| Einzelne Ressourcen dauerhaft verwalten | Gefällte Bäume und abgebaute Ressourcen bleiben entfernt; Erträge und spätere Rekultivierung werden verwaltet | Zustand nach Verlassen der Generationsreichweite, Rückkehr und Spielneustart vergleichen |
-| Vollständiger platzierbarer Tunnel | Ein Actor verwaltet Tunnelkörper, Kollision, Terrainöffnungen und die vorhandene Air Pocket gemeinsam; Laufzeitänderungen werden gespeichert | Im Editor setzen, zur Laufzeit wiederherstellen, durchqueren und im Ozeaneinfluss trocken prüfen |
-| Bauaufträge nachbearbeiten | Ungearbeitete Planung ändern oder stornieren; ausgeführte Arbeiten über neue Gegen-/Rückbauaufträge behandeln | Teilgebautes Ist-Gelände, Mengen und neue Planrevision nach Neustart vergleichen; technische Debug-Rücknahme getrennt halten |
-| Navigation nach Änderungen | Bürger finden gültige Wege nach Straßen-, Gelände- und Gebäudeänderungen | Erreichbare und blockierte Ziele, Umwege und dynamische NavMesh-Aktualisierung prüfen |
-| Baukamera und Geländeabfragen | Bauen funktioniert auch aus großer Höhe und beim schnellen Bewegen der Kamera | Bodentreffer, angeforderte Kollisionsbereiche, Terrainbereitschaft und Fehlermeldungen messen |
-| Verpackter Build und größere Welt | Dieselbe Spielschleife läuft außerhalb des Editors mit vielen Trassen und Brushes | Cook/Start, Speichern/Neustart, Framezeit und Speicher erfassen; anschließend Streaming untersuchen |
-| Wasserabfragen, Auftrieb und Häfen | Schiffe, schwimmende Objekte und Küstenbauten erhalten belastbare Wasserinformationen | Definierte Physikobjekte, mehrere Wellenzustände und Küsten-/Tunnelbereiche gezielt testen |
+| Ressourcenwirtschaft und Rekultivierung | Erträge, Arbeit und Neubepflanzung auf Einzelzuständen aufbauen | Mengen ohne doppelte Erträge, Wiederherstellung und gezielte Rücknahme |
+| Vollständiger platzierbarer Tunnel | Tunnelkörper, Kollision, Öffnungen und Air Pocket gemeinsam verwalten | Platzieren, speichern, durchfahren und im Ozeaneinfluss trocken prüfen |
+| Bauaufträge nachbearbeiten | Ungearbeitete Planung ändern; ausgeführte Arbeit über Gegen-/Rückbauaufträge behandeln | Teilbau, Mengen und Planrevision nach Neustart vergleichen |
+| Allgemeine Navigation | Gültige Wege nach Straßen-, Gelände- und Gebäudeänderungen | Erreichbare und blockierte Ziele sowie dynamische NavMesh-Aktualisierung |
+| Größere Welt | Viele Trassen und Brushes mit begrenzten Kosten | Framezeit, Speicher, Spielstandgröße und anschließend Streaming |
+| Wasser, Auftrieb und Häfen | Belastbare Informationen für Schiffe und Küstenbauten | Definierte Physikobjekte, Wellenzustände und Küsten-/Tunnelbereiche |
 
-Einzelne Ressourcen zu speichern ist eine andere Aufgabe als die flächige NoGrowth-Maske eines Grundstücks. Die [Fähigkeitenübersicht](versions-and-capabilities.md#biome-und-vegetation-für-die-stadt) erläutert die bisher gefundene Bookkeeping-Grenze. Ebenso ersetzt eine festgelegte Bürgerroute noch keine allgemeine Navigation.
+Die eigene Ressourcenverwaltung ergänzt die [Plugin-Bookkeeping-Grenze](versions-and-capabilities.md#biome-und-vegetation-für-die-stadt). Sie ist ein anderer Vorgang als flächige NoGrowth-Maskierung. Lokale Korridorabfragen ersetzen weiterhin keine allgemeine Navigation.[^capabilities][^foundations][^tunnel]
 
-## Nächster Vorschlag: Bauarbeit statt kostenloser Geländeverformung
+## Spätere Bauwelt: Maschinenarbeit mit Materialbilanz
 
-Die angekündigte Nutzeridee ist inzwischen als Designrichtung eingebracht: **Soll-Gelände planen, durch Maschinenarbeit vor Ort das Ist-Gelände verändern und Aushub als Ressource erhalten.** Unterbrochene Baustellen müssen samt Zwischenform, Ladung und Materialbestand einen Neustart überstehen. Ansichten, genaue Geologie und technische Auflösung bleiben offen. Das [Architekturkonzept](construction-and-terrain-architecture.md) trennt gesetzte Regeln, Vorschläge und die bisher nachgewiesenen Pluginfähigkeiten.
+Die bestätigte Richtung bleibt: **Soll-Gelände planen, durch Arbeit am Ort das Ist-Gelände ändern und Aushub als Ressource erhalten.** Planung allein verändert und rodet nichts. F6 und C bleiben ausdrückliche Soforteingriffe des Labors. Maschinen, Arbeitsraten, Holz-/Aushuberträge und Materialkonten fehlen.[^construction]
 
-Als nächsten Versuch empfehlen wir eine kleine Baugrube mit Baggerplatzhalter, begrenztem Puffer, Abtransport und Wiederverwendung des Materials. Volle Kapazität stoppt die Arbeit. Ein Neustart mitten im Aushub prüft die zusammengehörige Speicherung von Geometrie, Mengen und Fortschritt. Diese Funktion ist noch nicht gebaut. Der vorhandene Sofortbau bleibt Entwicklungs-/Prüfwerkzeug.
+Nach den Grundlagenprüfungen folgt als vorgeschlagener Versuch eine kleine Baugrube mit Baggerplatzhalter, begrenztem Puffer, Abtransport und Wiederverwendung. Volle Kapazität stoppt die Arbeit; ein Neustart mitten im Aushub prüft Geometrie, Mengen und Fortschritt gemeinsam. Dieser Kreislauf ist noch nicht implementiert.
 
-Parallel früh einen begrenzten 3D-Untergrundversuch durchführen: Unsere Höhenfeld-/Portalnachweise belegen weder frei ausgrabbares Erdreich noch TBM-Vortrieb. Die Wahl der unterirdischen Geometrie- und Kollisionslösung braucht einen eigenen Nachweis, bevor umfangreiche Tunneltechnik darauf aufbaut.
+Ein eigener früher 3D-Untergrundversuch bleibt nötig: Höhenfeld und Portalöffnungen beweisen weder frei ausgrabbares Erdreich noch TBM-Vortrieb. Die unterirdische Geometrie und Kollision benötigen einen eigenen Machbarkeitsnachweis.[^construction]
 
-## Reihenfolge überprüfen
-
-Die kleine Spielschleife besitzt jetzt ihren beschriebenen uncooked Neustartnachweis. Den Baustellenversuch als nächsten fachlichen Schritt vorschlagen und früh durch verpackten Build sowie Messungen vieler kleiner Geländeänderungen absichern. Materialbilanz, Kollisionsverzögerung, Framezeit, Speicher und Spielstandgröße begrenzen die spätere Auflösung. Die übrigen Biom-, Ressourcen-, Navigations- und Wasserthemen bleiben erhalten. Aus der Liste wird erst dann ein umgesetzter Baustein, wenn seine Anleitung und sein abgegrenzter Nachweis ergänzt sind.
+[^verification]: [Tatsächlicher Prüfstand](../verification.md).
+[^foundations]: [Foundations: aktuelle Anleitung und Prüfgrenzen](../guides/foundations-lab.md).
+[^loop]: [Bestehende CityLoop-Spielschleife](../guides/city-builder-loop.md).
+[^construction]: [Zielarchitektur für Bauarbeit und Material](construction-and-terrain-architecture.md).
+[^capabilities]: [Pluginfähigkeiten und Grenzen](versions-and-capabilities.md).
+[^tunnel]: [Vorhandene trockene Tunnelkomponente](../guides/reusable-tunnel-component.md).

@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T01:55:41Z"
+  at: "2026-10-28T13:47:03Z"
 sources:
+- id: foundations
+  resource: ../evidence/foundations-report.json
+  title: Bereinigte Foundations-Abnahme und getrennte Setup-, Automation- und Sichtbelege
 - id: official
   resource: https://universgen.gitbook.io/shader-world
   title: ShaderWorld Dokumentation
@@ -102,6 +105,22 @@ Die [Aufnahme unterwegs](../assets/images/cityloop-midroute.png) und [Ankunft na
 Der [gesonderte Regressionsbericht](../evidence/cityloop-regression-report.json) hält die erneuten RoadLab- und älteren Bauplatztests mit Speicherformat 3 fest. Insgesamt vier frische gerenderte Spielprozesse bestanden. Die vorherigen Format-2-Belege bleiben als frühere Abnahmen erhalten.
 
 Die zusätzliche [normale CityLoop-PIE-Aufnahme](../assets/images/cityloop-normal-autoload-house.png) zeigt das zweite Testhaus mit blauem Bürger nach nativem R/Enter/P/L, automatischem Speichern ohne K und normalem Stop/Play-Autoload. Zwei Grundstücks-IDs und zwei angekommene Bürger wurden dabei zurückgelesen. Dieses inspizierte CaptureEditorImage ist unverändert; sichtbare Editor-Diagnosehinweise wurden nicht retuschiert und gelten nicht als gelöst.
+
+## Foundations: neue Geländeplanung und dauerhafte Einzelrodung
+
+Der [Foundations-Bericht](../evidence/foundations-report.json) ergänzt am **28. Oktober 2026** zwei erfolgreiche gerenderte **uncooked** Spielprozesse mit **Speicherformat 4**: Nach der nativen Paintkorrektur mit schwarzer Datamap bestanden **29/29 Checks in 127,1 s** beim Erzeugen und **12/12 in 70,1 s** beim Wiederherstellen, mit **306 + 288** erfolgreichen echten Terrain-Physikproben und **35 + 32** protokollierten Abfragesamples. Er trennt inerte Planung von expliziter Lab-Debug-Ausführung, hält gespeicherte noch nicht ausgeführte/stornierte Pläne getrennt von Backends und bestätigt Einzelrodung einschließlich Darstellung, Kollision, tatsächlicher Instanzregeneration und 30 s Beobachtungszeit. Wiederholte Loads und atomare Ablehnung einer falschen Identität sind ebenfalls enthalten. Personenpfade, Slot-/Laufkennungen, Objekt-GUIDs und PIDs gehören nicht in den öffentlichen Export.
+
+Derselbe Bericht erfasst getrennt **fünf Biomprofile und 19 eigene Assets nach gespeichertem Kartenreload**, **acht erfolgreiche native Automationtests unter NullRHI** und die zusätzliche CityLoop-Regression mit Format 4. Der kontrollierte Hochkamera-/Umwegtest ist kein globaler NavMesh-Nachweis; die normale reale Hochkamera-Planbedienung wurde später separat geprüft. Sechs Tests liefen ohne Warnung; die zwei Warnungen aus dem Aufräumen einer Testwelt ohne World Context und der absichtlichen Ablehnung alten ausgeführten Paints sind erhalten. Der neue Migrationstest prüft logische Records und Livezustand, keine archivierte binäre SaveGame-Datei. Die früheren Format-2-/Format-3-Berichte werden durch diese neue Abnahme nicht umgedeutet.
+
+Die [Dach-Nahaufnahme](../assets/images/foundations-roof.png) ist ein unveränderter, inspizierter nativer GameViewport-Frame aus normalem PIE, aufgenommen über den Konsolenbefehl **Shot / FScreenshotRequest** ohne Editoroberfläche: geschlossenes oranges Satteldach, Testhaus und Bürger sind sichtbar. Das Bild entstand nach Korrektur der Dreiecksorientierung und ist von den späteren Foundations-Physikläufen getrennt. Herkunft, Größe und SHA-256 stehen im [Bildmanifest](../evidence/image-manifest.json). Der [Foundations-Guide](../guides/foundations-lab.md) erklärt Bedienung und Grenzen ohne vorausgesetzte Quellcodelektüre.
+
+Die korrigierte verpackte V2-Fassung bestand anschließend **zwei frische gekochte Spielprozesse** mit **RequiresCookedData = true**: **29/29 Checks in 118,6 s** beim Erzeugen und **12/12 in 66,1 s** beim Wiederherstellen, **306 + 279** erfolgreiche Terrainproben und **35 + 31** protokollierte Abfragesamples. Der vollständige UAT-Lauf mit Cook, Stage und Archive endete nach **96,15 s mit Exit 0**. Das Development-Paket enthält zwei gekochte Karten; die Laufzeitabnahme gilt für Foundations. Eine Shipping-Abnahme und andere Karten werden daraus nicht abgeleitet; die älteren kartenbezogenen Cook-Grenzen bleiben erhalten.
+
+Eine separate normale PIE-Bedienprobe verwendete echte native Slate-Tasten aus **500300 cm Kamerahöhe**, neun reale Terrainproben bei **Z = 299,995 cm** und vier stabile Durchläufe. Inerte Planerstellung, PageUp/Undo, Tab-Auswahl, K und Stop/Start-Autoload mit derselben Plan-ID und absoluter Ebnen-Höhe wurden geprüft; Verschieben auf anderen Boden behielt das Ziel 4 m bei. Dieser PIE-Neustart ist kein eigener Betriebssystemprozess.
+
+Bei der anschließenden Material-Sichtprüfung brachte Snow-Paint Bewuchs auf einem geräumten Bauplatz zurück. Die früheren Einstellungen und die unveränderte Physikhöhe hatten diese Wechselwirkung mit der NoGrowth-Maske nicht erfasst; der frühere „noBiome“-Checkname war deshalb zu weit gefasst. Die Korrektur durch einen nativen LayerMask-Brush bestand anschließend die neue uncooked Core-/Side-Vegetationsregression: in der letzten erfolgreichen Ausgangsprobe des uncooked Create-Laufs **436 Kernursprünge mit drei Bäumen und 29 Randursprünge**, nach Maske, Paint, Regeneration und drei Loads pro Prozess **0/0**. Der separate Waldbaum behielt Darstellung, Kollision und Transformation. Die nicht gespeicherten Maskenfixtures werden in jedem Prozess neu erzeugt; die Loads verwenden den tatsächlichen Managerpfad. Der erneute verpackte V2-Lauf bestätigte dieselben Masken-/Kontrollbedingungen nach tatsächlicher Regeneration und drei Loads pro Prozess. Ein weiterer tatsächlicher Sichtvergleich fand die weiße Datamap als falschen Selektor des ungesetzten Flow-Materials; die aktuelle Fassung verwendet deshalb schwarz (Flow-Anteil 0), und die Verifier prüfen Datamap und deaktivierte Neben-IDs ausdrücklich. Der abschließende Materialbildvergleich der kompilierten Black-Fassung bestand anschließend in normalem PIE: native T/F6/K/L-Eingaben, keine Brush-Parameterüberschreibung, sichtbares Snow nach Ausführung und erneut nach Laden. Der übermalte Bauplatz behielt seinen strukturellen Sandboden, blieb im geprüften Frame frei von Bewuchs und hielt 500 cm Terrainhöhe.
+
+Die [Ausgangsaufnahme](../assets/images/foundations-paint-before.png), [Snow nach K/L](../assets/images/foundations-paint-reloaded.png) und [geschützter Bauplatz nach überlappendem Snow-Paint](../assets/images/foundations-protected-pad.png) sind unveränderte, visuell inspizierte native **Shot-/FScreenshotRequest**-GameViewport-Frames vom 28. Oktober 2026. Das HUD wurde vor der Aufnahme ausgeblendet; die Bilder wurden nicht nachbearbeitet. Herkunft, Größe und SHA-256 stehen im [Bildmanifest](../evidence/image-manifest.json). Diese ausgewählten normalen PIE-Bilder ergänzen die Prozessberichte; sie sind kein Pixelgleichheitstest, keine eigene Materialbild-Abnahme im Paket und keine vollständige Biom- oder Leistungsprüfung.
 
 ## OKF
 

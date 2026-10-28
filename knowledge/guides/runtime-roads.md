@@ -7,7 +7,7 @@ status: stable
 tags: [shaderworld, citylab, roads, runtime, savegame, spline]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T02:45:00Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T13:47:03Z" }
 evidence_scope:
   implementation: Eigener nativer RoadLab-Prototyp gebaut; gemeinsamer ShaderWorld-Spline
     und eigene SplineMesh-Straßenoberfläche
@@ -24,6 +24,9 @@ evidence_scope:
     bei 3 und 100 m geprüft, Actor-Zuweisung nach Kartenneuladen und neuem PIE bestätigt
   not_tested: WASD, rechte Maustaste, Mausrad und F5/F9-Aliasse; Cook und Shipping
 sources:
+  - id: foundations-proof
+    resource: ../evidence/foundations-report.json
+    title: Separate Foundations-Format-4-Abnahme und kontrollierte Tests lokaler Umwege
   - id: format-three-regression
     resource: ../evidence/cityloop-regression-report.json
     title: Erneute RoadLab- und Bauplatzprüfung mit Format 3
@@ -179,7 +182,9 @@ Die unabhängige Regression der älteren **ShaderWorldPersistenceLab**-Karte bes
 
 Die ursprüngliche RoadLab-Abnahme verwendete **Format 2**. Es speichert Kontrollpunkte, Maße, Reihenfolge, **RCP_TwoLane** und **bSmoothSpline**. Meshsegmente entstehen neu; beliebige Assetpfade sind keine erlaubten Stile. Der Loader prüft Karten-/Generator-/Terrainidentität und Datensätze, bereitet Ersatzobjekte vor und übernimmt sie erst nach erfolgreicher Vorbereitung.[^roadlab-code]
 
-Die aktuelle CityLoop-Erweiterung schreibt **Format 3** mit zusätzlichen Grundstücks-/Bürgerdaten und lädt die alten Formate 1/2 weiter. Der Straßenablauf und sein Slot bleiben getrennt. RoadLab bestand nach dieser Erweiterung erneut zwei frische Prozesse mit 144/144 Kollisionsproben und denselben Freiräum-/Nachwachsprüfungen; die alte Bauplatzkarte bestand ebenfalls zwei frische Prozesse. Den neuen verbundenen Ablauf beschreibt [CityLoop](city-builder-loop.md).[^format-three-regression]
+Die damalige CityLoop-Erweiterung schrieb **Format 3** mit zusätzlichen Grundstücks-/Bürgerdaten und lud die alten Formate 1/2 weiter. Der Straßenablauf und sein Slot bleiben getrennt. RoadLab bestand nach dieser Erweiterung erneut zwei frische Prozesse mit 144/144 Kollisionsproben und denselben Freiräum-/Nachwachsprüfungen; die alte Bauplatzkarte bestand ebenfalls zwei frische Prozesse. Den neuen verbundenen Ablauf beschreibt [CityLoop](city-builder-loop.md).[^format-three-regression]
+
+**Aktueller Stand vom 28. Oktober 2026:** Die gemeinsame eigene Speicherimplementierung schreibt jetzt **Format 4** und unterstützt die Formate 1–3 weiter. Neu sind geplante/stornierte und ausgeführte Weltänderungen, Ressourcen-/Rodungszustand sowie ein optionaler aktiver Bürgerumweg mit Fortschritt. Die Straßen behalten dieselben Trassendaten und ihren getrennten Slot. Der neue [Foundations-Guide](foundations-lab.md) und [Bericht](../evidence/foundations-report.json) dokumentieren eine separate erfolgreiche Zwei-Prozess-Abnahme für tatsächliche Geländeänderungen und Einzelrodung. Das ist keine nachträgliche Format-4-Abnahme der historischen RoadLab-Datensätze. Begrenzte Bürgerumwege mit Boden-/Capsule-Prüfung und Wiederherstellung wurden auf kontrolliertem Physikboden getestet; globale Navigation bleibt offen. Die normale Foundations-Planbedienung aus rund 5 km Kamerahöhe mit Undo, Tab, K und PIE-Autoload besitzt einen zusätzlichen abgegrenzten Slate-Nachweis. Der korrigierte Paintbackend bestand uncooked und im Development-Paket die Core-/Side-NoGrowth-Regression mit Regeneration und Loads. Die Foundations-Abnahme im Development-Paket bestand in zwei frischen gekochten Spielprozessen mit 29/29 und 12/12 Checks; die zusätzliche normale PIE-Sichtprobe T/F6/K/L bestätigte Snow nach Laden und den sandigen, im Bild bewuchsfreien Bauplatz trotz überlappendem Snow-Paint. Die eigene verpackte Materialbild-Abnahme bleibt offen.[^foundations-proof]
 
 Wiederholtes Laden erzeugte keine Duplikate. Fehlender Slot, falsche Formatversion, ungültiger Stil und erzwungener Oberflächen-Baufehler ließen die bestehende Stadt erhalten. **Format 1** wurde mit einer **synthetischen Testdatei** als lineare Terraintrasse ohne Mesh eingelesen; eine archivierte Datei aus einer alten ausführbaren Spielversion wurde nicht getestet. Separate Generator-/Seed-Konflikte bleiben Codebefunde.[^road-proof]
 
@@ -211,3 +216,5 @@ Der Prototyp enthält **keine Kreuzungen, Verkehrssimulation, Brücken-/Tunnelge
 
 [^terrain-relief]: Aktiven ShaderWorld-4.1-POM-WPO-/PDO-Pfad, POM: Reference Plane und MinParallaxPixels in den installierten Materialgraphen/Funktionen gelesen; Legacy-DisplacementManage vom tatsächlich angeschlossenen Ausgang unterschieden.
 [^pom-proof]: [Bereinigter POM-Renderbericht](../evidence/road-pom-render-report.json): Parametervergleich, native Bilder, gescheiterte Diagnoseversuche und Grenzen der Materialkorrektur.
+
+[^foundations-proof]: [Bereinigter Foundations-Bericht](../evidence/foundations-report.json): Format 4, erfolgreiche gerenderte uncooked und aktuelle Development-cooked Gelände-/Rodungsprüfung sowie getrennte reale Hochkamera-Planbedienung; lokale Bürgerumwege separat auf kontrolliertem Physikboden. Die korrigierte Materialbemalung mit schwarzer Datamap und Flow-Anteil 0 bestand in beiden Laufarten die Core-/Side-NoGrowth-Regression; ein zusätzlicher qualitativer Materialbildvergleich in normalem PIE bestätigte Snow nach T/F6/K/L sowie den geschützten sandigen Bauplatz; eine eigene Materialpixelprüfung im Paket bleibt offen; der Foundations-Packagingnachweis ersetzt keine historische RoadLab-Cook-Abnahme.

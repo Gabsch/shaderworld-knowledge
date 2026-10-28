@@ -6,8 +6,8 @@ status: draft
 tags: [shaderworld, citylab, city-builder, construction, terraforming, logistics, underground]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T04:06:00Z" }
-evidence_scope: Nutzeranforderungen und Architekturvorschlag vom 28. Oktober 2026; keine Implementierung oder Laufzeitabnahme des Baustellensystems.
+generated: { by: codex/gpt-6, at: "2026-10-28T13:44:36Z" }
+evidence_scope: Nutzerdesign mit Foundations-Vorläufer; aktuelle Black-Fassung uncooked/cooked mit je zwei Prozessen und normale PIE-Paint-/Ladebilder geprüft. Maschinen-/Materialkreislauf nicht implementiert; keine separate verpackte Pixelabnahme.
 sources:
   - id: user-design
     resource: "Vom Nutzer am 28. Oktober 2026 bereitgestellter Designauszug zu Geländeverformung, physischem Bau, Materiallogistik und Untergrund; private Vorlage nicht im öffentlichen Bundle enthalten"
@@ -15,6 +15,9 @@ sources:
   - id: loop
     resource: ../guides/city-builder-loop.md
     title: Implementierter Sofortbau im CityLoop und sein abgegrenzter Neustartnachweis
+  - id: foundations
+    resource: ../guides/foundations-lab.md
+    title: Eigene Planungs-, Biom- und Ressourcenverwaltung mit historischen Nachweisen und aktuellem Paint-Retest
   - id: saves
     resource: ../guides/save-and-load.md
     title: Bisheriges logisches Speichermodell
@@ -35,7 +38,7 @@ sources:
 
 **Unser Ziel ist eine Stadt, deren Landschaft durch Bauarbeit entsteht.** Der Spieler plant eine Straße oder Baugrube. Maschinen erreichen den Ort, arbeiten dort und bewegen Material. Die Welt zeigt den erreichten Bauzustand, auch wenn die Baustelle unterbrochen und das Spiel neu gestartet wird.
 
-Diese Seite leitet aus dem bereitgestellten Nutzerdesign eine technische Richtung ab. **„Gesetzte Regel“** bezeichnet eine Nutzeranforderung, **„Vorschlag“** unsere noch zu erprobende Umsetzung. Die Versionsangaben nennen die bisherige technische Prüfbasis; sie versprechen keine fertige Baustellensimulation im Plugin. Es gibt hier noch keine neuen Editor-Schritte: Der vorgeschlagene Versuch ist nicht implementiert.[^user-design]
+Diese Seite leitet aus dem bereitgestellten Nutzerdesign eine technische Richtung ab. **„Gesetzte Regel“** bezeichnet eine Nutzeranforderung, **„Vorschlag“** unsere noch zu erprobende Umsetzung. Die Versionsangaben nennen die technische Prüfbasis; sie versprechen keine fertige Baustellensimulation im Plugin. Der vorgeschlagene Maschinen-/Materialversuch ist nicht implementiert. Die [Foundations-Anleitung](../guides/foundations-lab.md) beschreibt seine vorhandenen Vorarbeiten und die aktuellen abgegrenzten Nachweise nach zwei unterschiedlichen Paintfehlern.[^user-design][^foundations]
 
 ## Gesetzte Regeln und offene Entscheidungen
 
@@ -60,6 +63,10 @@ Unterschiedliche Volumenzustände für gewachsenen Boden, lockeren Aushub und ve
 | Bergtunnel und Air Pocket | Eigene Tunnelmeshes, Portalöffnungen, Kollision und abgegrenzte Durchfahrt geprüft | Gespeicherter räumlicher Aushub, Bauabschnitte, Geologie und alle drei Tunnelverfahren |
 
 Der aktuelle CityLoop baut mit **R/Enter** eine Straße und mit **P** ein gerodetes Grundstück samt Haus sofort. Er bleibt als Entwicklungs- und Prüflabor nützlich. Der spätere Spielablauf soll daraus zunächst **Bauaufträge** machen. Eine bereits sichtbare fertige Straße ist noch kein Nachweis physischer Bauarbeit.[^loop][^roads][^dry-tunnel]
+
+Die getrennte Foundations-Karte implementiert einen Vorläufer der Soll-/Ist-Trennung: Planrecords, Undo/Cancel ungearbeiteter Planung und ausdrückliche Debugausführung. Fünf Biomprofile sind eingerichtet. Nach einem NoGrowth-Überlappungsfehler des alten Paint-Splinebackends wurde auf einen quadratischen LayerMask-Brush umgestellt. Eine weitere Sichtprobe entdeckte einen falschen White-Flow-Selektor; der aktuelle Code verwendet Black für Zero-Flow. Diese Fassung bestand jeweils 29/29 und 12/12 Checks in zwei gerenderten uncooked und zwei echten cooked Prozessen; reale Kern-/Seitenvegetation blieb nach Paint, Regeneration und wiederholtem Laden entfernt, die Waldkontrolle erhalten. Acht native Automationtests und die normale kompilierte PIE-Paint-/Ladebildprüfung sind erfolgreich. Maschinen, Materialkonten, Arbeitsraten und räumliche Teilbauzustände fehlen.[^foundations]
+
+Für die Architektur ist eine Rangfolge der Masken nötig: Freie Materialmalerei darf strukturelle Straßen-/Pad-Daten nicht verdrängen. Der Brush setzt Material R vor dem Road-/Pad-Pass; spätere Strukturregeln behalten Material und NoGrowth in Kern und Seitenbereich. Uncooked und cooked prüfen diese Wirkung mit zuvor bewachsenem Gelände. Die nativen Maskentestactors werden je Prozess neu erzeugt und nicht zusätzlich gespeichert. Die Datamap steuert hier die Wahl zwischen Ground- und Flow-Material, nicht die Flächendeckung. Black wählt Ground; White hatte trotz passender Actorwerte keine sichtbare Farbe erzeugt. GPU-Pixel, Datenparameter und beliebige Maskenpersistenz benötigen deshalb getrennte Nachweise.[^foundations]
 
 ## Vorschlag: Die Spielsimulation führt, ShaderWorld stellt den Bauzustand dar
 
@@ -112,7 +119,7 @@ Vorschlag für die Lastbegrenzung: Arbeit logisch in festen Schritten buchen, be
 
 Ein Arbeitsschritt braucht eine stabile Kennung beziehungsweise Reihenfolge. Ist-Geometrie, Auftragsfortschritt und Materialtransfer müssen einen gemeinsamen Speicherstand bilden. Beim erneuten Laden darf derselbe Schritt weder Material erneut erzeugen noch erneut verbrauchen. Ein bekannter vollständiger Stand muss erhalten bleiben, wenn ein neuer Speichervorgang scheitert.
 
-Zu speichern wären mindestens Aufträge und Planrevisionen, ausgeführte räumliche Arbeit, Materialkonten und Reservierungen, Maschinen-/Fahrzeugpositionen und -ladungen, aktive Arbeits-/Transportzustände, laufende Übergaben, Bearbeitungsreihenfolge sowie Generator-/Datenversion. Sichtbare Brushes und Meshes sollen daraus wiederherstellbar sein. Die bestehende SaveGame-Version 3 ist dafür **noch kein fertiges Schema**; sie speichert die bisherigen Straßen, Bauflächen und Bürgerzustände.[^saves][^loop]
+Zu speichern wären mindestens Aufträge und Planrevisionen, ausgeführte räumliche Arbeit, Materialkonten und Reservierungen, Maschinen-/Fahrzeugpositionen und -ladungen, aktive Arbeits-/Transportzustände, laufende Übergaben, Bearbeitungsreihenfolge sowie Generator-/Datenversion. Sichtbare Brushes und Meshes sollen daraus wiederherstellbar sein. Das projektlokale **Spielstandformat 4** ergänzt Straßen-, Bauflächen- und Bürgerdaten um Plan-/Änderungsrecords und Einzelrodungszustände. Es ist **noch kein fertiger Maschinen-/Materialspielstand**; Konten, Ladungen und räumliche Arbeitsphasen fehlen. CityLoop besitzt einen getrennten Neustartnachweis. Die aktuelle Black-/Zero-Flow-Foundations-Fassung bestand passende native Persistenz- und Maskenprüfungen uncooked und cooked; die aktuelle kompilierte GPU-Wirkung ist zusätzlich in ausgewählten normalen PIE-Frames mit Laden geprüft. Das ersetzt keine separate verpackte Pixelabnahme.[^saves][^loop][^foundations]
 
 Ändert der Spieler einen laufenden Plan, bleibt die bereits ausgeführte Arbeit real vorhanden. Die neue Planrevision muss die verbleibenden Mengen und erforderlichen Gegenarbeiten neu bestimmen. Verhalten bei konkurrierenden Aufträgen und Speicherfehlern gehört zu den offenen Tests.
 
@@ -167,7 +174,7 @@ Die Ergebnisse gehören später mit getrennten Nachweisen für Datenbilanz, sich
 
 ## Empfohlene Reihenfolge
 
-1. Den Baustellenversuch mit Oberfläche, Materialbilanz und unterbrochenem Neustart durchführen. Sofortbau als gesonderten Entwicklermodus erhalten.
+1. Nach bestandenen uncooked/cooked und begrenzten normalen PIE-/Paintprüfungen nun visuelle Vollscans unter geklärtem Restore-Vertrag begrenzen. Erst anschließend größere Welt und Baustellenkreislauf belasten; separate verpackte Pixel-/Bedienproben bleiben eigene Aufgaben. Sofortbau als gesonderten Entwicklermodus erhalten.
 2. Parallel früh einen kleinen **3D-Untergrundversuch** durchführen: begrenzten Hohlraum unter intakter Oberfläche anlegen, aus zwei Perspektiven ansehen, Kollision und Wiederherstellung prüfen. Das ist die Entscheidungsvorlage für Tunneltechnik, keine bereits zugesagte ShaderWorld-Funktion.
 3. Früh Cook/verpackten Start und viele kleine Geländeänderungen messen: Physikverzögerung, Framezeit, Speicher und Größe des Spielstands. Daraus die Datenauflösung und Aktualisierungsstrategie wählen.
 4. Den gleichen Auftrags-/Materialablauf auf Straßenabschnitte und Hausbau übertragen; erst bearbeitete Abschnitte räumen, formen und fertigstellen.
@@ -177,6 +184,7 @@ Die erhaltenen Themen zu Biomen, Navigation, Wasser und größeren Welten stehen
 
 [^user-design]: Vom Nutzer am 28. Oktober 2026 bereitgestellter und als Richtung bestätigter Designauszug „Geländeverformung und physischer Bau“ / „Der Untergrund als vollwertige Spielwelt“. Private Vorlage; hier sinngemäß zusammengefasst. Umsetzungsvorschläge auf dieser Seite sind gesondert gekennzeichnet.
 [^loop]: [CityLoop: implementierter Ablauf und abgegrenzter Nachweis](../guides/city-builder-loop.md).
+[^foundations]: [Foundations: vorhandene Vorarbeiten und aktuelle abgegrenzte native/PIE-Nachweise](../guides/foundations-lab.md).
 [^saves]: [Bisheriges Speichern und Laden](../guides/save-and-load.md).
 [^roads]: [Laufzeitstraßen mit gemeinsamer Spline](../guides/runtime-roads.md).
 [^holes]: [Höhenfeld, Portalöffnungen und eigene Tunnelkörper](../guides/holes-and-mountain-tunnels.md).

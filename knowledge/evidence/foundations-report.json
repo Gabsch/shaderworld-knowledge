@@ -1,0 +1,1898 @@
+{
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_limits",
+  "runtime_tests_pending": false,
+  "packaged_pending": false,
+  "scope": "Bereinigter Bericht mit fuenf gespeicherten Biomprofilen, acht kontrollierten nativen Tests, CityLoop-Regression und aktueller Black-Zero-Flow-Foundations-Abnahme in je zwei frischen gerenderten uncooked und verpackten Development-Spielprozessen. Normale PIE-Eingaben, hohe Baukamera sowie sichtbarer Snow-Auftrag, Speichern/Laden und geschuetztes Grundstueck sind getrennt dokumentiert. Kein Shipping-, Grosswelt- oder allgemeiner Navigationsnachweis.",
+  "setup_readback": {
+    "status": "passed",
+    "map": "/Game/Maps/ShaderWorldFoundations",
+    "saved_and_reloaded_map": true,
+    "readback_passed": true,
+    "own_asset_count": 19,
+    "asset_counts": {
+      "biomes": 5,
+      "spawnables": 8,
+      "density_materials": 5,
+      "biome_layer_materials": 1
+    },
+    "profile_count": 5,
+    "profiles": [
+      {
+        "name": "Wald",
+        "biome_id": 0,
+        "ground_relative_altitude_cm": [
+          150,
+          100000
+        ],
+        "slope_degrees": [
+          0,
+          35
+        ],
+        "spawnable_count": 3
+      },
+      {
+        "name": "Wiese",
+        "biome_id": 1,
+        "ground_relative_altitude_cm": [
+          150,
+          2000
+        ],
+        "slope_degrees": [
+          0,
+          30
+        ],
+        "spawnable_count": 2
+      },
+      {
+        "name": "Fels",
+        "biome_id": 2,
+        "ground_relative_altitude_cm": [
+          150,
+          100000
+        ],
+        "slope_degrees": [
+          20,
+          85
+        ],
+        "spawnable_count": 1
+      },
+      {
+        "name": "Strand",
+        "biome_id": 4,
+        "ground_relative_altitude_cm": [
+          -150,
+          150
+        ],
+        "slope_degrees": [
+          0,
+          25
+        ],
+        "spawnable_count": 1
+      },
+      {
+        "name": "Meeresboden",
+        "biome_id": 5,
+        "ground_relative_altitude_cm": [
+          -100000,
+          -150
+        ],
+        "slope_degrees": [
+          0,
+          65
+        ],
+        "spawnable_count": 1
+      }
+    ],
+    "layer_material": {
+      "refPath": "/Game/CityLab/Biomes/Materials/M_CityBiomes_Layer.M_CityBiomes_Layer"
+    },
+    "tree_component": "/Script/UnrealMcpTest.CityLabResourceHISMComponent",
+    "road_reserved_biome_id": 3,
+    "assets_saved_before_map_assignment": true,
+    "explicit_live_rebuild_requested": false,
+    "reload_method": "Native LevelEditorSubsystem.load_level via SceneTools.load_level",
+    "limit": "Eigenschafts-, Zuweisungs- und Materialgraph-Readback; kein Nachweis aller sichtbaren Biomgrenzen, realer Baumkollision oder dauerhafter Einzelrodung."
+  },
+  "automation": {
+    "status": "passed_with_warnings",
+    "tests_total": 8,
+    "succeeded_without_warning": 6,
+    "succeeded_with_warning": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "after_roof_normal_fix": true,
+    "tests": [
+      {
+        "name": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "warning_summary": "Zwei erfolgreiche Tests mit je einer Warnung: BoundedCitizenDetour meldet beim Test-Actor-Aufraeumen fehlenden World Context; BackendMigration prueft absichtlich die abgelehnte Wiederherstellung bereits ausgefuehrter v1-Paint-Records bei unveraenderter laufender Stadt. Keine Fehler, keine nicht ausgefuehrten Tests.",
+    "limit": "Abgegrenzte native Code-/API-Vertraege mit NullRHI; kein Bildnachweis und kein vollstaendiger Foundations-Spiel-, Neustart- oder Cook-Nachweis des neuen LayerMask-Backends.",
+    "runtime_scope": "Controlled native Automation under NullRHI; no rendered GPU acceptance.",
+    "elapsed_test_seconds": 0.124022104,
+    "backend_v2_migration_test_passed": true
+  },
+  "cityloop_format4_regression": {
+    "status": "passed",
+    "save_format_version": 4,
+    "rendered": true,
+    "runtime_scope": "uncooked native game",
+    "distinct_process_count": 3,
+    "checks_passed": 24,
+    "checks_total": 24,
+    "phases": [
+      {
+        "phase": "create",
+        "success": true,
+        "checks_passed": 9,
+        "checks_total": 9
+      },
+      {
+        "phase": "resume",
+        "success": true,
+        "checks_passed": 7,
+        "checks_total": 7
+      },
+      {
+        "phase": "arrived",
+        "success": true,
+        "checks_passed": 8,
+        "checks_total": 8
+      }
+    ],
+    "process_identifiers_included": false,
+    "limit": "Vorhandene CityLoop-Karte mit Straßen, Grundstück, Haus und Bürger. Der Erfolg gilt nicht als Abnahme der neuen Foundations-Werkzeuge oder Einzelrodung."
+  },
+  "roof_visual": {
+    "status": "visually_inspected",
+    "image": "../assets/images/foundations-roof.png",
+    "capture_date": "2026-10-28",
+    "capture_time_utc": "11:24",
+    "capture_time_precision": "minute",
+    "origin": "Native PIE FScreenshotRequest from own Foundations project",
+    "visible_checks": {
+      "closed_orange_gable_roof": true,
+      "house_visible": true,
+      "citizen_visible": true,
+      "editor_ui_or_private_path_visible": false
+    },
+    "modified": false,
+    "bytes": 4768238,
+    "sha256": "d3b33b2f951eb3e4416327995170058e2e6de84731194c5438c9eae4b4b0f520",
+    "limit": "Ein inspizierter Frame; kein Nachweis aller Kamerapositionen, Langzeitwirkung oder vollständiger Foundations-Abnahme."
+  },
+  "foundations_runtime": {
+    "status": "passed_with_limits",
+    "complete_acceptance_passed": true,
+    "cold_restart_passed": true,
+    "full_regeneration_acceptance_passed": true,
+    "runtime_scope": "rendered uncooked native game",
+    "requires_cooked_data": false,
+    "save_format_version": 4,
+    "distinct_process_count": 2,
+    "process_identifiers_included": false,
+    "private_run_or_save_identifiers_included": false,
+    "phases": [
+      {
+        "phase": "create",
+        "anonymized_process": "process_a",
+        "status": "passed",
+        "elapsed_wall_seconds": 127.066438,
+        "native_checks_passed": 29,
+        "native_checks_total": 29,
+        "physics_sample_count": 306,
+        "query_sample_count": 35,
+        "expected_height_query_count": 34,
+        "max_absolute_height_error_cm": 0.014404517,
+        "repeated_load_count": 3,
+        "invalid_identity_snapshot_rejected_atomically": true,
+        "native_backend_counts": {
+          "height": 5,
+          "paint": 1
+        },
+        "backends_unique": true,
+        "incoming_filter_passes_final": 401,
+        "incoming_instances_suppressed_final": 6
+      },
+      {
+        "phase": "resume",
+        "anonymized_process": "process_b",
+        "status": "passed",
+        "elapsed_wall_seconds": 70.072109,
+        "native_checks_passed": 12,
+        "native_checks_total": 12,
+        "physics_sample_count": 288,
+        "query_sample_count": 32,
+        "expected_height_query_count": 32,
+        "max_absolute_height_error_cm": 0.014404517,
+        "repeated_load_count": 3,
+        "invalid_identity_snapshot_rejected_atomically": true,
+        "native_backend_counts": {
+          "height": 5,
+          "paint": 1
+        },
+        "backends_unique": true,
+        "incoming_filter_passes_final": 136,
+        "incoming_instances_suppressed_final": 8
+      }
+    ],
+    "key_checks": {
+      "real_terrain_preview_and_inert_plan_undo_cancel": true,
+      "physical_raise_lower_flatten": true,
+      "execution_order_independent_of_plan_order": true,
+      "material_only_paint_native_settings_and_unchanged_height": true,
+      "stable_world_bound_records_and_atomic_negative": true,
+      "cold_restart_and_three_repeated_loads_each": true,
+      "single_tree_clear_real_regeneration_and_unchanged_control": true,
+      "paint_preserves_physical_core_and_side_masks": true,
+      "separate_forest_control_preserved_after_paint_regeneration_and_loads": true
+    },
+    "saved_state": {
+      "world_edit_record_count": 8,
+      "debug_applied_count": 6,
+      "planned_count": 1,
+      "cancelled_count": 1,
+      "height_backend_count": 5,
+      "material_only_paint_backend_count": 1,
+      "cleared_resource_record_count": 1,
+      "records_and_resource_identities_unchanged_across_processes": true,
+      "repeated_loads_per_process": 3,
+      "repeated_loads_total": 6,
+      "invalid_identity_snapshots_rejected_without_live_state_loss": 2,
+      "planned_and_cancelled_records_create_no_backend": true
+    },
+    "terrain": {
+      "method": "Neun native Bodenkollisionsproben je Messfläche mit erwarteter Höhe und lokalem Bereitschaftsgate.",
+      "physics_sample_count_total": 594,
+      "expected_height_query_count_total": 66,
+      "required_stable_query_passes": 3,
+      "tolerance_cm": 3,
+      "max_absolute_error_cm": 0.014404517,
+      "operation_results": [
+        {
+          "test": "raise_2m",
+          "description": "Anheben um 2 m",
+          "sample_count": 9,
+          "expected_ground_z_cm": 500,
+          "observed_ground_z_cm": {
+            "min": 500,
+            "max": 500
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "lower_half_meter",
+          "description": "Danach um 0,5 m absenken",
+          "sample_count": 9,
+          "expected_ground_z_cm": 450,
+          "observed_ground_z_cm": {
+            "min": 450,
+            "max": 450
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "flatten_absolute_4m",
+          "description": "Auf absolute 4 m ebnen",
+          "sample_count": 9,
+          "expected_ground_z_cm": 400,
+          "observed_ground_z_cm": {
+            "min": 399.996551461,
+            "max": 399.996551461
+          },
+          "max_absolute_error_cm": 0.003448539
+        },
+        {
+          "test": "apply_later_plan_flatten_first",
+          "description": "Spaeter geplantes Ebnen zuerst ausfuehren",
+          "sample_count": 9,
+          "expected_ground_z_cm": 500,
+          "observed_ground_z_cm": {
+            "min": 500,
+            "max": 500
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "apply_earlier_plan_raise_second",
+          "description": "Frueher geplantes Anheben danach ausfuehren",
+          "sample_count": 9,
+          "expected_ground_z_cm": 600,
+          "observed_ground_z_cm": {
+            "min": 599.985595483,
+            "max": 599.985595483
+          },
+          "max_absolute_error_cm": 0.014404517
+        },
+        {
+          "test": "before_material_only_paint",
+          "description": "Vor Materialmalerei",
+          "sample_count": 9,
+          "expected_ground_z_cm": 300,
+          "observed_ground_z_cm": {
+            "min": 300,
+            "max": 300
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "after_material_only_paint",
+          "description": "Nach Materialmalerei",
+          "sample_count": 9,
+          "expected_ground_z_cm": 300,
+          "observed_ground_z_cm": {
+            "min": 300,
+            "max": 300
+          },
+          "max_absolute_error_cm": 0
+        }
+      ],
+      "restored_expected_heights_cm": [
+        400,
+        600,
+        300,
+        300,
+        300
+      ],
+      "restored_regions": [
+        "flattened_surface",
+        "ordered_flatten_then_raise",
+        "material_only_paint",
+        "unworked_plan",
+        "cancelled_plan"
+      ],
+      "limit": "Lokale Terrainkollision und erwartete Höhen; keine Garantie für alle asynchronen Arbeiten oder die gesamte Welt.",
+      "query_sample_count_total": 67
+    },
+    "vegetation": {
+      "method": "Getaggte echte ShaderWorld-Bauminstanzen in visuellen und aktivierten Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform.",
+      "initial_removed_tree": {
+        "visible_visual_matches": 1,
+        "active_collision_matches": 1
+      },
+      "control_tree": {
+        "visible_visual_matches_during_observation": 1,
+        "active_collision_matches_during_observation": 1,
+        "transform_preserved": true
+      },
+      "after_clear_and_during_observation": {
+        "visible_visual_matches": 0,
+        "active_collision_matches": 0,
+        "inspect_visible_visual_matches": 0,
+        "inspect_visible_collision_matches": 0
+      },
+      "native_rebuild_requested": true,
+      "incoming_filter_passes_before_rebuild": 0,
+      "incoming_instances_suppressed_before_rebuild": 0,
+      "observation": {
+        "required_duration_seconds": 30,
+        "measured_duration_seconds": 30.038306098,
+        "sample_count": 55,
+        "target_sample_interval_seconds": 0.5,
+        "all_samples_content_valid": true,
+        "all_samples_control_transform_preserved": true,
+        "samples_with_component_async_building": 7,
+        "incoming_filter_passes_first": 9,
+        "incoming_filter_passes_last": 289,
+        "incoming_instances_suppressed_first": 1,
+        "incoming_instances_suppressed_last": 1,
+        "global_hism_quiescence_required": false
+      },
+      "restored_after_cold_restart_and_repeated_loads": true,
+      "counter_limit": "Filter-/Suppression-Zähler zählen Verarbeitungsvorgänge bzw. Instanzen bei Publikation, keine Anzahl verschiedener gefällter Bäume.",
+      "collision_limit": "Aktive Kollisionsinstanzen wurden inspiziert; daraus keinen eigenen Kontakt- oder Kollisionsfahrtversuch mit dem Baum ableiten."
+    },
+    "bounded_scan_observation": {
+      "sample_count": 55,
+      "last_scan_milliseconds": {
+        "min": 0.869400799,
+        "sample_mean": 15.930076,
+        "max": 39.365600795
+      },
+      "last_scanned_components": {
+        "min": 2,
+        "sample_mean": 2,
+        "max": 2
+      },
+      "last_scanned_instances": {
+        "min": 5819,
+        "sample_mean": 141021.781818,
+        "max": 153939
+      },
+      "scope": "Stichproben des zuletzt gemeldeten Ressourcen-Scans waehrend der echten 30-s-Regeneration. Stichprobenmittel, kein Mittel aller Frames oder aller Scans; keine FPS-Zusage und kein Grossweltbenchmark."
+    },
+    "images": [],
+    "image_note": "Native Abschlussaufnahmen wurden im Test erzeugt; für diesen Lauf wurden hier noch keine Bilder übernommen oder visuell bewertet.",
+    "limits": [
+      "Aktueller Uncooked-Lauf mit Black als ZeroFlow-Datamap. Der aktuelle getrennte Win64-Development-Paketnachweis steht unter packaged_runtime.",
+      "Planung und sofortige F6-Debugausführung sind getrennt; keine Maschinenarbeit, Arbeitsraten, Aushub-/Holzerträge oder Materialbilanz.",
+      "Materialmalerei prueft native LayerMask-Einstellungen, registrierte Material-ID, unveraenderte Hoehe und erhaltene physische Core-/Side-NoGrowth-Instanzen. GPU-Farbauftrag braucht die getrennte Sichtabnahme.",
+      "Ein gerodeter Baum und ein unveränderter Kontrollbaum wurden geprüft; große Rodungsbestände und Reichweitenwechsel sind damit nicht abgenommen.",
+      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe."
+    ],
+    "tested_backend_is_current": true,
+    "paint_structure_overlap_tested": true,
+    "paint_structure_protection": {
+      "status": "passed_with_limits",
+      "phases": [
+        {
+          "phase": "create",
+          "stages": [
+            {
+              "stage": "before_no_growth_fixture",
+              "samples_total": 7,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 4,
+              "core_visible_vegetation": {
+                "min": 436,
+                "sample_mean": 436,
+                "max": 436
+              },
+              "core_visible_trees": {
+                "min": 3,
+                "sample_mean": 3,
+                "max": 3
+              },
+              "side_visible_vegetation": {
+                "min": 29,
+                "sample_mean": 29,
+                "max": 29
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 28,
+                "sample_mean": 28,
+                "max": 28
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "physical_core_and_side_before_paint",
+              "samples_total": 9,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 6,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "after_layer_paint_and_real_rebuild",
+              "samples_total": 17,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 14,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_1",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_2",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_3",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            }
+          ]
+        },
+        {
+          "phase": "resume",
+          "stages": [
+            {
+              "stage": "before_no_growth_fixture",
+              "samples_total": 7,
+              "passed_samples": 5,
+              "unpassed_samples_while_waiting": 2,
+              "core_visible_vegetation": {
+                "min": 201,
+                "sample_mean": 342,
+                "max": 436
+              },
+              "core_visible_trees": {
+                "min": 3,
+                "sample_mean": 3,
+                "max": 3
+              },
+              "side_visible_vegetation": {
+                "min": 14,
+                "sample_mean": 23,
+                "max": 29
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 13,
+                "sample_mean": 22,
+                "max": 28
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "physical_core_and_side_before_paint",
+              "samples_total": 3,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "after_layer_paint_and_real_rebuild",
+              "samples_total": 3,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_1",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_2",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_3",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            }
+          ]
+        }
+      ],
+      "zero_flow_black_datamap_confirmed": true,
+      "disabled_flow_slope_biome_ids_confirmed": true,
+      "scope": "Nicht-vakuose Core-/Side-Ausgangsvegetation, native NoGrowth-Maske, produktiver LayerMask-Paint, reale Regeneration, drei Loads je Prozess und ein neuer Prozess. Zusatzfixtures werden pro Prozess neu erzeugt und selbst nicht gespeichert. Instanzpruefung ist kein GPU-Pixelfarbbeweis."
+    }
+  },
+  "packaged_runtime": {
+    "status": "passed_with_limits",
+    "complete_acceptance_passed": true,
+    "cold_restart_passed": true,
+    "full_regeneration_acceptance_passed": true,
+    "runtime_scope": "rendered packaged native game",
+    "requires_cooked_data": true,
+    "save_format_version": 4,
+    "distinct_process_count": 2,
+    "process_identifiers_included": false,
+    "private_run_or_save_identifiers_included": false,
+    "phases": [
+      {
+        "phase": "create",
+        "anonymized_process": "packaged_process_a",
+        "status": "passed",
+        "elapsed_wall_seconds": 118.611236,
+        "native_checks_passed": 29,
+        "native_checks_total": 29,
+        "physics_sample_count": 306,
+        "query_sample_count": 35,
+        "expected_height_query_count": 34,
+        "max_absolute_height_error_cm": 0.014404517,
+        "repeated_load_count": 3,
+        "invalid_identity_snapshot_rejected_atomically": true,
+        "native_backend_counts": {
+          "height": 5,
+          "paint": 1
+        },
+        "backends_unique": true,
+        "incoming_filter_passes_final": 401,
+        "incoming_instances_suppressed_final": 7
+      },
+      {
+        "phase": "resume",
+        "anonymized_process": "packaged_process_b",
+        "status": "passed",
+        "elapsed_wall_seconds": 66.128392,
+        "native_checks_passed": 12,
+        "native_checks_total": 12,
+        "physics_sample_count": 279,
+        "query_sample_count": 31,
+        "expected_height_query_count": 31,
+        "max_absolute_height_error_cm": 0.014404517,
+        "repeated_load_count": 3,
+        "invalid_identity_snapshot_rejected_atomically": true,
+        "native_backend_counts": {
+          "height": 5,
+          "paint": 1
+        },
+        "backends_unique": true,
+        "incoming_filter_passes_final": 148,
+        "incoming_instances_suppressed_final": 7
+      }
+    ],
+    "key_checks": {
+      "real_terrain_preview_and_inert_plan_undo_cancel": true,
+      "physical_raise_lower_flatten": true,
+      "execution_order_independent_of_plan_order": true,
+      "material_only_paint_native_settings_and_unchanged_height": true,
+      "stable_world_bound_records_and_atomic_negative": true,
+      "cold_restart_and_three_repeated_loads_each": true,
+      "single_tree_clear_real_regeneration_and_unchanged_control": true,
+      "paint_preserves_physical_core_and_side_masks": true,
+      "separate_forest_control_preserved_after_paint_regeneration_and_loads": true
+    },
+    "saved_state": {
+      "world_edit_record_count": 8,
+      "debug_applied_count": 6,
+      "planned_count": 1,
+      "cancelled_count": 1,
+      "height_backend_count": 5,
+      "material_only_paint_backend_count": 1,
+      "cleared_resource_record_count": 1,
+      "records_and_resource_identities_unchanged_across_processes": true,
+      "repeated_loads_per_process": 3,
+      "repeated_loads_total": 6,
+      "invalid_identity_snapshots_rejected_without_live_state_loss": 2,
+      "planned_and_cancelled_records_create_no_backend": true
+    },
+    "terrain": {
+      "method": "Neun native Bodenkollisionsproben je Messfläche mit erwarteter Höhe und lokalem Bereitschaftsgate.",
+      "physics_sample_count_total": 585,
+      "expected_height_query_count_total": 65,
+      "required_stable_query_passes": 3,
+      "tolerance_cm": 3,
+      "max_absolute_error_cm": 0.014404517,
+      "operation_results": [
+        {
+          "test": "raise_2m",
+          "description": "Anheben um 2 m",
+          "sample_count": 9,
+          "expected_ground_z_cm": 500,
+          "observed_ground_z_cm": {
+            "min": 500,
+            "max": 500
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "lower_half_meter",
+          "description": "Danach um 0,5 m absenken",
+          "sample_count": 9,
+          "expected_ground_z_cm": 450,
+          "observed_ground_z_cm": {
+            "min": 450,
+            "max": 450
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "flatten_absolute_4m",
+          "description": "Auf absolute 4 m ebnen",
+          "sample_count": 9,
+          "expected_ground_z_cm": 400,
+          "observed_ground_z_cm": {
+            "min": 399.996551461,
+            "max": 399.996551461
+          },
+          "max_absolute_error_cm": 0.003448539
+        },
+        {
+          "test": "apply_later_plan_flatten_first",
+          "description": "Spaeter geplantes Ebnen zuerst ausfuehren",
+          "sample_count": 9,
+          "expected_ground_z_cm": 500,
+          "observed_ground_z_cm": {
+            "min": 500,
+            "max": 500
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "apply_earlier_plan_raise_second",
+          "description": "Frueher geplantes Anheben danach ausfuehren",
+          "sample_count": 9,
+          "expected_ground_z_cm": 600,
+          "observed_ground_z_cm": {
+            "min": 599.985595483,
+            "max": 599.985595483
+          },
+          "max_absolute_error_cm": 0.014404517
+        },
+        {
+          "test": "before_material_only_paint",
+          "description": "Vor Materialmalerei",
+          "sample_count": 9,
+          "expected_ground_z_cm": 300,
+          "observed_ground_z_cm": {
+            "min": 300,
+            "max": 300
+          },
+          "max_absolute_error_cm": 0
+        },
+        {
+          "test": "after_material_only_paint",
+          "description": "Nach Materialmalerei",
+          "sample_count": 9,
+          "expected_ground_z_cm": 300,
+          "observed_ground_z_cm": {
+            "min": 300,
+            "max": 300
+          },
+          "max_absolute_error_cm": 0
+        }
+      ],
+      "restored_expected_heights_cm": [
+        400,
+        600,
+        300,
+        300,
+        300
+      ],
+      "restored_regions": [
+        "flattened_surface",
+        "ordered_flatten_then_raise",
+        "material_only_paint",
+        "unworked_plan",
+        "cancelled_plan"
+      ],
+      "limit": "Lokale Terrainkollision und erwartete Höhen; keine Garantie für alle asynchronen Arbeiten oder die gesamte Welt.",
+      "query_sample_count_total": 66
+    },
+    "vegetation": {
+      "method": "Getaggte echte ShaderWorld-Bauminstanzen in visuellen und aktivierten Kollisionspools; stabiler Stammort, Ressourcenbindung und Kontrolltransform.",
+      "initial_removed_tree": {
+        "visible_visual_matches": 1,
+        "active_collision_matches": 1
+      },
+      "control_tree": {
+        "visible_visual_matches_during_observation": 1,
+        "active_collision_matches_during_observation": 1,
+        "transform_preserved": true
+      },
+      "after_clear_and_during_observation": {
+        "visible_visual_matches": 0,
+        "active_collision_matches": 0,
+        "inspect_visible_visual_matches": 0,
+        "inspect_visible_collision_matches": 0
+      },
+      "native_rebuild_requested": true,
+      "incoming_filter_passes_before_rebuild": 0,
+      "incoming_instances_suppressed_before_rebuild": 0,
+      "observation": {
+        "required_duration_seconds": 30,
+        "measured_duration_seconds": 30.251748599,
+        "sample_count": 56,
+        "target_sample_interval_seconds": 0.5,
+        "all_samples_content_valid": true,
+        "all_samples_control_transform_preserved": true,
+        "samples_with_component_async_building": 4,
+        "incoming_filter_passes_first": 30,
+        "incoming_filter_passes_last": 289,
+        "incoming_instances_suppressed_first": 1,
+        "incoming_instances_suppressed_last": 1,
+        "global_hism_quiescence_required": false
+      },
+      "restored_after_cold_restart_and_repeated_loads": true,
+      "counter_limit": "Filter-/Suppression-Zähler zählen Verarbeitungsvorgänge bzw. Instanzen bei Publikation, keine Anzahl verschiedener gefällter Bäume.",
+      "collision_limit": "Aktive Kollisionsinstanzen wurden inspiziert; daraus keinen eigenen Kontakt- oder Kollisionsfahrtversuch mit dem Baum ableiten."
+    },
+    "bounded_scan_observation": {
+      "sample_count": 56,
+      "last_scan_milliseconds": {
+        "min": 2.591500001,
+        "sample_mean": 15.2056,
+        "max": 23.098899997
+      },
+      "last_scanned_components": {
+        "min": 2,
+        "sample_mean": 2,
+        "max": 2
+      },
+      "last_scanned_instances": {
+        "min": 14812,
+        "sample_mean": 131853.25,
+        "max": 153939
+      },
+      "scope": "Stichproben des zuletzt gemeldeten Ressourcen-Scans waehrend der echten 30-s-Regeneration. Stichprobenmittel, kein Mittel aller Frames oder aller Scans; keine FPS-Zusage und kein Grossweltbenchmark."
+    },
+    "images": [],
+    "image_note": "Native Abschlussaufnahmen wurden im paketierten Spiel erzeugt; für diesen Lauf wurden hier noch keine Bilder übernommen oder visuell bewertet.",
+    "limits": [
+      "Geprüft ist ein Win64-Development-Paket mit den eigenen Testassets und der isolierten Foundations-Abnahme; kein Shipping-, Vertriebs-, Plattform- oder allgemeiner Release-Nachweis.",
+      "Materialmalerei prueft native LayerMask-Einstellungen, registrierte Material-ID, unveraenderte Hoehe und erhaltene physische Core-/Side-NoGrowth-Instanzen. GPU-Farbauftrag braucht die getrennte Sichtabnahme.",
+      "Planung und sofortige F6-Debugausführung sind getrennt; keine Maschinenarbeit, Arbeitsraten, Aushub-/Holzerträge oder Materialbilanz.",
+      "Ein gerodeter Baum und ein unveränderter Kontrollbaum wurden geprüft; große Rodungsbestände und Reichweitenwechsel sind damit nicht abgenommen.",
+      "Die 30-Sekunden-Messung prüft den Ressourceninhalt trotz weiterlaufendem componentweiten Aufbau und behauptet keine globale HISM-Ruhe."
+    ],
+    "cook_passed": true,
+    "packaged_acceptance_passed": true,
+    "platform": "Win64",
+    "build_configuration": "Development",
+    "executable_kind": "Packaged inner native Game executable under UnrealMcpTest/Binaries/Win64; not the bootstrap launcher and not UnrealEditor -game.",
+    "packaging": {
+      "status": "passed",
+      "evidence_scope": "Current full Cook, Stage and Archive after the final Black zero-flow constant fix; the resulting native packaged executable passed the separate rendered two-process pair.",
+      "cook_passed": true,
+      "cook_command_exit_code": 0,
+      "cook_command_seconds": 50.73,
+      "build_cook_run_seconds": 96.15,
+      "final_automation_tool_exit_code": 0,
+      "stage_passed": true,
+      "stage_command_seconds": 41.44,
+      "archive_passed": true,
+      "archive_command_seconds": 1.86,
+      "used_skip_cook": false,
+      "staging_location": "Fresh temporary staging directory outside the synchronized project tree.",
+      "project_local_script": "Tools/package_foundations.ps1",
+      "script_in_this_knowledge_bundle": false,
+      "diagnosis": "Aktueller BuildCookRun mit -cook, Stage/Pak und Archive endete mit AutomationTool ExitCode 0. Die nativen Cook-, Stage- und Archive-Abschlussmeldungen sowie Zeiten wurden aus dem aktuellen Protokoll gelesen.",
+      "limit": "Win64 Development mit eigenen Testassets; keine Shipping-, Vertriebs- oder Plattformabnahme. Erfolgreiches Packaging ersetzt die eigene gerenderte Laufzeitpruefung nicht."
+    },
+    "manual_and_visual_acceptance": {
+      "tool_input": "Normal PIE keys verified separately in normal_ui; no manual packaged input acceptance claimed.",
+      "high_camera_view": "500300 cm normal PIE camera query verified separately in normal_ui; no manual packaged high-camera acceptance claimed.",
+      "material_paint_gpu_appearance": "Final compiled Black backend visually inspected in normal PIE including save/load; no separate packaged pixel inspection claimed.",
+      "note": "Native runtime checks and normal PIE GPU frames are separate scopes; see normal_ui."
+    },
+    "tested_backend_is_current": true,
+    "paint_structure_overlap_tested": true,
+    "paint_structure_protection": {
+      "status": "passed_with_limits",
+      "phases": [
+        {
+          "phase": "create",
+          "stages": [
+            {
+              "stage": "before_no_growth_fixture",
+              "samples_total": 5,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 2,
+              "core_visible_vegetation": {
+                "min": 442,
+                "sample_mean": 442,
+                "max": 442
+              },
+              "core_visible_trees": {
+                "min": 3,
+                "sample_mean": 3,
+                "max": 3
+              },
+              "side_visible_vegetation": {
+                "min": 31,
+                "sample_mean": 31,
+                "max": 31
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 30,
+                "sample_mean": 30,
+                "max": 30
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "physical_core_and_side_before_paint",
+              "samples_total": 4,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 1,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "after_layer_paint_and_real_rebuild",
+              "samples_total": 6,
+              "passed_samples": 5,
+              "unpassed_samples_while_waiting": 1,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_1",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_2",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_3",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            }
+          ]
+        },
+        {
+          "phase": "resume",
+          "stages": [
+            {
+              "stage": "before_no_growth_fixture",
+              "samples_total": 7,
+              "passed_samples": 5,
+              "unpassed_samples_while_waiting": 2,
+              "core_visible_vegetation": {
+                "min": 201,
+                "sample_mean": 389,
+                "max": 436
+              },
+              "core_visible_trees": {
+                "min": 3,
+                "sample_mean": 3,
+                "max": 3
+              },
+              "side_visible_vegetation": {
+                "min": 14,
+                "sample_mean": 26,
+                "max": 29
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 13,
+                "sample_mean": 25,
+                "max": 28
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "physical_core_and_side_before_paint",
+              "samples_total": 3,
+              "passed_samples": 3,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": false,
+              "native_paint_ready_in_all_passed_samples": false
+            },
+            {
+              "stage": "after_layer_paint_and_real_rebuild",
+              "samples_total": 5,
+              "passed_samples": 4,
+              "unpassed_samples_while_waiting": 1,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_1",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_2",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            },
+            {
+              "stage": "after_load_3",
+              "samples_total": 1,
+              "passed_samples": 1,
+              "unpassed_samples_while_waiting": 0,
+              "core_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "core_visible_trees": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "side_visible_non_tree_vegetation": {
+                "min": 0,
+                "sample_mean": 0,
+                "max": 0
+              },
+              "forest_control_visual": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "forest_control_collision": {
+                "min": 1,
+                "sample_mean": 1,
+                "max": 1
+              },
+              "all_passed_samples_control_transform_preserved": true,
+              "paint_expected_enabled": true,
+              "native_paint_ready_in_all_passed_samples": true
+            }
+          ]
+        }
+      ],
+      "zero_flow_black_datamap_confirmed": true,
+      "disabled_flow_slope_biome_ids_confirmed": true,
+      "scope": "Nicht-vakuose Core-/Side-Ausgangsvegetation, native NoGrowth-Maske, produktiver LayerMask-Paint, reale Regeneration, drei Loads je Prozess und ein neuer Prozess. Zusatzfixtures werden pro Prozess neu erzeugt und selbst nicht gespeichert. Instanzpruefung ist kein GPU-Pixelfarbbeweis."
+    }
+  },
+  "publication": {
+    "sanitized": true,
+    "private_absolute_paths_included": false,
+    "credentials_included": false,
+    "save_identifiers_included": false,
+    "raw_plugin_source_or_assets_included": false,
+    "provenance": "Whitelisted setup, native Automation and CityLoop results; current Foundations runtime metrics were calculated from completed native uncooked and packaged phase reports. The native reports, process lineage, expected heights, reloads, real vegetation witnesses and suppression observations were cross-checked. Current full Cook/Stage/Archive times come from the successful AutomationTool log. Only sanitized aggregate metrics are included; no private paths, process/run/save/resource identifiers, raw plugin source or assets. normal_ui enthaelt ausschliesslich ausgewaehlte Werte aus normalen nativen Slate-/PIE-Proben und drei unveraenderte, visuell gepruefte eigene Spielbilder; keine privaten Objekt-, Prozess-, Lauf-, Ressourcen- oder Spielstandkennungen."
+  },
+  "paint_mask_regression": {
+    "status": "corrected_and_retested_in_final_compiled_black_backend",
+    "observation_scope": "Native PIE-Sichtvergleich nach freier Snow-Materialmalerei auf einer zuvor bewuchsfreien Haus-Bauflaeche.",
+    "observed": {
+      "snow_material_visible": true,
+      "ground_height_unchanged": true,
+      "trees_and_grass_reappeared_on_no_growth_lot": true
+    },
+    "prior_coverage_gap": "Der alte Check pruefte nur native Materialeinstellungen und unveraenderte Terrainhoehe. Sein Name mit biome war zu weitgehend; tatsaechliche Bewuchserhaltung auf ueberlappenden Strukturmasken wurde nicht geprueft.",
+    "source_diagnosis": "Der vorherige Material-Paint verwendete eine konkurrierende Spline. ShaderWorld waehlt pro Texel einen Spline-Gewinner fuer alle Kanaele; dessen R-Materialauftrag konnte die B-NoGrowth-Maske der physischen Struktur verdraengen. Core/Side-Zonenprioritaet verhindert eine allgemeine Reparatur nur durch niedrigere Spline-Prioritaet.",
+    "replacement_backend": {
+      "class": "ACityLabWorldPaintBrush",
+      "native_component": "USW_LayerMaskBrushComponent",
+      "native_layer_format": "MaskForIDs",
+      "data_mask": "Engine Black texture used as constant zero-flow selection; not a coverage mask.",
+      "footprint": "Square with native edge fading; RadiusMeters is the square half-size.",
+      "material_channel": "GroundMaterial only",
+      "biome_id": -1,
+      "flow_and_slope_materials": "Empty; preserve existing channels.",
+      "ordering": "Native layer brush stack runs before physical spline roads.",
+      "policy": "Physical road/pad core AND side masks take precedence. Free material paint is intentionally ignored inside those structural masks.",
+      "plugin_patch_required": false,
+      "binding_version": "WorldEditBackend-v2-NativeLayerMask",
+      "migration": "Logical native BackendMigration tests validate the exact legacy v1 binding: unchanged heights and inactive plans migrate, while applied v1 spline paint is rejected before staging without changing live records. Formats 1-3 retain their existing empty-journal path; no archived binary-save migration or automatic old-paint conversion is claimed."
+    },
+    "expanded_runtime_regression": {
+      "status": "passed_uncooked_and_packaged_with_limits",
+      "expected_native_checks": {
+        "create": 29,
+        "resume": 12
+      },
+      "non_vacuous_baseline": "Require actual trees in the core, actual non-tree vegetation in the side, and a separate visible/collidable forest control with preserved transform.",
+      "fixture": "Separate unsaved native spline: 12 m core half-width, 8 m side, both biome ID 3; production LayerMask paint overlaps each region.",
+      "sequence": [
+        "Observe vegetated baseline",
+        "Enable physical core and side NoGrowth masks",
+        "Observe cleared core and side",
+        "Enable material paint, request real native vegetation regeneration, and settle",
+        "Observe both zones remain clear and separate forest control remains unchanged",
+        "Repeat three save loads per process and recreate the fixture in a fresh process"
+      ],
+      "fixture_is_saved_world_edit": false,
+      "fixture_affects_eight_logical_record_count": false,
+      "save_scope": "The original free-paint record is saved and restored with the other eight logical records. Additional overlap fixtures are recreated for each process and retained across that process's three loads; this is not persistence of those fixture actors.",
+      "gpu_material_pixels_proven_by_instance_checks": false,
+      "required_native_parameters": "Black Datamap, actual registered Snow/Sand material ID, Flow/Slope/Biome IDs all -1; instance checks remain separate from GPU pixels."
+    },
+    "manual_gpu_appearance": "passed_in_normal_pie_after_final_compiled_black_backend_and_normal_save_load",
+    "images": [
+      "assets/images/foundations-paint-before.png",
+      "assets/images/foundations-paint-reloaded.png",
+      "assets/images/foundations-protected-pad.png"
+    ],
+    "image_note": "Unveraenderte eigene normale PIE-Frames; Root hat Vorher, angewendetes Snow, Snow nach K/L und das uebermalte strukturelle Grundstueck visuell inspiziert. Veröffentlicht sind Vorher, nach Laden und das geschuetzte Grundstueck; keine nachtraegliche Aenderung von Brush-Parametern im finalen Test.",
+    "zero_flow_selection_fix": {
+      "status": "production_runtime_retests_passed_manual_pixels_separate",
+      "observation": "Normal T/F6 created an enabled native Snow paint actor with a ready material, but the free target showed no white patch in the before/after images.",
+      "material_graph_evidence": "Native M_HeightMapBrush_layer Custom_1 chooses GroundMaterial when the FlowMapData criterion is below FlowMapCutoff 0.5; otherwise it chooses FlowMaterial. Constant white selects the disabled -1 flow ID and preserves the base data.",
+      "live_diagnostic": "Root changed only Datamap to Engine Black through native MCP. The actual rendered Snow square then appeared at the same free target.",
+      "production_change": "Constructor now supplies Engine Black as constant zero-flow selection. Native verifier and harness explicitly require Black and disabled Flow/Slope/Biome IDs.",
+      "binding_policy": "Unreleased v2 implementation bug fix; v2 record geometry and intended material semantics stay unchanged. No backend-v3 migration is claimed.",
+      "gpu_diagnostic_is_production_restart_acceptance": false,
+      "images": [],
+      "production_runtime_retests_passed": true
+    }
+  },
+  "historical_paint_overlap_gap": {
+    "foundations_runtime": {
+      "status": "historical_pass_before_overlap_regression",
+      "native_checks_per_phase": [
+        24,
+        7
+      ],
+      "elapsed_wall_seconds_per_phase": [
+        96.187147,
+        43.984309
+      ],
+      "scope": "Fruehere Spline-Paint-Fassung; keine NoGrowth-Core-/Side-Ueberlappung geprueft. Die damaligen Terrain-/Einzelrodungsbefunde bleiben historisch, bestaetigen aber den neuen Paint-Backend nicht."
+    },
+    "packaging": {
+      "status": "historical_staging_recovery",
+      "scope": "Ein frueherer Stage-Versuch scheiterte beim Loeschen eines vorhandenen synchronisierten Staging-Verzeichnisses mit UAT ExitCode 102. Die damalige Wiederherstellung nutzte erfolgreich bereits gekochte Daten und ein frisches temporaeres Staging-Verzeichnis. Der aktuelle Wiederholungslauf unten fuehrt Cook erneut vollstaendig aus."
+    },
+    "packaged_runtime": {
+      "status": "historical_pass_before_overlap_regression",
+      "native_checks_per_phase": [
+        24,
+        7
+      ],
+      "elapsed_wall_seconds_per_phase": [
+        92.745305,
+        41.714226
+      ],
+      "scope": "Fruehere Spline-Paint-Fassung; keine NoGrowth-Core-/Side-Ueberlappung geprueft. Die damaligen Terrain-/Einzelrodungsbefunde bleiben historisch, bestaetigen aber den neuen Paint-Backend nicht."
+    }
+  },
+  "normal_ui": {
+    "date": "2026-10-28",
+    "scope": "Native Slate input and normal PIE in the same editor process. Separate cold-process tests are documented independently.",
+    "high_camera": {
+      "pawn_height_cm": 500300,
+      "actual_ground_cm": 299.9951171129942,
+      "probe_count": 9,
+      "stable_passes": 4,
+      "ready": true,
+      "plan_created": true,
+      "plan_created_no_world_edit_backends": true,
+      "scope": "Earlier normal PIE before the paint-backend replacement; same build-query implementation, separate from final color inspection."
+    },
+    "plan_controls": {
+      "page_up_1m_to_1_5m_then_undo_to_1m": true,
+      "two_plans_independently_selectable": true,
+      "same_newest_plan_and_absolute_target_after_normal_pie_reload": true,
+      "absolute_flatten_target_m": 3.999951124191284,
+      "loaded_flatten_moved_from_300cm_to_500cm_ground_keeps_absolute_target": true,
+      "moved_flatten_ground_cm": 500,
+      "moved_flatten_probes": 9,
+      "moved_flatten_stable_passes": 3
+    },
+    "paint_before_fix": {
+      "ui_f6_executed": true,
+      "snow_visible": true,
+      "actual_ground_before_cm": 500,
+      "actual_ground_after_cm": 500,
+      "regression": "Earlier native spline-paint material appeared, but displaced structural NoGrowth; final native layer-mask regression and visuals are recorded separately.",
+      "corrected_backend_repeat_pending": false
+    },
+    "pre_test_state_restored": true,
+    "computer_use_activated": false,
+    "current_compiled_material_visual": {
+      "status": "passed_in_normal_pie",
+      "map": "/Game/Maps/ShaderWorldFoundations",
+      "compiled_black_backend_without_brush_parameter_mutation": true,
+      "input_keys": [
+        "T",
+        "F6",
+        "K",
+        "L"
+      ],
+      "paint_material": "Snow",
+      "paint_half_side_m": 4,
+      "native_data_texture": "/Engine/EngineResources/Black.Black",
+      "ground_material_id_in_this_profile": 7,
+      "flow_slope_biome_ids": [
+        -1,
+        -1,
+        -1
+      ],
+      "ground_before_cm": 94.99098191806115,
+      "ground_after_cm": 94.99098191806115,
+      "ready_probes": 9,
+      "snow_visible_after_debug_execution": true,
+      "snow_visible_after_save_and_load": true,
+      "same_backend_settings_after_restore": true,
+      "protected_pad_sand_visible_and_no_regrown_vegetation_in_frame": true,
+      "protected_pad_ground_cm": 500,
+      "two_real_paint_backends_during_pad_comparison": true,
+      "images": [
+        "assets/images/foundations-paint-before.png",
+        "assets/images/foundations-paint-reloaded.png",
+        "assets/images/foundations-protected-pad.png"
+      ],
+      "hud_hidden_for_frame_comparison": true,
+      "limit": "Qualitative GPU inspection of selected normal PIE frames. Dynamic water and vegetation LOD can differ; no pixelwise equality, complete biome survey, general packaged pixel acceptance or FPS claim."
+    },
+    "restored_test_paint_backends": 0,
+    "normal_pie_left_running": true,
+    "house_camera_restored": true,
+    "ui_observer_stopped": true,
+    "background_throttling_restored": true
+  }
+}
