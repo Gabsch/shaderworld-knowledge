@@ -14,7 +14,7 @@ evidence_scope: Lokaler Versions-/Sourcevergleich, Herstellerangaben und themati
   getrennte Tests
 generated:
   by: codex/gpt-6
-  at: '2026-10-27T21:54:47Z'
+  at: '2026-10-28T01:51:24Z'
 sources:
 - id: local-comparison
   resource: Local licensed ShaderWorld 3.9.96 and 4.1 installation comparison
@@ -56,7 +56,7 @@ Die Tabelle beschreibt den untersuchten Dateivergleich, nicht das genaue Einfüh
 
 ## Biome und Vegetation für die Stadt
 
-Die Reference-Welt zeigt das Biom `SW_GreenBiom` mit Bäumen, Felsen und Gras. In dessen Abhängigkeiten liegt unter anderem `M_Density_NotRoad1`; Straßen und Vegetation können also auf gemeinsame Geländedaten und Masken reagieren. Die sichtbare Reference-Trasse wurde untersucht. Eine eigene dauerhafte Rodungs- und Baumzustandsverwaltung ist noch nicht implementiert.
+Die Reference-Welt zeigt das Biom `SW_GreenBiom` mit Bäumen, Felsen und Gras. In dessen Abhängigkeiten liegt unter anderem `M_Density_NotRoad1`; Straßen und Vegetation können also auf gemeinsame Geländedaten und Masken reagieren. Die sichtbare Reference-Trasse wurde untersucht. Eine eigene Verwaltung einzelner gefällter Bäume ist noch nicht implementiert. Im getrennten [RoadLab](../guides/runtime-roads.md) ist inzwischen das Wiederherstellen der Straßenmaske aus gespeicherten Trassen in einem neuen Prozess geprüft: Die gemessenen Instanzursprünge im Kern verschwanden, wuchsen nach Rücknahme nach und verschwanden nach Laden erneut. Das ist kein allgemeiner Rodungs-/Ressourcenzustand und keine Überhangprüfung.
 
 Die offizielle Spawnable-Doku beschreibt eine wichtige Grenze: eingesammelte Ressourcen besitzen dort standardmäßig kein dauerhaftes Bookkeeping und können nach Verlassen und Wiederbetreten der Generationsreichweite wieder erscheinen. Für einen City Builder brauchen gerodete Bauflächen deshalb einen bestätigten dauerhaften Zustand.[^detail-panel]
 

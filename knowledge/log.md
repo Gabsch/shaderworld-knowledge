@@ -2,6 +2,16 @@
 
 ## 2026-10-28
 
+- Native Slate-Bedienprobe im RoadLab bestanden: R/Enter, Backspace, X, Q/E, K/L und normales PIE-Autoload mit identischen IDs, Splinepunkten/Tangenten und Einstellungen. Kamera per ActorTools versetzt; Bewegungstasten, Maustasten/Zoom und F5/F9 bleiben offen. Neue normale Auto-Load-Aufnahme ins Manifest aufgenommen. Unabhängige Bauplatz-/Terrainstraßen-Regression mit Format 2 und zwei frischen Prozessen bestanden.
+
+- RoadLab-Zwei-Prozess-Nachweis bestanden: 18/18 und 19/19 Checks, je 72/72 Kollisionsproben, identische zwei Straßen/16 Meshsegmente. Gemessene Pflanzenursprünge 999 → 0 → 999 → 0 bei 8615 Referenzen und drei gleichen Matrix-Fingerprints je Phase. Bereinigten Bericht und zweite native Aufnahme mit Herkunft/Hash ergänzt; synthetisches Format-1-Fixture, fehlende UI-/Cook-/Überhang-/GPU-Abnahme getrennt benannt.
+
+- Zweiter RoadLab-Lauf passiert das korrigierte Pflanzen-Baseline-Gate nach rund 31 s und erzeugt zwei Straßen mit 16 Meshes. Danach blockierte unser Manager wegen unnötiger Pad-Shader-Abhängigkeit ohne Pad-Instanz vor Kollisionsproben. Projektintegration auf vorhandene Pads begrenzt; neuer Test läuft, Neustart-/Vegetationswirkung weiterhin offen.
+
+- Erstes RoadLab-Timeout auf unser ungeeignetes Pflanzen-Testgate eingegrenzt: Grundterrain und Pflanzen waren vorhanden. Async-Build-Zustand plus drei stabile Transform-Fingerprints ersetzen die bisherige IsTreeFullyBuilt-Annahme; Straßen-/Neustart- und Maskenwirkung weiterhin offen.
+
+- RoadLab-Guide als draft vorbereitet: gemeinsame ShaderWorld-/SplineMesh-Trasse, RCP-Meshkopie, Punktbedienung und logisches Saveformat 2 dokumentiert. Build bestanden und erste unveränderte PIE-Aufnahme inspiziert: sichtbare Laufzeit-Beispielstraße, noch kein Bedienungs-/Zwei-Prozess-/Pflanzen-/Cook-Nachweis.
+
 - Neue native PIE-Aufnahme nach Komponentenwechsel und Kartenneuladen inspiziert: sichtbarer Tunnelinnenraum trocken, nur ein Frame; Langzeit-/GPU-Prüfung offen.
 - Eigenen Guide zur CityLab-Tunnelkomponente mit integriertem Air Pocket angelegt: Editor-Bedienung, Passagemaße und Platzierung beschrieben. Eigene Komponente implementiert, Build und zwei native Automationtests bestanden; Gespeicherte Karte tatsächlich neu geladen und Eigenschaften im neuen PIE bestätigt; frischer Spielprozess bestand 65/65 Proben und rund 259,44 m bodengebundene Durchfahrt. Bisherige separate Box bleibt als früherer Sichtnachweis erhalten.
 

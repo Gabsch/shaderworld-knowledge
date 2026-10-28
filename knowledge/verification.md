@@ -13,11 +13,14 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T00:08:51Z"
+  at: "2026-10-28T01:55:41Z"
 sources:
+- id: runtime-road-code
+  resource: guides/runtime-roads.md
+  title: RoadLab-Anleitung und abgegrenzter Zwei-Prozess-Nachweis
 - id: tunnel-component
   resource: evidence/tunnel-component-report.json
-  title: CityLab-Tunnelkomponente; native Tests und offene Kartenabnahme
+  title: CityLab-Tunnelkomponente; native Tests und geprüfte Karten-/PIE-Integration
 - id: terrain
   resource: evidence/terrain-report.json
   title: Terrainprüfung
@@ -64,10 +67,11 @@ Stand: **28. Oktober 2026**, Unreal **5.8.4**, ShaderWorld **4.1**. Die Statusan
 | Bauplatz und native Straße | [CityLab-Bericht](evidence/citylab-report.json), sechs Phasen mit je 14 Proben | Kleiner Laborbereich, keine Verkehrssimulation |
 | Dauerhafte Pads und Straßen | [Neustart-Bericht](evidence/persistence-report.json), zwei getrennte Prozesse; je 26 ursprüngliche und 26 geänderte Terrainproben | Eigene CityLab-SaveGame-Implementierung; uncooked Standalone |
 | P/R, K/L und automatisches Laden | Beobachteter UI-Test im Persistenzbericht | Kein allgemeines Plugin-Bedienkonzept |
-| Reference-Biom und Dreckstraße | Live-Ansicht und Actor-/Komponentenprüfung | Eigene Biome, dauerhafte Rodung und Road-Creator-Integration offen |
+| Reference-Biom und Dreckstraße | Live-Ansicht und Actor-/Komponentenprüfung | Eigene Baumzustandsverwaltung offen; begrenzte Straßenmaske inzwischen im RoadLab geprüft |
 | Ozean mit Wind und Schaum | [Ozeanbericht](evidence/ocean-report.json), Wind 18 m/s, Schaum aktiv, Rebuild beendet, sichtbare Schaumflächen | Keine Auftriebs-, Dedicated-Server- oder Mehrspielerabnahme |
 | CityBasics-Tunnel und Testbuggy | [CityBasics-Bericht](evidence/citybasics-report.json): zwei eigenständige Spielstarts, je 65/65 Kollisionsproben und rund 259,48 m bodengebundene Durchfahrt | Eigene Fahrbahn-/Tunnelmeshes; CharacterMovement, keine Chaos-Fahrzeugphysik; F-/Mausbedienung manuell offen |
 | Eigene Tunnelkomponente | [Komponentenbericht](evidence/tunnel-component-report.json): Build und zwei native Automationtests zu Profil/Lebenszyklus und echten WaterSubsystem-Abfragen bestanden | NullRHI mit kontrolliertem Wasserprovider; gespeicherte Karte und neues PIE zusätzlich per Eigenschaften geprüft, zusätzlich frischer Spielprozess mit 65/65 Kollisionsproben und rund 259,44 m Fahrt; neuer Sichtnachweis nur ein inspizierter PIE-Frame |
+| RoadLab-Laufzeitstraßen | [RoadLab-Bericht](evidence/runtime-roads-report.json), zwei Prozesse mit je 72/72 Kollisionsproben; zwei Straßen und 16 Meshes identisch wiederhergestellt, Pflanzenursprünge 999 → 0 → 999 → 0 | 3,5-m-Kern und 10–30-m-Referenzbereich; keine Äste-/Überhang- oder GPU-Maskenmessung; R/Enter, Entwurfstasten, Q/E, K/L und PIE-Autoload geprüft; Kamera-/Aliastasten und Cook/Shipping offen |
 | Terrainlöcher | [Lochbericht](evidence/hole-report.json), Demoansicht, Komponenten und Implementierung gelesen | Eigene Bergportale und Tunnelkörper im CityBasics-Bericht geprüft; Verpackung offen |
 | DX12/SM6 | Nanite-Warnung im Basistest behoben | Lumen-Konfiguration in Demoansichten weiterhin offen |
 
@@ -79,9 +83,15 @@ Die [Küsten-/Biomprüfung vom 28. Oktober](evidence/coast-biome-road-inspection
 
 Die neue **CityLab Tunnel (Dry)**-Komponente integriert die native Air Pocket in den Tunnelbaustein. Die bestandenen Tests prüfen auch Größenänderung, Registrierung, Entfernen und transformierte beziehungsweise gespiegelte Ausschlüsse. Der Archive-/PostLoad-Test ist kein Package-Ladetest. Die Laborkarte ist auf die neue Instanz **Tunnel** mit relativer **Z = 600 cm** umgestellt und gespeichert. Nach tatsächlichem Neuladen der Karte und neuem PIE sind die sechs Profilwerte, Extents, Transformation und NoCollision bestätigt; die alte DryTunnel-Box ist entfernt. Ein frischer Spielprozess bestand anschließend nochmals **65/65 Kollisionsproben**, **134/134 Bewegungs-Samples am Boden** und rund **259,44 m** bodengebundene Fahrt. Der Bericht ist für diesen abgegrenzten Umfang **passed_with_limits**. Die frühere Nutzerantwort „Bisher trocken“ bezieht sich auf die vorherige separate Box bei Z = 0. Nach der Migration wurde eine neue native PIE-Aufnahme inspiziert: Der sichtbare Innenraum mit Boden, Wänden und Buggy ist trocken. Dieser eine Frame ersetzt keine Langzeit- oder GPU-Wasserhöhenprüfung.
 
+Die neue Karte **ShaderWorldRoadLab** verwendet eine gemeinsame Terrain-/Mesh-Spline und den normalen Slot **CityLabRoads**. Der [RoadLab-Bericht](evidence/runtime-roads-report.json) ist **passed_with_limits**: Erzeugen/Speichern und Laden in einem anderen Spielprozess bestanden mit **18/18 und 19/19 Checks**. Pro Prozess bestanden 13 Grundterrain-, 23 Straßen-, 13 Rücksetz- und 23 erneute Ladeproben; die Straßenproben unterscheiden native Terrainkollision und SplineMesh-Physik. Größter Fehler: **0,204 cm Terrain**, **0,077 cm Asphalt**, bei 3 cm Toleranz. IDs, Geometrie, Stil, Glättung sowie zwei Actors/16 Meshsegmente stimmten zwischen Prozessen überein.
+
+In beiden Prozessen wurden bei drei gleichen vollständigen Matrix-Fingerprints je Phase **999 → 0 → 999 → 0 Pflanzenursprünge** im 3,5-m-Trassenkern gezählt; **8615** Referenzursprünge in 10–30 m Abstand blieben erhalten. Rücknahme ließ den Bewuchs nachwachsen, Laden räumte die gemessenen Ursprünge wieder frei. Das sind CPU-Instanzdaten, keine GPU-Maskenpixel oder Äste-/Überhangmessungen. Wiederholtes Laden, mehrere abgewiesene Loads und synthetische Format-1-Migration bestanden. Alte echte Spielstände und Cook/Shipping bleiben offen. Die zusätzliche Slate-Bedienprobe bestätigte R/Enter, Backspace, X, Q/E und K/L sowie identische IDs, Splinepunkte/Tangenten und Einstellungen nach normalem PIE-Neustart mit Auto-Load. Die Kamera wurde zwischen Punkten per ActorTools versetzt; WASD, rechte Maustaste, Mausrad und F5/F9 wurden nicht geprüft. Diese PIE-Prüfung ist kein eigener Betriebssystemprozess. Eine unabhängige Format-2-Regression der früheren Bauplatzkarte bestand in zwei frischen Prozessen mit je 26 ursprünglichen und 26 geänderten Terrainproben; sie bestätigt den bestehenden Padpfad nach dem Shader-Gate-Fix.
+
+Zwei frühere RoadLab-Timeouts sind im [Guide](guides/runtime-roads.md) als Diagnose erhalten: `IsTreeFullyBuilt` war kein geeignetes Pflanzen-Fertigsignal; anschließend wartete unser Manager ohne Pad-Instanz unnötig auf einen Pad-Shader. Nach Korrektur des Testgates und dieser eigenen Projektintegration bestand der Zwei-Prozess-Test. Die frühere Baseline ist kein zusätzlicher Persistenznachweis und keine allgemeine ShaderWorld-Fehlerdiagnose.
+
 ## Nächste Abnahmen für den City Builder
 
-1. Dauerhafte Rodungsmaske nach Speichern und Laden; der farbige CityBasics-Aufbau verwendet zunächst Reference-Materialien.
+1. Rodung auf Bauplätzen und Verwaltung einzelner gefällter Bäume; der RoadLab-Neustartnachweis gilt für seine gemessenen Straßenkerne.
 2. Manuelle F-/Mausbedienung des Laufmodus, weitere Fahrzeugprofile und speicherbare Tunnel.
 3. Auftrieb mit einem definierten Physikobjekt und kontrollierten Wellenbedingungen.
 4. NavMesh nach Bauflächen-, Straßen- und Gebäudeänderungen.

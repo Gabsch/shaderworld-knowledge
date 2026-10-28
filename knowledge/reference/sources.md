@@ -13,7 +13,7 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T00:08:51Z"
+  at: "2026-10-28T01:55:41Z"
 sources:
 - id: official
   resource: https://universgen.gitbook.io/shader-world
@@ -84,6 +84,14 @@ Der [Korrekturbericht](../evidence/coast-correction-report.json) ergänzt die an
 ## Wiederverwendbare Tunnelkomponente
 
 Der [Komponentenbericht](../evidence/tunnel-component-report.json) enthält den erfolgreichen nativen Build, zwei bestandene Automationtests und Eigenschaften der neuen **CityLab Tunnel (Dry)**-Komponente im Editor, nach tatsächlichem Kartenladen und im neu gestarteten PIE. Die API-Tests verwenden **NullRHI** und einen kontrollierten Wasserprovider im echten WaterSubsystem. Ihr Archive-/PostLoad-Test ist von der zusätzlichen echten Kartenladung getrennt. Ein frischer Spielprozess bestand danach 65/65 Kollisionsproben und rund 259,44 m bodengebundene Durchfahrt; der Gesamtbericht ist **passed_with_limits**. Die [neue native PIE-Aufnahme](../assets/images/citybasics-dry-tunnel-component.png) zeigt den sichtbaren Innenraum trocken; ein inspizierter Frame ist keine Langzeitabnahme. Herkunft und Hash stehen im [Bildmanifest](../evidence/image-manifest.json). Die frühere Nutzerantwort „Bisher trocken“ betrifft weiterhin die vorherige separate Box.
+
+## Laufzeitstraßen im RoadLab
+
+Der [RoadLab-Bericht](../evidence/runtime-roads-report.json) exportiert zwei erfolgreiche gerenderte uncooked Spielprozesse: je 72 Kollisionsproben, zwei Straßen mit 16 Meshsegmenten, identische logische Datensätze und Pflanzenursprünge im Trassenkern vor Bau, nach Bau/Laden, nach Rücknahme und nach erneutem Laden. Je Phase bleiben drei gleiche vollständige Matrix-Fingerprints erhalten. Die Herkunft der Rohdaten und Grenzen sind im JSON genannt; PIDs, Slot-/Laufkennungen und lokale Pfade wurden weggelassen. Format-1-Kompatibilität betrifft ein synthetisches Fixture, keinen archivierten historischen Spielstand.
+
+Die [erste PIE-Aufnahme](../assets/images/runtime-road-first-pie.png) zeigt eine Beispielstraße; die [Aufnahme des bestandenen Create-Laufs](../assets/images/runtime-road-create-verified.png) zeigt zwei Straßen mit Markierungen. Die zusätzliche [normale PIE-Aufnahme nach Auto-Load](../assets/images/runtime-road-normal-autoload-pie.png) zeigt den durch R/Enter ergänzten und per K gespeicherten Stand nach erneutem Play; der zweite Straßenverlauf weicht deshalb vom nativen Fixture ab. Alle drei Bilder sind unveränderte, inspizierte native Frames vom 28. Oktober 2026. Die Vorbereitungsmeldung im Create-Bild gehört zum Testmodus. Bilder ersetzen keine Dauer-, GPU-Masken- oder Überhangmessung; Herkunft, Bytes und Hashes stehen im [Manifest](../evidence/image-manifest.json).
+
+Der Bericht enthält außerdem die zusätzliche native Slate-Bedienprobe für R/Enter, Entwurfskorrektur, Q/E, K/L und normales PIE-Autoload sowie die frische Format-2-Regression der alten Bauplatzkarte. Kamerabewegung per ActorTools ist von ungeprüften WASD-/Maus-Eingaben getrennt; die PIE-Bedienprobe ist kein eigener Kaltstartprozess.
 
 ## OKF
 

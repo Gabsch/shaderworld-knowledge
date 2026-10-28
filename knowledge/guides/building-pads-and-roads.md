@@ -2,7 +2,7 @@
 type: Playbook
 title: Bauplätze und Straßen verändern
 description: CityLab bedienen und die nativen Dreckwege, eigene Tunnelmeshes sowie
-  die noch ungeprüfte Road-Creator-Pro-Anbindung unterscheiden.
+  den eigenen RoadLab-Prototyp mit RCP-Mesh unterscheiden.
 tags:
 - shaderworld
 - unreal-engine
@@ -12,11 +12,12 @@ engine_version: 5.8.4
 plugin_version: '4.1'
 evidence_scope: Straßenactor im Editor inspiziert; CityLab-Form und Kollision in Editor
   und PIE geprüft. CityBasics-Splineeinstellungen und eigene Cube-Fahrbahn im Einrichtungscode
-  gelesen; Bild und Kollisionsbericht verlinkt. Keine automatische Road-Creator-Pro-Anbindung
-  und keine dauerhafte Rodung praktisch nachgewiesen.
+  gelesen; Bild und Kollisionsbericht verlinkt. Gesonderter RoadLab-Nachweis für eigene
+  RCP-Mesh-/Terraintrasse mit Neustart und begrenzter Pflanzenursprungsprüfung; keine
+  automatische RCP-Editorbuilder-Anbindung.
 generated:
   by: codex/gpt-6
-  at: "2026-10-27T23:19:32Z"
+  at: "2026-10-28T01:57:21Z"
 sources:
 - id: map-inspection
   resource: ../reference/example-maps.md
@@ -35,9 +36,12 @@ sources:
     native SWSplineRoadComponent, Straßenlayer und selbst erzeugte Cube-Fahrbahn;
     Einrichtungscode nicht im öffentlichen Wissensbundle enthalten'
   title: Herkunft der CityBasics-Dreckwege und Tunnelmeshes
+- id: roadlab-proof
+  resource: ../evidence/runtime-roads-report.json
+  title: Eigene gemeinsame Terrain-/RCP-Meshtrasse in getrennten Prozessen geprüft
 - id: rcp-inspection
   resource: ../evidence/coast-biome-road-inspection.json
-  title: Road Creator Pro ist vorhanden; Zusammenspiel weiterhin offen
+  title: Frühere Bestandsprüfung von Road Creator Pro
 ---
 # Bauplätze und Straßen verändern
 
@@ -68,13 +72,13 @@ Der Dreckweg und der Asphalt im Tunnel entstehen auf unterschiedliche Weise. Im 
 
 Diese Herkunft wurde im ursprünglichen Einrichtungscode gelesen. Die Tunnelmarkierungen sind in diesem Aufbau keine Decals; für die feste Fahrbahn wurde weder ein RVT-Straßensystem noch Road Creator Pro verwendet.[^basics-setup] Die Kollisions- und Durchfahrtsprüfung des Tunnels betrifft diese eigenen Meshes. Sie beweist keine Reifenphysik und keine automatische Erzeugung eines Asphaltmeshes durch den ShaderWorld-Spline.[^basics-proof]
 
-Die Spline-Wirkung braucht das passende Terrainmaterial, einen passenden Datenlayer und eine darauf reagierende Biomkonfiguration. Ein **RedGround**-Wert allein macht deshalb nicht jedes beliebige Terrain rot und räumt auch nicht automatisch beliebige selbst platzierte Bäume weg. Dauerhafte Rodung nach Speichern und Laden bleibt ein eigener Test.
+Die Spline-Wirkung braucht das passende Terrainmaterial, einen passenden Datenlayer und eine darauf reagierende Biomkonfiguration. Ein **RedGround**-Wert allein macht deshalb nicht jedes beliebige Terrain rot und räumt auch nicht automatisch beliebige selbst platzierte Bäume weg. Der getrennte [RoadLab-Nachweis](runtime-roads.md) bestätigt inzwischen den Wiederaufbau einer solchen Straßenmaske für gemessene Instanzursprünge nach Neustart; er gilt nicht für alle Pflanzen oder beliebige Rodungen.
 
 ### Und Road Creator Pro?
 
-Road Creator Pro ist im Projekt installiert; eine ältere Teststraße liegt in der flachen Testkarte. **Eine automatische Geländeanpassung zwischen Road Creator Pro und ShaderWorld wurde bisher nicht nachgewiesen.** Die aktuellen CityBasics-Dreckzufahrten kommen aus ShaderWorld, die Tunnelplatte aus unseren Cube-Meshes.[^rcp-inspection][^basics-setup]
+Bei der früheren Bestandsprüfung waren Road Creator Pro und eine ältere Teststraße in der flachen Testkarte vorhanden. **Ob der native RCP-Editorbuilder selbst ShaderWorld-Terrain anpasst, wurde dabei nicht geprüft.** Die CityBasics-Dreckzufahrten kommen aus ShaderWorld, die Tunnelplatte aus unseren Cube-Meshes. Die anschließend geprüfte eigene Laufzeitintegration ist im nächsten Absatz beschrieben.[^rcp-inspection][^basics-setup]
 
-Für eine spätere Straßenfunktion wäre eine gemeinsame Trasse denkbar: Dieselben Kontrollpunkte steuern einmal die ShaderWorld-Formung samt Boden-/Biomlayer und einmal das Straßenmesh aus Road Creator Pro. Das ist ein **Architekturvorschlag**, keine vorhandene oder getestete Integration. Zuerst müssten Weltpositionen, Höhen, Breiten, Kurvenverlauf, Kollision und Neuberechnung nach einer Laufzeitänderung an einer kurzen Beispielstraße gemeinsam geprüft werden.
+Diesen gemeinsamen Trassenansatz setzt jetzt der eigene [RoadLab-Prototyp](runtime-roads.md) um: ShaderWorld formt Terrain/Biomkorridor, unser Projektcode erzeugt **USplineMeshComponent**-Segmente aus einer CPU-lesbaren RCP-Meshkopie. Zwei getrennte Prozesse bestätigten Wiederaufbau, Kollision und Pflanzenursprünge im gemessenen Kern. Das ist unsere Projektintegration; der RCP-Editorbuilder wird dabei nicht zur Laufzeit ausgeführt.[^roadlab-proof]
 
 ## Das vorbereitete CityLab verstehen
 
@@ -116,11 +120,12 @@ P/R/Q/E sind eigene CityLab-Bindings.[^persistence-proof] Das Plugin bringt dies
 
 Der [CityLab-Bericht](../evidence/citylab-report.json) prüft je 14 Kollisionsproben in sechs Phasen: Editor, PIE, Straße verschoben, Bauplatz verschoben, Rücksetzung und erneut geladene Karte. Die größte gemessene Abweichung lag bei rund 0,82 cm bei 3 cm Toleranz. Die [Persistenzprüfung](../evidence/persistence-report.json) ergänzt später den Test über getrennte Spielprozesse.
 
-Navigation, Verkehr, dauerhafte Vegetationsänderungen und die oben beschriebene gemeinsame Trasse mit Road Creator Pro bleiben weitere Schritte. Das eigene [CityBasics-Labor](city-basics-lab.md) ergänzt inzwischen eine feste Asphaltfahrbahn im Tunnel und prüft deren Kollision; das ist kein automatisch von der nativen SplineRoad erzeugtes Straßenmesh.
+Navigation, Verkehr, Baumzustände und allgemeine Rodung bleiben weitere Schritte. Die gemeinsame Terrain-/RCP-Meshtrasse hat inzwischen ihren eigenen [RoadLab-Prüfbericht](../evidence/runtime-roads-report.json). Das eigene [CityBasics-Labor](city-basics-lab.md) ergänzt inzwischen eine feste Asphaltfahrbahn im Tunnel und prüft deren Kollision; das ist kein automatisch von der nativen SplineRoad erzeugtes Straßenmesh.
 
 [^map-inspection]: [Einordnung der inspizierten Beispielwelten](../reference/example-maps.md).
 [^citylab-proof]: [Bereinigter CityLab-Prüfbericht](../evidence/citylab-report.json).
 [^persistence-proof]: [Persistenz- und UI-Nachweis](../evidence/persistence-report.json).
 [^basics-proof]: [CityBasics-Bericht: Kollisionsproben und tatsächliche Durchfahrten auf der eigenen Tunnel-Fahrbahn](../evidence/citybasics-report.json).
 [^basics-setup]: Projektlokales `Tools/setup_basics.py` im ursprünglichen UnrealMcpTest, am 28. Oktober 2026 gelesen. Die Einrichtung verwendet native ShaderWorld-SplineRoads und eigene Meshes aus `/Engine/BasicShapes/Cube`; das Skript und die Unreal-Assets werden hier nicht mitgeliefert.
-[^rcp-inspection]: [Bereinigte Küsten-/Straßeninspektion vom 28. Oktober 2026](../evidence/coast-biome-road-inspection.json): Road Creator Pro und eine ältere Teststraße sind vorhanden. Ein erfolgreicher automatischer Integrationsversuch mit ShaderWorld liegt nicht vor.
+[^rcp-inspection]: [Frühere Küsten-/Straßeninspektion vom 28. Oktober 2026](../evidence/coast-biome-road-inspection.json), vor dem eigenen RoadLab-Versuch: vorhandenes RCP und ältere Teststraße festgestellt; eine ShaderWorld-Terrainanpassung durch den nativen RCP-Editorbuilder wurde nicht geprüft. Den späteren Nachweis unserer eigenen Runtime-Hybridintegration enthält der separate RoadLab-Bericht.
+[^roadlab-proof]: [RoadLab-Bericht](../evidence/runtime-roads-report.json): eigene SplineMesh-Integration mit lizenziertem RCP-Mesh; zwei Prozesse, Terrain-/Oberflächenkollision und begrenzte Pflanzenursprungsmessung bestanden.

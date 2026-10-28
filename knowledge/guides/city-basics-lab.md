@@ -6,7 +6,7 @@ tags: [shaderworld, citybuilder, terrain, biome, brushes, tunnels, collision]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: stable
-generated: { by: codex/gpt-6, at: "2026-10-28T00:08:51Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T01:55:41Z" }
 evidence_scope:
   implementation: CityBasics-Karte aufgebaut; CharacterMovement-Testbuggy und Fußmodus implementiert und kompiliert; installierte Brush- und Kollisionsimplementierung gelesen
   practical_status: Editoransicht gemeinsam angesehen; zwei frische eigenständige Spielprozesse bestanden jeweils 65 Kollisionsproben und eine bodengebundene Durchfahrt;
@@ -57,6 +57,8 @@ Nach der Korrektur der Zufahrts-Längentabellen bestand die gespeicherte Endfass
 Du benötigst das ursprüngliche, lauffähig kompilierte Projekt **UnrealMcpTest**, Unreal Engine **5.8.4**, ShaderWorld **4.1** und die vorbereiteten CityBasics-Projektassets. Das öffentliche Wissens-Repository enthält diese Karte, die Materialien und den nativen Testbuggy nicht. Die Anleitung ist daher ein Laborprotokoll zum ursprünglichen Projekt und kein mitgeliefertes ShaderWorld-Komplettbeispiel.
 
 Für die Material- und Biomgrundlage wird eine Projektkopie der **Reference**-Welt verwendet. Deren Material Collection und **SW_GreenBiom** bleiben die Ausgangsbasis. Eigene Generator- und Brush-Materialien liegen im Projekt unter `/Game/ShaderWorldCityBasics`. Die Plugin-Originale bleiben die Vorlage. Die [Beispielwelten](../reference/example-maps.md) und das [Quellenverzeichnis](../reference/sources.md) erklären ihre Herkunft.[^sources-index]
+
+Die getrennte [RoadLab-Karte](runtime-roads.md) ermöglicht inzwischen das Zeichnen und Speichern sichtbarer Straßen. Sie übernimmt Insel, Wald und Ozean, enthält aber die CityBasics-Demobauten nicht; dort gelten eigene Kamera- und Straßenbau-Tasten. Erzeugen/Laden über zwei Prozesse, Kollision und begrenzte Pflanzenursprungsprüfung sind bestanden; R/Enter, Entwurfskorrektur, Q/E, K/L und normales PIE-Autoload sind zusätzlich geprüft, Kamerasteuerung und F5/F9 offen. Diese Straßenprüfung ersetzt weder die Tunnelkarte noch ihre Fahrtests.
 
 ## Die vorbereitete Karte öffnen
 

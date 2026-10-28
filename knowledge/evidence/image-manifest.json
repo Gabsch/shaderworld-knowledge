@@ -80,6 +80,30 @@
       "modified": false,
       "bytes": 770013,
       "sha256": "e07d75466492a1f123e5cecf5cbb2e2662617e3e458c10778edc155a0c28523a"
+    },
+    {
+      "file": "assets/images/runtime-road-first-pie.png",
+      "origin": "Native Unreal PIE capture from own RoadLab project; one runtime example road, inspected frame only, no input-flow or endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1286296,
+      "sha256": "315762fa5a7f7d0107710f3f2d058f37c70a71bc87a7b4b1ba4a25b2eb9655ef"
+    },
+    {
+      "file": "assets/images/runtime-road-create-verified.png",
+      "origin": "Native rendered uncooked RoadLab create-test capture from own project; two runtime asphalt roads inspected, one frame only; preparation HUD text belongs to automated test mode",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2053256,
+      "sha256": "05d65cf85b92aed513f5930d6e009e5db71320b0af3a869eaaffec07d864a686"
+    },
+    {
+      "file": "assets/images/runtime-road-normal-autoload-pie.png",
+      "origin": "Native Unreal CaptureEditorImage from normal RoadLab PIE after tested Slate-key road construction, save and PIE restart/auto-load; one inspected frame with restored-road status, no endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1469774,
+      "sha256": "b4b15ebdc36438f7362d268d0ff851ae6e07e5fd20c88aa020f6bc8ca64d7caa"
     }
   ]
 }
