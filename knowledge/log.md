@@ -2,6 +2,8 @@
 
 ## 2026-10-29
 
+- [Fahrzeug-Assetversuch](guides/vehicle-asset-evaluation.md) abgeschlossen: drei eigene Skeletal-Mesh-Importe, getrennte Zentimeterkorrektur von Meshes und Clips, Source-Posevergleich mit Faktor 100 und 0 cm Umrechnungsfehler, frisches Karten-/Assetladen, 80/42/9 bewegte Bones in eingefrorenen Editorposen und tatsächliches SIE-Ticken. Native Übersicht vom Agenten geprüft, SIE sauber beendet, 18 vorhandene Saves byteidentisch. Nur LOD0, starre Demorigs, Materialannäherungen und fehlende PhysicsAssets/Gameplay-/Cook-/Leistungsabnahme dokumentiert. ElectroNick-Lkw wegen fehlender Texturen und ungeklärter Herkunft nur lokaler Technikversuch; keine Modelle oder Screenshots verteilt. Negative Versuche (Einheiten, Mesh-Reimport ohne Clip-Reimport, Interchange-Namen und fehlende synchrone Poseauswertung) erhalten.
+
 - Beschlossenen [Scaping-/Maschinenarbeitsplan](reference/scaping-machine-work-plan.md) festgehalten: nach Fahrzeug-Import und ausdrücklicher Projektfreigabe zuerst Anheben/Absenken, parallel Untergrundansicht; danach gemischtes Ebnen, Rodung/Oberflächenarbeit und Straßen/Grundstücke. Ausgangsraster, Planrevisionen, gemeinsame Konten, Abbruchregeln und Neustart-/Bedienabnahmen definiert. Keine Implementierung in dieser Dokuaufgabe.
 - [Datenlayer und dauerhaften Spielstand](reference/shaderworld-data-and-persistence.md) abgegrenzt; [bereinigter Quellbefund](evidence/shaderworld-storage-source-audit.json) dokumentiert native Layer, transiente Exporte und unvollständige Speicher-/Schreibfunktionen der installierten 4.1-Version. Herstellerangaben, Quellbeobachtung und geplante Tests getrennt.
 

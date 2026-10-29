@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T00:02:31Z"
+  at: "2026-10-29T01:16:18Z"
 sources:
+- id: vehicle-evaluation
+  resource: evidence/vehicle-asset-evaluation.json
+  title: Gespeicherte Fahrzeugassets, getrennte Zentimeterkorrektur der Meshes/Clips, gerenderte Posen und SIE-Ticken
 - id: storage-source-audit
   resource: evidence/shaderworld-storage-source-audit.json
   title: Lesende 4.1-Quellprüfung von Layern, Cache und unvollständiger Storageklasse; kein Laufzeittest
@@ -94,6 +97,12 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## Fahrzeugassets: lokaler Importversuch, 29. Oktober 2026
+
+Die eigene Karte `/Game/Maps/VehicleEvaluationLab` enthält Liebherr 956, Wheel Loader und ElectroNick Dump Truck. Mesh- und Animationsdaten wurden getrennt mit korrekten Zentimetereinheiten importiert. Direkte Source-Posen bestätigen Faktor 100 ohne gemessenen Umrechnungsfehler; nach frischem Karten-/Assetladen zeigen eingefrorene Editorposen 80/42/9 bewegte Bones. Eine native gerenderte Übersicht wurde vom Agenten visuell geprüft. Echter SIE-Lauf mit fortschreitender Weltzeit und Clipzeit, danach sauber beendet; 18 bestehende Spielstände byteidentisch.
+
+Dies sind neue Demonstrationsrigs und -clips, keine mitgelieferten Originalanimationen. Alle Meshes besitzen nur LOD0; Liebherr/Radlader brauchen vereinfachte Skelette, Geometrie und Materialien. Keine PhysicsAssets oder geprüfte Fahrzeug-/Schaufelkollision, keine Chaos-/Terrainintegration, Cook- oder Leistungsabnahme. Beim Lkw fehlen Texturen; ungeklärte Herkunft begrenzt ihn auf den isolierten lokalen Technikversuch. Der kurze SIE-Startausschnitt erfasst die später beginnende Muldenbewegung nicht; sie ist separat über eingefrorene Posen und die gekippte gerenderte Stellung belegt. [Anleitung](guides/vehicle-asset-evaluation.md), [bereinigter Prüfbericht](evidence/vehicle-asset-evaluation.json).
 
 ## Neuer Stand: Baustellenplaner und parallele Grundlagen, 29. Oktober 2026
 

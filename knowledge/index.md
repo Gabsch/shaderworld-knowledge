@@ -14,6 +14,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Kostenlose Fahrzeugassets prüfen](guides/vehicle-asset-evaluation.md) – Liebherr, Radlader und Lkw mit neuen Democlips; gespeicherter Import, Einheiten, gerenderte Posen und SIE geprüft, Produktionsgrenzen offen.
 - [Baustellen selbst planen](guides/construction-planner.md) – Grube/Aufschuettung mit Formvorschau, Mengen, ausdruecklichem Arbeitsstart und je vier gerenderten Neustartprozessen uncooked/cooked.
 - [Rodungscache und Messgrenzen](guides/clearing-cache-and-performance.md) – weniger visuelle Instanzscans, stabile Baumkennungen und getrennte native/CityLab-Wiederherstellung.
 - [Unterirdische Hybridkammer](guides/underground-hybrid-probe.md) – eigener Hohlraum unter unveraenderter Oberflaeche; getrennte Kollisions-/Neustartabnahme, kein freies 3D-Graben.
