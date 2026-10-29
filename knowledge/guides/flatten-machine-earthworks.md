@@ -6,10 +6,10 @@ tags: [shaderworld, city-builder, earthworks, flatten, persistence]
 status: stable
 engine_version: 5.8.4
 plugin_version: '4.1'
-evidence_scope: "Begrenztes EarthworksLab: 52 native Tests; vollständige Uncooked-/frische Development-Cooked-Läufe je 12/12 + 16/16; normale Controller-API 15/15; sichtbare gekochte Demo mit 12/12 nativen + 9/9 externen Checks und agentengeprüften Slate-Pixeln. 50-cm-Kollision. Keine physischen Eingaben oder menschliche Abnahme."
+evidence_scope: "Begrenztes EarthworksLab: 52 native Tests; vollständige Uncooked-/frische Development-Cooked-Läufe je 12/12 + 16/16; normale Controller-API 15/15; sichtbare gekochte Demo mit 12/12 nativen + 9/9 externen Checks und agentengeprüften Slate-Pixeln. 50-cm-Kollision. Zusätzliche eng begrenzte Agentenprobe über Anheben-Schaltflächen; keine vollständige Tastatur-/Mausabnahme oder menschliche Prüfung."
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T11:18:40Z"
+  at: "2026-10-29T11:43:11Z"
 verified:
   by: codex/gpt-6
   at: "2026-10-29T11:00:12Z"
@@ -33,6 +33,9 @@ sources:
 - id: flatten-images
   resource: ../evidence/image-manifest.json
   title: Vier unveränderte Uncooked-Terrainbilder und tatsächliche sichtbare Demo mit Slate-Leiste
+- id: agent-button-demo
+  resource: "Aufgabenprotokoll vom 29. Oktober 2026: autorisierte Agentenbedienung sichtbarer Schaltflächen im normalen verpackten Spiel; ergänzender Quellbefund CityLabEarthworksGameMode.cpp:136,190 zu CancelPreview/PointerReleased. Privater Rohbericht und Computer-Use-Bilder nicht im Bundle enthalten"
+  title: Eng begrenzter Anheben-Schaltflächenlauf und Werkzeugwahl nach verworfener Vorschau
 - id: first-slice
   resource: machine-earthworks.md
   title: Bereits getrennt geprüftes Anheben und Absenken
@@ -43,13 +46,13 @@ sources:
 
 # Unebenen Boden durch Maschinen ebnen
 
-**Ebnen** ergänzt das eigene Erdarbeitslabor um eine feste, absolute Zielhöhe. Ein Buckel liefert Aushub, eine Mulde benötigt Einbaumaterial. Beide Mengen gehören zum selben gespeicherten Auftrag und werden getrennt angezeigt. **52 native Tests und der vollständige gerenderte Uncooked-Neustartlauf sind bestanden:** 12/12 Createchecks und 16/16 Resumechecks. Zwei frühere gerenderte Versuche scheiterten am unveränderten Höhengate; ihre Ursachen und Korrekturen bleiben unten dokumentiert. Die erfolgreiche Laborfassung verwendet das eigene Material v2 und exakt 50 cm Kollisionsabstand. Zusätzlich bestand die normale Controller-API 15/15 Checks. Auch der frisch verpackte Development-Lauf bestand vollständig 12/12 + 16/16. Auch die getrennte sichtbare Demo ist mit 12/12 nativen und 9/9 externen Checks samt agentengeprüfter Slate-Aufnahme bestanden. Physische Eingaben und eine menschliche Abnahme werden nicht behauptet. [Bereinigter Bericht](../evidence/flatten-machine-earthworks-test.json). Die vorhandenen Erfolge für [Anheben und Absenken](machine-earthworks.md) gehören zu dessen eigener Fassung.
+**Ebnen** ergänzt das eigene Erdarbeitslabor um eine feste, absolute Zielhöhe. Ein Buckel liefert Aushub, eine Mulde benötigt Einbaumaterial. Beide Mengen gehören zum selben gespeicherten Auftrag und werden getrennt angezeigt. **52 native Tests und der vollständige gerenderte Uncooked-Neustartlauf sind bestanden:** 12/12 Createchecks und 16/16 Resumechecks. Zwei frühere gerenderte Versuche scheiterten am unveränderten Höhengate; ihre Ursachen und Korrekturen bleiben unten dokumentiert. Die erfolgreiche Laborfassung verwendet das eigene Material v2 und exakt 50 cm Kollisionsabstand. Zusätzlich bestand die normale Controller-API 15/15 Checks. Auch der frisch verpackte Development-Lauf bestand vollständig 12/12 + 16/16. Auch die getrennte sichtbare Demo ist mit 12/12 nativen und 9/9 externen Checks samt agentengeprüfter Slate-Aufnahme bestanden. Eine vollständige Tastatur-/Mausabnahme oder menschliche Prüfung wird nicht behauptet; die zusätzliche gezielte Schaltflächenprobe ist unten getrennt beschrieben. [Bereinigter Bericht](../evidence/flatten-machine-earthworks-test.json). Die vorhandenen Erfolge für [Anheben und Absenken](machine-earthworks.md) gehören zu dessen eigener Fassung.
 
 ## Voraussetzungen und Bedienfolge
 
 Benötigt werden Unreal **5.8.4**, ShaderWorld **4.1**, die neu gebaute CityLab-Fassung und das zugehörige eigene Ebnenmaterial. Die Karte ist **/Game/Maps/ShaderWorldEarthworksLab**, der normale Spielstand bleibt **CityLabEarthworks**. Vor einem Versuch den vorhandenen Stand erhalten. Automatisierte Prüfungen benutzen eigene isolierte Slots.
 
-Die folgende Bedienfolge beschreibt den Codevertrag. Normale Controller-APIs für Zielvorschau, Bestätigung und Laden sind in PIE geprüft; das tatsächliche Slate-Bild ist in der normalen sichtbaren Demo geprüft. Physische Maus- und Tasteneingaben sind nicht abgenommen.
+Die folgende Bedienfolge beschreibt den Codevertrag. Normale Controller-APIs für Zielvorschau, Bestätigung und Laden sind in PIE geprüft; das tatsächliche Slate-Bild ist in der normalen sichtbaren Demo geprüft. Eine vollständige Maus-/Tastaturabnahme liegt nicht vor; die gezielte Schaltflächenprobe ist unten gesondert beschrieben.
 
 1. Die Karte öffnen, **Play** starten und auf verfügbaren Boden sowie Kollision warten. **Ebnen auf absolute Hoehe [6]** wählen; dadurch kehrt die Ansicht zur Oberfläche zurück.
 2. Die Maus über ein freies, begrenztes Arbeitsfeld bewegen. Anfangs folgt die Zielhöhe dem örtlichen Boden. **Linksklick** fixiert Ort und Höhe.
@@ -166,7 +169,10 @@ Auch bei 50 cm bleibt der Nachweis begrenzt: Die 50-cm-Kernproben liegen dann au
 > Für vorhandene Arbeit den gewünschten **Queued**-Eintrag auswählen, zuerst **Arbeit starten / Pause**, danach **Transport an / aus** direkt anklicken.
 > Über der linken Leiste sperrt der Quellcode **Space/H/Tab**. Dort die direkten Schaltflächen verwenden oder den Zeiger vor Hotkeys aus der Leiste bewegen.
 > Ein Anhebeauftrag benötigt beim Start seine vollständige Einbaumasse als echten Bestand. Beispiel: **1 × 1 Zelle, +0,5 m = 14,4 t im Modell**; geplanter Aushub ist keine automatische Gutschrift.
-> Nachweis: Quellbefund (`KeysAllowed`/`PointerBlocked`/`CanProcessWorldInput`) und ergänzende rein lesende UI-Sichtprüfung; keine getesteten physischen Eingaben, kein Bugfix und keine neue menschliche Abnahme.
+> Nach **Vorschau verwerfen** den Werkzeugknopf erneut wählen, bevor du in die Welt klickst. Alte Vorschau-/Fehlermeldungen können stehen bleiben, obwohl das Werkzeug deaktiviert ist.
+> Nachweis: Quellbefund (`KeysAllowed`/`PointerBlocked`/`CanProcessWorldInput`, `CancelPreview`/`PointerReleased`) und ergänzende Agentenbeobachtung; kein Bugfix oder menschliche Abnahme.
+
+Eine zusätzliche autorisierte Agentenprobe über sichtbare Schaltflächen im normalen verpackten Spiel bestätigte den kleinen Ablauf **Anheben, 1 × 1 Zelle, +0,50 m**: Auf gültigem freiem Feld erzeugte Bestätigen einen ungearbeiteten Auftrag mit **14,4 t Rest**. Arbeit aktivierte ihn und reservierte **14,4 t**; danach wurde Transport eingeschaltet. Die Anzeige erreichte **Completed / 0,0 t Rest**; Einbau stieg **40,4 → 54,8 t**, Lager sank **20,8 → 6,4 t** (gerundete UI-Werte), Materialbilanz blieb **0 g**, Puffer und Lkw waren leer. Der Speicherknopf wurde betätigt. Der ursprüngliche Ebnenauftrag war schon beim Einstieg fertig; seine Bedienfolge wurde in dieser Probe nicht geprüft. Dies belegt nur den beobachteten Schaltflächenlauf, keine unabhängige Höhen-/Volumenmessung, Neuladeprobe oder menschliche Abnahme.[^agent-button-demo]
 
 | Meldung oder Verhalten | Vorgehen |
 | --- | --- |
@@ -233,9 +239,11 @@ Die drei zusätzlichen 933 × 452-PNGs dieses API-Laufs enthalten nur den Spielt
 
 ![Fertiggestelltes Terrain nach kaltem Neustart](../assets/images/flatten-completed.png)
 
-Die Anleitung ist für diesen begrenzten Laborvertrag **stable**: Mengenmodell, Uncooked-/Development-Cooked-Neustarts, normale Controller-API und sichtbare Demo mit Slate-Leiste sind durch getrennte Belege gedeckt. Physische Maus-/Tasteneingaben und menschliche Prüfung sind nicht erfolgt. Keine allgemeine Bodenarten-, Verdichtungs-, Grundwasser-, Großwelt-, Leistungs- oder Schaufelphysikabnahme ableiten.
+Die Anleitung ist für diesen begrenzten Laborvertrag **stable**: Mengenmodell, Uncooked-/Development-Cooked-Neustarts, normale Controller-API und sichtbare Demo mit Slate-Leiste sind durch getrennte Belege gedeckt. Eine vollständige Maus-/Tastaturabnahme und menschliche Prüfung sind nicht erfolgt; die zusätzliche Agentenprobe belegt ausschließlich den beschriebenen Schaltflächenlauf. Keine allgemeine Bodenarten-, Verdichtungs-, Grundwasser-, Großwelt-, Leistungs- oder Schaufelphysikabnahme ableiten.
 
 [^flatten-model]: Eigener Mengenmodell- und Testcode gemäß Quellenbeschreibung, unabhängig lesend geprüft. Ausgeführte erste Gesamtsuite und Grenzen stehen im [bereinigten Bericht](../evidence/flatten-machine-earthworks-test.json).
-[^flatten-runtime]: Eigene Runtime- und Verifierquellen gemäß Quellenbeschreibung; der vollständige Uncooked-Lauf ist bestanden; normale Controller-APIs sind separat 15/15 geprüft; Uncooked, frisches Development-Cooked und sichtbare Demo mit Slate-Pixeln sind bestanden; physische Eingaben und menschliche Prüfung sind nicht erfolgt.
+[^flatten-runtime]: Eigene Runtime- und Verifierquellen gemäß Quellenbeschreibung; der vollständige Uncooked-Lauf ist bestanden; normale Controller-APIs sind separat 15/15 geprüft; Uncooked, frisches Development-Cooked und sichtbare Demo mit Slate-Pixeln sind bestanden; eine vollständige Eingabeabnahme und menschliche Prüfung sind nicht erfolgt; die kleine zusätzliche Agentenprobe ist separat beschrieben.
 [^vector-parameter-source]: Separat lizenzierter lokaler 4.1-Code gemäß Quellenbeschreibung, nur lesend geprüft; keine Pluginänderung.
 [^collision-spacing-source]: Separat lizenzierter lokaler 4.1-Code gemäß Quellenbeschreibung; Abstand und physische Rasterprojektion sind Quellbefunde. Die begrenzte 50-cm-Korrektur bestand die vollständige Uncooked-Neustartabnahme.
+
+[^agent-button-demo]: Gezielte autorisierte Agentenbeobachtung gemäß Quellenbeschreibung. Nur sichtbare UI-Werte und Buttonfolge; keine neue breite Abnahme, keine unabhängige Vermessung und keine veröffentlichten Screenshots.
