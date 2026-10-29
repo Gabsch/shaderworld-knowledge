@@ -6,9 +6,12 @@ status: draft
 tags: [shaderworld, citylab, city-builder, roadmap]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T19:29:12Z" }
+generated: { by: codex/gpt-6, at: "2026-10-29T00:02:31Z" }
 evidence_scope: Neue Baustellen-/Navigationssuite mit 22 nativen Tests bestanden; gerenderte Navigation 11/11; Baugrubenabschluss in zwei cooked Prozessen mit 14/14 und 15/15 Checks bestanden; normale PIE-Schaltflächen, voller Puffer, Stop/Play-Restore und Save-Abweisung mit Autosave-Schutz begrenzt geprüft; isolierter cooked Rodungsbenchmark mit acht CPU-Messfenstern bestanden, keine GPU-/FPS-Leistungszusage. Aktuelle Black-/Zero-Flow-Fassung uncooked und cooked mit je 29/29 und 12/12 Checks geprüft; normale kompilierte PIE-Paintbedienung mit Speichern/Laden und geschütztem Grundstück sichtbar geprüft. Keine separate verpackte Foundations-Pixelabnahme, vollständige Tastatur-/Fokusabnahme oder Cook-Abnahme anderer Karten.
 sources:
+  - id: scaping-next
+    resource: scaping-machine-work-plan.md
+    title: Nutzerbeschlossener nächster Slice nach Importabschluss und Projektfreigabe
   - id: fill-cycle
     resource: ../guides/closed-material-cycle.md
     title: Geschlossener Materialkreislauf und neuer Prüfstand mit 29 nativen Tests
@@ -52,6 +55,8 @@ sources:
 # Nächste City-Builder-Bausteine
 
 ## Aktueller Slice und verbindlicher Folgeschritt, 29. Oktober 2026
+
+**Nächster Startpunkt beschlossen:** nach abgeschlossenem Fahrzeug-Asset-Import und ausdrücklicher Projektfreigabe Anheben/Absenken als Maschinenaufträge beginnen, parallel eine Untergrundansicht. Der [verbindliche Arbeitsplan](scaping-machine-work-plan.md) beschreibt gemeinsame Zustände, Mengen, Revisionen, Reihenfolge und Abnahmekriterien. Die [Layer-/Speicherprüfung](shaderworld-data-and-persistence.md) ist ein reiner Quellbefund; sie ersetzt keine Persistenzabnahme. Während des Imports ist ausschließlich die abgestimmte OKF-Dokuarbeit freigegeben.
 
 Der [Baustellenplaner](../guides/construction-planner.md) setzt Grube und Aufschuettung mit Vorschau und Speicherung; je vier uncooked/cooked Prozesse pruefen ungearbeitete Plaene und laufende beladene Transporte. Die native Suite besteht aktuell aus 36 erfolgreichen Tests. Rodungscache und der getrennte [Untergrundversuch](../guides/underground-hybrid-probe.md) werden mit eigenen Nachweisen dokumentiert.
 

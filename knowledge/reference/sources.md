@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: 2026-10-28T17:13:23Z
+  at: "2026-10-29T00:02:31Z"
 sources:
+- id: storage-source-audit
+  resource: ../evidence/shaderworld-storage-source-audit.json
+  title: Speicher-/Datenlayer-Quellbefund mit Herstellerlinks, ohne Laufzeitbehauptung
 - id: foundations
   resource: ../evidence/foundations-report.json
   title: Bereinigte Foundations-Abnahme und getrennte Setup-, Automation- und Sichtbelege
@@ -34,6 +37,7 @@ sources:
 
 ## Aktuelle eigene Planer-, Rodungs- und Untergrundnachweise
 
+- [Speicher-/Datenlayerprüfung](../evidence/shaderworld-storage-source-audit.json): lesender Befund der installierten 4.1-Symbole. Vom [beschlossenen Umsetzungsplan](scaping-machine-work-plan.md) und bestehenden Laufzeitnachweisen getrennt; keine neue Persistenzabnahme.
 - [Baustellenplaner](../evidence/construction-planner-test.json): 36 native Tests, je vier neue uncooked/cooked Neustarts, normale Controller-Speicherprobe; Eingabe- und Karten-Cookgrenzen getrennt.
 - [Rodungscache](../evidence/clearing-cache-test.json): Quellen-/Snapshotvertrag, nativer Rotationsverlust versus eigener Ledgerrestore und acht isolierte cooked CPU-Messfenster mit historischem Vergleich.
 - [Untergrund-Hybrid](../evidence/underground-hybrid-test.json): eigene Huelle, unveraenderte Oberflaeche, Kollision, Profil-Neustart und getrennte Sichtbelege. Keine Behauptung frei grabbarer 3D-ShaderWorld-Geologie.

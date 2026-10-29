@@ -33,6 +33,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Nachschlagen
 
+- [Scaping als Maschinenaufträge: nächster Umsetzungsplan](reference/scaping-machine-work-plan.md) – nach Asset-Import/Freigabe Anheben und Absenken, parallel Untergrundansicht; Mengen, Speicherung und Abnahmen.
+- [ShaderWorld-Datenlayer und Spielstand](reference/shaderworld-data-and-persistence.md) – räumliche Terrain-Daten, Mapassets und dauerhafte Zustände unterscheiden; Quellbefund zu unvollständigen Speicherfunktionen in 4.1.
 - [Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) – gesetzte Designregeln, geprüfter kleiner Baugrubenkreislauf und Vorschläge für weitere Maschinen-/Materialarbeit.
 - [Nächste City-Builder-Bausteine](reference/city-builder-roadmap.md) – erhaltene Themen, Baufortschritt statt freiem Terraforming und offene Abnahmen.
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.

@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-28T21:08:00Z"
+  at: "2026-10-29T00:02:31Z"
 sources:
+- id: storage-source-audit
+  resource: evidence/shaderworld-storage-source-audit.json
+  title: Lesende 4.1-Quellprüfung von Layern, Cache und unvollständiger Storageklasse; kein Laufzeittest
 - id: planner-current
   resource: evidence/construction-planner-test.json
   title: 36 native Tests und je vier gerenderte Planer-Neustarts uncooked/cooked
@@ -98,6 +101,8 @@ sources:
 - **Planer:** je vier frische gerenderte uncooked/cooked Prozesse. Ungearbeitete Einzelgrube und Paar, dann beladener Lager-Lkw mit Teilaufschuettung exakt gespeichert und fortgesetzt. Abschluss **86,4 t Einbau / 0 g Bilanzfehler**, drei zusaetzliche Loads, lokale volle Probensets mit 5-cm-Gate. Maximaler passender Messfehler rund 3,002 cm. Normales PlannerLab ueber Controller-APIs bestaetigt/gespeichert/dreimal geladen; 16 andere Slots unveraendert. Native Slate-Vorschau visuell geprueft; Klick-/Tastensimulation ohne nachgewiesene Bestaetigung, deshalb **physische Eingabeabnahme offen**. Neue Karte im Editor gespeichert; kein eigener neuer Karten-Cook behauptet. [Planerbericht](evidence/construction-planner-test.json), [Anleitung](guides/construction-planner.md).
 - **Rodungscache:** eigener visueller Cache implementiert, kein Pluginpatch. Neues isoliertes cooked Messfensterpaket mit 0/1/10/100 Records: positiver Nachlaufmittelwert 0,816–1,251ms statt historisch 19,85–22,06 ms, Ray 0,315–0,548 ms statt 20,43–21,02 ms. Pro positivem Nachlauf 1 visueller Cachehit / 0 Rebuilds / 2.116 rohe Kollisionsslots. Kontrollen und vollstaendige CPU-Wiederherstellung bestanden; keine FPS-/GPU-/Grossweltgarantie. Native Plugin-Restore-Rotation geht verloren; der eigene Ledgerrestore erhaelt den Originaltransform. [Cachebericht](evidence/clearing-cache-test.json), [Anleitung](guides/clearing-cache-and-performance.md).
 - **Untergrund-Hybrid:** zwei saubere native Tests und zwei neue cooked Prozesse mit 13/13 + 14/14 Checks. Neun Oberflaechenproben bleiben unveraendert, sechs Huellekollisionen und 13-m-Kapselweg geprueft, Profil identisch wiederhergestellt. Create-Oberflaeche/Innenraum visuell geprueft. Keine Portale, frei ausgrabbare Voxel oder hydrologische Simulation ableiten. [Hybridbericht](evidence/underground-hybrid-test.json), [Anleitung](guides/underground-hybrid-probe.md).
+
+**Neue reine Quellprüfung:** [ShaderWorld-Speicherbefund](evidence/shaderworld-storage-source-audit.json) trennt räumliche GPU-Layer, transiente Region-/Cacheexports, Editor-Assetimport und nicht implementierte Storage-/Cache-Schreibpfade. Kein neuer Laufzeit- oder Speichertest. Der [beschlossene nächste Arbeitsplan](reference/scaping-machine-work-plan.md) beginnt nach Importabschluss/Freigabe mit Anheben/Absenken und paralleler Untergrundansicht; diese Erweiterungen sind noch nicht gebaut oder abgenommen.
 
 Die folgenden Abschnitte halten die aelteren Abnahmen und ihre jeweiligen Grenzen fest. **Naechster beauftragter Entwurfsschritt:** alle Scaping-Eingaben in gespeicherte Maschinenplaene ueberfuehren; diese breite Integration ist noch nicht implementiert.
 

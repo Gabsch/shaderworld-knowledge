@@ -6,9 +6,12 @@ status: draft
 tags: [shaderworld, citylab, city-builder, construction, terraforming, logistics, underground]
 engine_version: "5.8.4"
 plugin_version: "4.1"
-generated: { by: codex/gpt-6, at: "2026-10-28T21:08:00Z" }
+generated: { by: codex/gpt-6, at: "2026-10-29T00:02:31Z" }
 evidence_scope: Nutzerdesign mit Foundations-Vorläufer; kleiner ConstructionLab-Kreislauf mit 14/14 und 15/15 Checks in zwei cooked Prozessen vollständig abgeschlossen, Modellbilanz und lokale physische Höhen getrennt geprüft. Historisch 22 native Tests; neuer Wiedereinbau mit 29 nativen Tests und separaten uncooked/cooked Prozesspaaren bestanden. Gerenderte Navigation mit Harnessgrenze und acht CPU-Rodungsmessfenster belegt. Ausgewählte Baugruben-Standbilder geprüft; vollständige normale UI-Prüfung und Produktionswirtschaft bleiben offen.
 sources:
+  - id: scaping-next
+    resource: scaping-machine-work-plan.md
+    title: Beschlossener erster Integrationsslice und parallele Untergrundansicht
   - id: fill-cycle
     resource: ../guides/closed-material-cycle.md
     title: Geprüfter Wiedereinbau mit zweitem Lkw, gemeinsamen Grammkonten und Neustart
@@ -52,6 +55,8 @@ sources:
 # Bauarbeit, Gelände und Material als gemeinsames System
 
 ## Aktueller Stand am 29. Oktober 2026
+
+Die nächste Umsetzung ist im [Scaping-/Maschinenarbeitsplan](scaping-machine-work-plan.md) konkretisiert: Anheben/Absenken mit tatsächlichem Ausgangsraster, gemeinsamer Warteschlange/Materialverwaltung und exakter Wiederherstellung; parallel Darstellung des Untergrunds. Umsetzung erst nach Asset-Import und Projektfreigabe. Räumliche ShaderWorld-Layer bleiben zunächst Projektion des gespeicherten Zustands; die [Speicherabgrenzung](shaderworld-data-and-persistence.md) hält den untersuchten 4.1-Stand fest.
 
 Der [platzierbare Baustellenplaner](../guides/construction-planner.md) erprobt jetzt diese Trennung zwischen Sollplan und Ist-Arbeit: Vorschau bleibt fluechtig, Bestaetigung speichert pausierte Auftraege, Maschinen/Transport bewegen anschliessend echte Konten und Hoehen. Ungearbeitete Einzelgrube, Paar und beladene Teilfahrt wurden in je vier frischen uncooked/cooked Prozessen wiederhergestellt. Der Folgeslice verbindet alle Scaping-Eingaben mit solchen Maschinenauftraegen; diese breite Werkzeugumstellung ist noch nicht implementiert.
 

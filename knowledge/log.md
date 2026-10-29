@@ -2,6 +2,9 @@
 
 ## 2026-10-29
 
+- Beschlossenen [Scaping-/Maschinenarbeitsplan](reference/scaping-machine-work-plan.md) festgehalten: nach Fahrzeug-Import und ausdrücklicher Projektfreigabe zuerst Anheben/Absenken, parallel Untergrundansicht; danach gemischtes Ebnen, Rodung/Oberflächenarbeit und Straßen/Grundstücke. Ausgangsraster, Planrevisionen, gemeinsame Konten, Abbruchregeln und Neustart-/Bedienabnahmen definiert. Keine Implementierung in dieser Dokuaufgabe.
+- [Datenlayer und dauerhaften Spielstand](reference/shaderworld-data-and-persistence.md) abgegrenzt; [bereinigter Quellbefund](evidence/shaderworld-storage-source-audit.json) dokumentiert native Layer, transiente Exporte und unvollständige Speicher-/Schreibfunktionen der installierten 4.1-Version. Herstellerangaben, Quellbeobachtung und geplante Tests getrennt.
+
 Platzierbarer Baustellenplaner, Rodungscache und Untergrund-Hybrid.
 
 Planer mit fluechtiger Formvorschau, Mengen-/Konfliktanzeige, pausierter Bestaetigung, Stornierung ungearbeiteter Auftraege und eigenem Slot dokumentiert. Je vier frische uncooked/cooked Starts prueften ungearbeitete Einzelgrube/Paar und beladene Teilfahrt; 86,4 t Einbau, 0 g Bilanzfehler. Normales PIE mit API-Bestaetigung und drei exakten Loads; nativer Click/Key-Delivery nicht als physische Abnahme gewertet. Alte Construction-Daten vollstaendig wiederhergestellt, 16 andere Slots unveraendert. Neue PlannerLab-Karte gespeichert; eigener Karten-Cook bleibt offen.
