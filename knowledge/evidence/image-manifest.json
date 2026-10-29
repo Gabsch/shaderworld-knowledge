@@ -359,6 +359,46 @@
       "modified": false,
       "bytes": 1233683,
       "sha256": "159a8570f05bc9e3c00a2b3a9b8184a7b16f4e757ff42de596d89b053c6d8991"
+    },
+    {
+      "file": "assets/images/flatten-profile.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Prepared asymmetric hump/dip before Flatten work. Cyan field outlines are plan visualization, not measurement overlays. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2506168,
+      "sha256": "398f969fa73eaff9ec849095a967ab12f7765ca16299e083e71cf9c097013155"
+    },
+    {
+      "file": "assets/images/flatten-cut-checkpoint.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain during the loaded cut checkpoint; loader is visible beside the marked field. The native report records 12 t in the truck; the image alone is no mass measurement. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2376310,
+      "sha256": "7a1e110bde38670a3056c698e9c9c49a8ddac8877a7bfbae2b39479845b434f6"
+    },
+    {
+      "file": "assets/images/flatten-fill-checkpoint.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain during the loaded fill checkpoint after all cut was deposited. Native report records 12 t in the truck; no normal UI proof is claimed. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2388269,
+      "sha256": "7cac77adfc2f037a0c79892df1a7559ab3b7483f029053a778cda3203b45f35b"
+    },
+    {
+      "file": "assets/images/flatten-completed.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain after the fresh-process completion, with the reached core and shoulders. Heights are supported separately by the 377-position report, not by pixels alone. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2406637,
+      "sha256": "c8a55a681932b9dcdeee45d75d002c5232f119985803b8cc71bd778b229d22ed"
+    },
+    {
+      "file": "assets/images/flatten-demo-ui.png",
+      "origin": "Unmodified actual native 1600x1000 SHOWUI capture from the normal visible Development cooked Earthworks demo, loaded from isolated byte-identical cooked Ready. Coordinating and documentation agents visually inspected terrain and native Slate panel: queued Flatten selected, warehouse 21.6 t and balance 0 g visible. Top tool details still default to Lower; button 6 creates a new Flatten preview. No private desktop UI. Separate native 12/external 9-check audits prove model identity; image alone proves no mass/height or physical input/human verification.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 4087175,
+      "sha256": "eedd7f238fc475bd3af96540a8b8fa48bbd52afb315aa3a711f73be293ad4ecf"
     }
   ]
 }

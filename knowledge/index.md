@@ -14,6 +14,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Unebenen Boden durch Maschinen ebnen](guides/flatten-machine-earthworks.md) – begrenzter Slice B stable: 52 native Tests, Uncooked/frisches Development-Cooked je 12/12 + 16/16, Controller-API 15/15 und sichtbare getrennte Demo mit Slate-Bild bestanden. Physische Eingaben und menschliche Prüfung nicht erfolgt.
 - [Anheben und Absenken durch Maschinen](guides/machine-earthworks.md) – mehrere gespeicherte Pläne, gemeinsames Lager und ein Maschinenzug; 46 native Tests und je zwei uncooked/verpackte Kreislaufprozesse bestanden, 86,4 t und 0 g. Normale Controller-APIs und kalter Queue-Restore geprüft; physische Eingaben bleiben offen.
 - [Untergrundansicht bedienen](guides/underground-view.md) – Oberfläche, schematischer Schnitt und Innenraum als getrennte Darstellung; vier Editorbilder, lokale Kollisionsinvarianz und Kamerarückkehr geprüft; physische Bedienung und verpackte Ansichtspixel bleiben offen.
 
@@ -37,7 +38,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Nachschlagen
 
-- [Scaping als Maschinenaufträge: vereinbarter Ausbau](reference/scaping-machine-work-plan.md) – erster Anheben-/Absenken-Slice nativ, uncooked und verpackt geprüft; danach gemischtes Ebnen, Oberflächen- und Bauvorbereitung mit eigenen Abnahmen.
+- [Scaping als Maschinenaufträge: vereinbarter Ausbau](reference/scaping-machine-work-plan.md) – erster Anheben-/Absenken-Slice nativ, uncooked und verpackt geprüft; gemischtes Ebnen nativ, uncooked, frisch verpackt und mit sichtbarer Demo geprüft; Oberflächen- und Bauvorbereitung folgen mit eigenen Nachweisen.
 - [ShaderWorld-Datenlayer und Spielstand](reference/shaderworld-data-and-persistence.md) – räumliche Terrain-Daten, Mapassets und dauerhafte Zustände unterscheiden; Quellbefund zu unvollständigen Speicherfunktionen in 4.1.
 - [Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) – gesetzte Designregeln, geprüfter kleiner Baugrubenkreislauf und Vorschläge für weitere Maschinen-/Materialarbeit.
 - [Nächste City-Builder-Bausteine](reference/city-builder-roadmap.md) – erhaltene Themen, Baufortschritt statt freiem Terraforming und offene Abnahmen.

@@ -1,0 +1,1246 @@
+{
+  "schema": "citylab.flatten-machine-earthworks.evidence.v1",
+  "status": "passed_bounded_lab_contract",
+  "generated_at": "2026-10-29T11:00:12Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "city_save_format_version": 6,
+  "earthworks_record_version": {
+    "legacy_lower_raise": 1,
+    "flatten": 2
+  },
+  "provenance": {
+    "native": "Actual local CityLab automation index read after the first Flatten Editor build. Model and model tests remained unchanged through the final builds; no rerun after the UI/Ready changes is claimed. Device identities, instance identifiers, paths, logs and artifacts omitted.",
+    "builds": "Initial, final presentation/Ready and exact50cm guard Editor/Game build outcomes supplied by the coordinating build owner. Full uncooked rendered acceptance now passed; cooked and normal UI remain separate.",
+    "source_review": "Independent read-only review of the project-owned model, tests and verifier; source files are not distributed in this public bundle.",
+    "sanitization": "Contains no user paths, device identity, process IDs, save files, raw logs, licensed plugin sources or assets.",
+    "rendered_negative": "Actual first uncooked progress log and driver failure read locally. Raw logs, run identifiers, process identifiers and private test-data paths omitted.",
+    "rendered_positive": "Actual local flattened driver/create/resume JSON read and compared. Both loaded checkpoint records and both final job/account histories compare exactly. Driver exit0 supplied by the coordinating verification owner. Raw reports, private paths, process/run identities, saves and images omitted.",
+    "rendered_images": "Four exact, unmodified native uncooked captures were visually inspected by both the coordinating and documentation agents and copied into the bundle. They show terrain and plan marks without private UI. Images do not establish normal UI/input, numeric height/volume or performance acceptance.",
+    "normal_controller_api": "Actual complete local normal-controller report read and states compared. Fifteen checks passed on the prior compiled collision-guard binary. Later demo/audit source edits and builds are not attributed to this result. Raw snapshots, save hashes, private paths/identities and UI images omitted.",
+    "full_cook": "Actual full-cook log read locally: BuildCookRun135.22s, AutomationTool approximately137s, Exit0, 0errors and5 inherited Level Blueprint warnings. Final13-source snapshot additionally captured under coordinating owner assignment; accepted uncooked historical hashes remain intact.",
+    "cooked_positive": "Actual complete local driver/create/resume reports read and compared. RequiresCookedData is true in both distinct processes; 12/12 and16/16 checks passed. Both complete checkpoint records and both final job/account histories are equal. Driver exit0 confirmed by coordinating verification owner. Raw reports, private identities/paths/saves and cooked capture pixels omitted.",
+    "normal_demo": "Actual complete native audit and coordinating external review reports read. Full audit.state exactly equals the successful cooked create Ready snapshot, and initial native model hash matches. Twelve native and nine external checks passed. Coordinating and documentation agents viewed the actual SHOWUI PNG. Raw paths/process identities/saves/reports omitted; no human or physical-input claim."
+  },
+  "builds": {
+    "editor": {
+      "status": "passed",
+      "duration_seconds": 78.25,
+      "scope": "initial Flatten implementation before the final presentation/demo patch"
+    },
+    "game": {
+      "status": "passed",
+      "duration_seconds": 69.14,
+      "scope": "initial Flatten implementation before the final presentation/demo patch"
+    },
+    "final_rebuild": {
+      "status": "passed",
+      "editor_duration_seconds": 59.3,
+      "game_duration_seconds": 72.36,
+      "scope": "Final presentation and Ready/demo checkpoint source included; no rendered behavior implied."
+    },
+    "collision_guard_rebuild": {
+      "status": "passed",
+      "editor_duration_seconds": 168.47,
+      "game_duration_seconds": 184.08,
+      "scope": "C++ exact50cm Flatten guard correction; model math/tests unchanged from52-test proof."
+    },
+    "readonly_demo_audit_rebuild": {
+      "status": "passed",
+      "editor_duration_seconds": 49.04,
+      "game_duration_seconds": 69.8,
+      "scope": "Final opt-in read-only normal-demo audit additions in own GameMode/Verification sources. No model/input/save/work behavior change. Its separate fresh cooked runtime and normal visible demo results passed and are recorded under runtime_acceptance and demo_acceptance."
+    },
+    "full_cook_stage_archive": {
+      "status": "passed",
+      "configuration": "Development",
+      "platform": "Win64",
+      "full_cook": true,
+      "stage": true,
+      "archive": true,
+      "build_cook_run_seconds": 135.22,
+      "automation_tool_wall_seconds_approx": 137,
+      "exit_code": 0,
+      "cook_errors": 0,
+      "known_inherited_level_blueprint_warnings": 5,
+      "warning_maps": [
+        "ShaderWorldCityLoop",
+        "ShaderWorldEarthworksLab",
+        "ShaderWorldPlannerLab",
+        "ShaderWorldConstructionLab",
+        "ShaderWorldFoundations"
+      ],
+      "warning_scope": "Inherited unknown Level Blueprint node refers to no valid level actor; warnings remain, no claim of repair.",
+      "scope": "Full Cook/Stage/Archive on the final audit build; its separate fresh Development cooked Flatten runtime pair subsequently passed. Build success alone is not runtime, Shipping or performance proof.",
+      "log_source": {
+        "name": "flatten-full-cook.log",
+        "sha256": "623382b555f940cf2d3e03c100a99208f1d934b88bc54123fa8c334a5a6dfaec",
+        "bytes": 84704
+      }
+    }
+  },
+  "native_automation": {
+    "status": "passed",
+    "total": 52,
+    "clean": 50,
+    "with_known_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "duration_seconds": 3.6806468963623047,
+    "known_warning_scopes": [
+      "Test-world cleanup without a World Context in BoundedCitizenDetour.",
+      "Intentional rejection of an old already-applied WorldEditBackend-v1 paint in BackendMigration."
+    ],
+    "flatten_tests": [
+      {
+        "name": "CityLab.Earthworks.Flatten.AtomicRevisionAndCorruptPhaseRejection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.010141696780920029
+      },
+      {
+        "name": "CityLab.Earthworks.Flatten.LegacyLowerRaiseFingerprintAndVersion1",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.008436597883701324
+      },
+      {
+        "name": "CityLab.Earthworks.Flatten.LoadedCutFillAndCollisionWaitRestart",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.1552269011735916
+      },
+      {
+        "name": "CityLab.Earthworks.Flatten.RealDeficitCapacityAndBufferWait",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.04957420006394386
+      },
+      {
+        "name": "CityLab.Earthworks.Flatten.SignedTriangleGeometryAndAbsoluteTarget",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.04174920171499252
+      },
+      {
+        "name": "CityLab.Earthworks.Flatten.ZeroSinglePhaseAndSurplus",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0,
+        "duration_seconds": 0.14715610444545746
+      }
+    ],
+    "limits": "Native model and existing fixture tests; this result does not establish rendered terrain, runtime texture interpolation, normal UI, input, cold process reconstruction or packaged behavior."
+  },
+  "model_contract": {
+    "cells_per_side": [
+      1,
+      2,
+      3
+    ],
+    "sample_spacing_cm": 100,
+    "raster_side_formula": "4*N+5",
+    "fixed_tile_diagonal": "00 to 11",
+    "core_half_extent_cm_formula": "N*200",
+    "outer_half_extent_cm_formula": "(N+1)*200",
+    "shoulder_width_cm": 200,
+    "maximum_target_difference_at_every_frozen_sample_cm": 200,
+    "field": "At each frozen vertex, (absolute_target_z - measured_baseline_z) times the product of the two axis tapers; fixed linear interpolation inside each triangle.",
+    "quantities": "Clip each linear triangle at zero; integrate negative and positive lobes separately; use the configured in-situ density and round once to integer grams per lobe.",
+    "projection": "One independent global cut fraction times min(field,0), plus one global fill fraction times max(field,0). The frozen baseline is not projected again.",
+    "progress_limit": "Distributed whole-field progress per phase; no spatially advancing bucket simulation.",
+    "funding": "Start requires capacity for the complete cut and actual existing stock covering max(fill-cut,0). No cut is credited before real warehouse unloading.",
+    "phase_transition": "Fill reservation and delivery begin only after all actual cut has been deposited and its truck/buffer have drained.",
+    "zero_gram_rule": "A true zero field is valid; nonzero signed lobes that round to zero grams are rejected.",
+    "model_example": {
+      "baseline_cm": "1000+0.25*X",
+      "absolute_target_cm": 1025,
+      "cells_per_side": 2,
+      "cut_g": 36000000,
+      "fill_g": 81000000,
+      "actual_initial_deficit_g": 45000000
+    },
+    "overlapping_history_example": {
+      "description": "Opposite 0.75m hats offset southwest/northeast; the combined field is clipped before computing cut/fill.",
+      "cut_g": 18358594,
+      "fill_g": 18358594,
+      "naive_mass_per_old_hat_g": 21600000
+    },
+    "physical_limit": "Exact grams refer to this fixed triangle model, not an independent survey of the quantized ShaderWorld terrain mesh.",
+    "example_density_kg_per_m3": 1800,
+    "baseline_acceptance": {
+      "xy_center_snap_cm": 200,
+      "absolute_target_world_z_range_cm": [
+        -1000000,
+        1000000
+      ],
+      "frozen_grid_cm": 100,
+      "actual_collision_recheck_grid_cm": 50,
+      "maximum_actual_vs_triangle_baseline_difference_cm": 5,
+      "maximum_predicted_final_core_vs_absolute_target_difference_cm": 5,
+      "maximum_frozen_sample_drift_at_commit_or_start_cm": 3,
+      "scope": "Bounded local sampled-height acceptance; terrain between tested points is not guaranteed."
+    },
+    "reference_reconstruction": "Freeze actual measured heights and a separate reference after subtracting already executed queue deltas. Restore/inter-step checks interpolate a containing reference raster and add executed projections once.",
+    "gpu_projection_contract": {
+      "brushes_per_flatten_job": 1,
+      "transient_vertex_texture": "PF_R32_FLOAT; non-sRGB, no streaming, nearest filter and clamp addressing",
+      "interpolation": "Explicit four vertex loads and the same fixed 00-to-11 triangle interpolation as CPU; no hardware bilinear field.",
+      "cut_fill_combination": "Clamp the interpolated signed field to its negative/positive lobe before multiplying the independent progress fractions.",
+      "physical_scope": "Own material v2 with exact 50 cm lab collision passed full uncooked and fresh Development cooked create/resume pairs. Normal demo autoload/model and agent-reviewed Slate pixels passed separately. No arbitrary-shape, continuous-surface, performance, human or physical-input proof.",
+      "material_backend_version": 2,
+      "raster_side_source": "Texture dimensions reported by Deltas.GetDimensions; width must equal height. Grid.x/y/z carry only raster origin and spacing. Grid.w is not used."
+    },
+    "physical_collision_contract": {
+      "map": "/Game/Maps/ShaderWorldEarthworksLab",
+      "required_spacing_cm": 50,
+      "previous_spacing_cm": 100,
+      "property_meaning": "CollisionResolution is spacing between physical collision vertices in centimetres.",
+      "guard_scope": [
+        "Flatten preview",
+        "Flatten commit/revision/start baseline recheck",
+        "Atomic restore containing Flatten"
+      ],
+      "legacy_lower_raise": "Existing 100 cm Lower/Raise remains allowed; the new exact-spacing requirement is operation-specific.",
+      "map_setup_helper": "Tools/setup_earthworks_collision.py",
+      "setup_scope": "Only marked owned EarthworksLab, exactly one collision terrain, previous spacing 50 or 100, preserved original metadata, saved level and reload readback. Other maps and plugin files remain unchanged.",
+      "cost_limit": "50 cm produces approximately four times as many area samples as 100 cm at comparable coverage; no measured frame-rate or large-world claim.",
+      "reproduction_limit": "The original 100 cm physical mesh could bridge the sign crease between clipped vertex heights even when CPU and GPU displacement formulas agree. 50 cm is the bounded lab profile; it does not prove all intermediate points or all mixed shapes.",
+      "saved_map_readback": {
+        "map": "/Game/Maps/ShaderWorldEarthworksLab",
+        "previous_spacing_cm": 100,
+        "spacing_cm": 50,
+        "original_spacing_cm": "100",
+        "scope": "Owned map collision spacing only; rendered acceptance separate",
+        "saved_reload_readback": true,
+        "save_game_operations": false
+      },
+      "setup_status": "passed_map_saved_and_reloaded_no_savegame_write"
+    }
+  },
+  "remaining_limits": [
+    "Both earlier negative runtime attempts and the prior invalid SHOWUI harness capture remain documented; later corrected bounded runtime and actual native SHOWUI evidence passed.",
+    "Physical keyboard/mouse execution and human verification were not performed. Native controller API calls, read-only normal demo audit and agent-reviewed UI pixels are separate proofs.",
+    "Actual terrain-derived required mass is 18072546 g cut and 18835039 g fill; ideal symmetric native model masses are not substituted.",
+    "The unchanged 5 cm gate uses 377 positions. Core 50 cm probes are collision vertices; shoulder 25/75 cm probes test selected interpolation points, not a continuous surface or arbitrary mixed profiles.",
+    "No independent physical mesh-volume, Shipping, large-world, performance, groundwater, material-type, compaction or local bucket-physics acceptance is claimed."
+  ],
+  "source_snapshot": {
+    "captured_at": "2026-10-29T10:31:19Z",
+    "scope": "Frozen project-owned correction source after successful exact 50 cm guard builds and saved map reload, captured before the successful third uncooked pair. Hashes identify that reviewed implementation. Subsequent presentation/demo/harness working-tree edits are not claimed as this accepted source snapshot; final cooked/UI attribution remains separate.",
+    "files": [
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksModel.h",
+        "sha256": "63e90edd6c354be11acad03cb274fa932c3137a7f2cf31d14711258f39dba660",
+        "bytes": 10744
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksModel.cpp",
+        "sha256": "48d30a3d7daaaa69c863c67f6180c192ac8918a26ae2039aae6998b97eb95f90",
+        "bytes": 59311
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksTests.cpp",
+        "sha256": "3a8713b7608e6af20805c78307a6234dad71a112ff04d1eef9f03a796079fdc9",
+        "bytes": 49377
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworks.h",
+        "sha256": "b62d6978f7e15cd83995a44e64b8e159e33e8f4eedfc9726ce65ebad24eb799d",
+        "bytes": 4920
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworks.cpp",
+        "sha256": "791decd44c11d20fdec108d0d3458e3a4ee6549f9e3e5276a1ced43cb92df56d",
+        "bytes": 37894
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.h",
+        "sha256": "3afd05083ffe7d112c69ea6d64df2912f7bf17a3112d50d27615851b410566f4",
+        "bytes": 3893
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp",
+        "sha256": "bed56fadd4690b544bf5489bedc7c8abfee480195b9d1abf10ea31593329f63c",
+        "bytes": 25814
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabFlattenVerification.h",
+        "sha256": "9eb391f43ed2a9e51016bbede8bca47a74277bcac51e233e5be575c95d54681e",
+        "bytes": 2099
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabFlattenVerification.cpp",
+        "sha256": "f52992a7a4a61cdcc8d109920dcd25d7c324e2a2dd64bfb5f0bf7de380be98a5",
+        "bytes": 38118
+      },
+      {
+        "path": "Tools/verify_flatten.py",
+        "sha256": "d67626b248e0df42a957d4d51e4e831ff6ed420b4e0c1476467646ae62d27037",
+        "bytes": 24397
+      },
+      {
+        "path": "Tools/setup_flatten_material.py",
+        "sha256": "f54e60db9dbc974693d5aca96d8277438fe2ac3736d5ce0966be834c174172b8",
+        "bytes": 7133
+      },
+      {
+        "path": "Tools/launch_flatten_demo.ps1",
+        "sha256": "fbebcf77e456614ec3064bb7c043cc432f0e8dd18fd9ca1a2f0f7a367366a97c",
+        "bytes": 1894
+      },
+      {
+        "path": "Tools/setup_earthworks_collision.py",
+        "sha256": "ad09b7ab4587b17d1f6ade2deea01938154ec261c6a16ddc2ff37b20c4ee7d0d",
+        "bytes": 2897
+      }
+    ],
+    "status": "frozen_source_for_accepted_uncooked_run"
+  },
+  "negative_attempts": [
+    {
+      "label": "first_uncooked_material_v1",
+      "status": "failed_local_height_gate_and_targeted_stop",
+      "stage": 6,
+      "observed_point_xy_cm": [
+        -11800,
+        -5000
+      ],
+      "actual_height_cm": 336.0,
+      "expected_height_cm": 324.02,
+      "height_gate_cm": 5,
+      "observed_absolute_difference_cm": 11.98,
+      "observation": "Repeated progress log entries retained the same mismatch while the local collision gate held subsequent work. The coordinating owner then stopped only the isolated verification process.",
+      "completion_report": "No final native create JSON was written because this attempt was stopped. Driver failure reports missing native report; it is not a completed acceptance result or an application crash claim.",
+      "save_scope": "Only isolated test data were used; no normal-slot mutation is claimed or required for recovery.",
+      "cause": "ShaderWorld 4.1 USWorldSubsystem vector parameter transport converts FLinearColor to FVector and later back to FLinearColor, losing the original fourth component. The v1 material expected raster side 13 in FlattenGrid.w, received 1, and its side<2 guard returned the unchanged incoming height.",
+      "source_audit": {
+        "plugin_version": "4.1",
+        "header": "Source/ShaderWorld/Public/SWorldSubsystem.h:170-172",
+        "implementation": "Source/ShaderWorld/Private/SWorldSubsystem.cpp:1046-1061",
+        "scope": "Separately licensed local plugin source read only; no plugin source or assets included and no plugin change made."
+      },
+      "correction": "Own material backend v2 reads square raster width/height from the delta texture using GetDimensions; XYZ remain the only required vector payload. Exact-owned v1 graph migration checks marker and code before replacing it. Local backup and asset migration are coordinated separately.",
+      "verification_after_correction": "Full corrected uncooked and fresh Development cooked create/resume pairs passed with own material v2 and exact50cm collision. Normal visible demo/model audit and actual SHOWUI pixels subsequently passed separately. Earlier negative attempt retained."
+    },
+    {
+      "label": "second_uncooked_material_v2_collision 100 cm",
+      "status": "failed_local_height_gate_and_targeted_stop",
+      "stage": 6,
+      "material_backend_version": 2,
+      "physical_collision_spacing_cm": 100,
+      "observed_point_xy_cm": [
+        -11850,
+        -5150
+      ],
+      "actual_height_cm": 293.0,
+      "expected_height_cm": 299.0,
+      "observed_absolute_difference_cm": 6.0,
+      "height_gate_cm": 5,
+      "observation": "Repeated actual log samples retained this mismatch while the local gate held subsequent work. The isolated process was targeted for stop; no final native create JSON was written.",
+      "cause": "The physical 100 cm collision mesh interpolates already clipped vertex heights across a cut/fill zero boundary. This generally differs from clipping the continuously interpolated signed field, even with identical CPU/GPU field formulas.",
+      "independent_analytic_example": {
+        "cut_progress_g": 12000000,
+        "relative_point_xy_cm": [
+          150,
+          -150
+        ],
+        "continuous_expected_height_cm": 300.0,
+        "interpolated100cm_mesh_height_cm": 293.872,
+        "difference_cm": -6.128,
+        "scope": "Synthetic frozen-profile calculation; not a substitute for the observed measured293/299cm sample."
+      },
+      "source_audit": {
+        "plugin_version": "4.1",
+        "declaration": "Source/ShaderWorld/Public/Actor/ShaderWorldActor.h:539",
+        "spacing_use": "Source/ShaderWorld/Private/Actor/ShaderWorldActor_Collision.cpp:628,1095-1100,1241,1255",
+        "scope": "Separately licensed local sources read only; spacing usage confirmed. No plugin source/assets distributed or changed."
+      },
+      "correction": "Only the marked owned EarthworksLab is to use exactly 50 cm collision spacing, with saved reload readback. Flatten component guards reject other spacing before preview/recheck/restore; Lower/Raise retains its prior allowance.",
+      "gate_changed": false,
+      "verification_after_correction": "Full corrected uncooked and fresh Development cooked create/resume pairs passed with own material v2 and exact50cm collision. Normal visible demo/model audit and actual SHOWUI pixels subsequently passed separately. Earlier negative attempt retained."
+    }
+  ],
+  "source_snapshots_history": [
+    {
+      "captured_at": "2026-10-29T10:08:00Z",
+      "scope": "Final compiled project-owned source snapshot, with the own material setup script updated to v2 after the first rendered failure. The C++ binaries and native model result were not rebuilt for this material-only correction.",
+      "files": [
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworksModel.h",
+          "sha256": "63e90edd6c354be11acad03cb274fa932c3137a7f2cf31d14711258f39dba660",
+          "bytes": 10744
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworksModel.cpp",
+          "sha256": "48d30a3d7daaaa69c863c67f6180c192ac8918a26ae2039aae6998b97eb95f90",
+          "bytes": 59311
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworksTests.cpp",
+          "sha256": "3a8713b7608e6af20805c78307a6234dad71a112ff04d1eef9f03a796079fdc9",
+          "bytes": 49377
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworks.h",
+          "sha256": "a4494509270e34b801edbe2168f1a54daee48bba4c99281ef67295e53f3cc4de",
+          "bytes": 4869
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworks.cpp",
+          "sha256": "2c281afb9eb8e1660318882c9a8941b4eecc2c9dcc9cfbd982a393b32b48e631",
+          "bytes": 37333
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.h",
+          "sha256": "3afd05083ffe7d112c69ea6d64df2912f7bf17a3112d50d27615851b410566f4",
+          "bytes": 3893
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp",
+          "sha256": "bed56fadd4690b544bf5489bedc7c8abfee480195b9d1abf10ea31593329f63c",
+          "bytes": 25814
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabFlattenVerification.h",
+          "sha256": "9eb391f43ed2a9e51016bbede8bca47a74277bcac51e233e5be575c95d54681e",
+          "bytes": 2099
+        },
+        {
+          "path": "Source/UnrealMcpTest/CityLabFlattenVerification.cpp",
+          "sha256": "f52992a7a4a61cdcc8d109920dcd25d7c324e2a2dd64bfb5f0bf7de380be98a5",
+          "bytes": 38118
+        },
+        {
+          "path": "Tools/verify_flatten.py",
+          "sha256": "d67626b248e0df42a957d4d51e4e831ff6ed420b4e0c1476467646ae62d27037",
+          "bytes": 24397
+        },
+        {
+          "path": "Tools/setup_flatten_material.py",
+          "sha256": "f54e60db9dbc974693d5aca96d8277438fe2ac3736d5ce0966be834c174172b8",
+          "bytes": 7133
+        },
+        {
+          "path": "Tools/launch_flatten_demo.ps1",
+          "sha256": "fbebcf77e456614ec3064bb7c043cc432f0e8dd18fd9ca1a2f0f7a367366a97c",
+          "bytes": 1894
+        }
+      ],
+      "previous_material_setup": {
+        "path": "Tools/setup_flatten_material.py",
+        "sha256": "405f9587a988ad3f1a9c88b89be4e3c150e363d678eb79e95c3062a727c259ab",
+        "bytes": 6223,
+        "scope": "Own material v1 script used by the first failed rendered attempt."
+      }
+    }
+  ],
+  "source_updates": [
+    {
+      "captured_at": "2026-10-29T10:31:19Z",
+      "path": "Tools/setup_earthworks_collision.py",
+      "previous_sha256": "ac3fa5003994cd4c19ed0e58937ea5bc533345184be1f6a8f2c374dba81b0b4d",
+      "sha256": "ad09b7ab4587b17d1f6ade2deea01938154ec261c6a16ddc2ff37b20c4ee7d0d",
+      "scope": "Rename save_game_operations to distinguish no SaveGame writes from the intentional map save; setup semantics unchanged."
+    }
+  ],
+  "runtime_acceptance": {
+    "status": "passed_bounded_lab_contract",
+    "map": "/Game/Maps/ShaderWorldEarthworksLab",
+    "fixture": "Three actual prior machine jobs create the controlled asymmetric hump/dip and real material stock; no initial material credit.",
+    "checks": [
+      "Preview and commit remain inert.",
+      "Independent Python signed-volume and ledger calculation.",
+      "Subgrid absolute-height core probes, shoulder probes and unchanged outside controls.",
+      "Cold process restore during loaded cut and loaded fill transport.",
+      "Complete remaining work from both checkpoints, then compare immutable job histories and ledgers.",
+      "Three further loads without duplicate projection or material entries.",
+      "Hash preservation of all observed normal save slots."
+    ],
+    "height_gate_cm": 5,
+    "uncooked": {
+      "status": "passed",
+      "create": {
+        "status": "passed",
+        "phase": "create",
+        "checks_passed": 12,
+        "checks_total": 12,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "cut_fully_deposited_before_any_fill_withdrawal": true,
+          "source_plan_identity_preserved": true,
+          "outside_bounds_controls_preserved": true,
+          "fixture_uses_only_real_mined_material": true,
+          "flatten_preview_and_commit_are_inert": true,
+          "flatten_uses_altered_baseline_and_absolute_target": true,
+          "ready_queued_flatten_checkpoint_saved": true,
+          "cut_loaded_truck_checkpoint_saved": true,
+          "fill_loaded_truck_checkpoint_saved": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "duration_seconds": 149.66090519726276,
+        "ledger_observations": 985,
+        "cooked": false,
+        "save_format_version": 6,
+        "absolute_target_height_cm": 300,
+        "planned_actual_quantities_g": {
+          "cut": 18072546,
+          "fill": 18835039,
+          "additional_need": 762493
+        },
+        "ready_state": {
+          "record_version": 2,
+          "status": "Queued",
+          "warehouse_g": 21600000,
+          "initial_warehouse_credit_g": 0,
+          "paused": true,
+          "transport": false,
+          "balance_error_g": 0
+        },
+        "checkpoint_accounts": {
+          "cut_checkpoint": {
+            "initial_warehouse_g": 0,
+            "warehouse_g": 21600000,
+            "reserved_g": 762493,
+            "buffer_g": 6000000,
+            "truck_g": 12000000,
+            "excavated_g": 61200000,
+            "placed_g": 21600000,
+            "deposited_g": 43200000,
+            "withdrawn_g": 21600000,
+            "balance_error_g": 0
+          },
+          "fill_checkpoint": {
+            "initial_warehouse_g": 0,
+            "warehouse_g": 27672546,
+            "reserved_g": 6835039,
+            "buffer_g": 0,
+            "truck_g": 12000000,
+            "excavated_g": 61272546,
+            "placed_g": 21600000,
+            "deposited_g": 61272546,
+            "withdrawn_g": 33600000,
+            "balance_error_g": 0
+          }
+        },
+        "captures": [
+          {
+            "phase": "profile",
+            "native_captured": true,
+            "bytes": 2506168,
+            "visual_review": "Visually inspected by coordinating and documentation agents on 2026-10-29; no private UI visible. Terrain image only; no normal UI/input or independent volume claim.",
+            "public_image": "assets/images/flatten-profile.png",
+            "sha256": "398f969fa73eaff9ec849095a967ab12f7765ca16299e083e71cf9c097013155",
+            "modified": false
+          },
+          {
+            "phase": "cut_checkpoint",
+            "native_captured": true,
+            "bytes": 2376310,
+            "visual_review": "Visually inspected by coordinating and documentation agents on 2026-10-29; no private UI visible. Terrain image only; no normal UI/input or independent volume claim.",
+            "public_image": "assets/images/flatten-cut-checkpoint.png",
+            "sha256": "7a1e110bde38670a3056c698e9c9c49a8ddac8877a7bfbae2b39479845b434f6",
+            "modified": false
+          },
+          {
+            "phase": "fill_checkpoint",
+            "native_captured": true,
+            "bytes": 2388269,
+            "visual_review": "Visually inspected by coordinating and documentation agents on 2026-10-29; no private UI visible. Terrain image only; no normal UI/input or independent volume claim.",
+            "public_image": "assets/images/flatten-fill-checkpoint.png",
+            "sha256": "7cac77adfc2f037a0c79892df1a7559ab3b7483f029053a778cda3203b45f35b",
+            "modified": false
+          }
+        ],
+        "limits": "Actual terrain-derived cut/fill differ from ideal symmetric model examples. This phase creates the Ready and loaded cut/fill checkpoints; the separate fresh-process resume phase supplies completion proof.",
+        "height_probes": {
+          "accepted_batches": 48,
+          "accepted_measurements": 18096,
+          "unique_positions": 377,
+          "max_expected_height_error_cm": 1.9744280614630156,
+          "all_accepted_hit_and_match": true
+        }
+      },
+      "resume": {
+        "status": "passed",
+        "phase": "resume",
+        "checks_passed": 16,
+        "checks_total": 16,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "cut_fully_deposited_before_any_fill_withdrawal": true,
+          "source_plan_identity_preserved": true,
+          "fresh_process_has_no_earthwork_jobs": true,
+          "outside_bounds_controls_preserved": true,
+          "different_process": true,
+          "cut_checkpoint_restored_exactly": true,
+          "dense_interior_at_absolute_target": true,
+          "cut_checkpoint_remaining_work_completed": true,
+          "fill_checkpoint_restored_exactly": true,
+          "three_reloads_exact_and_unique": true,
+          "cancel_after_cut_transfer_does_not_rewind": true,
+          "both_checkpoint_histories_finish_once": true,
+          "mixed_flatten_completed_with_real_material": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "duration_seconds": 137.88138480111957,
+        "ledger_observations": 783,
+        "different_process": true,
+        "repeat_loads": 3,
+        "checkpoint_records_exact": {
+          "cut_checkpoint": true,
+          "fill_checkpoint": true
+        },
+        "both_final_job_histories_exact": true,
+        "both_final_accounts_exact": true,
+        "height_probes": {
+          "accepted_batches": 31,
+          "accepted_measurements": 11687,
+          "unique_positions": 377,
+          "max_expected_height_error_cm": 2.126815823619836,
+          "all_accepted_hit_and_match": true
+        },
+        "completed_interior_measurements": 3757,
+        "max_completed_interior_absolute_target_error_cm": 2.0000457770802313,
+        "final_accounts": {
+          "initial_warehouse_g": 0,
+          "warehouse_g": 20837507,
+          "reserved_g": 0,
+          "buffer_g": 0,
+          "truck_g": 0,
+          "excavated_g": 61272546,
+          "placed_g": 40435039,
+          "deposited_g": 61272546,
+          "withdrawn_g": 40435039,
+          "balance_error_g": 0
+        },
+        "completed_flatten_job": {
+          "status": "Completed",
+          "required_g": [
+            18072546,
+            18835039
+          ],
+          "completed_g": [
+            18072546,
+            18835039
+          ],
+          "remaining_g": 0,
+          "work_steps": 8,
+          "loaded_from_site_g": 18072546,
+          "deposited_g": 18072546,
+          "withdrawn_g": 18835039,
+          "delivered_to_site_g": 18835039
+        },
+        "captures": [
+          {
+            "phase": "completed",
+            "native_captured": true,
+            "bytes": 2406637,
+            "visual_review": "Visually inspected by coordinating and documentation agents on 2026-10-29; no private UI visible. Terrain image only; no normal UI/input or independent volume claim.",
+            "public_image": "assets/images/flatten-completed.png",
+            "sha256": "c8a55a681932b9dcdeee45d75d002c5232f119985803b8cc71bd778b229d22ed",
+            "modified": false
+          }
+        ]
+      },
+      "driver_success": true,
+      "driver_exit_code": 0,
+      "cooked": false,
+      "normal_slots_unchanged": true,
+      "normal_save_files_hashed": 19,
+      "combined": {
+        "ledger_observations": 1768,
+        "balance_error_g": 0,
+        "accepted_probe_batches": 79,
+        "accepted_repeated_measurements": 29783,
+        "unique_probe_positions": 377,
+        "max_expected_height_error_cm": 2.126815823619836,
+        "height_gate_cm": 5,
+        "max_completed_interior_absolute_target_error_cm": 2.0000457770802313,
+        "absolute_target_height_cm": 300,
+        "additional_need_g": 762493,
+        "final_warehouse_g": 20837507
+      },
+      "report_sources": [
+        {
+          "name": "flatten-test.json",
+          "sha256": "9ce851e7031f5ea421bcb35476f2c92edcf0dff437fc50f683efae5d5f8265d5",
+          "bytes": 23085892
+        },
+        {
+          "name": "create.json",
+          "sha256": "553588fe24d35dab0f58b4489c76da21a1a9a2f13edfc76af364dd62ba276730",
+          "bytes": 7428819
+        },
+        {
+          "name": "resume.json",
+          "sha256": "7f81552edc971838ebcc251e675e36e47229c96177742fc2f4bdfaba3d4d219c",
+          "bytes": 8994175
+        }
+      ],
+      "independent_recalculation": "The successful Python driver independently reconstructs fixed-diagonal triangle fields, clips signed lobes, checks their integrated grams and reconciles material accounts. Model quantities are not an independent measurement of the quantized physical mesh volume."
+    },
+    "cooked": {
+      "status": "passed",
+      "configuration": "Development",
+      "fresh_full_cook_stage_archive": "passed",
+      "driver_success": true,
+      "driver_exit_code": 0,
+      "cooked": true,
+      "save_format_version": 6,
+      "normal_slots_unchanged": true,
+      "normal_save_files_hashed": 19,
+      "source_snapshot": "final_build_cook_source_snapshot",
+      "create": {
+        "status": "passed",
+        "phase": "create",
+        "checks_passed": 12,
+        "checks_total": 12,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "cut_fully_deposited_before_any_fill_withdrawal": true,
+          "source_plan_identity_preserved": true,
+          "outside_bounds_controls_preserved": true,
+          "fixture_uses_only_real_mined_material": true,
+          "flatten_preview_and_commit_are_inert": true,
+          "flatten_uses_altered_baseline_and_absolute_target": true,
+          "ready_queued_flatten_checkpoint_saved": true,
+          "cut_loaded_truck_checkpoint_saved": true,
+          "fill_loaded_truck_checkpoint_saved": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "duration_seconds": 125.03566130250692,
+        "ledger_observations": 935,
+        "absolute_target_height_cm": 300,
+        "planned_actual_quantities_g": {
+          "cut": 18072546,
+          "fill": 18835039,
+          "additional_need": 762493
+        },
+        "ready_state": {
+          "record_version": 2,
+          "status": "Queued",
+          "warehouse_g": 21600000,
+          "initial_warehouse_credit_g": 0,
+          "paused": true,
+          "transport": false,
+          "balance_error_g": 0
+        },
+        "checkpoint_accounts": {
+          "cut_checkpoint": {
+            "initial_warehouse_g": 0,
+            "warehouse_g": 21600000,
+            "reserved_g": 762493,
+            "buffer_g": 6000000,
+            "truck_g": 12000000,
+            "excavated_g": 61200000,
+            "placed_g": 21600000,
+            "deposited_g": 43200000,
+            "withdrawn_g": 21600000,
+            "balance_error_g": 0
+          },
+          "fill_checkpoint": {
+            "initial_warehouse_g": 0,
+            "warehouse_g": 27672546,
+            "reserved_g": 6835039,
+            "buffer_g": 0,
+            "truck_g": 12000000,
+            "excavated_g": 61272546,
+            "placed_g": 21600000,
+            "deposited_g": 61272546,
+            "withdrawn_g": 33600000,
+            "balance_error_g": 0
+          }
+        },
+        "height_probes": {
+          "accepted_batches": 46,
+          "accepted_measurements": 17342,
+          "unique_positions": 377,
+          "max_expected_height_error_cm": 1.9744280614630156,
+          "all_accepted_hit_and_match": true
+        },
+        "captures": [
+          {
+            "phase": "profile",
+            "native_captured": true,
+            "bytes": 2498929,
+            "visual_review": "Native capture returned true; no additional pixel review or Slate UI proof claimed here.",
+            "public_image": false
+          },
+          {
+            "phase": "cut_checkpoint",
+            "native_captured": true,
+            "bytes": 2370280,
+            "visual_review": "Native capture returned true; no additional pixel review or Slate UI proof claimed here.",
+            "public_image": false
+          },
+          {
+            "phase": "fill_checkpoint",
+            "native_captured": true,
+            "bytes": 2389413,
+            "visual_review": "Native capture returned true; no additional pixel review or Slate UI proof claimed here.",
+            "public_image": false
+          }
+        ]
+      },
+      "resume": {
+        "status": "passed",
+        "phase": "resume",
+        "checks_passed": 16,
+        "checks_total": 16,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "cut_fully_deposited_before_any_fill_withdrawal": true,
+          "source_plan_identity_preserved": true,
+          "fresh_process_has_no_earthwork_jobs": true,
+          "outside_bounds_controls_preserved": true,
+          "different_process": true,
+          "cut_checkpoint_restored_exactly": true,
+          "dense_interior_at_absolute_target": true,
+          "cut_checkpoint_remaining_work_completed": true,
+          "fill_checkpoint_restored_exactly": true,
+          "three_reloads_exact_and_unique": true,
+          "cancel_after_cut_transfer_does_not_rewind": true,
+          "both_checkpoint_histories_finish_once": true,
+          "mixed_flatten_completed_with_real_material": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "duration_seconds": 102.71028719842434,
+        "ledger_observations": 777,
+        "different_process": true,
+        "repeat_loads": 3,
+        "checkpoint_records_exact": {
+          "cut_checkpoint": true,
+          "fill_checkpoint": true
+        },
+        "both_final_job_histories_exact": true,
+        "both_final_accounts_exact": true,
+        "height_probes": {
+          "accepted_batches": 31,
+          "accepted_measurements": 11687,
+          "unique_positions": 377,
+          "max_expected_height_error_cm": 2.126815823619836,
+          "all_accepted_hit_and_match": true
+        },
+        "completed_interior_measurements": 3757,
+        "max_completed_interior_absolute_target_error_cm": 2.0000457770802313,
+        "final_accounts": {
+          "initial_warehouse_g": 0,
+          "warehouse_g": 20837507,
+          "reserved_g": 0,
+          "buffer_g": 0,
+          "truck_g": 0,
+          "excavated_g": 61272546,
+          "placed_g": 40435039,
+          "deposited_g": 61272546,
+          "withdrawn_g": 40435039,
+          "balance_error_g": 0
+        },
+        "completed_flatten_job": {
+          "status": "Completed",
+          "required_g": [
+            18072546,
+            18835039
+          ],
+          "completed_g": [
+            18072546,
+            18835039
+          ],
+          "remaining_g": 0,
+          "work_steps": 8,
+          "loaded_from_site_g": 18072546,
+          "deposited_g": 18072546,
+          "withdrawn_g": 18835039,
+          "delivered_to_site_g": 18835039
+        },
+        "captures": [
+          {
+            "phase": "completed",
+            "native_captured": true,
+            "bytes": 2411345,
+            "visual_review": "Native capture returned true; no additional pixel review or Slate UI proof claimed here.",
+            "public_image": false
+          }
+        ]
+      },
+      "combined": {
+        "ledger_observations": 1712,
+        "balance_error_g": 0,
+        "accepted_probe_batches": 77,
+        "accepted_repeated_measurements": 29029,
+        "unique_probe_positions": 377,
+        "max_expected_height_error_cm": 2.126815823619836,
+        "height_gate_cm": 5,
+        "max_completed_interior_absolute_target_error_cm": 2.0000457770802313,
+        "absolute_target_height_cm": 300,
+        "additional_need_g": 762493,
+        "final_warehouse_g": 20837507
+      },
+      "report_sources": [
+        {
+          "name": "flatten-test.json",
+          "sha256": "1a6da3d7380c7c23542dec6798dba41ce25ab5a56f926d8cf7f8e25edc652d7a",
+          "bytes": 18132543
+        },
+        {
+          "name": "create.json",
+          "sha256": "0dae7acc24a99d9f29c2ca4e8f12b189c5859be285f13b707ab05fc18730fe06",
+          "bytes": 6104514
+        },
+        {
+          "name": "resume.json",
+          "sha256": "05f60f19e5e538883689cd183995e726ec3b2cd8aa3bc546082457b3ef1986a1",
+          "bytes": 6829619
+        }
+      ],
+      "independent_recalculation": "The successful Python driver independently reconstructs and clips signed fixed-diagonal triangles, checks integrated grams and material accounts. This does not independently measure the quantized physical terrain-mesh volume.",
+      "limits": [
+        "Fresh Development cooked runtime proof for the bounded lab fixture only.",
+        "No Shipping, performance, arbitrary profile or continuous-surface proof.",
+        "Normal demo launch and Slate UI pixels remain separate."
+      ]
+    },
+    "normal_ui": {
+      "status": "passed_agent_visual_review",
+      "scope": "Actual 1600x1000 SHOWUI PNG from normal visible cooked demo, visually inspected by coordinating and documentation agents. Terrain and native Slate panel visible; this is not physical input or human verification.",
+      "image": "assets/images/flatten-demo-ui.png",
+      "sha256": "eedd7f238fc475bd3af96540a8b8fa48bbd52afb315aa3a711f73be293ad4ecf",
+      "bytes": 4087175,
+      "selected_queue_operation": "Flatten",
+      "selected_queue_sequence": 4,
+      "default_preview_tool": "Lower",
+      "tool_6_effect": "Creates a new Flatten preview; selected queued work can be started with Space/H according to controller contract."
+    },
+    "physical_input": {
+      "status": "not_tested",
+      "scope": "No claim of physical keyboard/mouse execution or human verification."
+    },
+    "probe_contract": {
+      "unique_probe_positions": 377,
+      "core_grid_spacing_cm": 50,
+      "shoulder_offsets_cm": [
+        25,
+        75
+      ],
+      "height_gate_cm": 5,
+      "limits": "With 50 cm physical collision spacing, core 50 cm samples coincide with collision vertices. Shoulder 25/75 cm probes remain interpolation checks. Counts of accepted measurements include repeats; no continuous-surface or all-shape guarantee."
+    },
+    "normal_controller_api": {
+      "status": "passed",
+      "schema": "citylab.flatten-normal-ui-acceptance.v1",
+      "scope": "Normal native controller API and exact SaveGame state; separate terrain-only game viewport PNGs. No Slate UI pixels or physical input claim",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "checks": {
+        "legacy_seed_is_byte_copy": true,
+        "fresh_owned_bridge": true,
+        "old_v1_queued_lower_loaded": true,
+        "legacy_copy_not_rewritten": true,
+        "ready_seed_is_byte_copy": true,
+        "ready_four_jobs_paused_real_stock": true,
+        "target_preview_inert": true,
+        "confirmed_fifth_flatten_absolute_325_unworked": true,
+        "confirm_changes_only_queue_and_saves_own_copy": true,
+        "load_1_exact_state": true,
+        "load_2_exact_state": true,
+        "load_3_exact_state": true,
+        "loaded_projection_ready_without_state_change": true,
+        "native_editor_exit_after_actual_pie_stop": true,
+        "normal_original_and_ready_bytes_preserved": true
+      },
+      "duration_seconds": 112.65600000001723,
+      "editor_exit_code": 0,
+      "controller_verification_mode": false,
+      "legacy_autoload": {
+        "source": "Byte-identical copy of actual previous normal save",
+        "record_version": 1,
+        "queued_operation": "Lower",
+        "job_count": 1,
+        "copy_rewritten": false,
+        "limit": "One real legacy queued record only; no migration proof for every archive or worked old history."
+      },
+      "ready_state": {
+        "record_version": 2,
+        "job_count": 4,
+        "warehouse_g": 21600000,
+        "work_paused": true,
+        "transport_enabled": false
+      },
+      "target_and_confirm": {
+        "absolute_target_cm": 325,
+        "preview_full_state_inert": true,
+        "confirmed_job_count": 5,
+        "prior_jobs_exact": true,
+        "all_non_job_state_exact": true,
+        "new_job_status": "Queued",
+        "new_job_completed_g": [
+          0,
+          0
+        ],
+        "save_scope": "Isolated copy only"
+      },
+      "repeat_loads": 3,
+      "each_full_state_exact": true,
+      "canonical_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+      "ready_backend_without_state_change": true,
+      "normal_save_files_hashed": 19,
+      "normal_save_hash_maps_equal": true,
+      "original_and_ready_source_bytes_preserved": true,
+      "report_source": {
+        "name": "flatten-ui.json",
+        "sha256": "7142238a1246bcb2bde182ee1e51f355d64e976a1cc9e92844abfdf2ff5f9441",
+        "bytes": 5835483
+      },
+      "captures": [
+        {
+          "name": "legacy-queued-lower-game",
+          "include_ui": false,
+          "width": 933,
+          "height": 452,
+          "bytes": 350435,
+          "sha256": "5cc3fba97677859b2997116b4318302620f57c7ff7e97163d18f05b76a777ecc",
+          "public_image": false,
+          "visual_review": "No additional visual review or Slate UI claim in this evidence."
+        },
+        {
+          "name": "flatten-325-preview-game",
+          "include_ui": false,
+          "width": 933,
+          "height": 452,
+          "bytes": 1289146,
+          "sha256": "19c714e6a859837afed0fd1dafe01d63237c9be5fb948ce371ff7512e95f5f88",
+          "public_image": false,
+          "visual_review": "Coordinating agent reviewed target-preview terrain image; no Slate UI pixel review claimed."
+        },
+        {
+          "name": "flatten-325-loaded-game",
+          "include_ui": false,
+          "width": 933,
+          "height": 452,
+          "bytes": 1285485,
+          "sha256": "9dd8786636831d039c54af800120652051ed8e8c4c47a88b2f66f94f967af4e1",
+          "public_image": false,
+          "visual_review": "No additional visual review or Slate UI claim in this evidence."
+        }
+      ],
+      "source_scope": "Previous compiled exact50cm guard build; mathematical model unchanged. Later read-only demo audit and spawn changes have their own accepted build/cooked/demo evidence, recorded separately.",
+      "limits": [
+        "No physical input claim.",
+        "No Slate UI pixels.",
+        "No packaged or separate demo-launch acceptance.",
+        "No extra images copied into the public bundle."
+      ]
+    },
+    "normal_api_capture_history": [
+      {
+        "status": "failed_capture_harness_requirement",
+        "success": false,
+        "error": "Captured viewport is unexpectedly small",
+        "duration_seconds": 90.46900000001187,
+        "checks_completed_before_failure": 3,
+        "report_source": {
+          "name": "prior-flatten-ui.json",
+          "sha256": "04dcfc9391671337f90adec53747c26c1e96a73bc7f91d62b9455f1efa124578",
+          "bytes": 565949
+        },
+        "coordinating_agent_observation": "The actual SHOWUI 933x452 frame showed a stale blue editor grid rather than the intended running game surface. Preserved privately; not an accepted UI image or evidence of a Flatten feature defect.",
+        "resolution": "The later normal visible cooked demo produced an actual full1600x1000 native SHOWUI PNG with agent-reviewed Slate pixels. Earlier failed harness frame remains negative capture evidence, not a Flatten feature failure."
+      }
+    ]
+  },
+  "final_build_cook_source_snapshot": {
+    "captured_at": "2026-10-29T10:51:56Z",
+    "status": "frozen_final_build_cook_cooked_runtime_and_normal_demo_accepted",
+    "scope": "Additional final project-owned source snapshot assigned after the 49.04/69.80 s audit-only Editor/Game rebuild and full Cook/Stage/Archive. All 13 hashes still match after the successful fresh Development cooked create/resume pair and normal visible demo audit. Model math/tests stayed unchanged. The historical accepted uncooked source_snapshot remains immutable.",
+    "files": [
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksModel.h",
+        "sha256": "63e90edd6c354be11acad03cb274fa932c3137a7f2cf31d14711258f39dba660",
+        "bytes": 10744
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksModel.cpp",
+        "sha256": "48d30a3d7daaaa69c863c67f6180c192ac8918a26ae2039aae6998b97eb95f90",
+        "bytes": 59311
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksTests.cpp",
+        "sha256": "3a8713b7608e6af20805c78307a6234dad71a112ff04d1eef9f03a796079fdc9",
+        "bytes": 49377
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworks.h",
+        "sha256": "b62d6978f7e15cd83995a44e64b8e159e33e8f4eedfc9726ce65ebad24eb799d",
+        "bytes": 4920
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworks.cpp",
+        "sha256": "791decd44c11d20fdec108d0d3458e3a4ee6549f9e3e5276a1ced43cb92df56d",
+        "bytes": 37894
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.h",
+        "sha256": "3afd05083ffe7d112c69ea6d64df2912f7bf17a3112d50d27615851b410566f4",
+        "bytes": 3893
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp",
+        "sha256": "661242e457f41e68b85112d1455318b2d75f5eabde532d68962d00476548a740",
+        "bytes": 25946
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabFlattenVerification.h",
+        "sha256": "a503e9b40ae7f149a13bf286417513f806634e74cfca0b91a919f4a056662390",
+        "bytes": 2964
+      },
+      {
+        "path": "Source/UnrealMcpTest/CityLabFlattenVerification.cpp",
+        "sha256": "07c2e0df91e9444fc65989a198abfed687ef6fdc19acfb48f23cfa5eac9e201a",
+        "bytes": 47492
+      },
+      {
+        "path": "Tools/verify_flatten.py",
+        "sha256": "d67626b248e0df42a957d4d51e4e831ff6ed420b4e0c1476467646ae62d27037",
+        "bytes": 24397
+      },
+      {
+        "path": "Tools/setup_flatten_material.py",
+        "sha256": "f54e60db9dbc974693d5aca96d8277438fe2ac3736d5ce0966be834c174172b8",
+        "bytes": 7133
+      },
+      {
+        "path": "Tools/launch_flatten_demo.ps1",
+        "sha256": "2710bb9f76458d4cbe54e65857c497ccb61d868fd12ef7a0a047a916e68b9d83",
+        "bytes": 6101
+      },
+      {
+        "path": "Tools/setup_earthworks_collision.py",
+        "sha256": "ad09b7ab4587b17d1f6ade2deea01938154ec261c6a16ddc2ff37b20c4ee7d0d",
+        "bytes": 2897
+      }
+    ]
+  },
+  "demo_acceptance": {
+    "status": "passed_bounded_normal_visible_cooked_demo",
+    "launcher": "Tools/launch_flatten_demo.ps1",
+    "user_data_directory": "Saved/FlattenDemoUser",
+    "slot": "CityLabEarthworks",
+    "cooked": true,
+    "normal_visible_launch": true,
+    "verifier_mode": false,
+    "duration_seconds": 4.902077503502369,
+    "native_checks_passed": 12,
+    "native_checks_total": 12,
+    "native_checks": {
+      "explicit_isolated_user_directory": true,
+      "normal_game_without_verification_mode": true,
+      "normal_controller_initialized": true,
+      "valid_balanced_actual_model": true,
+      "four_fixture_jobs": true,
+      "first_three_profile_jobs_completed": true,
+      "queued_absolute_300cm_n2_flatten_has_zero_work": true,
+      "real_21_6t_stock_and_empty_cargo": true,
+      "machines_paused_transport_off_no_active_job": true,
+      "queued_flatten_selected_by_normal_controller": true,
+      "model_unchanged_during_read_only_audit": true,
+      "sixty_warm_render_capable_frames": true
+    },
+    "external_checks_passed": 9,
+    "external_checks_total": 9,
+    "external_checks": {
+      "cooked_aggregate_passed": true,
+      "full_ready_state_exact": true,
+      "initial_ready_hash_exact": true,
+      "native_checks_all_true": true,
+      "package_six_files_still_sealed": true,
+      "source_ready_bytes_unchanged": true,
+      "all_109_original_save_files_unchanged": true,
+      "actual_1600x1000_complete_showui_png": true,
+      "expected_runtime_identity": true
+    },
+    "full_state_equal_to_successful_cooked_ready": true,
+    "initial_ready_hash_match": true,
+    "ready_seed_byte_copy": true,
+    "ready_seed_sha256": "de492ceed3a6a6406ee5638c237a55f4d588242743cdcf9e51812274b61b911c",
+    "ready_state": {
+      "record_version": 2,
+      "job_count": 4,
+      "first_three_profile_jobs_completed": true,
+      "selected_queued_flatten_sequence": 4,
+      "absolute_target_cm": 300,
+      "cells_per_side": 2,
+      "required_g": [
+        18072546,
+        18835039
+      ],
+      "completed_g": [
+        0,
+        0
+      ],
+      "warehouse_g": 21600000,
+      "initial_warehouse_credit_g": 0,
+      "work_paused": true,
+      "transport_enabled": false,
+      "no_active_job": true,
+      "empty_buffer_and_truck": true,
+      "balance_error_g": 0
+    },
+    "package_seal": {
+      "status": "passed_before_launch_and_external_review",
+      "sealed_file_count": 6,
+      "executable_count": 1,
+      "pak_iostore_container_count": 5,
+      "algorithm": "SHA256",
+      "scope": "Launcher requires exact declared relative package paths, hashes of game executable and all .pak/.ucas/.utoc files, no duplicate/traversal/redirection paths. Mutable demo save is separate and never automatically reseeded."
+    },
+    "original_save_files_verified_unchanged": 109,
+    "ui_image": {
+      "file": "assets/images/flatten-demo-ui.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4087175,
+      "sha256": "eedd7f238fc475bd3af96540a8b8fa48bbd52afb315aa3a711f73be293ad4ecf",
+      "modified": false,
+      "show_ui": true,
+      "agent_visual_review": "Coordinating and documentation agents viewed actual image; terrain and native Slate panel with queued Flatten, warehouse 21.6 t and balance 0 g visible; no private desktop UI.",
+      "default_tool": "Lower",
+      "selected_queue_operation": "Flatten",
+      "physical_input_claim": false,
+      "human_verification_claim": false
+    },
+    "audit_scope": "Read-only normal-controller model audit and actual SHOWUI PNG; pixels require image review. No work, input, save or quit was performed.",
+    "user_progress": "Future intentional user progress is mutable in the isolated demo slot. Launcher preserves it, never overwrites existing saves and does not reseed automatically.",
+    "limits": [
+      "Read-only audit did not start work, send input, save or quit.",
+      "Space/H describe controller contract; no physical-input claim.",
+      "Accelerated demo configuration is not normal machine productivity."
+    ],
+    "report_sources": [
+      {
+        "name": "flatten-demo-audit.json",
+        "sha256": "f1ae9c4dbbf3b46185d6b5eddd83de6c1ef79204c3381d74dcd623513c5ee06b",
+        "bytes": 41267
+      },
+      {
+        "name": "flatten-demo-review.json",
+        "sha256": "cc8206fcf958fb1e49f14c725e5dffa5982cc5e5f36ca7a85af41ea9b9b87db2",
+        "bytes": 1607
+      },
+      {
+        "name": "flatten-demo.json",
+        "sha256": "07ddd2072d8335eb6fb57ea061d502d69a0572b0ccc38a7857bf9a2a9567854a",
+        "bytes": 2459
+      }
+    ]
+  }
+}
