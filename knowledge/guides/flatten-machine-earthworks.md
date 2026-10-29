@@ -9,7 +9,7 @@ plugin_version: '4.1'
 evidence_scope: "Begrenztes EarthworksLab: 52 native Tests; vollständige Uncooked-/frische Development-Cooked-Läufe je 12/12 + 16/16; normale Controller-API 15/15; sichtbare gekochte Demo mit 12/12 nativen + 9/9 externen Checks und agentengeprüften Slate-Pixeln. 50-cm-Kollision. Keine physischen Eingaben oder menschliche Abnahme."
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T11:00:12Z"
+  at: "2026-10-29T11:18:40Z"
 verified:
   by: codex/gpt-6
   at: "2026-10-29T11:00:12Z"
@@ -160,6 +160,13 @@ Die CPU- und GPU-Formeln können übereinstimmen, während das physische Dreieck
 Die aktuelle Korrektur verwendet ausschließlich im eigenen EarthworksLab 50 cm Abstand. Vorschau, erneute Planprüfung und das atomare Laden von Ebnenrecords verlangen diesen Wert exakt. Bestehende Anheben-/Absenkenfälle dürfen weiterhin 100 cm verwenden. Die neuen Guards und die gespeicherte Kartenrückprüfung bestanden. Die dritte Uncooked-Runde bestand anschließend vollständig mit 12/12 Create- und 16/16 Resumechecks. Die beiden früheren Negativbefunde bleiben erhalten; das 5-cm-Gate wurde nicht gelockert. Auch der frische Development-Cooked-Lauf bestand anschließend vollständig.
 
 Auch bei 50 cm bleibt der Nachweis begrenzt: Die 50-cm-Kernproben liegen dann auf physischen Kollisionsvertices. Die zusätzlichen 25-/75-cm-Schulterproben prüfen weiterhin Punkte dazwischen. Die insgesamt 377 unabhängigen Prüfpositionen belegen weder jede feinere Zwischenhöhe noch beliebige steile Mischprofile oder unabhängig vermessenes Meshvolumen.
+
+> **Bedienhilfe: Vorschau, Auftrag und Start unterscheiden**
+> Eine neue Vorschau muss gültig, per Linksklick fixiert und mit Enter bestätigt sein; „Mausvorschau“ ist noch kein gespeicherter Auftrag.
+> Für vorhandene Arbeit den gewünschten **Queued**-Eintrag auswählen, zuerst **Arbeit starten / Pause**, danach **Transport an / aus** direkt anklicken.
+> Über der linken Leiste sperrt der Quellcode **Space/H/Tab**. Dort die direkten Schaltflächen verwenden oder den Zeiger vor Hotkeys aus der Leiste bewegen.
+> Ein Anhebeauftrag benötigt beim Start seine vollständige Einbaumasse als echten Bestand. Beispiel: **1 × 1 Zelle, +0,5 m = 14,4 t im Modell**; geplanter Aushub ist keine automatische Gutschrift.
+> Nachweis: Quellbefund (`KeysAllowed`/`PointerBlocked`/`CanProcessWorldInput`) und ergänzende rein lesende UI-Sichtprüfung; keine getesteten physischen Eingaben, kein Bugfix und keine neue menschliche Abnahme.
 
 | Meldung oder Verhalten | Vorgehen |
 | --- | --- |
