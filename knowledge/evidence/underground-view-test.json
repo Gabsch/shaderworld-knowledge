@@ -1,0 +1,558 @@
+{
+  "report_version": 1,
+  "date": "2026-10-29",
+  "updated_at": "2026-10-29T02:45:57Z",
+  "status": "editor_views_component_physics_and_cold_restart_passed_cook_pending",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "scope": "Normal EarthworksLab PIE, own native controller calls through bounded file bridge. No verification GameMode; no physical keyboard/mouse input acceptance. Local view-only hybrid shell, no excavation.",
+  "map": "/Game/Maps/ShaderWorldEarthworksLab",
+  "game_mode": "/Script/UnrealMcpTest.CityLabEarthworksGameMode",
+  "source_records": {
+    "private_count": 11,
+    "private_batch": "Saved/McpDiagnostics/earthworks-view-v4-records.json",
+    "raw_records_published": false,
+    "absolute_paths_published": false,
+    "private_batch_count": 9,
+    "additional_surface_cutaway_capture_records": 2
+  },
+  "native_automation": {
+    "report_kind": "NullRHI CPU/data tests, no render proof",
+    "source_report": "Saved/McpDiagnostics/earthworks-livebiome-automation/index.json",
+    "own_tests": [
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedClipAndSelection",
+        "state": "Success",
+        "duration": 0.007447998970746994,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.MaterialRestoreOwnership",
+        "state": "Success",
+        "duration": 0.0065109990537166595,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+        "state": "Success",
+        "duration": 0.018500499427318573,
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "whole_suite": {
+      "succeeded_clean": 44,
+      "succeeded_with_known_warnings": 2,
+      "failed": 0,
+      "not_run": 0
+    }
+  },
+  "editor_visual_review": {
+    "surface": true,
+    "local_cutaway": true,
+    "green_biome_outside_cutaway_preserved": true,
+    "interior_shell": true,
+    "restored_surface": true,
+    "load_during_cutaway_returns_surface": true,
+    "inspection": "Agent visually inspected completed native PNG files, not screenshot-request acknowledgement alone",
+    "foliage": "Brief bounded refresh hides whole intersecting groups; not per-tree clipping",
+    "modified_images": false
+  },
+  "logical_invariance": {
+    "canonical_sha256_verified_from_raw_state": true,
+    "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+    "same_state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+    "all_logical_state_records_identical": true,
+    "all_mass_balance_errors_g": 0,
+    "all_pawn_locations_identical": true,
+    "job_count": 1,
+    "work_paused": true,
+    "transport_enabled": false,
+    "limit": "Unchanged logical state alone is not physical terrain/collision proof."
+  },
+  "phases": {
+    "surface": {
+      "action": "capture",
+      "success": true,
+      "mode": "surface",
+      "slice_height_cm": -200.0,
+      "own_hidden_vegetation_pools": 0,
+      "view_target_kind": "build_camera_pawn",
+      "pawn_location_cm": [
+        -18700.0,
+        8100.0,
+        2500.0
+      ],
+      "control_rotation_deg": [
+        -48.18000030517578,
+        48.18000030517578,
+        0.0
+      ],
+      "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "mass_balance_error_g": 0,
+      "job_count": 1,
+      "work_paused": true,
+      "transport_enabled": false,
+      "normal_controller_initialized": true,
+      "verification_mode": false
+    },
+    "cutaway": {
+      "action": "capture",
+      "success": true,
+      "mode": "cutaway",
+      "slice_height_cm": -200.0,
+      "own_hidden_vegetation_pools": 18,
+      "view_target_kind": "inspection_camera",
+      "pawn_location_cm": [
+        -18700.0,
+        8100.0,
+        2500.0
+      ],
+      "control_rotation_deg": [
+        -48.18000030517578,
+        48.18000030517578,
+        0.0
+      ],
+      "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "mass_balance_error_g": 0,
+      "job_count": 1,
+      "work_paused": true,
+      "transport_enabled": false,
+      "normal_controller_initialized": true,
+      "verification_mode": false
+    },
+    "interior": {
+      "action": "capture",
+      "success": true,
+      "mode": "interior",
+      "slice_height_cm": -200.0,
+      "own_hidden_vegetation_pools": 0,
+      "view_target_kind": "inspection_camera",
+      "pawn_location_cm": [
+        -18700.0,
+        8100.0,
+        2500.0
+      ],
+      "control_rotation_deg": [
+        -48.18000030517578,
+        48.18000030517578,
+        0.0
+      ],
+      "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "mass_balance_error_g": 0,
+      "job_count": 1,
+      "work_paused": true,
+      "transport_enabled": false,
+      "normal_controller_initialized": true,
+      "verification_mode": false
+    },
+    "restored_surface": {
+      "action": "capture",
+      "success": true,
+      "mode": "surface",
+      "slice_height_cm": -200.0,
+      "own_hidden_vegetation_pools": 0,
+      "view_target_kind": "build_camera_pawn",
+      "pawn_location_cm": [
+        -18700.0,
+        8100.0,
+        2500.0
+      ],
+      "control_rotation_deg": [
+        -48.18000030517578,
+        48.18000030517578,
+        0.0
+      ],
+      "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "mass_balance_error_g": 0,
+      "job_count": 1,
+      "work_paused": true,
+      "transport_enabled": false,
+      "normal_controller_initialized": true,
+      "verification_mode": false
+    },
+    "load_restored_surface": {
+      "action": "capture",
+      "success": true,
+      "mode": "surface",
+      "slice_height_cm": -200.0,
+      "own_hidden_vegetation_pools": 0,
+      "view_target_kind": "build_camera_pawn",
+      "pawn_location_cm": [
+        -18700.0,
+        8100.0,
+        2500.0
+      ],
+      "control_rotation_deg": [
+        -48.18000030517578,
+        48.18000030517578,
+        0.0
+      ],
+      "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "mass_balance_error_g": 0,
+      "job_count": 1,
+      "work_paused": true,
+      "transport_enabled": false,
+      "normal_controller_initialized": true,
+      "verification_mode": false
+    }
+  },
+  "slice_steps": [
+    {
+      "delta_cm": -100,
+      "observed_slice_height_cm": -300.0,
+      "same_logical_state": true
+    },
+    {
+      "delta_cm": 100,
+      "observed_slice_height_cm": -200.0,
+      "same_logical_state": true
+    }
+  ],
+  "public_images": [
+    {
+      "file": "assets/images/underground-view-surface.png",
+      "sha256": "e409468b73f287baa962945eb10204df60a726ff965573c3eb009df4671985fe",
+      "bytes": 1157410
+    },
+    {
+      "file": "assets/images/underground-view-cutaway.png",
+      "sha256": "b6fd871436344678eb89a57dfa20dab23227838edbf8ea42eca2c679b5b756be",
+      "bytes": 845706
+    },
+    {
+      "file": "assets/images/underground-view-interior.png",
+      "sha256": "4e1a99ba2d53bfd173adc220d0c8fd82bdafbdc7008821d2a9285c6d3680a039",
+      "bytes": 562200
+    },
+    {
+      "file": "assets/images/underground-view-restored-surface.png",
+      "sha256": "159a8570f05bc9e3c00a2b3a9b8184a7b16f4e757ff42de596d89b053c6d8991",
+      "bytes": 1233683
+    }
+  ],
+  "physics": {
+    "status": "passed_bounded_component_traces",
+    "source_aggregation": "Saved/McpDiagnostics/earthworks-view-physics-v5.json",
+    "normal_pie_after_cold_editor_restart": true,
+    "mode_count": 4,
+    "positive_terrain_traces": 36,
+    "positive_shell_traces": 24,
+    "all_heights_exactly_equal_between_modes": true,
+    "all_shell_distances_exactly_equal_between_modes": true,
+    "expected_surface_height_cm": 300,
+    "max_surface_abs_error_cm": 0.00209808349609375,
+    "native_output_contract": "K2_LineTraceComponent returns None on miss, otherwise HitLocation/HitNormal/BoneName/OutHit tuple. Public HitLocation and component being queried used; no protected HitResult fields.",
+    "records": [
+      {
+        "mode": "surface",
+        "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "mass_balance_error_g": 0,
+        "own_hidden_vegetation_pools": 0,
+        "terrain_hit_heights_cm": [
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961
+        ],
+        "shell_face_distances_cm": {
+          "ViewFloor": 200.00000894069672,
+          "ViewRoof": 200.00000894069672,
+          "ViewLeft": 300.0000089406967,
+          "ViewRight": 300.0000089406967,
+          "ViewBack": 800.0000059604645,
+          "ViewFront": 800.0000059604645
+        },
+        "pawn_location_cm": [
+          -18700.0,
+          8100.0,
+          2500.0
+        ],
+        "view_target_kind": "build_camera_pawn",
+        "uses_inspection_camera": false,
+        "roi_coverage": {
+          "scope": "Fixed local chamber footprint only; not whole-world collision coverage",
+          "roi_xy_center_cm": [
+            -17000.0,
+            10000.0
+          ],
+          "roi_xy_half_extent_cm": [
+            800.0,
+            350.0
+          ],
+          "total_component_count": 14,
+          "bounds_intersection_count": 1,
+          "unknown_bounds_count": 0,
+          "selected_count": 1,
+          "selection_limit": 128,
+          "truncated_candidate_count": 0,
+          "fallback_selected_count": 0,
+          "coverage_complete_for_roi_candidates": true,
+          "rule": "XY bounds intersection, or nearest unknown-bounds fallback; sorted by distance/path, max128"
+        },
+        "diagnostic_error_count": 0,
+        "all_native_trace_output_contracts_validated": true
+      },
+      {
+        "mode": "cutaway",
+        "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "mass_balance_error_g": 0,
+        "own_hidden_vegetation_pools": 18,
+        "terrain_hit_heights_cm": [
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961
+        ],
+        "shell_face_distances_cm": {
+          "ViewFloor": 200.00000894069672,
+          "ViewRoof": 200.00000894069672,
+          "ViewLeft": 300.0000089406967,
+          "ViewRight": 300.0000089406967,
+          "ViewBack": 800.0000059604645,
+          "ViewFront": 800.0000059604645
+        },
+        "pawn_location_cm": [
+          -18700.0,
+          8100.0,
+          2500.0
+        ],
+        "view_target_kind": "inspection_camera",
+        "uses_inspection_camera": true,
+        "roi_coverage": {
+          "scope": "Fixed local chamber footprint only; not whole-world collision coverage",
+          "roi_xy_center_cm": [
+            -17000.0,
+            10000.0
+          ],
+          "roi_xy_half_extent_cm": [
+            800.0,
+            350.0
+          ],
+          "total_component_count": 14,
+          "bounds_intersection_count": 1,
+          "unknown_bounds_count": 0,
+          "selected_count": 1,
+          "selection_limit": 128,
+          "truncated_candidate_count": 0,
+          "fallback_selected_count": 0,
+          "coverage_complete_for_roi_candidates": true,
+          "rule": "XY bounds intersection, or nearest unknown-bounds fallback; sorted by distance/path, max128"
+        },
+        "diagnostic_error_count": 0,
+        "all_native_trace_output_contracts_validated": true
+      },
+      {
+        "mode": "interior",
+        "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "mass_balance_error_g": 0,
+        "own_hidden_vegetation_pools": 0,
+        "terrain_hit_heights_cm": [
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961
+        ],
+        "shell_face_distances_cm": {
+          "ViewFloor": 200.00000894069672,
+          "ViewRoof": 200.00000894069672,
+          "ViewLeft": 300.0000089406967,
+          "ViewRight": 300.0000089406967,
+          "ViewBack": 800.0000059604645,
+          "ViewFront": 800.0000059604645
+        },
+        "pawn_location_cm": [
+          -18700.0,
+          8100.0,
+          2500.0
+        ],
+        "view_target_kind": "inspection_camera",
+        "uses_inspection_camera": true,
+        "roi_coverage": {
+          "scope": "Fixed local chamber footprint only; not whole-world collision coverage",
+          "roi_xy_center_cm": [
+            -17000.0,
+            10000.0
+          ],
+          "roi_xy_half_extent_cm": [
+            800.0,
+            350.0
+          ],
+          "total_component_count": 14,
+          "bounds_intersection_count": 1,
+          "unknown_bounds_count": 0,
+          "selected_count": 1,
+          "selection_limit": 128,
+          "truncated_candidate_count": 0,
+          "fallback_selected_count": 0,
+          "coverage_complete_for_roi_candidates": true,
+          "rule": "XY bounds intersection, or nearest unknown-bounds fallback; sorted by distance/path, max128"
+        },
+        "diagnostic_error_count": 0,
+        "all_native_trace_output_contracts_validated": true
+      },
+      {
+        "mode": "surface",
+        "state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "mass_balance_error_g": 0,
+        "own_hidden_vegetation_pools": 0,
+        "terrain_hit_heights_cm": [
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961,
+          300.0020980834961
+        ],
+        "shell_face_distances_cm": {
+          "ViewFloor": 200.00000894069672,
+          "ViewRoof": 200.00000894069672,
+          "ViewLeft": 300.0000089406967,
+          "ViewRight": 300.0000089406967,
+          "ViewBack": 800.0000059604645,
+          "ViewFront": 800.0000059604645
+        },
+        "pawn_location_cm": [
+          -18700.0,
+          8100.0,
+          2500.0
+        ],
+        "view_target_kind": "build_camera_pawn",
+        "uses_inspection_camera": false,
+        "roi_coverage": {
+          "scope": "Fixed local chamber footprint only; not whole-world collision coverage",
+          "roi_xy_center_cm": [
+            -17000.0,
+            10000.0
+          ],
+          "roi_xy_half_extent_cm": [
+            800.0,
+            350.0
+          ],
+          "total_component_count": 14,
+          "bounds_intersection_count": 1,
+          "unknown_bounds_count": 0,
+          "selected_count": 1,
+          "selection_limit": 128,
+          "truncated_candidate_count": 0,
+          "fallback_selected_count": 0,
+          "coverage_complete_for_roi_candidates": true,
+          "rule": "XY bounds intersection, or nearest unknown-bounds fallback; sorted by distance/path, max128"
+        },
+        "diagnostic_error_count": 0,
+        "all_native_trace_output_contracts_validated": true
+      }
+    ],
+    "scope": "Fixed local chamber ROI and direct individual component line traces. Not whole-world physics, character/vehicle movement, navigation, portal crossing or water proof.",
+    "source_records_checked_directly": 4
+  },
+  "pending": [
+    "Packaged cooked view run",
+    "Physical Esc/number keys/buttons and cursor chamber selection",
+    "Multi-camera, split-screen and multiplayer rendering",
+    "Water endurance, navigation and portals",
+    "Actual underground excavation, geology and machine/material ledgers"
+  ],
+  "runtime_limits": [
+    "Mask is spatially local but affects whole selected terrain actor, not per-camera material state.",
+    "Own lab uses full terrain material at all LODs; no mixed-LOD support or performance guarantee.",
+    "View hides whole intersecting per-player vegetation pools, preserving collision/resources.",
+    "Fixed-XY transient shell is not a saved machine-built tunnel.",
+    "Protected hidden-component and owned-MID registers unavailable in Python. Public own pool count and native ownership regression used."
+  ],
+  "licensed_source_published": false,
+  "cold_restart": {
+    "status": "passed_normal_queued_state_restore",
+    "normal_controller_and_saved_state_restored": true,
+    "same_state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+    "normal_slot_bytes_unchanged_reported": true,
+    "normal_slot_sha256": "ab4fdb9ac47ef39ded2f79a204c10b51945cf1182e3f4ce20b4b9eed6830b7cf",
+    "legacy_save_files_unchanged": true,
+    "legacy_save_file_count": 102,
+    "raw_save_files_published": false
+  },
+  "setup_client": {
+    "entrypoint": "Tools/setup_earthworks_lab.py",
+    "dependency": "Tools/earthworks_editor_session.py freshly attached in the same stopped-PIE editor",
+    "action": "setup",
+    "normal_slot_save_operations": false,
+    "ready_schema": "citylab.earthworks-editor-session.v1",
+    "ready_max_age_seconds": 120,
+    "max_wait_seconds": 120,
+    "session_guard": true,
+    "dispatch_count_per_run": 1,
+    "automatic_timeout_replay": false,
+    "offline_mock_cases_passed": 9,
+    "offline_cases": [
+      "success",
+      "editor_rejection",
+      "session_replaced",
+      "invalid_acknowledgement",
+      "timeout_without_replay",
+      "missing_ready",
+      "stale_ready",
+      "wrong_schema",
+      "not_ready"
+    ],
+    "wrapper_runtime_acceptance": "not run; real map setup used the same fixed bridge setup action directly",
+    "scope": "Offline client protocol proof only, separate from actual native editor map setup and view pixel/physics evidence."
+  },
+  "source_versions": {
+    "kind": "SHA-256 of own project source bytes at documentation freeze; source files not published",
+    "files": [
+      {
+        "relative_file": "Source/UnrealMcpTest/CityLabUndergroundView.h",
+        "sha256": "f6c262f8830393c814c56b6141489185a7862e118ae54287112336363a8ec17d"
+      },
+      {
+        "relative_file": "Source/UnrealMcpTest/CityLabUndergroundView.cpp",
+        "sha256": "a0367decd90ab9123e26bb303c94a21787d9322c5b5910a5dd17ccf835bc0a8f"
+      },
+      {
+        "relative_file": "Source/UnrealMcpTest/CityLabUndergroundViewTests.cpp",
+        "sha256": "a879a4723e7f650ba7dd401e0054e47223aabaf8666ad536512fb33914de9f62"
+      },
+      {
+        "relative_file": "Tools/setup_underground_view_material.py",
+        "sha256": "b93bf84e588276230f018bb0cd2621a8c1c438f09235b8cd6857cb21c8987173"
+      },
+      {
+        "relative_file": "Tools/earthworks_editor_session.py",
+        "sha256": "7c50b649faba4302e806e98f7372048001ef76f09bc4c5f8bdcc4d167117b642"
+      },
+      {
+        "relative_file": "Tools/setup_earthworks_lab.py",
+        "sha256": "a70c893f5b9a9b4202be61a6c2d6902e41946efb37e74d39e5d4658f4ddd8b16"
+      }
+    ]
+  },
+  "generated_at": "2026-10-29T02:48:04Z",
+  "package_build": {
+    "status": "passed_build_cook_stage_archive",
+    "new_map_and_materials_staged": true,
+    "buildcookrun_seconds": 157.39,
+    "packaged_view_pixels": "not_tested",
+    "separate_earthworks_packaged_cycle": "passed; see machine-earthworks-test.json",
+    "scope": "Build inclusion only for this view, not a packaged mode-switch/pixel test."
+  }
+}

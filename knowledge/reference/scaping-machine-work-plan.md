@@ -8,9 +8,18 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T00:01:27Z"
-evidence_scope: Nutzerbeschlossener Umsetzungsplan vom 29. Oktober 2026 und Quellprüfung; keine Umsetzung oder neue Laufzeitabnahme der beschriebenen Erweiterungen.
+  at: "2026-10-29T02:49:32Z"
+evidence_scope: Erster Slice nativ sowie uncooked und frisch verpackt mit je 10/10 und 12/12 Checks geprüft; normale Controller-/Queue-Kaltstartprobe und separate Editor-Ansicht mit lokalen Kollisionen bestanden. Physische Eingaben, verpackte Ansichtspixel und weitere Scaping-Werkzeuge offen.
 sources:
+  - id: machine-earthworks
+    resource: ../guides/machine-earthworks.md
+    title: Implementiertes Anheben und Absenken mit eigener Warteschlange und Speicherformat 6
+  - id: machine-evidence
+    resource: ../evidence/machine-earthworks-test.json
+    title: Finale native Suite und begrenzte uncooked Erstabnahme
+  - id: underground-view
+    resource: ../guides/underground-view.md
+    title: Eigene schematische Untergrunddarstellung mit getrenntem Nachweis
   - id: user-decision
     resource: "Direkte Nutzerentscheidung am 29. Oktober 2026: Plan in OKF festhalten; nach abgeschlossenem Asset-Import und Projektfreigabe Anheben/Absenken als Maschinenaufträge beginnen, parallel Untergrundansicht. Chat und Koordinationsnachrichten nicht im öffentlichen Bundle enthalten."
     title: Beschlossener Startpunkt und Reihenfolge
@@ -35,9 +44,9 @@ sources:
 ---
 # Alle Scaping-Werkzeuge an Maschinenaufträge anbinden
 
-**Beschlossen, noch nicht umgesetzt:** Alle regulären Scaping-Eingaben erzeugen einen gespeicherten Zielplan. Maschinen führen ihn schrittweise aus. Das sichtbare Gelände zeigt den erreichten Bauzustand. Die Vorschau darf zukünftige Arbeit zeigen, aber noch keinen Boden, Bewuchs oder Materialbestand ändern.
+**Ziel für alle regulären Scaping-Eingaben:** Ein gespeicherter Zielplan wird schrittweise von Maschinen ausgeführt. Das sichtbare Gelände zeigt den erreichten Bauzustand. Vorschau und ungearbeitete Bestätigung ändern noch keinen Boden, Bewuchs oder Materialbestand. Der erste getrennte Anheben-/Absenken-Slice ist implementiert und nativ sowie uncooked und verpackt geprüft; Ebnen, Oberflächenarbeit und die breite Umstellung der bisherigen Scaping-Werkzeuge folgen später.
 
-Der erste Arbeitsblock ist **Anheben und Absenken als Maschinenauftrag**, parallel dazu eine **Untergrundansicht**. Die Umsetzung startet erst nach abgeschlossenem Fahrzeug-Asset-Import und ausdrücklicher Projektfreigabe durch den Import-Chat. Die reine OKF-Dokuarbeit ist währenddessen abgestimmt; Editor, PIE, Blender, Builds und Spielstände bleiben beim Import. Eine fehlende Abschlussmeldung gilt nicht als Freigabe.[^user-decision]
+Der erste Arbeitsblock **Anheben und Absenken als Maschinenauftrag** wurde nach abgeschlossenem Fahrzeug-Asset-Import und ausdrücklicher Projektfreigabe begonnen. Parallel entstand die **Untergrundansicht**. Während des Imports war allein abgestimmte Dokuarbeit freigegeben; Editor, PIE, Blender, Builds und Spielstände blieben beim Import. Diese Freigabe wurde abgewartet. Weitere gemeinsame Editor-/GPU-Läufe bleiben zeitlich zu koordinieren.[^user-decision] [Bedienung und Prüfgrenzen](../guides/machine-earthworks.md).
 
 ## So soll sich der Ablauf anfühlen
 
@@ -62,17 +71,17 @@ Die vorhandene Foundations-Sofortausführung bleibt bis zur Umstellung ausdrück
 
 ## Gemeinsame Regeln für Planung, Boden und Material
 
-**Ein Plan besitzt eine stabile Identität und Revision.** Seine Arbeitsaufträge verweisen auf diese Identität. Die bisherige unabhängig erzeugte SourcePlanId im Construction-Pfad ist noch keine echte Verknüpfung zu einem Scaping-Plan. Der neue Auftrag speichert Weltbindung, Ausgangsraster, Zielraster, regionale Geländeversion, Operation und getrennte Aushub-/Einbaumengen.[^own-source]
+**Ein Plan besitzt eine stabile Identität und Revision.** Im neuen Earthworks-Pfad verweist `SourcePlanId` tatsächlich auf `Plan.Id`; der ausführende Job hat eine weitere stabile ID. Revisionen behalten Planidentität und Reihenfolge. Gespeichert werden Welt-/Generatorbindung, Ausgangs- und Referenzraster, Start-/Zielhöhen, Geländeversion und Operation. Der alte Construction-Pfad bleibt erhalten; seine unabhängig erzeugte SourcePlanId wurde dadurch nicht rückwirkend mit einem Scaping-Plan verbunden. Gemischte Aushub-/Einbaubereiche innerhalb eines Ebnenauftrags sind weiterhin Schritt B.[^own-source]
 
-**Den echten Ausgangsboden erfassen.** Der jetzige Baustellenplaner nimmt eine flache Basis an. Die neun Punkte der Scaping-Vorschau beziehungsweise lokalen Kollisionsabnahme ersetzen kein allgemeines Volumenraster; auch die dichtere Flachheitsprüfung der Construction-Vorschau mit 25/49/81 Punkten je nach Größe erzeugt noch kein gespeichertes Ausgangsraster. Für bearbeiteten oder unebenen Boden müssen Vorschau, Mengenrechnung und ausgeführte Geometrie dieselbe Beschreibung verwenden. Bereits enthaltene Änderungen dürfen beim nächsten Auftrag nicht erneut aufaddiert werden. Wird die Ausgangsfläche vor Arbeitsbeginn verändert, wartet der Auftrag mit **Plan erneut prüfen**.
+**Den echten Ausgangsboden erfassen.** Der frühere Construction-Planer setzte eine flache Basis voraus; seine Flachheitsprüfung war noch kein gespeichertes Ausgangsraster. Earthworks speichert nun dichte tatsächliche Kollisionsproben über der Einflussfläche und die Start-/Zielhöhe jeder Arbeitszelle. Zusätzlich enthält die Referenz dieselben Proben abzüglich bereits ausgeführter Earthworks-Höhenänderungen. Referenz plus sämtliche ausgeführten Beiträge erzeugen den erwarteten Boden, ohne die neue Baseline ein zweites Mal aufzutragen. Vor Arbeitsstart werden Fläche und Zugänge erneut geprüft. Ein veralteter ungearbeiteter Plan benötigt eine frische Revision. Ein beliebiges unebenes Feld samt gemischter Einebnung ist damit noch nicht abgenommen.
 
 **Mengen aus derselben Form ableiten.** Gegensätzliche Höhenbeiträge dürfen sich nicht sichtbar aufheben, während trotzdem beide vollständigen Mengen als bewegt gelten. Aushub und Einbau werden getrennt integriert; Dichten, Zellauflösung und Rundung werden ausdrücklich festgelegt. Exakte Modellgramm sind von einer unabhängigen Vermessung des quantisierten Terrainmeshvolumens zu unterscheiden.
 
-**Ein gemeinsamer Vorrat, mehrere Pläne.** Zunächst eine gespeicherte Warteschlange und ein aktiver Erdauftrag beziehungsweise Maschinenzug. Das vorhandene Gruben-/Aufschüttpaar bleibt ein geprüfter Spezialfall. Lagerbestände und Reservierungen gehören einmal zur Welt; jeder Auftrag darf denselben Vorrat nicht erneut als frei zusagen. Überlappende aktive Einflussbereiche werden zunächst ausgeschlossen. Wartende Pläne werden vor Beginn erneut geprüft.
+**Ein gemeinsamer Vorrat, mehrere Pläne.** Der erste Earthworks-Snapshot enthält eine Warteschlange, einen aktiven Auftrag, einen Lkw und genau ein Lager. Wartende Pläne besitzen weder Vorabgutschrift noch Reservierung. Anheben reserviert beim ausdrücklichen Start nur bereits vorhandenen vollständigen Bedarf; Absenken startet nur, wenn der gesamte verbleibende Aushub ins freie Lager passt. Der nächste Auftrag startet nicht automatisch. Das alte Gruben-/Aufschüttpaar bleibt ein separater Spezialfall mit eigenem Slot; seine Konten werden nicht automatisch mit Earthworks zusammengelegt.
 
-**Ändern und Abbrechen bewahren die Arbeit.** Unbegonnene Aufträge dürfen verändert oder storniert werden. Nach dem ersten Erdschritt oder Materialtransfer bleiben ausgeführte Höhen, Verbrauch und Ladungen erhalten. Ein neues Ziel erzeugt eine Folgerevision mit Rest- oder Gegenarbeit. Undo löscht keine bereits ausgeführte Baugeschichte. Beim Abbruch bleiben Ladungen erhalten oder werden durch einen ausdrücklichen Rücktransport behandelt.
+**Ändern und Abbrechen bewahren die Arbeit.** Unbegonnene Aufträge dürfen verändert oder storniert werden. Nach dem ersten Erdschritt oder Materialtransfer bleiben ausgeführte Höhen, Verbrauch und Ladungen erhalten. Nach ausgeführter Arbeit benötigt ein neues Ziel einen weiteren Gegenauftrag; der erste Slice erlaubt dann weder Revision noch Storno des bisherigen Jobs. Undo löscht keine bereits ausgeführte Baugeschichte. Ein allgemeiner Abbruch mit Rücktransport beladener Fahrzeuge ist noch nicht implementiert.
 
-**Ein Arbeitsschritt bildet einen konsistenten Speicherstand.** Materialbuchung, Zellfortschritt und ausgeführte Geometrieversion werden zusammen fortgeschrieben. Anschließend wird das Terrain daraus aufgebaut; weitere Erdarbeit wartet auf den lokalen Kollisionsnachweis. Nach dem Laden wird derselbe Stand rekonstruiert und geprüft, ohne Material erneut zu buchen. Neue Daten benötigen eine versionierte Save-Erweiterung mit geprüfter Übernahme alter Constructionrecords.[^current-cycle]
+**Ein Arbeitsschritt bildet einen konsistenten Speicherstand.** Materialbuchung, Zellfortschritt und ausgeführte Geometrieversion werden zusammen fortgeschrieben. Anschließend wird das Terrain daraus aufgebaut; weitere Erdarbeit wartet auf den lokalen Kollisionsnachweis. Nach dem Laden wird derselbe Stand rekonstruiert und geprüft, ohne Material erneut zu buchen. Speicherformat 6 ergänzt den Earthworks-Snapshot und erhält die bisherigen Felder einschließlich Constructionrecords. Native Schema-Fixtures prüfen diesen Datenvertrag; eine automatische Umwandlung alter Constructionaufträge in neue Earthworks-Jobs ist nicht enthalten. Die Migration jedes archivierten echten Binärsaves bleibt separat zu prüfen.[^current-cycle]
 
 ## Umsetzungsreihenfolge und erste Abnahme
 
@@ -90,6 +99,16 @@ Abnahmekriterien:
 - Revision, Storno und Undo bleiben vor Arbeit neutral. Nach erstem Erdschritt oder Materialtransfer dürfen sie weder Höhe noch Konten oder Ladungen zurücksetzen; Gegenarbeit benötigt einen neuen Auftrag.
 - Neustart während beladener Fahrt und während ausstehender Kollisionsaktualisierung erhält den vollständigen Zustand vor weiterer Simulation. Drei weitere Loads erzeugen keine Duplikate.
 - Unabhängige lokale Höhenproben, unbeeinflusste Kontrollflächen und alte Spielstände bleiben Teil der Prüfung. Physische Bedienung und gerenderte Form werden getrennt abgenommen.
+
+### Prüfstand A nach der ersten Umsetzung
+
+- **Nativ bestanden:** finale Suite 46/46, darunter sieben Earthworks-Tests und drei getrennte Untergrund-Datentests.
+- **Uncooked und verpackt bestanden:** je zwei gerenderte Prozesse mit **10/10 + 12/12 Checks**. Auf derselben N2-/0,75-m-Fläche **86,4 t** ausheben, lagern und wieder einbauen; alle Bilanzen **0 g**. Beladene Fahrt und Kollisionswarte-Checkpoint exakt fortgesetzt, drei weitere Loads ohne Duplikat. Je Laufpaar 825 akzeptierte lokale Höhenproben, maximal 4 cm bei 5-cm-Gate. Neuer EarthworksLab-Cook/Stage/Archive erfolgreich; bekannte geerbte Level-Blueprint-Warnungen bleiben.
+- **Normale APIs und Kaltstart bestanden:** eigener gespeicherter Kartenstand, Zielwahl, Bestätigung mit Autosave und drei logische Loads. Kalte Editorstarts laden den ungearbeiteten Plan mit identischem Zustand, Arbeit pausiert/Transport aus. Ein fehlender Slot bleibt bedienbar; normale Save-Dateien sind geschützt.
+- **Ansicht getrennt bestanden:** vier Editorbilder für Oberfläche/Schnitt/Innenraum/Rückweg, Tiefenschritte, Laden aus Schnitt und invariant neun Terrain-/sechs Hüllen-Komponentenspuren je Ansicht. Der frühere Gras-zu-Sand-Fehler ist nach Korrektur der Live-Materialbindungen visuell nachgeprüft. [Eigener Ansichtsbericht](../evidence/underground-view-test.json).
+- **Begrenzungen:** physische Eingaben, weitere normale Revisions-/Start- und Fehlerwege, Außenkontrollfelder und echte archivierte Altformat-Saves bleiben offen. Komponentenspuren sind keine Weltbewegungs- oder Wasserprobe; verpackte Ansichtspixel fehlen. Gemischtes Ebnen, breite Oberflächen-/Straßenanbindung und echter Tunnelvortrieb sind spätere Slices.
+
+Der [bereinigte Maschinenbericht](../evidence/machine-earthworks-test.json) trennt native Modelle, uncooked ConstructionLab-Override, verpacktes EarthworksLab und normale APIs. Der erste Kreislauf ist einschließlich Neustart abgenommen; vor der breiten Bedienumstellung die verbleibenden Interaktionsfälle gezielt prüfen.
 
 ### B: Ebnen mit Aushub und Einbau
 
@@ -109,7 +128,7 @@ Rodung als Voraussetzung, anschließend definierter Oberflächenauftrag; danach 
 
 Die Schnittansicht ist eine Darstellungsfunktion. Sie erzeugt keine Holebrushes, Erdbewegung, Rodung oder Wasserabdichtung. Auswahl und Kamera benötigen einen eigenen, zum sichtbaren Schnitt passenden Abfragepfad; Bürger, Fahrzeuge und Maschinen behalten ihre tatsächliche Kollision. Ausgeblendete Darstellung muss beim Verlassen, Laden und Beenden zuverlässig zurückgestellt werden.
 
-Eine fertige bedienbare ShaderWorld-Cutaway-API wurde im untersuchten Bestand nicht gefunden. Ein kompatibles eigenes Anzeigematerial ist ein zu prüfender Ansatz, einschließlich Bewuchs, Schatten und weiterer Kameras. Die erfolgreiche Hybridkammer ist die Grundlage für die erste Sichtprobe; ihre Existenz belegt keinen frei ausgrabbaren 3D-Untergrund.[^underground]
+Eine fertige bedienbare ShaderWorld-Cutaway-API wurde im untersuchten Bestand nicht gefunden. Eine eigene schematische Anzeige ist inzwischen implementiert. Drei native Datenprüfungen für Grenzen/Auswahl, Materialrückgabe und spielerbezogene Sichtbarkeit bestanden; GPU-Sichtbarkeit, Bewuchs, Schatten und weitere Kameras brauchen ihre eigene praktische Abnahme. [Bedienvertrag der Untergrundansicht](../guides/underground-view.md). Die erfolgreiche Hybridkammer ist die Grundlage für die erste Sichtprobe; ihre Existenz belegt keinen frei ausgrabbaren 3D-Untergrund.[^underground]
 
 Erste Abnahme: alle drei Modi wechseln, dieselbe Kammer auswählen, sicher hin- und zurückfahren, unveränderte Physik/Materialkonten nachweisen und nach Neustart denselben Bauzustand sehen. Sichtprüfung und echte Maus-/Tastaturbedienung separat protokollieren. Zunächst keine fingierte Geologie anzeigen; Schnittflächen ohne Erdmodell sind als schematisch zu kennzeichnen.
 
@@ -119,13 +138,13 @@ Unterirdischer Vortrieb braucht zusätzlich räumliche Boden-/Geologiedaten oder
 
 Der spätere Ablauf: Zugang herstellen, erreichbaren Abschnitt ausheben, Aushub abtransportieren, sichern/auskleiden, Kollision und Wasserabdichtung prüfen, Abschnitt freigeben. Portale, Trasse und Oberfläche werden abhängige Teilaufträge eines gemeinsamen Plans.
 
-Fahrzeuge erhalten Fähigkeiten wie ausheben, laden, transportieren und verteilen. Modell, bewegliche Teile und Animation werden über Adapter an den Arbeitsfortschritt gebunden; ihre tatsächliche Eignung wird erst aus dem separaten Importbericht übernommen. Keine erfolgreiche Fahrzeuganimation vorwegnehmen.
+Fahrzeuge erhalten Fähigkeiten wie ausheben, laden, transportieren und verteilen. Modell, bewegliche Teile und Animation werden über Adapter an den Arbeitsfortschritt gebunden. Der [separate Fahrzeug-Importversuch](../guides/vehicle-asset-evaluation.md) belegt inzwischen gespeicherte Mesh-/Clips und Demoposen. Das bestätigt weder Schaufelphysik noch echte Fahrzeug-/Terrainkollision oder Produktionsleistung; die Arbeitsmengen bleiben Modellzustand.
 
 Danach priorisieren: Bürger-/Maschinenwege nach Bodenänderungen, mehrere konkurrierende Baustellen, frischer Karten-Cook und verpackte Bedien-/Neustartabnahme; größere Welten und Streaming erst mit gezielten Leistungsnachweisen. Räumliche ShaderWorld-Layer werden als Projektion unseres Zustands erprobt, nicht vorab zum alleinigen Speicher erklärt.[^storage]
 
-## Zuständigkeiten nach der Projektfreigabe
+## Zuständigkeiten und weitere gemeinsame Prüfungen
 
-- Hauptarbeit: gemeinsamer Auftragsvertrag, tatsächlicher Ausgangsboden, Materialkonten und Save-Migration; Integration der ersten Anheben-/Absenken-Runde.
+- Hauptarbeit: offene Abnahmen der ersten Anheben-/Absenken-Runde schließen; danach denselben gemeinsamen Auftragsvertrag für gemischtes Ebnen erweitern.
 - Parallelagent: isolierte Untergrunddarstellung mit eigenen Dateien und abgestimmtem Material-/Kameravertrag.
 - Parallelagent: Mengen-/Restore-Review und unabhängige Abnahmefälle; später begrenzter Datenlayer-Neustartversuch.
 - Editor, GPU-Abnahmen und Builds werden weiterhin zeitlich koordiniert. Parallelität bedeutet keine gleichzeitige Steuerung derselben Unreal-Sitzung.

@@ -14,6 +14,9 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Anheben und Absenken durch Maschinen](guides/machine-earthworks.md) – mehrere gespeicherte Pläne, gemeinsames Lager und ein Maschinenzug; 46 native Tests und je zwei uncooked/verpackte Kreislaufprozesse bestanden, 86,4 t und 0 g. Normale Controller-APIs und kalter Queue-Restore geprüft; physische Eingaben bleiben offen.
+- [Untergrundansicht bedienen](guides/underground-view.md) – Oberfläche, schematischer Schnitt und Innenraum als getrennte Darstellung; vier Editorbilder, lokale Kollisionsinvarianz und Kamerarückkehr geprüft; physische Bedienung und verpackte Ansichtspixel bleiben offen.
+
 - [Kostenlose Fahrzeugassets prüfen](guides/vehicle-asset-evaluation.md) – Liebherr, Radlader und Lkw mit neuen Democlips; gespeicherter Import, Einheiten, gerenderte Posen und SIE geprüft, Produktionsgrenzen offen.
 - [Baustellen selbst planen](guides/construction-planner.md) – Grube/Aufschuettung mit Formvorschau, Mengen, ausdruecklichem Arbeitsstart und je vier gerenderten Neustartprozessen uncooked/cooked.
 - [Rodungscache und Messgrenzen](guides/clearing-cache-and-performance.md) – weniger visuelle Instanzscans, stabile Baumkennungen und getrennte native/CityLab-Wiederherstellung.
@@ -34,14 +37,14 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Nachschlagen
 
-- [Scaping als Maschinenaufträge: nächster Umsetzungsplan](reference/scaping-machine-work-plan.md) – nach Asset-Import/Freigabe Anheben und Absenken, parallel Untergrundansicht; Mengen, Speicherung und Abnahmen.
+- [Scaping als Maschinenaufträge: vereinbarter Ausbau](reference/scaping-machine-work-plan.md) – erster Anheben-/Absenken-Slice nativ, uncooked und verpackt geprüft; danach gemischtes Ebnen, Oberflächen- und Bauvorbereitung mit eigenen Abnahmen.
 - [ShaderWorld-Datenlayer und Spielstand](reference/shaderworld-data-and-persistence.md) – räumliche Terrain-Daten, Mapassets und dauerhafte Zustände unterscheiden; Quellbefund zu unvollständigen Speicherfunktionen in 4.1.
 - [Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) – gesetzte Designregeln, geprüfter kleiner Baugrubenkreislauf und Vorschläge für weitere Maschinen-/Materialarbeit.
 - [Nächste City-Builder-Bausteine](reference/city-builder-roadmap.md) – erhaltene Themen, Baufortschritt statt freiem Terraforming und offene Abnahmen.
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.
-- [Prüfstand und offene Tests](verification.md) – aktuelle 36 native Tests sowie Planer/Cache/Hybridnachweise; historische 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
+- [Prüfstand und offene Tests](verification.md) – aktuelle 46 native Tests, uncooked/verpackte Maschinen-Erdarbeit und separate Editor-Ansichtsprüfung; ältere 36er-Planer/Cache/Hybridnachweise sowie historische 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
 
 ## Wissensbasis pflegen
 

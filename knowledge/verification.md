@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T01:16:18Z"
+  at: "2026-10-29T02:49:32Z"
 sources:
+- id: machine-earthworks
+  resource: evidence/machine-earthworks-test.json
+  title: 46 native Tests und je zwei uncooked sowie verpackte Erdarbeitsprozesse mit exakten Checkpoints
 - id: vehicle-evaluation
   resource: evidence/vehicle-asset-evaluation.json
   title: Gespeicherte Fahrzeugassets, getrennte Zentimeterkorrektur der Meshes/Clips, gerenderte Posen und SIE-Ticken
@@ -98,22 +101,35 @@ sources:
 
 # Prüfstand und offene Tests
 
+## Maschinen-Anheben und -Absenken, 29. Oktober 2026
+
+- **Final nativ:** 46/46 in **2,209579 s**, 44 ohne und zwei mit bekannten Warnungen aus Testwelt-Cleanup und absichtlicher Ablehnung alter AppliedPaint-Daten. Sieben Earthworks-Modelltests und drei Untergrund-Daten-/Besitztests bestanden.
+- **Uncooked:** zwei gerenderte Prozesse auf ConstructionLab mit Earthworks-Spielmodus bestanden **10/10 + 12/12 Checks**, 151,3/134,4 s. N2/0,75 m: **86,4 t** auf derselben Fläche ausheben, lagern und wieder einbauen. **1.011 Bilanzen mit 0 g Fehler**; am Ende Lager, Reservierung, Puffer und Lkw leer.
+- **Frisch verpackt:** eigener EarthworksLab-Karten-/Material-Cook, Stage und Archive erfolgreich, BuildCookRun **157,39 s**. Zwei gerenderte Development-Game-Prozesse bestanden **10/10 + 12/12**, 97,9/95,4 s; **965 Bilanzen mit 0 g Fehler** und gleicher 86,4-t-Kreislauf. Fünf geerbte nichtfatale Level-Blueprint-Warnungen bleiben. Neue Karte/Schnittmaterialien und Radlader gestaged; ElectroNick/Liebherr nicht enthalten. Kein Shipping- oder Leistungsnachweis.
+- **Speicherung mitten in der Arbeit:** in beiden Laufpaaren vollständige Records mit **12 t auf beladener Fahrt** und während ausstehender Kollisionsaktualisierung mit **6 t eingebaut/6 t Puffer** exakt wiederhergestellt. Drei weitere Loads ohne Konten-/Projektionsduplikate. Der Verifier hält weitere Simulation ausdrücklich bis zu stabilen unabhängigen Höhenproben an.
+- **Lokale Höhen:** je Laufpaar **300 + 525 akzeptierte Proben**, 25 Punkte/drei stabile Durchläufe pro Prüfphase, unabhängige Referenz-/Grammrechnung und Nachrechnung im Python-Harness. **5-cm-Gate**, maximal **4 cm**. Anlaufproben sind Wartephasen. Kein unabhängig gemessenes Terrainmeshvolumen oder Außenkontrollfeld.
+- **Normales PIE:** eigene Karte gespeichert/zurückgelesen, Controller ohne Verifier; fehlender Save bleibt ein behebbarer Hinweis. Zielwahl, Bestätigung mit Autosave und **drei exakte logische Loads** bestanden. Separate kalte Editorstarts erhielten denselben ungearbeiteten wartenden Plan mit gleichem kanonischem SHA-256, Pause und Transport aus. **102 alte Save-Dateien** und der neu angelegte normale Earthworks-Slot blieben bei der Ansichtsprüfung bytegleich; die Kreislauftests nutzten isolierte Slots.
+- **Separate Untergrundansicht:** Oberfläche, Schnitt, Innenraum und Rückweg mit vier unveränderten Editorbildern bestätigt; ursprüngliches grünes Biom bleibt erhalten. Tiefenschritte, Laden aus Schnitt, Kamerarückgabe sowie neun Terrain- und sechs Hüllen-Komponentenspuren je Ansicht geprüft; alle lokalen Treffer gleich, Konten/Zustand unverändert. [Bilder und begrenzter Nachweis](guides/underground-view.md), [Ansichtsbericht](evidence/underground-view-test.json). Kein realer Tunnelvortrieb, Weltbewegungs-, Wasser- oder verpackter Ansichtspixelnachweis.
+- **Offen im begrenzten Umfang:** echte Maus-/Tasteneingaben, normale Revision-/Fokus-/Fehlerwege und Start eines nachträglich veralteten gespeicherten Plans. N1/N3, Kapazitäten und konkurrierende inerte Pläne sind nativ gedeckt. Planung ist durch Konten, fehlende Höhenbrushes und Bodenproben inert belegt; unabhängige Bewuchs-Pixelprobe, Holzbilanz, Großwelt und Migration jedes archivierten echten Binärsaves fehlen.
+
+[Anleitung](guides/machine-earthworks.md), [bereinigte Werte, Konten und Hashes](evidence/machine-earthworks-test.json), [weiterer Scaping-Plan](reference/scaping-machine-work-plan.md). Beschleunigte Prüfraten sind keine normalen Baugeschwindigkeiten.
+
 ## Fahrzeugassets: lokaler Importversuch, 29. Oktober 2026
 
 Die eigene Karte `/Game/Maps/VehicleEvaluationLab` enthält Liebherr 956, Wheel Loader und ElectroNick Dump Truck. Mesh- und Animationsdaten wurden getrennt mit korrekten Zentimetereinheiten importiert. Direkte Source-Posen bestätigen Faktor 100 ohne gemessenen Umrechnungsfehler; nach frischem Karten-/Assetladen zeigen eingefrorene Editorposen 80/42/9 bewegte Bones. Eine native gerenderte Übersicht wurde vom Agenten visuell geprüft. Echter SIE-Lauf mit fortschreitender Weltzeit und Clipzeit, danach sauber beendet; 18 bestehende Spielstände byteidentisch.
 
 Dies sind neue Demonstrationsrigs und -clips, keine mitgelieferten Originalanimationen. Alle Meshes besitzen nur LOD0; Liebherr/Radlader brauchen vereinfachte Skelette, Geometrie und Materialien. Keine PhysicsAssets oder geprüfte Fahrzeug-/Schaufelkollision, keine Chaos-/Terrainintegration, Cook- oder Leistungsabnahme. Beim Lkw fehlen Texturen; ungeklärte Herkunft begrenzt ihn auf den isolierten lokalen Technikversuch. Der kurze SIE-Startausschnitt erfasst die später beginnende Muldenbewegung nicht; sie ist separat über eingefrorene Posen und die gekippte gerenderte Stellung belegt. [Anleitung](guides/vehicle-asset-evaluation.md), [bereinigter Prüfbericht](evidence/vehicle-asset-evaluation.json).
 
-## Neuer Stand: Baustellenplaner und parallele Grundlagen, 29. Oktober 2026
+## Vorheriger Stand: Baustellenplaner und parallele Grundlagen, 29. Oktober 2026
 
 - **Native Regression:** 36/36 erfolgreich, 34 ohne und zwei mit bekannten Warnungen. Neue Planermengen-/Reichweitentests, Cacheinvalidierung, echter nativer Collectable-Restore, vollstaendiger eigener Ledgerrestore und Hybridprofilvalidierung sind enthalten.
 - **Planer:** je vier frische gerenderte uncooked/cooked Prozesse. Ungearbeitete Einzelgrube und Paar, dann beladener Lager-Lkw mit Teilaufschuettung exakt gespeichert und fortgesetzt. Abschluss **86,4 t Einbau / 0 g Bilanzfehler**, drei zusaetzliche Loads, lokale volle Probensets mit 5-cm-Gate. Maximaler passender Messfehler rund 3,002 cm. Normales PlannerLab ueber Controller-APIs bestaetigt/gespeichert/dreimal geladen; 16 andere Slots unveraendert. Native Slate-Vorschau visuell geprueft; Klick-/Tastensimulation ohne nachgewiesene Bestaetigung, deshalb **physische Eingabeabnahme offen**. Neue Karte im Editor gespeichert; kein eigener neuer Karten-Cook behauptet. [Planerbericht](evidence/construction-planner-test.json), [Anleitung](guides/construction-planner.md).
 - **Rodungscache:** eigener visueller Cache implementiert, kein Pluginpatch. Neues isoliertes cooked Messfensterpaket mit 0/1/10/100 Records: positiver Nachlaufmittelwert 0,816–1,251ms statt historisch 19,85–22,06 ms, Ray 0,315–0,548 ms statt 20,43–21,02 ms. Pro positivem Nachlauf 1 visueller Cachehit / 0 Rebuilds / 2.116 rohe Kollisionsslots. Kontrollen und vollstaendige CPU-Wiederherstellung bestanden; keine FPS-/GPU-/Grossweltgarantie. Native Plugin-Restore-Rotation geht verloren; der eigene Ledgerrestore erhaelt den Originaltransform. [Cachebericht](evidence/clearing-cache-test.json), [Anleitung](guides/clearing-cache-and-performance.md).
 - **Untergrund-Hybrid:** zwei saubere native Tests und zwei neue cooked Prozesse mit 13/13 + 14/14 Checks. Neun Oberflaechenproben bleiben unveraendert, sechs Huellekollisionen und 13-m-Kapselweg geprueft, Profil identisch wiederhergestellt. Create-Oberflaeche/Innenraum visuell geprueft. Keine Portale, frei ausgrabbare Voxel oder hydrologische Simulation ableiten. [Hybridbericht](evidence/underground-hybrid-test.json), [Anleitung](guides/underground-hybrid-probe.md).
 
-**Neue reine Quellprüfung:** [ShaderWorld-Speicherbefund](evidence/shaderworld-storage-source-audit.json) trennt räumliche GPU-Layer, transiente Region-/Cacheexports, Editor-Assetimport und nicht implementierte Storage-/Cache-Schreibpfade. Kein neuer Laufzeit- oder Speichertest. Der [beschlossene nächste Arbeitsplan](reference/scaping-machine-work-plan.md) beginnt nach Importabschluss/Freigabe mit Anheben/Absenken und paralleler Untergrundansicht; diese Erweiterungen sind noch nicht gebaut oder abgenommen.
+**Neue reine Quellprüfung:** [ShaderWorld-Speicherbefund](evidence/shaderworld-storage-source-audit.json) trennt räumliche GPU-Layer, transiente Region-/Cacheexports, Editor-Assetimport und nicht implementierte Storage-/Cache-Schreibpfade. Kein neuer Laufzeit- oder Speichertest. Der [beschlossene Arbeitsplan](reference/scaping-machine-work-plan.md) begann nach Importabschluss und ausdrücklicher Freigabe mit Anheben/Absenken und paralleler Untergrundansicht. Der erste Erdarbeitsumfang ist inzwischen nativ, uncooked und verpackt wie oben geprüft. Eigener Karten-Cook, normale Controller-APIs, kalter Queue-Restore und separate Editor-Ansicht sind bestanden; physische Eingaben und verpackte Ansichtspixel bleiben offen.
 
-Die folgenden Abschnitte halten die aelteren Abnahmen und ihre jeweiligen Grenzen fest. **Naechster beauftragter Entwurfsschritt:** alle Scaping-Eingaben in gespeicherte Maschinenplaene ueberfuehren; diese breite Integration ist noch nicht implementiert.
+Die folgenden Abschnitte halten die aelteren Abnahmen und ihre jeweiligen Grenzen fest. **Weiterer beauftragter Ausbau:** Nach Abschluss der offenen Erstabnahmen gemischtes Ebnen, Oberflächenarbeit und Bauvorbereitung in gespeicherte Maschinenpläne überführen. Die breite Integration aller Scaping-Eingaben ist weiterhin nicht implementiert.
 
 
 Stand: **28. Oktober 2026**, Unreal **5.8.4**, ShaderWorld **4.1**. Die Statusangaben beschreiben den jeweiligen Versuch. Eine schöne Ansicht bestätigt weder dauerhafte Speicherung noch Physikkollision oder Leistung einer großen Welt.

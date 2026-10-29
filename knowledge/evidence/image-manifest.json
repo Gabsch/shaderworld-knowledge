@@ -327,6 +327,38 @@
       "modified": false,
       "bytes": 2956319,
       "sha256": "7d248920de5a2d508c596f9644bd55db6a5770aa2d9153d9e014cd1c8604f822"
+    },
+    {
+      "file": "assets/images/underground-view-surface.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Green vegetated surface before inspection; beach/ocean visible. Agent visually inspected; no collision claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1157410,
+      "sha256": "e409468b73f287baa962945eb10204df60a726ff965573c3eb009df4671985fe"
+    },
+    {
+      "file": "assets/images/underground-view-cutaway.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Settled local 24x14m masked view with brown schematic sides and lit hybrid shell; green terrain persists outside footprint. Whole intersecting vegetation pools hidden for local player; no excavation claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 845706,
+      "sha256": "b6fd871436344678eb89a57dfa20dab23227838edbf8ea42eca2c679b5b756be"
+    },
+    {
+      "file": "assets/images/underground-view-interior.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Lit enclosed checkerboard hybrid shell from fixed interior camera. Agent visually inspected; selected frame only, no water endurance, navigation or portal claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 562200,
+      "sha256": "4e1a99ba2d53bfd173adc220d0c8fd82bdafbdc7008821d2a9285c6d3680a039"
+    },
+    {
+      "file": "assets/images/underground-view-restored-surface.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Green vegetated surface after returning from interior to build camera; agent visually compared with original surface. Separate readback confirms pawn view target and own hidden-pool count zero.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1233683,
+      "sha256": "159a8570f05bc9e3c00a2b3a9b8184a7b16f4e757ff42de596d89b053c6d8991"
     }
   ]
 }
