@@ -1,0 +1,644 @@
+{
+  "owner": "earth-material-import.material-evaluation-evidence.v1",
+  "schema": "earth-material-evaluation-evidence-v1",
+  "status": "complete_bounded_material_evaluation",
+  "publicationReady": true,
+  "asOfDate": "2026-10-29",
+  "scope": "Sanitized factual metadata for licensed acquisition, offline 2K inspection, completed import, independent saved editor readback, and a visually reviewed rendered comparison. No source archives, raw textures, source images, generated engine assets or local user paths are embedded.",
+  "acquisition": {
+    "status": "downloaded_extracted_import_complete",
+    "method": "Official Fab website Download UI, anonymous free texture-set download",
+    "date": "2026-10-29",
+    "consentRecorded": true,
+    "consentBasis": "The acquisition record states explicit user authorization for all three named materials and individual acceptance in the official website dialog.",
+    "license": {
+      "name": "Fab Standard License",
+      "url": "https://www.fab.com/eula",
+      "dialogLastUpdated": "2025-04-06",
+      "cc0": false
+    },
+    "licenseEvidenceIsSeparateFromFileInventory": true
+  },
+  "offlineInspection": {
+    "status": "complete",
+    "jpgCount": 27,
+    "all2048Square": true,
+    "allRgb": true,
+    "allDecodeSuccessfully": true,
+    "allMatchAcquisitionSha256": true,
+    "sourceBytesUnchanged": true,
+    "acquisitionRecordSha256": "6c233dd0bfcc872bff421690181c9ec9d2e8703d36efbc7acaeef1e5f985fc5a",
+    "textureInspectionReportSha256": "92435acc04247ab8d4aed69b34cfcd6ab1505f8998aff7230ed0561f917fa271"
+  },
+  "normalInference": {
+    "method": "Correlate the decoded normal-map slopes with gradients of the matching displacement JPG at five in-memory scales. Image rows increase down; positive X calibration and positive OpenGL-Y correlation indicate OpenGL under the stated coordinate assumptions.",
+    "manufacturerExactZipConventionVerified": false,
+    "limitations": [
+      "Photogrammetry normal and displacement maps need not encode precisely the same spatial detail.",
+      "Lossy 8-bit JPEG, independent map processing and downsampling reduce correlation and can introduce artifacts.",
+      "The inference assumes aligned UV orientation and conventional positive height polarity; positive X calibration supports that assumption but does not prove every tangent basis.",
+      "Correlation does not test Unreal import settings, mesh tangent handedness, material wiring, visual lighting, displacement scale or collision."
+    ],
+    "manufacturerReferences": [
+      {
+        "url": "https://dev.epicgames.com/documentation/fab/setting-up-assets-for-fab-in-launcher",
+        "claim_paraphrase": "Fab in Launcher authoring/export guidance assumes tangent-space DirectX if the filename does not specify another convention.",
+        "scope_limit": "A launcher packaging convention is not an explicit declaration of these legacy Megascans website ZIP pixels."
+      },
+      {
+        "url": "https://dev.epicgames.com/community/learning/courses/y73/unreal-engine-capturing-reality-asset-processing/dXLx/unreal-engine-capturing-reality-frequently-asked-questions-faq?locale=es-es",
+        "claim_paraphrase": "The Quixel asset-processing FAQ asks for OpenGL normals with positive Y in its baking workflow.",
+        "scope_limit": "A source baking requirement is not proof that a particular distributed website ZIP was not subsequently converted."
+      }
+    ]
+  },
+  "materials": [
+    {
+      "id": "earth",
+      "name": "Ground Rubble",
+      "publisher": "Quixel Megascans",
+      "fabUrl": "https://www.fab.com/listings/b973f6e6-a891-4c01-b565-0a178b840ea2",
+      "fabListingId": "b973f6e6-a891-4c01-b565-0a178b840ea2",
+      "quixelId": "vl3jbbcg",
+      "license": "Fab Standard License",
+      "archiveSha256": "546313ef4a40674c2aaf7a803b1e4a4bf15a6835159e957da588c65437c53b85",
+      "downloadedResolutionLabel": "2K",
+      "verifiedJpgCount": 9,
+      "verifiedDimensions": [
+        2048,
+        2048
+      ],
+      "verifiedMode": "RGB",
+      "textureSha256ByFilenameMapLabel": {
+        "AO": "bfd7a89bb5729f070cdc685a1bb6158b4da259860190d307c5a2f7c9a3ebb8ad",
+        "BaseColor": "b461339f2b6615ecd1a84085259668cedcc7114f9d2fc7190a93e73efdae97c1",
+        "Bump": "03f20743f9494b3a99f8ef23816121da48f01dccb598c2bfff4c37e03ba6e180",
+        "Cavity": "492ac065de7e7be68f7228846d13472828fb0f612f9de8790c49a9227e8102a0",
+        "Displacement": "112e92b7773fe067c6811f310957a1b28723987ff4ded7381d199bc519485b95",
+        "Gloss": "36ab6c69543b9100629741dd54f74b83096e6e36daa7d96bfa5860d897fe0b9c",
+        "Normal": "7f0ea32f3bd2002f816925c778a1ff1b25fcac82ef590130c6e2384484990e5c",
+        "Roughness": "495dcfd24a19ccc19122c0a6c71e418a2623ac1563fa85bf45933075a3768c67",
+        "Specular": "541af55a11180d06826116f5c3b49affe19f19b67ac66ff3a357145c07bb7ef3"
+      },
+      "tileSizeCm": [
+        250,
+        250
+      ],
+      "plannedUvTilingFrom250CmReference": 1.0,
+      "normalConvention": {
+        "classification": "OpenGL",
+        "evidenceType": "offline_inference",
+        "manufacturerCertified": false,
+        "confirmedScaleCount": 5,
+        "nativeXCalibrationCorrelation": 0.9632414103330719,
+        "nativeYOpenGlCorrelation": 0.96109261655761,
+        "recommendedUnrealFlipGreen": true,
+        "actualUnrealFlipGreen": true,
+        "actualPropertyReadbackStatus": "verified_saved_editor_readback"
+      },
+      "sourceImageVisualReview": {
+        "reviewedBy": "parent_agent",
+        "input": "downloaded Basecolor JPG",
+        "assessment": "Earth containing visible brick, ceramic and concrete fragments and individual waste pieces; suitable as mixed construction-site ground, not clean topsoil."
+      },
+      "family": "mixed_construction_ground",
+      "plannedUse": "Ground surface, heap surface and truck-fill surface for mixed construction-site material.",
+      "actualImportStatus": "complete",
+      "renderStatus": "reviewed",
+      "actualImportedTextureCount": 5,
+      "actualReportedUvTiling": 1.0,
+      "actualHeightConnected": false,
+      "actualMetallicConstant": 0,
+      "actualSavedUvTiling": 1.0,
+      "actualSavedAoEnabled": true
+    },
+    {
+      "id": "gravel",
+      "name": "Construction Gravel",
+      "publisher": "Quixel Megascans",
+      "fabUrl": "https://www.fab.com/listings/e1bfd6aa-92e4-4857-b450-20383038ad82",
+      "fabListingId": "e1bfd6aa-92e4-4857-b450-20383038ad82",
+      "quixelId": "vl0mfbllw",
+      "license": "Fab Standard License",
+      "archiveSha256": "1add444912657727deb0449cedfa7deb86ee74641dbf9ab43beedfb59b79eb81",
+      "downloadedResolutionLabel": "2K",
+      "verifiedJpgCount": 9,
+      "verifiedDimensions": [
+        2048,
+        2048
+      ],
+      "verifiedMode": "RGB",
+      "textureSha256ByFilenameMapLabel": {
+        "AO": "ce7cec71642f17809c10581fa7d43db1d79269e863f82a4dcade5a979faccc3c",
+        "BaseColor": "4f008ea4abb5ac642e37faf371ba7b7175bb60e99b3b88a9aefe1b8d3b1c63c2",
+        "Bump": "c17e241a08b933f3f52a798ad97287d684e4b74428b9451cccc6961244590a2a",
+        "Cavity": "f2e33fe1a8222d82b9dc9c164660a5dfee16b5577158afca9745251ad9c79f56",
+        "Displacement": "7119fd48595fc2153a4d441a4ffd7f3417efef43e3a7ce55bddc9028fc387f3e",
+        "Gloss": "d1eab36a25636cfdce5d6b454efabe90b90420250f8f6ed6afcd470e2c07a2cc",
+        "Normal": "a399b160fe736011bd5a181cda3ff7def56f43a62c5c91ed0cf40e66cc7b32ff",
+        "Roughness": "2d3383558dce76edf053da697aeef7743c95a5e9a9937f7abdbff87900d4f5f8",
+        "Specular": "1b6248b98882f76f37b1bce233a89959875bbfd0ddd946893db89ded1e566fb5"
+      },
+      "tileSizeCm": [
+        300,
+        300
+      ],
+      "plannedUvTilingFrom250CmReference": 0.8333333333333334,
+      "normalConvention": {
+        "classification": "OpenGL",
+        "evidenceType": "offline_inference",
+        "manufacturerCertified": false,
+        "confirmedScaleCount": 5,
+        "nativeXCalibrationCorrelation": 0.9237823734125628,
+        "nativeYOpenGlCorrelation": 0.9246478178655337,
+        "recommendedUnrealFlipGreen": true,
+        "actualUnrealFlipGreen": true,
+        "actualPropertyReadbackStatus": "verified_saved_editor_readback"
+      },
+      "sourceImageVisualReview": {
+        "reviewedBy": "parent_agent",
+        "input": "downloaded Basecolor JPG",
+        "assessment": "Neutral gray/beige broken gravel; suitable as the first gravel comparison surface."
+      },
+      "family": "broken_gravel",
+      "plannedUse": "Gravel ground surface, stockpile surface and truck-fill surface.",
+      "actualImportStatus": "complete",
+      "renderStatus": "reviewed",
+      "actualImportedTextureCount": 5,
+      "actualReportedUvTiling": 0.8333333333333334,
+      "actualHeightConnected": false,
+      "actualMetallicConstant": 0,
+      "actualSavedUvTiling": 0.8333333134651184,
+      "actualSavedAoEnabled": true
+    },
+    {
+      "id": "rubble",
+      "name": "Construction Rubble",
+      "publisher": "Quixel Megascans",
+      "fabUrl": "https://www.fab.com/listings/11bbcf74-0773-40bf-bba4-e2b2d7554abd",
+      "fabListingId": "11bbcf74-0773-40bf-bba4-e2b2d7554abd",
+      "quixelId": "vmghehslw",
+      "license": "Fab Standard License",
+      "archiveSha256": "84d8e8f65f1926ab394906128fafe22b826197b7c771727244006bf436857b82",
+      "downloadedResolutionLabel": "2K",
+      "verifiedJpgCount": 9,
+      "verifiedDimensions": [
+        2048,
+        2048
+      ],
+      "verifiedMode": "RGB",
+      "textureSha256ByFilenameMapLabel": {
+        "AO": "d30d4bc679df3d632fe310849ff6996786c0ec9f164d4435592dacc13acfdf62",
+        "BaseColor": "7c52ef51fd99020186d078eb03b546f0e09d45854786cba62599eeb1b294053a",
+        "Bump": "60664ef5abe1a20571e1687178ccd9ea67d66d6f2cd8674053536d776a933091",
+        "Cavity": "3e93e043f6c43b18c1b7b337b1850ba9181d102f108e6d9fd461a7b7e537b069",
+        "Displacement": "a3f6479c7c7084a0be72d9afdc74d6cac472e7e973ac52120a2124e39adddec6",
+        "Gloss": "9bb907a1f5705a787e62cceb87d8ca9d822a5b3662a05a6ae6d97fa374833a59",
+        "Normal": "e123278e9aeb32528efa371eb2401380909a83f34d85e741f041b145aee6ff77",
+        "Roughness": "4a7935e65a2f186d48aabfa4ec84f7e4176594d8f789ac2f959404d5fb870ff2",
+        "Specular": "e966fc2fddf11a34e5ef27bdb6f808a5eacceab59744c4b2a4f35bd2b3145698"
+      },
+      "tileSizeCm": [
+        250,
+        250
+      ],
+      "plannedUvTilingFrom250CmReference": 1.0,
+      "normalConvention": {
+        "classification": "OpenGL",
+        "evidenceType": "offline_inference",
+        "manufacturerCertified": false,
+        "confirmedScaleCount": 5,
+        "nativeXCalibrationCorrelation": 0.901563567073574,
+        "nativeYOpenGlCorrelation": 0.901116489968719,
+        "recommendedUnrealFlipGreen": true,
+        "actualUnrealFlipGreen": true,
+        "actualPropertyReadbackStatus": "verified_saved_editor_readback"
+      },
+      "sourceImageVisualReview": {
+        "reviewedBy": "parent_agent",
+        "input": "downloaded Basecolor JPG",
+        "assessment": "Noticeably redder and coarser mixture of brick and concrete; keep distinct from the earth and gravel families."
+      },
+      "family": "construction_rubble",
+      "plannedUse": "Demolition debris ground surface, rubble heap surface and truck-fill surface.",
+      "actualImportStatus": "complete",
+      "renderStatus": "reviewed",
+      "actualImportedTextureCount": 5,
+      "actualReportedUvTiling": 1.0,
+      "actualHeightConnected": false,
+      "actualMetallicConstant": 0,
+      "actualSavedUvTiling": 1.0,
+      "actualSavedAoEnabled": true
+    }
+  ],
+  "presentationPlan": {
+    "surfaceContexts": [
+      "ground",
+      "heap",
+      "truck_fill"
+    ],
+    "uvReferenceCm": 250,
+    "materialProvides": "Surface appearance on independently supplied geometry.",
+    "separateMaterialFamiliesStillNeeded": [
+      "sand",
+      "clay",
+      "clean_topsoil"
+    ],
+    "limits": [
+      "The three downloaded sets are surface materials, not ready-made pile or vehicle geometry.",
+      "A surface material does not supply editable pile volume, soil mass accounting, excavation behavior or collision.",
+      "A displayed truck fill is not evidence of granular physics, loading mechanics or material transfer.",
+      "Height-map availability is not evidence that displacement, parallax or terrain integration has been implemented or tested.",
+      "The imported fill sample uses a generic static container, not a tested construction-vehicle integration."
+    ]
+  },
+  "actualImport": {
+    "status": "complete",
+    "reportSha256": "fe7fc972de34775da68a854dd8b2aedbab76aad7489b38bae0f07835f7a68208",
+    "startedUtc": "2026-10-29T17:57:25.831257+00:00",
+    "finishedUtc": "2026-10-29T17:57:33.293112+00:00",
+    "configSha256": "c4721d2c1ba5fdef88a982f726166f10169ed72570294a1358c8cd5b785caa70",
+    "configDigest": "15dd639ca9d8d13876eca89d2b803da61f0b65747a5e8feeacb70aff1aab8ffc",
+    "geometryManifestSha256": "d607591fb175b1d007c2b518a2646675d6bc1ccf90767bf400ad31962de1a077",
+    "engineVersion": "5.8.4-58902052+++UE5+Release-5.8",
+    "engineVersionEvidence": "Completed commandlet log",
+    "importerSha256AtOfflineAudit": "70753b40ffd6ff94d8b40c489898e70b775550ac2f80179103c221a5e5d07f41",
+    "importerBindingLimit": "Parent confirmed the corrected importer was executed; the import report does not itself record the executed script digest.",
+    "inputBindingChecks": {
+      "configSha256Matched": true,
+      "normalizedConfigDigestRecomputed": true,
+      "textureSourceCountRehashed": 15,
+      "textureHashesMatchOfflineInspection": true,
+      "geometrySourceCountRehashed": 9,
+      "geometryManifestSha256Matched": true
+    },
+    "savedPackageCount": 30,
+    "savedTextureCount": 15,
+    "savedMaterialCount": 5,
+    "savedMaterialInstanceCount": 3,
+    "savedMasterOrNeutralMaterialCount": 2,
+    "savedMeshCount": 9,
+    "savedMapCount": 1,
+    "savedPackageFilesExist": true,
+    "savedPackageHeadersMatchUnrealMagic": true,
+    "savedPackageInventory": [
+      {
+        "name": "T_GroundRubble_base_color",
+        "kind": "texture",
+        "bytes": 6228829,
+        "sha256": "1a5f4f0874528b229074fbd3f311e919fbaddf0c73d7e696f698b094a9554820"
+      },
+      {
+        "name": "T_GroundRubble_normal",
+        "kind": "texture",
+        "bytes": 10217049,
+        "sha256": "d7a6c91409ac98ed44675dac757332b6c4a67c71a813bb63dcdc6b7e93094c20"
+      },
+      {
+        "name": "T_GroundRubble_roughness",
+        "kind": "texture",
+        "bytes": 1482435,
+        "sha256": "53c62081d2f0eb7d0bffb1bba3654f5ecb0ea17696a0d0c8af1a70370813c42a"
+      },
+      {
+        "name": "T_GroundRubble_ao",
+        "kind": "texture",
+        "bytes": 3539748,
+        "sha256": "b07bf40a799a38361be8fc206a82e572e5b393066bf88f958670322359c9e5d5"
+      },
+      {
+        "name": "T_GroundRubble_height",
+        "kind": "texture",
+        "bytes": 1533917,
+        "sha256": "e254f9f9a2c39322764056909b5ac0fc38befcf378b59ce6e4a1ab12985fb04b"
+      },
+      {
+        "name": "T_ConstructionGravel_base_color",
+        "kind": "texture",
+        "bytes": 6522260,
+        "sha256": "de9d0a09ac4adf80684f1c62b40fcc97723cc6bf441813b22fc0e4f09bc3e17d"
+      },
+      {
+        "name": "T_ConstructionGravel_normal",
+        "kind": "texture",
+        "bytes": 9881185,
+        "sha256": "5922a85c657a5fd71b12234134bcddf81e62838f2c1cd0afc02293c26472ed9d"
+      },
+      {
+        "name": "T_ConstructionGravel_roughness",
+        "kind": "texture",
+        "bytes": 2951741,
+        "sha256": "7c1a4b526930df4cdf9848c9c9ab2bbeea911f4dc244084104c9212740077474"
+      },
+      {
+        "name": "T_ConstructionGravel_ao",
+        "kind": "texture",
+        "bytes": 3257953,
+        "sha256": "463e44fff5b8d449bc91b8366dc78deedc32ad17d6688995d2171c9f5bb1f2c8"
+      },
+      {
+        "name": "T_ConstructionGravel_height",
+        "kind": "texture",
+        "bytes": 1571201,
+        "sha256": "3392e22476c3112035c7f8bf21aec58c6f2abd08390360c6b08db03c3f651650"
+      },
+      {
+        "name": "T_ConstructionRubble_base_color",
+        "kind": "texture",
+        "bytes": 7048358,
+        "sha256": "2efda6ddafbebc2c68d4b042fedab7060bd704d706a6d8e031222cb358aa5dd2"
+      },
+      {
+        "name": "T_ConstructionRubble_normal",
+        "kind": "texture",
+        "bytes": 9720700,
+        "sha256": "725779f6255322e35d6ee24dfd12a380ed49d95c65e98e2b807302c7f97483e2"
+      },
+      {
+        "name": "T_ConstructionRubble_roughness",
+        "kind": "texture",
+        "bytes": 2892986,
+        "sha256": "a9a59834d25ab8d182d1978d87d0de9e542531bc3f2c72367817cd1e05c58630"
+      },
+      {
+        "name": "T_ConstructionRubble_ao",
+        "kind": "texture",
+        "bytes": 3794048,
+        "sha256": "bca9034f6af19fa3c1b85132518c0eb93921016e2f5a0826b0c3a1db531614c7"
+      },
+      {
+        "name": "T_ConstructionRubble_height",
+        "kind": "texture",
+        "bytes": 1433334,
+        "sha256": "c63fea31a7f2816a6d9a312d82df54cd19c29a8887ce9f3001adad03803035b2"
+      },
+      {
+        "name": "M_EarthMaster",
+        "kind": "master_or_neutral_material",
+        "bytes": 11665,
+        "sha256": "0e6d7873c17445254949d34cb95e6f8c63fdb310cae111290dbdd6b38d4d5b41"
+      },
+      {
+        "name": "M_Neutral",
+        "kind": "master_or_neutral_material",
+        "bytes": 5615,
+        "sha256": "4092e3e4f0f2eba1e24416125ad00db71eeee83773552cd6bd8357db5762f64e"
+      },
+      {
+        "name": "MI_GroundRubble",
+        "kind": "material_instance",
+        "bytes": 7165,
+        "sha256": "df128843a63388cb0872729a51ad53f6995ace76455d7c8c2a5328501dde60a6"
+      },
+      {
+        "name": "MI_ConstructionGravel",
+        "kind": "material_instance",
+        "bytes": 7285,
+        "sha256": "4ddd3b6ea937a433c6a91c3482f4cb1e90774516c624f410ec3ed1c63fa35e40"
+      },
+      {
+        "name": "MI_ConstructionRubble",
+        "kind": "material_instance",
+        "bytes": 7285,
+        "sha256": "ff66b4ff95135edb57b08911e317435bb345953c14d66dbba1ccff9a002b8799"
+      },
+      {
+        "name": "SM_ground_plane",
+        "kind": "mesh",
+        "bytes": 12028,
+        "sha256": "3b5520ab679945909fce043ee16a2e7afd02e117eeae849564bd55db5b6c131b"
+      },
+      {
+        "name": "SM_ground_strip",
+        "kind": "mesh",
+        "bytes": 12033,
+        "sha256": "0fdcbcdfe3293a43d45ff02c88fda44ee2ede6940432cd68b65de721cdd9d2cd"
+      },
+      {
+        "name": "SM_pile_low",
+        "kind": "mesh",
+        "bytes": 103280,
+        "sha256": "3321946a01ba50992bed41e5ef852044034b2723d9b6913719ebccbb9d6f2cbb"
+      },
+      {
+        "name": "SM_pile_mid",
+        "kind": "mesh",
+        "bytes": 103691,
+        "sha256": "2625f2e7a4a508ba852ba5c64c71c278938403faaf92471dbf1d2eafde4ffd17"
+      },
+      {
+        "name": "SM_pile_high",
+        "kind": "mesh",
+        "bytes": 103700,
+        "sha256": "02db12b2a6ef6131e0ae13ccc00f15741f399de5294125505b8d30036e67fe75"
+      },
+      {
+        "name": "SM_generic_container_frame",
+        "kind": "mesh",
+        "bytes": 12788,
+        "sha256": "7ca92846fbbc2761eca223b883ecd7e3eb16613cc2baabe962fd5ff0a8343b4c"
+      },
+      {
+        "name": "SM_fill_low",
+        "kind": "mesh",
+        "bytes": 46576,
+        "sha256": "6b7e9d1d9c52d20fa727dc3b73a72c449d9be438b25e41dfe8b5e8eb9ab3c892"
+      },
+      {
+        "name": "SM_fill_mid",
+        "kind": "mesh",
+        "bytes": 46571,
+        "sha256": "69d0ee3589b5b7c28e8e4a3e8230e3bdddda82bed96fa51a8d31d55d0028ea18"
+      },
+      {
+        "name": "SM_fill_high",
+        "kind": "mesh",
+        "bytes": 46596,
+        "sha256": "b941d468eb068b356b4c019adf8ae5a0374ab5b9d809fb2d4c4a81ba4cc0eaf4"
+      },
+      {
+        "name": "EarthMaterialEvaluationLab",
+        "kind": "map",
+        "bytes": 52539,
+        "sha256": "0c1a733ce61a89c57d1c3a2011954383fe478c029552ced89e2bf095bd31e9d2"
+      }
+    ],
+    "filesystemAuditUtc": "2026-10-29T18:00:50.135526+00:00",
+    "filesystemAuditLimit": "Checks package files, size, header and digest only; it does not deserialize assets or prove persisted engine properties.",
+    "meshBoundsReportMaxDeviationCm": 3.6295726602020295e-06,
+    "uvBasisCm": 250.0,
+    "heightUsage": "Reference texture only; no displacement/parallax enabled",
+    "densityLimit": "UV0 XY projection on piles; steep slopes have lower effective texel density. Actor scale is one.",
+    "reportedActorCount": 19,
+    "reportedActorScaleOne": true,
+    "reportedStageContexts": [
+      "three_material_ground_strips",
+      "three_static_heap_levels_per_material",
+      "generic_container_with_high_fill_per_material"
+    ],
+    "reportedMaterialParameterReadback": [
+      "BaseColorTex",
+      "NormalTex",
+      "RoughnessTex",
+      "UVTiling",
+      "UseAO"
+    ],
+    "reportedTexturePropertyReadback": [
+      "srgb",
+      "max_texture_size",
+      "virtual_texture_streaming"
+    ],
+    "readbackEvidenceBasis": "Independent final editor verifier reloaded saved map and assets, checked all texture/material parameters and assignments, and confirmed no asset saves or content changes during verification.",
+    "errors": [],
+    "warnings": [],
+    "historicalFailedAttempts": [
+      {
+        "status": "failed",
+        "finishedUtc": "2026-10-29T17:54:07.848519+00:00",
+        "savedAssetCount": 0,
+        "reason": "Static-switch expression wiring failed",
+        "correction": "Use the exposed True/False expression pin names.",
+        "reportSha256": "880a2bfca8e187f39dd853bf6064c5fa6278c9cc05b9057bb65ddcb9a570fd9f"
+      },
+      {
+        "status": "failed",
+        "finishedUtc": "2026-10-29T17:55:31.524958+00:00",
+        "savedAssetCount": 0,
+        "reason": "A material-instance texture setter returned false",
+        "correction": "Check getter readback rather than treating the false setter return as proof that the applied value failed.",
+        "reportSha256": "fe1a1673145f420f74ad03f1fad73a5e0701f6f622acc0c14a4fcf4487340220"
+      }
+    ],
+    "savedPackageInventoryStage": "Final own-map lighting correction, followed by independent saved editor readback and render captures.",
+    "postImportOwnedMapChange": {
+      "reason": "Resolve equal directional-light forward-shading priority",
+      "property": "forward_shading_priority",
+      "before": 0,
+      "after": 1,
+      "savedOnlyOwnedMap": true,
+      "beforeMapSha256": "72f8de54039fe5af2656061e8928c4a903d876f63bde5c20ec4c7ac218f0ec77",
+      "afterMapSha256": "0c1a733ce61a89c57d1c3a2011954383fe478c029552ced89e2bf095bd31e9d2",
+      "other29PackageDigestsUnchanged": true
+    }
+  },
+  "renderStatus": {
+    "status": "complete",
+    "evidenceSha256": "418aefc024e3191448eb74e096a150c538822675298ebb85c569639266466957",
+    "renderedComparisonReviewed": true,
+    "reviewedBy": [
+      "codex/gpt-6 coordinating agent",
+      "codex/gpt-6 documentation agent"
+    ],
+    "reviewedAtUtc": "2026-10-29T18:12:16.050968Z",
+    "renderedContextsVerified": [
+      "ground_strips",
+      "static_heaps",
+      "generic_container_fill"
+    ],
+    "images": [
+      {
+        "file": "assets/images/earth-material-overview.png",
+        "label": "overview",
+        "width": 1600,
+        "height": 900,
+        "bytes": 924872,
+        "sha256": "3b35381b6c4056286330ac2cd85001fe54849748464e740ca9f71f58af73f117",
+        "modified": false
+      },
+      {
+        "file": "assets/images/earth-material-ground-rubble.png",
+        "label": "ground-rubble",
+        "width": 1600,
+        "height": 900,
+        "bytes": 2344773,
+        "sha256": "887f8058d8e344c0996cf458f0915b47000f0cb9ed148f043576119731933b45",
+        "modified": false
+      },
+      {
+        "file": "assets/images/earth-material-construction-gravel.png",
+        "label": "construction-gravel",
+        "width": 1600,
+        "height": 900,
+        "bytes": 2457405,
+        "sha256": "a667e0a762f631e9e477b8a7703975bf387163905f8e4aa6f1f269caec70a4f8",
+        "modified": false
+      },
+      {
+        "file": "assets/images/earth-material-construction-rubble.png",
+        "label": "construction-rubble",
+        "width": 1600,
+        "height": 900,
+        "bytes": 1889815,
+        "sha256": "315051c0cd295d18e922ac92c2a0e8838cd965402b2d2b5c569384e10aeea7bc",
+        "modified": false
+      }
+    ],
+    "judgments": {
+      "earth": "Schutthaltiger Aushub/Baustellenmischboden; kein reiner Mutterboden.",
+      "gravel": "Heller gebrochener Kies/Schotter, als erster Kieslook geeignet.",
+      "rubble": "Rötlicher gröberer Ziegel-/Betonbruch, als eigener Bauschuttlook geeignet."
+    },
+    "scopeLimits": [
+      "Normals and basecolor provide visible fine surface detail; mesh silhouettes remain smooth without individual geometric stones.",
+      "Planar UV projection stretches on steep heap slopes.",
+      "Screenshots verify the bounded material comparison, not loose granular physics, vehicle filling, soil mass transfer, ShaderWorld terrain integration or performance.",
+      "The gravel appears very white/chalky under the laboratory lighting; assess color/exposure in the intended production scene."
+    ],
+    "errors": []
+  },
+  "runtimeVerification": {
+    "status": "complete_saved_editor_readback",
+    "reportSha256": "0717a5bb49bfe05635717b51cfa97f680eb35d0301dcb9dac37fcecbb5aafed7",
+    "startedUtc": "2026-10-29T18:07:37.713463+00:00",
+    "finishedUtc": "2026-10-29T18:07:40.213933+00:00",
+    "importReportSha256": "fe7fc972de34775da68a854dd8b2aedbab76aad7489b38bae0f07835f7a68208",
+    "configSha256": "c4721d2c1ba5fdef88a982f726166f10169ed72570294a1358c8cd5b785caa70",
+    "inputDigest": "15dd639ca9d8d13876eca89d2b803da61f0b65747a5e8feeacb70aff1aab8ffc",
+    "importerHelperSha256": "70753b40ffd6ff94d8b40c489898e70b775550ac2f80179103c221a5e5d07f41",
+    "savedMapReloadVerified": true,
+    "materialAssignmentsVerified": true,
+    "uvTilingVerified": true,
+    "normalImportFlipGreenVerified": true,
+    "textureDimensionsVerified": [
+      2048,
+      2048
+    ],
+    "textureSrgbCompressionAndStreamingVerified": true,
+    "meshCount": 9,
+    "meshActorCount": 19,
+    "materialInstanceCount": 3,
+    "textureCount": 15,
+    "allMaterialsOnGroundPileFill": true,
+    "contentFilesUnchangedDuringVerification": true,
+    "contentFileCount": 30,
+    "assetsSavedDuringVerification": 0,
+    "pieOrGameplayStarted": false,
+    "errors": [],
+    "warnings": []
+  },
+  "documentationEvidenceStatus": "saved_editor_readback_and_rendered_material_evaluation_complete",
+  "protectedProjectVerification": {
+    "status": "passed",
+    "reportSha256": "ff52e50d29eb22c9768b5028db3fa3f16a2a44fc7c0b29acd470b389c559c2a9",
+    "checkedUtc": "2026-10-29T18:09:08.769835+00:00",
+    "protectedHashesChecked": 315,
+    "hashDifferences": 0,
+    "foreignContentMetadataEntriesChecked": 887,
+    "foreignContentMetadataDifferences": 0,
+    "packagedMetadataEntriesChecked": 152,
+    "packagedMetadataDifferences": 0,
+    "scopeLimit": "315 files checked by hash; foreign-content and packaged checks are metadata comparisons, not additional byte-hash guarantees."
+  },
+  "editorClosure": {
+    "cleanQuitObservedByParent": true,
+    "logClosedUtcApprox": "2026-10-29T18:09:08Z",
+    "nativeShutdownAndClosedLogConfirmed": true,
+    "osExitCodeNotIndependentlyRecorded": true
+  },
+  "reproducibilityNotes": [
+    "An initial saved-texture readback began before height-texture building completed; the dimension gate correctly failed. A later retry and the final independent verifier passed after texture building.",
+    "The own key directional light forward-shading priority was changed from 0 to 1 and only the owned evaluation map saved; the final verifier was repeated after that change.",
+    "Helpers require the actual prefixed actor labels and exposed editor property names. Incorrect light/close-helper name assumptions were corrected; they are not evidence of faulty source materials.",
+    "Two initial import-helper failures with zero saved assets are retained under actualImport.historicalFailedAttempts."
+  ]
+}

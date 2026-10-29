@@ -1,12 +1,12 @@
 {
   "schema": "citylab.site-preparation-knowledge-evidence.v1",
-  "updated_at": "2026-10-29T17:56:02.643Z",
+  "updated_at": "2026-10-29T18:15:32.679Z",
   "engine_version": "5.8.4",
   "plugin_version": "4.1",
-  "status": "stable_bounded_poc_sealed_demo_ready_live_visible_launch_pending",
+  "status": "stable_bounded_poc_sealed_demo_normal_launcher_window_map_passed",
   "scope": "Eigene gespeicherte Rodung vor Erdarbeit und Testhausfreigabe sowie getrennte native Regression freier Untergrundkamera. Kein allgemeiner Produktions-, Eingabe- oder Untergrundbau-Nachweis.",
   "runtime": {
-    "overall_result": "bounded_native_uncooked_cooked_common_ui_normal_state_and_no_csv_lifecycle_passed_demo_prepared_csv_instrumented_exit_failed",
+    "overall_result": "bounded_native_uncooked_cooked_common_ui_normal_state_no_csv_lifecycle_and_launcher_window_map_passed_csv_instrumented_exit_failed",
     "cooked": {
       "result": "passed_bounded_v2_exact_regression_fixture",
       "run": "09d8063b376a4998bfa08fd0929f31fb",
@@ -2175,7 +2175,7 @@
         }
       ],
       "visual_review": "Root and documentation agent inspected actual PNGs: forest planning preview, bounded clean cutaway with grass outside, closed checker interior. Whole Editor frame with tiny HUD, no image edits/full-screen claim.",
-      "scope": "Current normal APIs on preserved legacy map using matching uncooked v6 Ready source, native v7 save and three exact loads. View move/look/zoom/slice/center/focus and surface return checked. New V2 map/slot/cooked normal demo separate pending; no physical inputs/human acceptance."
+      "scope": "Current normal APIs on preserved legacy map using matching uncooked v6 Ready source, native v7 save and three exact loads. View move/look/zoom/slice/center/focus and surface return checked. Separate V2 launcher/window/map evidence is recorded under prepared_demo; no physical inputs, human acceptance or V2 cooked underground-view pixels inferred."
     },
     "underground_free_camera_rendered": {
       "result": "passed_current_shared_legacy_map_controller_apis_and_editor_images",
@@ -2455,7 +2455,7 @@
       "limit": "These separate normal launches use no CSV instrumentation and validate native timed graceful exit/OS0 plus file preservation. Exact gameplay state is proven by the separate normal CSV snapshots; this lifecycle report adds no GETALL or physical input claim."
     },
     "prepared_demo": {
-      "result": "prepared_sealed_ready_live_launch_pending",
+      "result": "passed_sealed_ready_normal_launcher_window_and_map",
       "manifest_schema": "citylab.site-preparation-demo.v1",
       "manifest_sha256": "ee3a9190c6ec7a75b02a515ce265d98f9f17e21871fda5fe2be49f3478c0bdfa",
       "creation_report_sha256": "473c9bc4dcccecf63d3b3dbbb6249600ac76270135203e84e7a607eb7aac20ef",
@@ -2530,8 +2530,32 @@
       },
       "work_paused": true,
       "transport_enabled": false,
-      "visible_launch_status": "pending",
-      "limit": "Launcher and matching seeded state prepared. Visible window launch and physical input remain separate pending checks. Existing player progress must never be automatically reseeded."
+      "visible_launch_status": "passed_owned_responding_window_correct_map",
+      "limit": "Normal launcher created a responsive owned window on the intended play map; matching seed and package-manifest digests were unchanged at observation. No screen-pixel, physical-input, Computer Use or human acceptance inferred; this live launch adds no final-exit proof. Existing player progress must never be automatically reseeded.",
+      "visible_launch": {
+        "result": "passed_bounded_normal_launcher_window_and_map",
+        "observed_utc": "2026-10-29T18:12:47.2451574Z",
+        "source_report": "Private project report Saved/McpDiagnostics/site-preparation-visible-launch.json; not bundled. Public summary omits process/window IDs and host paths.",
+        "raw_report_sha256": "01fe4a8091cdbf87ab42868d1df73a6dd4dce86e5e1482f807a58205ac9a0da5",
+        "launcher": "Tools/launch_site_preparation_demo.ps1",
+        "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+        "slot": "CityLabSitePreparation",
+        "own_command_line_verified": true,
+        "responding_main_window": true,
+        "nonzero_main_window_handle_observed": true,
+        "offscreen": false,
+        "map_brought_up_for_play": true,
+        "startup_log_has_fatal_or_error": false,
+        "package_manifest_sha256": "ee3a9190c6ec7a75b02a515ce265d98f9f17e21871fda5fe2be49f3478c0bdfa",
+        "package_manifest_matches_prepared_demo": true,
+        "observed_save_sha256": "9565e39cbf8ee9c5754bab6f1ff0b33c9c9b64f91863b086ab374549f3f0a18e",
+        "seed_sha256": "9565e39cbf8ee9c5754bab6f1ff0b33c9c9b64f91863b086ab374549f3f0a18e",
+        "seed_unchanged_at_observation": true,
+        "computer_use": false,
+        "physical_input_acceptance": false,
+        "human_visible_confirmation": false,
+        "limit": "Responsive owned window and intended play map confirmed from process/window readback and native startup log. No screen-pixel, physical-input, Computer Use or human acceptance, gameplay-completion or final-exit claim. Observation does not replace separate CSV lifecycle failures or cross-build/underground limits."
+      }
     }
   },
   "images": [
@@ -2570,7 +2594,7 @@
     }
   ],
   "limits": [
-    "Full uncooked/Development-cooked V2 restart pairs, shared UI, exact normal autoload snapshots and three separate no-CSV normal lifecycle cases passed. Seeded six-file-sealed demo prepared; actual visible launcher window and physical input remain pending. CSV-instrumented V2/old archive late OS777003 remains failed and unresolved.",
+    "Full uncooked/Development-cooked V2 restart pairs, shared UI, exact normal autoload snapshots and three separate no-CSV normal lifecycle cases passed. Seeded six-file-sealed demo passed a separate normal launcher/window/map check with matching seed and manifest. Physical input, Computer Use and human screen-pixel acceptance remain untested. CSV-instrumented V2/old archive late OS777003 remains failed and unresolved.",
     "Persistence is paired to the tested build. A fresh cook changes native biome/spawnable Version GUIDs included in TerrainSettingsIdentity; the existing old Earthworks save is rejected by the new package without being changed. Stable semantic identities and explicit cross-build migration remain future work.",
     "Terrainaufnahmen enthalten keine Slate-Werkzeugleiste und belegen keine echte Bedienung. Aktuelle Editor-API-Aufnahmen ersetzen keine physischen Eingaben.",
     "21 Baumressourcen am aktuellen V2-Prüfstandort werden verwaltet; Holz besitzt kein Konto.",
@@ -3191,7 +3215,7 @@
     "runtime_proof": "Exact old-control diagnostic still failed; no full current acceptance. Replaced by separate versioned V2 biome/new-map contract."
   },
   "current_v2_lab_source_contract": {
-    "result": "bounded_runtime_verified_sealed_demo_prepared_live_launch_pending",
+    "result": "bounded_runtime_and_sealed_demo_normal_launcher_window_map_verified",
     "density_rule_version": "BlueAndBounds1",
     "map": "/Game/Maps/ShaderWorldSitePreparationLab",
     "normal_slot": "CityLabSitePreparation",
@@ -3204,7 +3228,7 @@
     "legacy_metadata_unchanged": true,
     "ordinary_saves_unchanged": true,
     "source": "Own reviewed setup_site_preparation_lab.py, repair_city_biome_density.py, controller/map-slot changes; separately licensed native ShaderWorld functions read only. No plugin source/assets distributed.",
-    "runtime_proof": "Native suite, idempotent setup, original-location uncooked/cooked restart pairs, normal exact Ready snapshots and separate same-binary/save no-CSV lifecycle passed. Six-file sealed demo with matching isolated seed prepared. CSV-instrumented shutdown remains failed; actual visible launch and physical input still pending.",
+    "runtime_proof": "Native suite, idempotent setup, original-location uncooked/cooked restart pairs, normal exact Ready snapshots and separate same-binary/save no-CSV lifecycle passed. Six-file sealed demo with matching isolated seed passed a normal launcher/window/map check. CSV-instrumented shutdown remains failed; physical input, Computer Use and human screen-pixel acceptance remain untested.",
     "idempotent_setup": {
       "result": "passed",
       "complete": true,

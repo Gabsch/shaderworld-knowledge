@@ -9,15 +9,15 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T17:56:02.676Z"
+  at: "2026-10-29T18:15:57.142984Z"
 evidence_scope:
   source: Freie begrenzte Kamera, Schnittfenster und aktuelle Controllerintegration gelesen.
-    Gemeinsame APIs im erhaltenen EarthworksLab erneut geprüft; versiegelte V2-Map/Slot-Demo vorbereitet; verpackte Schnitt-/Innenraumpixel separat offen.
+    Gemeinsame APIs im erhaltenen EarthworksLab erneut geprüft; normaler V2-Launcherstart mit Fenster-/Kartennachweis bestanden; verpackte Schnitt-/Innenraumpixel separat offen.
   prior_verification: Vorherige Sourcebasis bestand finale Builds, fünf native Untergrundtests
     und normale Controller-/Kamera-API innerhalb einer 38-Check-Probe; drei SHOWUI-Editorbilder
     agentengeprüft. Diese Nachweise bleiben genau ihrem früheren Sourcezustand zugeordnet.
   runtime: Aktuelle gemeinsame Controller-/Kamera-API bestanden in 38 Checks mit drei visuell
-    geprüften 1310×750-Editorbildern auf EarthworksLab. V2-Demo vorbereitet; physische Eingaben und verpackte Schnitt-/Innenraumpixel offen.
+    geprüften 1310×750-Editorbildern auf EarthworksLab. Normaler V2-Launcherstart mit antwortendem Hauptfenster und Kartennachweis bestanden; physische Eingaben, menschliche Pixelbestätigung und verpackte Schnitt-/Innenraumpixel offen.
   limit: Echte Tasten-/Mauseingaben und verpackte Ansichtspixel offen. API-/Komponentenspuren
     belegen keine Weltbewegung, Navigation, Wasserfreiheit oder echten Untergrundaushub.
 sources:

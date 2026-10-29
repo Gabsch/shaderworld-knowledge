@@ -465,6 +465,50 @@
       "bytes": 1314220,
       "sha256": "56f5ae0862408ec428dbd85c8dddd7767abc5f88db79f95deb6d34077d643f32",
       "revision_scope": "Current normal V2 cooked controller image. Independent no-CSV same-binary/save normal lifecycle is a separate result; image does not prove human input or clean exit."
+    },
+    {
+      "file": "assets/images/earth-material-overview.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 924872,
+      "sha256": "3b35381b6c4056286330ac2cd85001fe54849748464e740ca9f71f58af73f117",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-ground-rubble.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 2344773,
+      "sha256": "887f8058d8e344c0996cf458f0915b47000f0cb9ed148f043576119731933b45",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-construction-gravel.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 2457405,
+      "sha256": "a667e0a762f631e9e477b8a7703975bf387163905f8e4aa6f1f269caec70a4f8",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-construction-rubble.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 1889815,
+      "sha256": "315051c0cd295d18e922ac92c2a0e8838cd965402b2d2b5c569384e10aeea7bc",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
     }
   ]
 }

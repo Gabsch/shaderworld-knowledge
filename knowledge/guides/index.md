@@ -10,3 +10,5 @@
 - [Fehlerdiagnose](troubleshooting.md) – vom sichtbaren Fehler zur passenden Einstellung.
 
 - [CityBasics mit Insel, Berg und Tunnel](city-basics-lab.md).
+
+- [Erdmaterialien auf Boden, Haufen und Füllungen vergleichen](earth-material-evaluation.md) – 2K-Quellen, gespeicherter Import/Editor-Readback und vier Renderansichten geprüft; Oberflächenwirkung von Geometrie und Mengenmodell trennen.
