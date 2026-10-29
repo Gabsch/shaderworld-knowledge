@@ -1,0 +1,3365 @@
+{
+  "schema": "citylab.site-preparation-knowledge-evidence.v1",
+  "updated_at": "2026-10-29T17:56:02.643Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "stable_bounded_poc_sealed_demo_ready_live_visible_launch_pending",
+  "scope": "Eigene gespeicherte Rodung vor Erdarbeit und Testhausfreigabe sowie getrennte native Regression freier Untergrundkamera. Kein allgemeiner Produktions-, Eingabe- oder Untergrundbau-Nachweis.",
+  "runtime": {
+    "overall_result": "bounded_native_uncooked_cooked_common_ui_normal_state_and_no_csv_lifecycle_passed_demo_prepared_csv_instrumented_exit_failed",
+    "cooked": {
+      "result": "passed_bounded_v2_exact_regression_fixture",
+      "run": "09d8063b376a4998bfa08fd0929f31fb",
+      "cooked": true,
+      "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+      "regression_fixture": true,
+      "fixture_center": [
+        -6000,
+        -10000,
+        300
+      ],
+      "control_anchor_world": [
+        -1751,
+        -6594,
+        280
+      ],
+      "raw_aggregate_sha256": "b5ece02826313c61113561fb02c16b4621bae89c19a75431124fd2803442a6e7",
+      "normal_save_files_hashed": 157,
+      "normal_slots_unchanged": true,
+      "create": {
+        "result": "passed",
+        "mode": "create",
+        "cooked": true,
+        "process_id": 32096,
+        "source_process_id": 0,
+        "elapsed_seconds": 150.6854306012392,
+        "raw_report_sha256": "878ff6da75d6614500363da39a8986cf8684516d4fef0a7c5ff7e802791a6051",
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "real_frozen_tree_resources": true,
+          "preview_and_confirmation_are_inert": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "house_dependency_gate": true,
+          "earthwork_cannot_skip_clearing": true,
+          "invalid_dependency_restore_is_atomic": true,
+          "partial_clearing_checkpoint_saved": true,
+          "clearing_does_not_move_soil": true,
+          "loaded_earthwork_trip_checkpoint_saved": true,
+          "house_built_after_physical_completion": true,
+          "built_checkpoint_saved": true
+        },
+        "ledger_observations": 1134,
+        "accepted_tree_observations": 4,
+        "ground": {
+          "accepted_batches": 9,
+          "waiting_batches": 0,
+          "repeated_samples": 2601,
+          "unique_xy": 289,
+          "max_error_cm": 1.0002288853283972,
+          "gate_cm": 5
+        },
+        "snapshots": {
+          "ready": {
+            "native_state_hash": "11a8a4b0b8b87069ee7049c2f39b7b65",
+            "earthworks_native_state_hash": "9e79eff5d4c46a5fbc3abca89e2bb236",
+            "phase": "Planned",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 0,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "partial_clearing": {
+            "native_state_hash": "bc4f5014bbb926192e75b645c8adf3f8",
+            "earthworks_native_state_hash": "9e79eff5d4c46a5fbc3abca89e2bb236",
+            "phase": "Clearing",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 1,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "9fab6807c7ece6275ac734bf7d944b3e",
+            "earthworks_native_state_hash": "a4b0260bcfaf7f7e4b649799c8b0e45b",
+            "phase": "Earthworks",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "completed": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "built": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          }
+        }
+      },
+      "resume": {
+        "result": "passed",
+        "mode": "resume",
+        "cooked": true,
+        "process_id": 120408,
+        "source_process_id": 32096,
+        "elapsed_seconds": 292.9882161989808,
+        "raw_report_sha256": "ebabe52ba65030abf5c1d1ad7d3a5e70ea8dfeed359773ce8d4d6005e2124e09",
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "different_process": true,
+          "real_frozen_tree_resources": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "partial_clearing_restored_exactly": true,
+          "house_dependency_gate": true,
+          "truck_checkpoint_restored_exactly": true,
+          "both_checkpoint_paths_finish_once": true,
+          "built_checkpoint_restored_exactly": true,
+          "three_reloads_exact_without_duplicates": true
+        },
+        "ledger_observations": 2121,
+        "accepted_tree_observations": 8,
+        "ground": {
+          "accepted_batches": 24,
+          "waiting_batches": 12,
+          "repeated_samples": 6936,
+          "unique_xy": 289,
+          "max_error_cm": 1.0002288853283972,
+          "gate_cm": 5
+        },
+        "snapshots": {
+          "partial_clearing": {
+            "native_state_hash": "bc4f5014bbb926192e75b645c8adf3f8",
+            "earthworks_native_state_hash": "9e79eff5d4c46a5fbc3abca89e2bb236",
+            "phase": "Clearing",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 1,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "final_from_partial": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "9fab6807c7ece6275ac734bf7d944b3e",
+            "earthworks_native_state_hash": "a4b0260bcfaf7f7e4b649799c8b0e45b",
+            "phase": "Earthworks",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "final_from_truck": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "built": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_1": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_2": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_3": {
+            "native_state_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+            "earthworks_native_state_hash": "c6ffac226b045bd6fc9301726e02ddf4",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          }
+        }
+      },
+      "checkpoint_full_hashes_exact": true,
+      "both_final_paths_full_hash": "f1fc28eb7d04a0c923f86e2d2f5d894c",
+      "repeated_loads": 3,
+      "house_count_each_final": 1,
+      "ledger_observations_total": 3255,
+      "balance_error_g": 0,
+      "images": [
+        {
+          "file": "assets/images/site-preparation-cooked-partial-clearing.png",
+          "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1280,
+          "height": 720,
+          "bytes": 2819523,
+          "sha256": "b352c83cd919ed759fd699545bd580d1648d1ccb4f2b04b58bfeb0426474291c",
+          "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+        },
+        {
+          "file": "assets/images/site-preparation-cooked-completed.png",
+          "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1280,
+          "height": 720,
+          "bytes": 2571958,
+          "sha256": "72d98b3ded239436ed6b42f619ad46d0132284d69b38228d158fac1b87b40f98",
+          "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+        }
+      ],
+      "limit": "Development cooked, one exact original fixture/control and 21 frozen resources. No general biome/cache, Shipping, performance, physical-input or human-acceptance claim."
+    },
+    "physical_input": {
+      "result": "not_tested"
+    },
+    "human_acceptance": {
+      "result": "not_claimed"
+    },
+    "historical_uncooked_516d40d6f2084cb98372ba6623aae2d8": {
+      "create": {
+        "result": "passed",
+        "run": "516d40d6f2084cb98372ba6623aae2d8",
+        "raw_report_sha256": "5f93a8a3173b7f11cea697fdb0d42979faa5bead0e20201c33daa3a824fee63d",
+        "elapsed_seconds": 377.40654370188713,
+        "cooked": false,
+        "save_format_version": 7,
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "real_frozen_tree_resources": true,
+          "preview_and_confirmation_are_inert": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "house_dependency_gate": true,
+          "earthwork_cannot_skip_clearing": true,
+          "invalid_dependency_restore_is_atomic": true,
+          "partial_clearing_checkpoint_saved": true,
+          "clearing_does_not_move_soil": true,
+          "loaded_earthwork_trip_checkpoint_saved": true,
+          "house_built_after_physical_completion": true,
+          "built_checkpoint_saved": true
+        },
+        "ledger_observations": 2580,
+        "tree_observations": 7,
+        "snapshots": {
+          "ready": {
+            "native_state_hash": "bb1ec111c34d7144337f92c65bb7eb8b",
+            "earthworks_native_state_hash": "80f2b016f09127c16449d87bb4de4f64",
+            "phase": "Planned",
+            "frozen_tree_count": 23,
+            "cleared_tree_count": 0,
+            "clearing_steps": 0,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_operation": "Flatten",
+            "earthwork_status": "Queued",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              0,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "partial_clearing": {
+            "native_state_hash": "6401a49c13337fac7cae87bb29fef214",
+            "earthworks_native_state_hash": "80f2b016f09127c16449d87bb4de4f64",
+            "phase": "Clearing",
+            "frozen_tree_count": 23,
+            "cleared_tree_count": 1,
+            "clearing_steps": 1,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_operation": "Flatten",
+            "earthwork_status": "Queued",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              0,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "bc4ec8631a89e03330bb061d1e544546",
+            "earthworks_native_state_hash": "d1d5ffdfba0811c8dcc98db6b4a1ebe0",
+            "phase": "Earthworks",
+            "frozen_tree_count": 23,
+            "cleared_tree_count": 23,
+            "clearing_steps": 23,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "ToWarehouse",
+            "truck_distance_cm": 300,
+            "earthwork_operation": "Flatten",
+            "earthwork_status": "Active",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              18000000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "completed": {
+            "native_state_hash": "2d402b22de26e75b87fa02d2c5639d7e",
+            "earthworks_native_state_hash": "dd16ac680382510b46a469c5b70c180a",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 23,
+            "cleared_tree_count": 23,
+            "clearing_steps": 23,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_operation": "Flatten",
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "built": {
+            "native_state_hash": "2d402b22de26e75b87fa02d2c5639d7e",
+            "earthworks_native_state_hash": "dd16ac680382510b46a469c5b70c180a",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 23,
+            "cleared_tree_count": 23,
+            "clearing_steps": 23,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_operation": "Flatten",
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          }
+        },
+        "ground": {
+          "sample_gate_cm": 5,
+          "distinct_xy_positions": 289,
+          "batches": [
+            {
+              "phase": "planned",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 1,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "planned",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 2,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "planned",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 3,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 1,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 2,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 3,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 4,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 5,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 6,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "partial_clearing",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 7,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0
+            },
+            {
+              "phase": "completed",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 1,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0.5006866559851915
+            },
+            {
+              "phase": "completed",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 2,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0.5006866559851915
+            },
+            {
+              "phase": "completed",
+              "accepted": true,
+              "backend_ready": true,
+              "refresh_pending": false,
+              "stable_passes": 3,
+              "sample_count": 289,
+              "all_hit": true,
+              "max_absolute_error_cm": 0.5006866559851915
+            }
+          ]
+        },
+        "trees": [
+          {
+            "phase": "planned",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 0,
+            "recorded_count": 0
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "completed",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 23,
+            "cleared_count": 23,
+            "recorded_count": 23
+          }
+        ],
+        "retained_final_backend_diagnostic": "Dieser Slice braucht eine ebene, freie Lagerzufahrt (3 cm).",
+        "revision": "historical_before_restore_anchor_and_binary_default_fix",
+        "accepted_for_current_revision": false
+      },
+      "resume": {
+        "result": "not_accepted",
+        "observation": "Local validation stage remained blocked for more than 360 seconds; process deliberately stopped after ownership verification. No successful resume report.",
+        "diagnostic_after_runtime_change": "A later diagnostic resume reached valid ground samples but not all expected tree candidates. It was stopped; no overall pass.",
+        "same_source_create_resume": false
+      },
+      "checkpoint_policy": "Early provisional format-7 files from the old class-default-7 revision must not be reused with current legacy-default-6 reader; fresh run and fresh checkpoints required."
+    },
+    "historical_uncooked_c34c8547c4e84cffa85532f32fc44bed": {
+      "create": {
+        "result": "passed_before_latest_native_vegetation_recompute_fix",
+        "accepted_for_current_revision": false,
+        "raw_report_sha256": "bbfe49100b44d22506e9cc63b3c863eb3756b2562c017001b82774b68a6906e0",
+        "run": "c34c8547c4e84cffa85532f32fc44bed",
+        "elapsed_seconds": 318.9480566009879,
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "real_frozen_tree_resources": true,
+          "preview_and_confirmation_are_inert": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "house_dependency_gate": true,
+          "earthwork_cannot_skip_clearing": true,
+          "invalid_dependency_restore_is_atomic": true,
+          "partial_clearing_checkpoint_saved": true,
+          "clearing_does_not_move_soil": true,
+          "loaded_earthwork_trip_checkpoint_saved": true,
+          "house_built_after_physical_completion": true,
+          "built_checkpoint_saved": true
+        },
+        "save_format_version": 7,
+        "frozen_tree_count": 41,
+        "partial_cleared_tree_count": 1,
+        "final_cleared_tree_count": 41,
+        "excavated_and_warehouse_g": 176400000,
+        "final_buffer_truck_reserved_and_balance_error_g": 0,
+        "ledger_observations": 2100,
+        "house_count": 1,
+        "physical_house_hit": true,
+        "maximum_local_ground_error_cm": 0.5006866559851915
+      },
+      "resume": {
+        "result": "not_accepted",
+        "source_description": "Root-agent checked strict cold-resume diagnostics and handed off exact-position/same-mesh zero-scale observation; no successful resume JSON exists.",
+        "observation": "Three uncleared frozen tree resources had the same native XYZ and mesh candidate with raw scale zero. Control resource and ground probes were stable. Process deliberately stopped; driver exit 1.",
+        "initial_zero_scale_cause": "unproved",
+        "clearing_prefix_exclusion": "Own already-cleared prefix was about 49.6 m away, outside the 25 cm clear matching range; no evidence of an unintended extra clear."
+      }
+    },
+    "diagnostic_upgraded_c34c_resume": {
+      "result": "original_strict_tree_gate_passed_then_stopped",
+      "scope": "Different-source diagnostic using the older c34c checkpoint; original expected tree gate passed after regional native recompute, then root stopped before full completion. No full resume success and no same-source create/resume claim.",
+      "targeted_regression": "Supports original three zero-scale resource IDs separately from the accepted different-location 49-resource final fixture."
+    },
+    "historical_verified_uncooked_ca1c": {
+      "result": "passed",
+      "run": "ca1c028287034c85976c135b63d54cd1",
+      "raw_aggregate_sha256": "e02fb405c04889a12f69c6f0e5eada47c4d7697136841ba12a0c6575b0836bae",
+      "fixture_center_cm": [
+        -4000,
+        4000,
+        300
+      ],
+      "frozen_source_create_resume": true,
+      "create": {
+        "result": "passed",
+        "raw_report_sha256": "caa62e4a342ce29815790e3942c1e7ab160990f3583359360015ec82042aaecf",
+        "elapsed_seconds": 328.5941676981747,
+        "process_id": 58800,
+        "source_process_id": 0,
+        "cooked": false,
+        "save_format_version": 7,
+        "repeat_loads": 0,
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "real_frozen_tree_resources": true,
+          "preview_and_confirmation_are_inert": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "house_dependency_gate": true,
+          "earthwork_cannot_skip_clearing": true,
+          "invalid_dependency_restore_is_atomic": true,
+          "partial_clearing_checkpoint_saved": true,
+          "clearing_does_not_move_soil": true,
+          "loaded_earthwork_trip_checkpoint_saved": true,
+          "house_built_after_physical_completion": true,
+          "built_checkpoint_saved": true
+        },
+        "ledger_observations": 2396,
+        "tree_observations": 5,
+        "snapshots": {
+          "ready": {
+            "native_state_hash": "ba057feb83919216024099a7a25aad95",
+            "earthworks_native_state_hash": "48a20dc1a636523d2adcfb2cbdeb869d",
+            "phase": "Planned",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 0,
+            "clearing_steps": 0,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Queued",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              0,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "partial_clearing": {
+            "native_state_hash": "d5719e613157570447b5a74aa9c9c6a9",
+            "earthworks_native_state_hash": "48a20dc1a636523d2adcfb2cbdeb869d",
+            "phase": "Clearing",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 1,
+            "clearing_steps": 1,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Queued",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              0,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "9f7bb9d8a5e1f16e736457cad03c02da",
+            "earthworks_native_state_hash": "bf1af7c463926c918e77de1fe6ad1af5",
+            "phase": "Earthworks",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "ToWarehouse",
+            "truck_distance_cm": 1000,
+            "earthwork_status": "Active",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              18000000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "completed": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "built": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          }
+        },
+        "ground": {
+          "sample_gate_cm": 5,
+          "distinct_accepted_xy_positions": 289,
+          "accepted_batches": 9,
+          "not_yet_accepted_batches": 0,
+          "accepted_samples": 2601,
+          "max_absolute_error_cm": 0.5006866559851915,
+          "scope": "Only accepted stable local batches count as completed terrain proof; earlier waiting batches do not imply global readiness."
+        },
+        "trees": [
+          {
+            "phase": "planned",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 0,
+            "recorded_count": 0
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "partial_clearing",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "completed",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          }
+        ]
+      },
+      "resume": {
+        "result": "passed",
+        "raw_report_sha256": "282c881075153edf7ad929a020fdb5d385a4d7ad179a2a2b6b2841d741e83c63",
+        "elapsed_seconds": 589.4847957007587,
+        "process_id": 119168,
+        "source_process_id": 58800,
+        "cooked": false,
+        "save_format_version": 7,
+        "repeat_loads": 3,
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "different_process": true,
+          "real_frozen_tree_resources": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "partial_clearing_restored_exactly": true,
+          "house_dependency_gate": true,
+          "truck_checkpoint_restored_exactly": true,
+          "both_checkpoint_paths_finish_once": true,
+          "built_checkpoint_restored_exactly": true,
+          "three_reloads_exact_without_duplicates": true
+        },
+        "ledger_observations": 4397,
+        "tree_observations": 8,
+        "snapshots": {
+          "partial_clearing": {
+            "native_state_hash": "d5719e613157570447b5a74aa9c9c6a9",
+            "earthworks_native_state_hash": "48a20dc1a636523d2adcfb2cbdeb869d",
+            "phase": "Clearing",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 1,
+            "clearing_steps": 1,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Queued",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              0,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "final_from_partial": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "9f7bb9d8a5e1f16e736457cad03c02da",
+            "earthworks_native_state_hash": "bf1af7c463926c918e77de1fe6ad1af5",
+            "phase": "Earthworks",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": false,
+            "transport_requested": true,
+            "truck_phase": "ToWarehouse",
+            "truck_distance_cm": 1000,
+            "earthwork_status": "Active",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              18000000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 0,
+            "house_physics_hit": false
+          },
+          "final_from_truck": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "built": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "repeat_1": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "repeat_2": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          },
+          "repeat_3": {
+            "native_state_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+            "earthworks_native_state_hash": "24bb553e4e059ed0f05764da4835ca9b",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 49,
+            "cleared_tree_count": 49,
+            "clearing_steps": 49,
+            "work_paused": true,
+            "transport_requested": false,
+            "truck_phase": "AtWarehouse",
+            "truck_distance_cm": 0,
+            "earthwork_status": "Completed",
+            "required_g": [
+              176400000,
+              0
+            ],
+            "completed_g": [
+              176400000,
+              0
+            ],
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "house_actor_count": 1,
+            "house_physics_hit": true
+          }
+        },
+        "ground": {
+          "sample_gate_cm": 5,
+          "distinct_accepted_xy_positions": 289,
+          "accepted_batches": 24,
+          "not_yet_accepted_batches": 12,
+          "accepted_samples": 6936,
+          "max_absolute_error_cm": 0.8979591836734926,
+          "scope": "Only accepted stable local batches count as completed terrain proof; earlier waiting batches do not imply global readiness."
+        },
+        "trees": [
+          {
+            "phase": "partial_restored",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 1,
+            "recorded_count": 1
+          },
+          {
+            "phase": "completed_from_partial",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "truck_restored",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "completed_from_truck",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "built_restored",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "reloaded",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "reloaded",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          },
+          {
+            "phase": "reloaded",
+            "accepted": true,
+            "control_visual": 1,
+            "control_transform_matches": true,
+            "resources_count": 49,
+            "cleared_count": 49,
+            "recorded_count": 49
+          }
+        ]
+      },
+      "checkpoint_native_hashes_exact": true,
+      "final_from_both_paths_native_hash": "277bf2f40a98aaf6f080316eeb89da6f",
+      "normal_slots_unchanged": true,
+      "normal_save_files_hashed": 137,
+      "profile": "Accelerated limited Earthworks verification with fixed validated route; not normal machine performance.",
+      "regression_limit": "This accepted 49-resource fixture differs from the older c34c three-zero-scale-resource fixture. Do not treat it as an exact-ID rerun of that older finding.",
+      "accepted_for_current_revision": false
+    },
+    "historical_verified_ui_b5f9": {
+      "result": "passed_normal_controller_and_camera_api",
+      "run": "b5f9b9e03872460688c5542e81ff10c8",
+      "raw_report_sha256": "359bd6c19ef26e2aec805c7abc33b46e9733fc10494d1578f4f5cb6eb080356e",
+      "elapsed_seconds": 134.25,
+      "checks": {
+        "legacy_seed_is_byte_copy": true,
+        "fresh_owned_bridge": true,
+        "legacy_v6_normal_autoload": true,
+        "legacy_autoload_did_not_rewrite": true,
+        "search_1_0_inert": true,
+        "search_1_1_inert": true,
+        "search_1_2_inert": true,
+        "search_1_3_inert": true,
+        "search_1_4_inert": true,
+        "site_1_tool7_fixed_n3_stable_manifest": true,
+        "site_1_target_actual_ground_minus_50cm": true,
+        "site_1_selected_record_binding": true,
+        "site_1_confirmation_inert": true,
+        "site_1_house_gate_before_work": true,
+        "site_1_cancel_preview_inactive": true,
+        "selected_record_tab_and_house_gate": true,
+        "private_slot_upgraded_to_v7": true,
+        "load_1_exact_complete_state": true,
+        "load_2_exact_complete_state": true,
+        "load_3_exact_complete_state": true,
+        "cutaway_move_api": true,
+        "cutaway_look_api": true,
+        "cutaway_zoom_api": true,
+        "cutaway_slice_api": true,
+        "cutaway_center_api": true,
+        "cutaway_focus_api": true,
+        "cutaway_saved_state_inert": true,
+        "interior_move_api": true,
+        "interior_look_api": true,
+        "interior_zoom_api": true,
+        "interior_focus_api": true,
+        "interior_saved_state_inert": true,
+        "surface_restores_original_camera": true,
+        "final_demo_seed_is_one_unworked_site": true,
+        "only_one_isolated_native_slot": true,
+        "owned_editor_exited_cleanly": true,
+        "final_demo_seed_preserved_after_shutdown": true,
+        "normal_and_demo_sources_preserved": true
+      },
+      "editor_exit_code": 0,
+      "generator_normalization": false,
+      "legacy_source_sha256": "0a08fe82c5580ec8de007c9b6ce6bff1a57f1062ea1392cbbb6e9638e6740eec",
+      "normal_sources_byte_unchanged": true,
+      "normal_source_save_count": 20,
+      "snapshots": {
+        "legacy_loaded": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "c1a30cd20039b9cd8d1ff90262db36f8b8e7e9eb581ad280fcad1fcba14d7650",
+          "complete_hash": "06d348fbd4a80edf55b265909ecc4c3d595a19db808933df2abcd6e18cb85a83",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "site_1_confirmed": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "saved_unworked_site": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "load_1": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "load_2": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "load_3": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "surface_restored": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        },
+        "final_surface_unworked_demo_seed": {
+          "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+          "state_hash": "a4d6bfd996ab7be8bdb93eb8a7941efe18bb7c8e77456036eac43949180ee995",
+          "complete_hash": "eee9ebdb93d4e72b1040ae65cf5522fb5da248e3c6c06d5404e89e01f71f73f8",
+          "complete_hash_kind": "sha256-canonical-earthworks-preparations-clearing-json-v1",
+          "mass_balance_error_g": 0
+        }
+      },
+      "images": [
+        {
+          "archived_filename": "site-preparation-editor-preview.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus eigener normaler Unreal-Editor-Spielvorschau b5f9b9e03872460688c5542e81ff10c8; ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Controller-/Kamera-API vom Harness aufgerufen, keine physischen Eingaben. Vom Agenten visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 1385197,
+          "sha256": "2f39fb16b1c802afebe3ef9eea57f261ce16991d936d12351dc91db7d3c49d0c",
+          "distributed_in_current_bundle": false
+        },
+        {
+          "archived_filename": "underground-editor-cutaway-camera.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus eigener normaler Unreal-Editor-Spielvorschau b5f9b9e03872460688c5542e81ff10c8; ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Controller-/Kamera-API vom Harness aufgerufen, keine physischen Eingaben. Vom Agenten visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 1100641,
+          "sha256": "5b2bf543afd4d37147a18a152a655014aa7f6ad56a4860461a2040c5a67af844",
+          "distributed_in_current_bundle": false
+        },
+        {
+          "archived_filename": "underground-editor-interior-camera.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus eigener normaler Unreal-Editor-Spielvorschau b5f9b9e03872460688c5542e81ff10c8; ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Controller-/Kamera-API vom Harness aufgerufen, keine physischen Eingaben. Vom Agenten visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 717124,
+          "sha256": "954be9d0fcb12dd3113e9b12d8171a99f1609ec80f77f6c207def468d96ebc49",
+          "distributed_in_current_bundle": false
+        }
+      ],
+      "visual_review": "All three unchanged 1310×750 Editor-frame images visually inspected by parent and documentation agent. Forest preview, clean local cutaway with green terrain outside, checker-material closed interior. No fullscreen/HUD-legibility/physical-input claim.",
+      "scope": "Normal controller native API, correct original uncooked version-6 copy autoloaded without rewrite, inert site confirmation/house dependency guard, version-7 new private save, three exact full loads; separate free-camera API operations preserve saved state.",
+      "historical_negative_probe": "Earlier cooked/editor fixture with different generator binding was safely rejected; earlier changed-default binary version regression is now covered by native memory archive tests.",
+      "accepted_for_current_revision": false
+    },
+    "historical_verified_underground_api_before_regional_fix": {
+      "result": "passed_normal_editor_controller_api_and_agent_image_review",
+      "checks": [
+        "cutaway_move_api",
+        "cutaway_look_api",
+        "cutaway_zoom_api",
+        "cutaway_slice_api",
+        "cutaway_center_api",
+        "cutaway_focus_api",
+        "cutaway_saved_state_inert",
+        "interior_move_api",
+        "interior_look_api",
+        "interior_zoom_api",
+        "interior_focus_api",
+        "interior_saved_state_inert",
+        "surface_restores_original_camera"
+      ],
+      "physical_input": "not_tested",
+      "cooked_view_pixels": "not_tested",
+      "scope": "Bounded component/controller APIs and unchanged saved model state, plus actual whole Editor-frame SHOWUI pictures. No tunnel excavation/physics/navigation/water/multiplayer proof.",
+      "accepted_for_current_revision": false
+    },
+    "current_uncooked": {
+      "result": "passed_bounded_v2_exact_regression_fixture",
+      "run": "90a54d855c8f4fb6b9e4ecbb2d5c01a3",
+      "cooked": false,
+      "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+      "regression_fixture": true,
+      "fixture_center": [
+        -6000,
+        -10000,
+        300
+      ],
+      "control_anchor_world": [
+        -1751,
+        -6594,
+        280
+      ],
+      "raw_aggregate_sha256": "2f848ccd7f5a8cef02aedec7afc0da0715dc0ac89c84e473eca286a5da264e8f",
+      "normal_save_files_hashed": 149,
+      "normal_slots_unchanged": true,
+      "create": {
+        "result": "passed",
+        "mode": "create",
+        "process_id": 90336,
+        "source_process_id": 0,
+        "elapsed_seconds": 169.21565870195627,
+        "raw_report_sha256": "85cc04d232327c0c2db01a68934ce3d4f9a77e9181edafd8a814767a574b2778",
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "real_frozen_tree_resources": true,
+          "preview_and_confirmation_are_inert": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "house_dependency_gate": true,
+          "earthwork_cannot_skip_clearing": true,
+          "invalid_dependency_restore_is_atomic": true,
+          "partial_clearing_checkpoint_saved": true,
+          "clearing_does_not_move_soil": true,
+          "loaded_earthwork_trip_checkpoint_saved": true,
+          "house_built_after_physical_completion": true,
+          "built_checkpoint_saved": true
+        },
+        "ledger_observations": 1204,
+        "accepted_tree_observations": 5,
+        "ground": {
+          "accepted_batches": 9,
+          "waiting_batches": 0,
+          "repeated_samples": 2601,
+          "unique_xy": 289,
+          "max_error_cm": 1.0002288853283972,
+          "gate_cm": 5
+        },
+        "snapshots": {
+          "ready": {
+            "native_state_hash": "1711a2c44176255c329e3b411d179ed3",
+            "earthworks_native_state_hash": "8579cd3f17a8e2251cc099682a93b661",
+            "phase": "Planned",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 0,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "partial_clearing": {
+            "native_state_hash": "e4544be0103468550dc555683136b94f",
+            "earthworks_native_state_hash": "8579cd3f17a8e2251cc099682a93b661",
+            "phase": "Clearing",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 1,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "7ebbab0298e56cd9c7be4f29e7c0a1b8",
+            "earthworks_native_state_hash": "c53861e79b2a398eec416e29dd3418b1",
+            "phase": "Earthworks",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "completed": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "built": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          }
+        }
+      },
+      "resume": {
+        "result": "passed",
+        "mode": "resume",
+        "process_id": 70380,
+        "source_process_id": 90336,
+        "elapsed_seconds": 322.83004969730973,
+        "raw_report_sha256": "2e79d823d177f9cd60124694f08a6920e22e98f4e824d913017b823ee8d7c447",
+        "checks": {
+          "all_observed_material_ledgers_balance": true,
+          "clearing_prefix_matches_saved_resource_ledger": true,
+          "different_process": true,
+          "real_frozen_tree_resources": true,
+          "independent_physical_ground": true,
+          "control_tree_preserved": true,
+          "partial_clearing_restored_exactly": true,
+          "house_dependency_gate": true,
+          "truck_checkpoint_restored_exactly": true,
+          "both_checkpoint_paths_finish_once": true,
+          "built_checkpoint_restored_exactly": true,
+          "three_reloads_exact_without_duplicates": true
+        },
+        "ledger_observations": 2171,
+        "accepted_tree_observations": 8,
+        "ground": {
+          "accepted_batches": 24,
+          "waiting_batches": 12,
+          "repeated_samples": 6936,
+          "unique_xy": 289,
+          "max_error_cm": 1.0002288853283972,
+          "gate_cm": 5
+        },
+        "snapshots": {
+          "partial_clearing": {
+            "native_state_hash": "e4544be0103468550dc555683136b94f",
+            "earthworks_native_state_hash": "8579cd3f17a8e2251cc099682a93b661",
+            "phase": "Clearing",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 1,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "final_from_partial": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "truck_checkpoint": {
+            "native_state_hash": "7ebbab0298e56cd9c7be4f29e7c0a1b8",
+            "earthworks_native_state_hash": "c53861e79b2a398eec416e29dd3418b1",
+            "phase": "Earthworks",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "buffer_g": 6000000,
+              "truck_g": 12000000,
+              "reserved_g": 0,
+              "excavated_g": 18000000,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "final_from_truck": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "built": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_1": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_2": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          },
+          "repeat_3": {
+            "native_state_hash": "610672016cbd10be99629a8cd0cd2569",
+            "earthworks_native_state_hash": "ff65895aaa82dd5cd90bb7495f84a036",
+            "phase": "HouseBuilt",
+            "frozen_tree_count": 21,
+            "cleared_tree_count": 21,
+            "house_actor_count": 1,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 176400000,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "reserved_g": 0,
+              "excavated_g": 176400000,
+              "placed_g": 0,
+              "deposited_g": 176400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            }
+          }
+        }
+      },
+      "checkpoint_full_hashes_exact": true,
+      "both_final_paths_full_hash": "610672016cbd10be99629a8cd0cd2569",
+      "repeated_loads": 3,
+      "house_count_each_final": 1,
+      "ledger_observations_total": 3375,
+      "balance_error_g": 0,
+      "limit": "Bounded exact original fixture/control on own V2 map. No global biome/cache guarantee, cooked runtime, physical input or human acceptance derived."
+    },
+    "current_ui": {
+      "result": "passed_current_shared_ui_on_preserved_earthworks_map",
+      "run": "c312a3cbd06b4e70b51f9b1b9d908d76",
+      "raw_report_sha256": "0bf22a76facdca5478eb186f15cc1258d0d58eaa0dd2cd5f45cb0fbdcbb766da",
+      "elapsed_seconds": 204.31299999999464,
+      "checks": {
+        "legacy_seed_is_byte_copy": true,
+        "fresh_owned_bridge": true,
+        "legacy_v6_normal_autoload": true,
+        "legacy_autoload_did_not_rewrite": true,
+        "search_1_0_inert": true,
+        "search_1_1_inert": true,
+        "search_1_2_inert": true,
+        "search_1_3_inert": true,
+        "search_1_4_inert": true,
+        "site_1_tool7_fixed_n3_stable_manifest": true,
+        "site_1_target_actual_ground_minus_50cm": true,
+        "site_1_selected_record_binding": true,
+        "site_1_confirmation_inert": true,
+        "site_1_house_gate_before_work": true,
+        "site_1_cancel_preview_inactive": true,
+        "selected_record_tab_and_house_gate": true,
+        "private_slot_upgraded_to_v7": true,
+        "load_1_exact_complete_state": true,
+        "load_2_exact_complete_state": true,
+        "load_3_exact_complete_state": true,
+        "cutaway_move_api": true,
+        "cutaway_look_api": true,
+        "cutaway_zoom_api": true,
+        "cutaway_slice_api": true,
+        "cutaway_center_api": true,
+        "cutaway_focus_api": true,
+        "cutaway_saved_state_inert": true,
+        "interior_move_api": true,
+        "interior_look_api": true,
+        "interior_zoom_api": true,
+        "interior_focus_api": true,
+        "interior_saved_state_inert": true,
+        "surface_restores_original_camera": true,
+        "final_demo_seed_is_one_unworked_site": true,
+        "only_one_isolated_native_slot": true,
+        "owned_editor_exited_cleanly": true,
+        "final_demo_seed_preserved_after_shutdown": true,
+        "normal_and_demo_sources_preserved": true
+      },
+      "editor_exit_code": 0,
+      "generator_normalization": false,
+      "map": "/Game/Maps/ShaderWorldEarthworksLab",
+      "normal_source_save_count": 20,
+      "normal_sources_byte_unchanged": true,
+      "legacy_source_sha256": "0a08fe82c5580ec8de007c9b6ce6bff1a57f1062ea1392cbbb6e9638e6740eec",
+      "snapshots": {
+        "legacy_loaded": {
+          "complete_native_state_sha256": "06d348fbd4a80edf55b265909ecc4c3d595a19db808933df2abcd6e18cb85a83"
+        },
+        "site_1_confirmed": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "saved_unworked_site": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "load_1": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "load_2": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "load_3": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "surface_restored": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        },
+        "final_surface_unworked_demo_seed": {
+          "complete_native_state_sha256": "0bdb214f57a56af3cd3fab07bc24316fd2301d44c554b4a9f8217425e8effc9c"
+        }
+      },
+      "private_ui_harness_sha256": "005166307b6891634e7f797bd57203132e5dd99512dfbff5d33dc93a8936cd4f",
+      "images": [
+        {
+          "file": "assets/images/site-preparation-editor-preview.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 1377110,
+          "sha256": "1fcc5b04835ef157625891684c5a75b4cf0844cb02fa4cf00efebcabea9adf40",
+          "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+        },
+        {
+          "file": "assets/images/underground-editor-cutaway-camera.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 1020548,
+          "sha256": "c5a8aba98a4f9b5be86363f7c6db88e3d014ed1b50c1666ec1b1403640ab5481",
+          "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+        },
+        {
+          "file": "assets/images/underground-editor-interior-camera.png",
+          "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+          "captured_date": "2026-10-29",
+          "modified": false,
+          "width": 1310,
+          "height": 750,
+          "bytes": 716093,
+          "sha256": "c9bfd7eba1dda93ab4f1a802a8a217393f2b60df1b715abd6f6da29b5c2fd0ec",
+          "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+        }
+      ],
+      "visual_review": "Root and documentation agent inspected actual PNGs: forest planning preview, bounded clean cutaway with grass outside, closed checker interior. Whole Editor frame with tiny HUD, no image edits/full-screen claim.",
+      "scope": "Current normal APIs on preserved legacy map using matching uncooked v6 Ready source, native v7 save and three exact loads. View move/look/zoom/slice/center/focus and surface return checked. New V2 map/slot/cooked normal demo separate pending; no physical inputs/human acceptance."
+    },
+    "underground_free_camera_rendered": {
+      "result": "passed_current_shared_legacy_map_controller_apis_and_editor_images",
+      "run": "c312a3cbd06b4e70b51f9b1b9d908d76",
+      "scope": "No terrain mass, physical digging, navigation or input delivery inferred; V2 cooked view pixels pending."
+    },
+    "historical_cooked_8b6edf_before_regional_fix": {
+      "result": "not_accepted",
+      "raw_failure_progress_sha256": "96567c153979bd5daceff0d2d5ae961f4fd583fe8ea7de98562846c6d89f6774",
+      "run": "8b6edf5ea5cd46fb9bed3e267b743380",
+      "stage": 6,
+      "elapsed_seconds": 394.43440909683704,
+      "ground_gate_ready": true,
+      "tree_gate_ready": false,
+      "last_tree_failure": "control tree C386B875A4EFC5FAEB969EE3E8E6C408 visual=0 original=0 anchor=X=-1751.000 Y=-6594.000 Z=280.000",
+      "accounts": {
+        "initial_warehouse_g": 0,
+        "warehouse_g": 176400000,
+        "buffer_g": 0,
+        "truck_g": 0,
+        "reserved_g": 0,
+        "excavated_g": 176400000,
+        "placed_g": 0,
+        "deposited_g": 176400000,
+        "withdrawn_g": 0,
+        "balance_error_g": 0
+      },
+      "cleared_resources": 21,
+      "house_built": false,
+      "scope": "Full cook succeeded on the prior source, but strict runtime control-tree check failed; no create/resume pass.",
+      "full_cook": {
+        "result": "succeeded_prior_source",
+        "duration_seconds": 104.98,
+        "errors": 0,
+        "known_inherited_level_blueprint_warnings": 5
+      },
+      "same_fixture_diagnostic": {
+        "result": "failed_after_work_control_tree_zero_scale",
+        "control_initial_cold_restore_passed": true,
+        "control_id": "C386B875A4EFC5FAEB969EE3E8E6C408",
+        "control_anchor_cm": [
+          -1751,
+          -6594,
+          280
+        ],
+        "same_xyz_spawn_mesh_raw_scale_zero": true,
+        "nearest_own_cleared_resource_m": 51.33,
+        "clear_matching_radius_cm": 25,
+        "raw_diagnostic_json_sha256": "a2f016d004fc5bcde644c67336bcbdbcb17dccdfaf167dbc4df386e7e1239542",
+        "scope": "Copied already-cooked assets plus a diagnostic executable, not a new full-cook acceptance; strict gates unchanged and no synthetic trees."
+      }
+    },
+    "current_v2_normal_cooked": {
+      "result": "native_readonly_snapshots_passed_process_lifecycle_failed",
+      "run": "280b7ec454c24cf6a85c92eb57d97a3f",
+      "variant": "normalwithoutforcedlogging",
+      "preset": "site-preparation",
+      "legacy_archive": false,
+      "raw_report_sha256": "92f06496071e65394b688449a4d52c7602611d596414a20d960726d86c328996",
+      "raw_log_sha256": "1aa8e2a8248655906199b849abc4469a17fc2cfc2608ce8aa22b2fc0914c4293",
+      "helper_sha256": "645f63a953ddfe10cbb55b71a48f531bd7446b7f4bd8053d8ed0a11d90ab9530",
+      "process_id": 34156,
+      "elapsed_seconds": 65.65599999998813,
+      "exit_code": 777003,
+      "validation_error": null,
+      "source_unchanged": true,
+      "other_save_files_unchanged": true,
+      "native_snapshots": {
+        "initialized_snapshots": 8,
+        "native_save_format_versions": [
+          7
+        ],
+        "native_export_state_sha256": "eebe9d15c254c3dcfc4c971b4f0c30b57cb4e132de1c200cdc7c8bf4022b04db",
+        "jobs": 1,
+        "warehouse_g": 0,
+        "balance_error_g": 0,
+        "preparation_records": 1,
+        "phase": "Planned",
+        "cleared_resources": 0,
+        "projected_houses": 0,
+        "work_started": false,
+        "ground_scope": "Untouched Queued/Planned: zero worked-ground passes and empty status, not physical completion evidence. Independent physical ground is covered by full create/resume tests.",
+        "source_native_export_equivalent": true,
+        "controller_verification_mode": false,
+        "selected_job_id": "E15D4D2D4B0FACCCC0883E89E1E673D1",
+        "source_profile": {
+          "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+          "earthworks_native_export_sha256": "eebe9d15c254c3dcfc4c971b4f0c30b57cb4e132de1c200cdc7c8bf4022b04db",
+          "preparations_native_export_sha256": "f1c1c3517470d061a043c8e6694098512ffb9a5ced69942ab71b740dc194a255",
+          "clearing_native_export_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "config_native_export": {
+            "FixedStepSeconds": 0.25,
+            "InSituDensityKgPerM3": 1800,
+            "LooseDensityKgPerM3": 1400,
+            "ExcavationGramsPerStep": 6000000,
+            "LoadingGramsPerStep": 12000000,
+            "UnloadingGramsPerStep": 12000000,
+            "BufferCapacityGrams": 18000000,
+            "TruckCapacityGrams": 12000000,
+            "StorageCapacityGrams": 1000000000,
+            "DiggerTravelCmPerSecond": 2000,
+            "TruckTravelCmPerSecond": 4000,
+            "DiggerReachCm": 2000,
+            "DiggerStandOffCm": 300
+          },
+          "fixture_profile": "Accelerated acceptance fixture, not standard gameplay rates; retained unchanged.",
+          "frozen_tree_resources": 21,
+          "job_id": "E15D4D2D4B0FACCCC0883E89E1E673D1",
+          "record_id": "F6F4CE47477E23356ABF68BFF8F1ED66"
+        },
+        "native_snapshot_version": 2,
+        "native_export_scope": "Canonical native ExportText equivalence, not a full-precision binary serialization hash."
+      },
+      "native_capture_exit_log": {
+        "stop_requested": true,
+        "capture_ended_and_finalize_logged": true,
+        "graceful_exit_callsite": "CsvProfiler.ExitAfterCsvProfiling",
+        "native_log_closed": true,
+        "seconds_fallback_used": false
+      },
+      "scope": "Actual normal-controller native autoload and read-only snapshots are exact. Nonzero process exit means this is NOT a full normal-demo/lifecycle pass, not physical input or human acceptance."
+    },
+    "historical_private_ui_transport_failure_5cc579": {
+      "result": "test_infrastructure_failure_no_product_failure_inferred",
+      "raw_report_sha256": "1dade8b92f16b574872ab54e1ffc15d8cee796f9b20fb0006be2ab958cb7d391",
+      "completed_checks_before_transport_timeout": 30,
+      "checks_all_true": true,
+      "observed_report_error": "Bridge request exceeded 55 seconds: view_api",
+      "diagnosis_scope": "Coordinator observed private response publication PermissionError/WinError5 after accepted operation. Retry publishes same response, no second product action. Complete new 38-check run supersedes this attempt; no guide failure narrative or physical input claim."
+    },
+    "current_legacy_cross_build_normal_audit": {
+      "result": "failed_cross_build_compatibility_safely_rejected",
+      "raw_report_sha256": "bba0a70f623834e1faaffad409a8ee557229083485276b03f2146e1efaaf7ee8",
+      "raw_log_sha256": "920e64dfc1f5a7a2019885a5fe870a59edb7512be2be5210904b33424c930952",
+      "observed_native_error": "Terrain settings, materials, or generated seeds differ from this save.",
+      "initialized": false,
+      "source_unchanged": true,
+      "other_save_files_unchanged": true,
+      "initial_private_audit_faults": "Original helper did not parse bracket-adjacent native rows and fixed warehouse check used rounded 6,400,000 g instead of actual 6,437,507 g. Read-only offline parser/validator correction now exposes native binding rejection.",
+      "old_report_os_exit_code": 777003,
+      "exit_code_limit": "Historical OS code preserved without inferred cause; actual final native log reached Exiting and file close. Corrected helper reports validation failure and OS status independently.",
+      "corrected_helper_sha256": "f61d4c5f310daf0c025f41815ee3ee5ffaf820824fc815e1978a364f464f50aa",
+      "offline_only_retest": {
+        "actual_log_batches": 8,
+        "actual_error_preserved": true,
+        "positive_validator_fixtures": 3,
+        "negative_gates": 13,
+        "exact_archived_executable_seal_checked": true,
+        "no_process_launch": true,
+        "plan_cases": 3
+      },
+      "archive_baseline": "Pending explicit legacy archive mode; new package rejection is not waived.",
+      "cross_build_load_supported": false
+    },
+    "historical_private_normal_site_inert_ground_gate_failure": {
+      "result": "private_audit_expectation_failed_native_autoload_accepted",
+      "raw_report_sha256": "d45c779e274047519b21322c92ab4107f336868aea98eb9ba93cfd0f0691913e",
+      "raw_log_sha256": "b7d7dd3ddec802b11c35f9ac56a2281e51eda93d28fa98d560011ec817513c12",
+      "native_snapshots": 8,
+      "observed_native_controller_initialized": true,
+      "observed_native_error": "",
+      "source_and_other_saves_unchanged": true,
+      "old_audit_error": "Required StableGroundPasses >= 3 even for untouched Queued/Planned; native contract legitimately reports zero worked-ground passes and empty GroundStatus.",
+      "old_os_exit_code": 777003,
+      "corrected_helper_sha256": "458fa9adc5fb4411b41e32eab9e84b6e74257a34490e17ccd98d43b96d643b5f",
+      "offline_reparse": {
+        "result": "passed_inert_source_runtime_exact_comparison",
+        "initialized_snapshots": 8,
+        "jobs": 1,
+        "preparations": 1,
+        "phase": "Planned",
+        "frozen_tree_resources": 21,
+        "work_started": false,
+        "warehouse_g": 0,
+        "cleared_resources": 0,
+        "houses": 0,
+        "source_native_export_equivalent": true,
+        "worked_ground_passes": 0,
+        "ground_status": "",
+        "negative_nonzero_worked_ground_gate": true
+      },
+      "scope": "No new game was launched for the offline parser correction. Full normal audit still requires a new successful process/exit result; physical ground completion comes from separate full create/resume pairs."
+    },
+    "current_paired_legacy_archive_normal": {
+      "result": "native_readonly_snapshots_passed_process_lifecycle_failed",
+      "run": "cf083b105f22466f954754a9294d430f",
+      "variant": "normalwithoutforcedlogging",
+      "preset": "legacy",
+      "legacy_archive": true,
+      "raw_report_sha256": "caf5e7a3356286bcda7da9b852d759750799bbd66a008a3559f92027cdb93994",
+      "raw_log_sha256": "1d997c1c6898b9db55690cba7041dc04d0fe8d9bcbd5fabab18d11aa225f0ecd",
+      "helper_sha256": "645f63a953ddfe10cbb55b71a48f531bd7446b7f4bd8053d8ed0a11d90ab9530",
+      "process_id": 31944,
+      "elapsed_seconds": 60.98399999999674,
+      "exit_code": 777003,
+      "validation_error": null,
+      "source_unchanged": true,
+      "other_save_files_unchanged": true,
+      "native_snapshots": {
+        "initialized_snapshots": 8,
+        "native_save_format_versions": [
+          6
+        ],
+        "native_export_state_sha256": "6c9d3619625e545ab4c669caf9598184d8bf5ff987085ef23768fb7a47311bd7",
+        "jobs": 5,
+        "warehouse_g": 6437507,
+        "legacy_archive": true,
+        "preparation_class_absent_in_archived_binary": true,
+        "balance_error_g": 0,
+        "preparation_records": 0,
+        "source_native_export_equivalent": true,
+        "controller_verification_mode": false,
+        "selected_job_id": "9EAD623D4A03F9A5345C779010ABD31B",
+        "native_snapshot_version": 2,
+        "cleared_resources": 0,
+        "native_export_scope": "Canonical native ExportText equivalence, not a full-precision binary serialization hash."
+      },
+      "native_capture_exit_log": {
+        "stop_requested": true,
+        "capture_ended_and_finalize_logged": true,
+        "graceful_exit_callsite": "CsvProfiler.ExitAfterCsvProfiling",
+        "native_log_closed": true,
+        "seconds_fallback_used": false
+      },
+      "scope": "Actual normal-controller native autoload and read-only snapshots are exact. Nonzero process exit means this is NOT a full normal-demo/lifecycle pass, not physical input or human acceptance."
+    },
+    "normal_process_exit_diagnosis": {
+      "observed_os_code": 777003,
+      "native_enum": "ECrashExitCodes::CrashReporterCrashed",
+      "read_only_engine_sources": [
+        "Core/Public/GenericPlatform/GenericPlatformCrashContext.h",
+        "Core/Private/Windows/WindowsPlatformCrashContext.cpp"
+      ],
+      "source_finding": "The enum maps 777003 to CrashReporterCrashed; native crash-reporting thread uses it if its own crash-reporting handler faults. This does not establish the original exception or a product-specific cause.",
+      "actual_scope": "Latest V2 and separately sealed old Foundations archive both completed valid native CSV snapshots/finalization and closed logs but returned this OS code.",
+      "normal_lifecycle_probe": "Completed three separate no-CSV normal cases (new V2, preserved old package, clean Entry), each OS0 with native timed graceful exit and log closure. The late CSV-instrumented 777003 failure remains unresolved; it is not evidence of a general normal shutdown failure."
+    },
+    "normal_without_csv_lifecycle": {
+      "result": "passed_3_of_3",
+      "raw_report_sha256": "0f0df1f856ece8c50c67dad3c24dfbb5725325eede00c1c183ce53eb460721f9",
+      "scope": "Same immutable binaries; no CSV profiler, no FORCELOGFLUSH; lifecycle only, state proven separately by read-only snapshots",
+      "cases": [
+        {
+          "name": "v2",
+          "pid": 79568,
+          "exit_code": 0,
+          "seconds": 45.71799999999348,
+          "graceful_seconds_exit": true,
+          "log_closed": true,
+          "original_saves_unchanged": true,
+          "source_unchanged": true,
+          "isolated_save_sha256": "9565e39cbf8ee9c5754bab6f1ff0b33c9c9b64f91863b086ab374549f3f0a18e"
+        },
+        {
+          "name": "legacy",
+          "pid": 37600,
+          "exit_code": 0,
+          "seconds": 46.171000000002095,
+          "graceful_seconds_exit": true,
+          "log_closed": true,
+          "original_saves_unchanged": true,
+          "source_unchanged": true,
+          "isolated_save_sha256": "99d16b145ee6fe69d0b8c004b27d41a9bae60c8cea6827ee9cfb29c1e98735cb"
+        },
+        {
+          "name": "entry",
+          "pid": 2528,
+          "exit_code": 0,
+          "seconds": 25.844000000011874,
+          "graceful_seconds_exit": true,
+          "log_closed": true,
+          "original_saves_unchanged": true,
+          "source_unchanged": true,
+          "isolated_save_sha256": null
+        }
+      ],
+      "limit": "These separate normal launches use no CSV instrumentation and validate native timed graceful exit/OS0 plus file preservation. Exact gameplay state is proven by the separate normal CSV snapshots; this lifecycle report adds no GETALL or physical input claim."
+    },
+    "prepared_demo": {
+      "result": "prepared_sealed_ready_live_launch_pending",
+      "manifest_schema": "citylab.site-preparation-demo.v1",
+      "manifest_sha256": "ee3a9190c6ec7a75b02a515ce265d98f9f17e21871fda5fe2be49f3478c0bdfa",
+      "creation_report_sha256": "473c9bc4dcccecf63d3b3dbbb6249600ac76270135203e84e7a607eb7aac20ef",
+      "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+      "slot": "CityLabSitePreparation",
+      "launcher": "Tools/launch_site_preparation_demo.ps1",
+      "demo_user_dir": "Saved/SitePreparationDemoUser",
+      "source_run": "09d8063b376a4998bfa08fd0929f31fb",
+      "source_ready_sha256": "9565e39cbf8ee9c5754bab6f1ff0b33c9c9b64f91863b086ab374549f3f0a18e",
+      "demo_seed_sha256": "9565e39cbf8ee9c5754bab6f1ff0b33c9c9b64f91863b086ab374549f3f0a18e",
+      "seed_bytes": 52882,
+      "expected_native_state_hash": "11a8a4b0b8b87069ee7049c2f39b7b65",
+      "executable_sha256": "a72e55e76fa75d72c41c5bfb558bea1fc0f81d9d3e26cf9f3b827e020c3b1084",
+      "package_files": [
+        {
+          "path": "UnrealMcpTest/Binaries/Win64/UnrealMcpTest.exe",
+          "sha256": "a72e55e76fa75d72c41c5bfb558bea1fc0f81d9d3e26cf9f3b827e020c3b1084"
+        },
+        {
+          "path": "UnrealMcpTest/Content/Paks/global.ucas",
+          "sha256": "2f1f22c9fd2d30db741c09939b2e15f0152afba28ad991a5f8c5585c665e44e8"
+        },
+        {
+          "path": "UnrealMcpTest/Content/Paks/global.utoc",
+          "sha256": "6eab2e772128727891bf00da9e2b53f51c36a015af33681b5d76dc08251625fa"
+        },
+        {
+          "path": "UnrealMcpTest/Content/Paks/UnrealMcpTest-Windows.pak",
+          "sha256": "d077d8d63d26577451d81a6827d614c09f1861ee4f8b1ca32c954ec9848de527"
+        },
+        {
+          "path": "UnrealMcpTest/Content/Paks/UnrealMcpTest-Windows.ucas",
+          "sha256": "ee67cf1b0e536dddb4d7a4b4c59313153c8f72e89b267eab03aa4e15c4e0f3fd"
+        },
+        {
+          "path": "UnrealMcpTest/Content/Paks/UnrealMcpTest-Windows.utoc",
+          "sha256": "281ec2e2777ff5b39e0fa2ff4caa9e02950875af8b88981116a9e8b669ef1a7e"
+        }
+      ],
+      "source_seal_sha256": "6f5c4e4b64c5187c00c1bc18a4e9ed405d0a3aa631ce4fe495457b5d1e9b2034",
+      "source_files_verified": 106,
+      "package_files_verified": 6,
+      "prior_save_files_preserved": 170,
+      "save_inventory_files_after": 171,
+      "one_new_private_seed_created": true,
+      "other_saves_unchanged": true,
+      "normal_snapshots_validated": 8,
+      "accelerated_profile": {
+        "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+        "earthworks_native_export_sha256": "eebe9d15c254c3dcfc4c971b4f0c30b57cb4e132de1c200cdc7c8bf4022b04db",
+        "preparations_native_export_sha256": "f1c1c3517470d061a043c8e6694098512ffb9a5ced69942ab71b740dc194a255",
+        "clearing_native_export_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "config_native_export": {
+          "FixedStepSeconds": 0.25,
+          "InSituDensityKgPerM3": 1800,
+          "LooseDensityKgPerM3": 1400,
+          "ExcavationGramsPerStep": 6000000,
+          "LoadingGramsPerStep": 12000000,
+          "UnloadingGramsPerStep": 12000000,
+          "BufferCapacityGrams": 18000000,
+          "TruckCapacityGrams": 12000000,
+          "StorageCapacityGrams": 1000000000,
+          "DiggerTravelCmPerSecond": 2000,
+          "TruckTravelCmPerSecond": 4000,
+          "DiggerReachCm": 2000,
+          "DiggerStandOffCm": 300
+        },
+        "fixture_profile": "Accelerated acceptance fixture, not standard gameplay rates; retained unchanged.",
+        "frozen_tree_resources": 21,
+        "job_id": "E15D4D2D4B0FACCCC0883E89E1E673D1",
+        "record_id": "F6F4CE47477E23356ABF68BFF8F1ED66"
+      },
+      "work_paused": true,
+      "transport_enabled": false,
+      "visible_launch_status": "pending",
+      "limit": "Launcher and matching seeded state prepared. Visible window launch and physical input remain separate pending checks. Existing player progress must never be automatically reseeded."
+    }
+  },
+  "images": [
+    {
+      "file": "assets/images/site-preparation-cooked-partial-clearing.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2819523,
+      "sha256": "b352c83cd919ed759fd699545bd580d1648d1ccb4f2b04b58bfeb0426474291c",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-cooked-completed.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2571958,
+      "sha256": "72d98b3ded239436ed6b42f619ad46d0132284d69b38228d158fac1b87b40f98",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-normal-cooked-controls.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normalem Development-Cooked-Controller auf SitePreparationLab V2, Audit 280b7ec454c24cf6a85c92eb57d97a3f. Echte aktuelle linke Werkzeugleiste und pausierter geplanter Auftrag im Wald; grüner CSV-Framezähler gehört zum Prüflauf. Koordinierender und Dokumentationsagent haben die Aufnahme visuell geprüft. Keine physischen Eingaben. Acht State-Snapshots separat exakt geprüft; dieser CSV-Prozess endete spät mit 777003 und ist kein vollständiger Lebenszyklus-PASS.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 888,
+      "height": 500,
+      "bytes": 1314220,
+      "sha256": "56f5ae0862408ec428dbd85c8dddd7767abc5f88db79f95deb6d34077d643f32",
+      "revision_scope": "Current normal V2 cooked controller image. Independent no-CSV same-binary/save normal lifecycle is a separate result; image does not prove human input or clean exit."
+    }
+  ],
+  "limits": [
+    "Full uncooked/Development-cooked V2 restart pairs, shared UI, exact normal autoload snapshots and three separate no-CSV normal lifecycle cases passed. Seeded six-file-sealed demo prepared; actual visible launcher window and physical input remain pending. CSV-instrumented V2/old archive late OS777003 remains failed and unresolved.",
+    "Persistence is paired to the tested build. A fresh cook changes native biome/spawnable Version GUIDs included in TerrainSettingsIdentity; the existing old Earthworks save is rejected by the new package without being changed. Stable semantic identities and explicit cross-build migration remain future work.",
+    "Terrainaufnahmen enthalten keine Slate-Werkzeugleiste und belegen keine echte Bedienung. Aktuelle Editor-API-Aufnahmen ersetzen keine physischen Eingaben.",
+    "21 Baumressourcen am aktuellen V2-Prüfstandort werden verwaltet; Holz besitzt kein Konto.",
+    "Ein lokaler Erdauftrag und ein gemeinsamer Maschinenzug; keine freie Fahrzeuglogistik oder Bürgernavigation.",
+    "Externe Terrainänderung nach begonnener Rodung kann NeedsReplan blockieren; expliziter Replanpfad ist nicht Teil dieses Slice.",
+    "Native Untergrundtests belegen kein physisches Loch, ausgehobenes Volumen oder physische Kamerabedienung.",
+    "Known compiler C4457 name-shadow warning retained; two known native test warnings remain separate from runtime acceptance.",
+    "Historical failed restores, exact-ID diagnostic, different-location ca1c pass and old cooked control-tree failures remain separately source-scoped; current original-location V2 pairs do not rewrite that history."
+  ],
+  "historical_builds_pre_restore_and_version_fix": {
+    "editor": {
+      "result": "succeeded",
+      "duration_seconds": 92.43,
+      "raw_log_sha256": "b438452f94143ac46b8fe92ffafa8562c53e1471ebe8c23817cda22e3c3a5db1"
+    },
+    "game": {
+      "result": "succeeded",
+      "duration_seconds": 102.85,
+      "raw_log_sha256": "28478651967e1af8872fae4b10c7127ada13f20da601ca962c8f050bfeac35c8"
+    }
+  },
+  "historical_native_pre_restore_and_version_fix": {
+    "raw_report_sha256": "82d12d0d2314fd76d0d9a7fd3303cf59ebb86a213bf4c1b25298ab86bc555511",
+    "succeeded": 58,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "total_duration_seconds": 3.845860004425049,
+    "focused_tests": [
+      {
+        "fullTestPath": "CityLab.SitePreparation.BoundsBindingsAndSingleConvoy",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.CollisionGatedHouseAndIdempotence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.EmptyClearingRequiresExplicitStart",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.OrderedClearingAndNoCredit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.PartialRestoreAndLedger",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.UnworkedRevisionAndCancellation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedCameraMath",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedClipAndSelection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.FreeCameraAndSliceIndependence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.MaterialRestoreOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "known_warning_tests": [
+      {
+        "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+        "warnings": 1,
+        "errors": 0
+      }
+    ]
+  },
+  "historical_source_snapshot_pre_restore_and_version_fix": {
+    "original_snapshot_sha256": "4ac21e7c4271663cc3c33f6a31a726bf4d3eaa048470f49d872c5b5a5bc4c739",
+    "at": "2026-10-29T13:32:36.416420+00:00",
+    "sha256": {
+      "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp": "8f47e1c157661b6a08250137dfed23fb872ae15f76fb2f3dc52081b18422777e",
+      "Source/UnrealMcpTest/CityLabEarthworksGameMode.h": "7763230f77134d55ab21eb6695a68417c25bf2f0f965a85b954d0823c86b402f",
+      "Source/UnrealMcpTest/CityLabPersistence.cpp": "e1dae76ea269173cd444fdb574aa8e221748c126eb60b5181845c540954e45b8",
+      "Source/UnrealMcpTest/CityLabPersistence.h": "514c65aa32963babe4ba198c2309ad6d5c5fe46e9494dc0512c6542ede88709c",
+      "Source/UnrealMcpTest/CityLabSitePreparation.cpp": "9a9283c8c82a70e7ac645146c5416c01b114b83c50afddf51b742d6409f524f3",
+      "Source/UnrealMcpTest/CityLabSitePreparation.h": "17f376334b55b90a088a1d85cd39a68294356d990e5d6fb12685d1f057de157b",
+      "Source/UnrealMcpTest/CityLabSitePreparationModel.cpp": "6ea3533196e8e096b3e826720514b0a6bdaf455e932ce36324f1c42214245ee7",
+      "Source/UnrealMcpTest/CityLabSitePreparationModel.h": "3e405eb32a77ae01f63eebd09071eb10e3cc0d3ddabd0132b8f234215b090a9a",
+      "Source/UnrealMcpTest/CityLabSitePreparationTests.cpp": "bcf235151ac68e58794af6a9562a387889e91a3ae33dcabcbb44d4e474d43274",
+      "Source/UnrealMcpTest/CityLabSitePreparationVerification.cpp": "86250f40eb806669b8eee55ef0f8e17df3b79f5ca5ee012a7439de3e63229b4d",
+      "Source/UnrealMcpTest/CityLabSitePreparationVerification.h": "3005501d4a9ee60a4958d44a771ec443a281d5ff994aacba9bd607dc8470bd90",
+      "Source/UnrealMcpTest/CityLabUndergroundView.cpp": "bf3da27bca4c5341f2fac6e7699a800d3a923976df4f267581b3e988b8c86728",
+      "Source/UnrealMcpTest/CityLabUndergroundView.h": "1de9344bd5251398526cbf0deac62fc613e75ad65f06cb3e09d096e3a9571e91",
+      "Source/UnrealMcpTest/CityLabUndergroundViewTests.cpp": "0a02fce7ce3c124f51a707c18a4c92f8dafc2e4bcf9b522103e645c68a883a9c"
+    }
+  },
+  "current_persistence_contract": {
+    "save_class_default_version": 6,
+    "SaveCity_explicit_written_version": 7,
+    "reason": "Unreal may omit fields equal to the class default. Keep legacy default 6 when reading old omitted fields, and explicitly write 7 for new saves.",
+    "binary_regression_test": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+    "scope": "Actual SaveGameToMemory/LoadGameFromMemory regression, not complete migration of every archived user save.",
+    "map_slot_contract": {
+      "legacy_map": "/Game/Maps/ShaderWorldEarthworksLab",
+      "legacy_slot": "CityLabEarthworks",
+      "v2_map": "/Game/Maps/ShaderWorldSitePreparationLab",
+      "v2_slot": "CityLabSitePreparation",
+      "migration": "None. Preserve legacy map/materials/resources/saves. V2 uses fresh own state with zero stock; later V2 material changes still require binding validation."
+    },
+    "build_pairing": {
+      "result": "cross_build_legacy_save_rejected_by_new_cook",
+      "current_restart_scope": "Cold restart and repeated loads within each tested unchanged build, not across different cooked releases.",
+      "read_only_source_finding": "ShaderWorld Biom and Spawnable PreSave unconditionally assign new Version GUIDs. The own terrain identity includes these versions directly and via editable ObjectSettings.",
+      "source_files": [
+        "ShaderWorld/Private/Data/ShaderWorld_Biom.cpp",
+        "ShaderWorld/Private/Data/ShaderWorld_Spawnable.cpp",
+        "ShaderWorld/Public/Data/ShaderWorld_Biom.h",
+        "ShaderWorld/Public/Data/ShaderWorld_Spawnable.h",
+        "UnrealMcpTest/CityLabPersistence.cpp"
+      ],
+      "legacy_source_preserved": true,
+      "production_binding_normalized": false,
+      "next_work": [
+        "Stable semantic content identity with deterministic release versioning.",
+        "Explicit validated save migration across released builds, with old package recovery."
+      ],
+      "archive_baseline": "Sealed old Foundations archive accepted exact native five-job state/ledger in eight snapshots. Its separate no-CSV normal lifecycle passed OS0; CSV-instrumented exit777003 remains failed. New package cross-build binding rejection is not waived."
+    }
+  },
+  "current_collision_readiness_contract": {
+    "runtime_owned_probe_anchor": "Commit, Restore and Tick maintain local terrain request anchor at active/ready/latest noncancelled preparation.",
+    "reason": "Transient preview visitor from the prior process cannot satisfy cold restore readiness. Render camera location alone is not physical-ground readiness.",
+    "runtime_verification": "Current V2 exact-regression uncooked and Development-cooked create/cold-resume passed with independent physical ground; bounded 5cm gate."
+  },
+  "historical_builds_version_fix": {
+    "editor": {
+      "result": "succeeded",
+      "duration_seconds": 67.26,
+      "raw_log_sha256": "22828728df596d88dc10d7dd94f23f94312e2ca91fb98dff38426598edb04bdf",
+      "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed"
+    },
+    "game": {
+      "result": "succeeded",
+      "duration_seconds": 61.79,
+      "raw_log_sha256": "913085d2aef4d5841b0d9a2ac3ca3bbd51fdb5cfcc4f7e23ae9d1979e816bdb9",
+      "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed"
+    }
+  },
+  "historical_native_version_fix": {
+    "raw_report_sha256": "8e3b1431dd4700ef392f6500ec562a0f77ff92b9e822f172582ac4fed67f6890",
+    "succeeded": 58,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "total_duration_seconds": 3.7565701007843018,
+    "focused_tests": [
+      {
+        "fullTestPath": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.BoundsBindingsAndSingleConvoy",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.CollisionGatedHouseAndIdempotence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.EmptyClearingRequiresExplicitStart",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.OrderedClearingAndNoCredit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.PartialRestoreAndLedger",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.UnworkedRevisionAndCancellation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedCameraMath",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedClipAndSelection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.FreeCameraAndSliceIndependence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.MaterialRestoreOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "known_warning_tests": [
+      {
+        "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+        "warnings": 1,
+        "errors": 0
+      }
+    ]
+  },
+  "current_vegetation_restore_contract": {
+    "scope": "Current V2 exact-regression uncooked and cooked restore passed for original center/control and 21 frozen resources. No global GPU/vegetation readiness guarantee.",
+    "projection": "Untouched Queued/NeedsReplan intent creates no terrain brushes during MakeProjection or UpdateProjection, matching inert commit.",
+    "region": "Frozen tree bounds plus 200 cm; exactly one real native UpdateSpawnablesInRegion request after readiness.",
+    "waits": "Terrain production idle; no vegetation/redraw/earthwork refresh pending; matching initialized source participants have density materials, visible compute clipmap, completed readbacks, empty spawn/collision/position-update queues and finished HISM async builds; render fence plus at least 2 seconds. Drain and fence/2-second wait repeat after regional request.",
+    "preservation": "No synthetic instances, no cleared-resource ledger changes, no material credits, no weakened strict tree check.",
+    "limit": "Neither WorldGeneratedAndReady nor this bounded regional gate is a universal GPU/vegetation-ready guarantee. Legacy density excluded GrassAlt. Why the distant RED value changed was not fully established; no vendor cache bug fix or general global-biome guarantee is claimed."
+  },
+  "historical_builds_vegetation_intermediate": {
+    "editor": {
+      "result": "succeeded_intermediate_build5",
+      "duration_seconds": 73.43,
+      "raw_log_sha256": "655079053fad2e65da60660b007b5c04a10407bde16ad7f867d7c3411007361e",
+      "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed",
+      "final_guard_result": "pending"
+    },
+    "game": {
+      "result": "succeeded_intermediate_build5",
+      "duration_seconds": 67.78,
+      "raw_log_sha256": "5f79463979e2d44cb70bc57c65b650a431e7eaaf3c4a58ecb21c7bd60090b5ae",
+      "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed",
+      "final_guard_result": "pending"
+    }
+  },
+  "historical_native_vegetation_intermediate": {
+    "raw_report_sha256": "67e8a543bf584cd2a06d8b671540305739c11268e65811f56322f891cc36657e",
+    "succeeded": 58,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "total_duration_seconds": 2.5476338863372803,
+    "focused_tests": [
+      {
+        "fullTestPath": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.BoundsBindingsAndSingleConvoy",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.CollisionGatedHouseAndIdempotence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.EmptyClearingRequiresExplicitStart",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.OrderedClearingAndNoCredit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.PartialRestoreAndLedger",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.SitePreparation.UnworkedRevisionAndCancellation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedCameraMath",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.BoundedClipAndSelection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.FreeCameraAndSliceIndependence",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.MaterialRestoreOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "known_warning_tests": [
+      {
+        "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+        "warnings": 1,
+        "errors": 0
+      }
+    ]
+  },
+  "historical_images": [
+    {
+      "archived_filename": "site-preparation-verified-partial-clearing.png",
+      "origin": "Unveränderte native Terrainaufnahme aus eigenem finalem gerendertem Uncooked-Prüfprozess ca1c028287034c85976c135b63d54cd1, Standort (-40 m, 40 m); vom Agenten visuell geprüft. Keine Slate-Werkzeugleiste oder Eingabeabnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2738028,
+      "sha256": "378960bdfaab950c41f2d984eca814f33067956166d38c034dab945dd5335159",
+      "revision_scope": "Historical prior source before versioned V2 biome/new-map contract; not current V2 proof.",
+      "distributed_in_current_bundle": false
+    },
+    {
+      "archived_filename": "site-preparation-verified-completed.png",
+      "origin": "Unveränderte native Terrainaufnahme aus eigenem finalem gerendertem Uncooked-Prüfprozess ca1c028287034c85976c135b63d54cd1, Standort (-40 m, 40 m); vom Agenten visuell geprüft. Keine Slate-Werkzeugleiste oder Eingabeabnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2506477,
+      "sha256": "3903ef7645030f3d5e1447999deb6f7c75190832577503ae2b11c78f18598f85",
+      "revision_scope": "Historical prior source before versioned V2 biome/new-map contract; not current V2 proof.",
+      "distributed_in_current_bundle": false
+    },
+    {
+      "archived_filename": "site-preparation-partial-clearing.png",
+      "origin": "Unveränderte native Terrainaufnahme aus eigenem gerendertem Uncooked-CityLab-Prüfprozess 516d40d6f2084cb98372ba6623aae2d8; vom Agenten visuell geprüft. Wald während des Teilrodungscheckpoints; Terrainaufnahme ohne Slate-Werkzeugleiste",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2705070,
+      "sha256": "f7fd1b45bc292a6d5a760dd4d2d7da7e84fcaeb20cd06af196deeba2f852a94c",
+      "distributed_in_current_bundle": false
+    },
+    {
+      "archived_filename": "site-preparation-completed.png",
+      "origin": "Unveränderte native Terrainaufnahme aus eigenem gerendertem Uncooked-CityLab-Prüfprozess 516d40d6f2084cb98372ba6623aae2d8; vom Agenten visuell geprüft. Gerodeter abgesenkter Bauplatz mit geschlossenem Testhausdach und freier Zufahrt; Terrainaufnahme ohne Slate-Werkzeugleiste",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2542968,
+      "sha256": "20590be1d44cd9184bb395742b11badabf938f053dc1f149da19715825a3157d",
+      "distributed_in_current_bundle": false
+    }
+  ],
+  "previous_verified_revision_before_regional_mask_fix": {
+    "scope": "These passed builds/native/uncooked/UI results belong to the prior source revision; they do not verify the new removal of a redundant global vegetation reset.",
+    "builds": {
+      "editor": {
+        "result": "succeeded_final_source_guard",
+        "duration_seconds": 68.29,
+        "raw_log_sha256": "803370ed1ea23ba43059c086c391340f7b3f699408b3501dbd84f12757e884cd",
+        "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed"
+      },
+      "game": {
+        "result": "succeeded_final_source_guard",
+        "duration_seconds": 142.46,
+        "raw_log_sha256": "75267469ffad0739eb4d66c4459e9014805f101bb5f43036236a790a0378089f",
+        "known_compile_warning": "C4457: local Name shadows function parameter in own UndergroundView implementation; not fixed"
+      }
+    },
+    "native": {
+      "raw_report_sha256": "3676546f253001c8e5c1cc5e9f94a9ca6ce35ad70e8a2f8c53ee382a1723be8c",
+      "succeeded": 58,
+      "succeeded_with_warnings": 2,
+      "failed": 0,
+      "not_run": 0,
+      "in_process": 0,
+      "total_duration_seconds": 3.1308960914611816,
+      "focused_tests": [
+        {
+          "fullTestPath": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.BoundsBindingsAndSingleConvoy",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.CollisionGatedHouseAndIdempotence",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.EmptyClearingRequiresExplicitStart",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.OrderedClearingAndNoCredit",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.PartialRestoreAndLedger",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.SitePreparation.UnworkedRevisionAndCancellation",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.UndergroundView.BoundedCameraMath",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.UndergroundView.BoundedClipAndSelection",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.UndergroundView.FreeCameraAndSliceIndependence",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.UndergroundView.MaterialRestoreOwnership",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+          "state": "Success",
+          "warnings": 0,
+          "errors": 0
+        }
+      ],
+      "known_warning_tests": [
+        {
+          "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+          "warnings": 1,
+          "errors": 0
+        },
+        {
+          "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+          "warnings": 1,
+          "errors": 0
+        }
+      ]
+    },
+    "source_guard_readback": {
+      "at": "2026-10-29T14:56:57Z",
+      "scope": "Own relevant project sources read after parent confirmed final source guard builds and no pending source edits. Fresh runtime/cook association still pending.",
+      "sha256": {
+        "Source/UnrealMcpTest/CityLabSitePreparation.h": "13ed58d1af4b0d05ecfb7fb51698ca29308b0e6959ddf0dae82f50a009390daf",
+        "Source/UnrealMcpTest/CityLabSitePreparation.cpp": "690b3e4a2be0354d3f06fbdd7eeb3613539dc2a00dd4a4d7e8ac94a3fc61b5f1",
+        "Source/UnrealMcpTest/CityLabSitePreparationModel.h": "3e405eb32a77ae01f63eebd09071eb10e3cc0d3ddabd0132b8f234215b090a9a",
+        "Source/UnrealMcpTest/CityLabSitePreparationModel.cpp": "6ea3533196e8e096b3e826720514b0a6bdaf455e932ce36324f1c42214245ee7",
+        "Source/UnrealMcpTest/CityLabSitePreparationTests.cpp": "bcf235151ac68e58794af6a9562a387889e91a3ae33dcabcbb44d4e474d43274",
+        "Source/UnrealMcpTest/CityLabSitePreparationVerification.h": "aa4801bf3f2a3f97f31ba1545123456e1f4b8acc255b627f2bb938f5871596ef",
+        "Source/UnrealMcpTest/CityLabSitePreparationVerification.cpp": "2ecd42d1dd3cad569072df8a01508c876101c62f442397a5517b3ce2c19de2da",
+        "Source/UnrealMcpTest/CityLabEarthworks.h": "3a31fe52978e353f47d6e5a323db48e8eec29959d507fd4e1be0e0e0d6ebf9a4",
+        "Source/UnrealMcpTest/CityLabEarthworks.cpp": "7290c0240e927a983857350f68d6841098d36c3866fe43aace15b2a924a9c63d",
+        "Source/UnrealMcpTest/CityLabEarthworksModel.h": "63e90edd6c354be11acad03cb274fa932c3137a7f2cf31d14711258f39dba660",
+        "Source/UnrealMcpTest/CityLabEarthworksModel.cpp": "48d30a3d7daaaa69c863c67f6180c192ac8918a26ae2039aae6998b97eb95f90",
+        "Source/UnrealMcpTest/CityLabEarthworksTests.cpp": "3a8713b7608e6af20805c78307a6234dad71a112ff04d1eef9f03a796079fdc9",
+        "Source/UnrealMcpTest/CityLabEarthworksGameMode.h": "7763230f77134d55ab21eb6695a68417c25bf2f0f965a85b954d0823c86b402f",
+        "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp": "8f47e1c157661b6a08250137dfed23fb872ae15f76fb2f3dc52081b18422777e",
+        "Source/UnrealMcpTest/CityLabPersistence.h": "1982ce6344d3b1035da020e7a4909ee8b462408ef130a1dc594f39a79ff51b64",
+        "Source/UnrealMcpTest/CityLabPersistence.cpp": "e1dae76ea269173cd444fdb574aa8e221748c126eb60b5181845c540954e45b8",
+        "Source/UnrealMcpTest/CityLabUndergroundView.h": "1de9344bd5251398526cbf0deac62fc613e75ad65f06cb3e09d096e3a9571e91",
+        "Source/UnrealMcpTest/CityLabUndergroundView.cpp": "bf3da27bca4c5341f2fac6e7699a800d3a923976df4f267581b3e988b8c86728",
+        "Source/UnrealMcpTest/CityLabUndergroundViewTests.cpp": "0a02fce7ce3c124f51a707c18a4c92f8dafc2e4bcf9b522103e645c68a883a9c",
+        "Source/UnrealMcpTest/CityLabWorldEditVersionTests.cpp": "5efaa11477e9c55dd0d603ff920d36827468c2b2c6dbff0d5dfaccbbd932d76d",
+        "Source/UnrealMcpTest/CityLabVegetationState.h": "139a39f5a2df1a2849419800332d7582e87de8866cdf66a620db87679d817331",
+        "Source/UnrealMcpTest/CityLabVegetationState.cpp": "89bb9f157405f48d6a7bd2a19674133df9cbf5bda72cad17eb42a84efbaa2001",
+        "Source/UnrealMcpTest/CityLabBuildQueries.h": "58ba87265e99363e5cb53aa6d0f9b729e17fb1aed7ceface52b854aff1d8869e",
+        "Source/UnrealMcpTest/CityLabBuildQueries.cpp": "0f58145cc2f67a1ccccb65da25347498f68aa649a674693ed9c5d2de33c1a4ff"
+      },
+      "unchanged_at_uncooked_review": true
+    }
+  },
+  "builds": {
+    "result": "passed_v2_final_editor_and_game",
+    "editor_seconds": 114.31,
+    "game_seconds": 102.37,
+    "editor_log_sha256": "60943c9cb873d78fc2fcbef7936145aebf598092d96ae30e62f98e954474cdea",
+    "game_log_sha256": "9db72614ab4b19bc12f09a700001ad889e5d157e0749ae525e1628998518fd94",
+    "known_warning": "C4457 local Name shadows declaration in CityLabUndergroundView.cpp; unchanged.",
+    "fresh_full_cook": {
+      "result": "passed",
+      "build_cook_run_seconds": 142.22,
+      "exit_code": 0,
+      "errors": 0,
+      "inherited_level_blueprint_warnings": 6,
+      "note": "Five prior stale level-actor references plus same inherited warning in copied SitePreparation map; not fixed. Package success does not prove cooked runtime.",
+      "raw_log_sha256": "71a9de6d9db29a48a88b01e259760f9fb706bab577118923bead3b55c67312d9"
+    }
+  },
+  "native": {
+    "result": "passed_v2_bounded_native_suite",
+    "tests": 60,
+    "success": 58,
+    "success_with_known_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "suite_duration_seconds": 3.79469633102417,
+    "raw_native_report_sha256": "e46e5d12053ac39af6fa427233f3b8b69c999f1c458acd161a5af9ea4b430b58",
+    "host_startup_inclusive_seconds": 72.11,
+    "host_report_sha256": "780ef8b7a881add1d8df629cd9682d7a1f6381d51fe0b1e11bef937460edb2f2",
+    "scope": "Native data/component regressions only; no rendered runtime, physical input or current cooked acceptance derived."
+  },
+  "historical_regional_mask_only_attempt": {
+    "result": "historical_insufficient_fix_control_regression_still_failed",
+    "own_method": "UCityLabEarthworksComponent::EnsureMasks",
+    "change": "Remove only additional Terrain->rebuildVegetationOnly=true global reset; retain native road manager bounded cache/spawn/collision refresh for the NoGrowth masks.",
+    "reason": "The prior cooked run lost an unrelated control tree far outside own clearing matching range, including same-XYZ/same-spawn-mesh native zero-scale diagnostic. Global reset destroys unrelated biome/LOD/readback pools; causal effect of removing the extra reset still requires exact-fixture and fresh full reruns.",
+    "preservation": "No fake instances, no cleared-resource or material-ledger changes, no strict-gate relaxation.",
+    "source_current_sha256": "17f8c21f99a8f31ca8b8116771ad69629146b404162009f62d4fb30b92271d24",
+    "runtime_proof": "Exact old-control diagnostic still failed; no full current acceptance. Replaced by separate versioned V2 biome/new-map contract."
+  },
+  "current_v2_lab_source_contract": {
+    "result": "bounded_runtime_verified_sealed_demo_prepared_live_launch_pending",
+    "density_rule_version": "BlueAndBounds1",
+    "map": "/Game/Maps/ShaderWorldSitePreparationLab",
+    "normal_slot": "CityLabSitePreparation",
+    "new_asset_root": "/Game/CityLab/Biomes/SitePreparationV2",
+    "asset_count": 11,
+    "density_contract": "Explicit blue biome ID plus native cell bounds. Preserve height/slope gates and shared spawnables. Red material GrassAlt is no additional hidden vegetation exclusion. Own explicit NoGrowth biome ID3 remains separate from permanent clearing ledger.",
+    "setup_report_sha256": "04900c89e927dbc2cf180137e2dcb0805cc91e85b68bbd964da1bd6713fc0726",
+    "legacy_source_digest": "c870d6a4254a4b799b61c406f92d5e41bc341801b44b8d841521b60b7cef2783",
+    "legacy_source_files_unchanged": true,
+    "legacy_metadata_unchanged": true,
+    "ordinary_saves_unchanged": true,
+    "source": "Own reviewed setup_site_preparation_lab.py, repair_city_biome_density.py, controller/map-slot changes; separately licensed native ShaderWorld functions read only. No plugin source/assets distributed.",
+    "runtime_proof": "Native suite, idempotent setup, original-location uncooked/cooked restart pairs, normal exact Ready snapshots and separate same-binary/save no-CSV lifecycle passed. Six-file sealed demo with matching isolated seed prepared. CSV-instrumented shutdown remains failed; actual visible launch and physical input still pending.",
+    "idempotent_setup": {
+      "result": "passed",
+      "complete": true,
+      "already_complete": true,
+      "created": [],
+      "legacy_source_files_unchanged": true,
+      "legacy_metadata_unchanged": true,
+      "ordinary_saves_unchanged": true,
+      "raw_report_sha256": "58a5a8e972806b333725206ea416d0df0bbd63416779fc549cd7edf82fa09abe",
+      "host_startup_inclusive_seconds": 53.297
+    },
+    "bounded_host_preservation": {
+      "protected_files": 95,
+      "unchanged": true,
+      "scope": "Project/Config, original+V2 biomes, Content/Maps, setup scripts and existing ordinary CityLab*.sav slots; see bounded host report. Not an all-world GPU readiness claim."
+    },
+    "diagnostic_scope": "Observed legacy red 0-to-1 near the original control with blue 0; private native density replay 1-to-0 and all tested biome overrides 0; legacy source excludes red GrassAlt. V2 explicit-blue contract passed the original location. WHY red terrain output changed far outside work was not fully established; no vendor-cache bug fix or global readiness claim."
+  },
+  "current_v2_source_guard": {
+    "raw_seal_sha256": "6f5c4e4b64c5187c00c1bc18a4e9ed405d0a3aa631ce4fe495457b5d1e9b2034",
+    "total_source_asset_binary_files_checked": 106,
+    "all_unchanged_at_doc_read": true,
+    "own_source_config_tool_sha256": {
+      "Source/UnrealMcpTest/CityLabBuildPanel.cpp": "40dcd98942f0b6e9fb940331f085fcd5f2b7bacf8331c8711afc0eb11468602d",
+      "Source/UnrealMcpTest/CityLabBuildPanelTests.cpp": "bb4f7a2c28048316aee4670522bccbe89c6c7390a8d2536874ccae4bb8ab12c1",
+      "Source/UnrealMcpTest/CityLabBuildQueries.cpp": "0f58145cc2f67a1ccccb65da25347498f68aa649a674693ed9c5d2de33c1a4ff",
+      "Source/UnrealMcpTest/CityLabBuildQueryTests.cpp": "451ae3709a4e061916024ed383ec63c97dc48c85b0fcc1f5da29501b4fc04962",
+      "Source/UnrealMcpTest/CityLabCamera.cpp": "b72a98b00c517bdc35815c22f3ffbb216f4b84829b02289631140d83daf21694",
+      "Source/UnrealMcpTest/CityLabCameraCollisionTests.cpp": "736119930cb70908f487f77c74b93d6c591b6c823f43e802939801f97e56646f",
+      "Source/UnrealMcpTest/CityLabCameraTests.cpp": "1b767d50900455dab0e222f1274a3ed2543cdae3bda030efc6e0c6143313d155",
+      "Source/UnrealMcpTest/CityLabClearingBenchmark.cpp": "f4ddcc06a869c88dcac6df851c9b88e68b057bad6ff2e8bb0824a14696a6c528",
+      "Source/UnrealMcpTest/CityLabConstruction.cpp": "b859c7de0270035d4635efd8e6b425e1ab527c96e9e1038f7600ac3cd16854d2",
+      "Source/UnrealMcpTest/CityLabConstructionGameMode.cpp": "82c1352280b2e699fee189d447914ade55039208fd82e8fb6dac9a1acc6cd107",
+      "Source/UnrealMcpTest/CityLabConstructionModel.cpp": "86e3879bc356508280f1d084de1e8b3f12e0fcc8375d07f62bf651db52adc243",
+      "Source/UnrealMcpTest/CityLabConstructionTests.cpp": "d1d2e74d5bde89ac78d84fadd676b2477c6dacd18524d93e628abb5474619fd6",
+      "Source/UnrealMcpTest/CityLabConstructionVerification.cpp": "6c079a3f2facbe4b3dadee4af32699dfbf1a96c8d5d7821bc3da2990d622beb7",
+      "Source/UnrealMcpTest/CityLabDrivePawn.cpp": "dfcc576ae73fc6a7b16ec1fbfe000cc1e1ec3e7c21d4fe370dc529e89692bc0a",
+      "Source/UnrealMcpTest/CityLabEarthworks.cpp": "17f8c21f99a8f31ca8b8116771ad69629146b404162009f62d4fb30b92271d24",
+      "Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp": "c6b0ad6ee0febea058f2fa84ef8e502779ac265b487b310836bdef25a43f2a00",
+      "Source/UnrealMcpTest/CityLabEarthworksModel.cpp": "48d30a3d7daaaa69c863c67f6180c192ac8918a26ae2039aae6998b97eb95f90",
+      "Source/UnrealMcpTest/CityLabEarthworksTests.cpp": "3a8713b7608e6af20805c78307a6234dad71a112ff04d1eef9f03a796079fdc9",
+      "Source/UnrealMcpTest/CityLabEarthworksVerification.cpp": "7b0f295880c5b5d2840ebb2a4b73a0d55b3336c514a4eaae64e61dbad4081933",
+      "Source/UnrealMcpTest/CityLabFillVerification.cpp": "25b4e436682bb4c58b94910338e6dcd8e14bca3903137bfe79cc323bb6a412b9",
+      "Source/UnrealMcpTest/CityLabFlattenVerification.cpp": "07c2e0df91e9444fc65989a198abfed687ef6fdc19acfb48f23cfa5eac9e201a",
+      "Source/UnrealMcpTest/CityLabFoundationsGameMode.cpp": "d4236e4af6ee6eddb89d26fe70f3ed1637127ddc56dc56d249ff2a699ca1788c",
+      "Source/UnrealMcpTest/CityLabFoundationVerification.cpp": "95f1b3fd85a3435b7ad44e166ec002d1a3c2f513610114a72bd829f26797d821",
+      "Source/UnrealMcpTest/CityLabGameMode.cpp": "fc4ceeb133cd6235f70b57b68c4ca5f72720cb58251fe6ffc0ee74ac6c2f6cd6",
+      "Source/UnrealMcpTest/CityLabLoopGameMode.cpp": "c26b24fa61c5f47554052c48e695efa19c94ab479acb6a04ebe1127c716f29c5",
+      "Source/UnrealMcpTest/CityLabLoopVerification.cpp": "3618640b1584583318afd4e4f2961116109ccc3c084036d0375d113ea09d8d0e",
+      "Source/UnrealMcpTest/CityLabNavigationVerification.cpp": "668b430de9b2e53e6fa1a90844c36a286a325750a8cf9dfcc82b061d6f588977",
+      "Source/UnrealMcpTest/CityLabPersistence.cpp": "e1dae76ea269173cd444fdb574aa8e221748c126eb60b5181845c540954e45b8",
+      "Source/UnrealMcpTest/CityLabPlannerGameMode.cpp": "ccd684828fe2d0690c3f12082fdbf492144f026e931e23aecaf358496fbd4844",
+      "Source/UnrealMcpTest/CityLabPlannerVerification.cpp": "221a936de46d9c5b1514148552c129c10a63248273f54df5783d999fd62f64aa",
+      "Source/UnrealMcpTest/CityLabResourcePicking.cpp": "c8f93a265689bff61defe2866f48ac52f5d684f727775619852b93c1764230ef",
+      "Source/UnrealMcpTest/CityLabResourcePickingTests.cpp": "dc3ab9162dae624a444669b1dcb661d43e9ae910c98a82879aa103475936c0c8",
+      "Source/UnrealMcpTest/CityLabRoadGameMode.cpp": "1b63e104614136ddc1e3ea43330fa77168c9a363f21823e0c0e4b17d1a4e93ef",
+      "Source/UnrealMcpTest/CityLabRoadSurfaceComponent.cpp": "3dde13e7bf1ebd4b45e251b3b8592f068f2621e1d2b730a2deec2f95af98bb98",
+      "Source/UnrealMcpTest/CityLabRoadVerification.cpp": "9a9164db1691ff21971b28b5e8d1f15545475d2e35bed6cb28393f89fca00c88",
+      "Source/UnrealMcpTest/CityLabSettlement.cpp": "2de945895a4f33ef970e4e5b4510c5051346e858fc3e1e0e6d111a92cc390d30",
+      "Source/UnrealMcpTest/CityLabSitePreparation.cpp": "690b3e4a2be0354d3f06fbdd7eeb3613539dc2a00dd4a4d7e8ac94a3fc61b5f1",
+      "Source/UnrealMcpTest/CityLabSitePreparationModel.cpp": "6ea3533196e8e096b3e826720514b0a6bdaf455e932ce36324f1c42214245ee7",
+      "Source/UnrealMcpTest/CityLabSitePreparationTests.cpp": "bcf235151ac68e58794af6a9562a387889e91a3ae33dcabcbb44d4e474d43274",
+      "Source/UnrealMcpTest/CityLabSitePreparationVerification.cpp": "f7d8b0e81b3227745186f173a524465f3002792e6d20d8479944d358c22fc182",
+      "Source/UnrealMcpTest/CityLabTerrainNavigationTests.cpp": "de6796d0c3abb0248e2a8c54a63984e07b6718e1239dce81bad754bb4a8e2632",
+      "Source/UnrealMcpTest/CityLabTunnelComponent.cpp": "58e14e74277ec39c2b951e627b1138c4ed392a8bbf18efc2d72d70fc6da3bad1",
+      "Source/UnrealMcpTest/CityLabTunnelTests.cpp": "c921c4c1601b695bf5700922b9f3c0fed44815e04ad94601df8dd0d2f113b397",
+      "Source/UnrealMcpTest/CityLabUndergroundView.cpp": "bf3da27bca4c5341f2fac6e7699a800d3a923976df4f267581b3e988b8c86728",
+      "Source/UnrealMcpTest/CityLabUndergroundViewTests.cpp": "0a02fce7ce3c124f51a707c18a4c92f8dafc2e4bcf9b522103e645c68a883a9c",
+      "Source/UnrealMcpTest/CityLabVegetationState.cpp": "89bb9f157405f48d6a7bd2a19674133df9cbf5bda72cad17eb42a84efbaa2001",
+      "Source/UnrealMcpTest/CityLabVegetationTests.cpp": "9f578d167a584d892182598b7a6913faffece7f36a9f69345314a1d417ebdc2b",
+      "Source/UnrealMcpTest/CityLabVerification.cpp": "f7d524d1c0a6da3e9b4082eed14d80d26ac148fd3c0c2f3e026099f1836630b9",
+      "Source/UnrealMcpTest/CityLabWorldEdits.cpp": "828b527d36e07cb7acc57a6575cebb713b629885c4b27f5a9cc311593725276d",
+      "Source/UnrealMcpTest/CityLabWorldEditVersionTests.cpp": "5efaa11477e9c55dd0d603ff920d36827468c2b2c6dbff0d5dfaccbbd932d76d",
+      "Source/UnrealMcpTest/CityLabBuildPanel.h": "b01aa9ff3eb518c8d0478011d47773a109560f7e5eae7c4a2a6e57056ca02ade",
+      "Source/UnrealMcpTest/CityLabBuildQueries.h": "58ba87265e99363e5cb53aa6d0f9b729e17fb1aed7ceface52b854aff1d8869e",
+      "Source/UnrealMcpTest/CityLabCamera.h": "76b5651a71a31a0e096c07f2f1bc8cd5a394a7cd88c1ec1f68bd21c5ceff05e5",
+      "Source/UnrealMcpTest/CityLabClearingBenchmark.h": "122b208272546e14923a8755944c47111fddcb2ef924a7b7180b3a21155821a3",
+      "Source/UnrealMcpTest/CityLabConstruction.h": "a88221a4d1d31017ca836d0b65d953330f62a7f1ff1fe38b840351de8021f851",
+      "Source/UnrealMcpTest/CityLabConstructionGameMode.h": "e8fdb367b2aa7911a6678a2635e1deff2648e7474d8450bfdb75fe506d3340b1",
+      "Source/UnrealMcpTest/CityLabConstructionModel.h": "cf0e1cdab7a045c5c203d65d929e6758ce14029b5e007dec8480c5d0123e4a9d",
+      "Source/UnrealMcpTest/CityLabConstructionVerification.h": "d50cb6a67e2057556351b1fb9994ab1e5658507175bfe6a37a07ce8c434e31d2",
+      "Source/UnrealMcpTest/CityLabDrivePawn.h": "16513fe3f5e650fa2ace47f1b65340d5c5db392056d49e27dfd1a2d2f4f5f191",
+      "Source/UnrealMcpTest/CityLabEarthworks.h": "3a31fe52978e353f47d6e5a323db48e8eec29959d507fd4e1be0e0e0d6ebf9a4",
+      "Source/UnrealMcpTest/CityLabEarthworksGameMode.h": "2e3ddef824f987bb51482274947a456c86e85a30cf8c3a49da75d779dce48130",
+      "Source/UnrealMcpTest/CityLabEarthworksModel.h": "63e90edd6c354be11acad03cb274fa932c3137a7f2cf31d14711258f39dba660",
+      "Source/UnrealMcpTest/CityLabEarthworksVerification.h": "000c60818a8be0c7edad10b20b64ef86b8b36b9f41fb1d48896a1b4898590c32",
+      "Source/UnrealMcpTest/CityLabFillVerification.h": "f755015d9cd37fcfd4271a4e1b67e81779a91ce3758b03c45ab2321bbceaf52d",
+      "Source/UnrealMcpTest/CityLabFlattenVerification.h": "a503e9b40ae7f149a13bf286417513f806634e74cfca0b91a919f4a056662390",
+      "Source/UnrealMcpTest/CityLabFoundationsGameMode.h": "384d76ecb80bbf5b1231d61b56d96066c2dede80e48769cec800f3a4aca9cc9b",
+      "Source/UnrealMcpTest/CityLabFoundationVerification.h": "757a9bf2f1176cf9ebe1bef984b8e2822722493a1081010087f14d8d950e08cc",
+      "Source/UnrealMcpTest/CityLabGameMode.h": "3085e9c03d79df217fb8fd4c0c8897f559656fa6e0649acb6feaa7a6065c10a0",
+      "Source/UnrealMcpTest/CityLabLoopGameMode.h": "dae2fcaa0f518683bbfd94956cab3fbffba69dba36d240a87e2e208129e82e2a",
+      "Source/UnrealMcpTest/CityLabLoopVerification.h": "94aa4ad8f94edb7e17c720617d4803a0235f5eb4507aabb8bd0eca33cbf3c24c",
+      "Source/UnrealMcpTest/CityLabNavigationVerification.h": "344b1e40a4543e7e42d792ddf5d603b557614256cd675f9473615c2df49b0464",
+      "Source/UnrealMcpTest/CityLabPersistence.h": "1982ce6344d3b1035da020e7a4909ee8b462408ef130a1dc594f39a79ff51b64",
+      "Source/UnrealMcpTest/CityLabPlannerGameMode.h": "80938a8e3e70928cde5ffc9ff83e21eca316d8eef1d58b133d653fb88bc118d6",
+      "Source/UnrealMcpTest/CityLabPlannerVerification.h": "05236af6272519130926ae6d7430d89a122ebabb75efaa59661986ba8060224e",
+      "Source/UnrealMcpTest/CityLabResourcePicking.h": "2140c4a7c8894a3b9aae0272f69d10393ed7a472deec0ba2b59b0b0fbd007682",
+      "Source/UnrealMcpTest/CityLabRoadGameMode.h": "a4dea4ea4367b3e7fbf5793c1f8e0fa9c0f97fa7c7827c626583febbf11026a7",
+      "Source/UnrealMcpTest/CityLabRoadSurfaceComponent.h": "1765908b822eb5db17868f452b6801be85729944ab36b14b8c7451a425eae933",
+      "Source/UnrealMcpTest/CityLabRoadVerification.h": "bc358be46dea4dad755de9b9e9d65b8af6add4a669d019ec48ced3f9fa8307fd",
+      "Source/UnrealMcpTest/CityLabSettlement.h": "ffaaa8270effb863cb9a17df4ba6d9f9baf5a5dcf39866958536cabf3159e133",
+      "Source/UnrealMcpTest/CityLabSitePreparation.h": "13ed58d1af4b0d05ecfb7fb51698ca29308b0e6959ddf0dae82f50a009390daf",
+      "Source/UnrealMcpTest/CityLabSitePreparationModel.h": "3e405eb32a77ae01f63eebd09071eb10e3cc0d3ddabd0132b8f234215b090a9a",
+      "Source/UnrealMcpTest/CityLabSitePreparationVerification.h": "12c807d058d2d7ac961e3567f3dca62f624245a7a9f657485395ab72143ffbae",
+      "Source/UnrealMcpTest/CityLabTunnelComponent.h": "09a85baa62e4a6b4a58d56be84018ae354e6a328e12ad1627a8694881dc869a0",
+      "Source/UnrealMcpTest/CityLabUndergroundView.h": "1de9344bd5251398526cbf0deac62fc613e75ad65f06cb3e09d096e3a9571e91",
+      "Source/UnrealMcpTest/CityLabVegetationState.h": "139a39f5a2df1a2849419800332d7582e87de8866cdf66a620db87679d817331",
+      "Source/UnrealMcpTest/CityLabVerification.h": "0ad49d9921b9a02f539876d12fa0fabb13f9b57dd3f84237624f239a2ecc50c4",
+      "Source/UnrealMcpTest/CityLabWorldEdits.h": "a42644bd077bf55cb8eee7accddef838c8286a31b12b1e7f6387a881ea79dd9d",
+      "Config/DefaultGame.ini": "f23bb12ffaa169cd4336eb8cc3d88eca03ad8fda5587548e282b997bbcf2ce3e",
+      "Tools/setup_site_preparation_lab.py": "1d2decf190e6717c83a9fb04c4bd07153a3fa708d449cde5d51f617ae1feedc6",
+      "Tools/repair_city_biome_density.py": "1350c4c87e885e27321bef4f1ec197afea3dd6d99c3c3128bb0d846666af46cb",
+      "Tools/verify_site_preparation.py": "72c7e38d6a4e9714100d4980d34443fcc5484760866decae952dd1fe6ad1f7d8",
+      "Tools/launch_site_preparation_demo.ps1": "898a7494342a28511e729ac420476c611e10f269186ddf4b88b8fd0d22109fbd"
+    },
+    "scope": "Private seal also binds eleven own licensed-derived assets, preserved old map and build binaries. Only own code/config/tool hashes reproduced; no assets, saves, vendor code or private paths included."
+  },
+  "independent_preservation": {
+    "result": "passed",
+    "raw_report_sha256": "bc7fbdcba5d4956a98f2219f1abf2e5a9fc8002d894ba1cf3b5f73cec69b98f0",
+    "at_utc": "2026-10-29T17:50:12.623661+00:00",
+    "scope": "CPU filesystem hashes only; no game/editor/build/process/Git/normal-save mutations. Private report.",
+    "source_seal": {
+      "expected_files": 106,
+      "matching_files": 106,
+      "deviations": [],
+      "seal_sha256": "6f5c4e4b64c5187c00c1bc18a4e9ed405d0a3aa631ce4fe495457b5d1e9b2034"
+    },
+    "package_seal": {
+      "expected_files": 6,
+      "matching_files": 6,
+      "deviations": [],
+      "seal_sha256": "ea1d891b989ad124b9a3cea2a8189a7219146dfe4c909177e2ad33227fea0bb2",
+      "linked_source_seal_matches": true,
+      "exe_sha256_matches": true
+    },
+    "baseline_saves": {
+      "expected_files": 122,
+      "matching_files": 122,
+      "deviations": [],
+      "baseline_sha256": "6cdf922c95c0c23feb8541c0e6a2d7b0117cd03aa2edd585985f5f50ecefbfa6"
+    },
+    "original_foundations_archive": {
+      "expected_files": 6,
+      "matching_files": 6,
+      "deviations": [],
+      "executable_sha256_matches": true,
+      "manifest_sha256": "07ddd2072d8335eb6fb57ea061d502d69a0572b0ccc38a7857bf9a2a9567854a"
+    },
+    "legacy_user_save": {
+      "sha256": "99d16b145ee6fe69d0b8c004b27d41a9bae60c8cea6827ee9cfb29c1e98735cb",
+      "original_seed_sha256": "de492ceed3a6a6406ee5638c237a55f4d588242743cdcf9e51812274b61b911c",
+      "same_as_original_seed": false,
+      "note": "Player progress after seeding is intentional; original 122-file baseline is authoritative."
+    }
+  }
+}

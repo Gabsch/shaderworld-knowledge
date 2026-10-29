@@ -399,6 +399,72 @@
       "modified": false,
       "bytes": 4087175,
       "sha256": "eedd7f238fc475bd3af96540a8b8fa48bbd52afb315aa3a711f73be293ad4ecf"
+    },
+    {
+      "file": "assets/images/site-preparation-editor-preview.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 1377110,
+      "sha256": "1fcc5b04835ef157625891684c5a75b4cf0844cb02fa4cf00efebcabea9adf40",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/underground-editor-cutaway-camera.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 1020548,
+      "sha256": "c5a8aba98a4f9b5be86363f7c6db88e3d014ed1b50c1666ec1b1403640ab5481",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/underground-editor-interior-camera.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 716093,
+      "sha256": "c9bfd7eba1dda93ab4f1a802a8a217393f2b60df1b715abd6f6da29b5c2fd0ec",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/site-preparation-cooked-partial-clearing.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2819523,
+      "sha256": "b352c83cd919ed759fd699545bd580d1648d1ccb4f2b04b58bfeb0426474291c",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-cooked-completed.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2571958,
+      "sha256": "72d98b3ded239436ed6b42f619ad46d0132284d69b38228d158fac1b87b40f98",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-normal-cooked-controls.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normalem Development-Cooked-Controller auf SitePreparationLab V2, Audit 280b7ec454c24cf6a85c92eb57d97a3f. Echte aktuelle linke Werkzeugleiste und pausierter geplanter Auftrag im Wald; grüner CSV-Framezähler gehört zum Prüflauf. Koordinierender und Dokumentationsagent haben die Aufnahme visuell geprüft. Keine physischen Eingaben. Acht State-Snapshots separat exakt geprüft; dieser CSV-Prozess endete spät mit 777003 und ist kein vollständiger Lebenszyklus-PASS.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 888,
+      "height": 500,
+      "bytes": 1314220,
+      "sha256": "56f5ae0862408ec428dbd85c8dddd7767abc5f88db79f95deb6d34077d643f32",
+      "revision_scope": "Current normal V2 cooked controller image. Independent no-CSV same-binary/save normal lifecycle is a separate result; image does not prove human input or clean exit."
     }
   ]
 }

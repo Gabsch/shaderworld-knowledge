@@ -9,26 +9,27 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T02:45:57Z"
+  at: "2026-10-29T17:56:02.676Z"
 evidence_scope:
-  source: Neue eigene Untergrundansicht, Material-Setup und Integration im Earthworks-Controller
-    gelesen; Bedienfolge aus der Implementierung abgeleitet.
-  offline: Python-Syntax und einheitliche CRLF-Zeilenenden des Material-Setup-Skripts
-    geprüft; der externe Setup-Client bestand neun isolierte Offline-Protokollfälle.
-    Seine tatsächliche externe Anfrage wurde nicht als Editorlauf abgenommen.
-  native: Neuer Editor-/Game-Build nach Live-Biom-Korrektur erfolgreich; alle drei
-    CityLab.UndergroundView-Tests einschließlich erweiterter Live-Bindungsregression
-    bestanden ohne Warnungen oder Fehler. Gesamtlauf 44 Success und zwei andere
-    Tests mit bekannten Warnungen; null Fehler, ausgelassene oder laufende Tests.
-  runtime: Normale Spielvorschau mit Oberfläche, lokalem Schnitt, Innenraum und
-    Rückkehr visuell geprüft. 1-m-Tiefenschritte und Laden während des Schnitts
-    über normale Controllerfunktionen bestätigt. Nach kaltem Editorneustart gleiche
-    gespeicherte Erdarbeitsdaten; neun Terrain- und sechs Hüllen-Komponentenspuren
-    je Ansicht unverändert, Materialbilanzfehler null.
-  limit: Separate verpackte Ansichtsprüfung und physische Tasten-/Maus-/Knopfbedienung dieser Ansicht
-    noch offen. Komponentenspuren belegen keine Weltbewegung, Navigation,
-    Wasserfreiheit, Portaldurchfahrt, Multiplayer oder echten Untergrundaushub.
+  source: Freie begrenzte Kamera, Schnittfenster und aktuelle Controllerintegration gelesen.
+    Gemeinsame APIs im erhaltenen EarthworksLab erneut geprüft; versiegelte V2-Map/Slot-Demo vorbereitet; verpackte Schnitt-/Innenraumpixel separat offen.
+  prior_verification: Vorherige Sourcebasis bestand finale Builds, fünf native Untergrundtests
+    und normale Controller-/Kamera-API innerhalb einer 38-Check-Probe; drei SHOWUI-Editorbilder
+    agentengeprüft. Diese Nachweise bleiben genau ihrem früheren Sourcezustand zugeordnet.
+  runtime: Aktuelle gemeinsame Controller-/Kamera-API bestanden in 38 Checks mit drei visuell
+    geprüften 1310×750-Editorbildern auf EarthworksLab. V2-Demo vorbereitet; physische Eingaben und verpackte Schnitt-/Innenraumpixel offen.
+  limit: Echte Tasten-/Mauseingaben und verpackte Ansichtspixel offen. API-/Komponentenspuren
+    belegen keine Weltbewegung, Navigation, Wasserfreiheit oder echten Untergrundaushub.
 sources:
+  - id: free-camera-source
+    resource: "Eigene gelesene Implementierung in Source/UnrealMcpTest/CityLabUndergroundView.h/.cpp, CityLabUndergroundViewTests.cpp und CityLabEarthworksGameMode.h/.cpp: freie Kamera, mathematische SlicePlanePoint-Auswahl, SetCutawayCenter, Kamera-/Inputrückgabe und getrennte sichtabhängige Hüllenausblendung. Aktuelle Builds und fünf native Untergrundtests bestanden; gemeinsame Controller-/Kamera-API und aktuelle Editorbilder getrennt auf EarthworksLab geprüft. Physische Eingaben und verpackte Ansichtspixel offen. Projektquellen nicht im Bundle enthalten"
+    title: Freie begrenzte Inspektionskamera und Schnittfenster als neuer Quellbefund
+  - id: camera-build-native
+    resource: "Eigene gelesene Berichte Saved/McpDiagnostics/site-v2-final-editor-build.log, site-v2-final-game-build.log und nativer V2-NullRHI-Report: Editor 114,31 s/Game 102,37 s erfolgreich mit bekannter C4457-Name-Schattenwarnung. Alle fünf CityLab.UndergroundView-Tests Success mit null Warnungen/Fehlern. Gesamtlauf 60 Tests in 3,794696 s, 58 Success/zwei bekannte SuccessWithWarnings, null failed/notRun/inProcess; private Rohberichte nicht im Bundle enthalten"
+    title: Aktuelle V2-Sourcebasis mit Builds und fünf bestandenen nativen Untergrundtests
+  - id: normal-ui-proof
+    resource: ../evidence/site-preparation-test.json
+    title: Aktuelle gemeinsame Controller-/Kamera-API auf EarthworksLab und drei visuell geprüfte Editorbilder
   - id: own-test
     resource: ../evidence/underground-view-test.json
     title: Bereinigter Ansichts-, Tiefenschritt-, Lade-, Kaltstart- und Komponentenspurbericht
@@ -62,7 +63,9 @@ sources:
 ---
 # Untergrund zwischen Oberfläche, Schnitt und Innenraum ansehen
 
-Mit der neuen Laboransicht sollst du eine Kammer unter der Insel finden, ihre Lage im Schnitt verstehen und in den Innenraum schauen können. Ein Knopf bringt dich anschließend zur ursprünglichen Baukamera zurück. **Oberfläche, Schnitt, Innenraum und Rückkehr sind im Editor visuell bestätigt. Lokale Komponentenspuren, unveränderte Erdarbeitsdaten, Laden und kalter Editorneustart sind ebenfalls geprüft. Die Anleitung bleibt bis zur verpackten Ansichtsprüfung und zur physischen Tasten-/Mausbedienung ein Entwurf.** Die frühere [Kammerprobe](underground-hybrid-probe.md) hat eigene bestandene Tests; deren Ergebnisse bestätigen nicht automatisch diese neue Bedienung.[^own-test][^previous-probe]
+Mit der Laboransicht kannst du die Lage einer Testkammer unter der Insel untersuchen und in ihren Innenraum schauen. Die freie Kamera und das verschiebbare Schnittfenster sind nativ und erneut über die aktuellen gemeinsamen Controller-/Kamera-APIs mit Editorbildern auf EarthworksLab geprüft. **Die normale SitePreparation-V2-Demo ist vorbereitet; ihre Oberflächenaufnahme bestätigt keine verpackte Schnitt-/Innenraumansicht.** Echte physische Eingaben bleiben offen.[^free-camera-source][^camera-build-native]
+
+Die vier bisherigen Bilder und die lokalen Kollisions-, Lade- und Kaltstartnachweise gehören zur vorherigen Fassung mit fester Inspektionskamera. Sie bleiben als historische Belege erhalten und bestätigen die neue Bewegung nicht automatisch. **Oberflaeche [3]** ist weiterhin der eindeutige Rückweg zur Baukamera. Die Anleitung bleibt bis zur verpackten Ansicht und gezielten physischen Eingabeprüfung ein Entwurf.[^own-test][^previous-probe]
 
 ## Voraussetzungen und Einrichtung
 
@@ -96,22 +99,58 @@ Es muss genau ein kollisionsaktives ShaderWorld-Terrain vorhanden sein. Untersch
 
 ## Die drei Ansichten bedienen
 
+Für den aktuellen [Slice C](site-preparation.md) verwende die bereits eingerichtete **/Game/Maps/ShaderWorldSitePreparationLab** mit eigenem Slot **CityLabSitePreparation**. Die zuvor beschriebene Erstinstallation der EarthworksLab-Basis ist kein Auftrag, die neue V2-Karte nochmals umzubauen. Die ursprüngliche EarthworksLab-Karte und ihr Spielstand bleiben getrennt erhalten. Die Kamera-/Schnittbedienung unten gilt als aktueller Quellvertrag; die gemeinsame API ist erneut auf EarthworksLab geprüft, die normale V2-Cooked-Demo steht aus.
+
+
 Starte nach der Einrichtung die normale Spielvorschau. Warte, bis Terrain und Bodenkollision bereit sind. Scrolle in der linken Werkzeugleiste zum Bereich **Untergrund | getrennte schematische Testkammer**. Die folgende Tabelle beschreibt die Bedienung aus dem Code. Alle drei Ansichten und die Rückkehr wurden im Editor visuell verglichen. Die Prüfung rief die normalen Controllerfunktionen über eine begrenzte Editorbrücke auf; sie drückte keine echten Tasten oder Bedienknöpfe.[^own-panel]
 
 | Bedienung | Erwartetes Ergebnis |
 | --- | --- |
 | **Oberflaeche [3]** anklicken | Die Schnittmaske verschwindet; die ursprüngliche Baukamera und die von der Ansicht selbst ausgeblendeten Objekte werden freigegeben. |
-| **Schnitt [4]** anklicken | Die getrennte Kammer wird bei Bedarf initialisiert und ausgewählt. Eine feste Übersichtskamera zeigt einen lokalen Ausschnitt von **24 × 14 m**. |
-| **Innenraum [5]** anklicken | Die Kamera steht innerhalb der geschlossenen Hülle. Die Terrain-Schnittmaske ist wieder deaktiviert. |
+| **Schnitt [4]** anklicken | Die getrennte Kammer wird bei Bedarf initialisiert und ausgewählt. Eine Übersicht als Startpose zeigt einen lokalen Ausschnitt von **24 × 14 m**; die neue Kamera bleibt danach frei beweglich. |
+| **Innenraum [5]** anklicken | Die Kamera startet innerhalb der geschlossenen Hülle. Die Terrain-Schnittmaske ist wieder deaktiviert; die neue Bewegung bleibt im begrenzten Innenraum. |
 | **Schnitt 1 m tiefer** anklicken | Die horizontale Schnitthöhe sinkt um **1 m**. |
 | **Schnitt 1 m hoeher** anklicken | Die horizontale Schnitthöhe steigt um **1 m**. |
 | Im Schnitt oder Innenraum auf die Kammer klicken | Eine eigene Auswahlabfrage prüft die räumliche Kammerbox; ein Klick daneben hebt diese Auswahl auf. |
 
-Die Zahlen **3**, **4** und **5** sind zusätzlich als Tastenkürzel vorgesehen, wenn kein Bedienfeld den Tastaturfokus hält. Die sichtbaren Knöpfe sind der eindeutigste Einstieg. Während der Inspektionskamera sind normale WASD-/Blickbewegungen der Baukamera gesperrt; die beiden Inspektionsperspektiven sind zunächst fest vorgegeben.[^own-panel]
+Die Zahlen **3**, **4** und **5** sind zusätzlich als Tastenkürzel gebunden, wenn der Zeiger außerhalb der Bedienleiste liegt und kein Bedienfeld den Tastaturfokus hält. Die sichtbaren Knöpfe sind der eindeutigste Einstieg. Die normale Baukamera bleibt während der Inspektion gesperrt. Die eigene Inspektionskamera erhält getrennte Bewegungseingaben.[^free-camera-source]
 
-Für die Rückkehr immer **Oberflaeche [3]** verwenden. Der neue eigene **Esc**-Eingabefilter soll während der Inspektion zuerst zur Oberfläche zurückkehren und die Taste verbrauchen, bevor Unreals normaler Vorschau-Abbruch greift. Außerhalb der Inspektion verwirft Esc gegebenenfalls eine Bauvorschau. Der echte Tastendruck ist noch nicht praktisch abgenommen; der sichtbare Oberflächenknopf bleibt der eindeutige Rückweg. Auch ein Wechsel zum Anheben- oder Absenken-Werkzeug setzt die Untergrundansicht zurück.[^own-panel]
+Für die Rückkehr immer **Oberflaeche [3]** verwenden. Der eigene **Esc**-Eingabefilter kehrt laut Quellvertrag während der Inspektion zuerst zur Oberfläche zurück und verbraucht die Taste, bevor Unreals normaler Vorschau-Abbruch greift. Außerhalb der Inspektion verwirft Esc gegebenenfalls eine Bauvorschau. Der echte Tastendruck ist noch nicht praktisch abgenommen; der sichtbare Oberflächenknopf bleibt der eindeutige Rückweg. Auch ein Wechsel zum Anheben- oder Absenken-Werkzeug setzt die Untergrundansicht zurück.[^own-panel]
+
+## Freie Kamera und Schnittfenster: neuer Entwurf
+
+Die folgenden Bindungen sind im aktuellen Controller implementiert. Für den vorherigen Quellstand sind Builds, native Zahlen-/Kameratests und normale Controller-/Kamera-API-Aufrufe bestanden. Die zugehörigen Editorbilder wurden visuell geprüft; echte Tastatur-/Mausbedienung bleibt separat offen.[^free-camera-source][^camera-build-native]
+
+1. **Schnitt [4]** wählen und den Mauszeiger von der linken Werkzeugleiste in die Welt bewegen. Mit **W/S** vorwärts/rückwärts, **A/D** seitlich und **Q/E** abwärts/aufwärts fahren. Im Schnitt beträgt die Grundgeschwindigkeit **10 m/s**, im Innenraum **1,5 m/s**, jeweils multipliziert mit dem Regler **Bewegung**. Vorwärts folgt der Blickrichtung; Q/E folgt der Welthöhe.
+2. Die **rechte Maustaste gedrückt halten**, um den Blick zu drehen. Der Zeiger wird währenddessen verborgen; nach Loslassen erscheint er wieder an der Ausgangsstelle. Die Blickgeschwindigkeit folgt dem Regler **Maus**. Blickneigung und Bewegung sind begrenzt. Bei Fokusverlust soll die Eingabefreigabe greifen; das ist ein gelesener Eingabevertrag, noch keine physische Fokusabnahme.
+3. Mit dem **Mausrad** entlang der Blickrichtung vorwärts/rückwärts fahren. **Untergrundkamera zentrieren [Home]** setzt ausdrücklich die Startperspektive neu.
+4. Im Schnitt den Zeiger über den gewünschten Bereich setzen und **G** drücken. Das verschiebt den Mittelpunkt des weiterhin **24 × 14 m** großen Fensters. Die Auswahl trifft eine mathematische horizontale Ebene auf der aktuellen Schnitthöhe; ausgeblendete Terrainkollision wird nicht als sichtbarer Boden interpretiert. G wird außerhalb der Werkzeugleiste bedient.
+5. Mit **Bild ab / Bild auf** oder den Knöpfen **Schnitt 1 m tiefer / hoeher** die Schnitthöhe in **1-m-Schritten** ändern. Dabei bleiben die selbst gewählte Kamerapose und Blickrichtung erhalten. Auch eine Fensterverschiebung setzt die Kamera nicht zurück.
+6. Mit **Oberflaeche [3]** zur ursprünglichen Baukamera zurückkehren. **Esc** ist der zusätzliche Quellvertrag für denselben Rückweg; echte Tastenprüfung bleibt offen.
+
+Der Fenstermittelpunkt bleibt auf jeder XY-Achse höchstens **30 m** vom Demokammermittelpunkt entfernt. Ein ungeeigneter oder rückwärts gerichteter Zeigerstrahl wird abgewiesen. Das verschiebt nur die Sichtmaske; weder Kammer noch Erde werden verschoben. Die Kamera darf im Schnitt auf jeder XY-Achse bis **60 m** um die Kammer und höchstens **100 m über dem Demoboden** fahren. Im Innenraum bleibt ihre Position mindestens **25 cm** von den modellierten Innenraumgrenzen entfernt. Dies sind Inspektionsgrenzen, keine simulierte Weltkollision oder frei befahrbare Untergrundwelt.
+
+Bei freier Schnittbewegung wechseln die ausgeblendeten kameranahen Hüllenflächen mit der Kameraseite. Dafür besitzt die Ansicht eigene lokale Ausblendeeinträge; Pflanzenpools werden nicht bei jedem Kameraschritt neu durchsucht. Bauteilkollision, Baumzustände und Materialkonten bleiben davon unberührt.
+
+Mit **Oberflaeche [3]** geht es weiterhin zur ursprünglichen Baukamera zurück. Die beiden neuen Tests **CityLab.UndergroundView.BoundedCameraMath** und **CityLab.UndergroundView.FreeCameraAndSliceIndependence** sind ohne Warnungen oder Fehler bestanden. Sie prüfen Zahlen-/Auswahlgrenzen, Kameraposen in einer isolierten Testwelt, Tiefenschritte ohne Rücksprung und fremden Kamerabesitz. Die drei bisherigen Untergrundtests sind ebenfalls sauber bestanden. Diese native Prüfung ist kein Nachweis echter Maus-/Tastaturbedienung oder gerenderter Pixel.[^camera-build-native]
+
+## Aktuelle Editorbilder und Kameraprüfung auf EarthworksLab
+
+Die erneute normale Editorprobe mit aktuellem gemeinsamem Controller auf der erhaltenen EarthworksLab-Karte bestand **38/38 Checks in 204,31 s**. Im Schnitt wurden Bewegung, Blick, Zoom, Tiefe, Fenstermittelpunkt und Fokus über die eigenen APIs geprüft. Im Innenraum wurden Bewegung, Blick, Zoom und Fokus geprüft. Die vollständigen gespeicherten Baudaten blieben bei beiden Ansichten gleich; die Rückkehr stellte das ursprüngliche Kameraziel wieder her. Der Harness rief normale Controller-/Komponentenfunktionen auf, keine echten Tasten oder Mausbewegungen.[^normal-ui-proof]
+
+**Bewegliche Schnittansicht:** Die unveränderte SHOWUI-Aufnahme zeigt den lokalen schematischen Schnitt mit grünem Boden außerhalb des Fensters. Sie stammt aus dem tatsächlichen **1310 × 750-Editorrahmen**, keine Vollbildaufnahme des Spiels. Die Werkzeugleiste ist oben links klein sichtbar.
+
+![Lokaler Schnitt mit aktuellem gemeinsamem Controller auf EarthworksLab](../assets/images/underground-editor-cutaway-camera.png)
+
+**Innenraum:** Die unveränderte Editoraufnahme zeigt den begrenzten geschlossenen Raum mit kariertem Material. Das ist weiterhin eine getrennte Testkammer, kein ausgehobener Tunnel.
+
+![Begrenzte Testkammer mit aktuellem gemeinsamem Controller auf EarthworksLab](../assets/images/underground-editor-interior-camera.png)
+
+Beide Bilder wurden vom Agenten visuell geprüft und sind mit Herkunft, Größe und SHA-256 im [Bildmanifest](../evidence/image-manifest.json) erfasst. Die darunterstehenden älteren Bilder und Kollisionsspuren bleiben getrennte historische Nachweise. Ein Bild bestätigt weder physische Kamerabedienung noch eine globale Kollisions-/Navigationsstrecke.
 
 ## Der geprüfte Ansichtswechsel
+
+Dieser Abschnitt zeigt den früheren geprüften Stand mit fester Inspektionskamera. Die aktuellen API-Nachweise und neuen Editorbilder stehen im vorherigen Abschnitt; die alten Bilder bleiben separat erhalten.
 
 Die vier unveränderten Bilder stammen aus der normalen Earthworks-Spielvorschau. Ihre Herkunft, Größe und Prüfsummen stehen im [Bildmanifest](../evidence/image-manifest.json); der [bereinigte Prüfbericht](../evidence/underground-view-test.json) enthält die passenden Zustände und Grenzen. Sie zeigen keinen bereits ausgehobenen Tunnel.[^own-test]
 
@@ -135,7 +174,7 @@ Die vier unveränderten Bilder stammen aus der normalen Earthworks-Spielvorschau
 
 Die Demokammer liegt mit ihrem XY-Mittelpunkt bei **−170 m / 100 m**. Ihre tatsächliche Höhe wird erst nach neun Terrain-Kollisionsproben bestimmt. Für diesen Standort erwartet die Implementierung eine nahezu ebene, unveränderte Inseloberfläche. Der freie Innenraum misst **16 × 6 × 4 m**. Boden, Dach und vier Wände bestehen aus eigenen einfachen Meshes; dazu kommt eine eigene Tunnel-Air-Pocket.[^own-view]
 
-Der anfängliche Schnitt liegt **5 m unter der gemessenen Oberfläche**. Die Anzeige nennt sowohl die absolute Welthöhe in Metern als auch den Abstand unter dem Boden. Die Knöpfe verändern diese Sichtgrenze in 1-m-Schritten innerhalb eines begrenzten Bereichs. Die Schnittposition verändert keinen Bauauftrag und führt keine Maschine aus.
+Der anfängliche Schnitt liegt **5 m unter der gemessenen Oberfläche am Demostandort**. Die Anzeige nennt sowohl die absolute Welthöhe in Metern als auch den Abstand unter dem Demoboden. Ein verschobenes Fenster liefert keine neu vermessene Geologie oder neue örtliche Bodenreferenz. Die Knöpfe verändern diese Sichtgrenze in 1-m-Schritten innerhalb eines begrenzten Bereichs. Die Schnittposition verändert keinen Bauauftrag und führt keine Maschine aus.
 
 Die Maske betrifft nur Terrainpunkte innerhalb des gewählten Rechtecks, die über der eingestellten Schnitthöhe liegen. Außerhalb dieses Rechtecks soll das Terrain sichtbar bleiben. Die vorhandene Terrain-Lochmaske wird mit der eigenen Sichtmaske kombiniert. Dadurch sollen bereits vorhandene Öffnungen erhalten bleiben. Die braunen senkrechten Flächen am Rand sind **schematische Schnittseiten**. Sie zeigen keine gemessenen Gesteinsschichten und kein tatsächlich abgeschnittenes Erdvolumen.[^own-view]
 
@@ -189,17 +228,20 @@ Für einen echten Maschinenauftrag im Untergrund fehlen unter anderem gespeicher
 | Grüner Boden wird außerhalb des Schnitts zu Sand | Aktuellen Build mit der Live-Materialkorrektur verwenden. Im ersten Versuch gingen Biom-Cache-Bindungen beim Materialwechsel verloren; dieser Fehler ist im neuen nativen Test und Editor-Schnittbild behoben. |
 | Mehr Bäume als erwartet verschwinden | Ganze betroffene Bewuchs-Pools werden für die Ansicht verborgen. Mit **Oberflaeche** zurücksetzen; keine Rodungsdaten löschen. |
 | Das unsichtbare Gelände blockiert weiterhin eine Abfrage oder Bewegung | Für eine Sichtmaske erwartet: Kollision wird nicht entfernt. Für die Kammerauswahl die eigene Auswahlfunktion benutzen. |
-| Die feste Inspektionskamera lässt sich nicht mit WASD bewegen | In diesem ersten Aufbau vorgesehen. Mit **Oberflaeche [3]** zur beweglichen Baukamera zurückkehren. |
+| Die Inspektionskamera bleibt fest | Die frühere Fassung hatte feste Posen. Aktuellen Build verwenden, Spielansicht fokussieren und den Zeiger außerhalb der linken Bedienleiste halten. **Home** setzt eine ungünstige Kamera ausdrücklich zurück. **Oberflaeche [3]** bleibt der Rückweg. |
+| Das Schnittfenster lässt sich unter dem Zeiger nicht verschieben | Schnittmodus wählen und die Kamera so ausrichten, dass der Zeigerstrahl die Schnittebene vor ihr trifft. Der Mittelpunkt muss im begrenzten Demo-Umfeld bleiben. |
 | Nach Laden bleibt eine fremde Kamera oder Materialzuweisung aktiv | Fremder Besitz wird absichtlich nicht überschrieben. Statusmeldung und Reihenfolge der beteiligten Systeme prüfen. |
 | Im Innenraum erscheint Wasser | Air-Pocket-Registrierung und Ozeanmaterial gesondert prüfen. Diese neue Ansicht besitzt noch keinen Wasserfreiheitsnachweis. |
 
 ## Noch offene Abnahme dieser Ansicht
 
-Der neue gemeinsame Editor-/Game-Build und die drei **CityLab.UndergroundView**-Tests einschließlich der erweiterten Live-Biom-Bindungsregression sind bestanden. Die Tests prüfen das begrenzte Maskierungsrechteck, die Auswahlbox, den tatsächlichen nativen Materialpfad mit erhaltenen ShaderWorld-Bindungen sowie das Freigeben eigener Material-/Spieler-Ausblendungen.[^native-final] Ein bestandener Datentest allein bestätigt kein sichtbares Bild.
+Der vorherige gemeinsame Editor-/Game-Build und die drei damaligen **CityLab.UndergroundView**-Tests einschließlich der erweiterten Live-Biom-Bindungsregression sind bestanden. Die Tests prüfen das begrenzte Maskierungsrechteck, die Auswahlbox, den tatsächlichen nativen Materialpfad mit erhaltenen ShaderWorld-Bindungen sowie das Freigeben eigener Material-/Spieler-Ausblendungen.[^native-final] Ein bestandener Datentest allein bestätigt kein sichtbares Bild.
 
 Im Editor sind die grüne Oberfläche und der saubere lokale Schnitt nach Korrektur des Biomfehlers visuell geprüft. Außerhalb des Rechtecks bleibt grüner Boden erhalten; betroffene Bewuchsgruppen werden für die Ansicht verborgen. Direkt nach dem Wechsel kann noch ein kurzer Nachlauf sichtbar sein, bis die begrenzte Bewuchs-Aktualisierung gegriffen hat. Das belegt keine exakten Einzelpflanzengrenzen.
 
-Bestanden sind jetzt die normalen Controlleraufrufe für alle drei Ansichten, 1-m-Tiefenschritte, Oberflächenrückkehr und Laden während des Schnitts sowie die lokalen Komponentenspuren und der normale Kaltstart. Die vier Bilder oben belegen die gerenderten Ansichten; sie ersetzen keine Tastatur-/Mausprüfung.
+Im damaligen Stand mit fester Kamera bestanden die normalen Controlleraufrufe für alle drei Ansichten, 1-m-Tiefenschritte, Oberflächenrückkehr und Laden während des Schnitts sowie die lokalen Komponentenspuren und der normale Kaltstart. Die vier historischen Bilder belegen diese gerenderten Ansichten; sie ersetzen keine Tastatur-/Mausprüfung.
+
+Die freie Kamera und der verschiebbare Ausschnitt sind durch die fünf nativen Untergrundtests und die erneut geprüfte aktuelle API mit Editorbildern auf EarthworksLab belegt. Die normale V2-Cooked-Demo ist vorbereitet; verpackte Schnitt-/Innenraumpixel bleiben separat offen. Die weiter oben gezeigten älteren festen Kamerabilder bleiben ein weiterer eigener historischer Stand. Physische Eingaben und verpackte Ansichtspixel bleiben offen.[^camera-build-native][^normal-ui-proof]
 
 Offen bleiben die **verpackten Ansichts-/Pixelprüfungen**, echte Tasten/Knopf-/Mausbedienung einschließlich **Esc** und Kammerauswahl, Weltbewegung und Navigation, Wasser- und Dauertests sowie mehrere gleichzeitige Kameras oder Spieler. Die Grenzen von Höhenfeld und Hybridkammer gelten weiterhin.
 
@@ -213,3 +255,7 @@ Offen bleiben die **verpackten Ansichts-/Pixelprüfungen**, echte Tasten/Knopf-/
 [^previous-probe]: [Getrennter bestandener Hybridkammer-Versuch](underground-hybrid-probe.md).
 [^holes]: [Höhenfeldlöcher und Bergtunnel](holes-and-mountain-tunnels.md).
 [^architecture]: [Geplanter Maschinenarbeits-Slice und Untergrundansicht](../reference/scaping-machine-work-plan.md).
+[^free-camera-source]: Gelesene neue eigene Kamera-/Schnittfensterimplementierung einschließlich Controllerbindungen und Eingaberückgabe; keine physische Eingabeabnahme daraus abgeleitet.
+[^camera-build-native]: Gelesene aktuelle V2-Buildlogs und nativer Gesamtreport mit fünf fehlerfreien Untergrundtests. Aktuelle gemeinsame API-/Editorbildprobe getrennt auf EarthworksLab; physische Eingaben und verpackte Ansichtspixel offen.
+
+[^normal-ui-proof]: [Aktuelle normale 38-Check-Controller-/Kameraprobe auf EarthworksLab mit SHOWUI-Bildern](../evidence/site-preparation-test.json); agentengeprüfte Editorrahmen, keine physischen Eingaben oder menschliche Abnahme.

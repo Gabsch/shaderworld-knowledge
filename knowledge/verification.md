@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T11:00:12Z"
+  at: "2026-10-29T17:56:02.667Z"
 sources:
+- id: site-preparation-draft
+  resource: guides/site-preparation.md
+  title: V2-Slice C mit begrenzten Neustartnachweisen und offener normaler Demo
 - id: machine-earthworks
   resource: evidence/machine-earthworks-test.json
   title: 46 native Tests und je zwei uncooked sowie verpackte Erdarbeitsprozesse mit exakten Checkpoints
@@ -100,6 +103,16 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## Slice C: geprüfte V2-Karte mit vorbereiteter Demo
+
+**V2 nativ und in vollständigen Uncooked-/Development-Cooked-Neustartpaaren bestanden; versiegelte V2-Demo vorbereitet, sichtbarer Start offen.** [Grundstück vorbereiten](guides/site-preparation.md) beschreibt Rodung vor Erdarbeit und physischer Hausfreigabe. Neue Karte **ShaderWorldSitePreparationLab**, Slot **CityLabSitePreparation** und zehn eigene BlueAndBounds1-Biom-/Dichtekopien sind eingerichtet. Der gelesene Setupreport bestätigt elf neue Assets und unveränderte Legacydateien, deren Metadaten sowie vorhandene Spielstände. Alte EarthworksLab-Welt und Spielstände werden nicht umgebunden. Die native V2-Suite und Wiederholung ohne neue Assets sind bestanden. Zwei getrennte Uncooked-Prozesse bestanden 14/14 + 12/12 Checks am ursprünglichen Problemstandort: 21 Ressourcen, Kontrollbaum erhalten, 176,4 t Lager, 0 g Bilanzfehler und genau ein Haus nach beiden Fortsetzungen sowie drei weiteren Loads. 149 vorhandene Save-Dateien unverändert. Frischer Cook/Stage/Archive bestanden (sechs geerbte Level-Blueprint-Warnungen, null Fehler). Das anschließende frische Development-Cooked-Paar bestand ebenfalls 14/14 + 12/12 Checks am ursprünglichen Problemstandort mit denselben begrenzten Konten-/Baum-/Hausgates, drei weiteren Loads und 157 unveränderten Save-Dateien. Normale V2-Startdaten sind in acht Snapshots vollständig exakt zur Ready-Quelle, doch der Prozess liefert spät Exit 777003. Auch das passend versiegelte alte Foundations-Archiv lädt fünf fertige Jobs und exakt 6.437.507 g Lager korrekt und endet anschließend mit demselben Code. Native CSV-Finalisierung und geschlossene Logs sind belegt; das ist kein vollständiger normaler Lebenszyklus-PASS. Drei getrennte normale Start-/Exitfälle ohne CSV sind inzwischen mit Exit 0 bestanden: V2 mit gleichem Ready-Save, altes passend versiegeltes Paket und leere Entry-Karte; Quelldateien/Spielstände unverändert. Die instrumentierten Fehler bleiben offen und werden nicht umgewertet. Eine unveränderte normale V2-SHOWUI-Aufnahme wurde visuell geprüft. V2-Demo mit bytegleicher Ready-Startdatei und sechs versiegelten Paketdateien vorbereitet: 106 Source-Dateien und 170 zuvor vorhandene Save-Dateien unverändert, genau eine private neue Startdatei. Sichtbarer Launcherstart und physische Eingaben bleiben getrennt offen.
+
+**Speichergrenze zwischen Builds:** Die erfolgreiche Wiederaufnahme gilt jeweils innerhalb desselben Uncooked- beziehungsweise Cooked-Builds. Der neue Cook weist den bestehenden alten Earthworks-Spielstand wegen abweichender Terrainbindung ab, obwohl seine Datei unverändert bleibt. Native Biom-/Spawnable-Versionen werden beim Speichern einschließlich Cook neu erzeugt und sind in unserer Terrainidentität enthalten. Alte Paketfassung erhalten; eine stabile semantische Bindung und explizite Migration sind Folgearbeit. Keine Bindung wird für diesen Slice normalisiert.
+
+Die neue Dichteauswahl nutzt ausdrücklich die blaue Biom-ID plus native Zellgrenzen. Höhen-/Hangregeln bleiben erhalten; roter Bodenwert GrassAlt ist keine zusätzliche Pflanzensperre. Der [Prüfbericht](evidence/site-preparation-test.json) erhält frühere Uncooked-/API-Erfolge und negative Cooked-Kontrollbaumdiagnosen separat; kein Übertragen alter Erfolge auf V2 und keine gelockerten Prüfgrenzen.
+
+Die [Untergrundansicht](guides/underground-view.md#freie-kamera-und-schnittfenster-neuer-entwurf) bleibt eine Darstellungsfunktion ohne physischen Aushub. Die aktuelle gemeinsame Controller-/Kamera-API wurde zusätzlich auf der erhaltenen EarthworksLab-Karte in 38 Checks mit drei visuell geprüften Editorbildern wiederholt. Frühere Nachweise bleiben historisch; die normale V2-Demo ist vorbereitet, doch sichtbarer Launcherstart, physische Eingaben und verpackte Schnitt-/Innenraumpixelprüfungen bleiben offen. NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad; Holz und allgemeine Logistik folgen später.
 
 ## Slice B: Ebnen auf absolute Höhe, Uncooked und frisch verpackt bestanden
 

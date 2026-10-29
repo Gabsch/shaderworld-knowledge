@@ -8,9 +8,12 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T11:00:12Z"
-evidence_scope: "Erster Slice nativ, uncooked und frisch verpackt geprüft. Slice B Ebnen abgeschlossen für den begrenzten Laborvertrag: 52 native Tests, Uncooked/frisches Development-Cooked je 12/12 + 16/16, Controller-API 15/15 und sichtbare Demo mit 12/12 nativen + 9/9 externen Checks/agentengeprüftem Slate-Bild. Physische Eingaben/menschliche Prüfung nicht erfolgt; weitere Scaping-Werkzeuge folgen."
+  at: "2026-10-29T17:56:02.672Z"
+evidence_scope: "Erster Slice nativ, uncooked und frisch verpackt geprüft. Slice B Ebnen abgeschlossen für den begrenzten Laborvertrag: 52 native Tests, Uncooked/frisches Development-Cooked je 12/12 + 16/16, Controller-API 15/15 und sichtbare Demo mit 12/12 nativen + 9/9 externen Checks/agentengeprüftem Slate-Bild. Physische Eingaben/menschliche Prüfung nicht erfolgt; weitere Scaping-Werkzeuge folgen. Slice C hat historische Uncooked-/API-/Native-Nachweise; getrennte SitePreparation-V2-Map mit expliziter blauer Biomregel und eigenem Slot eingerichtet; V2-Uncooked-/Cooked-Neustartpaare bestanden; versiegelte Demo vorbereitet, sichtbarer Start offen. Physische Eingaben offen."
 sources:
+  - id: site-preparation
+    resource: ../guides/site-preparation.md
+    title: Laufender Slice-C-Entwurf für gespeicherte Rodung vor Erdarbeit und Hausfreigabe
   - id: machine-earthworks
     resource: ../guides/machine-earthworks.md
     title: Implementiertes Anheben und Absenken mit eigener Warteschlange und Speicherformat 6
@@ -120,6 +123,8 @@ Der vollständige Abtrag muss ins freie Lager passen. Echter vorhandener Bestand
 
 ### C: Vorbereitungs- und Oberflächenarbeit
 
+**Getrennte SitePreparation-V2-Fassung in Abnahme:** [Grundstücksvorbereitung](../guides/site-preparation.md) verbindet gespeicherte Rodung, Erdauftrag und physische Hausfreigabe. Die neue Map **ShaderWorldSitePreparationLab** und Slot **CityLabSitePreparation** verwenden zehn eigene BlueAndBounds1-Biom-/Dichtekopien; Höhen-/Hangregeln und gemeinsame Spawnassets bleiben erhalten. Materialwahl GrassAlt besitzt keine versteckte zusätzliche Dichtesperre. Quelldateien der bisherigen EarthworksLab-Welt und ihr Slot bleiben erhalten; keine Save- oder Ressourcenmigration. Einrichtung mit elf neuen Assets, native V2-Suite und Wiederholung ohne neue Assets geprüft; vollständige V2-Uncooked-/Development-Cooked-Neustartpaare am ursprünglichen Problemstandort bestanden. Normale V2-Daten werden exakt geladen; der CSV-instrumentierte Exit bleibt fehlerhaft. Drei getrennte normale Starts ohne CSV endeten sauber mit Exit 0; der instrumentierte Fehler bleibt separat offen. Passender Demo-Startspielstand und sechs Paketdateien sind versiegelt vorbereitet; sichtbarer Launcherstart und physische Eingaben bleiben offen. Speichern und kalte Wiederaufnahme sind damit innerhalb desselben Builds belegt; ein neuer Cook kann die alte Terrainbindung ändern und alte Saves abweisen. Stabile semantische Bindungen und explizite Save-Migration vor späteren Releasewechseln einplanen; hier keine Normalisierung. Frühere Nachweise und negative Kontrollbaumdiagnosen bleiben [historisch zugeordnet](../evidence/site-preparation-test.json). Fester 12 × 12-m-Kern und 7/Space/H/B gelten weiter. Holz, Oberflächenarbeit und explizites Replan nach begonnener Rodung folgen später.
+
 Rodung als Voraussetzung, anschließend definierter Oberflächenauftrag; danach Straßenabschnitte und Grundstücke. Materialmalerei erst nach fachlicher Festlegung von Fläche, Arbeitsleistung und gegebenenfalls Schichtverbrauch anbinden. Holz-, Verdichtungs- und Mehrmaterialwirtschaft bleiben eigene Erweiterungen.
 
 ## Parallel: Untergrundansicht
@@ -132,7 +137,7 @@ Rodung als Voraussetzung, anschließend definierter Oberflächenauftrag; danach 
 
 Die Schnittansicht ist eine Darstellungsfunktion. Sie erzeugt keine Holebrushes, Erdbewegung, Rodung oder Wasserabdichtung. Auswahl und Kamera benötigen einen eigenen, zum sichtbaren Schnitt passenden Abfragepfad; Bürger, Fahrzeuge und Maschinen behalten ihre tatsächliche Kollision. Ausgeblendete Darstellung muss beim Verlassen, Laden und Beenden zuverlässig zurückgestellt werden.
 
-Eine fertige bedienbare ShaderWorld-Cutaway-API wurde im untersuchten Bestand nicht gefunden. Eine eigene schematische Anzeige ist inzwischen implementiert. Drei native Datenprüfungen für Grenzen/Auswahl, Materialrückgabe und spielerbezogene Sichtbarkeit bestanden; GPU-Sichtbarkeit, Bewuchs, Schatten und weitere Kameras brauchen ihre eigene praktische Abnahme. [Bedienvertrag der Untergrundansicht](../guides/underground-view.md). Die erfolgreiche Hybridkammer ist die Grundlage für die erste Sichtprobe; ihre Existenz belegt keinen frei ausgrabbaren 3D-Untergrund.[^underground]
+Eine fertige bedienbare ShaderWorld-Cutaway-API wurde im untersuchten Bestand nicht gefunden. Eine eigene schematische Anzeige ist inzwischen implementiert. Die freie Inspektionskamera mit verschiebbarem Sichtfenster und Controllerbindungen ist integriert. Aktuelle Editor-/Game-Builds und fünf native Untergrundtests sind bestanden; die gemeinsame Controller-/Kamera-API und zugehörige Editorbilder sind erneut auf EarthworksLab geprüft. Normale V2-Demo vorbereitet; verpackte Schnitt-/Innenraumpixel weiterhin offen. Physische Eingaben und verpackte Ansichtspixel bleiben offen. Bewegung über WASD/QE, Blick über rechte Maus, Mausrad, Home für Fokus, G für den Ausschnitt und Bild auf/ab für Tiefe sind als Quellvertrag dokumentiert. Historische feste Kamera und deren Bilder bleiben getrennt; GPU-Sichtbarkeit, Bewuchs, Schatten und weitere Kameras brauchen ihre eigene praktische Abnahme. [Bedienvertrag der Untergrundansicht](../guides/underground-view.md). Die erfolgreiche Hybridkammer ist die Grundlage für die erste Sichtprobe; ihre Existenz belegt keinen frei ausgrabbaren 3D-Untergrund.[^underground]
 
 Erste Abnahme: alle drei Modi wechseln, dieselbe Kammer auswählen, sicher hin- und zurückfahren, unveränderte Physik/Materialkonten nachweisen und nach Neustart denselben Bauzustand sehen. Sichtprüfung und echte Maus-/Tastaturbedienung separat protokollieren. Zunächst keine fingierte Geologie anzeigen; Schnittflächen ohne Erdmodell sind als schematisch zu kennzeichnen.
 
