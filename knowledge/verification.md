@@ -13,11 +13,17 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T18:13:56.378396Z"
+  at: "2026-10-29T21:24:47.578582+00:00"
 sources:
+- id: stable-save-guide
+  resource: guides/stable-save-binding.md
+  title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
+- id: stable-save-evidence
+  resource: evidence/save-binding-test.json
+  title: Getrennte CPU-, Bridge-, B2/C2-, Physik- und normale Lebenszyklusnachweise
 - id: site-preparation-draft
   resource: guides/site-preparation.md
-  title: V2-Slice C mit begrenzten Neustartnachweisen und offener normaler Demo
+  title: V2-Slice C mit begrenzten Neustartnachweisen und getrennter normaler Demo
 - id: machine-earthworks
   resource: evidence/machine-earthworks-test.json
   title: 46 native Tests und je zwei uncooked sowie verpackte Erdarbeitsprozesse mit exakten Checkpoints
@@ -107,11 +113,25 @@ sources:
 
 # Prüfstand und offene Tests
 
+## Stabile Savebindung: bekannte A7-Stände, zwei neue Cooks und normale Fortsetzung
+
+**Der begrenzte Format-8-Vertrag der SitePreparation-V2-Karte ist bestanden.** [Anleitung](guides/stable-save-binding.md) und [bereinigter Beleg](evidence/save-binding-test.json) trennen gelesene Implementierung, historische CPU-Prüfung, tatsächliche native Migration, physische Fortsetzung und normale Controller-/Prozessprüfung. Dies ist kein allgemeiner Konverter für geänderte Inhalte oder andere Welten.
+
+Der historische Editor-7-Satz enthält 70 native Tests: 68 sauber und zwei bekannte Warnungen, keine offenen oder fehlgeschlagenen Tests. Er wurde nicht pauschal einer späteren EXE zugeschrieben. Je sieben Datei-Kopie-Negativtests bestanden im früheren 365- und erneut im korrigierten 366-Pakete-Profil; Originalquellen blieben gleich. Das korrigierte Profil umfasst 346 passende historische Quellrevisionen, davon 56 moderne Inhalts-Hashes und 290 GUIDs, zusätzlich 18 gebackene Editorquellen, ein Icon und ein Makropaket mit zwei kompilierten Verbrauchern. GUIDs und vertrauenswürdig unveränderte initiale Codebasis beweisen keine vollständigen historischen Herstellerbytes: beide Herkunftsflags bleiben false.
+
+Finales Game 4 bestand in 97,04 s. Die abschließenden vollständigen Cooks B2 und C2 bestanden ohne SkipCook in 158,65 und 103,79 s, jeweils mit Cook/Stage/Archive und Exit 0. Teilrodung, beladener Transport und fertiges Haus bestehen je 16 Bridge-, 30 B2- und 30 C2-Checks. Alle 13 beobachteten nativen Biom-/Spawnable-Versionen änderten sich B2→C2; tatsächliche Profile, logische Zustände und geprüfte Zieldateien blieben gleich. Zwei ungültige Stände werden je Fall mit exaktem Rückweg der leeren Welt und vier weitere bei vorhandener Arbeit atomar abgewiesen. Drei weitere Loads desselben Ursprungs bleiben exakt.
+
+Die abschließende strenge physische C2-Fortsetzung bestand zwölf Checks in 291,34 s und endete mit Exit 0: beide Arbeitswege fertig, 21 Ressourcen entfernt, Kontrollbaum erhalten, Boden und genau ein Haus physisch getroffen, drei weitere Loads und alle acht alten Historyhashes erhalten. Lager 176.400.000 g, Puffer/Lkw leer, 2.149 beobachtete Modellbilanzen ohne Grammfehler. 24 akzeptierte Bodensätze ergeben 6.936 Messungen an 289 Positionen, maximal 1,00023 cm Höhenabweichung. Vier frühere Sätze mit fehlendem Treffer oder laufender Aktualisierung wurden wiederholt und zählen nicht als Erfolg. Das ist eine örtliche Stichprobe, keine vollständige Oberflächen- oder unabhängige Meshmassenprüfung.
+
+Der normale Nutzerstand wurde getrennt ausdrücklich übernommen (16/30 native Checks) und einmalig in die eigene neue Demoablage kopiert. Das vollständige normale No-CSV-Prozesspaar bestand anschließend: Speichern/Laden über normale Controller-APIs und kalter zweiter Start, vier plus zwei Snapshots mit acht exakten vollständigen Rohdatengruppen und 0 g Bilanzfehler; beide Prozesse sauber Exit 0. Alte normale Dateien, vorbereitete Demoquelle und Paket blieben unverändert. SaveGame/Laufzeit-Vergleich nutzt den vorhandenen Parser mit Standardwertbehandlung und behauptet keine neue binäre Fließkommapräzision. Der abschließende normale C2-Launcherstart ohne Computer Use und ohne Offscreenmodus hat ein antwortendes eigenes Hauptfenster, korrekte Karte und keine Startupfehler. Menschliche Pixelbestätigung und physische Tasten bleiben offen.
+
+Vier Fehler bleiben als eigene fehlgeschlagene Vorversuche erhalten: ein nicht erfasstes natives Standardmaterial im ersten Profil, die sichere C-Prüfslot-Kollision, der zu frühe Haus-Physiktest nach dem zweiten Load und ein fehlender Log-Marker des ersten normalen Prüftreibers. Die Profilwurzel wurde ergänzt, die C-Prüfphase isoliert, der native Prüfer wartet auf das bereits vorhandene Produktions-Bodengate bei unveränderten Assertions, und allein die private Logkonfiguration des normalen Treibers wurde ergänzt. Danach wurden die betreffenden vollständigen Prüfungen erneut bestanden. Der frühere CSV-Spätfehler bleibt davon unabhängig offen.
+
 ## Slice C: geprüfte V2-Karte mit vorbereiteter Demo
 
 **V2 nativ und in vollständigen Uncooked-/Development-Cooked-Neustartpaaren bestanden; normaler V2-Launcherstart mit antwortendem Hauptfenster und Kartennachweis bestanden; physische Eingaben und menschliche Pixelbestätigung offen.** [Grundstück vorbereiten](guides/site-preparation.md) beschreibt Rodung vor Erdarbeit und physischer Hausfreigabe. Neue Karte **ShaderWorldSitePreparationLab**, Slot **CityLabSitePreparation** und zehn eigene BlueAndBounds1-Biom-/Dichtekopien sind eingerichtet. Der gelesene Setupreport bestätigt elf neue Assets und unveränderte Legacydateien, deren Metadaten sowie vorhandene Spielstände. Alte EarthworksLab-Welt und Spielstände werden nicht umgebunden. Die native V2-Suite und Wiederholung ohne neue Assets sind bestanden. Zwei getrennte Uncooked-Prozesse bestanden 14/14 + 12/12 Checks am ursprünglichen Problemstandort: 21 Ressourcen, Kontrollbaum erhalten, 176,4 t Lager, 0 g Bilanzfehler und genau ein Haus nach beiden Fortsetzungen sowie drei weiteren Loads. 149 vorhandene Save-Dateien unverändert. Frischer Cook/Stage/Archive bestanden (sechs geerbte Level-Blueprint-Warnungen, null Fehler). Das anschließende frische Development-Cooked-Paar bestand ebenfalls 14/14 + 12/12 Checks am ursprünglichen Problemstandort mit denselben begrenzten Konten-/Baum-/Hausgates, drei weiteren Loads und 157 unveränderten Save-Dateien. Normale V2-Startdaten sind in acht Snapshots vollständig exakt zur Ready-Quelle, doch der Prozess liefert spät Exit 777003. Auch das passend versiegelte alte Foundations-Archiv lädt fünf fertige Jobs und exakt 6.437.507 g Lager korrekt und endet anschließend mit demselben Code. Native CSV-Finalisierung und geschlossene Logs sind belegt; das ist kein vollständiger normaler Lebenszyklus-PASS. Drei getrennte normale Start-/Exitfälle ohne CSV sind inzwischen mit Exit 0 bestanden: V2 mit gleichem Ready-Save, altes passend versiegeltes Paket und leere Entry-Karte; Quelldateien/Spielstände unverändert. Die instrumentierten Fehler bleiben offen und werden nicht umgewertet. Eine unveränderte normale V2-SHOWUI-Aufnahme wurde visuell geprüft. V2-Demo mit bytegleicher Ready-Startdatei und sechs versiegelten Paketdateien vorbereitet: 106 Source-Dateien und 170 zuvor vorhandene Save-Dateien unverändert, genau eine private neue Startdatei. Der normale Launcherstart wurde um 18:12:47 UTC ohne Offscreenmodus mit antwortendem eigenem Hauptfenster und nativem Nachweis der korrekten Karte bestätigt; keine Startupfehler, Seed und Paketmanifest unverändert. Physische Eingaben und menschliche Pixelbestätigung bleiben offen.
 
-**Speichergrenze zwischen Builds:** Die erfolgreiche Wiederaufnahme gilt jeweils innerhalb desselben Uncooked- beziehungsweise Cooked-Builds. Der neue Cook weist den bestehenden alten Earthworks-Spielstand wegen abweichender Terrainbindung ab, obwohl seine Datei unverändert bleibt. Native Biom-/Spawnable-Versionen werden beim Speichern einschließlich Cook neu erzeugt und sind in unserer Terrainidentität enthalten. Alte Paketfassung erhalten; eine stabile semantische Bindung und explizite Migration sind Folgearbeit. Keine Bindung wird für diesen Slice normalisiert.
+**Historische Speichergrenze des damaligen Format-7-Slice:** Seine erfolgreichen Neustarts gehören jeweils derselben Uncooked-/Cooked-Fassung. Die neue ausdrücklich begrenzte A7→B8→C8-Prüfung steht im vorigen Abschnitt; alte Dateien und passende Paketfassung bleiben erhalten. Der native Ladenachweis allein belegt keine physische Fortsetzung; dafür liegt im vorigen Abschnitt die separat bestandene strenge C2-Prüfung vor.
 
 Die neue Dichteauswahl nutzt ausdrücklich die blaue Biom-ID plus native Zellgrenzen. Höhen-/Hangregeln bleiben erhalten; roter Bodenwert GrassAlt ist keine zusätzliche Pflanzensperre. Der [Prüfbericht](evidence/site-preparation-test.json) erhält frühere Uncooked-/API-Erfolge und negative Cooked-Kontrollbaumdiagnosen separat; kein Übertragen alter Erfolge auf V2 und keine gelockerten Prüfgrenzen.
 

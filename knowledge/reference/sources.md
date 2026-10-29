@@ -13,8 +13,14 @@ plugin_version: '4.1'
 evidence_scope: Quellenverzeichnis und exportierte eigene Testnachweise
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T00:02:31Z"
+  at: "2026-10-29T21:24:47.578582+00:00"
 sources:
+- id: stable-save-guide
+  resource: ../guides/stable-save-binding.md
+  title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
+- id: stable-save-evidence
+  resource: ../evidence/save-binding-test.json
+  title: Getrennte CPU-, Bridge-, B2/C2-, Physik- und normale Lebenszyklusnachweise
 - id: storage-source-audit
   resource: ../evidence/shaderworld-storage-source-audit.json
   title: Speicher-/Datenlayer-Quellbefund mit Herstellerlinks, ohne Laufzeitbehauptung
@@ -34,6 +40,10 @@ sources:
 
 
 # Quellen und Bildherkunft
+
+## Neue begrenzte Savebindung
+
+Die [Speicheranleitung](../guides/stable-save-binding.md) und ihr [bereinigter Beleg](../evidence/save-binding-test.json) unterscheiden gelesenen Vertrag, historische 70 native CPU-Tests, je sieben Datei-Kopie-Negativtests zweier Profilfassungen und die echte bekannte A7→B8→C8-Abnahme. Drei Checkpoints bestehen mit finalem Game 4 in vollständigen neuen Cooks B2/C2 je 16/30/30 native Checks. Die strenge physische C2-Fortsetzung besteht zwölf Checks mit 21 Ressourcen, Boden, Haus, Materialbilanz und drei Loads. Der normale Nutzerstand ist getrennt migriert; normales No-CSV-Speichern/Laden über Controller-APIs und kalter Neustart bestehen mit sechs vollständigen Snapshots, acht exakten Rohdatengruppen und beiden Prozessen Exit 0. Der normale C2-Start belegt ein antwortendes eigenes Fenster und die richtige Karte ohne Computer Use; keine menschliche Pixel- oder physische Eingabenabnahme. Vier fehlgeschlagene Vorversuche bleiben erhalten. Historische GUID-Revisionen, gebackene Editorquellen und initiale vertrauenswürdige Codebasis beweisen keine vollständigen historischen Herstellerbytes. Private Saves, Herstellerquellen und Rohprojektdateien werden nicht veröffentlicht; für diese Datenbindung werden keine neuen Bilder behauptet.
 
 ## Aktuelle eigene Planer-, Rodungs- und Untergrundnachweise
 

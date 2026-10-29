@@ -8,13 +8,19 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T18:15:32.679Z"
+  at: "2026-10-29T21:24:47.578582+00:00"
 evidence_scope:
   source: Getrennte V2-Laborkarte mit BlueAndBounds1-Biomkopien und eigenem Slot eingerichtet; aktueller Controller- und Setupvertrag gelesen. Altassets und bisherige Spielstände bleiben erhalten.
   prior_verification: Vorheriger Quellstand bestand Uncooked-Neustartpaar, native 60er-Suite und normale Controller-/Kamera-API. Diese Ergebnisse und Bilder sind historisch genau diesem Stand zugeordnet.
   runtime: V2-Einrichtung mit elf neuen Assets und unveränderten Legacydateien geprüft; native V2-Suite und wiederholte Einrichtung bestanden; vollständige Uncooked-/Cooked-Neustartpaare bestanden; normale V2-Startdaten exakt wiederhergestellt; separate normale Prozesse ohne CSV-Instrumentierung sauber beendet. CSV-instrumentierter Exit bleibt fehlgeschlagen; passender Demo-Startspielstand und sechs Paketdateien versiegelt vorbereitet; normaler Launcherstart mit reagierendem eigenem Fenster und korrekter Spielkarte bestanden; physische Eingaben und menschliche Pixelabnahme offen. Historische Nachweise gelten ihrer früheren Sourcebasis.
   limit: Keine globale GPU-/Bewuchs-Fertiggarantie, keine physische Eingabe- oder menschliche Abnahme. Holz und allgemeine Logistik offen; NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad.
 sources:
+  - id: stable-save-guide
+    resource: stable-save-binding.md
+    title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
+  - id: stable-save-evidence
+    resource: ../evidence/save-binding-test.json
+    title: Getrennte CPU-, Bridge-, B2/C2-, Physik- und normale Lebenszyklusnachweise
   - id: own-site-model
     resource: "Eigene gelesene Projektimplementierung: Source/UnrealMcpTest/CityLabSitePreparationModel.h/.cpp, CityLabSitePreparation.h/.cpp, CityLabEarthworksGameMode.h/.cpp, CityLabEarthworks.h/.cpp und CityLabPersistence.h/.cpp. Projektquellen nicht im Bundle enthalten"
     title: Bauvorbereitung, Controller, lokaler Bewuchsrestore und Speicherdaten als eigener Quellvertrag
@@ -50,9 +56,13 @@ Benötigt werden CityLab mit Unreal **5.8.4**, ShaderWorld **4.1**, dem aktuelle
 
 Die neue Karte verwendet **CityLabSitePreparation** als normalen Speicher-Slot. Sie startet bei dessen erster Verwendung frisch mit **0 t Lagerbestand**: zuerst abtragen und einlagern, danach Material einbauen. Das bisherige **ShaderWorldEarthworksLab** mit Slot **CityLabEarthworks**, seinen fünf Aufträgen und rund 6,4 t bleibt getrennt erhalten. Alte Saves werden nicht umgebunden oder ersetzt. Eine verpackte V2-Demo bekommt außerdem einen eigenen UserDir; ein alter Spielstand mit anderer Welt-/Materialbindung wird sicher abgewiesen.[^own-site-model][^v2-biome-contract]
 
-**Wichtig für alte Spielstände:** „Erhalten“ bedeutet zunächst, dass ihre Dateien und die alte Paketfassung bewahrt bleiben. Ein Save ist derzeit an die Terrainidentität seines Builds gebunden. Schon ein neuer Cook kann native Biom-/Spawnable-Versionen ändern; der neue Build weist unseren alten Earthworks-Save deshalb sicher ab. Neustarts innerhalb desselben geprüften Builds sind bestanden. Eine stabile Bindung über neue Releases und eine ausdrückliche Migration müssen wir noch bauen. Alte Saves daher zusammen mit ihrer passenden Paketfassung aufbewahren.[^build-bound-save-source][^proof]
+**Wichtig für alte Spielstände:** Alte Quelle und passende Paketfassung gemeinsam erhalten. Die bisherige Demo bleibt ihrer Format-7-Fassung zugeordnet. Die [ausdrückliche Übernahme bekannter V2-Stände nach Format 8](stable-save-binding.md) ist nativ über zwei neue vollständige Cooks, mit strenger physischer Wiederaufnahme und mit normalem Speicher-/Lade-/Kaltstartpaar bestanden. Der neue normale C2-Start zeigt ein antwortendes eigenes Fenster und die richtige Karte. Frühere Fehler bleiben im Beleg; menschliche Pixelbestätigung und physische Tasten sind separat offen. Der normale Ladebefehl konvertiert Altstände nicht stillschweigend.
 
-## Vorgeplante Demo starten
+## Aktuelle stabile Demo starten
+
+Für den übernommenen eigenen Stand startet **Tools/launch_stable_site_preparation_demo.ps1** die geprüfte C2-Fassung mit eigener Datenablage **Saved/SaveBindingDemoUser**. Sie setzt den einmalig übernommenen Arbeitsstand fort und besät vorhandenen Fortschritt nicht neu. **F5** speichert und **F9** lädt; für einen kalten Neustart denselben Launcher erneut verwenden. Die [Speicheranleitung](stable-save-binding.md) erklärt Übernahme, Prüfungen und Rückweg zur bewahrten alten Fassung.
+
+## Historische vorgeplante Format-7-Demo starten
 
 Im Projektordner startet **Tools/launch_site_preparation_demo.ps1** die vorbereitete verpackte V2-Fassung mit eigener Datenablage **Saved/SitePreparationDemoUser**. Der Launcher prüft die sechs Paketdateien gegen das Manifest und schützt gegen doppelte Starts derselben Demo. Die Startdatei ist exakt die geprüfte Cooked-Ready-Datei; bestehender Spielfortschritt wird nicht automatisch neu besät. Der normale Launcherstart ist separat bestanden: Am **29. Oktober 2026 um 18:12:47 UTC** bestätigten Prozess-/Fensterabfrage und natives Startlog ein reagierendes eigenes Hauptfenster, die richtige Spielkarte und einen Start ohne Offscreen-Modus oder protokollierten Startup-Error. Seeddatei und Paketmanifest stimmten mit den vorbereiteten SHA256-Werten überein. Dieser Nachweis enthält keine Pixelprüfung, Computer-Use-Bedienung, physischen Eingaben oder menschliche Bestätigung und keinen abschließenden Exitnachweis.[^proof]
 
@@ -118,7 +128,7 @@ Dafür wurden **zehn neue Biom-/Dichtematerialassets und eine neue Karte** angel
 
 Gespeichert werden die verbundenen Aufträge, eingefrorenen Baumkennungen, Rodungsfortschritt, Phase, Pause, Transportwunsch, ausgeführte Erde, Materialkonten, Lkw-Ladung und Hausidentität. **NoGrowth ersetzt das Rodungsregister nicht:** Die Maske verhindert neuen Bewuchs; das Register hält fest, welche Ressourcen tatsächlich entfernt wurden. Holz besitzt in diesem Slice noch kein eigenes Konto.[^own-site-model][^clearing]
 
-Neue Spielstände schreiben ausdrücklich **Format 7**. Ältere unterstützte Formate werden innerhalb ihrer Welt-/Generatorbindung geprüft; ein nativer Binärtest erhält auch den alten ausgelassenen Versionswert 6. Das ist keine universelle Altsave-Migration. Widersprüchliche Records oder eine andere Welt-/Generator-/Terrainbindung werden vor Anwendung abgewiesen. Die erfolgreichen kalten Restarts verwenden jeweils dieselbe Paketfassung; sie bestätigen keine Kompatibilität nach erneutem Cook.[^proof][^build-bound-save-source]
+Die hier ursprünglich abgenommene Demo schreibt ausdrücklich **Format 7**. Die getrennte neue stabile V2-Fassung schreibt **Format 8** mit Schema 1; ihr begrenzter Übernahme-/B/C-Nachweis steht in der [neuen Speicheranleitung](stable-save-binding.md). Ältere unterstützte Formate werden innerhalb ihrer Welt-/Generatorbindung geprüft; ein nativer Binärtest erhält auch den alten ausgelassenen Versionswert 6. Das ist keine universelle Altsave-Migration. Widersprüchliche Records oder eine andere Welt-/Generator-/Terrainbindung werden vor Anwendung abgewiesen. Die erfolgreichen kalten Restarts verwenden jeweils dieselbe Paketfassung; sie bestätigen keine Kompatibilität nach erneutem Cook.[^proof][^build-bound-save-source]
 
 Nach dem Laden kann **Bewuchs nach Laden: native Neuberechnung abwarten** erscheinen. Die Runtime fordert den lokalen Boden selbst an und lässt die beteiligten nativen Baumquellen in ihrer begrenzten Region fertig rechnen, bevor weitere Arbeit folgt. Sie erfindet keine Instanzen und verändert dafür keine Rodungs- oder Materialbuchung. Lokale Bodenbereitschaft ist trotzdem keine globale GPU-/Bewuchs-Fertiggarantie für beliebige Biome oder Streaminglagen.[^own-site-model][^proof]
 
@@ -137,7 +147,7 @@ Der [Prüfbericht](../evidence/site-preparation-test.json) erhält die früheren
 | Der Lkw fährt nicht | Erst Arbeit starten, danach für denselben Bauplatz **H** verwenden. Während Rodung wird der Transportwunsch nur vorgemerkt. |
 | Das Haus bleibt gesperrt | Fertige Erdarbeit und aktuellen Kollisionsnachweis abwarten; den Hausbereich freihalten. |
 | Ein Baum scheint ungerodet zu fehlen | Native Nullskalierung und dauerhaften Rodungsrecord unterscheiden. Ein fehlender sichtbarer Kandidat darf nicht als zusätzlich gefällter Baum gebucht werden. |
-| Alter Save wird nach neuem Cook abgewiesen | Passende alte Paketfassung verwenden und Datei sichern. Buildübergreifende Migration fehlt; die Bindung nicht blind umschreiben. Frühere vorläufige Testdateien vor der Versionskorrektur sind keine Migrationsvorlage. |
+| Alter Save wird nach neuem Cook abgewiesen | Quelle mit passender alter Paketfassung bewahren. Für die bekannten V2-Stände den [ausdrücklichen Format-8-Weg](stable-save-binding.md) nutzen lassen; dessen native B2/C2-Abnahme und separate physische Fortsetzung gelten für bekannte Stände bei unveränderter Grundlage. Beliebige Inhaltsänderungen benötigen eine eigene Migration. Keine Bindungen umhashen. |
 | Ausgangsboden ändert sich während Rodung extern | Der spätere Erdstart kann **NeedsReplan** blockieren. Rodungsfortschritt bleibt erhalten; ein expliziter Replanpfad nach begonnener Rodung fehlt noch. |
 
 Es gibt weiterhin **einen Maschinenzug**, feste geprüfte Wege und ein Erdmaterial. Holztransport, allgemeine Bürger-/Fahrzeugnavigation, Oberflächenarbeit und das Ändern bereits geleisteter Aufträge folgen später. Die [Untergrundansicht](underground-view.md) ist eine getrennte Darstellungsfunktion.

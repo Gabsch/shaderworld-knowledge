@@ -14,6 +14,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Bauplatz nach einem neuen Build weiterbauen](guides/stable-save-binding.md) – bekannte A7-Stände ausdrücklich nach Format 8 übernehmen; drei Checkpoints je 16/30/30 native Checks über zwei neue Cooks, strenge physische Fortsetzung, normales Speicher-/Lade-/Kaltstartpaar und normaler Fenster-/Kartenstart bestanden. Historische Herkunftsgrenzen und weiterhin offene menschliche Eingabenprüfung erklärt.
+
 - [Grundstück durch Rodung und Erdarbeit vorbereiten](guides/site-preparation.md) – Slice C mit Rodung vor Erdarbeit und Hausfreigabe in getrennter SitePreparation-V2-Map/eigenem Slot; explizite Biomregeln, Legacywelt erhalten, V2-Uncooked- und Cooked-Neustarts bestanden; normaler V2-Launcherstart mit antwortendem Fenster und korrektem Kartennachweis bestanden; physische Eingaben und menschliche Pixelbestätigung offen.
 
 - [Unebenen Boden durch Maschinen ebnen](guides/flatten-machine-earthworks.md) – begrenzter Slice B stable: 52 native Tests, Uncooked/frisches Development-Cooked je 12/12 + 16/16, Controller-API 15/15 und sichtbare getrennte Demo mit Slate-Bild bestanden. Physische Eingaben und menschliche Prüfung nicht erfolgt.
@@ -48,7 +50,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Versionen und Fähigkeiten](reference/versions-and-capabilities.md) – alter UE-5.5-Bestand, aktuelle Erweiterungen, Biome, PCG und offene Grenzen.
 - [MCP und Automatisierung](reference/mcp-and-automation.md) – was der native Unreal-MCP im Lernprojekt übernimmt.
 - [Quellen und Bildherkunft](reference/sources.md) – offizielle Dokumentation, eigener Nachweis und Bildverzeichnis.
-- [Prüfstand und offene Tests](verification.md) – aktuelle 46 native Tests, uncooked/verpackte Maschinen-Erdarbeit und separate Editor-Ansichtsprüfung; ältere 36er-Planer/Cache/Hybridnachweise sowie historische 29 native Tests, frühere 12er-/22er-Suiten, der getrennte gerenderte Navigationsversuch, cooked Baugrubenabschluss, geschlossener Materialkreislauf und acht CPU-Rodungsmessfenster mit ihren Grenzen.
+- [Prüfstand und offene Tests](verification.md) – begrenzte Format-8-Savebindung mit CPU-, B2/C2-, physischer Fortsetzungs- und normaler Lebenszyklusabnahme; Fenster-/Kartenstart belegt. Frühere Berichte behalten ihre jeweilige Fassung; menschliche Eingabenprüfung bleibt offen.
 
 ## Wissensbasis pflegen
 
