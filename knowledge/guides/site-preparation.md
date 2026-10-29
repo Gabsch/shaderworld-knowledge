@@ -8,13 +8,16 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T21:24:47.578582+00:00"
+  at: "2026-10-29T22:16:30.241841+00:00"
 evidence_scope:
   source: Getrennte V2-Laborkarte mit BlueAndBounds1-Biomkopien und eigenem Slot eingerichtet; aktueller Controller- und Setupvertrag gelesen. Altassets und bisherige Spielstände bleiben erhalten.
   prior_verification: Vorheriger Quellstand bestand Uncooked-Neustartpaar, native 60er-Suite und normale Controller-/Kamera-API. Diese Ergebnisse und Bilder sind historisch genau diesem Stand zugeordnet.
   runtime: V2-Einrichtung mit elf neuen Assets und unveränderten Legacydateien geprüft; native V2-Suite und wiederholte Einrichtung bestanden; vollständige Uncooked-/Cooked-Neustartpaare bestanden; normale V2-Startdaten exakt wiederhergestellt; separate normale Prozesse ohne CSV-Instrumentierung sauber beendet. CSV-instrumentierter Exit bleibt fehlgeschlagen; passender Demo-Startspielstand und sechs Paketdateien versiegelt vorbereitet; normaler Launcherstart mit reagierendem eigenem Fenster und korrekter Spielkarte bestanden; physische Eingaben und menschliche Pixelabnahme offen. Historische Nachweise gelten ihrer früheren Sourcebasis.
   limit: Keine globale GPU-/Bewuchs-Fertiggarantie, keine physische Eingabe- oder menschliche Abnahme. Holz und allgemeine Logistik offen; NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad.
 sources:
+  - id: tab-focus
+    resource: "Nutzermeldung mit blau fokussiertem Kameraregler am 29. Oktober 2026; eigener gelesener Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp: SCityLabEarthworksPanel, BlocksKeys, KeysAllowed, SetupInputComponent, SelectNextJob und QueueText; Unreal Slate NavigationConfig und SlateApplication. Private Aufnahme und separat lizenzierte Quellen nicht im Bundle enthalten"
+    title: Gemeldeter Tab-Fokusfehler und gelesener Maus-Workaround, noch kein Fix
   - id: stable-save-guide
     resource: stable-save-binding.md
     title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
@@ -75,7 +78,7 @@ Die Knopfbezeichnungen und Kürzel stammen aus der aktuellen Controllerintegrati
 1. Karte öffnen, **Play** starten und fertigen Boden abwarten. Links **Bauplatz: Roden > Ebnen > Haus [7]** wählen. Der Testhaus-Bauplatz hat einen festen **12 × 12 m** großen ebenen Kern.
 2. Den Mauszeiger außerhalb der Werkzeugleiste auf geeigneten Boden bewegen. Ein kurzer linker Klick fixiert den Standort. Mit **Hoehe − / Hoehe +** beziehungsweise **Bild ab / Bild auf** die absolute Zielhöhe in **0,25-m-Schritten** ändern. Die Vorschau nennt Bäume einschließlich der Zufahrt und getrennte Aushub-/Einbaumengen. Kurz stillhalten, bis die Baumerfassung stabil ist.
 3. **Plan bestaetigen + speichern [Enter]** wählen. Der Auftrag erscheint in der Warteschlange; Bäume und Erde bleiben zunächst unverändert. Danach ist die Vorschau inaktiv. Für eine neue Planung das Werkzeug erneut wählen; **Vorschau verwerfen [Esc]** beendet nur die Vorschau.
-4. Den gewünschten Auftrag mit **Naechsten waehlen [Tab]** auswählen und **Arbeit starten / Pause [Space]** betätigen. Erst jetzt entfernt die Rodung schrittweise die gespeicherten Bäume. Erneutes Betätigen pausiert und erhält den Fortschritt.
+4. Den gewünschten Auftrag mit der Maus über **Naechsten waehlen [Tab]** auswählen und **Arbeit starten / Pause [Space]** anklicken. Ein **`>`** vor der Listenzeile markiert die Auswahl. Tab besitzt aktuell den unten beschriebenen Fokusfehler. Erst jetzt entfernt die Rodung schrittweise die gespeicherten Bäume. Erneutes Betätigen pausiert und erhält den Fortschritt.
 5. Für denselben gestarteten Bauplatz **Transport an / aus [H]** einschalten. Während der Rodung wird der Wunsch nur vorgemerkt. Erst nach vollständiger Rodung beginnt die Erdarbeit mit dem gemeinsamen Lager, begrenztem Puffer und Lkw. Aushub braucht Lagerplatz; zusätzlicher Einbau braucht echten vorhandenen Bestand.[^flatten]
 6. Auf **Bauplatz bereit** warten. Dafür müssen Erdarbeit und lokale Kollisionsprüfung abgeschlossen sein. Dann **Haus auf fertigen Bauplatz setzen [B]** wählen. Der Boden und freie Hausbereich werden erneut geprüft. Wiederholtes Auslösen baut kein zweites Haus.[^own-site-model]
 
@@ -89,6 +92,14 @@ Die Knopfbezeichnungen und Kürzel stammen aus der aktuellen Controllerintegrati
 | Bauplatz bereit | Erde fertig und Hausboden über neun lokale Punkte in drei stabilen Durchläufen geprüft. |
 | Haus gebaut | Genau das zugeordnete Testhaus steht am freigegebenen Ort. |
 | Storniert | Ungearbeiteter Auftrag neutral beendet. Geleistete Arbeit wird nicht zurückgedreht. |
+
+## Bekannter Eingabefehler: Tab landet auf den Kamerareglern
+
+Am 29. Oktober 2026 meldete der Nutzer, dass **Tab** die unteren Kameraregler blau fokussiert, statt den nächsten Auftrag zu wählen. Der gelesene Controllerpfad erklärt das Verhalten: Die Regler dürfen Tastaturfokus erhalten, die Auftragsauswahl ist dagegen ein nachgelagerter Spielbefehl. Slate kann Tab vorher als UI-Navigation behandeln; ein fokussierter Regler sperrt anschließend über den vorgesehenen UI-Schutz weitere Weltkürzel. Das ist ein Eingabefehler, keine Grenze auf einen Bauplatz.[^tab-focus]
+
+**Ohne Tastaturkürzel weiterarbeiten:** Links zur **Auftragswarteschlange** hochscrollen und **Naechsten waehlen [Tab]** mit der Maus anklicken. Das **`>`** wandert zur nächsten vorhandenen Zeile; auch fertige Aufträge werden durchlaufen. Danach die Knöpfe **Arbeit starten / Pause**, **Transport an / aus** und bei fertigem Bauplatz **Haus auf fertigen Bauplatz setzen** benutzen. Ein weiterer Bauplatz entsteht über das erneut gewählte Bauplatzwerkzeug, einen anderen Ort und **Plan bestaetigen + speichern**. Je Bauplatz ist ein Haus vorgesehen; der einzelne Maschinenzug arbeitet die Aufträge nacheinander ab. Tab erstellt keinen neuen Plan.
+
+Der Mausweg ist durch die gelesenen direkten Button-Callbacks belegt; eine neue physische Bedienprobe wurde dafür nicht ausgeführt. Die vorhandenen Zustands- und API-Prüfungen sind kein Test der tatsächlichen Tab-Weiterleitung. **Noch nicht korrigiert oder neu ausgeliefert:** Ein gezielter Fix muss Tab vor der UI-Navigation im eigenen Spielfenster behandeln und anschließend den Weltfokus wiederherstellen, ohne Editorfenster oder beabsichtigte Reglerbedienung zu verändern. Dafür ist eine echte Slate-Eingabeprüfung mit mehreren Aufträgen und fokussierten Reglern erforderlich. Das laufende Nutzerspiel wurde für diesen Befund nicht bedient oder neu gestartet.
 
 ## Aktuelle Werkzeugleiste im normalen verpackten Spiel
 
@@ -161,3 +172,5 @@ Es gibt weiterhin **einen Maschinenzug**, feste geprüfte Wege und ein Erdmateri
 [^biome-rules]: [Bestehende Höhen- und Hangregeln](foundations-lab.md).
 
 [^build-bound-save-source]: Gelesene native PreSave-Versionierung und eigene Terrainidentität gemäß Quellenbeschreibung; keine Änderung am Vendorcode oder nachträgliche Save-Normalisierung.
+
+[^tab-focus]: Direkte Nutzermeldung und unabhängige lesende Prüfung des aktuellen Controllers und Slate-Routingpfads; kein neuer Build, kein physischer Eingabetest und keine ausgelieferte Korrektur.
