@@ -17,8 +17,11 @@ verified:
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T20:47:06.231484+00:00"
+  at: "2026-10-30T22:29:19.274182+00:00"
 sources:
+- id: rcp-stage2
+  resource: evidence/rcp-toolkit-integration.json
+  title: Stage2-Maschinen-/Kaltstart-API bestanden; Stage3-/Importfehler und Folgeprüfungen getrennt
 - id: rcp-stage1
   resource: evidence/rcp-toolkit-stage1.json
   title: RCP-Inventar, negative Raw20-Route und bestandene begrenzte Eigenadapter20-Probe
@@ -134,6 +137,14 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## RCP-Stage2: Produktionsmanager, vier Materialien und Kaltstart
+
+Zwei frische gekochte Prozesse bestehen **32 Create-/95 Resume-Prüfungen**. Drei zusätzliche Einspur-/Dreispur-/Kieswegpläne entstehen während echtem Teilabtrag, ohne laufende Arbeit oder Ladung umzuschreiben. Der kalte Zwischenstand erhält **533.594 g Fertigteile auf dem Weg zur Baustelle**, alle sechs nativen Exportgruppen und drei weitere normale Loads exakt. Anschließend wird ausschließlich der Hauptauftrag mit gewöhnlichen endlichen Waren und Arbeit fertig; die drei wartenden Aufträge bleiben unverändert. 3.595 Bilanzbeobachtungen, leere finale Ladung/Puffer und Erde/Kies/Asphalt/Fertigteile jeweils **0 g Fehler** bestanden. Die deklarierten 12-t-Lkw-/18-t-Puffergrenzen wurden eingehalten; ein beobachtetes Belegungsmaximum wurde nicht protokolliert.[^rcp-stage2]
+
+Die Bodenkollision trifft **566.055/566.055** Messpunkte in 21 Rastern mit 50 cm Abstand, maximal **1,812653 cm** Fehler bei unveränderter 5-cm-Grenze; tatsächliche Absenkung bis 50 cm. Zwei unveränderte originale 1600×1000-Bilder wurden von Agenten visuell geprüft. Sie zeigen die damalige lange Leiste und akzeptieren weder die spätere kompakte Oberfläche noch tatsächliche Maus-/Tastaturbedienung.[^rcp-stage2]
+
+Der erste gekochte Stage3-Lauf scheitert an einer echten Funding-Prüfung am vorhandenen ungeregelten Startknoten. Der enge Quellfix ist im Nachfolgebuild; **Editor16 in 111,03 s** bestanden bedeutet noch keine neue native oder gekochte Stage3-Abnahme. Der erste gepinnte Legacy-Import scheiterte getrennt am im alten Save ausgelassenen Standardfeld Version1; Korrektur und neues Kaltpaar bleiben offen. Eigenes GroundTransition-Material ist in einem sauberen Commandlet als identischer Graph geprüft, noch ohne GPU-/NoGrowth-Nachweis. Neuer Starter, Mehrfachauftrags-UI, Stage4-Brücke/Tunnel/Wasser und weitere Verlaufspunkte bleiben eigene Prüfungen. **Der bisherige stabile Starter bleibt RoadConstruction11.**[^rcp-stage2]
 
 ## RCP-Stage1: eigener gekochter Adapter begrenzt bestanden
 
@@ -486,3 +497,5 @@ Neue Versuche ergänzen die jeweilige Anleitung und ihren Beleg. Die Anleitung [
 [^camera-tree]: [Bereinigter Kamerabaum-Bericht](evidence/camera-tree-test.json): aktuelle 25er-Suite, Build-/Repackageerfolg und historische Fixturekorrektur; normale ConstructionLab-Wiederherstellung separat bestätigt; keine neue physische oder cooked Kamerabedienabnahme.
 
 [^rcp-stage1]: Bereinigter Stage1-Beleg mit getrennten Artefakt-Hashes und Prüfumfängen im Quellenobjekt `rcp-stage1`.
+
+[^rcp-stage2]: [Bereinigter Stage2-Integrationsbeleg](evidence/rcp-toolkit-integration.json): Produktionsmanager-API und Kaltstart bestanden, historische Fehlversuche und Nachfolgeprüfungen ausdrücklich abgegrenzt.

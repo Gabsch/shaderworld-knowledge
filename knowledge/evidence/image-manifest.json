@@ -571,6 +571,34 @@
       "bytes": 4305881,
       "sha256": "106a57245ed0413cfbd479f6bfbea17fc95a1de99cd159a9b5cd10fc9689f38b",
       "revision_scope": "ShaderWorld 4.2, Quellbindung 14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c/RoadConstruction11. Frischer echter Slate-/Maschinen-T-Bau 40/40; dasselbe fertige Save besteht normales 4+2-Kaltpaar und vier T-Messdurchgänge. Einmalige neue Demo und normaler sichtbarer Starterstart separat nativ bestanden; dieses Bild stammt weiterhin aus dem Kaltpaar, nicht aus dem finalen Livefenster."
+    },
+    {
+      "file": "assets/images/rcp-toolkit-production-create.png",
+      "origin": "Unveränderte eigene native SHOWUI-Aufnahme aus dem gekochten Stage2-Create-Prozess. Koordinierender Agent und Dokumentationsagent prüften das vollständige 1600×1000-Original visuell: bewaldetes Labor, Straße und Baumaschine; damalige lange Leiste mit wichtigen Knöpfen unterhalb des sichtbaren Ausschnitts. Keine private Desktopoberfläche, keine Bildbearbeitung. Das Bild ist keine Abnahme der nachfolgenden kompakten Leiste, keine Messung der Materialkonten und keine menschliche Bestätigung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4348418,
+      "sha256": "93ebb9636120d12b424210322ec629ff93540ab39218f1638719718f2fcb4ffb",
+      "agent_visually_reviewed": true,
+      "human_reviewed": false,
+      "revision_scope": "Stage2-Quellbindung dc70e336f100b68db01cf70b9e0c070ffc48decabff1635af2179047c345b33c; ursprünglicher Create32/Resume95-API-Prüfstand. Kein Bild der späteren Stage3-/Stage4-Fassung.",
+      "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
+    },
+    {
+      "file": "assets/images/rcp-toolkit-production-resume.png",
+      "origin": "Unveränderte eigene native SHOWUI-Aufnahme aus dem gekochten Stage2-Resume-Prozess. Koordinierender Agent und Dokumentationsagent prüften das vollständige 1600×1000-Original visuell: bewaldetes Labor, Straße und Baumaschine; damalige lange Leiste mit wichtigen Knöpfen unterhalb des sichtbaren Ausschnitts. Keine private Desktopoberfläche, keine Bildbearbeitung. Das Bild ist keine Abnahme der nachfolgenden kompakten Leiste, keine Messung der Materialkonten und keine menschliche Bestätigung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4333691,
+      "sha256": "b499d171323dea70a33d6845477d93ec46d9d26b85d07bc20c9fd0e0aca8932e",
+      "agent_visually_reviewed": true,
+      "human_reviewed": false,
+      "revision_scope": "Stage2-Quellbindung dc70e336f100b68db01cf70b9e0c070ffc48decabff1635af2179047c345b33c; ursprünglicher Create32/Resume95-API-Prüfstand. Kein Bild der späteren Stage3-/Stage4-Fassung.",
+      "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
     }
   ]
 }

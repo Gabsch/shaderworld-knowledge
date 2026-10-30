@@ -9,12 +9,15 @@ plugin_version: "4.2"
 rcp_local_version: unbekannt
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T20:47:06.231484+00:00"
+  at: "2026-10-30T22:29:19.274182+00:00"
 evidence_scope:
   manual: Das Agententeam hat das vollständige offizielle 90-seitige RCP-Handbuch einschließlich relevanter Abbildungen und Roadmap gelesen; Herstellerfähigkeiten sind keine Laufzeitabnahme.
   local: Aktualisierter Bestand mit 907 Paketen, 18 eigenen vorbereiteten Meshkopien, tatsächlicher Klassenreflexion und statischen Tunnel-/Brückengeometriemessungen; Releasekennung und Vollständigkeit des neuesten Releases bleiben ungeklärt.
-  runtime: Gekochter Deferred-Spawn ist belegt. Alle 20 direkten UCS-Neuaufbauzyklen sind fehlgeschlagen. Nach behobener innerer Kollisionsnaht besteht der eigene Adapter alle 20 gekochten Lebenszykluszyklen mit 300 Szene- und 300 Bodytreffern; keine normale Spiel-/Neustartabnahme. Native2 bleibt getrennt mit 128 Modell-/API-Tests, keine vollständige RCP- oder normale Spielabnahme.
+  runtime: Historische Stage1 mit gekochtem Deferred-Spawn, negativer Raw20-Route und begrenzt bestandener Eigenadapter20-Probe getrennt von Native2 mit 128 Modell-/API-Tests. Nachfolgende Stage2 besteht Create32/Resume95 über die Produktionsmanager-API einschließlich Kaltstart; neue normale Bediengesten, Stage3, Import und Stage4 sind damit nicht abgenommen.
 sources:
+  - id: stage2-proof
+    resource: ../evidence/rcp-toolkit-integration.json
+    title: Begrenzte Stage2-Maschinen-/Kaltstartabnahme und getrennte Folgefehler
   - id: rcp-manual
     resource: https://drive.google.com/file/d/1NYQA6k-qZHusso1npgAfEgGpnieeDRxt/view
     title: Offizielles Road-Creator-Pro-Handbuch, 90 Seiten, über den Dokumentationslink der Fab-Produktseite abgerufen am 30. Oktober 2026
@@ -193,6 +196,10 @@ Als erste praktische Abnahme zählt der getrennte gekochte Versuch mit tatsächl
 
 ## Prüfstatus und offene Entscheidungen
 
+**Nachfolgende Stage2 begrenzt bestanden:** Die eigene Produktionsmanager-API besteht zwei gekochte Prozesse mit 32 Create-/95 Resume-Prüfungen, drei zusätzlichen gespeicherten Profilplänen während Erdarbeit und einem kalten beladenen Fertigteiltransport. Vollständige Zustände und drei normale Loads bleiben exakt; nur der Hauptauftrag wird fertig, vier Materialbilanzen sind 0 g. Neue Bediengesten und allgemeine Depot-/Flottenlogik sind damit nicht geprüft. Die [Baukastenanleitung](../guides/rcp-road-toolkit.md) bleibt Entwurf und erklärt die ursprünglichen Bilder samt UI-Grenzen.[^stage2-proof]
+
+Der erste echte Stage3-Versuch scheitert an der Erstzuweisung eines Kostenträgers am bestehenden Startknoten; Korrektur und erneute gekochte Knoten-/Nahtprüfung bleiben offen. Der erste gepinnte Legacy-Import scheitert getrennt am alten ausgelassenen Standardfeld Version1. Editor16 sowie eine reine eigene Materialgraphprüfung sind im Nachfolgestand bestanden, keine neue GPU-/Spiel-/Stage4-Abnahme. Historische Stage1-Nachweise darunter behalten ihren engen Umfang.[^stage2-proof]
+
 **Belegt:** vollständige 90-Seiten-Handbuchrecherche, neuer 907-Paket-Bestand mit unveränderten Vendorbytes und Saves während der Prüfung, echte Klassen-/Materialreflexion, 18 vorbereitete eigene Kopien und abgegrenzte statische Geometriemessungen. Native2 besteht **128 CityLab-Modell-/API-Tests: 126 sauber, zwei bekannte Warnungen, null Fehler**. Das sind keine 128 verpackten RCP-Actor- oder Fahrtests.[^local-inventory]
 
 **Gekochter Rohversuch:** Der frische isolierte Cook und ein Deferred-Spawn des Haupt-Blueprints funktionieren. Die anschließenden **20 direkten `UserConstructionScript`-Aufrufzyklen sind fehlgeschlagen**: Im ersten Actor wuchsen registrierte Komponenten von 7 über 10 auf 19, während nur zwei tatsächliche Zweispur-Meshinstanzen verblieben. Der angeforderte Profil-/Material-/Zubehörwechsel wurde nicht dargestellt; alle drei realen Szene- und Body-Rays verfehlten die Straße. Die Splineform änderte sich, und nach Destroy/GC blieben in allen Zyklen null eigene schwache Objektreferenzen übrig. Es gab keine Engine-Fehlerzeilen; Vendorpakete, Probequellen, gekochte Dateien und alle 362 vorhandenen Spielstände blieben unverändert. Das ist ein negatives Ergebnis für **diese direkte UCS-Aufrufroute**, keine Behauptung, Construction Scripts oder sämtliche RCP-Laufzeitpfade könnten grundsätzlich nicht funktionieren.[^local-inventory]
@@ -203,7 +210,7 @@ Der erste eigene Prüfläufer schrieb außerdem seine Berichte versehentlich unt
 
 **Eigener Adapter, zweite Abnahme bestanden:** Alle **20 gekochten Zyklen** bestehen ohne Beobachtungsfehler: Zweispur → Vierspur, Kurve/Höhe, exakter Main-/ReflectiveMirage-Materialwechsel, Leitplanken, wiederholter Aufbau, Clear und Neuaufbau. Die fünf befüllten Zustände pro Zyklus ergeben **300 echte Szene- und 300 Bodytreffer**, einschließlich des unveränderten mittleren Nahtstrahls. Registrierte Komponenten bleiben bei 9 für die gerade Straße und 21 mit Leitplanken; Clear lässt nur drei Fixturekomponenten zurück. Nach Destroy/vollständigem GC sind alle eigenen schwachen Referenzen in jedem Zyklus ungültig. Der konkrete Leitplanken-Materialoverride ist für diese isolierte Probe Beton, keine Abnahme aller Vendor-Metallmaterialien. Vendor-/eigene Pakete, Quellen/Werkzeuge, Konfigurationshashes, gekochte Dateien und alle 362 vorhandenen Saves blieben während der Probe exakt unverändert. Native Laufzeit 58,67 s; Speicher- und Einzelbauzeiten stehen im [Beleg](../evidence/rcp-toolkit-stage1.json). Prozessspeicher einschließlich Engine-/Assetcaches ist kein eigenständiger Leak- oder Stadtleistungsnachweis.[^local-inventory]
 
-**Noch offen:** weitere Profil-/Kollisions-/Leistungsgrenzen, Nähte zwischen eigenständigen Outputactoren, die weiteren drei Stufen und ihre normale Bedienung sowie Speichern-/Laden-/Neustarttests. Vorhandene Funktionen und Spielstände behalten ihren eigenen [begrenzten Prüfstand](../guides/road-construction-tools.md).
+**Noch offen:** weitere Profil-/Kollisions-/Leistungsgrenzen, Nähte zwischen eigenständigen Outputactoren, weitere Profile-/Netz-/Bauwerksabnahmen und ihre normale Bedienung; Stage2 hat inzwischen nur die oben abgegrenzten Produktionsmanager-/Kaltstartfälle bestanden. Vorhandene Funktionen und Spielstände behalten ihren eigenen [begrenzten Prüfstand](../guides/road-construction-tools.md).
 
 Die Herkunft aller benötigten optionalen Materialien, der vollständige aktuelle Vendorumfang und die Grenze zwischen Ausstattung und Simulation bleiben ausdrücklich zu klären. Depotflotte, allgemeine Fahrzeugsuche und das vertagte Mehrfachauftragsproblem sind durch Stage1 nicht erledigt.
 
@@ -216,3 +223,5 @@ Die Herkunft aller benötigten optionalen Materialien, der vollständige aktuell
 [^road-plan]: [Straßenbau-Arbeitsplan](road-construction-work-plan.md).
 [^machine-plan]: [Scaping als Maschinenaufträge](scaping-machine-work-plan.md).
 [^rcp-author]: [Offizieller Produktthread mit Autorenantworten](https://forums.unrealengine.com/t/lyoshko-road-creator-pro/2418882); kein mitgelieferter Verkehrs- oder Runtime-Abnahmenachweis.
+
+[^stage2-proof]: [Bereinigter Stage2-Beleg](../evidence/rcp-toolkit-integration.json); Folgefehler und noch offene Runtime-/UI-/Starterprüfungen sind gesondert erfasst.

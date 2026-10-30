@@ -8,7 +8,7 @@ engine_version: "5.8.4"
 plugin_version: "4.2"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T16:44:51.030465+00:00"
+  at: "2026-10-30T22:29:19.274182+00:00"
 verified:
   by: codex/gpt-6
   at: "2026-10-30T16:44:51.030465+00:00"
@@ -62,6 +62,8 @@ sources:
     title: Historische Bauplatz-Savebindung und ausdrücklich begrenzte Migration
 ---
 # Straßen zeichnen und von Maschinen bauen lassen
+
+**Neuer RCP-Baukasten in Arbeit:** Die [separate RCP-Anleitung](rcp-road-toolkit.md) dokumentiert bereits die begrenzte Stage2-Maschinen-/Kaltstartabnahme. Ihre neuen Werkzeuge und der neue Starter bleiben bis zur jeweiligen Prüfung Entwurf. Die folgende Anleitung und ihre bestehenden Abnahmen gehören weiterhin zu RoadConstruction11.
 
 **Aktuell: ShaderWorld 4.2 und RoadConstruction11.** Straße zeichnen, bestätigen und mit Maschinen sowie echten Materiallieferungen bauen lassen; der geprüfte frische T-Anschluss ist bereits in der Demo vorhanden. Kamerabedingter Kollisionsnachlauf, normale Eingabe und kaltes Laden sind für diesen begrenzten Ablauf geprüft. Frühere4.1-Fassungen bleiben getrennt erhalten.[^plugin42-upgrade][^camera-collision-followup]
 

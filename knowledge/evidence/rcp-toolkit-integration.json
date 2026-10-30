@@ -1,0 +1,244 @@
+{
+  "schema": "citylab.rcp-toolkit-integration-summary.v1",
+  "updated_utc": "2026-10-30T22:28:51.821579+00:00",
+  "status": "draft_stage2_cooked_manager_passed_stage3_import_ui_demo_pending",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.2",
+  "rcp_release_version": "unknown",
+  "scope": "Sanitized Stage2 cooked production-manager API acceptance with cold resume. Historical Stage3 and legacy-import failures retained; subsequent editor/material checks are separate and do not accept new runtime, UI, starter or Stage4 behavior.",
+  "native_baseline": {
+    "source_build_id": "dc70e336f100b68db01cf70b9e0c070ffc48decabff1635af2179047c345b33c",
+    "source_file_count": 197,
+    "editor_build": {
+      "label": "Editor14",
+      "success": true,
+      "seconds": 117.88,
+      "log_sha256": "416e81233840edec1dde04a3c10893fe1522e38cc7465e0f148790c8b46a7bbd"
+    },
+    "game_build": {
+      "label": "Game4",
+      "success": true,
+      "seconds": 184.69,
+      "log_sha256": "f72773ced24e54cba9a94510cbb111cbdf38f6c45ee1e9345fb6738249245e94"
+    },
+    "tests": {
+      "label": "Native14",
+      "passed_clean": 135,
+      "passed_known_warnings": 2,
+      "failed": 0,
+      "not_run": 0,
+      "count": 137,
+      "test_duration_seconds_not_process_duration": 5.3448100090026855,
+      "report_sha256": "f145b9f9f26ca9dbe74f0d9eb2de3979575f91fd6d19073effbe45bd0961e7da",
+      "scope": "Native model/API tests; no cooked gameplay or visible UI acceptance."
+    }
+  },
+  "prepared_geometry": {
+    "mesh_count": 29,
+    "non_nanite_originals_exact_referenced_positions": 21,
+    "original_nanite_fallback_vs_full_own_cpu_different": 8,
+    "protected_assets_and_saves_unchanged": true,
+    "report_sha256": "32dc8dc52244df07cb6ac40a06008929afa0fd6181f02fe171e700212bf518d4",
+    "scope": "Referenced LOD0 geometry hashes and bounds of all owned copies. Non-Nanite originals require byte-identical referenced triangle positions. Original Nanite fallback geometry is explicitly distinguished from the rebuilt full non-Nanite CPU mesh, never claimed identical. CPU retained, collision LOD0, actual bounds separate from cached editor bounds. Does not claim rendered pixels or scene collision.",
+    "runtime_or_pixel_claimed": false
+  },
+  "stage1_historical": {
+    "evidence": "rcp-toolkit-stage1.json",
+    "status": "own_adapter20_passed_bounded",
+    "raw20_failed": true,
+    "first_own20_seam_failed": true,
+    "not_transferred_to_new_manager_scope": true
+  },
+  "new_content_and_package": {
+    "status": "stage2_cooked_sealed_passed",
+    "profile_schema": "citylab.rcp-toolkit-content-profile.v1",
+    "catalog_revision": 1,
+    "binding_domain": "RoadToolkit-v2",
+    "snapshot_version": 2,
+    "vendor_packages_expected": 907,
+    "own_package_count": 31,
+    "profile_sha256": "5433a3e2a2e043edb1b1f7055afacd0470fbc64791eb5ad5de91718dcf55d4c8",
+    "package_receipt_sha256": "e33683e0f5f4eb7e261e55388d440a57fd919b7675ef6aeb023bf5b987e10195",
+    "cooked_success": true,
+    "source_seal_sha256": "3370323bbd59f01dae2d328780f003bf92dc699e0de8462138d4d71ca9443452",
+    "material_recipe_revision": 1
+  },
+  "stage2_production": {
+    "status": "passed_bounded_production_manager_api",
+    "receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9",
+    "create_passed": true,
+    "cold_resume_passed": true,
+    "soil_gravel_asphalt_prefab_balance_g": {
+      "soil_g": 0,
+      "gravel_g": 0,
+      "asphalt_g": 0,
+      "prefab_g": 0
+    },
+    "maximum_truck_grams": null,
+    "maximum_buffer_grams": null,
+    "terrain_collision_grids": {
+      "batches": 21,
+      "samples": 566055,
+      "hits": 566055,
+      "spacing_cm": 50,
+      "maximum_error_cm": 1.8126525902189314,
+      "tolerance_cm": 5,
+      "all_accepted": true
+    },
+    "paid_accessories": true,
+    "scope": "Fresh cooked rendered production-manager API processes, ordinary finite stocks/rates, actual initial ground, real partial cut, three additional profile plans during earthwork, paid four-resource main-road completion, cold exact state plus three normal loads. Not an injected Slate/input acceptance, not all queued profile builds, not arbitrary depot/fleet routing.",
+    "create_checks": 32,
+    "resume_checks": 95,
+    "create_seconds": 145.45481219887733,
+    "resume_seconds": 802.7710543982685,
+    "ledger_observations": 3595,
+    "declared_truck_capacity_grams": 12000000,
+    "declared_buffer_capacity_grams": 18000000,
+    "every_observation_within_finite_capacities": true,
+    "maximum_observed_occupancy_not_recorded": true,
+    "concurrent_plans_during_actual_partial_cut": 3,
+    "queued_profiles": [
+      "rcp.one_lane",
+      "rcp.three_lane",
+      "rcp.gravel"
+    ],
+    "cold_loaded_prefab_grams": 533594,
+    "cold_loaded_prefab_phase": "ToSite",
+    "cold_state_full_native_and_six_groups_exact": true,
+    "additional_normal_loads": 3,
+    "only_main_job_completed": true,
+    "queued_jobs_unchanged": true,
+    "completed_empty_truck_and_buffer": true,
+    "maximum_measured_ground_lowering_cm": 50,
+    "screenshots": [
+      {
+        "file": "assets/images/rcp-toolkit-production-create.png",
+        "sha256": "93ebb9636120d12b424210322ec629ff93540ab39218f1638719718f2fcb4ffb",
+        "bytes": 4348418,
+        "width": 1600,
+        "height": 1000,
+        "provenance": "Own CityLab cooked rendered production-manager Stage2 create process; original unedited PNG.",
+        "agent_visually_reviewed": true,
+        "human_reviewed": false,
+        "visible_scope": "Forested lab, road, construction vehicle and then-current Stage2 long UI. Critical controls extend below fold; this image does not accept the new staged compact UI.",
+        "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
+      },
+      {
+        "file": "assets/images/rcp-toolkit-production-resume.png",
+        "sha256": "b499d171323dea70a33d6845477d93ec46d9d26b85d07bc20c9fd0e0aca8932e",
+        "bytes": 4333691,
+        "width": 1600,
+        "height": 1000,
+        "provenance": "Own CityLab cooked rendered production-manager Stage2 resume process; original unedited PNG.",
+        "agent_visually_reviewed": true,
+        "human_reviewed": false,
+        "visible_scope": "Forested lab, road, construction vehicle and then-current Stage2 long UI. Critical controls extend below fold; this image does not accept the new staged compact UI.",
+        "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
+      }
+    ],
+    "preexisting_saves_unchanged": true,
+    "source_profile_package_unchanged": true
+  },
+  "stage3_network": {
+    "status": "first_cooked_attempt_failed_production_preview_fix_in_editor_build_retest_pending",
+    "receipt_sha256": null,
+    "create_passed": null,
+    "cold_resume_passed": null,
+    "cold_reopen_passed": null,
+    "full_group_state_preserved": null,
+    "seam_scene_hits": null,
+    "actual_fixed_module_corridor_hits": null,
+    "scope": "The first actual cooked production PreviewNetwork rejected first funding of the otherwise unchanged uncontrolled starter endpoint when a genuinely new fixed-circle approach was attached. Narrow correction and positive/negative regression are now in the successor source; Editor16 built successfully. No new native/cooked Stage3 pass is claimed. Offline geometry is not acceptance.",
+    "first_failed_receipt_sha256": "41a13bec4fddc7c3738cb2cd2318219259827acc57d94ccbdfcf9f5ce9b8c120",
+    "first_create_passed": false
+  },
+  "legacy_import": {
+    "status": "first_native_import_failed_legacy_omitted_default_fix_in_successor_retest_pending",
+    "driver_offline_checks": 36,
+    "source_original_player_sha256": "4c3dd18e999222c484f41d2b41b73713938b0e056df190047fd6dfbc0b22709b",
+    "original_binary_proof_sha256": "4de5ec25d0507e2134a7eb4002cf9ad9d0bfd483af764fb3112fa1b479b37b5f",
+    "native_copy_passed": false,
+    "new_normal_4_plus_2_passed": null,
+    "native_negative_cases_passed": null,
+    "unknown_binding_native_negative_tested": false,
+    "existing_original_unchanged": true,
+    "scope": "The first known pinned copy reached the native schema gate and failed because old default Version1 was omitted by delta serialization and decoded under new default2. Only an explicitly authenticated known source may restore that legacy default; ordinary loads stay strict. Corrected native import and normal v2 cold pair still required. Original save/authentication/old-binary proof retained. No arbitrary save migration."
+  },
+  "ordinary_ui_and_visible_demo": {
+    "status": "pending",
+    "actual_ui_gestures_passed": null,
+    "visible_launch_passed": null,
+    "duplicate_launch_guard_passed": null,
+    "starter_default_changed": false,
+    "screenshot": null,
+    "human_reviewed": false,
+    "scope": "Do not change current stable starter until an independently bound new demo and actual launch receipt exist."
+  },
+  "open_boundaries": [
+    "User-reported multiple-job UI remains explicitly unresolved until separately retested.",
+    "General depot fleet selection and arbitrary depot/vehicle reachability are open.",
+    "Stage4 bridge/tunnel output, portal holes, air pockets and physical passage require separate runtime acceptance.",
+    "Additional route points/corridor UI are prepared separately and not accepted here.",
+    "Manufacturer release version and full latest-release completeness remain unknown.",
+    "Human UI/pixel confirmation and performance at city scale remain open."
+  ],
+  "failures": [
+    {
+      "scope": "historical_stage2_driver_preflight",
+      "status": "failed_before_game_start_then_fixture_corrected",
+      "cause": "Historical source helper still required old673 RCP closure; updated907 contract was already strictly sealed separately. Saved driver binds the explicit current full source/content/package seal instead; historical raw profiles and old authored hashes were retained.",
+      "product_runtime_exercised": false,
+      "gates_relaxed": false
+    },
+    {
+      "scope": "actual_stage3_fixed_module_anchored_production_preview",
+      "status": "failed_fix_in_successor_editor_build_new_runtime_pending",
+      "receipt_sha256": "41a13bec4fddc7c3738cb2cd2318219259827acc57d94ccbdfcf9f5ce9b8c120",
+      "normal_saves_unchanged": true,
+      "source_vendor_toolkit_package_unchanged": true,
+      "error_sanitized": "ordinary_full_preview_valid: Knoten braucht einen ungearbeiteten normalen Strassenauftrag als Kostentraeger.",
+      "product_runtime_exercised": true,
+      "diagnosis": "Initial funding on an otherwise unchanged uncontrolled starter endpoint incorrectly required a pre-existing unstarted nonstarter work job.",
+      "saved_fix_scope": "Only first absent funding to a genuinely new incident alignment absent Before and Build, with exact unchanged node metadata; existing started work and all reconfiguration rules remain protected."
+    },
+    {
+      "scope": "known_pinned_legacy_native_copy_import",
+      "status": "failed_schema_gate_fix_not_runtime_verified",
+      "product_runtime_exercised": true,
+      "normal_source_save_unchanged": true,
+      "cause": "Authentic old default Version1 was omitted by delta serialization. The new class default2 exposed the mismatch. Narrow successor correction applies only to pinned authenticated source bytes, never to ordinary load or unknown saves."
+    },
+    {
+      "scope": "successor_own_material_preparation",
+      "status": "prepare_report_guard_passed_but_first_process_exit1_then_clean_reverify_exit0",
+      "product_runtime_exercised": false,
+      "cause": "Initial lookup of the not-yet-created own material emitted an expected missing-asset error. The owned graph was created and guarded; a separate commandlet verified the existing graph cleanly with exit0. Neither pass is a rendered mask or NoGrowth proof."
+    }
+  ],
+  "publication": {
+    "ready": true,
+    "scope": "Sanitized documentation and exact original screenshots only; no private reports or licensed content published.",
+    "private_receipts_kept_private": true,
+    "licensed_sources_or_assets_included": false
+  },
+  "successor_checks_not_runtime_acceptance": {
+    "editor_build": {
+      "label": "Editor16",
+      "success": true,
+      "seconds": 111.03,
+      "log_sha256": "a168e8e0a88b413896d0cf3c579dbaeb39ca0fd1a46b774cbf194b670011dd99",
+      "scope": "Editor compilation only; not this Stage2 baseline and no new native/cooked/GPU acceptance."
+    },
+    "ground_transition_material": {
+      "status": "own_graph_reverified_clean_commandlet",
+      "receipt_sha256": "52b84d950e94f106aab9fba3f7520bc90fb074a43ffd4c4a0d31c190a522fa9b",
+      "target": "/Game/CityLabRcpToolkit/Materials/M_CityLab_GroundTransitionMask",
+      "bytes": 25091,
+      "sha256": "d6d7f75481f8a83ca4fde04e3b0d30cb0859f15e186998d8425f6ef384da5fa3",
+      "existing_graph_matches": true,
+      "vendor_and_all_existing_saves_unchanged": true,
+      "unrelated_project_content_unchanged": true,
+      "scope": "Owned graph/custom-code/metadata readback and exact output hash only. Prior layer values remain outside the intended field; Sand red/NoGrowth blue recipe is prepared inside. No rendered GPU, actual NoGrowth, terrain collision or Stage4 acceptance."
+    }
+  }
+}
