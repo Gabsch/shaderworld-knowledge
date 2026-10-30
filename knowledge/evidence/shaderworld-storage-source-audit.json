@@ -1,0 +1,78 @@
+{
+  "report_version": 1,
+  "date": "2026-10-29",
+  "observed_at_utc": "2026-10-29T00:01:27Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "source_review_only",
+  "scope": "Official documentation plus read-only review of supplied licensed ShaderWorld4.1 source. No editor, game, build, save, GPU-export or new persistence test executed. This report contains observations and project proposals, not plugin source.",
+  "observations": [
+    {
+      "source": "Source/ShaderWorld/Public/Data/SWStructs.h:755-785",
+      "symbol": "FSWProducers",
+      "finding": "Named producer, generator material, format and filter. Default RGBA8/Nearest; discrete IDs and blend weights are discussed in source. These are spatial GPU layers, not a disk database."
+    },
+    {
+      "source": "Source/ShaderWorldCore/Public/Storage/SWStorageBase.h:40-64; Private/Storage/SWStorageBase.cpp",
+      "symbol": "USWStorageBase",
+      "finding": "Destination path, transient export trigger and empty TerrainStorage class; no implemented persistent save/load contract found in this class."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Actor/ShaderWorldActor_Cache.cpp:185-233",
+      "symbol": "AShaderWorldActor::ApplyBrushToCache",
+      "finding": "Cache tiles are sought, but the inspected write section is unimplemented; function may still return true. Success return is not proof of an applied or persistent edit."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Actor/ShaderWorldActor_Cache.cpp:110-183",
+      "symbol": "AShaderWorldActor::ExportCacheInBounds",
+      "finding": "Render-target export with transient RGBA8 intermediate, dimensions below4097. No disk save; positive wrapper result does not prove every inner export succeeded."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Actor/ShaderWorldActor_Cache.cpp:608-721; Public/Data/ShaderWorldTerrainRegion.h",
+      "symbol": "AShaderWorldActor::ProduceTerrainRegion",
+      "finding": "Transient GPU outputs: world height R32F, normals/layers RGBA16F; up to4096 samples per axis. Requires supported segmented terrain and ready world/shaders/tiles; retry state is explicit. No OverTime ocean path or persistence guarantee."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Data/ShaderWorld_TiledData.cpp:63 onward",
+      "symbol": "UShaderWorld_TiledData helper methods",
+      "finding": "Inspected AddData, UpdateBounds, UpdateHierarchy and RebuildMips helpers are empty. No working tile persistence inferred from their names."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Utilities/SWBlueprintFunctionLibrary.cpp:466-545; Private/Utilities/HeightMapImporter.cpp; Public/Utilities/HeightMapImporter.h:81-117",
+      "symbol": "ImportHeightmap / editor asset import",
+      "finding": "Located SavePackage paths belong to editor asset import. Import method uses WITH_EDITOR; texture-source construction uses WITH_EDITORONLY_DATA. Not a runtime packaged-game world-save contract."
+    },
+    {
+      "source": "Source/ShaderWorld/Private/Data/ShaderWorldRT2D.cpp:67-74; Private/Actor/ShaderWorldBrushManager.cpp:1624-1627",
+      "symbol": "Inspected Serialize overrides",
+      "finding": "Only base serialization invoked in inspected overrides; no custom GPU pixel or world-edit persistence contract established. Does not claim every possible serializer was exhaustively audited."
+    }
+  ],
+  "documentation_sources": [
+    {
+      "url": "https://www.shader.world/",
+      "claim": "Manufacturer describes runtime data alongside terrain, including biome/material and environmental values."
+    },
+    {
+      "url": "https://universgen.gitbook.io/shader-world/fundamentals/kick-start/heightmap-import-16-bits-raw-png",
+      "claim": "Brush example writes layer values consumed by terrain material."
+    },
+    {
+      "url": "https://universgen.gitbook.io/shader-world/fundamentals/kick-start/detail-panel",
+      "claim": "Cached generation, producers and spawnable layer consumption; collectable resource bookkeeping is not provided by default."
+    }
+  ],
+  "project_decision": {
+    "terrain_layers": "Regenerable spatial projection for soil, moisture, construction masks and related display/spawn rules. Proposed uses, not newly tested.",
+    "authoritative_save": "Stable entities, plan revisions, completed work, integer-gram accounts, machine and truck state remain in own versioned persistence.",
+    "editor_map": "Authored start world can contain configured actors/assets. Runtime changes are not thereby proven to be written back into the umap.",
+    "future_checkpoints": "Consider regional snapshots only after a bounded reconstruction/cold-restart/cooked test and performance measurement."
+  },
+  "not_tested": [
+    "Additional custom data layer and brush integration",
+    "CPU/GPU export correctness",
+    "Durability across region eviction and cold restart",
+    "Packaged layer save/load",
+    "Crash recovery, commit atomicity or migration of new regional snapshots"
+  ]
+}

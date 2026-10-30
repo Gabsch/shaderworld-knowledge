@@ -1,0 +1,2403 @@
+{
+  "report_version": 1,
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "status": "passed_with_limits",
+  "scope": "Own component build, two native automation tests, saved map reload, new PIE property readbacks, one inspected PIE frame and fresh post-migration ground traversal passed. See separate verification limits.",
+  "build": {
+    "success": true,
+    "target": "UnrealMcpTestEditor Win64 Development",
+    "scope": "Native project build, not a packaged game"
+  },
+  "component": {
+    "class": "/Script/UnrealMcpTest.CityLabTunnelComponent",
+    "display_name": "CityLab Tunnel (Dry)",
+    "native_base": "/Script/ShaderWorld.ShaderWorldAirPocketBoxComponent",
+    "dimensions_cm": {
+      "passage_length": 17000,
+      "passage_width": 800,
+      "passage_height": 600,
+      "portal_overlap_each_end": 500,
+      "side_padding_each_side": 400,
+      "vertical_padding_each_side": 1700
+    },
+    "computed_local_half_extent_cm": {
+      "x": 9000,
+      "y": 800,
+      "z": 2000
+    },
+    "runtime_configuration": "ConfigureTunnel(length,width,height,portalOverlap,sidePadding,verticalPadding); profile properties are BlueprintReadOnly.",
+    "refresh_method": "RefreshTunnelAirPocket",
+    "readonly_extent_display": "AirPocketHalfExtentCm"
+  },
+  "native_automation": {
+    "success": true,
+    "fresh_process": true,
+    "exit_code": 0,
+    "renderer": "NullRHI",
+    "tests": [
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "result": "Success",
+        "coverage": [
+          "Default half extents and non-colliding, non-overlap, non-navigation, non-ticking settings",
+          "Immediate ConfigureTunnel profile changes and readonly extent display",
+          "FObjectWriter/FObjectReader roundtrip followed by PostLoad; not a disk package-load test",
+          "Reflected editor property change callback updates extents",
+          "Invalid, nonfinite, negative and excessive dimensions are sanitized"
+        ]
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "result": "Success",
+        "coverage": [
+          "Real ShaderWorld WaterSubsystem with a controlled flat-water provider; no rendered ocean",
+          "Native registration contributes exactly one shape/group",
+          "Seven probes inside/outside a rotated, translated and scaled volume",
+          "Seven corresponding probes with mirrored negative scale; positive packed half extents",
+          "IgnoreAirPockets bypass returns water",
+          "Moving the owning actor moves the excluded area",
+          "Runtime ConfigureTunnel shrink updates water membership without duplicate shapes",
+          "Unregister removes the exclusion and restores provider water coverage"
+        ]
+      }
+    ],
+    "scope_limit": "Water query and shape lifecycle checks under NullRHI. They do not verify the actual ocean material or GPU wave rendering."
+  },
+  "map_integration": {
+    "success": true,
+    "status": "passed",
+    "map": "/Game/Maps/ShaderWorldCityBasics",
+    "actor": "Basics_Tunnel_AirPocket",
+    "component": "Tunnel",
+    "actor_location_cm": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "legacy_DryTunnel_removed": true,
+    "map_saved": true,
+    "actual_editor_map_reload_after_save": true,
+    "reload_method": "Scene.load_level of the saved map, separate from the automation archive/PostLoad test",
+    "editor": {
+      "passageLengthCm": 17000,
+      "passageWidthCm": 800,
+      "passageHeightCm": 600,
+      "portalOverlapCm": 500,
+      "sidePaddingCm": 400,
+      "verticalPaddingCm": 1700,
+      "airPocketHalfExtentCm": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "boxExtent": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "relativeLocation": {
+        "x": 0,
+        "y": 0,
+        "z": 600
+      },
+      "relativeRotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "relativeScale3D": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "bGenerateOverlapEvents": false,
+      "collision": "NoCollision",
+      "component_count": 1
+    },
+    "editor_reloaded": {
+      "passageLengthCm": 17000,
+      "passageWidthCm": 800,
+      "passageHeightCm": 600,
+      "portalOverlapCm": 500,
+      "sidePaddingCm": 400,
+      "verticalPaddingCm": 1700,
+      "airPocketHalfExtentCm": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "boxExtent": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "relativeLocation": {
+        "x": 0,
+        "y": 0,
+        "z": 600
+      },
+      "relativeRotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "relativeScale3D": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "bGenerateOverlapEvents": false,
+      "collision": "NoCollision",
+      "component_count": 1
+    },
+    "pie": {
+      "passageLengthCm": 17000,
+      "passageWidthCm": 800,
+      "passageHeightCm": 600,
+      "portalOverlapCm": 500,
+      "sidePaddingCm": 400,
+      "verticalPaddingCm": 1700,
+      "airPocketHalfExtentCm": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "boxExtent": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "relativeLocation": {
+        "x": 0,
+        "y": 0,
+        "z": 600
+      },
+      "relativeRotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "relativeScale3D": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "bGenerateOverlapEvents": false,
+      "collision": "NoCollision",
+      "component_count": 1
+    },
+    "scope": "Native property reads in editor, reloaded editor map and newly started PIE; not a manual Blueprint click-through or rendered-ocean test."
+  },
+  "fresh_drive": {
+    "success": true,
+    "status": "passed",
+    "runtime": "UnrealEditor.exe -game -RenderOffscreen; uncooked Development Editor runtime",
+    "exit_code": 0,
+    "fresh_process": true,
+    "summary": {
+      "success": true,
+      "collision_probes": 65,
+      "passed_probes": 65,
+      "actual_ground_crossing_passed": true,
+      "teleport_during_crossing": false,
+      "drive_sample_count": 134,
+      "grounded_sample_count": 134,
+      "sample_x_min_cm": -12997.17421577371,
+      "sample_x_max_cm": 12905.416691265864,
+      "drive_sample_seconds": 29.088802099227905,
+      "driven_distance_m": 259.44490733332793,
+      "elapsed_wall_seconds": 54.15597699955106,
+      "host_wall_seconds": 105.094
+    },
+    "report": {
+      "success": true,
+      "report_version": 1,
+      "map": "ShaderWorldCityBasics",
+      "scope": "Ground-bound CharacterMovement test buggy; collision and real traversal, no Chaos vehicle simulation.",
+      "error": "",
+      "last_probe_error": "",
+      "collision_probes_passed": true,
+      "actual_ground_crossing_passed": true,
+      "teleport_during_crossing": false,
+      "elapsed_wall_seconds": 54.15597699955106,
+      "driven_distance_cm": 25944.490733332794,
+      "floor_height_cm": 300,
+      "ceiling_underside_z_cm": 900,
+      "tunnel_min_x": -8000,
+      "tunnel_max_x": 8000,
+      "tunnel_half_width_cm": 400,
+      "probes": [
+        {
+          "label": "floor_x_-13000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -13000,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-12500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -12500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-12000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_6",
+          "x": -12000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-11500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -11500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-11000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_7",
+          "x": -11000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-10500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -10500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-10000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_8",
+          "x": -10000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-9500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -9500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-9000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_9",
+          "x": -9000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-8500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -8500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-8000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_10",
+          "x": -8000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-7500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -7500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-7000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_11",
+          "x": -7000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-6500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -6500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-6000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_12",
+          "x": -6000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-5500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -5500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-5000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_13",
+          "x": -5000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-4500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -4500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-4000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_14",
+          "x": -4000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-3500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -3500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-3000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_15",
+          "x": -3000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-2500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -2500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-2000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_16",
+          "x": -2000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-1500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -1500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-1000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_32",
+          "x": -1000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_-500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": -500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_0",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_17",
+          "x": 0,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_1000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_18",
+          "x": 1000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_1500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 1500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_2000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_19",
+          "x": 2000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_2500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 2500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_3000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_20",
+          "x": 3000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_3500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 3500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_4000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_21",
+          "x": 4000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_4500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 4500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_5000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_22",
+          "x": 5000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_5500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 5500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_6000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_23",
+          "x": 6000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_6500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 6500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_7000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_24",
+          "x": 7000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_7500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 7500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_8000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_25",
+          "x": 8000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_8500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 8500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_9000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_26",
+          "x": 9000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_9500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 9500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_10000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_27",
+          "x": 10000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_10500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 10500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_11000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_28",
+          "x": 11000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_11500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 11500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_12000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_29",
+          "x": 12000,
+          "y": 0,
+          "z": 302,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_12500",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 12500,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "floor_x_13000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_2",
+          "x": 13000,
+          "y": 0,
+          "z": 300,
+          "detail": "Expected Z 300.00 cm (+/-3)."
+        },
+        {
+          "label": "ceiling_x_-4000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_5",
+          "x": -4000,
+          "y": 0,
+          "z": 900,
+          "detail": "Expected Z 900.00 cm (+/-3)."
+        },
+        {
+          "label": "ceiling_x_0",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_5",
+          "x": 0,
+          "y": 0,
+          "z": 900,
+          "detail": "Expected Z 900.00 cm (+/-3)."
+        },
+        {
+          "label": "ceiling_x_4000",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_5",
+          "x": 4000,
+          "y": 0,
+          "z": 900,
+          "detail": "Expected Z 900.00 cm (+/-3)."
+        },
+        {
+          "label": "west_portal_terrain_hole",
+          "passed": true,
+          "blocking_hit": false,
+          "actor": "",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "detail": "Terrain-only ray must miss; tunnel meshes are ignored."
+        },
+        {
+          "label": "east_portal_terrain_hole",
+          "passed": true,
+          "blocking_hit": false,
+          "actor": "",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "detail": "Terrain-only ray must miss; tunnel meshes are ignored."
+        },
+        {
+          "label": "mountain_roof_preserved",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "ShaderWorldActor_1",
+          "x": 0,
+          "y": 0,
+          "z": 6000,
+          "detail": "Terrain above the tunnel center must remain."
+        },
+        {
+          "label": "capsule_whole_route_clear",
+          "passed": true,
+          "blocking_hit": false,
+          "actor": "",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "detail": "Full swept pawn capsule must fit from west to east."
+        },
+        {
+          "label": "south_wall",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_3",
+          "x": 0,
+          "y": -400,
+          "z": 600,
+          "detail": "Inside wall must block at the configured half width (+/-5 cm)."
+        },
+        {
+          "label": "capsule_south_wall_blocks",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_3",
+          "x": 0,
+          "y": -400,
+          "z": 411.2907409667969,
+          "detail": "Negative control: pawn capsule must be blocked by the tunnel wall."
+        },
+        {
+          "label": "north_wall",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_4",
+          "x": 0,
+          "y": 400,
+          "z": 600,
+          "detail": "Inside wall must block at the configured half width (+/-5 cm)."
+        },
+        {
+          "label": "capsule_north_wall_blocks",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_4",
+          "x": 0,
+          "y": 400,
+          "z": 411.2907409667969,
+          "detail": "Negative control: pawn capsule must be blocked by the tunnel wall."
+        },
+        {
+          "label": "capsule_floor_blocks",
+          "passed": true,
+          "blocking_hit": true,
+          "actor": "StaticMeshActor_17",
+          "x": 0,
+          "y": 0,
+          "z": 302,
+          "detail": "Negative control: floor must support the pawn capsule."
+        }
+      ],
+      "drive_samples": [
+        {
+          "seconds": 0.05387989804148674,
+          "x": -12997.17421577371,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 72.62779929333945,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 0.2853371985256672,
+          "x": -12936.665542858687,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 399.31527838960636,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 0.518580500036478,
+          "x": -12799.935368300197,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 725.9838571887116,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 0.7219870984554291,
+          "x": -12624.675768278676,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 0.9467856995761395,
+          "x": -12422.402118556338,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 1.1597437001764774,
+          "x": -12230.725967176395,
+          "y": 0,
+          "z": 402.150000333786,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 1.386769998818636,
+          "x": -12026.445676423746,
+          "y": 0,
+          "z": 404.1499993801117,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000381469727,
+          "floor_actor": "StaticMeshActor_6"
+        },
+        {
+          "seconds": 1.590439599007368,
+          "x": -11843.185156993704,
+          "y": 0,
+          "z": 404.1499993801117,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999952316284,
+          "floor_actor": "StaticMeshActor_6"
+        },
+        {
+          "seconds": 1.7914955988526344,
+          "x": -11662.10569594069,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 2.004588298499584,
+          "x": -11470.433507524567,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 2.232822798192501,
+          "x": -11264.942447506028,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 2.447106499224901,
+          "x": -11072.246868945795,
+          "y": 0,
+          "z": 404.1499936580658,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000262260437,
+          "floor_actor": "StaticMeshActor_7"
+        },
+        {
+          "seconds": 2.6608160994946957,
+          "x": -10879.707166962462,
+          "y": 0,
+          "z": 404.1499936580658,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000021457672,
+          "floor_actor": "StaticMeshActor_7"
+        },
+        {
+          "seconds": 2.891667000949383,
+          "x": -10675.388896130162,
+          "y": 0,
+          "z": 402.14999985694885,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 3.13484900072217,
+          "x": -10453.513066135483,
+          "y": 0,
+          "z": 402.14999985694885,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 3.3501226007938385,
+          "x": -10259.393506162005,
+          "y": 0,
+          "z": 402.14999985694885,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 3.5799311995506287,
+          "x": -10052.95060727759,
+          "y": 0,
+          "z": 404.14999771118164,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999713897705,
+          "floor_actor": "StaticMeshActor_8"
+        },
+        {
+          "seconds": 3.792569600045681,
+          "x": -9861.221807487445,
+          "y": 0,
+          "z": 404.14999771118164,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000047683716,
+          "floor_actor": "StaticMeshActor_8"
+        },
+        {
+          "seconds": 4.006793398410082,
+          "x": -9668.426866494256,
+          "y": 0,
+          "z": 402.15000200271606,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 4.222070500254631,
+          "x": -9474.590537734466,
+          "y": 0,
+          "z": 402.15000200271606,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 4.447799500077963,
+          "x": -9271.496088467675,
+          "y": 0,
+          "z": 402.15000200271606,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 4.6625557988882065,
+          "x": -9078.181757815319,
+          "y": 0,
+          "z": 404.1455981731415,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999809265137,
+          "floor_actor": "StaticMeshActor_9"
+        },
+        {
+          "seconds": 4.879866197705269,
+          "x": -8882.621747665244,
+          "y": 0,
+          "z": 404.1455981731415,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999952316284,
+          "floor_actor": "StaticMeshActor_9"
+        },
+        {
+          "seconds": 5.108836799860001,
+          "x": -8676.6297482328,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 5.322250097990036,
+          "x": -8484.477766268092,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 5.536452900618315,
+          "x": -8291.650068797308,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 5.737885598093271,
+          "x": -8111.16658788188,
+          "y": 0,
+          "z": 404.14999508857727,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999978542328,
+          "floor_actor": "StaticMeshActor_10"
+        },
+        {
+          "seconds": 5.95075199753046,
+          "x": -7919.205136634546,
+          "y": 0,
+          "z": 404.14999508857727,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999985694885,
+          "floor_actor": "StaticMeshActor_10"
+        },
+        {
+          "seconds": 6.17899239808321,
+          "x": -7713.572596795993,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 6.390317898243666,
+          "x": -7523.230696879464,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 6.617966499179602,
+          "x": -7318.254708163577,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 6.845647100359201,
+          "x": -7113.568877466159,
+          "y": 0,
+          "z": 404.15000081062317,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000071525574,
+          "floor_actor": "StaticMeshActor_11"
+        },
+        {
+          "seconds": 7.071645397692919,
+          "x": -6910.001118891078,
+          "y": 0,
+          "z": 404.15000081062317,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999978542328,
+          "floor_actor": "StaticMeshActor_11"
+        },
+        {
+          "seconds": 7.298875197768211,
+          "x": -6705.509597472983,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 7.524822797626257,
+          "x": -6502.383018694954,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 7.751867100596428,
+          "x": -6297.799246050554,
+          "y": 0,
+          "z": 402.14999890327454,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 7.978871300816536,
+          "x": -6093.568636514383,
+          "y": 0,
+          "z": 404.1499944925308,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999978542328,
+          "floor_actor": "StaticMeshActor_12"
+        },
+        {
+          "seconds": 8.193277798593044,
+          "x": -5900.54761882885,
+          "y": 0,
+          "z": 404.1499944925308,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000002384186,
+          "floor_actor": "StaticMeshActor_12"
+        },
+        {
+          "seconds": 8.419428799301386,
+          "x": -5697.089747004347,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 8.631952300667763,
+          "x": -5505.676217414575,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 8.845770999789238,
+          "x": -5314.100058786707,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 9.05895259976387,
+          "x": -5121.511305906015,
+          "y": 0,
+          "z": 404.14999878406525,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999930858612,
+          "floor_actor": "StaticMeshActor_13"
+        },
+        {
+          "seconds": 9.26165359839797,
+          "x": -4938.875208087402,
+          "y": 0,
+          "z": 404.14999878406525,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999969005585,
+          "floor_actor": "StaticMeshActor_13"
+        },
+        {
+          "seconds": 9.47441029921174,
+          "x": -4747.513428367811,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 9.70084910094738,
+          "x": -4543.759997226434,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 9.911614697426558,
+          "x": -4354.277326204019,
+          "y": 0,
+          "z": 402.1500006914139,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 10.13742670044303,
+          "x": -4150.936368517714,
+          "y": 0,
+          "z": 404.15000116825104,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999952316284,
+          "floor_actor": "StaticMeshActor_14"
+        },
+        {
+          "seconds": 10.363306898623705,
+          "x": -3947.7804463730627,
+          "y": 0,
+          "z": 404.15000116825104,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000858306885,
+          "floor_actor": "StaticMeshActor_14"
+        },
+        {
+          "seconds": 10.577635899186134,
+          "x": -3755.265497826176,
+          "y": 0,
+          "z": 402.1500073671341,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 10.80352259799838,
+          "x": -3551.4509559051567,
+          "y": 0,
+          "z": 402.1500073671341,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 299.99998474121094,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 11.016937900334597,
+          "x": -3359.314098246532,
+          "y": 0,
+          "z": 402.1500073671341,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 11.22852659970522,
+          "x": -3168.9324178175502,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999952316284,
+          "floor_actor": "StaticMeshActor_15"
+        },
+        {
+          "seconds": 11.445080798119307,
+          "x": -2973.999256678062,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000002384186,
+          "floor_actor": "StaticMeshActor_15"
+        },
+        {
+          "seconds": 11.655324399471283,
+          "x": -2784.7398762033754,
+          "y": 0,
+          "z": 402.84683072566986,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999861717224,
+          "floor_actor": "StaticMeshActor_15"
+        },
+        {
+          "seconds": 11.881483897566795,
+          "x": -2581.122345887261,
+          "y": 0,
+          "z": 402.14999878406525,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 12.096237998455763,
+          "x": -2387.9548963533216,
+          "y": 0,
+          "z": 402.14999878406525,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 12.323177497833967,
+          "x": -2183.628706298905,
+          "y": 0,
+          "z": 404.1500002145767,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000025033951,
+          "floor_actor": "StaticMeshActor_16"
+        },
+        {
+          "seconds": 12.551482900977135,
+          "x": -1978.2046076284223,
+          "y": 0,
+          "z": 404.1500002145767,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999933242798,
+          "floor_actor": "StaticMeshActor_16"
+        },
+        {
+          "seconds": 12.766540300101042,
+          "x": -1784.546655826407,
+          "y": 0,
+          "z": 402.8133715391159,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99998903274536,
+          "floor_actor": "StaticMeshActor_16"
+        },
+        {
+          "seconds": 12.96885709837079,
+          "x": -1602.4151888118558,
+          "y": 0,
+          "z": 402.15000212192535,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 13.181163400411606,
+          "x": -1411.4532761649662,
+          "y": 0,
+          "z": 402.15000212192535,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 299.99998474121094,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 13.38229290023446,
+          "x": -1230.3994670884185,
+          "y": 0,
+          "z": 402.15000212192535,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 13.596216898411512,
+          "x": -1037.9537262396389,
+          "y": 0,
+          "z": 404.150004029274,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999966621399,
+          "floor_actor": "StaticMeshActor_32"
+        },
+        {
+          "seconds": 13.80779130011797,
+          "x": -847.7488067374998,
+          "y": 0,
+          "z": 404.150004029274,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.000009059906,
+          "floor_actor": "StaticMeshActor_32"
+        },
+        {
+          "seconds": 14.035433400422335,
+          "x": -642.6488865540796,
+          "y": 0,
+          "z": 402.14999401569366,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 14.263497900217772,
+          "x": -437.4330480025583,
+          "y": 0,
+          "z": 402.14999401569366,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 14.490017000585794,
+          "x": -233.6392965541654,
+          "y": 0,
+          "z": 402.14999401569366,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 14.714912999421358,
+          "x": -31.26916777356201,
+          "y": 0,
+          "z": 404.1499983072281,
+          "speed_cm_per_second": 899.9999999999998,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999988079071,
+          "floor_actor": "StaticMeshActor_17"
+        },
+        {
+          "seconds": 14.95774519816041,
+          "x": 186.97894435362286,
+          "y": 0,
+          "z": 404.1499983072281,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999022483826,
+          "floor_actor": "StaticMeshActor_17"
+        },
+        {
+          "seconds": 15.182198397815228,
+          "x": 389.51170217232175,
+          "y": 0,
+          "z": 402.15000450611115,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 15.408550798892975,
+          "x": 592.9971135778851,
+          "y": 0,
+          "z": 402.15000450611115,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 15.621103897690773,
+          "x": 784.2542234434313,
+          "y": 0,
+          "z": 402.76191079616547,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999918937683,
+          "floor_actor": "StaticMeshActor_18"
+        },
+        {
+          "seconds": 15.863057799637318,
+          "x": 1002.3234121127552,
+          "y": 0,
+          "z": 404.1499980688095,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999165534973,
+          "floor_actor": "StaticMeshActor_18"
+        },
+        {
+          "seconds": 16.09151889756322,
+          "x": 1207.7937721832222,
+          "y": 0,
+          "z": 403.8118978738785,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999899864197,
+          "floor_actor": "StaticMeshActor_18"
+        },
+        {
+          "seconds": 16.317697998136282,
+          "x": 1411.4979713781304,
+          "y": 0,
+          "z": 402.14999282360077,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 16.535456400364637,
+          "x": 1603.304441235823,
+          "y": 0,
+          "z": 402.14999282360077,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 16.757174000144005,
+          "x": 1806.9090131296343,
+          "y": 0,
+          "z": 404.1499956846237,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999964237213,
+          "floor_actor": "StaticMeshActor_19"
+        },
+        {
+          "seconds": 16.982098400592804,
+          "x": 2009.3639231844372,
+          "y": 0,
+          "z": 404.1499956846237,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000014305115,
+          "floor_actor": "StaticMeshActor_19"
+        },
+        {
+          "seconds": 17.228805098682642,
+          "x": 2230.9927921368308,
+          "y": 0,
+          "z": 402.1500018835068,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 17.440656699240208,
+          "x": 2422.141272537274,
+          "y": 0,
+          "z": 402.1500018835068,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 17.657969299703836,
+          "x": 2613.9345123990006,
+          "y": 0,
+          "z": 402.1500018835068,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 17.880501300096512,
+          "x": 2817.963523752851,
+          "y": 0,
+          "z": 404.1500004529953,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999997615814,
+          "floor_actor": "StaticMeshActor_20"
+        },
+        {
+          "seconds": 18.094572197645903,
+          "x": 3010.6639638169236,
+          "y": 0,
+          "z": 404.1500004529953,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99998927116394,
+          "floor_actor": "StaticMeshActor_20"
+        },
+        {
+          "seconds": 18.30966930091381,
+          "x": 3203.8909919186062,
+          "y": 0,
+          "z": 404.1500004529953,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99917221069336,
+          "floor_actor": "StaticMeshActor_20"
+        },
+        {
+          "seconds": 18.520805399864912,
+          "x": 3394.189604334397,
+          "y": 0,
+          "z": 402.15000665187836,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 18.76446719840169,
+          "x": 3613.5172620041794,
+          "y": 0,
+          "z": 402.15000665187836,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 18.991956397891045,
+          "x": 3818.2384643329806,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999942779541,
+          "floor_actor": "StaticMeshActor_21"
+        },
+        {
+          "seconds": 19.20346900075674,
+          "x": 4008.625093437595,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000030994415,
+          "floor_actor": "StaticMeshActor_21"
+        },
+        {
+          "seconds": 19.42907689884305,
+          "x": 4211.619372255964,
+          "y": 0,
+          "z": 403.39678394794464,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999897480011,
+          "floor_actor": "StaticMeshActor_21"
+        },
+        {
+          "seconds": 19.656671598553658,
+          "x": 4416.487992144985,
+          "y": 0,
+          "z": 402.1499947309494,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 19.88960909843445,
+          "x": 4626.233622394366,
+          "y": 0,
+          "z": 402.1499947309494,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 20.102654300630093,
+          "x": 4817.803571708364,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999985694885,
+          "floor_actor": "StaticMeshActor_22"
+        },
+        {
+          "seconds": 20.315828397870064,
+          "x": 5009.771681539578,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999921321869,
+          "floor_actor": "StaticMeshActor_22"
+        },
+        {
+          "seconds": 20.53367369994521,
+          "x": 5205.917771123213,
+          "y": 0,
+          "z": 404.14999973773956,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99998354911804,
+          "floor_actor": "StaticMeshActor_22"
+        },
+        {
+          "seconds": 20.736547399312258,
+          "x": 5388.431922308964,
+          "y": 0,
+          "z": 402.1500059366226,
+          "speed_cm_per_second": 900.0000000000001,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 20.93875489756465,
+          "x": 5570.410664342207,
+          "y": 0,
+          "z": 402.1500059366226,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 21.140841100364923,
+          "x": 5752.290761433405,
+          "y": 0,
+          "z": 402.1500059366226,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 21.3688361980021,
+          "x": 5957.527212761206,
+          "y": 0,
+          "z": 404.150004863739,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999499320984,
+          "floor_actor": "StaticMeshActor_23"
+        },
+        {
+          "seconds": 21.584034100174904,
+          "x": 6151.171123199028,
+          "y": 0,
+          "z": 404.150004863739,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999978542328,
+          "floor_actor": "StaticMeshActor_23"
+        },
+        {
+          "seconds": 21.794770400971174,
+          "x": 6340.826682709021,
+          "y": 0,
+          "z": 402.1499948501587,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 22.00991589948535,
+          "x": 6534.451512582464,
+          "y": 0,
+          "z": 402.1499948501587,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 22.23826899752021,
+          "x": 6739.975513480467,
+          "y": 0,
+          "z": 402.1499948501587,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 22.467792499810457,
+          "x": 6946.6293714566655,
+          "y": 0,
+          "z": 404.1499993801117,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999833106995,
+          "floor_actor": "StaticMeshActor_24"
+        },
+        {
+          "seconds": 22.668423000723124,
+          "x": 7127.144713662428,
+          "y": 0,
+          "z": 404.1499993801117,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999966621399,
+          "floor_actor": "StaticMeshActor_24"
+        },
+        {
+          "seconds": 22.869386598467827,
+          "x": 7307.738533951206,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 23.08328089863062,
+          "x": 7500.488832928104,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 299.99998474121094,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 23.286655999720097,
+          "x": 7683.486733920736,
+          "y": 0,
+          "z": 402.15000557899475,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 299.99998474121094,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 23.500627297908068,
+          "x": 7876.119853891296,
+          "y": 0,
+          "z": 404.14999508857727,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99999928474426,
+          "floor_actor": "StaticMeshActor_25"
+        },
+        {
+          "seconds": 23.710920799523592,
+          "x": 8065.284642912311,
+          "y": 0,
+          "z": 404.14999508857727,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999966621399,
+          "floor_actor": "StaticMeshActor_25"
+        },
+        {
+          "seconds": 23.95598080009222,
+          "x": 8286.00964430706,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 24.170452900230885,
+          "x": 8478.911682553453,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 24.386250600218773,
+          "x": 8673.216013200445,
+          "y": 0,
+          "z": 402.1500012874603,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 24.59764989838004,
+          "x": 8863.357032425565,
+          "y": 0,
+          "z": 404.15000545978546,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000009536743,
+          "floor_actor": "StaticMeshActor_26"
+        },
+        {
+          "seconds": 24.812649000436068,
+          "x": 9056.86027105884,
+          "y": 0,
+          "z": 404.15000545978546,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000262260437,
+          "floor_actor": "StaticMeshActor_26"
+        },
+        {
+          "seconds": 25.028883699327707,
+          "x": 9251.57545242445,
+          "y": 0,
+          "z": 402.14999544620514,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 25.244054399430752,
+          "x": 9445.189033783836,
+          "y": 0,
+          "z": 402.14999544620514,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 25.446849800646305,
+          "x": 9627.769693694872,
+          "y": 0,
+          "z": 402.14999544620514,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 25.67295989766717,
+          "x": 9831.148721985383,
+          "y": 0,
+          "z": 404.1499996185303,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999907016754,
+          "floor_actor": "StaticMeshActor_27"
+        },
+        {
+          "seconds": 25.88565630093217,
+          "x": 10022.617873884601,
+          "y": 0,
+          "z": 404.1499996185303,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000262260437,
+          "floor_actor": "StaticMeshActor_27"
+        },
+        {
+          "seconds": 26.088588200509548,
+          "x": 10205.250732935829,
+          "y": 0,
+          "z": 404.1499996185303,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.99998140335083,
+          "floor_actor": "StaticMeshActor_27"
+        },
+        {
+          "seconds": 26.314399000257254,
+          "x": 10408.35004370646,
+          "y": 0,
+          "z": 402.15000581741333,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 26.516192100942135,
+          "x": 10590.023593939704,
+          "y": 0,
+          "z": 402.15000581741333,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 26.72796230018139,
+          "x": 10780.675453282756,
+          "y": 0,
+          "z": 402.15000581741333,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 26.942444998770952,
+          "x": 10973.656241185827,
+          "y": 0,
+          "z": 404.1499938964844,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999969005585,
+          "floor_actor": "StaticMeshActor_28"
+        },
+        {
+          "seconds": 27.157727397978306,
+          "x": 11167.525963447852,
+          "y": 0,
+          "z": 404.1499938964844,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.0000023841858,
+          "floor_actor": "StaticMeshActor_28"
+        },
+        {
+          "seconds": 27.374077800661325,
+          "x": 11362.239431552453,
+          "y": 0,
+          "z": 402.14999747276306,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 27.58566289767623,
+          "x": 11552.592942081255,
+          "y": 0,
+          "z": 402.14999747276306,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 27.799399700015783,
+          "x": 11745.003133602304,
+          "y": 0,
+          "z": 402.14999747276306,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 28.027361501008272,
+          "x": 11950.129151679439,
+          "y": 0,
+          "z": 404.14999651908875,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 301.9999990463257,
+          "floor_actor": "StaticMeshActor_29"
+        },
+        {
+          "seconds": 28.228321000933647,
+          "x": 12130.981094352765,
+          "y": 0,
+          "z": 404.14999651908875,
+          "speed_cm_per_second": 899.9999999999999,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 302.00000262260437,
+          "floor_actor": "StaticMeshActor_29"
+        },
+        {
+          "seconds": 28.4424857981503,
+          "x": 12323.705654181404,
+          "y": 0,
+          "z": 402.1500017642975,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 28.65670919790864,
+          "x": 12516.552881486577,
+          "y": 0,
+          "z": 402.1500017642975,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 28.885602798312902,
+          "x": 12722.645503990216,
+          "y": 0,
+          "z": 402.1500017642975,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300.00001525878906,
+          "floor_actor": "StaticMeshActor_2"
+        },
+        {
+          "seconds": 29.088802099227905,
+          "x": 12905.416691265864,
+          "y": 0,
+          "z": 402.1500017642975,
+          "speed_cm_per_second": 900,
+          "grounded": true,
+          "movement_mode": 1,
+          "floor_z": 300,
+          "floor_actor": "StaticMeshActor_2"
+        }
+      ]
+    },
+    "scope_limit": "Ground-bound CharacterMovement crossing and collision probes; no Chaos vehicle physics, water-height measurement or packaged build."
+  },
+  "previous_visual_evidence": {
+    "report": "coast-correction-report.json",
+    "response": "Bisher trocken",
+    "scope": "Earlier separate native Air Pocket Box centered at Z=0; this observation is not a visual test of the new component or its Z=600 placement."
+  },
+  "verification_limits": [
+    "Manual Blueprint Add Component and Blueprint node workflow not yet observed",
+    "No GPU height measurements; new visual evidence is limited to one inspected PIE frame",
+    "No endurance or all-wave-phase guarantee",
+    "No runtime SaveGame reconstruction of the tunnel component; no packaged build",
+    "Creates no tunnel meshes, hole brushes or solid collision; one straight box does not generate a curved tunnel"
+  ],
+  "sources": [
+    "Saved/McpDiagnostics/tunnel-component-automation.json in the original project; public export omits process identity",
+    "Saved/McpDiagnostics/tunnel-component-editor.json in the original project; saved map reload and native PIE property readbacks",
+    "Saved/McpDiagnostics/citybasics-test.json and citybasics-drive.json in the original project; public export omits process identity and local report/log paths",
+    "Source/UnrealMcpTest/CityLabTunnelComponent.h/.cpp and CityLabTunnelTests.cpp in the original project; not redistributed",
+    "coast-correction-report.json for the earlier standalone box only"
+  ],
+  "visual_rendering": {
+    "status": "one_pie_frame_captured_and_inspected",
+    "date": "2026-10-28",
+    "image": "assets/images/citybasics-dry-tunnel-component.png",
+    "capture_tool": "Native Unreal CaptureEditorImage",
+    "observation": "Visible tunnel interior with orange test buggy, unobstructed road surface and walls; no water visible in the inspected frame after migration, saved map reload and new PIE start.",
+    "new_user_confirmation": false,
+    "scope_limit": "One inspected frame only; no timed endurance, all-wave-phase, full-camera-route or GPU water-height proof."
+  },
+  "success": true,
+  "render_range_code_finding": {
+    "cvar": "sw.Water.AirPocketRange",
+    "default_cm": 30000,
+    "distance": "3D minimum distance from first render-camera origin to exclusion-group AABB",
+    "outside_range": "Group is not packed for the water material; CPU water-query membership remains independent of this render filter",
+    "zero_semantics": "Not unlimited; only groups whose AABB contains the camera have zero distance",
+    "larger_city_camera_range_tested": false,
+    "sources": [
+      "Source/ShaderWorld/Private/SWSceneViewExtension.cpp:6-10,143-155",
+      "Source/ShaderWorld/Private/Water/ShaderWorldAirPocket.cpp:69-86"
+    ]
+  }
+}

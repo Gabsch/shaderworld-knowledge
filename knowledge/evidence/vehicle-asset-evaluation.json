@@ -1,0 +1,139 @@
+{
+  "schema": "vehicle-asset-evaluation-v1",
+  "generated_utc": "2026-10-29T01:17:29.203633+00:00",
+  "engine": "5.8.4-58902052",
+  "plugin": "ShaderWorld 4.1",
+  "scope": "Separate saved asset/map reload, rendered editor pose samples and SimulateInEditor ticking. No terrain gameplay, cooked or performance acceptance.",
+  "map": "/Game/Maps/VehicleEvaluationLab",
+  "status": "complete_with_documented_limits",
+  "models": [
+    {
+      "id": "Liebherr956",
+      "mesh": "/Game/VehicleEvaluation/Liebherr956/Meshes/SK_Liebherr956.SK_Liebherr956",
+      "triangles_export": 1854664,
+      "vertices_export": 952118,
+      "bone_count": 162,
+      "material_slots": 43,
+      "dimensions_cm": [
+        1187.0267944335938,
+        369.4898223876953,
+        509.2547912597656
+      ],
+      "lod_count": 1,
+      "sections_lod0": 43,
+      "vertices_lod0": 2270319,
+      "animation_length_seconds": 5.0,
+      "animation_origin": "New demonstration; no original source clip",
+      "animation_unit_repair": {
+        "passed": true,
+        "expected_factor": 100.0,
+        "tested_bone_translations": 486,
+        "max_translation_error_cm": 0.0
+      },
+      "editor_sample_changed_bones": 80,
+      "editor_sample_max_delta": {
+        "translation_cm": 144.15812244148808,
+        "rotation_degrees": 9.0436065438553,
+        "scale": 0.0
+      },
+      "sie_changed_bones": 80,
+      "sie_playing": true,
+      "source_fbx_sha256": "82DA6AC1276E013784C7D29627F3FF329BAEAB30DB7D6C31A069433D71D31E92"
+    },
+    {
+      "id": "WheelLoader",
+      "mesh": "/Game/VehicleEvaluation/WheelLoader/Meshes/SK_WheelLoader.SK_WheelLoader",
+      "triangles_export": 327508,
+      "vertices_export": 165587,
+      "bone_count": 74,
+      "material_slots": 20,
+      "dimensions_cm": [
+        981.2578735351562,
+        363.04258728027344,
+        610.9951171875
+      ],
+      "lod_count": 1,
+      "sections_lod0": 20,
+      "vertices_lod0": 241704,
+      "animation_length_seconds": 5.0,
+      "animation_origin": "New demonstration; no original source clip",
+      "animation_unit_repair": {
+        "passed": true,
+        "expected_factor": 100.0,
+        "tested_bone_translations": 222,
+        "max_translation_error_cm": 0.0
+      },
+      "editor_sample_changed_bones": 42,
+      "editor_sample_max_delta": {
+        "translation_cm": 89.97088408171425,
+        "rotation_degrees": 29.361865476573286,
+        "scale": 0.0
+      },
+      "sie_changed_bones": 42,
+      "sie_playing": true,
+      "source_fbx_sha256": "638A96BB6F449E5674B264F638FA1B8C386FE72BB8293E5FB5AACCD292FB171F"
+    },
+    {
+      "id": "ElectroNick",
+      "mesh": "/Game/VehicleEvaluation/ElectroNick/Meshes/SK_ElectroNick.SK_ElectroNick",
+      "triangles_export": 34307,
+      "vertices_export": 18359,
+      "bone_count": 11,
+      "material_slots": 6,
+      "dimensions_cm": [
+        809.1505126953125,
+        302.62974548339844,
+        320.0223083496093
+      ],
+      "lod_count": 1,
+      "sections_lod0": 6,
+      "vertices_lod0": 31257,
+      "animation_length_seconds": 4.0,
+      "animation_origin": "New demonstration; no original source clip",
+      "animation_unit_repair": {
+        "passed": true,
+        "expected_factor": 100.0,
+        "tested_bone_translations": 33,
+        "max_translation_error_cm": 0.0
+      },
+      "editor_sample_changed_bones": 9,
+      "editor_sample_max_delta": {
+        "translation_cm": 0.0,
+        "rotation_degrees": 179.94434761958627,
+        "scale": 0.0
+      },
+      "sie_changed_bones": 8,
+      "sie_playing": true,
+      "source_fbx_sha256": "47F203A9E4D95D7A73679F704DB69CDAA807F8B7E8C1229237B1162E6B45BE8C"
+    }
+  ],
+  "checks": {
+    "completed_import": true,
+    "corrected_mesh_and_animation_units": true,
+    "separate_animation_unit_repair_and_direct_motion": true,
+    "unit_scale_factor_cm_per_fbx_unit": 100.0,
+    "uniform_import_scale": 1.0,
+    "owned_texture_and_six_decal_color_repair": true,
+    "original_source_images_preserved": true,
+    "editor_bone_motion": true,
+    "rendered_screenshot_reviewed_by": "codex/gpt-6",
+    "sie_world_time_advanced": true,
+    "sie_stopped_cleanly": true,
+    "existing_save_files_unchanged": 18
+  },
+  "historical_failures": [
+    "First import omitted scene-unit conversion and produced meshes 100 times too small; rejected by bounds acceptance.",
+    "An existing-FBX reimport switched to InterchangeAssetImportData, whose class does not expose the legacy convert_scene_unit property; readback aborted before saving and the process-local Legacy FBX route was used.",
+    "Oversized non-power-of-two mask triggered an automatic virtual-texture warning before bounded texture build settings."
+  ],
+  "limits": [
+    "New rigid evaluation rigs; Blender constraints/drivers are baked, not runtime Unreal solvers.",
+    "Liebherr and wheel loader need simplified hierarchical production rigs, LODs and material consolidation.",
+    "Liebherr hoses/track geometry remain rigid; no continuous belt drive. Demo loop discrepancy up to 3.35 mm.",
+    "Truck cab textures and several normal maps missing; delivered textures 512/1024 px, scalar roughness/metallic.",
+    "Truck source provenance remains unresolved despite listing CC-BY 4.0; isolated local technical evaluation only.",
+    "No PhysicsAssets were generated. Vehicle/body/bucket collision has not been tested.",
+    "No Chaos Vehicle setup, navigation, terrain work integration, mass-vehicle benchmark, cook or packaged acceptance.",
+    "Third-party models, textures and screenshots are not distributed in this public evidence."
+  ]
+}

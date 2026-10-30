@@ -1,0 +1,2141 @@
+{
+  "schema": "citylab.machine-earthworks.evidence.v1",
+  "status": "passed_with_limits",
+  "generated_at": "2026-10-29T02:48:04Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "city_save_format_version": 6,
+  "earthworks_record_version": 1,
+  "provenance": {
+    "native": "Final CityLab native automation index after the live-biome restoration fix; local paths and device identity removed.",
+    "rendered": "Actual create/resume reports and orchestrator result from an isolated two-process uncooked run.",
+    "sanitization": "No user paths, machine identity, process IDs, save files, plugin sources, vehicle assets or raw logs included.",
+    "normal_controller": "Actual normal EarthworksLab PIE controller report and saved editor map/material readback; no physical input or pixel claim.",
+    "cooked": "Fresh cook/stage/archive followed by two distinct rendered packaged Game processes on EarthworksLab; all checks and checkpoint equality validated by the Python orchestrator."
+  },
+  "native_automation": {
+    "status": "passed",
+    "total": 46,
+    "clean": 44,
+    "with_known_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "duration_seconds": 2.209578514099121,
+    "known_warning_scopes": [
+      "Test-world cleanup without a World Context in BoundedCitizenDetour.",
+      "Intentional rejection of an old already-applied WorldEditBackend-v1 paint in BackendMigration."
+    ],
+    "earthworks_tests": [
+      {
+        "name": "CityLab.Earthworks.AtomicCorruptionAndOverflowRejection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.InertQueueAndRealReservations",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.LoadedLowerAndRaiseRestartDeterminism",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.LowerRequiresCompleteWarehouseSpace",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.RevisionCancellationAndMaterialHistory",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.SameAreaCycleWithoutDoubleEarth",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Earthworks.TriangleBasisIntegralAndN3Bounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "underground_view_data_tests": [
+      {
+        "name": "CityLab.UndergroundView.BoundedClipAndSelection",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.UndergroundView.MaterialRestoreOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.UndergroundView.PerPlayerVisibilityOwnership",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      }
+    ],
+    "other_tests": [
+      {
+        "name": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.CollisionIgnoreBudgetFailsClosed",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.CollisionIgnoresOnlyTaggedShaderWorldTrees",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.CollisionPreservesSolidsBehindTrees",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.AdjacentWorkAndCompleteConservation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.AtomicRejectAndBinding",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.FillClosedCycleConservation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.FillMidHaulSerialization",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.FillRejectsCorruptionAtomically",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.FillStarvationPartialLoadsAndBackpressure",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.MidWorkSerializationDeterminism",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.PlanAndBoundedBuffer",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Construction.TransportAndStorageLimit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.CitizenDetoursNewNarrowPit",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.CitizenWaitsForPitAndRaisedStepRepair",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.DynamicCollisionProbeGate",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Navigation.RefreshPauseAndGroundRevalidation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Planner.OutsideStandsReachFinalHeight",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Planner.UnworkedProfilesRoundTrip",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.UndergroundProbe.BoundedProfile",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.UndergroundProbe.ProfileSerialization",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.LedgerRestoresOriginalTransformWithSnapshot",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.SparseVisualSnapshotInvalidation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.UnversionedLegacyFallback",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "limit": "Native logic/data/API tests do not establish rendered view pixels or normal physical input.",
+    "earlier_run": {
+      "total": 46,
+      "duration_seconds": 1.9233824014663696,
+      "status": "passed_with_same_two_known_warnings"
+    }
+  },
+  "uncooked": {
+    "status": "passed",
+    "rendered_processes": 2,
+    "distinct_process_restart": true,
+    "map_scope": {
+      "map": "/Game/Maps/ShaderWorldConstructionLab",
+      "game_mode_override": "/Script/UnrealMcpTest.CityLabEarthworksGameMode",
+      "render_offscreen": true,
+      "isolated_user_directory": true,
+      "guid_derived_test_slots": true,
+      "new_earthworks_lab_asset_start": "passed_separately_in_normal_PIE_with_native_controller_APIs",
+      "new_earthworks_lab_asset_cook": "passed_separately_with_fresh_cook_and_two_packaged_processes"
+    },
+    "profile": {
+      "scope": "Accelerated acceptance fixture, separate from the normal playable rates.",
+      "fixed_step_seconds": 0.25,
+      "earthwork_grams_per_step": 6000000,
+      "loading_grams_per_step": 12000000,
+      "unloading_grams_per_step": 12000000,
+      "buffer_capacity_grams": 18000000,
+      "truck_capacity_grams": 12000000,
+      "warehouse_capacity_grams": 1000000000,
+      "truck_speed_cm_per_second": 2000,
+      "digger_speed_cm_per_second": 1000,
+      "in_situ_density_kg_per_m3": 1800
+    },
+    "normal_save_files_unchanged": true,
+    "all_observed_ledger_balance_error_grams": 0,
+    "ledger_observations": 1011,
+    "full_records_match_across_restart": {
+      "truck_checkpoint": true,
+      "collision_pending_checkpoint": true
+    },
+    "probe_contract": {
+      "predictions": "Independent arithmetic in both the native verifier and Python checker from the persisted reference plus executed per-cell mass fractions.",
+      "tolerance_cm": 5,
+      "stable_passes": 3,
+      "points_per_batch": 25,
+      "max_accepted_error_cm": 4,
+      "accepted_samples_create": 300,
+      "accepted_samples_resume": 525,
+      "limit": "Initial missing/mismatching or refresh-pending observations are waits, not accepted work states. No independent mesh-volume or outside-control-area measurement."
+    },
+    "phases": [
+      {
+        "mode": "create",
+        "status": "passed",
+        "elapsed_seconds": 151.25331099703908,
+        "checks_passed": 10,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "source_plan_identity_preserved": true,
+          "preview_and_commit_are_inert": true,
+          "lower_completed_before_same_area_raise": true,
+          "stale_baseline_rejected_atomically": true,
+          "raise_uses_lowered_baseline": true,
+          "loaded_truck_checkpoint_saved": true,
+          "collision_pending_checkpoint_saved": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "ledger_observations": 504,
+        "repeat_loads": 0,
+        "collision_pending_at_save": true,
+        "snapshots": {
+          "baseline": {
+            "complete_record_hash": "6f4fd656ac9d8bbeb05f2e503b28f192",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": []
+          },
+          "planned": {
+            "complete_record_hash": "17800c8498b599b1bc6afe05bc146a26",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Queued",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "lower_completed": {
+            "complete_record_hash": "4634085bb4e9d1b554464210e15b4eed",
+            "record_version": 1,
+            "fixed_step_count": 249,
+            "geometry_revision": 18,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 86400000,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "truck_checkpoint": {
+            "complete_record_hash": "3e367a5826d9285a2031ac5bcbc60c3f",
+            "record_version": 1,
+            "fixed_step_count": 252,
+            "geometry_revision": 18,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToSite",
+            "truck_route_distance_cm": 6850.000000000149,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 0,
+              "truck_g": 12000000,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "pending_checkpoint": {
+            "complete_record_hash": "2870db03ecdbb7525605c3f4052833a9",
+            "record_version": 1,
+            "fixed_step_count": 268,
+            "geometry_revision": 19,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToWarehouse",
+            "truck_route_distance_cm": 500,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 6000000,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 6000000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  6000000,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          }
+        },
+        "independent_collision_probes": [
+          {
+            "phase": "baseline",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 11,
+            "max_accepted_error_cm": 0
+          },
+          {
+            "phase": "planned",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 0,
+            "max_accepted_error_cm": 0
+          },
+          {
+            "phase": "lower_completed",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 0,
+            "max_accepted_error_cm": 3
+          },
+          {
+            "phase": "truck_checkpoint",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 0,
+            "max_accepted_error_cm": 3
+          }
+        ]
+      },
+      {
+        "mode": "resume",
+        "status": "passed",
+        "elapsed_seconds": 134.3888722024858,
+        "checks_passed": 12,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "source_plan_identity_preserved": true,
+          "fresh_process_has_no_earthwork_jobs": true,
+          "different_process": true,
+          "truck_checkpoint_restored_exactly": true,
+          "pending_checkpoint_restored_exactly": true,
+          "pending_restore_rebuild_observed": true,
+          "cancel_after_transfer_does_not_rewind": true,
+          "three_reloads_exact_and_unique": true,
+          "same_area_material_cycle_completed": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "ledger_observations": 507,
+        "repeat_loads": 3,
+        "collision_pending_at_save": false,
+        "snapshots": {
+          "cold_baseline": {
+            "complete_record_hash": "361e67d64d68e076ca85bedfc00ddbd5",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": []
+          },
+          "truck_checkpoint": {
+            "complete_record_hash": "3e367a5826d9285a2031ac5bcbc60c3f",
+            "record_version": 1,
+            "fixed_step_count": 252,
+            "geometry_revision": 18,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToSite",
+            "truck_route_distance_cm": 6850.000000000149,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 0,
+              "truck_g": 12000000,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "pending_checkpoint": {
+            "complete_record_hash": "2870db03ecdbb7525605c3f4052833a9",
+            "record_version": 1,
+            "fixed_step_count": 268,
+            "geometry_revision": 19,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToWarehouse",
+            "truck_route_distance_cm": 500,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 6000000,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 6000000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  6000000,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "final": {
+            "complete_record_hash": "e4ea15faaef92c51be75c6df7b77fe79",
+            "record_version": 1,
+            "fixed_step_count": 513,
+            "geometry_revision": 36,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 86400000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 86400000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          }
+        },
+        "independent_collision_probes": [
+          {
+            "phase": "cold_baseline",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 28,
+            "max_accepted_error_cm": 0
+          },
+          {
+            "phase": "truck_restored",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 6,
+            "max_accepted_error_cm": 3
+          },
+          {
+            "phase": "pending_restored",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 4,
+            "max_accepted_error_cm": 3.4177653162429635
+          },
+          {
+            "phase": "reloaded",
+            "load_iteration": 1,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 4,
+            "max_accepted_error_cm": 3.4177653162429635
+          },
+          {
+            "phase": "reloaded",
+            "load_iteration": 2,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 4,
+            "max_accepted_error_cm": 3.4177653162429635
+          },
+          {
+            "phase": "reloaded",
+            "load_iteration": 3,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 3,
+            "max_accepted_error_cm": 3.4177653162429635
+          },
+          {
+            "phase": "completed",
+            "load_iteration": 0,
+            "accepted_batches": 3,
+            "points_per_batch": 25,
+            "matching_accepted_samples": 75,
+            "wait_or_unaccepted_batches": 0,
+            "max_accepted_error_cm": 4
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Development Game cooked Lower/Raise cycle passed; no Shipping run, packaged view screenshot or physical mouse-keyboard input acceptance.",
+    "Underground view pixels, local traces and queued-state cold editor restore have their own underground-view-test.json proof; they do not establish real excavation, water exclusion or city navigation.",
+    "The rendered fixture exercises N2 at 0.75 m on one same-area Lower/Raise cycle; N1/N3, capacity boundaries and competing queued plans have native model scope only.",
+    "The stale-baseline rendered case rejects an old preview at CommitPlan; a changed already-queued plan at StartJob and normal revision controls still need their own runtime acceptance.",
+    "Inert preview/commit accounts, absent height brushes and unchanged local ground are checked; no independent vegetation-pixel or timber-yield test.",
+    "Legacy schema fixtures and unchanged normal save files do not constitute a binary migration test for every archived real save.",
+    "Model grams use declared lab density and the triangle-basis integral; they are not independently measured physical mesh mass.",
+    "One soil type, fixed supplied routes, one active job/convoy, no automatic next-job activation, no general city logistics, compaction, mixed Flatten or timber accounting."
+  ],
+  "normal_controller": {
+    "status": "passed_with_limits",
+    "scope": "Normal EarthworksLab PIE controller APIs and existing Slate panel, verification flag false; no physical input claim.",
+    "own_slot": "CityLabEarthworks",
+    "map": "/Game/Maps/ShaderWorldEarthworksLab",
+    "initial_jobs": 0,
+    "missing_load_hint_did_not_disable_planning": true,
+    "confirmed_and_native_autosaved": true,
+    "exact_repeated_logical_loads": 3,
+    "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+    "confirmed_and_reloaded_state_hash": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+    "current_normal_slot": {
+      "jobs": 1,
+      "queued_unworked": true,
+      "work_paused": true,
+      "transport_enabled": false
+    },
+    "events": [
+      {
+        "step": 1,
+        "native_action_success": true,
+        "result": {},
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Anheben/Absenken planen. Arbeit und Transport sind ausdrueckliche Schalter.",
+        "state_hash": "5a88c40f6efaefa1f0fd6e1744a647e56d53ba20ea333859789dfadf8f176668",
+        "jobs": 0,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 2,
+        "native_action_success": false,
+        "result": null,
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Noch kein Erdarbeits-Spielstand vorhanden. Zuerst einen Plan bestaetigen oder speichern.",
+        "state_hash": "5a88c40f6efaefa1f0fd6e1744a647e56d53ba20ea333859789dfadf8f176668",
+        "jobs": 0,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 3,
+        "native_action_success": true,
+        "result": {
+          "target_valid": true
+        },
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": true,
+        "target_fixed": true,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Noch kein Erdarbeits-Spielstand vorhanden. Zuerst einen Plan bestaetigen oder speichern.",
+        "state_hash": "5a88c40f6efaefa1f0fd6e1744a647e56d53ba20ea333859789dfadf8f176668",
+        "jobs": 0,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 4,
+        "native_action_success": true,
+        "result": {
+          "confirmed_and_native_autosaved": true
+        },
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Plan gespeichert. Boden und Konten unveraendert; Arbeit und Transport gesondert starten.",
+        "state_hash": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "jobs": 1,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 5,
+        "native_action_success": true,
+        "result": {
+          "loaded_normal_earthworks_slot": true,
+          "scope": "Logical restore only; collision/pixels can still be rebuilding"
+        },
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Auftraege geladen. Bodenkollision wird wieder aufgebaut.",
+        "state_hash": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "jobs": 1,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 6,
+        "native_action_success": true,
+        "result": {
+          "loaded_normal_earthworks_slot": true,
+          "scope": "Logical restore only; collision/pixels can still be rebuilding"
+        },
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Auftraege geladen. Bodenkollision wird wieder aufgebaut.",
+        "state_hash": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "jobs": 1,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      },
+      {
+        "step": 7,
+        "native_action_success": true,
+        "result": {
+          "loaded_normal_earthworks_slot": true,
+          "scope": "Logical restore only; collision/pixels can still be rebuilding"
+        },
+        "initialized": true,
+        "verification_mode": false,
+        "preview_valid": false,
+        "target_fixed": false,
+        "cells_per_side": 2,
+        "amount_meters": 0.75,
+        "status_message": "Auftraege geladen. Bodenkollision wird wieder aufgebaut.",
+        "state_hash": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+        "jobs": 1,
+        "mass_balance_error_grams": 0,
+        "generic_read_only_snapshot_probe_available": false
+      }
+    ],
+    "limits": [
+      "Native API actions are not physical mouse/keyboard input acceptance.",
+      "The three Loads prove exact logical Earthworks state, not finished collision/pixels or a cold process restart.",
+      "An independent generic read-only snapshot probe hit its component limit; direct controller/backend status and canonical Earthworks hashes remain the reported observation paths.",
+      "A missing slot is a recoverable hint; an invalid existing save and its normal failure/restore UI path need their own acceptance."
+    ],
+    "cold_restart": {
+      "status": "passed",
+      "scope": "Separate cold editor starts with normal non-verifier controller, one queued unworked plan, paused work and transport off. Logical state restored before any work.",
+      "state_hash_kind": "sha256-canonical-earthworks-state-json-v1",
+      "restored_state_sha256": "2e87dab233ba2082735fa7f5b0de59eaaa6917ce1ff9dc682475e5b48fa6fd71",
+      "normal_slot_bytes_unchanged": true,
+      "legacy_save_files_unchanged": 102
+    }
+  },
+  "own_map_setup": {
+    "status": "passed_saved_readback_and_normal_PIE_start",
+    "map": "/Game/Maps/ShaderWorldEarthworksLab",
+    "source_map": "/Game/Maps/ShaderWorldConstructionLab",
+    "mode": "/Script/UnrealMcpTest.CityLabEarthworksGameMode",
+    "saved_map_readback": true,
+    "setup_save_game_operations": false,
+    "terrain_count": 1,
+    "terrain_main_material": "/Game/ShaderWorldRoadLab/Materials/MI_RoadLab_Terrain.MI_RoadLab_Terrain",
+    "terrain_far_material": "/Game/ShaderWorldRoadLab/Materials/MI_RoadLab_Terrain.MI_RoadLab_Terrain",
+    "cutaway_material_setup": {
+      "prepared": true,
+      "source": "/Game/ShaderWorldRoadLab/Materials/MI_RoadLab_Terrain.MI_RoadLab_Terrain",
+      "material": "/Game/CityLab/Underground/M_UndergroundCutaway.M_UndergroundCutaway",
+      "instance": "/Game/CityLab/Underground/MI_UndergroundCutaway.MI_UndergroundCutaway",
+      "source_instance_layers_preserved": 1,
+      "default_mask_enabled": false,
+      "rendered_acceptance": "passed_normal_editor_separately",
+      "scope": "Surface/Cutaway/Interior/Restore screenshots and local invariant component traces: see underground-view-test.json; no packaged view pixels."
+    },
+    "scope": "Own saved lab, normal PIE and fresh cooked map start passed; no general mixed-LOD performance guarantee."
+  },
+  "cooked": {
+    "status": "passed",
+    "rendered_processes": 2,
+    "distinct_process_restart": true,
+    "map_scope": {
+      "map": "/Game/Maps/ShaderWorldEarthworksLab",
+      "game_mode_override": "/Script/UnrealMcpTest.CityLabEarthworksGameMode",
+      "render_offscreen": true,
+      "isolated_user_directory": true,
+      "guid_derived_test_slots": true
+    },
+    "profile": {
+      "scope": "Accelerated acceptance fixture, separate from the normal playable rates.",
+      "fixed_step_seconds": 0.25,
+      "earthwork_grams_per_step": 6000000,
+      "loading_grams_per_step": 12000000,
+      "unloading_grams_per_step": 12000000,
+      "buffer_capacity_grams": 18000000,
+      "truck_capacity_grams": 12000000,
+      "warehouse_capacity_grams": 1000000000,
+      "truck_speed_cm_per_second": 2000,
+      "digger_speed_cm_per_second": 1000,
+      "in_situ_density_kg_per_m3": 1800
+    },
+    "normal_save_files_unchanged": true,
+    "all_observed_ledger_balance_error_grams": 0,
+    "ledger_observations": 965,
+    "full_records_match_across_restart": {
+      "truck_checkpoint": true,
+      "collision_pending_checkpoint": true
+    },
+    "probe_contract": {
+      "predictions": "Independent arithmetic in both the native verifier and Python checker from the persisted reference plus executed per-cell mass fractions.",
+      "tolerance_cm": 5,
+      "stable_passes": 3,
+      "points_per_batch": 25,
+      "max_accepted_error_cm": 4,
+      "accepted_samples_create": 300,
+      "accepted_samples_resume": 525,
+      "limit": "Initial missing/mismatching or refresh-pending observations are waits, not accepted work states. No independent mesh-volume or outside-control-area measurement."
+    },
+    "phases": [
+      {
+        "mode": "create",
+        "status": "passed",
+        "elapsed_seconds": 97.85468499734998,
+        "checks_passed": 10,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "source_plan_identity_preserved": true,
+          "preview_and_commit_are_inert": true,
+          "lower_completed_before_same_area_raise": true,
+          "stale_baseline_rejected_atomically": true,
+          "raise_uses_lowered_baseline": true,
+          "loaded_truck_checkpoint_saved": true,
+          "collision_pending_checkpoint_saved": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "ledger_observations": 488,
+        "repeat_loads": 0,
+        "collision_pending_at_save": true,
+        "snapshots": {
+          "baseline": {
+            "complete_record_hash": "3959788229f01ab0da1ba0ddc062b37f",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": []
+          },
+          "planned": {
+            "complete_record_hash": "f958bc4b552fc7e9c755db756039f94e",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Queued",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "lower_completed": {
+            "complete_record_hash": "9e4734936cc41b99cf84a515f95dd5e7",
+            "record_version": 1,
+            "fixed_step_count": 249,
+            "geometry_revision": 18,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 86400000,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "truck_checkpoint": {
+            "complete_record_hash": "3db51d12ae3b074749d0eb66586eb6d3",
+            "record_version": 1,
+            "fixed_step_count": 252,
+            "geometry_revision": 18,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToSite",
+            "truck_route_distance_cm": 6850.000000000149,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 0,
+              "truck_g": 12000000,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "pending_checkpoint": {
+            "complete_record_hash": "ed16c37c3a55626d34bf8ebaa8db0498",
+            "record_version": 1,
+            "fixed_step_count": 268,
+            "geometry_revision": 19,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToWarehouse",
+            "truck_route_distance_cm": 500,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 6000000,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 6000000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  6000000,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          }
+        }
+      },
+      {
+        "mode": "resume",
+        "status": "passed",
+        "elapsed_seconds": 95.39973239973187,
+        "checks_passed": 12,
+        "checks": {
+          "all_observed_ledgers_balance": true,
+          "source_plan_identity_preserved": true,
+          "fresh_process_has_no_earthwork_jobs": true,
+          "different_process": true,
+          "truck_checkpoint_restored_exactly": true,
+          "pending_checkpoint_restored_exactly": true,
+          "pending_restore_rebuild_observed": true,
+          "cancel_after_transfer_does_not_rewind": true,
+          "three_reloads_exact_and_unique": true,
+          "same_area_material_cycle_completed": true,
+          "unique_native_projection": true,
+          "independent_local_collision_heights": true
+        },
+        "ledger_observations": 477,
+        "repeat_loads": 3,
+        "collision_pending_at_save": false,
+        "snapshots": {
+          "cold_baseline": {
+            "complete_record_hash": "49f3c0e4aa147bf505f2fffcfc8305b2",
+            "record_version": 1,
+            "fixed_step_count": 0,
+            "geometry_revision": 0,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 0,
+              "placed_g": 0,
+              "deposited_g": 0,
+              "withdrawn_g": 0,
+              "balance_error_g": 0
+            },
+            "jobs": []
+          },
+          "truck_checkpoint": {
+            "complete_record_hash": "3db51d12ae3b074749d0eb66586eb6d3",
+            "record_version": 1,
+            "fixed_step_count": 252,
+            "geometry_revision": 18,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToSite",
+            "truck_route_distance_cm": 6850.000000000149,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 0,
+              "truck_g": 12000000,
+              "excavated_g": 86400000,
+              "placed_g": 0,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "pending_checkpoint": {
+            "complete_record_hash": "ed16c37c3a55626d34bf8ebaa8db0498",
+            "record_version": 1,
+            "fixed_step_count": 268,
+            "geometry_revision": 19,
+            "work_paused": false,
+            "transport_enabled": true,
+            "truck_phase": "ToWarehouse",
+            "truck_route_distance_cm": 500,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 74400000,
+              "reserved_g": 74400000,
+              "buffer_g": 6000000,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 6000000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 12000000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Active",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  6000000,
+                  0,
+                  0,
+                  0
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          },
+          "final": {
+            "complete_record_hash": "2aa9d7df5b879ab41be8fbce992d2729",
+            "record_version": 1,
+            "fixed_step_count": 513,
+            "geometry_revision": 36,
+            "work_paused": true,
+            "transport_enabled": false,
+            "truck_phase": "AtWarehouse",
+            "truck_route_distance_cm": 0,
+            "accounts": {
+              "initial_warehouse_g": 0,
+              "warehouse_g": 0,
+              "reserved_g": 0,
+              "buffer_g": 0,
+              "truck_g": 0,
+              "excavated_g": 86400000,
+              "placed_g": 86400000,
+              "deposited_g": 86400000,
+              "withdrawn_g": 86400000,
+              "balance_error_g": 0
+            },
+            "jobs": [
+              {
+                "operation": "Lower",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 1,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  300,
+                  300,
+                  300,
+                  300
+                ],
+                "target_heights_cm": [
+                  225,
+                  225,
+                  225,
+                  225
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              },
+              {
+                "operation": "Raise",
+                "status": "Completed",
+                "plan_revision": 1,
+                "plan_sequence": 2,
+                "source_plan_identity_matches_plan": true,
+                "job_and_plan_have_distinct_stable_ids": true,
+                "cells_per_side": 2,
+                "cell_size_cm": 400,
+                "amount_cm": 75,
+                "start_heights_cm": [
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432,
+                  223.9995422293432
+                ],
+                "target_heights_cm": [
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432,
+                  298.9995422293432
+                ],
+                "required_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "completed_cell_grams": [
+                  21600000,
+                  21600000,
+                  21600000,
+                  21600000
+                ],
+                "dense_baseline_samples": 49,
+                "dense_reference_samples": 49
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "limit": "Rendered native data/physics proof in Development Game, not physical input, packaged screenshot, Shipping, scalability or independent mesh-volume measurement."
+  },
+  "package_build": {
+    "success": true,
+    "fresh_cook": true,
+    "exit_code": 0,
+    "buildcookrun_seconds": 157.39,
+    "cook_commandlet_seconds": 105.91,
+    "uat_wall_seconds": 160,
+    "engine_version": "5.8.4",
+    "plugin_version": "4.1",
+    "level_blueprint_warning_maps": [
+      "ShaderWorldCityLoop",
+      "ShaderWorldEarthworksLab",
+      "ShaderWorldPlannerLab",
+      "ShaderWorldConstructionLab",
+      "ShaderWorldFoundations"
+    ],
+    "warning_scope": "Inherited Level Blueprint unknown-node reference to invalid level actor; no cook failure; not repaired by this slice",
+    "executable_sha256": "62931e2ec0e3371e4c2b075a2f966832b7e261af2c4244d80f4fa0144fd0d833",
+    "executable_bytes": 344609792,
+    "stage_manifest_sha256": "47cf334dc41ff684bf50a0b6c88698299eae62f7029af19bf1de711d237fa479",
+    "new_map_and_materials_staged": true,
+    "vehicle_evaluation_staged_records": 32,
+    "electronick_records": 0,
+    "liebherr_records": 0,
+    "scope": "Build/cook/stage/archive proof only; not packaged runtime or pixels"
+  }
+}

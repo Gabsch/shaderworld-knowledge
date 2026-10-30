@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_explicit_interaction_limits",
+  "scope": "Fix for wrong ground-radius tree targeting and missing native ShaderWorld render-tree publication. Source/geometry, rendered normal-PIE backend pixel acceptance, and cooked CPU/physics/persistence regressions are independent evidence.",
+  "causes": [
+    {
+      "old_selection": "C projected through canopy to ground and selected an uncleared trunk in an 800 cm XY radius; a different tree could be removed.",
+      "new_selection": "Fresh exact mouse ray; nearest tagged visual tree transformed local mesh bounds before terrain or solid occluders. No radius fallback. The Roden tool previews a yellow box; the bounds approximate the crown silhouette."
+    },
+    {
+      "old_render_commit": "CPU instance-transform changes and MarkRenderStateDirty did not reliably publish the ExternalLegacyData instance buffer.",
+      "new_render_commit": "Changed visual pools are queued and refreshed through native SWUpdateTree when mesh data is ready; native concurrent-build handling restarts as needed. No plugin patch, no forbidden UE BuildTreeIfOutdated call."
+    }
+  ],
+  "builds": {
+    "editor": "passed",
+    "game_development": "passed",
+    "package_windows_development": "passed",
+    "package_method": "Re-stage and archive with SkipCook after code-only changes; existing cooked assets reused."
+  },
+  "native_automation": {
+    "succeeded": 10,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "tests": [
+      {
+        "name": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "name": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "scope": "NullRHI C++ geometry/state tests, including CursorRayBounds; no normal mouse or GPU pixel evidence.",
+    "known_warnings": [
+      "Cleanup of intentionally created testworld citizen without a world context.",
+      "Intentionally rejected historical applied paint record."
+    ]
+  },
+  "normal_pie_pixels": {
+    "method": "Native editor console/Python calls the reflected ray picker and clearing/persistence backend in the real normal PIE world. Separate test slots preserve the user city. Fixed top-down camera, same exact target/control across before/after/load frames.",
+    "actual_C_key_path_exercised": false,
+    "yellow_preview_interaction_verified": false,
+    "reason": "The native input harness did not establish actual game viewport focus; production focus/UI guards were retained.",
+    "target_crown_visible_before": true,
+    "target_crown_visibly_absent_after_clear": true,
+    "target_crown_visibly_absent_after_load": true,
+    "control_crown_visibly_preserved": true,
+    "control_live_resource_id_unchanged_after_load": true,
+    "control_transform_values_unchanged_after_load": true,
+    "target_live_lookup_after_load": false,
+    "first_oblique_probe_render_refresh_requests": 1,
+    "request_count_is_GPU_completion_counter": false,
+    "first_oblique_probe_target_CPU_nonzero_visual_matches": 0,
+    "first_oblique_probe_target_active_collision_matches": 0,
+    "inspect_resource_scope": "Only ledger entries are inspected. Default zero counts for an uncleared ID do not establish absence; control was separately queried by its original anchor and compared by value.",
+    "images": [
+      "../assets/images/tree-clearing-before.png",
+      "../assets/images/tree-clearing-after.png",
+      "../assets/images/tree-clearing-loaded.png"
+    ],
+    "visual_review": "Agent inspected all three unchanged original full frames; target crown at orange center marker disappears, blue control neighbor remains. No automated pixel equality test; water, wind, foliage and temporal effects vary."
+  },
+  "cooked_regression": {
+    "success": true,
+    "requires_cooked_data": true,
+    "distinct_fresh_processes": 2,
+    "scope": "Terrain/physics, CPU visual-transform arrays, active collision instances, real vegetation regeneration, 30-second observation and repeated save/load. These checks do not independently inspect tree GPU pixels.",
+    "phases": [
+      {
+        "mode": "create",
+        "success": true,
+        "elapsed_wall_seconds": 120.5,
+        "checks": {
+          "height_backend_ready_before_execution_and_restore": true,
+          "baseline_real_collision_and_vegetation": true,
+          "preview_uses_real_terrain": true,
+          "revise_keeps_stable_id_and_sequence": true,
+          "undo_restores_unworked_plan": true,
+          "foreign_binding_and_duplicate_ids_rejected": true,
+          "planning_spawns_no_backends": true,
+          "planning_undo_cancel_leave_actual_world_unchanged": true,
+          "same_edit_cannot_apply_twice": true,
+          "executed_edit_cannot_plan_undo_revise_cancel": true,
+          "raise_changes_actual_collision_height": true,
+          "lower_changes_actual_collision_height": true,
+          "flatten_sets_absolute_actual_collision_height": true,
+          "actual_execution_order_independent_of_plan_order": true,
+          "native_material_paint_layer_only_registered_id_and_height": true,
+          "paint_fixture_core_side_and_forest_initially_vegetated": true,
+          "physical_core_and_side_masks_clear_actual_vegetation": true,
+          "paint_preserves_physical_core_and_side_no_growth": true,
+          "paint_keeps_separate_forest_control_unchanged": true,
+          "tagged_tree_and_control_initially_visible_and_collidable": true,
+          "single_tree_visual_and_collision_cleared_control_unchanged": true,
+          "cleared_tree_stays_absent_after_real_instance_regeneration": true,
+          "vegetation_rebuild_observed_stable_30_seconds": true,
+          "logical_format4_snapshot_complete": true,
+          "invalid_identity_snapshot_rejected_atomically": true,
+          "paint_core_side_masks_and_forest_preserved_across_loads": true,
+          "restored_planned_and_cancelled_records_create_no_backends": true,
+          "three_repeated_loads_do_not_duplicate_records_or_backends": true,
+          "screenshot_saved": true
+        },
+        "physics_sample_count": 324,
+        "repeat_load_count": 3
+      },
+      {
+        "mode": "resume",
+        "success": true,
+        "elapsed_wall_seconds": 70.8,
+        "checks": {
+          "height_backend_ready_before_execution_and_restore": true,
+          "cold_world_has_original_terrain_and_tree_before_load": true,
+          "paint_fixture_core_side_and_forest_initially_vegetated": true,
+          "physical_core_and_side_masks_clear_actual_vegetation": true,
+          "paint_preserves_physical_core_and_side_no_growth": true,
+          "paint_keeps_separate_forest_control_unchanged": true,
+          "paint_core_side_masks_and_forest_preserved_across_loads": true,
+          "restored_planned_and_cancelled_records_create_no_backends": true,
+          "different_process_restores_actual_edits_and_tree_state": true,
+          "invalid_identity_snapshot_rejected_atomically": true,
+          "three_repeated_loads_do_not_duplicate_records_or_backends": true,
+          "screenshot_saved": true
+        },
+        "physics_sample_count": 288,
+        "repeat_load_count": 3
+      }
+    ]
+  },
+  "limits": [
+    "Subsequent user feedback confirms trying the corrected clearing; the native screenshot probe itself did not exercise C or yellow preview. Preview-specific details and focus/occlusion edge cases remain unverified.",
+    "Tree mesh bounds approximate leaves and may contain empty crown space; no exact per-leaf silhouette picking.",
+    "RenderRefreshRequests counts requests, not a GPU fence or guaranteed latency.",
+    "The preview additionally scans tree pools at up to 5 Hz. Large-world or large-clearing performance is unmeasured; existing periodic rescan optimization remains planned.",
+    "No packaged per-tree pixel acceptance, Shipping test, general collision-driving proof, wood yield, machinery, or production clearing economy."
+  ],
+  "publication": {
+    "only_sanitized_report_and_own_screenshots": true,
+    "local_paths_save_slots_resource_ids_credentials_not_included": true
+  },
+  "user_confirmation": {
+    "date": "2026-10-28",
+    "source": "Direct user feedback in the active project conversation after the corrected clearing was provided.",
+    "quote": "Awesome. getested. 👍",
+    "scope": "The user confirms having tried the corrected clearing. This is subsequent human feedback, separate from the earlier native backend screenshot probe.",
+    "corrected_clearing_tried_and_confirmed": true,
+    "individual_C_key_sequence_independently_recorded": false,
+    "yellow_preview_explicitly_confirmed": false,
+    "all_focus_and_occlusion_edges_verified": false,
+    "limitations": "No detailed input trace, preview-specific statement, exhaustive focus/occlusion pass, performance measurement, or packaged pixel acceptance can be inferred from this short confirmation."
+  }
+}

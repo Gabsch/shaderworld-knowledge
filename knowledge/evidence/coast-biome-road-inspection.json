@@ -1,0 +1,113 @@
+{
+  "inspection_date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "map": "/Game/Maps/ShaderWorldCityBasics",
+  "scope": "Read-only PIE property/material wiring queries, installed asset and code inspection, own setup script review. No water or vegetation changes applied; no new runtime behavior test.",
+  "user_observations": {
+    "waves_visible_through_island": "Reported by user; exact location, time and cache state not reproduced or measured.",
+    "forest_plants_underwater": "Reported by user; current biome and altitude settings inspected."
+  },
+  "live_property_readbacks": {
+    "ground": {
+      "data_receiver_is_ocean": true,
+      "data_source": null,
+      "biome": "/ShaderWorld/Spawnables/SW_GreenBiom",
+      "surface_height_plateau_cm": 300,
+      "seabed_height_cm": -1800
+    },
+    "ocean": {
+      "data_source_is_ground": true,
+      "biomes": [],
+      "generate_collision": false,
+      "base_height_cm": 0,
+      "wind_speed_m_s": 14,
+      "amplitude": 1,
+      "shallow_attenuation": 0.949999988079071,
+      "max_attenuation_depth": 0,
+      "choppiness": 1.600000023841858,
+      "foam": true,
+      "shore_foam_depth": 30
+    },
+    "biome_layer_parameters": {
+      "Ocean Height": 0,
+      "Add Sand to beach": 100,
+      "Biom_ID": 0,
+      "Sand": 0,
+      "SandGrass": 0
+    },
+    "forest_spawnable_altitude_ranges_cm": {
+      "SW_Tree": {
+        "min": -9150,
+        "max": 10000000
+      },
+      "SW_Grass_Close": {
+        "min": -9550,
+        "max": 10000000
+      },
+      "SW_Grass_Distant_mixed": {
+        "min": -9550,
+        "max": 10000000
+      }
+    },
+    "ocean_material": {
+      "asset": "/ShaderWorld/Demo_Ocean/Material/M_Ocean_Material",
+      "blend_mode": "BLEND_Masked",
+      "uses_material_attributes": true,
+      "exclusion_wiring_confirmed": "ShaderWorldWaterExclusion_0 Opacity Mask output -> Multiply_0 input B -> MakeMaterialAttributes_0 OpacityMask -> material attributes output"
+    }
+  },
+  "installed_asset_findings": {
+    "biome_assets": [
+      "/ShaderWorld/Demo_Blank/SW_BlankBiom",
+      "/ShaderWorld/Demo_Heightmap/Spawnables/Grass/SWS_BiomHeightDemo",
+      "/ShaderWorld/Spawnables/SW_GreenBiom",
+      "/ShaderWorld/Spawnables/SW_GreenBiomArray",
+      "/ShaderWorld/Spawnables/SW_BiomOceanMap"
+    ],
+    "ocean_map_biome": "Black Alder trees, ordinary grass and rocks; land-oriented variants, not a marine flora collection.",
+    "ocean_map_forest_min_altitude_cm": {
+      "SW_Tree_Oceanmap": 600,
+      "SW_Grass_Close_OceanMap": 450,
+      "SW_Grass_Distant_OceanMap": 450
+    },
+    "marine_plant_asset_search": "No matching marine flora assets found among the installed asset names or the five biome assets. This does not limit custom spawnables."
+  },
+  "code_findings": {
+    "shore_attenuation": "Terrain heights affect spectrum displacement through Ocean DataSource. Attenuation 1 removes local waves on land; 0.95 retains 5 percent. Uncovered terrain cache is treated as deep water.",
+    "wave_failure_diagnosis": "Correct actor references do not prove valid GPU cache coverage. Five percent residual waves alone do not establish the cause of waves crossing a 3 m plateau.",
+    "water_exclusion": "Native Air Pocket Box, Capsule and Spline Tube affect water queries. Visual removal requires a masked water material with Water Exclusion connected; the current material wiring was confirmed, but no volume behavior was tested.",
+    "cpu_water_sampling": "The inspected CPU ocean provider documents deep-water evaluation without coastal attenuation; gameplay and rendered shoreline need separate tests.",
+    "vegetation": "Spawnable altitude intervals are evaluated against ground height. The old negative minima permit vegetation at the new -1800 cm seabed. Water height is not automatically substituted for these ranges."
+  },
+  "road_composition": {
+    "dirt_approaches": "Native ShaderWorld SWSplineRoadComponent; terrain shaping and AltitudeBasedLayer material/biome writes.",
+    "road_surface_layer": "RedGround core, Sand sides, biome ID 3 excludes normal forest spawning.",
+    "tunnel_asphalt": "Own scaled Engine Cube mesh with a simple dark material.",
+    "yellow_center_lines": "Own narrow Engine Cube meshes with a yellow material.",
+    "road_creator_pro_used_here": false,
+    "decals_or_rvt_blending_used_here": false,
+    "road_creator_integration_status": "Separate older test road exists. Shared terrain adjustment and runtime support are not verified."
+  },
+  "unperformed_tests": [
+    "Reproduce wave penetration at a measured position and time",
+    "Compare attenuation 0.95 and 1 with confirmed terrain cache coverage",
+    "Air Pocket render and water-query behavior",
+    "Project-only forest spawnable copies with a positive minimum altitude",
+    "Shared Road Creator Pro and ShaderWorld spline integration"
+  ],
+  "sources": [
+    "Tools/setup_basics.py (original project; not redistributed)",
+    "Source/ShaderWorld/Public/Producers/ShaderWorldComputeProducer.h",
+    "Shaders/Private/ShaderWorldComputeProducers.usf",
+    "Source/ShaderWorld/Private/Actor/ShaderWorldActor_Ocean.cpp",
+    "Source/ShaderWorld/Public/Water/ShaderWorldAirPocketComponents.h",
+    "Source/ShaderWorld/Private/Water/ShaderWorldWaterSubsystem.cpp",
+    "Source/ShaderWorld/Public/MaterialInterface/ShaderWorldWaterExclusion.h",
+    "Source/ShaderWorld/Private/Water/ShaderWorldOceanWaterProvider.h",
+    "Source/ShaderWorld/Public/Data/ShaderWorld_Spawnable.h",
+    "Source/ShaderWorld/Private/Data/SWStructs.cpp",
+    "Shaders/Private/ShaderWorldUtilities.usf",
+    "Shaders/Private/ShaderWorldUtilities.ush"
+  ]
+}

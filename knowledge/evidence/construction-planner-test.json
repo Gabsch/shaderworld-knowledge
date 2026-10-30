@@ -1,0 +1,463 @@
+{
+  "date": "2026-10-29",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_explicit_input_and_lab_limits",
+  "scope": "One paired flat worksite, fixed validated haul routes, one soil material. No arbitrary terrain/traffic/hydrology claim.",
+  "save_game_format": 5,
+  "record_versions_preserved": [
+    1,
+    2
+  ],
+  "native_suite": {
+    "passed": 36,
+    "clean": 34,
+    "with_known_warnings": 2,
+    "failed": 0,
+    "duration_seconds": 2.0683839321136475,
+    "new_planner_tests": [
+      "CityLab.Planner.OutsideStandsReachFinalHeight",
+      "CityLab.Planner.UnworkedProfilesRoundTrip"
+    ],
+    "new_cache_and_hybrid_tests": [
+      "CityLab.UndergroundProbe.BoundedProfile",
+      "CityLab.UndergroundProbe.ProfileSerialization",
+      "CityLab.Vegetation.LedgerRestoresOriginalTransformWithSnapshot",
+      "CityLab.Vegetation.SparseVisualSnapshotInvalidation",
+      "CityLab.Vegetation.UnversionedLegacyFallback"
+    ]
+  },
+  "phases": {
+    "uncooked": {
+      "success": true,
+      "isolated_process_count": 4,
+      "phases": [
+        {
+          "mode": "plan",
+          "success": true,
+          "elapsed_seconds": 29.079538200050592,
+          "checks": {
+            "preview_sizes_and_analytic_mass": true,
+            "invalid_size_and_amount_rejected": true,
+            "physical_obstacle_rejected": true,
+            "hover_has_no_committed_state": true,
+            "hover_has_no_backends": true,
+            "plans_inert": true,
+            "committed_projection_unique": true,
+            "saved_unworked_model": true
+          },
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 1,
+            "step": 0,
+            "paused": true,
+            "transport": false,
+            "excavated_g": 0,
+            "source_remaining_g": 14400000,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 0,
+            "fill_remaining_g": 0,
+            "withdrawn_g": 0,
+            "fill_delivered_g": 0,
+            "source_delivered_g": 0,
+            "balance_error_g": 0,
+            "fill_truck_phase": "AtSite",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 27,
+            "matching_sample_count": 27,
+            "max_matching_error_cm": 0,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          },
+          "previous_saved_checkpoint": "not_applicable: first fresh process creates the initial unworked save."
+        },
+        {
+          "mode": "pit",
+          "success": true,
+          "elapsed_seconds": 7.354666501283646,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "unworked_exact_restore": true,
+            "unworked_restore_no_material_moved": true,
+            "unworked_unique_projection": true,
+            "cancel_unworked_source": true,
+            "fill_preview_exact_demand": true,
+            "plans_inert": true,
+            "committed_projection_unique": true,
+            "saved_unworked_model": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 0,
+            "paused": true,
+            "transport": false,
+            "excavated_g": 0,
+            "source_remaining_g": 86400000,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 0,
+            "fill_remaining_g": 86400000,
+            "withdrawn_g": 0,
+            "fill_delivered_g": 0,
+            "source_delivered_g": 0,
+            "balance_error_g": 0,
+            "fill_truck_phase": "AtSite",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 144,
+            "matching_sample_count": 81,
+            "max_matching_error_cm": 0,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        },
+        {
+          "mode": "pair",
+          "success": true,
+          "elapsed_seconds": 35.92923440039158,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "unworked_exact_restore": true,
+            "unworked_restore_no_material_moved": true,
+            "unworked_unique_projection": true,
+            "plans_inert": true,
+            "two_sites_unique": true,
+            "immutable_plans": true,
+            "warehouse_and_loaded_fill_motion": true,
+            "checkpoint_ground_both_sites": true,
+            "saved_complete_model": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 31,
+            "paused": false,
+            "transport": true,
+            "excavated_g": 54000000,
+            "source_remaining_g": 32400000,
+            "source_buffer_g": 18000000,
+            "source_truck_g": 0,
+            "warehouse_g": 12000000,
+            "fill_truck_g": 12000000,
+            "fill_buffer_g": 0,
+            "placed_g": 12000000,
+            "fill_remaining_g": 74400000,
+            "withdrawn_g": 24000000,
+            "fill_delivered_g": 12000000,
+            "source_delivered_g": 36000000,
+            "balance_error_g": 0,
+            "fill_truck_phase": "ToStorage",
+            "fill_truck_distance_cm": 1000
+          },
+          "ground": {
+            "sample_count": 162,
+            "matching_sample_count": 162,
+            "max_matching_error_cm": 1.7505493247881532,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        },
+        {
+          "mode": "resume",
+          "success": true,
+          "elapsed_seconds": 115.33380400016904,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "immutable_plans": true,
+            "complete_model_restored": true,
+            "no_projection_duplicates": true,
+            "all_soil_reused": true,
+            "final_ground_both_sites": true,
+            "final_projection_unique": true,
+            "completed_model_saved": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 3,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 176,
+            "paused": false,
+            "transport": true,
+            "excavated_g": 86400000,
+            "source_remaining_g": 0,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 86400000,
+            "fill_remaining_g": 0,
+            "withdrawn_g": 86400000,
+            "fill_delivered_g": 86400000,
+            "source_delivered_g": 86400000,
+            "balance_error_g": 0,
+            "fill_truck_phase": "Completed",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 270,
+            "matching_sample_count": 270,
+            "max_matching_error_cm": 3.0016174563206732,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        }
+      ]
+    },
+    "cooked": {
+      "success": true,
+      "isolated_process_count": 4,
+      "phases": [
+        {
+          "mode": "plan",
+          "success": true,
+          "elapsed_seconds": 2.0451573990285397,
+          "checks": {
+            "preview_sizes_and_analytic_mass": true,
+            "invalid_size_and_amount_rejected": true,
+            "physical_obstacle_rejected": true,
+            "hover_has_no_committed_state": true,
+            "hover_has_no_backends": true,
+            "plans_inert": true,
+            "committed_projection_unique": true,
+            "unworked_brushes_disabled_and_no_growth_mask": true,
+            "saved_unworked_model": true
+          },
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 1,
+            "step": 0,
+            "paused": true,
+            "transport": false,
+            "excavated_g": 0,
+            "source_remaining_g": 14400000,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 0,
+            "fill_remaining_g": 0,
+            "withdrawn_g": 0,
+            "fill_delivered_g": 0,
+            "source_delivered_g": 0,
+            "balance_error_g": 0,
+            "fill_truck_phase": "AtSite",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 27,
+            "matching_sample_count": 27,
+            "max_matching_error_cm": 0,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          },
+          "previous_saved_checkpoint": "not_applicable: first fresh process creates the initial unworked save."
+        },
+        {
+          "mode": "pit",
+          "success": true,
+          "elapsed_seconds": 2.1227537021040916,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "unworked_exact_restore": true,
+            "unworked_restore_no_material_moved": true,
+            "unworked_unique_projection": true,
+            "cancel_unworked_source": true,
+            "fill_preview_exact_demand": true,
+            "plans_inert": true,
+            "committed_projection_unique": true,
+            "unworked_brushes_disabled_and_no_growth_mask": true,
+            "saved_unworked_model": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 0,
+            "paused": true,
+            "transport": false,
+            "excavated_g": 0,
+            "source_remaining_g": 86400000,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 0,
+            "fill_remaining_g": 86400000,
+            "withdrawn_g": 0,
+            "fill_delivered_g": 0,
+            "source_delivered_g": 0,
+            "balance_error_g": 0,
+            "fill_truck_phase": "AtSite",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 90,
+            "matching_sample_count": 81,
+            "max_matching_error_cm": 0,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        },
+        {
+          "mode": "pair",
+          "success": true,
+          "elapsed_seconds": 31.14223800227046,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "unworked_exact_restore": true,
+            "unworked_restore_no_material_moved": true,
+            "unworked_unique_projection": true,
+            "plans_inert": true,
+            "two_sites_unique": true,
+            "immutable_plans": true,
+            "warehouse_and_loaded_fill_motion": true,
+            "checkpoint_ground_both_sites": true,
+            "saved_complete_model": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 0,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 31,
+            "paused": false,
+            "transport": true,
+            "excavated_g": 54000000,
+            "source_remaining_g": 32400000,
+            "source_buffer_g": 18000000,
+            "source_truck_g": 0,
+            "warehouse_g": 12000000,
+            "fill_truck_g": 12000000,
+            "fill_buffer_g": 0,
+            "placed_g": 12000000,
+            "fill_remaining_g": 74400000,
+            "withdrawn_g": 24000000,
+            "fill_delivered_g": 12000000,
+            "source_delivered_g": 36000000,
+            "balance_error_g": 0,
+            "fill_truck_phase": "ToStorage",
+            "fill_truck_distance_cm": 1000
+          },
+          "ground": {
+            "sample_count": 180,
+            "matching_sample_count": 162,
+            "max_matching_error_cm": 1.7505493247881532,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        },
+        {
+          "mode": "resume",
+          "success": true,
+          "elapsed_seconds": 105.94452640041709,
+          "checks": {
+            "fresh_process_has_no_sites": true,
+            "different_process": true,
+            "phase_checkpoint_kind": true,
+            "immutable_plans": true,
+            "complete_model_restored": true,
+            "no_projection_duplicates": true,
+            "all_soil_reused": true,
+            "final_ground_both_sites": true,
+            "final_projection_unique": true,
+            "completed_model_saved": true
+          },
+          "complete_state_hash_matches_previous_saved_checkpoint": true,
+          "repeat_loads": 3,
+          "final_ledger": {
+            "record_version": 2,
+            "step": 176,
+            "paused": false,
+            "transport": true,
+            "excavated_g": 86400000,
+            "source_remaining_g": 0,
+            "source_buffer_g": 0,
+            "source_truck_g": 0,
+            "warehouse_g": 0,
+            "fill_truck_g": 0,
+            "fill_buffer_g": 0,
+            "placed_g": 86400000,
+            "fill_remaining_g": 0,
+            "withdrawn_g": 86400000,
+            "fill_delivered_g": 86400000,
+            "source_delivered_g": 86400000,
+            "balance_error_g": 0,
+            "fill_truck_phase": "Completed",
+            "fill_truck_distance_cm": 0
+          },
+          "ground": {
+            "sample_count": 270,
+            "matching_sample_count": 270,
+            "max_matching_error_cm": 3.0016174563206732,
+            "tolerance_cm": 5,
+            "acceptance_gate": "Three consecutive full passing local sample sets; resume also performs three further loads. Initial waiting/mismatching samples are retained privately."
+          }
+        }
+      ],
+      "map_scope": {
+        "map": "/Game/Maps/ShaderWorldConstructionLab",
+        "game_mode_override": "/Script/UnrealMcpTest.CityLabPlannerGameMode",
+        "packaging": "Development game after successful SkipCook repackage using existing cooked assets.",
+        "new_planner_map_asset": "/Game/Maps/ShaderWorldPlannerLab saved/read-back in Editor and added to MapsToCook; own new map Cook and packaged map launch not yet verified."
+      }
+    }
+  },
+  "normal_ui": {
+    "success": true,
+    "checks": {
+      "confirmed_pit_paused": true,
+      "both_unworked": true,
+      "normal_slot_exact_three_loads": true,
+      "other_16_slots_unchanged": true,
+      "terrain_matches_unworked_plans": true
+    },
+    "normal_slot": "CityLabPlanner",
+    "same_full_record_after_repeated_loads": true,
+    "repeat_loads": 3,
+    "old_construction_record_restore_exact_before_restoring_original_flags": true,
+    "other_save_files_unchanged": 16,
+    "final_state": "Own test pair removed while unworked; empty planner slot saved, green fixed N2 /0.75 m preview provided. Old Construction slot retained at completed172.8t.",
+    "scope": "Native Slate preview visually inspected. Native click/key delivery did not confirm, so actual controller APIs used for confirmation/save/load; physical input acceptance remains open. Three reloads wait real readiness between calls.",
+    "input_limit": "Slate Click/PressKey returned delivery but did not confirm. Actual mouse/keyboard acceptance not claimed; planner/controller confirmation APIs, normal save/load and rendered preview are verified."
+  },
+  "limits": [
+    "1-3 cells per side at 4 m spacing; 0.5-2 m height change. N3 has model/preview coverage; rendered work below uses N2.",
+    "Flat initial terrain: at most 2 cm variation across support, access and machine stands.",
+    "Mean sea level exclusion is not wave or groundwater simulation.",
+    "Benchmarked plans restore exactly; no offline catch-up.",
+    "Work clears vegetation with a lab NoGrowth mask, without timber credit.",
+    "All Scaping-to-machine integration is the next slice, not implemented here.",
+    "Cooked planner evidence uses ConstructionLab with explicit PlannerGameMode override and existing cooked assets after SkipCook. The new PlannerLab map itself still needs a fresh Cook and packaged launch."
+  ],
+  "historical_attempts": [
+    {
+      "scope": "new vegetation native test",
+      "result": "An overly strong expectation of original rotation after native ShaderWorld collectable Restore was rejected; native buffer equivalence and own full-transform ledger restoration are tested separately."
+    }
+  ]
+}

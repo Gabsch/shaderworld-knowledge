@@ -1,0 +1,324 @@
+{
+  "date": "2026-10-28",
+  "prepared_at_utc": "2026-10-28T20:06:43Z",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "status": "passed_with_explicit_limits",
+  "scope": "Camera-only resource-tree collision filter: native query-physics tests, builds and separate normal ConstructionLab PIE restore confirmed. No physical WASD acceptance or current cooked gameplay is claimed.",
+  "evidence_origin": {
+    "automation": "Whitelisted fields from the final native editor automation report; raw host/device/path/instance identifiers and log messages are excluded.",
+    "builds": "Successful private build/repackage logs and coordinated parent confirmation. No raw logs or binaries are distributed."
+  },
+  "source_state": {
+    "files": [
+      {
+        "file": "Source/UnrealMcpTest/CityLabCamera.h",
+        "sha256": "76b5651a71a31a0e096c07f2f1bc8cd5a394a7cd88c1ec1f68bd21c5ceff05e5"
+      },
+      {
+        "file": "Source/UnrealMcpTest/CityLabCamera.cpp",
+        "sha256": "b72a98b00c517bdc35815c22f3ffbb216f4b84829b02289631140d83daf21694"
+      },
+      {
+        "file": "Source/UnrealMcpTest/CityLabRoadGameMode.cpp",
+        "sha256": "1b63e104614136ddc1e3ea43330fa77168c9a363f21823e0c0e4b17d1a4e93ef"
+      },
+      {
+        "file": "Source/UnrealMcpTest/CityLabCameraCollisionTests.cpp",
+        "sha256": "736119930cb70908f487f77c74b93d6c591b6c823f43e802939801f97e56646f"
+      }
+    ],
+    "scope": "Hashes describe the current local source bytes, not an embedded binary source manifest. Production camera code was unchanged between the successful game build and the fixture-only editor rebuild."
+  },
+  "collision_contract": {
+    "sweep_radius_cm": 50,
+    "query_channel": "Visibility",
+    "max_component_retry_attempts": 32,
+    "ignored_component_requires": [
+      "USWHISMComponent inheritance",
+      "CityLab.TreeResource component tag"
+    ],
+    "actor_tag_alone_is_insufficient": true,
+    "entire_terrain_actor_is_never_ignored": true,
+    "non_tree_solids_remain_blocking": true,
+    "initial_non_tree_penetration_fails_closed": true,
+    "ground_clearance_adjustment_is_swept_again": true,
+    "scope": "Per-query camera component filtering; no mutation of tree collision for other game actors."
+  },
+  "builds": {
+    "editor_after_fixture_correction": {
+      "status": "passed",
+      "duration_seconds": 45.71
+    },
+    "game_development": {
+      "status": "passed",
+      "duration_seconds": 111.13
+    },
+    "repackage": {
+      "status": "passed",
+      "method": "SkipCook BuildCookRun with already cooked assets; not a new full cook",
+      "duration_seconds": 18.77,
+      "automation_exit_code": 0,
+      "current_cooked_gameplay_test_performed": false
+    }
+  },
+  "native_automation": {
+    "status": "passed",
+    "report_created_at_utc": "2026-10-28T20:02:41Z",
+    "runtime": "Editor automation; controlled query-only Chaos physics worlds, without a rendered human-input test",
+    "test_count": 25,
+    "succeeded_without_warnings": 23,
+    "succeeded_with_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "in_process": 0,
+    "duration_seconds": 0.4600381851196289,
+    "tests": [
+      {
+        "fullTestPath": "CityLab.BuildPanel.WorldClickIsolation",
+        "state": "Success",
+        "duration": 0.007274501025676727,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "state": "Success",
+        "duration": 0.08577480167150497,
+        "warnings": 1,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.ClosedGableRoof",
+        "state": "Success",
+        "duration": 0.022689200937747955,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.BuildQueries.ExpectedHeightAndHighOwner",
+        "state": "Success",
+        "duration": 0.015713002532720566,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionIgnoreBudgetFailsClosed",
+        "state": "Success",
+        "duration": 0.03813369944691658,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionIgnoresOnlyTaggedShaderWorldTrees",
+        "state": "Success",
+        "duration": 0.018881402909755707,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.CollisionPreservesSolidsBehindTrees",
+        "state": "Success",
+        "duration": 0.018355701118707657,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.MathAndGroundBounds",
+        "state": "Success",
+        "duration": 0.004883699119091034,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Camera.PreferenceFileRoundTrip",
+        "state": "Success",
+        "duration": 0.019124701619148254,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.AdjacentWorkAndCompleteConservation",
+        "state": "Success",
+        "duration": 0.008102402091026306,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.AtomicRejectAndBinding",
+        "state": "Success",
+        "duration": 0.008096098899841309,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.MidWorkSerializationDeterminism",
+        "state": "Success",
+        "duration": 0.03827429935336113,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.PlanAndBoundedBuffer",
+        "state": "Success",
+        "duration": 0.007925301790237427,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Construction.TransportAndStorageLimit",
+        "state": "Success",
+        "duration": 0.008693203330039978,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.CitizenDetoursNewNarrowPit",
+        "state": "Success",
+        "duration": 0.01711679995059967,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.CitizenWaitsForPitAndRaisedStepRepair",
+        "state": "Success",
+        "duration": 0.030935700982809067,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.DynamicCollisionProbeGate",
+        "state": "Success",
+        "duration": 0.018369298428297043,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Navigation.RefreshPauseAndGroundRevalidation",
+        "state": "Success",
+        "duration": 0.019682202488183975,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Persistence.VersionedPayloadAndConstructionSave",
+        "state": "Success",
+        "duration": 0.008940503001213074,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Tunnel.ProfileAndLifecycle",
+        "state": "Success",
+        "duration": 0.008250001817941666,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Tunnel.WaterRegistrationAndTransform",
+        "state": "Success",
+        "duration": 0.015404000878334045,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.CursorRayBounds",
+        "state": "Success",
+        "duration": 0.011464599519968033,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.IncomingCacheFilter",
+        "state": "Success",
+        "duration": 0.007895499467849731,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.Vegetation.StableIdentityAndRestore",
+        "state": "Success",
+        "duration": 0.008445799350738525,
+        "warnings": 0,
+        "errors": 0
+      },
+      {
+        "fullTestPath": "CityLab.WorldEdits.BackendMigration",
+        "state": "Success",
+        "duration": 0.011611800640821457,
+        "warnings": 1,
+        "errors": 0
+      }
+    ],
+    "known_warnings": [
+      {
+        "test": "CityLab.BuildQueries.BoundedCitizenDetour",
+        "summary": "Existing synthetic actor cleanup has no world context."
+      },
+      {
+        "test": "CityLab.WorldEdits.BackendMigration",
+        "summary": "Intentional rejection of incompatible old applied version-1 spline paint; the live world is preserved."
+      }
+    ]
+  },
+  "new_camera_test_scope": {
+    "test_count": 3,
+    "warnings": 0,
+    "errors": 0,
+    "geometry": "Real query-only physics geometry using Engine cube meshes in native ShaderWorld HISM pools and ordinary box components; not synthetic hit results or a forest pixel test.",
+    "verified_cases": [
+      "Raw sweep confirms a real blocking tagged native pool before filtering; the camera crosses it.",
+      "Collision disabled then republished around the camera sphere produces a genuine initial penetration; the tagged-tree filter permits escape.",
+      "Untagged native SW pool, actor-only tag, and a tagged foreign HISM still block; later assertions reached after the overlap check.",
+      "A solid behind an ignored tree remains blocking, even when the ordinary solid copies the tree tag.",
+      "Initial overlap with an ordinary solid fails closed and preserves the prior camera position.",
+      "Exhausting the bounded component retry budget fails closed and preserves the prior camera position."
+    ],
+    "not_directly_exercised": "The second sweep of a post-query ground-height correction is a controller code review finding, not a separate end-to-end controller fixture here."
+  },
+  "historical_first_attempt": {
+    "status": "failed_fixture_then_corrected",
+    "test_count": 25,
+    "succeeded_without_warnings": 22,
+    "succeeded_with_warnings": 2,
+    "failed": 1,
+    "failed_test": "CityLab.Camera.CollisionIgnoresOnlyTaggedShaderWorldTrees",
+    "failure_scope": "The old escape start was inside a one-sided complex mesh face and did not prove an initial blocking overlap. Assertions after this gate were not covered by that first run.",
+    "correction": "Fixture now places a 50 cm sphere center 25 cm outside the near face, causing 25 cm penetration; a separate raw sweep also verifies republished geometry. The strict initial-penetration assertion remains. Production collision code was not weakened."
+  },
+  "normal_pie": {
+    "status": "passed_with_explicit_restore_scope",
+    "runtime": "Normal rendered editor PIE in ConstructionLab without a verification flag; same editor process, not a fresh cooked game process",
+    "evidence_origin": "Two inspected private native readbacks plus the coordinated nine-point ground and camera-location comparison; raw exports, object paths and save identifiers are excluded.",
+    "restored_state_confirmed": true,
+    "serialized_construction_records_all_fields_equal_checkpoint": true,
+    "comparison_method": "Complete export_text record comparison against a backup loaded through a separate diagnostic slot; not a selected-fields-only comparison.",
+    "job_count": 1,
+    "paused": true,
+    "storage_mass_grams": 172800000,
+    "buffer_mass_grams": 0,
+    "truck_mass_grams": 0,
+    "remaining_soil_mass_grams": 0,
+    "local_ground_points_checked": 9,
+    "ground_matches_restored_state": true,
+    "controller_stable_ground_passes": 3,
+    "waiting_for_collision": false,
+    "camera_location_restored_within_cm": 0.01,
+    "preexisting_save_file_count_checked": 17,
+    "unrelated_save_file_count": 16,
+    "all_unrelated_preexisting_save_files_byte_identical": true,
+    "construction_save_bytes_changed_during_normal_pie_start": true,
+    "save_scope": "The normal Construction save was rewritten during normal startup; its construction model is exactly equal to the checkpoint. Only the 16 unrelated saves are claimed byte-identical. No filenames or save IDs are distributed.",
+    "computer_use_used": false,
+    "physical_input_tested": false,
+    "current_cooked_gameplay_performed": false,
+    "scope_limit": "Startup/restore, state, ground and camera-location readbacks; no rendered held-WASD/tree-entry or mouse interaction proof."
+  },
+  "limits": [
+    "No physical held-WASD/RMB/Shift acceptance or subjective user camera-feel claim.",
+    "Successful SkipCook repackage does not establish current cooked camera gameplay or a new full cook.",
+    "Controlled native physics fixtures are separate from normal PIE, pixel comparisons and arbitrary vegetation assets.",
+    "The filter intentionally ignores an eligible whole HISM component for the single camera query; it does not change other actors collision responses.",
+    "The 32-attempt budget fails closed; it is not an unbounded path-through-all-trees guarantee."
+  ]
+}

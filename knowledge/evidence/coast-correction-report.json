@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "map": "/Game/Maps/ShaderWorldCityBasics",
+  "status": "saved_in_pie_and_initial_user_visual_confirmation",
+  "implemented": {
+    "land_biome": "/Game/ShaderWorldCityBasics/Spawnables/SW_Basics_LandBiome",
+    "project_forest_altitude_ranges_cm": {
+      "/Game/ShaderWorldCityBasics/Spawnables/SW_Basics_Tree": {
+        "altitudeRange": {
+          "min": 150,
+          "max": 10000000
+        }
+      },
+      "/Game/ShaderWorldCityBasics/Spawnables/SW_Basics_GrassClose": {
+        "altitudeRange": {
+          "min": 150,
+          "max": 10000000
+        }
+      },
+      "/Game/ShaderWorldCityBasics/Spawnables/SW_Basics_GrassDistant": {
+        "altitudeRange": {
+          "min": 150,
+          "max": 10000000
+        }
+      }
+    },
+    "plugin_original_altitude_ranges_cm": {
+      "/ShaderWorld/Spawnables/BlackAlder/SW_Tree": {
+        "altitudeRange": {
+          "min": -9150,
+          "max": 10000000
+        }
+      },
+      "/ShaderWorld/Spawnables/FreeGrass/SW_Grass_Close": {
+        "altitudeRange": {
+          "min": -9550,
+          "max": 10000000
+        }
+      },
+      "/ShaderWorld/Spawnables/FreeGrass/SW_Grass_Distant_mixed": {
+        "altitudeRange": {
+          "min": -9550,
+          "max": 10000000
+        }
+      }
+    },
+    "shallow_attenuation": 1.0,
+    "air_pocket": {
+      "actor_label": "Basics_Tunnel_AirPocket",
+      "component_class": "/Script/ShaderWorld.ShaderWorldAirPocketBoxComponent",
+      "center_cm": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation_degrees": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "half_extent_cm": {
+        "x": 9000,
+        "y": 800,
+        "z": 2000
+      },
+      "hidden_in_game": true,
+      "dimensions_m": {
+        "length": 180,
+        "width": 16,
+        "height": 40
+      }
+    }
+  },
+  "checks": {
+    "map_save_completed": true,
+    "new_pie_session_started": true,
+    "air_pocket_properties_read_back_in_new_pie": true,
+    "shallow_attenuation_read_back_in_running_pie_before_exclusion": 1.0,
+    "project_spawnable_ranges_read_back": true,
+    "original_plugin_ranges_unchanged": true,
+    "water_exclusion_material_wiring": "Previously confirmed: Water Exclusion -> Multiply -> Make Material Attributes Opacity Mask -> material output.",
+    "air_pocket_collision_mode_read_back": "NoCollision",
+    "air_pocket_generate_overlap_events_read_back": false,
+    "shallow_attenuation_read_back_after_exclusion": 1.0
+  },
+  "diagnosis": {
+    "user_observation": "Waves still appeared with attenuation 1.0; user localized them to the tunnel area.",
+    "code_finding": "Portal hole brushes store a -7000000 cm hole sentinel in the terrain height cache. The ocean decodes this as ordinary negative terrain height; shallow weighting therefore treats portal holes as deep water and allows full waves even with attenuation 1.0. The separate floor static mesh is not sampled as terrain.",
+    "scope_limit": "Explains portal locations and interpolated hole edges; no measured GPU proof of leakage at the exact tunnel center."
+  },
+  "verification_limits": [
+    "No valid multi-location GPU height measurements completed; initial diagnostic request had valid=0.",
+    "User reported the affected tunnel location dry after the fix. Fresh editor capture failed because no editor window was available; no timed endurance or all-wave-phase guarantee.",
+    "No exhaustive enumeration of vegetation instance positions or underwater visual acceptance.",
+    "Air Pocket changes water rendering and queries, not terrain holes or solid tunnel collision.",
+    "No packaged build or runtime persistence test for the new volume."
+  ],
+  "sources": [
+    "Tools/coast_basics.py and Tools/setup_basics.py in the original project (not redistributed)",
+    "Source/ShaderWorld/Private/Brushes/SW_HoleMeshBrushComponent.cpp (hole encoding)",
+    "Shaders/Private/ShaderWorldComputeProducers.usf (terrain decoding and shallow weighting)",
+    "Source/ShaderWorld/Private/Water/ShaderWorldAirPocketComponents.cpp (native registration and box shape)",
+    "Previous read-only inspection report: coast-biome-road-inspection.json"
+  ],
+  "user_visual_confirmation": {
+    "date": "2026-10-28",
+    "prompt": "After the restarted preview with water exclusion across tunnel and portals, do waves still come through the floor?",
+    "response": "Bisher trocken",
+    "scope": "Initial observation by the user at the affected tunnel location. No timed endurance test, exhaustive camera-route test or all-wave-phase guarantee."
+  }
+}

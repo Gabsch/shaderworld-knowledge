@@ -1,5 +1,7 @@
 # Nachschlagen
 
+- [Straßenwerkzeuge Schritt für Schritt bedienen](../guides/road-construction-tools.md) – abgenommener begrenzter RoadConstruction6-Ablauf mit Vorschau, Maschinenbelieferung, Haus und kaltem Neustart; normale Controllerfunktionen, physische Eingaben separat offen.
+- [Straßen als Bau- und Transportaufträge](road-construction-work-plan.md) – erster Netz-/Baufront-/Material-Slice abgeschlossen; Abnahmegrenzen und spätere Brücken-/Tunnel-/Verkehrsthemen.
 - [Beispielwelten](example-maps.md) – die richtige Map für den nächsten Versuch wählen.
 - [Versionen und Fähigkeiten](versions-and-capabilities.md) – getestete Möglichkeiten und offene Aufgaben.
 - [MCP und Automatisierung](mcp-and-automation.md) – Editorwerkzeuge und vorhandene lokale Skripte.

@@ -1,0 +1,119 @@
+{
+  "schema": "citylab.road-pom-render.v1",
+  "status": "passed_with_limits",
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "map": "/Game/Maps/ShaderWorldRoadLab",
+  "scope": "Source/asset inspection and discrete native PIE screenshots; normal map reload plus PIE restart in the same editor process.",
+  "symptom": "Circular terrain patch visible through asphalt close to a near-vertical camera ray; appearance changes with distance and angle.",
+  "active_source_findings": {
+    "terrain_material": "/ShaderWorld/Demo_Reference/Material/M_Reference_Material",
+    "material_function": "/ShaderWorld/Demo_Reference/Material/LandscapeMaterial/MF_ReferenceMaterial",
+    "parallax_function": "MFC_POM_Array",
+    "active_WPO_output": "POM: World Position Offset",
+    "flat_pom_depth_cm": 24,
+    "default_reference_plane": 0.75,
+    "default_flat_upward_raise_cm": 6,
+    "nominal_road_top_clearance_cm": 3,
+    "minimum_projected_parallax_pixels": 0.5,
+    "explanation": "For very small projected lateral parallax the function returns before applying PDO; the upstream POM WPO raise remains. A near-vertical camera can therefore reveal the raised terrain above the road.",
+    "legacy_correction": "The old DisplacementAmount/DisplacementManage outputs are not the active POM WPO in this master. Their values and distance circle were an initial, rejected causal explanation."
+  },
+  "fix": {
+    "material_instance": "/Game/ShaderWorldRoadLab/Materials/MI_RoadLab_Terrain",
+    "parent": "/ShaderWorld/Demo_Reference/Material/M_Reference_Material",
+    "POM: Reference Plane": 1.0,
+    "EnablePOM": true,
+    "EnableReliefDepth": true,
+    "flat_upward_raise_cm": 0,
+    "effect": "Moves the POM reference so relief works below the nominal terrain surface; retains POM and its relief depth.",
+    "coverage": "Terrain material of the entire RoadLab, including areas outside roads. No dedicated road-only material mask.",
+    "original_plugin_assets_changed": false,
+    "road_geometry_or_collision_changed": false,
+    "save_schema_changed": false,
+    "alpha_channel_changed": false
+  },
+  "visual_checks": [
+    {
+      "image": "assets/images/road-pom-before-30m.png",
+      "camera_height_above_flat_terrain_m": 30,
+      "pitch_degrees": -85,
+      "reference_plane": 0.75,
+      "observed": "Circular terrain patch reproduced."
+    },
+    {
+      "image": "assets/images/road-pom-after-30m.png",
+      "camera_height_above_flat_terrain_m": 30,
+      "pitch_degrees": -85,
+      "reference_plane": 1.0,
+      "observed": "Same camera location and angle; patch absent."
+    },
+    {
+      "image": "assets/images/road-pom-after-3m.png",
+      "camera_height_above_flat_terrain_m": 3,
+      "pitch_degrees": -85,
+      "reference_plane": 1.0,
+      "observed": "Inspected close asphalt view; patch absent."
+    },
+    {
+      "image": "assets/images/road-pom-after-100m.png",
+      "camera_height_above_flat_terrain_m": 100,
+      "pitch_degrees": -85,
+      "reference_plane": 1.0,
+      "observed": "Inspected overview of three roads; no circular asphalt patch."
+    },
+    {
+      "image": "assets/images/road-pom-reloaded-30m.png",
+      "camera_height_above_flat_terrain_m": 30,
+      "pitch_degrees": -85,
+      "reference_plane": 1.0,
+      "observed": "Patch absent after saved map was actually reloaded and normal PIE restarted."
+    }
+  ],
+  "reload_checks": {
+    "saved_ground_material_assignment_verified": true,
+    "reference_plane_readback": 1,
+    "POM_enabled_readback": true,
+    "relief_enabled_readback": true,
+    "road_count": 3,
+    "normal_city_autoload_message_confirmed": true,
+    "camera_position_and_view_restored": true,
+    "native_slate_observer_removed": true,
+    "separate_game_process": false
+  },
+  "negative_and_recovery_cases": [
+    {
+      "case": "Legacy DisplacementAmount and DisplacementAmountSlope set to1",
+      "outcome": "The patch remained; these overrides were removed."
+    },
+    {
+      "case": "Relief/POM switch comparisons",
+      "outcome": "Switching off the path removed the patch, but the final fix keeps both switches enabled."
+    },
+    {
+      "case": "Raw parent replacement on an active terrain MID",
+      "outcome": "D3D12 access violation; editor restarted. No changed map/material assets were saved by this failed comparison."
+    },
+    {
+      "case": "Material-graph copy and local mask attempt",
+      "outcome": "HLSL translator assertion through ShaderWorldLayerSample; editor restarted. No graph/map change from this attempt was saved; the final fix uses a regular material instance."
+    },
+    {
+      "case": "First map assignment save attempt",
+      "outcome": "The native ObjectTools edit did not mark the level dirty. A real level reload restored the original material. Corrected through a reversible native actor edit, saved, reloaded and checked again."
+    },
+    {
+      "case": "Unsaved third road before diagnostic crash",
+      "outcome": "Rebuilt from the two read-back positions, saved with the existing roads, and loaded in normal PIE. Its rebuilt actor has a new identity; historical ID preservation is not claimed."
+    }
+  ],
+  "limits": [
+    "Discrete inspected frames, not exhaustive angles or endurance testing.",
+    "Material comparisons did not rerun earlier collision/vegetation cold-process tests.",
+    "Normal PIE restart is not a new operating-system game process.",
+    "Cook/Shipping remains unverified.",
+    "Visible memory-pressure warnings in some native screenshots were not a performance diagnosis or a resolved condition."
+  ],
+  "sanitization": "No user machine paths, actor GUIDs, save files, raw crash logs, licensed plugin source or Unreal assets included."
+}

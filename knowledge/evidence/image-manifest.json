@@ -56,6 +56,549 @@
       "modified": false,
       "bytes": 439318,
       "sha256": "7e18e90795417a5919b83c8e5df95e4604a365e91359f5640ee421c7d4bb1cdc"
+    },
+    {
+      "file": "assets/images/citybasics-road.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, PIE",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1263099,
+      "sha256": "3ab0931f9baae1753a685a3ce2f79e0a91505c052b927408e9c08301fc62a5d3"
+    },
+    {
+      "file": "assets/images/citybasics-portal-approach.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, PIE",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1175881,
+      "sha256": "80c9ce5ab546c2c71507e4e43d63e26a7dbd795fc594ac5a694a054218b65daf"
+    },
+    {
+      "file": "assets/images/citybasics-dry-tunnel-component.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityBasics project, new CityLabTunnelComponent in PIE; one inspected frame, no endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 770013,
+      "sha256": "e07d75466492a1f123e5cecf5cbb2e2662617e3e458c10778edc155a0c28523a"
+    },
+    {
+      "file": "assets/images/runtime-road-first-pie.png",
+      "origin": "Native Unreal PIE capture from own RoadLab project; one runtime example road, inspected frame only, no input-flow or endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1286296,
+      "sha256": "315762fa5a7f7d0107710f3f2d058f37c70a71bc87a7b4b1ba4a25b2eb9655ef"
+    },
+    {
+      "file": "assets/images/runtime-road-create-verified.png",
+      "origin": "Native rendered uncooked RoadLab create-test capture from own project; two runtime asphalt roads inspected, one frame only; preparation HUD text belongs to automated test mode",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2053256,
+      "sha256": "05d65cf85b92aed513f5930d6e009e5db71320b0af3a869eaaffec07d864a686"
+    },
+    {
+      "file": "assets/images/runtime-road-normal-autoload-pie.png",
+      "origin": "Native Unreal CaptureEditorImage from normal RoadLab PIE after tested Slate-key road construction, save and PIE restart/auto-load; one inspected frame with restored-road status, no endurance test",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1469774,
+      "sha256": "b4b15ebdc36438f7362d268d0ff851ae6e07e5fd20c88aa020f6bc8ca64d7caa"
+    },
+    {
+      "file": "assets/images/road-pom-before-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1512621,
+      "sha256": "f55e54afc05552beb23a57e708c23100972cce18dcece03cc7aa4b04988bf351"
+    },
+    {
+      "file": "assets/images/road-pom-after-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1522923,
+      "sha256": "f0ff9c14f12e4030e565b058de37b89fd7da533d08b7eb4566ca15a9fdb364b7"
+    },
+    {
+      "file": "assets/images/road-pom-after-3m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1587453,
+      "sha256": "d18184ef019ee6178342055166f4a77e99fa1fdf07b9c09a9880814e6f9ec436"
+    },
+    {
+      "file": "assets/images/road-pom-after-100m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1592564,
+      "sha256": "2f137ecb8515e39cbc9feb64b06a6d7a88d0dfe5335a1e3f1ea1ead5d4ef1653"
+    },
+    {
+      "file": "assets/images/road-pom-reloaded-30m.png",
+      "origin": "Native Unreal CaptureEditorImage from own RoadLab project, PIE; inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1507524,
+      "sha256": "04db8a1e8e1e560ae242b6fe65b8c75773c993c23e832e55f47a8b759b0e8468"
+    },
+    {
+      "file": "assets/images/cityloop-midroute.png",
+      "origin": "Native FScreenshotRequest from own CityLoop rendered uncooked game; create phase; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2377436,
+      "sha256": "9913df408ca3c0a054ee8b5936ba609f2148d258663104e28363ecad5275359c"
+    },
+    {
+      "file": "assets/images/cityloop-restarted-arrival.png",
+      "origin": "Native FScreenshotRequest from own CityLoop rendered uncooked game; arrived phase; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2386747,
+      "sha256": "477da29ba6a572578abac4bd0c3b4e379e6015ce9e4a2f7c3b1f322f14588f63"
+    },
+    {
+      "file": "assets/images/cityloop-normal-autoload-house.png",
+      "origin": "Native Unreal CaptureEditorImage from own CityLoop project, normal PIE after native R/Enter/P/L, automatic saving and normal stop/play auto-load; visually inspected by Codex",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1412717,
+      "sha256": "b63d33f5de943ca7cb6b3cdb4ee8fb72819f6bd68121bbed6d97de173de19199"
+    },
+    {
+      "file": "assets/images/foundations-roof.png",
+      "origin": "Native PIE game screenshot via console FScreenshotRequest from own Foundations project, 11:24 UTC; closed orange gable roof, house and citizen visually inspected by Codex; one frame, no complete Foundations-runtime acceptance",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 4768238,
+      "sha256": "d3b33b2f951eb3e4416327995170058e2e6de84731194c5438c9eae4b4b0f520"
+    },
+    {
+      "file": "assets/images/foundations-paint-before.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:35:15+00:00",
+      "modified": false,
+      "bytes": 5367242,
+      "sha256": "03750cee63dcedd83229d08b7377f8b5cc32bcc2979bc8bcd2aec7643fc860d9",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Free coastal terrain before material painting.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/foundations-paint-reloaded.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:41:38+00:00",
+      "modified": false,
+      "bytes": 5336203,
+      "sha256": "003fc9b6f83d4ae64825091d31835687d3d1d767c2d37e669b3467d68cc05849",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Snow square visibly retained after native K save and L restore in normal PIE.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/foundations-protected-pad.png",
+      "origin": "Native normal PIE console Shot / FScreenshotRequest from own local project; HUD hidden, final compiled Black zero-flow backend; no brush parameter overrides",
+      "captured_date": "2026-10-28",
+      "captured_time_utc": "2026-10-28T13:41:45+00:00",
+      "modified": false,
+      "bytes": 5082283,
+      "sha256": "1ee7ce8fbd9959e237e690d8a85a116b7950ba0162d369e8aa33bcea41ac01cc",
+      "width": 1842,
+      "height": 1096,
+      "visible_check": "Structural pad stays sandy and visibly free of vegetation after overlapping Snow paint.",
+      "inspection": "Codex visually inspected the unchanged image; no human verification claimed."
+    },
+    {
+      "file": "assets/images/build-controls-panel.png",
+      "origin": "Unmodified native SlateInspector Screenshot of the immersive normal Foundations PIE viewport; final compiled toolbar layout and personal camera values 1x, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 5161880,
+      "sha256": "2808b6964d72638b0374a65390a85b8300ea8cabe0de58b3d16f0f687625a8c2"
+    },
+    {
+      "file": "assets/images/tree-clearing-before.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10225056,
+      "sha256": "30bc8945fff934f503bb6607fc30d5ea6cceefdea01048392b802c76dcd5ac0f"
+    },
+    {
+      "file": "assets/images/tree-clearing-after.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10232128,
+      "sha256": "a5f00a7f42677f01a2310e659c8715be1611939bcedc4f21557850abe9b777b3"
+    },
+    {
+      "file": "assets/images/tree-clearing-loaded.png",
+      "origin": "Own normal Unreal PIE frame captured through the native Slate screenshot API; controlled backend clearing/load with fixed top-down camera. Orange target-trunk marker and blue control-trunk marker drawn in the actual scene. No synthetic or retouched pixels.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 10237314,
+      "sha256": "f0800e59a634124838ce7c5d158f413fca415f878d76bba811a928549cc82e68"
+    },
+    {
+      "file": "assets/images/construction-midwork.png",
+      "origin": "Native FScreenshotRequest capture from own rendered packaged ConstructionLab create game process, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2806134,
+      "sha256": "31298198b7b5f71830d1f35f9f4f701bb69f64ebf26019dce0e52592ef7abdfb"
+    },
+    {
+      "file": "assets/images/construction-complete.png",
+      "origin": "Native FScreenshotRequest capture from own rendered packaged ConstructionLab resume game process, visually inspected",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2804393,
+      "sha256": "0e23d1bf49681558d3ea68fb99ff36bcff52bbad99583c647df2d17604dadfd0"
+    },
+    {
+      "file": "assets/images/construction-ui-buffer.png",
+      "origin": "Normal PIE full 18-tonne buffer, transport off; native Slate screenshot visually inspected.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 2642673,
+      "sha256": "98cc9f4f56b11ab78909ad6fa141f5e5af8dabf09ef23c62faede25b98608772"
+    },
+    {
+      "file": "assets/images/construction-ui-paused.png",
+      "origin": "Normal PIE after exact checkpoint restore,60 t removed,12 buffer/12 truck/36 stored; native Slate screenshot visually inspected.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 9224517,
+      "sha256": "758e0dc0188e7d735ba40466ccaeb7eec128df52b77b413e6035dbc37938cc66"
+    },
+    {
+      "file": "assets/images/fill-cycle-planned.png",
+      "origin": "Unmodified native Unreal Slate screenshot of own ConstructionLab after normal save/load; excavation completed, warehouse stocked, second site planned and paused, vegetation at unworked target still present. Agent visually inspected. No automated final-surface pixel comparison.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 1302794,
+      "sha256": "9ef0797d3a1f982cb8de0c89eb22650a46102cb9f31f9dbfa5b1c4cf823dc7a3"
+    },
+    {
+      "file": "assets/images/project-browser-current.png",
+      "origin": "Unmodified native SlateInspector widget capture of the project tile in a fresh Windows-backend Unreal 5.8.4 Project Browser after engine registration and search-path correction. Visually inspected: UnrealMcpTest and Current. Not an OS-window visibility check or an actual Open action.",
+      "captured_date": "2026-10-28",
+      "modified": false,
+      "bytes": 26589,
+      "sha256": "084c376e78b88995c042b6e3d55c1a80077d2dd5a2edb8f708c0b100f135ccd9"
+    },
+    {
+      "file": "assets/images/underground-surface.png",
+      "origin": "Unmodified screenshot from isolated cooked hybrid underground create process. Agent visually inspected: vegetated surface with beach/ocean; absence of surface deformation tested separately by nine probes.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2633906,
+      "sha256": "604409ce70cd373bbadc6a063dfa13929634ccb26ac53b1d2c31618c54a71391"
+    },
+    {
+      "file": "assets/images/underground-interior.png",
+      "origin": "Unmodified screenshot from isolated cooked hybrid underground create process. Agent visually inspected: lit enclosed checkerboard chamber with continuous visible floor, walls and ceiling. Separate collision test, no portal or water-simulation claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1510320,
+      "sha256": "695eee0e4279ee1886389dac663c2a5fd93f5ebbcc3e65b64576bfc9044cfdce"
+    },
+    {
+      "file": "assets/images/planner-preview.png",
+      "origin": "Normal PlannerLab PIE: fixed green N2/0.75m preview, 48m3/86.4t, forest present and no committed job. Native Slate widget screenshot visually inspected. No physical input acceptance.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2954548,
+      "sha256": "2c54f9c0a85b49b7dca0e8df8cfb2c0c835ecd11e9fea926a3804b70502d7fae"
+    },
+    {
+      "file": "assets/images/planner-pair-paused.png",
+      "origin": "Normal PlannerLab PIE after controller-API confirmation/save and three exact loads: source and fill still unworked, zero material transfers, forest present and work/transport buttons available. Native Slate widget screenshot visually inspected; no physical input acceptance.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2956319,
+      "sha256": "7d248920de5a2d508c596f9644bd55db6a5770aa2d9153d9e014cd1c8604f822"
+    },
+    {
+      "file": "assets/images/underground-view-surface.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Green vegetated surface before inspection; beach/ocean visible. Agent visually inspected; no collision claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1157410,
+      "sha256": "e409468b73f287baa962945eb10204df60a726ff965573c3eb009df4671985fe"
+    },
+    {
+      "file": "assets/images/underground-view-cutaway.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Settled local 24x14m masked view with brown schematic sides and lit hybrid shell; green terrain persists outside footprint. Whole intersecting vegetation pools hidden for local player; no excavation claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 845706,
+      "sha256": "b6fd871436344678eb89a57dfa20dab23227838edbf8ea42eca2c679b5b756be"
+    },
+    {
+      "file": "assets/images/underground-view-interior.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Lit enclosed checkerboard hybrid shell from fixed interior camera. Agent visually inspected; selected frame only, no water endurance, navigation or portal claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 562200,
+      "sha256": "4e1a99ba2d53bfd173adc220d0c8fd82bdafbdc7008821d2a9285c6d3680a039"
+    },
+    {
+      "file": "assets/images/underground-view-restored-surface.png",
+      "origin": "Unmodified native Unreal PIE viewport SHOT from own Earthworks lab. Green vegetated surface after returning from interior to build camera; agent visually compared with original surface. Separate readback confirms pawn view target and own hidden-pool count zero.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 1233683,
+      "sha256": "159a8570f05bc9e3c00a2b3a9b8184a7b16f4e757ff42de596d89b053c6d8991"
+    },
+    {
+      "file": "assets/images/flatten-profile.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Prepared asymmetric hump/dip before Flatten work. Cyan field outlines are plan visualization, not measurement overlays. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2506168,
+      "sha256": "398f969fa73eaff9ec849095a967ab12f7765ca16299e083e71cf9c097013155"
+    },
+    {
+      "file": "assets/images/flatten-cut-checkpoint.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain during the loaded cut checkpoint; loader is visible beside the marked field. The native report records 12 t in the truck; the image alone is no mass measurement. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2376310,
+      "sha256": "7a1e110bde38670a3056c698e9c9c49a8ddac8877a7bfbae2b39479845b434f6"
+    },
+    {
+      "file": "assets/images/flatten-fill-checkpoint.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain during the loaded fill checkpoint after all cut was deposited. Native report records 12 t in the truck; no normal UI proof is claimed. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2388269,
+      "sha256": "7cac77adfc2f037a0c79892df1a7559ab3b7483f029053a778cda3203b45f35b"
+    },
+    {
+      "file": "assets/images/flatten-completed.png",
+      "origin": "Unmodified native Unreal rendered uncooked verification capture from the own EarthworksLab. Terrain after the fresh-process completion, with the reached core and shoulders. Heights are supported separately by the 377-position report, not by pixels alone. Coordinating agent and documentation agent visually inspected all four selected captures; no private UI visible. No UI/input, independent mesh-volume or performance claim.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 2406637,
+      "sha256": "c8a55a681932b9dcdeee45d75d002c5232f119985803b8cc71bd778b229d22ed"
+    },
+    {
+      "file": "assets/images/flatten-demo-ui.png",
+      "origin": "Unmodified actual native 1600x1000 SHOWUI capture from the normal visible Development cooked Earthworks demo, loaded from isolated byte-identical cooked Ready. Coordinating and documentation agents visually inspected terrain and native Slate panel: queued Flatten selected, warehouse 21.6 t and balance 0 g visible. Top tool details still default to Lower; button 6 creates a new Flatten preview. No private desktop UI. Separate native 12/external 9-check audits prove model identity; image alone proves no mass/height or physical input/human verification.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "bytes": 4087175,
+      "sha256": "eedd7f238fc475bd3af96540a8b8fa48bbd52afb315aa3a711f73be293ad4ecf"
+    },
+    {
+      "file": "assets/images/site-preparation-editor-preview.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 1377110,
+      "sha256": "1fcc5b04835ef157625891684c5a75b4cf0844cb02fa4cf00efebcabea9adf40",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/underground-editor-cutaway-camera.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 1020548,
+      "sha256": "c5a8aba98a4f9b5be86363f7c6db88e3d014ed1b50c1666ec1b1403640ab5481",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/underground-editor-interior-camera.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normaler Unreal-Editor-Spielvorschau c312a3cbd06b4e70b51f9b1b9d908d76 in der erhaltenen EarthworksLab-Karte mit aktuellem gemeinsamem Controller. Ganzer 1310×750-Editorrahmen mit kleiner Slate-Leiste. Normale APIs per Harness, keine physischen Eingaben; koordinierender und Dokumentationsagent haben das Bild visuell geprüft.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1310,
+      "height": 750,
+      "bytes": 716093,
+      "sha256": "c9bfd7eba1dda93ab4f1a802a8a217393f2b60df1b715abd6f6da29b5c2fd0ec",
+      "revision_scope": "Current shared UI/camera on preserved EarthworksLab; not new V2 map/slot/cooked-demo, physical input or human acceptance."
+    },
+    {
+      "file": "assets/images/site-preparation-cooked-partial-clearing.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2819523,
+      "sha256": "b352c83cd919ed759fd699545bd580d1648d1ccb4f2b04b58bfeb0426474291c",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-cooked-completed.png",
+      "origin": "Unveränderte native Terrainaufnahme aus erfolgreichem Development-Cooked-Create 09d8063b376a4998bfa08fd0929f31fb auf SitePreparationLab V2. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft. Keine Slate-Leiste/physische Bedienung im Bild; keine Bearbeitung.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1280,
+      "height": 720,
+      "bytes": 2571958,
+      "sha256": "72d98b3ded239436ed6b42f619ad46d0132284d69b38228d158fac1b87b40f98",
+      "revision_scope": "Current verified V2 cooked process pair; bounded original regression fixture, no global biome or shipping claim."
+    },
+    {
+      "file": "assets/images/site-preparation-normal-cooked-controls.png",
+      "origin": "Unveränderte native SHOWUI-Aufnahme aus normalem Development-Cooked-Controller auf SitePreparationLab V2, Audit 280b7ec454c24cf6a85c92eb57d97a3f. Echte aktuelle linke Werkzeugleiste und pausierter geplanter Auftrag im Wald; grüner CSV-Framezähler gehört zum Prüflauf. Koordinierender und Dokumentationsagent haben die Aufnahme visuell geprüft. Keine physischen Eingaben. Acht State-Snapshots separat exakt geprüft; dieser CSV-Prozess endete spät mit 777003 und ist kein vollständiger Lebenszyklus-PASS.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 888,
+      "height": 500,
+      "bytes": 1314220,
+      "sha256": "56f5ae0862408ec428dbd85c8dddd7767abc5f88db79f95deb6d34077d643f32",
+      "revision_scope": "Current normal V2 cooked controller image. Independent no-CSV same-binary/save normal lifecycle is a separate result; image does not prove human input or clean exit."
+    },
+    {
+      "file": "assets/images/earth-material-overview.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 924872,
+      "sha256": "3b35381b6c4056286330ac2cd85001fe54849748464e740ca9f71f58af73f117",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-ground-rubble.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 2344773,
+      "sha256": "887f8058d8e344c0996cf458f0915b47000f0cb9ed148f043576119731933b45",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-construction-gravel.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 2457405,
+      "sha256": "a667e0a762f631e9e477b8a7703975bf387163905f8e4aa6f1f269caec70a4f8",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/earth-material-construction-rubble.png",
+      "origin": "Unveränderte native Unreal-Renderaufnahme aus eigener EarthMaterialEvaluationLab-Karte nach gespeichertem Editor-Readback. Koordinierender und Dokumentationsagent haben das Bild visuell geprüft; gerenderte Materialansicht, keine rohe Fab-Textur und keine Physik-/Gameplay-Abnahme.",
+      "captured_date": "2026-10-29",
+      "modified": false,
+      "width": 1600,
+      "height": 900,
+      "bytes": 1889815,
+      "sha256": "315051c0cd295d18e922ac92c2a0e8838cd965402b2d2b5c569384e10aeea7bc",
+      "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/site-preparation-order-cards.png",
+      "origin": "Unmodified native SHOWUI capture from own packaged EarthworksUi2 game after real Slate event routing; two paused test orders, not player data",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "bytes": 3051587,
+      "sha256": "de6dbd948a1614312e6ef08b33e251fe0ac3794d0110f636ec7da005114f4e29"
+    },
+    {
+      "file": "assets/images/site-replan-paused.png",
+      "origin": "Unveraenderte native SHOWUI-Aufnahme des eigenen verpackten SiteReplan3-Labors nach zwei bestaetigten Zielhoehenrevisionen. Koordinierender Agent visuell geprueft: Auftragsleiste, Umplanen-Knopf, Baufeld, Bagger und Lkw sichtbar; pausierter Zustand vor Fortsetzung. Keine menschliche Bedienabnahme.",
+      "captured_date": "2026-10-30",
+      "sha256": "438142d98b1e70bfea4a3aa7a5a0d4aba851b3ab57eff65e5ba7c1119071d6cd",
+      "width": 888,
+      "height": 500,
+      "modified": false,
+      "bytes": 1239588
+    },
+    {
+      "file": "assets/images/road-construction-paused-cut.png",
+      "origin": "Unveränderte native 1600×1000-SHOWUI-Aufnahme aus erfolgreichem Development-Cooked-Create des eigenen RoadConstruction6-Labors. Koordinierender und Dokumentationsagent haben das Original visuell geprüft: lesbare Straßenleiste, aktiver Abtragsauftrag mit Arbeit/Transport pausiert, gelbe Baustellenfahrzeuge an vorhandener Startstraße, Wald/Strand. Native Berichtsdaten belegen beladene Innenfahrt; Pixel allein messen keine Masse. Keine physische Eingabe oder menschliche Prüfung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4144367,
+      "sha256": "cbb1ac443486b4258bd24c723860ce1f7cce97b790961c99041c3d83496aad52",
+      "revision_scope": "Finaler e0aad3-Quellstand und RoadConstruction6, Create35/35. Pausierter Abtrags-Checkpoint vor späterer Fortsetzung; keine neu fertig gebaute Straße im Bild. Vollständiges Resume/Normalpaar separat belegt."
+    },
+    {
+      "file": "assets/images/road-construction-completed-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten regulären kalten RoadConstruction6-Prozess nach abgeschlossener Straßen-/Hauskette. Koordinierender und Dokumentationsagent haben das Original visuell geprüft: lesbare linke Straßenleiste mit fertigen Aufträgen, fertiger T-/Straßenanschluss und Hauszufahrt, Haus, gelber Radlader und blauer Platzhalter-Lkw im Küstenwald. Eigenes getrenntes Labor; kein Privatdesktop. Normale F5/F9-Funktionen und vollständige Zustandsvergleiche separat belegt, keine physischen Eingaben oder menschliche Abnahme.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4142808,
+      "sha256": "1a3c3df2746e5d2849b0b3c5abc6399c9a1f30f61a41d66dff95c14f8bbeec92",
+      "revision_scope": "Finaler e0aad3-Quellstand/RoadConstruction6; normaler zweiter kalter Prozess mit exaktem abgeschlossenen Straßen-/Zufahrts-/Hausstand. Bild ist qualitative Agentenansicht; Bilanz/Kollision/Savegenauigkeit stammen aus separaten Berichten."
+    },
+    {
+      "file": "assets/images/road-construction8-junction-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten normalen kalten RoadConstruction8-Prozess mit dem ausdrücklich übernommenen T-/Hauszustand. Koordinierender Agent und weitere Agenten einschließlich Dokumentationsagent haben das Original visuell geprüft: asphaltierter T-Anschluss mit durchgehender Straßenfläche, Hauszufahrt, Testhaus, Radlader und Platzhalter-Lkw im Küstenwald; keine private Desktopoberfläche. Die Weitansicht ist eine qualitative Sichtprüfung. Subzentimeter-Naht, Kollision und Speicheridentität sind durch getrennte Messungen belegt, nicht aus Pixeln abgeleitet. Keine menschliche Abnahme oder physische Eingabe daraus behauptet.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4289179,
+      "sha256": "90684b6dae2056c6757c83bd7fad635f29dd67f33b2e0d856732260bcf3dee19",
+      "revision_scope": "Quellstand 650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510/RoadConstruction8. Normales kaltes Funktionspaar mit vier+zwei vollständigen Zustandsaufnahmen und vier erfolgreichen T-Messdurchgängen. Neuer Straßenbau/volle Spiel-UI-Freigabe separat."
+    },
+    {
+      "file": "assets/images/road-construction11-fresh-t-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten normalen kalten RoadConstruction11-Prozess unter ShaderWorld 4.2. Koordinierender Agent und Dokumentationsagent haben das originale 1600×1000-Bild visuell geprüft: durchgehend asphaltierter frischer T-Anschluss, gelbe Baumaschine, blauer Lkw und ausgewählter fertiger Straßenauftrag mit 0 t Restmengen im bewaldeten Gelände. Keine private Desktopoberfläche, keine Bildbearbeitung. Die Weitansicht bestätigt das sichtbare Gesamtbild; Naht-/Kollisionsgenauigkeit, Materialkonten und Speicheridentität stammen aus getrennten Messungen/Reports. Keine menschliche Eingabenabnahme.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4305881,
+      "sha256": "106a57245ed0413cfbd479f6bfbea17fc95a1de99cd159a9b5cd10fc9689f38b",
+      "revision_scope": "ShaderWorld 4.2, Quellbindung 14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c/RoadConstruction11. Frischer echter Slate-/Maschinen-T-Bau 40/40; dasselbe fertige Save besteht normales 4+2-Kaltpaar und vier T-Messdurchgänge. Einmalige neue Demo und normaler sichtbarer Starterstart separat nativ bestanden; dieses Bild stammt weiterhin aus dem Kaltpaar, nicht aus dem finalen Livefenster."
+    },
+    {
+      "file": "assets/images/rcp-toolkit-production-create.png",
+      "origin": "Unveränderte eigene native SHOWUI-Aufnahme aus dem gekochten Stage2-Create-Prozess. Koordinierender Agent und Dokumentationsagent prüften das vollständige 1600×1000-Original visuell: bewaldetes Labor, Straße und Baumaschine; damalige lange Leiste mit wichtigen Knöpfen unterhalb des sichtbaren Ausschnitts. Keine private Desktopoberfläche, keine Bildbearbeitung. Das Bild ist keine Abnahme der nachfolgenden kompakten Leiste, keine Messung der Materialkonten und keine menschliche Bestätigung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4348418,
+      "sha256": "93ebb9636120d12b424210322ec629ff93540ab39218f1638719718f2fcb4ffb",
+      "agent_visually_reviewed": true,
+      "human_reviewed": false,
+      "revision_scope": "Stage2-Quellbindung dc70e336f100b68db01cf70b9e0c070ffc48decabff1635af2179047c345b33c; ursprünglicher Create32/Resume95-API-Prüfstand. Kein Bild der späteren Stage3-/Stage4-Fassung.",
+      "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
+    },
+    {
+      "file": "assets/images/rcp-toolkit-production-resume.png",
+      "origin": "Unveränderte eigene native SHOWUI-Aufnahme aus dem gekochten Stage2-Resume-Prozess. Koordinierender Agent und Dokumentationsagent prüften das vollständige 1600×1000-Original visuell: bewaldetes Labor, Straße und Baumaschine; damalige lange Leiste mit wichtigen Knöpfen unterhalb des sichtbaren Ausschnitts. Keine private Desktopoberfläche, keine Bildbearbeitung. Das Bild ist keine Abnahme der nachfolgenden kompakten Leiste, keine Messung der Materialkonten und keine menschliche Bestätigung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4333691,
+      "sha256": "b499d171323dea70a33d6845477d93ec46d9d26b85d07bc20c9fd0e0aca8932e",
+      "agent_visually_reviewed": true,
+      "human_reviewed": false,
+      "revision_scope": "Stage2-Quellbindung dc70e336f100b68db01cf70b9e0c070ffc48decabff1635af2179047c345b33c; ursprünglicher Create32/Resume95-API-Prüfstand. Kein Bild der späteren Stage3-/Stage4-Fassung.",
+      "private_source_receipt_sha256": "99dc227ec1538c8bc1b3524fd988150c7b1e291e5586d3222fcb4461e97107e9"
     }
   ]
 }

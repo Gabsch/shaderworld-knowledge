@@ -6,12 +6,21 @@ tags: [shaderworld, savegame, persistence, citybuilder, runtime, collision]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 status: draft
-generated: { by: codex/gpt-6, at: "2026-10-27T21:49:03Z" }
+generated: { by: codex/gpt-6, at: "2026-10-28T17:13:23Z" }
 evidence_scope:
-  tested: Zwei getrennte gerenderte Spielprozesse mit zwei Bauplätzen und zwei Straßentrassen sowie Kollisionsproben
-  observed: Tastaturbedienung und verzögertes automatisches Laden nach einem Editor-Neustart im ursprünglichen Testprojekt
-  not_tested: Verpackter Shipping-Build, Navigation, Multiplayer, Gebäude, Rodung und große Änderungsmengen
+  tested: Historisches Pad-/Terrainstraßenlabor in zwei gerenderten Prozessen; Foundations-Format-4-Abnahme uncooked mit korrigiertem Paint und Core-/Side-Masken sowie dieselbe V2-Fassung im Development-Paket in je zwei frischen Prozessen; echte Höhenänderungen und Einzelrodungszustände in CPU-/Kollisionsdaten; separate normale PIE-Backend-Bildprobe des Rodungsfixes
+  observed: Ältere Laborbedienung, separate Foundations-Slate-Planbedienung aus rund 5 km Höhe sowie finale normale PIE-Sichtprobe T/F6/K/L mit Snow nach Laden und geschütztem Bauplatz
+  not_tested: Eigene Materialbild-Abnahme im verpackten Spiel; allgemeine Navigation, Multiplayer, Tunnelpersistenz, Shipping und große Änderungsmengen
 sources:
+  - id: foundations-proof
+    resource: ../evidence/foundations-report.json
+    title: Foundations mit Format 4, Einzelrodung und tatsächlicher Wiederherstellung in einem neuen Prozess
+  - id: foundations-guide
+    resource: foundations-lab.md
+    title: Getrenntes Foundations-Labor mit Planung und expliziter Debug-Ausführung
+  - id: format-four-code
+    resource: "Originales Testprojekt UnrealMcpTest: CityLabPersistence.h/.cpp, CityLabWorldEdits.h/.cpp, CityLabVegetationState.h/.cpp und CityLabSettlement.h/.cpp; Projektcode nicht im öffentlichen Bundle enthalten"
+    title: Eigene logische Speicherfelder und begrenzte Bürgerumwege
   - id: persistence-proof
     resource: ../evidence/persistence-report.json
     title: Neustartnachweis des Spielstandlabors
@@ -30,6 +39,8 @@ sources:
 Im Testprojekt lassen sich während des Spiels Bauplätze ebnen und Straßentrassen anlegen, speichern und in einem neuen Spielprozess wiederherstellen. Das ist durch einen Test mit zwei getrennten Prozessen und echten Terrain-Kollisionsabfragen belegt.[^persistence-proof]
 
 Die Speicherfunktion ist eine **eigene C++-Erweiterung des Testprojekts**. Sie ist kein allgemeiner ShaderWorld-Menüpunkt und wird durch das Aktivieren des Plugins allein nicht verfügbar. ShaderWorld liefert die verformbaren Terrain- und Straßenbausteine; das Projekt speichert die logischen Stadtänderungen und baut sie beim Laden neu auf.[^lab-implementation]
+
+**Diese Bedienfolge beschreibt das ältere Pad-/Terrainstraßenlabor.** Das neuere [Foundations-Labor](foundations-lab.md) verwendet einen eigenen Slot und Speicherformat 4; sein erfolgreicher Neustartnachweis für geplante/ausgeführte Geländeänderungen und Einzelrodung steht [weiter unten](#aktueller-stand-speicherformat-4). Die Tasten des älteren Labors bleiben in dieser Anleitung erhalten.[^foundations-proof]
 
 ## Was du zum Nachmachen brauchst
 
@@ -100,6 +111,39 @@ Der Spielstand trägt eine Formatversion und Identitäten für Karte, Generator 
 
 Eine erfolgreiche Ladebestätigung bedeutet zunächst, dass die Daten übernommen wurden. GPU-Gelände und Physikkollision aktualisieren sich anschließend. Die automatische Bereitschaftsprüfung ist keine vollständige Fertigmeldung der Physik; der automatisierte Test wartet deshalb zusätzlich auf passende Kollisionstreffer. Auch die Herstellerdokumentation beschreibt Terrain-, Kollisions- und Spawnable-Aktualisierung als Folge einer Brush-Änderung.[^lab-implementation][^shaderworld-brush-docs]
 
+## Aktueller Stand: Speicherformat 4
+
+**Stand: 28. Oktober 2026.** Die aktuelle eigene Speicherimplementierung schreibt **Format 4**. Die ursprüngliche Padkarte, RoadLab, CityLoop und Foundations haben weiterhin getrennte Slots. Ein Spielstand des einen Labors ist keine austauschbare Ausgangswelt für die anderen.[^format-four-code]
+
+| Daten | Bedeutung beim erneuten Laden |
+| --- | --- |
+| Bauplätze und Straßen | Stabile IDs, Reihenfolge, Trasse und Maße; native Backends und Asphaltsegmente werden erneut gebaut. |
+| Grundstück, Haus und Bürger | Logische Hauszuordnung, gespeicherte Straßen-/Zugangsroute, Fortschritt und Ankunft. |
+| Geplante und stornierte Weltänderungen | Sollzustand und Parameter bleiben gespeichert; sie erzeugen keine ausgeführten Höhen- oder Materialbrushes. |
+| Ausgeführte Lab-Debug-Änderungen | Tatsächliche Ausführungsreihenfolge und Parameter werden beim Laden wieder angewendet; Planreihenfolge ist davon getrennt. |
+| Ressourcen-/Rodungszustand | Stabile logische Identität und Zustand einzelner Ressourcen; aktuelle Instanznummern sind keine dauerhafte Identität. |
+| Aktiver lokaler Bürgerumweg | Zusätzliche Wegpunkte, Fortschritt auf dem Umweg und die Stelle zum Wiedereintritt in die ursprüngliche Route. |
+
+Die Felder sind eigene Projektfunktionen. Sie sind keine allgemeine ShaderWorld-Speicherfunktion und bilden noch keine Maschinenarbeit, Materialbilanz oder frei ausgrabbare Untergrundgeometrie ab.[^format-four-code]
+
+Der neue [Foundations-Nachweis](../evidence/foundations-report.json) bestand in **zwei unterschiedlichen gerenderten uncooked Prozessen** mit **29/29 und 12/12 Checks** und **306 + 288** erfolgreichen Terrainproben nach der nativen Paintkorrektur mit schwarzer Datamap. Anheben, Absenken und Ebnen auf eine absolute Höhe wurden tatsächlich gemessen. Für einen einzelnen Baum blieben die CPU-Instanzskalierung und aktiven Kollisionsinstanzen entfernt, auch nach echter ShaderWorld-Regeneration, 30 s Beobachtung und Laden im zweiten Prozess; der Kontrollbaum behielt seine Instanzdaten. Diese damaligen Zähler prüfen keine GPU-Pixel. Der spätere [Rodungsfix](../evidence/tree-clearing-test.json) ergänzt einen getrennten normalen PIE-Bildvergleich: Die Zielkrone verschwindet und bleibt nach Laden weg, während der markierte Kontrollbaum erhalten bleibt. Die Bildprobe nutzt die Backend-API; C-Bedienung bleibt eine eigene manuelle Abnahme. Noch nicht ausgeführte und stornierte Pläne erzeugten bei der Wiederherstellung keine Backends. Drei weitere Loads pro Prozess erzeugten keine Duplikate, ein Spielstand mit falscher Identität ersetzte die vorhandene Stadt nicht.[^foundations-proof]
+
+Die Schreibweise **Format 4** ersetzt die älteren Format-2-/Format-3-Nachweise nicht: CityLoop besitzt seinen getrennten Drei-Prozess-Nachweis für Haus/Bürger. Die Fortsetzung eines gespeicherten lokalen Umwegs ist zusätzlich mit kontrolliertem Physikboden nativ getestet; sie ist keine allgemeine NavMesh- oder neue Foundations-Bürger-Neustartabnahme. Der Loader unterstützt Formate 1–3 weiter; das ist keine Zusage für beliebige archivierte Spielstände aus alten ausführbaren Versionen.[^format-four-code][^foundations-proof]
+
+### Wechsel des Paintbackends ohne stilles Umdeuten
+
+**Das Speicherformat bleibt 4.** Zusätzlich trägt jeder Weltänderungsrecord eine genaue Backend-/Terrain-/Materialidentität. Der Wechsel vom bisherigen Spline-Paint zum nativen LayerMask-Brush mit schwarzer Datamap (Flow-Anteil 0) erhält eine neue Backendkennung **v2**: Das alte Paint hatte eine Kreisfläche, das neue eine quadratische Fläche mit nativem Randverlauf. Eine bereits bemalte Fläche lässt sich daher nicht allein durch Austausch des Backends mit identischer Bedeutung wiederherstellen.[^format-four-code]
+
+Der Loader erkennt nur die **exakt passende v1-Identität derselben Terrain-/Materialbindung**. Noch nicht ausgeführte und stornierte Pläne, einschließlich Paint, sowie unveränderte Höhenoperationen dürfen übernommen werden. Erst nach vollständiger Prüfung normalisiert der vorbereitete Restore diese Records auf v2; IDs, Geometrie, Planstatus und Ausführungsreihenfolge bleiben erhalten. Neue Paint-Ausführung verwendet anschließend die aktuelle Fläche.[^format-four-code]
+
+Enthält der alte Spielstand **bereits ausgeführtes v1-Paint**, wird er vor dem Staging mit einer Erklärung abgewiesen. Die vorhandene Stadt bleibt erhalten, der alte Spielstand wird nicht überschrieben. Er braucht eine ausdrücklich festgelegte Migration statt einer stillen Kreis-zu-Quadrat-Umdeutung. Die älteren Stadtformate **1–3 mit leerem Weltänderungsjournal** behalten ihr bisheriges Verhalten.[^format-four-code]
+
+Der native Test **CityLab.WorldEdits.BackendMigration** bestand unter NullRHI: sichere Planübernahme, akzeptierte alte Höhenrecords, abgewiesenes altes Applied-Paint, unveränderte Live-Records und strikte Generator-/Bindingprüfung. Seine erwartete Ablehnungswarnung gehört zum Test. Das bestätigt die logischen Migrationsregeln; es ersetzt keinen Versuch mit einer archivierten binären SaveGame-Datei.[^foundations-proof]
+
+Im Foundations-Labor wählt der Code nach Laden den neuesten offenen Plan; **Tab** wechselt zwischen offenen Plänen. Bei einem gespeicherten Ebnen-Plan bleibt die absolute Zielhöhe beim Verschieben mit **T** erhalten. Fehlt der Bodenhit noch, zeigt das HUD zunächst die absolute Zielhöhe. Der Start wartet auf das tatsächlich geladene, für die aktive Plattform shaderbereite Höhenmaterial; solange ist die Baueingabe gesperrt. Eine normale Slate-Bedienprobe aus rund **5 km Kamerahöhe** bestätigte Planerstellung ohne Weltänderung, PageUp/Undo, Tab-Auswahl, K und normales PIE-Autoload mit derselben Plan-ID und absoluter Zielhöhe. Nach dem Laden blieb das Ziel 4 m auch beim Verschieben auf Boden bei 5 m erhalten. Das ist ein Bediennachweis im selben Editorprozess; die Betriebssystem-Neustartprüfung steht getrennt im Bericht.[^foundations-guide][^format-four-code]
+
+Die korrigierte verpackte V2-Fassung bestand nach abgeschlossenem Cook/Stage/Archive **zwei frische Spielprozesse mit RequiresCookedData = true**: **29/29 Checks in 118,6 s** beim Erzeugen und **12/12 in 66,1 s** beim Wiederherstellen; alle **306 + 279 Terrainproben** bestanden. Der native Layer-Brush-Pfad mit schwarzer Datamap und Flow-Anteil 0 erhält den bewuchsfreien Kern/Rand auch nach Paint, tatsächlicher Regeneration und drei Loads pro Prozess. Das Development-Paket enthält zwei gekochte Karten; die Laufzeitabnahme gilt für Foundations. Shipping und eine eigene Materialbild-Abnahme im verpackten Spiel stehen noch aus. Die finale normale PIE-Sichtprobe mit T/F6/K/L bestätigte separat sichtbares Snow nach Ausführung und nach Laden; [die Aufnahme nach K/L](../assets/images/foundations-paint-reloaded.png) zeigt den erhaltenen Materialanstrich. Ein zweites Snow-Paint über dem [geschützten Bauplatz](../assets/images/foundations-protected-pad.png) ließ dessen Sandboden, sichtbare Freistellung und 500 cm Terrainhöhe bestehen. Diese qualitativen Frames sind kein zusätzlicher Betriebssystem-Neustarttest oder Pixelgleichheitstest. Die früheren kartenbezogenen Nachweise behalten ihren eigenen Umfang. Die vollständigen Schritte und der genaue Prüfstatus stehen im [Foundations-Guide](foundations-lab.md).[^foundations-proof]
+
 ## Wenn etwas nicht klappt
 
 | Beobachtung | Als Nächstes prüfen |
@@ -111,9 +155,13 @@ Eine erfolgreiche Ladebestätigung bedeutet zunächst, dass die Daten übernomme
 | L meldet inkompatiblen Spielstand | Karte, Generator, Seeds oder Terrainkonfiguration mit der gespeicherten Basis vergleichen. Die aktuelle Stadt wird bei Ablehnung nicht ersetzt. |
 | Gelände sieht geladen aus, Bodenhit stimmt noch nicht | Weitere gerenderte Frames und Kollisionsaktualisierung abwarten. |
 
-Gebäude, entfernte Vegetation, Verkehrsnetz, Navigation, Tunnel und Multiplayerzustand gehören noch nicht zu diesem kleinen Spielstandmodell. Sie benötigen eigene gespeicherte Daten und eigene Abnahmen. Für die geometrischen Grenzen eines Tunnels siehe [Löcher im Gelände und Bergtunnel](holes-and-mountain-tunnels.md).
+Die hier beschriebene ältere Laborabnahme enthält keine Gebäude, Bewuchsfreistellung, Verkehrsnetz-Navigation, Tunnel oder Multiplayerzustände. Die inzwischen ergänzte [CityLoop-Spielschleife](city-builder-loop.md) besitzt eigene Format-3-Daten und Neustartnachweise für Grundstück, flächige Bewuchsfreistellung, Testhaus und Bürgerroute. Speicherung und Wiederherstellung der Einzelrodungszustände sind inzwischen separat im [Foundations-Labor](foundations-lab.md) geprüft; der zusätzliche normale PIE-Backend-Bildvergleich des Rodungsfixes bestätigt dort das sichtbare Verschwinden nach Laden; allgemeine Navigation und Tunnelpersistenz bleiben offen. Für die geometrischen Grenzen eines Tunnels siehe [Löcher im Gelände und Bergtunnel](holes-and-mountain-tunnels.md).
 
 [^persistence-proof]: [Bereinigter Bericht des Neustarttests](../evidence/persistence-report.json), mit ausgewählten Prüfungen und Messwerten aus dem ursprünglichen Testprojekt.
 [^citylab-view]: [Illustration der CityLab-Geländeversuche](../assets/images/citylab-terrain.png); andere Karte als das Persistenzlabor.
 [^lab-implementation]: Geprüfte projektlokale Implementierung in `CityLabPersistence.h/.cpp`, `CityLabGameMode.h/.cpp` und `CityLabVerification.h/.cpp` sowie das Bedienungsprotokoll des ursprünglichen Testprojekts. Diese Dateien sind nicht Bestandteil des öffentlichen Dokumentationsbundles.
 [^shaderworld-brush-docs]: [ShaderWorld: Blueprint Brush System – Landmass](https://universgen.gitbook.io/shader-world/fundamentals/kick-start/blueprint-brush-system-landmass).
+
+[^foundations-proof]: [Bereinigter Foundations-Bericht](../evidence/foundations-report.json): getrennte uncooked und aktuelle Development-cooked Prozesse, tatsächliche Geländeänderung, Einzelrodungszustände in CPU-/Kollisionsdaten und native Tests; spätere GPU-Sichtprobe separat im Rodungsbericht; korrigierter Paintpfad mit schwarzer Datamap in beiden Laufarten mit Core-/Side-NoGrowth und Loads bestanden; finaler qualitativer Materialbildvergleich mit T/F6/K/L in normalem PIE bestanden; eigene verpackte Materialpixelprüfung offen.
+[^foundations-guide]: [Foundations-Labor](foundations-lab.md): eigenes Grundlagenlabor und vorgesehene HUD-/Tastenbedienung.
+[^format-four-code]: Eigene Format-4-Implementierung in `CityLabPersistence`, `CityLabWorldEdits`, `CityLabVegetationState` und `CityLabSettlement`; nicht im öffentlichen Wissensbundle enthalten.

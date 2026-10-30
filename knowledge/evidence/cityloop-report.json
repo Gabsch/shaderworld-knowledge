@@ -1,0 +1,587 @@
+{
+  "report_version": 1,
+  "date": "2026-10-28",
+  "engine_version": "5.8.4",
+  "plugin_version": "4.1",
+  "generated": {
+    "by": "codex/gpt-6",
+    "at": "2026-10-28T03:41:20Z"
+  },
+  "status": "passed_with_limits",
+  "map": "/Game/Maps/ShaderWorldCityLoop",
+  "scope": "Three separate rendered uncooked native game processes: create a road, cleared level house lot and road-guided citizen; save while walking, resume to arrival in the next process, and restore the arrived state in a third process.",
+  "three_distinct_processes": true,
+  "source_processes_match_previous_saves": true,
+  "world_generator_and_terrain_identities_stable": true,
+  "lot_and_linked_road_identifiers_stable": true,
+  "lot_and_route_geometry_stable": true,
+  "arrived_record_identical_after_final_restart": true,
+  "test_fixture": {
+    "road_count": 1,
+    "house_lot_count": 1,
+    "citizen_count": 1,
+    "lot_center_cm": {
+      "x": -11800,
+      "y": -11500,
+      "z": 500
+    },
+    "lot_radius_meters": 12,
+    "lot_yaw_degrees": 89.99993896484375,
+    "route_point_count": 23,
+    "route_length_meters": 60.9999755859375,
+    "road_width_meters": 8,
+    "access_width_meters": 4,
+    "baseline_terrain_height_cm": 300,
+    "edited_terrain_height_cm": 500
+  },
+  "totals": {
+    "checks_passed": 24,
+    "checks_total": 24,
+    "accepted_collision_samples": 438,
+    "citizen_position_samples": 29,
+    "all_recorded_citizen_positions_have_ground_contact": true
+  },
+  "phases": [
+    {
+      "phase": "create",
+      "success": true,
+      "checks": {
+        "baseline_collision_and_vegetation": true,
+        "lot_road_access_collision": true,
+        "lot_vegetation_cleared": true,
+        "repeated_load_without_duplicates": true,
+        "invalid_lot_preserves_city": true,
+        "overlapping_lot_rejected": true,
+        "citizen_walked_before_midroute_save": true,
+        "logical_save_complete": true,
+        "screenshot_saved": true
+      },
+      "checks_passed": 9,
+      "checks_total": 9,
+      "elapsed_wall_seconds": 39.361,
+      "source_process_matches_previous_save": null,
+      "current_process_differs_from_loaded_save_source": null,
+      "lot_and_linked_road_identifiers_match_initial_phase": true,
+      "lot_and_route_geometry_match_initial_phase": true,
+      "actors_unique": true,
+      "road_count": 1,
+      "house_lot_count": 1,
+      "save_format_version": 3,
+      "physics": {
+        "accepted_samples": 162,
+        "accepted_samples_passed": 162,
+        "accepted_baseline_samples": 114,
+        "accepted_edited_samples": 48,
+        "unique_test_positions": 6,
+        "height_tolerance_cm": 5,
+        "max_recorded_accepted_height_error_cm": 0
+      },
+      "vegetation": {
+        "before": {
+          "measured_lot_core_origins": 252,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 79062,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        },
+        "after": {
+          "measured_lot_core_origins": 0,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 73210,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        }
+      },
+      "citizen": {
+        "sample_count": 6,
+        "all_recorded_samples_have_ground_contact": true,
+        "max_recorded_foot_height_error_cm": 3,
+        "recorded_progress_is_monotonic": true,
+        "saved_progress_meters": 14.2877880859375,
+        "saved_arrived": false,
+        "position_samples": [
+          {
+            "route_progress_meters": 2.34719,
+            "position_cm": {
+              "x": -15765.280956,
+              "y": -14000.00022,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 4.818753,
+            "position_cm": {
+              "x": -15518.124685,
+              "y": -14000.000037,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 7.15355,
+            "position_cm": {
+              "x": -15284.644991,
+              "y": -14000.000117,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 9.478757,
+            "position_cm": {
+              "x": -15052.124318,
+              "y": -14000.000376,
+              "z": 597.0
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 11.953286,
+            "position_cm": {
+              "x": -14804.671386,
+              "y": -14000.000315,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 14.287788,
+            "position_cm": {
+              "x": -14571.221259,
+              "y": -13999.99994,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          }
+        ]
+      }
+    },
+    {
+      "phase": "resume",
+      "success": true,
+      "checks": {
+        "baseline_collision_and_vegetation": true,
+        "cold_process_records_and_progress_restored": true,
+        "lot_road_access_collision": true,
+        "lot_vegetation_cleared": true,
+        "restored_citizen_walked_to_house": true,
+        "logical_save_complete": true,
+        "screenshot_saved": true
+      },
+      "checks_passed": 7,
+      "checks_total": 7,
+      "elapsed_wall_seconds": 50.116,
+      "source_process_matches_previous_save": true,
+      "current_process_differs_from_loaded_save_source": true,
+      "lot_and_linked_road_identifiers_match_initial_phase": true,
+      "lot_and_route_geometry_match_initial_phase": true,
+      "actors_unique": true,
+      "road_count": 1,
+      "house_lot_count": 1,
+      "save_format_version": 3,
+      "physics": {
+        "accepted_samples": 138,
+        "accepted_samples_passed": 138,
+        "accepted_baseline_samples": 114,
+        "accepted_edited_samples": 24,
+        "unique_test_positions": 6,
+        "height_tolerance_cm": 5,
+        "max_recorded_accepted_height_error_cm": 0
+      },
+      "vegetation": {
+        "before": {
+          "measured_lot_core_origins": 252,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 79062,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        },
+        "after": {
+          "measured_lot_core_origins": 0,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 73210,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        }
+      },
+      "citizen": {
+        "sample_count": 20,
+        "all_recorded_samples_have_ground_contact": true,
+        "max_recorded_foot_height_error_cm": 3.0,
+        "recorded_progress_is_monotonic": true,
+        "saved_progress_meters": 60.9999755859375,
+        "saved_arrived": true,
+        "position_samples": [
+          {
+            "route_progress_meters": 16.664608,
+            "position_cm": {
+              "x": -14333.539187,
+              "y": -13999.999652,
+              "z": 597.0
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 18.964619,
+            "position_cm": {
+              "x": -14103.538068,
+              "y": -13999.999892,
+              "z": 597.0
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 21.494653,
+            "position_cm": {
+              "x": -13850.53469,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 24.024714,
+            "position_cm": {
+              "x": -13597.528604,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 26.324746,
+            "position_cm": {
+              "x": -13367.525422,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 28.854829,
+            "position_cm": {
+              "x": -13114.517189,
+              "y": -14000.000178,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 31.154854,
+            "position_cm": {
+              "x": -12884.514697,
+              "y": -14000.000176,
+              "z": 597.0
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 33.454878,
+            "position_cm": {
+              "x": -12654.512151,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 35.984905,
+            "position_cm": {
+              "x": -12401.509839,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 38.514946,
+            "position_cm": {
+              "x": -12148.505137,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 41.044985,
+            "position_cm": {
+              "x": -11895.501291,
+              "y": -14000,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 43.574932,
+            "position_cm": {
+              "x": -11800.002415,
+              "y": -13842.504123,
+              "z": 597
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 46.104878,
+            "position_cm": {
+              "x": -11800.002158,
+              "y": -13589.508994,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 48.634839,
+            "position_cm": {
+              "x": -11800.001901,
+              "y": -13336.512959,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 50.935146,
+            "position_cm": {
+              "x": -11800.001668,
+              "y": -13106.482059,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 53.235107,
+            "position_cm": {
+              "x": -11800.001435,
+              "y": -12876.485926,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 55.765054,
+            "position_cm": {
+              "x": -11800.001178,
+              "y": -12623.491335,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 58.065117,
+            "position_cm": {
+              "x": -11800.000944,
+              "y": -12393.48501,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 60.595161,
+            "position_cm": {
+              "x": -11800.000688,
+              "y": -12140.480566,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": false
+          },
+          {
+            "route_progress_meters": 60.999976,
+            "position_cm": {
+              "x": -11800.000646,
+              "y": -12100.0,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": true
+          }
+        ]
+      }
+    },
+    {
+      "phase": "arrived",
+      "success": true,
+      "checks": {
+        "baseline_collision_and_vegetation": true,
+        "cold_process_records_and_progress_restored": true,
+        "lot_road_access_collision": true,
+        "lot_vegetation_cleared": true,
+        "arrived_citizen_preserved_after_restart": true,
+        "arrived_citizen_stays_at_house": true,
+        "logical_save_complete": true,
+        "screenshot_saved": true
+      },
+      "checks_passed": 8,
+      "checks_total": 8,
+      "elapsed_wall_seconds": 30.813,
+      "source_process_matches_previous_save": true,
+      "current_process_differs_from_loaded_save_source": true,
+      "lot_and_linked_road_identifiers_match_initial_phase": true,
+      "lot_and_route_geometry_match_initial_phase": true,
+      "actors_unique": true,
+      "road_count": 1,
+      "house_lot_count": 1,
+      "save_format_version": 3,
+      "physics": {
+        "accepted_samples": 138,
+        "accepted_samples_passed": 138,
+        "accepted_baseline_samples": 114,
+        "accepted_edited_samples": 24,
+        "unique_test_positions": 6,
+        "height_tolerance_cm": 5,
+        "max_recorded_accepted_height_error_cm": 0
+      },
+      "vegetation": {
+        "before": {
+          "measured_lot_core_origins": 252,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 79062,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        },
+        "after": {
+          "measured_lot_core_origins": 0,
+          "outside_reference_origins": 2374,
+          "total_valid_origins": 73210,
+          "consecutive_identical_full_matrix_fingerprints": 3,
+          "relevant_async_components_pending": 0
+        }
+      },
+      "citizen": {
+        "sample_count": 3,
+        "all_recorded_samples_have_ground_contact": true,
+        "max_recorded_foot_height_error_cm": 0,
+        "recorded_progress_is_monotonic": true,
+        "saved_progress_meters": 60.9999755859375,
+        "saved_arrived": true,
+        "position_samples": [
+          {
+            "route_progress_meters": 60.999976,
+            "position_cm": {
+              "x": -11800.000646,
+              "y": -12100.0,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": true
+          },
+          {
+            "route_progress_meters": 60.999976,
+            "position_cm": {
+              "x": -11800.000646,
+              "y": -12100.0,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": true
+          },
+          {
+            "route_progress_meters": 60.999976,
+            "position_cm": {
+              "x": -11800.000646,
+              "y": -12100.0,
+              "z": 594
+            },
+            "ground_z_cm": 500,
+            "ground_contact": true,
+            "arrived": true
+          }
+        ]
+      }
+    }
+  ],
+  "measurement_notes": [
+    "Collision counts include repeated accepted snapshots of the same six positions at the lot, access path and road. They are not counts of unique points or a complete history of unsuccessful polling attempts.",
+    "Collision probes isolate native ShaderWorld terrain. They do not independently certify all house collision faces or replace the previous road surface physics tests.",
+    "Vegetation counts are CPU HISM instance origins: a 10 m lot core and a 30-50 m reference area restricted to the side opposite the road. They do not measure GPU mask pixels, branch overhang or every species visually.",
+    "Three consecutive identical fingerprints of complete valid instance matrices and no relevant pending async components gate each reported vegetation phase. Raw hashes are omitted.",
+    "Citizen samples record actual actor positions, route progress and a terrain ground-contact trace. The reported foot check uses a 90 cm capsule half-height plus 4 cm designed ground clearance, with an 8 cm acceptance tolerance for the remaining difference.",
+    "Identifier and geometry comparisons here cover the lot record, linked road identifier and citizen route. The public report does not include full saved road records.",
+    "The three-process native verifier creates and saves through project APIs. Additional normal PIE acceptance then verified native R/Enter/P/L, first-start sample generation, automatic saving without manual K and normal Stop/Play auto-load; its scope is separated in normal_pie_ui. Exact autosave timing and input aliases were not measured."
+  ],
+  "not_tested": [
+    "WASD, right mouse, wheel, F5/F9 aliases, the new K callback and exact five-second autosave timing",
+    "General NavMesh pathfinding, detours, connected road graphs or citizen traffic",
+    "Deliberately blocked-route or missing-collision negative movement fixtures",
+    "Full world-boundary and water-level placement guards or intersections with later roads",
+    "Packaged Cook/Shipping, multiplayer, large-world streaming or performance limits"
+  ],
+  "sanitization": "Computer paths, save-slot names, run identifiers, process numbers, object identifiers, generator hashes and matrix fingerprints are omitted; their relevant comparisons are retained as booleans.",
+  "normal_pie_ui": {
+    "success": true,
+    "scope": "Native Slate key input in normal PIE, followed by Stop/Play in the same editor process; separate from the three OS-process tests.",
+    "verified_keys": [
+      "R",
+      "Enter",
+      "P",
+      "L"
+    ],
+    "new_roads_by_r_enter": 1,
+    "new_lots_by_p": 1,
+    "restored_lots_after_normal_restart": 2,
+    "restored_arrived_citizens": 2,
+    "lot_identifiers_match": true,
+    "automatic_save_without_manual_k_verified": true,
+    "manual_l_load_verified": true,
+    "normal_auto_load_verified": true,
+    "camera": "ActorTools moved the camera for cursor targeting; native camera bounds restored afterward. WASD/right mouse/wheel untested.",
+    "aliases_not_tested": [
+      "F5",
+      "F9"
+    ],
+    "image": "assets/images/cityloop-normal-autoload-house.png",
+    "automatic_first_start_example_created": true
+  }
+}

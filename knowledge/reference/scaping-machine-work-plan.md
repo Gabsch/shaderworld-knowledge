@@ -1,0 +1,175 @@
+---
+type: Playbook
+title: Alle Scaping-Werkzeuge an Maschinenaufträge anbinden
+description: Beschlossene Reihenfolge für Anheben, Absenken und weitere Bauarbeit mit gemeinsamer Materialbilanz, Speicherung und paralleler Untergrundansicht.
+status: draft
+tags: [shaderworld, city-builder, planning, machines, terraforming, underground, persistence]
+engine_version: "5.8.4"
+plugin_version: "4.1"
+generated:
+  by: codex/gpt-6
+  at: "2026-10-29T21:24:47.578582+00:00"
+evidence_scope: "Erster Slice nativ, uncooked und frisch verpackt geprüft. Slice B Ebnen abgeschlossen für den begrenzten Laborvertrag: 52 native Tests, Uncooked/frisches Development-Cooked je 12/12 + 16/16, Controller-API 15/15 und sichtbare Demo mit 12/12 nativen + 9/9 externen Checks/agentengeprüftem Slate-Bild. Physische Eingaben/menschliche Prüfung nicht erfolgt; weitere Scaping-Werkzeuge folgen. Slice C hat historische Uncooked-/API-/Native-Nachweise; getrennte SitePreparation-V2-Map mit expliziter blauer Biomregel und eigenem Slot eingerichtet; V2-Uncooked-/Cooked-Neustartpaare bestanden; normaler V2-Launcherstart mit antwortendem Hauptfenster und Kartennachweis bestanden. Physische Eingaben und menschliche Pixelbestätigung offen."
+sources:
+  - id: stable-save-guide
+    resource: ../guides/stable-save-binding.md
+    title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
+  - id: stable-save-evidence
+    resource: ../evidence/save-binding-test.json
+    title: Getrennte CPU-, Bridge-, B2/C2-, Physik- und normale Lebenszyklusnachweise
+  - id: site-preparation
+    resource: ../guides/site-preparation.md
+    title: Geprüfter begrenzter Slice C für gespeicherte Rodung vor Erdarbeit und Hausfreigabe
+  - id: machine-earthworks
+    resource: ../guides/machine-earthworks.md
+    title: Implementiertes Anheben und Absenken mit eigener Warteschlange und Speicherformat 6
+  - id: machine-evidence
+    resource: ../evidence/machine-earthworks-test.json
+    title: Finale native Suite und begrenzte uncooked Erstabnahme
+  - id: underground-view
+    resource: ../guides/underground-view.md
+    title: Eigene schematische Untergrunddarstellung mit getrenntem Nachweis
+  - id: user-decision
+    resource: "Direkte Nutzerentscheidung am 29. Oktober 2026: Plan in OKF festhalten; nach abgeschlossenem Asset-Import und Projektfreigabe Anheben/Absenken als Maschinenaufträge beginnen, parallel Untergrundansicht. Chat und Koordinationsnachrichten nicht im öffentlichen Bundle enthalten."
+    title: Beschlossener Startpunkt und Reihenfolge
+  - id: current-planner
+    resource: ../guides/construction-planner.md
+    title: Vorhandener begrenzter Planer und seine abgegrenzte Abnahme
+  - id: world-edits
+    resource: ../guides/foundations-lab.md
+    title: Bestehende Scaping-Pläne und getrennte Sofort-Debugausführung
+  - id: current-cycle
+    resource: ../guides/closed-material-cycle.md
+    title: Bereits geprüfter Materialkreislauf
+  - id: underground
+    resource: ../guides/underground-hybrid-probe.md
+    title: Geprüfte Hybridkammer und offene Untergrundarbeit
+  - id: storage
+    resource: shaderworld-data-and-persistence.md
+    title: Datenlayer, Projektkarte und dauerhafter Spielstand
+  - id: own-source
+    resource: "Gelesener eigener Projektcode: CityLabWorldEdits.h/.cpp, CityLabConstruction.h/.cpp, CityLabConstructionModel.h/.cpp, CityLabPersistence.h/.cpp und UndergroundProbe.h/.cpp. PlanEdit/RevisePlan/GetPreview und PreviewSite/ExpectedHeightAt/ProbeTerrain geprüft; Projektquellen nicht im öffentlichen Bundle enthalten."
+    title: Vorhandene Bausteine und Grenzen des flachen Baustellenmodells
+---
+# Alle Scaping-Werkzeuge an Maschinenaufträge anbinden
+
+**Ziel für alle regulären Scaping-Eingaben:** Ein gespeicherter Zielplan wird schrittweise von Maschinen ausgeführt. Das sichtbare Gelände zeigt den erreichten Bauzustand. Vorschau und ungearbeitete Bestätigung ändern noch keinen Boden, Bewuchs oder Materialbestand. Der erste getrennte Anheben-/Absenken-Slice ist implementiert und nativ sowie uncooked und verpackt geprüft. Slice B für Ebnen ist nativ und im vollständigen Uncooked-Neustartlauf geprüft; normale Controller-APIs sind separat geprüft; Frisches Development-Cooked und normale sichtbare Demo mit agentengeprüften Slate-Pixeln sind ebenfalls bestanden. Physische Eingaben und menschliche Prüfung sind nicht erfolgt. Oberflächenarbeit und die breite Umstellung der bisherigen Scaping-Werkzeuge folgen später.
+
+Der erste Arbeitsblock **Anheben und Absenken als Maschinenauftrag** wurde nach abgeschlossenem Fahrzeug-Asset-Import und ausdrücklicher Projektfreigabe begonnen. Parallel entstand die **Untergrundansicht**. Während des Imports war allein abgestimmte Dokuarbeit freigegeben; Editor, PIE, Blender, Builds und Spielstände blieben beim Import. Diese Freigabe wurde abgewartet. Weitere gemeinsame Editor-/GPU-Läufe bleiben zeitlich zu koordinieren.[^user-decision] [Bedienung und Prüfgrenzen](../guides/machine-earthworks.md).
+
+## So soll sich der Ablauf anfühlen
+
+1. Werkzeug wählen und die gewünschte Form ziehen.
+2. Zieloberfläche, tatsächlichen Ausgangsboden, Aushub, Einbaubedarf und Zugang prüfen. Ungültige Flächen mit verständlichem Grund markieren.
+3. Auftrag bestätigen. Er ist gespeichert und zunächst pausiert; auf dem Gelände ist erst eine Plananzeige zu sehen.
+4. Maschinenarbeit und Transport ausdrücklich starten. Begrenzte Puffer und tatsächlich verfügbare Lieferungen bestimmen den Fortschritt.
+5. Pausieren, speichern und das Spiel schließen. Nach dem Neustart sind Pläne, ausgeführtes Gelände, Maschinen, Ladungen und Materialkonten wieder auf demselben Stand.
+
+## Welche Aufträge die Werkzeuge erzeugen
+
+| Werkzeug | Geplanter Auftrag und Materialwirkung |
+| --- | --- |
+| Absenken | Boden ausheben; genau einmal in Puffer, Fahrzeug oder Lager buchen; bei vollem Puffer warten. |
+| Anheben | Material anliefern und einbauen; ohne Lieferung keine zusätzliche Höhe. |
+| Ebnen | Zielhöhe festlegen; Aushub und Einbau getrennt berechnen, auch wenn sie innerhalb derselben Fläche auftreten. |
+| Bodenmaterial auftragen | Flächenweise Oberflächenarbeit. Eine reine Material-ID beschreibt weder Masse noch Schichtdicke. Für physische Schichten Materialart, Dicke und Verbrauch vorher definieren. |
+| Roden | Vorbereitungsarbeit mit dauerhaften Baumzuständen. Eine NoGrowth-Maske allein ist noch keine Holzbilanz; Erträge gesondert ergänzen. |
+| Straße oder Grundstück vorbereiten | Abhängige Schritte aus Rodung, Erdarbeit und Oberflächenbau. Nur tatsächlich vorbereitete Abschnitte werden fertiggestellt beziehungsweise für Gebäude freigegeben. |
+
+Die vorhandene Foundations-Sofortausführung bleibt bis zur Umstellung ausdrücklich ein Labor-Debugwerkzeug. Sie darf nicht unbemerkt die reguläre Maschinenarbeit umgehen.[^world-edits]
+
+## Gemeinsame Regeln für Planung, Boden und Material
+
+**Ein Plan besitzt eine stabile Identität und Revision.** Im neuen Earthworks-Pfad verweist `SourcePlanId` tatsächlich auf `Plan.Id`; der ausführende Job hat eine weitere stabile ID. Revisionen behalten Planidentität und Reihenfolge. Gespeichert werden Welt-/Generatorbindung, Ausgangs- und Referenzraster, Start-/Zielhöhen, Geländeversion und Operation. Der alte Construction-Pfad bleibt erhalten; seine unabhängig erzeugte SourcePlanId wurde dadurch nicht rückwirkend mit einem Scaping-Plan verbunden. Gemischte Aushub-/Einbaubereiche innerhalb eines Ebnenauftrags verwenden in Schritt B getrennte vorzeichenabhängige Arbeitsphasen; Native, Uncooked- und frische Development-Cooked-Abnahme sowie normale Controller-API und sichtbare Demo sind bestanden. Physische Eingaben und menschliche Prüfung sind nicht erfolgt.[^own-source]
+
+**Den echten Ausgangsboden erfassen.** Der frühere Construction-Planer setzte eine flache Basis voraus; seine Flachheitsprüfung war noch kein gespeichertes Ausgangsraster. Earthworks speichert nun dichte tatsächliche Kollisionsproben über der Einflussfläche und die Start-/Zielhöhe jeder Arbeitszelle. Zusätzlich enthält die Referenz dieselben Proben abzüglich bereits ausgeführter Earthworks-Höhenänderungen. Referenz plus sämtliche ausgeführten Beiträge erzeugen den erwarteten Boden, ohne die neue Baseline ein zweites Mal aufzutragen. Vor Arbeitsstart werden Fläche und Zugänge erneut geprüft. Ein veralteter ungearbeiteter Plan benötigt eine frische Revision. Ein beliebiges unebenes Feld samt gemischter Einebnung ist damit noch nicht abgenommen.
+
+**Mengen aus derselben Form ableiten.** Gegensätzliche Höhenbeiträge dürfen sich nicht sichtbar aufheben, während trotzdem beide vollständigen Mengen als bewegt gelten. Aushub und Einbau werden getrennt integriert; Dichten, Zellauflösung und Rundung werden ausdrücklich festgelegt. Exakte Modellgramm sind von einer unabhängigen Vermessung des quantisierten Terrainmeshvolumens zu unterscheiden.
+
+**Ein gemeinsamer Vorrat, mehrere Pläne.** Der erste Earthworks-Snapshot enthält eine Warteschlange, einen aktiven Auftrag, einen Lkw und genau ein Lager. Wartende Pläne besitzen weder Vorabgutschrift noch Reservierung. Anheben reserviert beim ausdrücklichen Start nur bereits vorhandenen vollständigen Bedarf; Absenken startet nur, wenn der gesamte verbleibende Aushub ins freie Lager passt. Der nächste Auftrag startet nicht automatisch. Das alte Gruben-/Aufschüttpaar bleibt ein separater Spezialfall mit eigenem Slot; seine Konten werden nicht automatisch mit Earthworks zusammengelegt.
+
+**Ändern und Abbrechen bewahren die Arbeit.** Unbegonnene Aufträge dürfen verändert oder storniert werden. Nach dem ersten Erdschritt oder Materialtransfer bleiben ausgeführte Höhen, Verbrauch und Ladungen erhalten. Nach ausgeführter Arbeit benötigt ein neues Ziel einen weiteren Gegenauftrag; der erste Slice erlaubt dann weder Revision noch Storno des bisherigen Jobs. Undo löscht keine bereits ausgeführte Baugeschichte. Ein allgemeiner Abbruch mit Rücktransport beladener Fahrzeuge ist noch nicht implementiert.
+
+**Ein Arbeitsschritt bildet einen konsistenten Speicherstand.** Materialbuchung, Zellfortschritt und ausgeführte Geometrieversion werden zusammen fortgeschrieben. Anschließend wird das Terrain daraus aufgebaut; weitere Erdarbeit wartet auf den lokalen Kollisionsnachweis. Nach dem Laden wird derselbe Stand rekonstruiert und geprüft, ohne Material erneut zu buchen. Speicherformat 6 ergänzt den Earthworks-Snapshot und erhält die bisherigen Felder einschließlich Constructionrecords. Native Schema-Fixtures prüfen diesen Datenvertrag; eine automatische Umwandlung alter Constructionaufträge in neue Earthworks-Jobs ist nicht enthalten. Die Migration jedes archivierten echten Binärsaves bleibt separat zu prüfen.[^current-cycle]
+
+## Umsetzungsreihenfolge und erste Abnahme
+
+### A: Anheben und Absenken
+
+Ein Bodenmaterial, kleine zunächst ebene Flächen, feste geprüfte Wege, ein gemeinsames Lager, wartende Pläne und ein aktiver Maschinenzug. Die zentrale Probe lautet: **abtragen, lagern und dieselbe bearbeitete Fläche wieder auftragen**. Noch keine allgemeine Stadtlogistik, freie Routenwahl oder konkurrierende Erdmaschinen.
+
+Abnahmekriterien:
+
+- Vorschau, Bestätigung und ungearbeitete Revision verändern weder Terrain, Bewuchs noch Materialkonten.
+- Veralteter Ausgangsboden blockiert den Arbeitsstart mit einer verständlichen Meldung.
+- Der zweite Auftrag verwendet den tatsächlich ausgeführten Boden; keine doppelte Höhenprojektion oder Materialbuchung.
+- Aushub und Einbau stimmen im definierten Modell; Gesamtbilanz **0 g**. Voller Puffer und fehlende Lieferung halten die Arbeit an.
+- Mehrere wartende Pläne können denselben Lagerbestand nicht mehrfach verbrauchen.
+- Revision, Storno und Undo bleiben vor Arbeit neutral. Nach erstem Erdschritt oder Materialtransfer dürfen sie weder Höhe noch Konten oder Ladungen zurücksetzen; Gegenarbeit benötigt einen neuen Auftrag.
+- Neustart während beladener Fahrt und während ausstehender Kollisionsaktualisierung erhält den vollständigen Zustand vor weiterer Simulation. Drei weitere Loads erzeugen keine Duplikate.
+- Unabhängige lokale Höhenproben, unbeeinflusste Kontrollflächen und alte Spielstände bleiben Teil der Prüfung. Physische Bedienung und gerenderte Form werden getrennt abgenommen.
+
+### Prüfstand A nach der ersten Umsetzung
+
+- **Nativ bestanden:** finale Suite 46/46, darunter sieben Earthworks-Tests und drei getrennte Untergrund-Datentests.
+- **Uncooked und verpackt bestanden:** je zwei gerenderte Prozesse mit **10/10 + 12/12 Checks**. Auf derselben N2-/0,75-m-Fläche **86,4 t** ausheben, lagern und wieder einbauen; alle Bilanzen **0 g**. Beladene Fahrt und Kollisionswarte-Checkpoint exakt fortgesetzt, drei weitere Loads ohne Duplikat. Je Laufpaar 825 akzeptierte lokale Höhenproben, maximal 4 cm bei 5-cm-Gate. Neuer EarthworksLab-Cook/Stage/Archive erfolgreich; bekannte geerbte Level-Blueprint-Warnungen bleiben.
+- **Normale APIs und Kaltstart bestanden:** eigener gespeicherter Kartenstand, Zielwahl, Bestätigung mit Autosave und drei logische Loads. Kalte Editorstarts laden den ungearbeiteten Plan mit identischem Zustand, Arbeit pausiert/Transport aus. Ein fehlender Slot bleibt bedienbar; normale Save-Dateien sind geschützt.
+- **Ansicht getrennt bestanden:** vier Editorbilder für Oberfläche/Schnitt/Innenraum/Rückweg, Tiefenschritte, Laden aus Schnitt und invariant neun Terrain-/sechs Hüllen-Komponentenspuren je Ansicht. Der frühere Gras-zu-Sand-Fehler ist nach Korrektur der Live-Materialbindungen visuell nachgeprüft. [Eigener Ansichtsbericht](../evidence/underground-view-test.json).
+- **Begrenzungen:** physische Eingaben, weitere normale Revisions-/Start- und Fehlerwege, Außenkontrollfelder und echte archivierte Altformat-Saves bleiben offen. Komponentenspuren sind keine Weltbewegungs- oder Wasserprobe; verpackte Ansichtspixel fehlen. Gemischtes Ebnen ist im folgenden Slice B geprüft; breite Oberflächen-/Straßenanbindung und echter Tunnelvortrieb bleiben spätere Slices.
+
+Der [bereinigte Maschinenbericht](../evidence/machine-earthworks-test.json) trennt native Modelle, uncooked ConstructionLab-Override, verpacktes EarthworksLab und normale APIs. Der erste Kreislauf ist einschließlich Neustart abgenommen; vor der breiten Bedienumstellung die verbleibenden Interaktionsfälle gezielt prüfen.
+
+### B: Ebnen mit Aushub und Einbau
+
+Ein kontrolliertes Buckel-/Muldenprofil auf eine absolute Zielhöhe bringen. Positive und negative Volumen getrennt anzeigen; zunächst denselben Materialtyp verwenden. Fehlmengen und Überschüsse sichtbar machen. Überlappende Änderungen und erneute Planung auf bereits bearbeiteter Fläche gezielt prüfen.
+
+**Für den begrenzten Laborvertrag abgeschlossen:** [Neue Ebnenanleitung](../guides/flatten-machine-earthworks.md). Der neue Vertrag friert den Boden auf einem 1-m-Raster ein und definiert ein fest trianguliertes Änderungsfeld mit ebener Kernfläche und 2-m-Schultern. Erst das zusammengefasste Feld wird an seiner Nullhöhe in räumlich getrennten Abtrag und Einbau geteilt. Dadurch zählen gegenläufige alte Höhenbeiträge in ihrer Überlappung nicht doppelt. Die Maschinenarbeit schreitet je Phase proportional über alle zugehörigen Bereiche fort; sie ist keine lokal simulierte Schaufelarbeit.
+
+Der vollständige Abtrag muss ins freie Lager passen. Echter vorhandener Bestand deckt beim Start den zusätzlichen Bedarf; erst nach vollständiger tatsächlicher Einlagerung beginnt Einbau. Der interne Earthworks-Snapshot erhält für Ebnen Version 2, das übergeordnete SaveGameformat bleibt 6. Die native Gesamtsuite bestand 52/52 Tests, 50 ohne und zwei mit bekannten Warnungen; finale Editor-/Game- und Guardbuilds sind bestanden. Zwei frühere gerenderte Versuche scheiterten am verlorenen vierten Vektorparameter beziehungsweise der 100-cm-Kollision an einer Vorzeichenkante. Eigenes Material v2 und exakt 50 cm auf der eigenen Karte korrigierten diese Ursachen; beide Negativbefunde bleiben erhalten. Anschließend bestand der vollständige gerenderte Uncooked-Lauf **12/12 + 16/16 in 149,660905/137,881385 s**: beladene Abtrags-/Einbaucheckpoints kalt exakt geladen, beide Restarbeiten identisch abgeschlossen, drei weitere Loads ohne Duplikate. Tatsächliche Mengen **18.072.546/18.835.039 g Abtrag/Einbau**, Endlager **20.837.507 g**, alle 1.768 Bilanzen 0 g und 19 normale Save-Dateien unverändert. 377 verschiedene Höhenpositionen bestanden mit maximal 2,126816 cm lokalem Fehler bei 5-cm-Gate; kein kontinuierlicher Oberflächen- oder Leistungsnachweis. Die normale Controller-API bestand zusätzlich 15/15 in 112,656 s: echte alte Version-1-Kopie geladen, inerte 325-cm-Vorschau, ungearbeiteten fünften Auftrag bestätigt und drei Loads exakt erhalten. 19 normale Save-Dateien blieben unverändert. Terrain-Captures sind keine Slate-Pixelabnahme; der frühere ungültige SHOWUI-Harnessversuch bleibt erhalten. Der frische Development-Cook/Stage/Archive bestand in 135,22 s BuildCookRun mit Exit 0, 0 Fehlern und fünf bekannten geerbten Level-Blueprint-Warnungen. Das frische Development-Cooked-Laufpaar bestand anschließend **12/12 + 16/16 in 125,035661/102,710287 s**: exakte beladene Kaltstarts, drei Loads, gleiche Mengen und Endkonten wie Uncooked, 1.712 Bilanzen/0 g und 19 normale Save-Dateien unverändert. 29.029 akzeptierte Wiederholmessungen an 377 Positionen mit denselben begrenzten Maximalfehlern. Die normale sichtbare Demo bestand zusätzlich 12/12 native und 9/9 externe Checks: vollständiger Ready-Zustand/initialer Hash exakt, sechs Paketdateien versiegelt, 109 ursprüngliche Save-Dateien unverändert. Tatsächliche 1600 × 1000-SHOWUI-Aufnahme mit Terrain und Slate-Leiste agentengeprüft. Physische Eingaben und menschliche Prüfung sind nicht erfolgt; breite Werkzeugumstellung, Shipping und Leistungsnachweise bleiben außerhalb dieses Slice. [Bereinigter Bericht](../evidence/flatten-machine-earthworks-test.json).
+
+### C: Vorbereitungs- und Oberflächenarbeit
+
+**Historische Einrichtung der getrennten SitePreparation-V2-Fassung:** [Grundstücksvorbereitung](../guides/site-preparation.md) verbindet gespeicherte Rodung, Erdauftrag und physische Hausfreigabe. Die neue Map **ShaderWorldSitePreparationLab** und Slot **CityLabSitePreparation** verwenden zehn eigene BlueAndBounds1-Biom-/Dichtekopien; Höhen-/Hangregeln und gemeinsame Spawnassets bleiben erhalten. Materialwahl GrassAlt besitzt keine versteckte zusätzliche Dichtesperre. Quelldateien der bisherigen EarthworksLab-Welt und ihr Slot bleiben erhalten; damals keine Save- oder Ressourcenmigration. Einrichtung mit elf neuen Assets, native V2-Suite und Wiederholung ohne neue Assets geprüft; vollständige V2-Uncooked-/Development-Cooked-Neustartpaare am ursprünglichen Problemstandort bestanden. Normale V2-Daten werden exakt geladen; der CSV-instrumentierte Exit bleibt fehlerhaft. Drei getrennte normale Starts ohne CSV endeten sauber mit Exit 0; der instrumentierte Fehler bleibt separat offen. Passender Demo-Startspielstand und sechs Paketdateien sind versiegelt vorbereitet; der normale Launcherstart mit antwortendem eigenem Hauptfenster und nativem Kartennachweis ist bestätigt. Physische Eingaben und menschliche Pixelbestätigung bleiben offen. Speichern und kalte Wiederaufnahme sind damit innerhalb desselben Builds belegt; ein neuer Cook kann die alte Terrainbindung ändern und alte Saves abweisen. Der spätere begrenzte Format-8-Nachweis ergänzt nun stabile Bindung und ausdrückliche Übernahme bekannter Referenzstände; ihre ursprünglichen Kennungen werden erhalten. Frühere Nachweise und negative Kontrollbaumdiagnosen bleiben [historisch zugeordnet](../evidence/site-preparation-test.json). Fester 12 × 12-m-Kern und 7/Space/H/B gelten weiter. Holz, Oberflächenarbeit und explizites Replan nach begonnener Rodung folgen später.
+
+**Nachtrag Savebindung:** [Bekannte A7-Stände nach B8/C8 übernehmen](../guides/stable-save-binding.md) ist für den begrenzten Bauplatzvertrag abgeschlossen: drei Checkpoints je 16 Bridge-/30 B2-/30 C2-Checks in zwei vollständigen neuen Cooks, strenge physische Fortsetzung mit 21 Ressourcen, Haus und drei Loads, getrennte Nutzermigration sowie normales No-CSV-Speicher-/Lade-/Kaltstartpaar bestanden. 13 native Versionen ändern sich bei gleichem tatsächlichem Profil. Der normale C2-Start belegt ein antwortendes eigenes Fenster und die richtige Karte, keine menschlichen Pixel oder physischen Tasten. Historische Herkunftsgrenzen und die vier fehlgeschlagenen Vorversuche bleiben im [Beleg](../evidence/save-binding-test.json) erhalten. Kein neuer Oberflächen-, Replan- oder Tunnel-Slice.
+
+Rodung als Voraussetzung, anschließend definierter Oberflächenauftrag; danach Straßenabschnitte und Grundstücke. Materialmalerei erst nach fachlicher Festlegung von Fläche, Arbeitsleistung und gegebenenfalls Schichtverbrauch anbinden. Holz-, Verdichtungs- und Mehrmaterialwirtschaft bleiben eigene Erweiterungen.
+
+## Parallel: Untergrundansicht
+
+| Modus | Geplantes Verhalten |
+| --- | --- |
+| Oberfläche | Normale Stadtansicht und normale Bodenabfrage. |
+| Schnittansicht | Ausgewählten Untergrundbereich lokal freilegen; später Tiefenregler mit absoluter Höhe und Tiefe unter dem örtlichen Boden. |
+| Innenraum | Sichere Kameraposition im ausgewählten fertigen Abschnitt; eindeutige Rückkehr zur Oberfläche. |
+
+Die Schnittansicht ist eine Darstellungsfunktion. Sie erzeugt keine Holebrushes, Erdbewegung, Rodung oder Wasserabdichtung. Auswahl und Kamera benötigen einen eigenen, zum sichtbaren Schnitt passenden Abfragepfad; Bürger, Fahrzeuge und Maschinen behalten ihre tatsächliche Kollision. Ausgeblendete Darstellung muss beim Verlassen, Laden und Beenden zuverlässig zurückgestellt werden.
+
+Eine fertige bedienbare ShaderWorld-Cutaway-API wurde im untersuchten Bestand nicht gefunden. Eine eigene schematische Anzeige ist inzwischen implementiert. Die freie Inspektionskamera mit verschiebbarem Sichtfenster und Controllerbindungen ist integriert. Aktuelle Editor-/Game-Builds und fünf native Untergrundtests sind bestanden; die gemeinsame Controller-/Kamera-API und zugehörige Editorbilder sind erneut auf EarthworksLab geprüft. Normaler V2-Launcherstart mit Fenster-/Kartennachweis bestanden; verpackte Schnitt-/Innenraumpixel weiterhin offen. Physische Eingaben und verpackte Ansichtspixel bleiben offen. Bewegung über WASD/QE, Blick über rechte Maus, Mausrad, Home für Fokus, G für den Ausschnitt und Bild auf/ab für Tiefe sind als Quellvertrag dokumentiert. Historische feste Kamera und deren Bilder bleiben getrennt; GPU-Sichtbarkeit, Bewuchs, Schatten und weitere Kameras brauchen ihre eigene praktische Abnahme. [Bedienvertrag der Untergrundansicht](../guides/underground-view.md). Die erfolgreiche Hybridkammer ist die Grundlage für die erste Sichtprobe; ihre Existenz belegt keinen frei ausgrabbaren 3D-Untergrund.[^underground]
+
+Erste Abnahme: alle drei Modi wechseln, dieselbe Kammer auswählen, sicher hin- und zurückfahren, unveränderte Physik/Materialkonten nachweisen und nach Neustart denselben Bauzustand sehen. Sichtprüfung und echte Maus-/Tastaturbedienung separat protokollieren. Zunächst keine fingierte Geologie anzeigen; Schnittflächen ohne Erdmodell sind als schematisch zu kennzeichnen.
+
+## Danach: Tunnelbau und weitere Grundlagen
+
+Unterirdischer Vortrieb braucht zusätzlich räumliche Boden-/Geologiedaten oder eine andere geeignete 3D-Geometriebeschreibung. Ein entnommener Bereich darf nicht zugleich als Oberflächenaushub und als Tunnelmaterial gezählt werden. Die heutige Hybridhülle wurde unter dem Höhenfeld eingesetzt und hat dadurch noch keinen Aushub erzeugt.
+
+Der spätere Ablauf: Zugang herstellen, erreichbaren Abschnitt ausheben, Aushub abtransportieren, sichern/auskleiden, Kollision und Wasserabdichtung prüfen, Abschnitt freigeben. Portale, Trasse und Oberfläche werden abhängige Teilaufträge eines gemeinsamen Plans.
+
+Fahrzeuge erhalten Fähigkeiten wie ausheben, laden, transportieren und verteilen. Modell, bewegliche Teile und Animation werden über Adapter an den Arbeitsfortschritt gebunden. Der [separate Fahrzeug-Importversuch](../guides/vehicle-asset-evaluation.md) belegt inzwischen gespeicherte Mesh-/Clips und Demoposen. Das bestätigt weder Schaufelphysik noch echte Fahrzeug-/Terrainkollision oder Produktionsleistung; die Arbeitsmengen bleiben Modellzustand.
+
+Danach priorisieren: Bürger-/Maschinenwege nach Bodenänderungen, mehrere konkurrierende Baustellen, frischer Karten-Cook und verpackte Bedien-/Neustartabnahme; größere Welten und Streaming erst mit gezielten Leistungsnachweisen. Räumliche ShaderWorld-Layer werden als Projektion unseres Zustands erprobt, nicht vorab zum alleinigen Speicher erklärt.[^storage]
+
+## Zuständigkeiten und weitere gemeinsame Prüfungen
+
+- Hauptarbeit: Nach den begrenzten Anheben-/Absenken- und Ebnenabnahmen Oberflächenarbeit und Bauvorbereitung als folgenden Slice präzisieren; physische Eingaben als eigene offene Interaktionsabnahme behandeln.
+- Parallelagent: isolierte Untergrunddarstellung mit eigenen Dateien und abgestimmtem Material-/Kameravertrag.
+- Parallelagent: Mengen-/Restore-Review und unabhängige Abnahmefälle; später begrenzter Datenlayer-Neustartversuch.
+- Editor, GPU-Abnahmen und Builds werden weiterhin zeitlich koordiniert. Parallelität bedeutet keine gleichzeitige Steuerung derselben Unreal-Sitzung.
+
+[^user-decision]: Direkte Nutzerentscheidung laut Quellenbeschreibung; sie autorisiert die genannten nächsten Arbeiten nach der Freigabe, keinen vorzeitigen Editorzugriff.
+[^current-planner]: [Vorhandener Baustellenplaner](../guides/construction-planner.md), mit seinen eigenen Eingabe- und Cookgrenzen.
+[^world-edits]: [Foundations](../guides/foundations-lab.md), vorhandene Planungs- und Debugbausteine.
+[^current-cycle]: [Geschlossener Materialkreislauf](../guides/closed-material-cycle.md), bestehender abgegrenzter Nachweis.
+[^underground]: [Untergrund-Hybridversuch](../guides/underground-hybrid-probe.md), eigene Hülle und getrennte Kollisions-/Neustartprüfung.
+[^storage]: [ShaderWorld-Daten und dauerhafter Spielstand](shaderworld-data-and-persistence.md).
+[^own-source]: Eigener Projektcode laut Quellenbeschreibung; gelesen, nicht Teil dieses öffentlichen Bundles.

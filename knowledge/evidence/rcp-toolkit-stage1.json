@@ -1,0 +1,426 @@
+{
+  "schema": "citylab.rcp-toolkit-stage1-summary.v1",
+  "updated_utc": "2026-10-30T20:46:16.912044+00:00",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.2",
+  "rcp_release_version": "unknown",
+  "status": "bounded_stage1_own_adapter_lifecycle_passed",
+  "scope": "Sanitized inventory, reflection, static geometry and native API tests; cooked raw spawn succeeds, direct-UCS raw20 fails, first own-adapter20 fails at a collision seam. Corrected sealed own-adapter20 passes exact identity, scene/body rays and lifecycle gates; no broad RCP or normal-gameplay acceptance.",
+  "inventory": {
+    "historical_packages": 673,
+    "current_packages": 907,
+    "current_uasset": 905,
+    "current_umap": 2,
+    "folder_groups": {
+      "Blueprints": 80,
+      "Demo": 18,
+      "Materials": 241,
+      "Meshes": 352,
+      "Sound": 7,
+      "Textures": 209
+    },
+    "main_road_creator_blueprints": 1,
+    "blueprint_group_is_not_actor_class_count": true,
+    "content_pack_not_own_rcp_plugin": true,
+    "installed_version_not_inferred_from_engine_serializer": true,
+    "all_vendor_bytes_unchanged_during_inspection": true,
+    "all_preexisting_saves_unchanged_during_inspection": true,
+    "bridge_folder_meshes": 9,
+    "full_latest_vendor_release_completeness_proven": false
+  },
+  "reflection": {
+    "vendor_properties": 196,
+    "vendor_functions": 47,
+    "editor_only_property_flags": 0,
+    "editor_only_function_flags": 0,
+    "missing_editor_only_flags_do_not_prove_transitive_runtime_safety": true,
+    "user_construction_script": {
+      "present": true,
+      "script_bytes": 18616,
+      "parameter_count": 0,
+      "runtime_rebuild_verified": false,
+      "tested_route": "Direct ProcessEvent of actual UserConstructionScript after deferred FinishSpawning; this route failed, not a blanket verdict on all Blueprint runtime construction."
+    },
+    "cdo_road_settings_mesh": "None; computed by Set Road Settings from Road Type, not a ready CDO mapping"
+  },
+  "material_reference_findings": {
+    "registry_reports_missing_game_references": {
+      "/Game/Street_Props/Textures/T_Galvanized_Steel_Normal": [
+        "/Game/Road_Creator_Pro/Materials/MI_Galvanized_Steel_Matte"
+      ],
+      "/Game/Street_Props/Textures/T_Scratches": [
+        "/Game/Road_Creator_Pro/Materials/MI_Galvanized_Steel_Matte",
+        "/Game/Road_Creator_Pro/Materials/MI_Painted_Metal_Black",
+        "/Game/Road_Creator_Pro/Materials/MI_Painted_Metal_Grey"
+      ],
+      "/Game/Street_Props/Textures/T_Grunge_Mask": [
+        "/Game/Road_Creator_Pro/Materials/MI_Painted_Metal_Black",
+        "/Game/Road_Creator_Pro/Materials/MI_Painted_Metal_Grey"
+      ],
+      "/Game/Street_Props/Textures/T_Plastic_Props_Normal": [
+        "/Game/Road_Creator_Pro/Materials/MI_Plastic_Props_Retro-Reflective"
+      ],
+      "/Game/Backyard_Pool/Textures/T_Dirt_N": [
+        "/Game/Road_Creator_Pro/Materials/Plastic/MI_Plastic_Black_Matte_2"
+      ],
+      "/Game/Restroom_Basic_Pack/Textures/T_Dirt": [
+        "/Game/Road_Creator_Pro/Materials/Plastic/MI_Plastic_Green_Glossy"
+      ]
+    },
+    "distinct_missing_reference_count": 6,
+    "affected_material_package_count": 6,
+    "all_direct_main_blueprint_game_dependencies_present": true,
+    "cooked_visual_effect_observed": false,
+    "silent_vendor_repairs_performed": false
+  },
+  "material_parameters": {
+    "main_asphalt_static_switches": 37,
+    "main_asphalt_scalars": 57,
+    "main_asphalt_vectors": 5,
+    "main_variant_retro_reflective": false,
+    "main_variant_mirage": false,
+    "reflective_mirage_variant_retro_reflective": true,
+    "reflective_mirage_variant_mirage": true,
+    "cooked_switch_or_material_variant_acceptance": "Corrected own20 passes exact cooked Main to ReflectiveMirage slot0 material identities. This selects precompiled variants; no runtime static-switch compilation or pixel appearance acceptance."
+  },
+  "prepared_assets": {
+    "own_mesh_copies": 18,
+    "cpu_access_readback_true": true,
+    "vendor_unchanged": true,
+    "saves_unchanged": true,
+    "roles": {
+      "road_profiles": 6,
+      "bridges": 5,
+      "tunnel_and_portal": 2,
+      "support": 1,
+      "accessories": 4
+    },
+    "runtime_collision_acceptance": "Corrected own20 passes 300 actual scene rays and 300 component-body rays including unchanged center seam. Limited two/four-lane fixture; no continuous road, arbitrary accessory or independent-actor seam acceptance."
+  },
+  "static_geometry": {
+    "method": "LOD0 triangle intersections with independently checked UE coordinate conversion. Summary only; no licensed meshes, vertices or OBJ exports published.",
+    "tunnel_drive_corridor": {
+      "sample_count": 729,
+      "width_m": 8,
+      "height_m": 4,
+      "local_floor_datum_cm": 10,
+      "minimum_sampled_inner_roof_cm": 527.384888,
+      "scope": "A measured central corridor, not the whole arch, wall/floor thickness, collision or a drive-through test."
+    },
+    "portal_floor_datum_cm": 0,
+    "portal_and_tunnel_datums_are_not_identical": true,
+    "bridge_deck": {
+      "central_samples": 81,
+      "samples_with_surface_at_or_above_local_z0": 0,
+      "scope": "Road/top deck cannot be inferred from bridge chassis bounding box; keep a separate road surface and test opaque/colliding closure."
+    },
+    "whole_arch_bounding_rectangle_approved": false,
+    "runtime_verified": false
+  },
+  "native_editor_tests": {
+    "report": "Native2",
+    "success_total": 128,
+    "clean": 126,
+    "with_known_warnings": 2,
+    "failed": 0,
+    "not_run": 0,
+    "known_warning_tests": [
+      "CityLab.BuildQueries.BoundedCitizenDetour",
+      "CityLab.WorldEdits.BackendMigration"
+    ],
+    "scope": "Existing and new CityLab model/API tests; not 128 cooked RCP actor, rendering, input, lifecycle or restart tests."
+  },
+  "pending_acceptance": [
+    "Separate component/actor boundary joints: caller-defined overlap flags and real exact-seam probes; the first fix only covers interior slices of each component.",
+    "Subsequent stages: multiple planning, four-resource work, nodes/roundabouts, bridge/tunnel/water, ordinary input, save and cold restart."
+  ],
+  "ordinary_demo": {
+    "current_verified_starter": "RoadConstruction11",
+    "replaced_by_stage1_probe": false,
+    "old_saves_migrated_by_this_stage": false
+  },
+  "private_provenance": [
+    {
+      "artifact": "rcp-inspect-native.json",
+      "sha256": "4b7ee819061f11644a3f068d67d0481f39140b96152477d8a89d70bc085d518d",
+      "scope": "Actual AssetRegistry/CDO/function/material/mesh inspection; vendor assets and saves unchanged."
+    },
+    {
+      "artifact": "prepared-assets.json",
+      "sha256": "631c20303715d27731461242110d7ac1fa38b9c5a70eccd27b00331beddb83c7",
+      "scope": "Own prepared copies and CPU-access readback; source assets retained."
+    },
+    {
+      "artifact": "Geometry/measured-structure-cross-sections.json",
+      "sha256": "74dfda0b495f31e621b59d4684d6b4d88cd799c5dddf7d5e18902f6e9e783313",
+      "scope": "Static geometry measurements; no original mesh exports published."
+    },
+    {
+      "artifact": "Native2/index.json",
+      "sha256": "1c400fa92b1fa93eb70168d4ed57514ba9989f3f286189c1d8383b599afb53c8",
+      "scope": "Editor native automation report; no cooked runtime proof."
+    },
+    {
+      "artifact": "package-02533ad82b784b219d761b085eb02d02.json",
+      "sha256": "929bbe9435fa1f367c1df7c33e06606dd86a2ef539bab9c9327fff0536149d53",
+      "scope": "Fresh raw-only cook/source/package seal; no ordinary save compatibility."
+    },
+    {
+      "artifact": "runtime-5fc33f8bcd154e3189ccc3fe1e2f0ce9/result.json",
+      "sha256": "18cfe5bfad5e16c2a7253602c7bcc8b61046ad11a9d3369d0a997dc276305efa",
+      "scope": "Cooked deferred spawn/discovery only; not full runtime acceptance."
+    },
+    {
+      "artifact": "runtime-f8dab7c6bc884e6ea548a1942a2d2a6f/result.json",
+      "sha256": "b8c41ae506c40c850d00e93439c6f1f8ee4ef37ed9bc00fbbe0fb13ca6bb1ddd",
+      "scope": "All20 direct-UCS cycles completed and failed; zero engine-error lines and protected inputs unchanged."
+    },
+    {
+      "artifact": "failed-fixture-own-adapter-a2628178164d4c32b9005142a70466f5/result.json",
+      "sha256": "3609ed7cffa151b537a6532a778f31c06061dba69f0e1b2def5486c39d9d2b29",
+      "scope": "Preserved failed first own-adapter driver; seam collision and self-output tool-guard failure."
+    },
+    {
+      "artifact": "failed-fixture-own-adapter-a2628178164d4c32b9005142a70466f5/RcpAdapterUser-a2628178164d4c32b9005142a70466f5/Saved/McpDiagnostics/rcp-own-adapter-result.json",
+      "sha256": "524748c32711bb7e721bbff118fa773353ff47357bb08176921814a082d4961b",
+      "scope": "Actual first own-adapter20 native observations; 60 exact-seam collision failures retained."
+    },
+    {
+      "artifact": "OwnAdapterRuns/own-adapter-1541d7436c5747c99ac1b91b717d191b/result.json",
+      "sha256": "b33ece328c5a3a5743718064ebe576457d69a89d0426dde3c27d5f6a8fe664a8",
+      "scope": "Corrected sealed own-adapter20 driver passes; six protected groups unchanged."
+    },
+    {
+      "artifact": "OwnAdapterRuns/own-adapter-1541d7436c5747c99ac1b91b717d191b/RcpAdapterUser-1541d7436c5747c99ac1b91b717d191b/Saved/McpDiagnostics/rcp-own-adapter-result.json",
+      "sha256": "de4ff399915882561f811069dd30850dcc3526a416b16da6d30c8c185ad5eb75",
+      "scope": "Actual corrected own-adapter20 native observations; all unchanged exact scene/body fractions and lifecycle gates pass."
+    },
+    {
+      "artifact": "package-20f606942b2347718be2385b1be0c1b5.json",
+      "sha256": "ce154297b03e7f94b6c54a83a4797bbd454ec167d8b02d6ccb1447091532f0f9",
+      "scope": "Own-adapter2 exact source/package/loose-content binding; no ordinary save compatibility."
+    }
+  ],
+  "privacy": {
+    "personal_paths_removed": true,
+    "configuration_contents_included": false,
+    "saves_or_vendor_assets_included": false,
+    "vendor_source_or_full_geometry_exports_included": false,
+    "human_validation_claimed": false
+  },
+  "static_road_mesh_bounds": [
+    {
+      "label": "1-Lane Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Straight_Roads/SM_Road_1_Lane.SM_Road_1_Lane",
+      "length_x_cm": 1200.00048828125,
+      "width_y_cm": 500.0000305175781,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    },
+    {
+      "label": "2-Lane Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Straight_Roads/SM_Road_2_Lanes.SM_Road_2_Lanes",
+      "length_x_cm": 1200.0004272460938,
+      "width_y_cm": 900.0,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    },
+    {
+      "label": "3-Lane Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Straight_Roads/SM_Road_3_Lanes.SM_Road_3_Lanes",
+      "length_x_cm": 1200.0004272460938,
+      "width_y_cm": 1300.0001220703125,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    },
+    {
+      "label": "4-Lane Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Straight_Roads/SM_Road_4_Lanes.SM_Road_4_Lanes",
+      "length_x_cm": 1200.00048828125,
+      "width_y_cm": 1700.0,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    },
+    {
+      "label": "2+2-Lane Wide Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Straight_Roads/SM_Road_Wide_2+2_Lanes.SM_Road_Wide_2+2_Lanes",
+      "length_x_cm": 1200.000244140625,
+      "width_y_cm": 1999.999755859375,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    },
+    {
+      "label": "Gravel Road",
+      "mesh": "/Game/Road_Creator_Pro/Meshes/Road_Meshes/Gravel/SM_Gravel_Road.SM_Gravel_Road",
+      "length_x_cm": 1200.000244140625,
+      "width_y_cm": 597.6925659179688,
+      "cpu_access": false,
+      "scope": "Static local mesh bounds, not lane width, generated profile scale, road collision or runtime success."
+    }
+  ],
+  "cooked_stage1": {
+    "scope": "Raw Blueprint only; no old SaveGame compatibility or normal-game acceptance",
+    "cook_and_seal_success": true,
+    "source_manifest_sha256": "52f2c28c99a926831fc1b60e033196438410cdce4a6533a8d42df8d1c11f3cae",
+    "cooked_deferred_spawn_only": {
+      "success": true,
+      "completed_cycles": 1,
+      "driver_elapsed_seconds": 14.938,
+      "game_exit_code": 0,
+      "full_runtime_acceptance": false
+    },
+    "raw_direct_ucs20": {
+      "success": false,
+      "completed_cycles": 20,
+      "observation_failures": 150,
+      "game_exit_code": 0,
+      "engine_error_lines": 0,
+      "native_elapsed_seconds": 37.539490196853876,
+      "driver_elapsed_seconds": 50.109,
+      "first_actor_registered_component_counts": {
+        "straight": 7,
+        "identical_repeat": 10,
+        "changed": 19
+      },
+      "first_actor_actual_mesh_instances": {
+        "straight": 2,
+        "identical_repeat": 2,
+        "changed": 2
+      },
+      "first_actor_mesh_profile_remained_two_lane": true,
+      "requested_curve_height_retained_all_cycles": true,
+      "requested_material_accessory_alternate_profile_applied": false,
+      "each_stage_scene_body_hits_of3": 0,
+      "all_cycles_owned_weak_references_after_destroy_full_gc": 0,
+      "vendor_packages_unchanged": true,
+      "probe_sources_unchanged": true,
+      "cooked_files_unchanged": true,
+      "preexisting_saves_unchanged": true,
+      "preexisting_saves_count": 362,
+      "scope": "Failure of this exact direct-UCS rebuild route. Registered empty component growth is within each live actor, not a persistent post-destroy GC leak."
+    }
+  },
+  "own_adapter_first_attempt": {
+    "success": false,
+    "completed_cycles": 20,
+    "observation_failures": 60,
+    "native_elapsed_seconds": 60.36293059960008,
+    "registered_mesh_profile_material_accessory_identity_gates_passed": true,
+    "repeat_clear_rebuild_output_counts_stable": true,
+    "clear_removed_geometry_and_collision": true,
+    "all_cycles_owned_weak_references_after_destroy_full_gc": 0,
+    "straight_repeat_material_switch_collision": {
+      "hits_of3": 2,
+      "missing_fraction": 0.5,
+      "world_scene_and_component_body_both_miss": true,
+      "straight_length_cm": 6000.00048828125,
+      "slices": 6
+    },
+    "curved_changed_and_rebuilt_collision_hits_of3": 3,
+    "engine_error_lines": 0,
+    "vendor_prepared_config_cooked_saves_unchanged": true,
+    "source_tools_guard_passed": false,
+    "source_tools_guard_reason": "The driver wrote its own reports below Tools/runs, inside its guarded tool set. Completed failed evidence was preserved and relocated privately; the next driver writes only under Saved.",
+    "correction_status": "Corrected sealed second cook/probe passes all20 cycles with unchanged test fractions and collision gates. Failure history and original driver guard failure retained.",
+    "joint_fix_scope": "Each interior slice continues its own Hermite polynomial by at most0.5cm. At spline-point knots the neighbour can use a different polynomial; this is bounded continuation, not exact agreement of different neighbouring curves. External component ends remain unchanged unless a later caller explicitly authorizes matching coverage."
+  },
+  "own_adapter_second_attempt": {
+    "success": true,
+    "runtime_success_claimed": true,
+    "raw_vendor_acceptance": false,
+    "completed_cycles": 20,
+    "observation_failures": 0,
+    "exit_code": 0,
+    "engine_error_lines": 0,
+    "driver_elapsed_seconds": 78.1559999999954,
+    "native_elapsed_seconds": 58.66930949687958,
+    "route": "Own native Surface/Accessories; no vendor Blueprint spawn or function invocation.",
+    "map": "/Game/Maps/ShaderWorldRoadConstructionLab",
+    "game_mode": "/Script/UnrealMcpTest.CityLabRcpProbeGameMode",
+    "populated_snapshots_per_cycle": 5,
+    "actual_world_scene_hits": 300,
+    "actual_component_body_hits": 300,
+    "unchanged_ray_fractions": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "registered_component_counts": {
+      "straight": [
+        9
+      ],
+      "repeat": [
+        9
+      ],
+      "material_switch": [
+        9
+      ],
+      "changed": [
+        21
+      ],
+      "rebuilt_after_clear": [
+        21
+      ]
+    },
+    "after_clear_registered_fixture_components": 3,
+    "tracked_objects_per_cycle": 100,
+    "all_cycles_owned_weak_references_after_destroy_full_gc": 0,
+    "profile_change": "rcp.two_lane to rcp.four_lane with six real prepared road slices; changed/rebuilt adds12 rail slices",
+    "material_change": "Exact cooked Asphalt Main to ReflectiveMirage slot0 readback; rail override Concrete is explicit isolated fixture appearance",
+    "repeat_clear_rebuild_identity_and_count_gates_passed": true,
+    "all_six_protected_input_groups_unchanged": {
+      "vendor_packages_unchanged": true,
+      "prepared_packages_unchanged": true,
+      "active_sources_and_tools_unchanged": true,
+      "config_hashes_only_unchanged": true,
+      "cooked_code_and_containers_unchanged": true,
+      "preexisting_saves_unchanged": true
+    },
+    "protected_vendor_packages": 907,
+    "protected_prepared_packages": 18,
+    "protected_preexisting_saves": 362,
+    "build_seconds_ranges": {
+      "straight_build_seconds": {
+        "min": 0.0012206000028527342,
+        "max": 0.0030299999998533167
+      },
+      "repeat_build_seconds": {
+        "min": 0.001222899998538196,
+        "max": 0.002774599997792393
+      },
+      "changed_build_seconds": {
+        "min": 0.09062560000165831,
+        "max": 0.13918220000050496
+      },
+      "rebuilt_after_clear_seconds": {
+        "min": 0.0929281999997329,
+        "max": 0.1434069000024465
+      },
+      "material_setter_seconds": {
+        "min": 5.0202012062072754e-05,
+        "max": 0.0001993998885154724
+      }
+    },
+    "process_physical_memory_bytes": {
+      "initial": 1487695872,
+      "after_asset_load": 1525772288,
+      "after_gc_min": 2264993792,
+      "after_gc_max": 2404798464,
+      "final": 2299392000
+    },
+    "memory_scope": "Process physical memory includes retained assets and engine caches; not alone a leak proof. Acceptance uses actual stable output counts and all owned weak objects invalid after destroy/full GC.",
+    "scope": "Own adapter: two/four-lane, curve/height, exact cooked material swap, Concrete rails, clear/rebuild and object lifecycle. No vendor BP, normal gameplay, terrain, navigation, save/restart, arbitrary accessories or visual-pixel acceptance.",
+    "guard_time_scope": "Protected groups were exact before/after this completed probe. Later authorized Stage2 source edits do not alter this historical result.",
+    "sealed_package": {
+      "schema": "citylab.rcp-toolkit-adapter-package.v2",
+      "success": true,
+      "source_seal_sha256": "3ba83a22f6c22725ef1e245f592fbfaf63d44acfe6b68d619c812f97b1a50d5e",
+      "loose_content_companion_sha256": "04d559d5201f2dd4ef0eb88a2a5d53cfe163939792018f659a2a0c84757a0178",
+      "game_executable_sha256": "0a07de886d7a7c20ef6807a1f8cfb41eb7cfb160c46bdbb15628a7b00d86bdf8",
+      "editor_build_seconds": 56.09,
+      "game_build_seconds": 140.5,
+      "cook_seconds": 146.26,
+      "legacy_save_compatibility_claimed": false
+    }
+  }
+}
