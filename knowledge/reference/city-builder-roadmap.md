@@ -8,9 +8,19 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T21:24:47.578582+00:00"
-evidence_scope: 46 native Tests und je zwei uncooked/verpackte Maschinenprozesse bestanden; normale Controller-/Queue-Kaltstartprobe und separate Editor-Ansicht geprüft. Physische Eingaben und verpackte Ansichtspixel offen; frühere Nachweise behalten eigene Grenzen.
+  at: "2026-10-30T01:29:51Z"
+verified:
+  by: codex/gpt-6
+  at: "2026-10-30T01:29:51Z"
+  scope: Neue Format-9-Umplanung gegen bereinigte native, Cook-, Create-/Resume-, bekannte UI2-Migrations-, normale Spieler-Lebenszyklus- und getrennte Fenster-/Kartennachweise geprüft; frühere Belege behalten ihren jeweiligen Umfang. Keine physische Eingabe oder menschliche Abnahme.
+evidence_scope: Aktueller begrenzter Umplanungs-Slice mit 79 nativen Tests, frischem SiteReplan3-Cook, 17/18 gerenderten Create-/Resume-Checks, zehn bekannten UI2-Migrationschecks und normalem aktuellem Spieler-F5/F9-/Kaltstart abgeschlossen. Frühere Maschinen-/Savebindungsbelege bleiben ihren Fassungen zugeordnet. Physische Eingaben, menschliche Prüfung und der nächste Straßenwerkzeug-Slice sind separat.
 sources:
+  - id: site-replan-guide
+    resource: ../guides/replan-building-sites.md
+    title: Abgeschlossener begrenzter erster Slice für begonnene Bauplätze
+  - id: site-replan-proof
+    resource: ../evidence/site-replan-test.json
+    title: Finale native, Cook-, gerenderte Neustart- und bekannte UI2-Migrationsnachweise
   - id: stable-save-guide
     resource: ../guides/stable-save-binding.md
     title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
@@ -71,9 +81,15 @@ sources:
 ---
 # Nächste City-Builder-Bausteine
 
-## Aktueller Slice und verbindlicher Folgeschritt, 29. Oktober 2026
+## Ersten Umplanungs-Slice abgeschlossen, 30. Oktober 2026
 
-**Savebindung vor weiterem Ausbau:** Die [bekannten Bauplatzstände](../guides/stable-save-binding.md) sind ausdrücklich nach Format 8 übernommen und in zwei vollständigen neuen Cooks geprüft: drei Checkpoints je 16/30/30 native Checks. Strenge physische Fortsetzung, getrennte Nutzermigration und normales No-CSV-Speicher-/Lade-/Kaltstartpaar sind bestanden; der normale C2-Start hat ein antwortendes eigenes Fenster und die richtige Karte. Ursprünge, Reihenfolge und Grammkonten erhalten; 13 beobachtete native Versionen ändern sich tatsächlich. Herkunftsflags bleiben begrenzt und menschliche Pixel-/physische Eingabenprüfung offen. Frühere Fehlversuche bleiben im [Beleg](../evidence/save-binding-test.json). Oberflächen-/Straßenaufträge und Replan sind die nächsten eigenständigen Themen.
+[Begonnene Bauplätze sicher umplanen](../guides/replan-building-sites.md) ist für die feste Fläche und neue Zielhöhe abgenommen: Rodung, geleistete Bodenarbeit und Material bleiben erhalten; Bestätigung startet pausiert. Die finale Suite besteht **79 native Tests**, der frische SiteReplan3-Cook und **17/18 gerenderte Create-/Resume-Checks** einschließlich kaltem Start und drei normalen Loads. Die begrenzte bekannte UI2-v8-Kopiermigration besteht **zehn Checks**; der aktuelle übernommene Spielerstand bleibt über normale F5/F9-Funktionen und kalten zweiten Prozess in vier plus zwei vollständigen Rohdaten-Snapshots exakt. Historische UI2-Datei und passendes Archiv bleiben erhalten. Der normale sichtbare Start ist separat mit antwortendem eigenem Fenster, passender Karte und eigener neuer Datenablage bestätigt; daraus wird keine Pixel- oder physische Eingabeabnahme abgeleitet.[^site-replan-proof]
+
+**Als Nächstes richtige Bau- und Straßenwerkzeuge:** Straßenplanung mit **Kurvenvorschau** und vollständigem Werkzeugablauf ist der nächste eigenständige Slice. Diese Werkzeuge sind noch nicht umgesetzt. Allgemeines Verschieben, unbekannte Gelände-/Generatorwechsel, Holzbilanz und breite Logistik sind ebenfalls keine Ergebnisse der begrenzten Umplanung.[^site-replan-guide]
+
+## Historischer Stand und damaliger Folgeschritt, 29. Oktober 2026
+
+**Savebindung vor weiterem Ausbau:** Die [bekannten Bauplatzstände](../guides/stable-save-binding.md) sind ausdrücklich nach Format 8 übernommen und in zwei vollständigen neuen Cooks geprüft: drei Checkpoints je 16/30/30 native Checks. Strenge physische Fortsetzung, getrennte Nutzermigration und normales No-CSV-Speicher-/Lade-/Kaltstartpaar sind bestanden; der normale C2-Start hat ein antwortendes eigenes Fenster und die richtige Karte. Ursprünge, Reihenfolge und Grammkonten erhalten; 13 beobachtete native Versionen ändern sich tatsächlich. Herkunftsflags bleiben begrenzt und menschliche Pixel-/physische Eingabenprüfung offen. Frühere Fehlversuche bleiben im [Beleg](../evidence/save-binding-test.json). Oberflächen-/Straßenaufträge und Replan waren die damals nächsten eigenständigen Themen; die inzwischen abgeschlossene begrenzte Umplanung steht im Abschnitt vom 30. Oktober.
 
 **Erster Maschinen-Slice umgesetzt:** Nach abgeschlossenem Fahrzeugimport und ausdrücklicher Projektfreigabe entstanden [Anheben/Absenken](../guides/machine-earthworks.md) mit mehreren gespeicherten Plänen, tatsächlichem Ausgangsraster, gemeinsamer Materialbilanz und einem aktiven Maschinenzug sowie parallel die [Untergrundansicht](../guides/underground-view.md). Die damals geprüfte native Suite bestand **46/46 Tests**. Zwei gerenderte uncooked Prozesse bestanden **10/10 + 12/12 Checks**: 86,4 t auf derselben Fläche abtragen, einlagern und wieder einbauen; beladene Fahrt, Kollisionswarte-Checkpoint und drei weitere Loads exakt erhalten, **0 g Modellbilanzfehler**. Normale Save-Dateien blieben unverändert. [Bereinigter Nachweis](../evidence/machine-earthworks-test.json).
 

@@ -10,11 +10,21 @@ tags:
 status: stable
 engine_version: 5.8.4
 plugin_version: '4.1'
+verified:
+  by: codex/gpt-6
+  at: "2026-10-30T01:29:51Z"
+  scope: Neue Format-9-Umplanung gegen bereinigte native, Cook-, Create-/Resume-, bekannte UI2-Migrations-, normale Spieler-Lebenszyklus- und getrennte Fenster-/Kartennachweise geprüft; frühere Belege behalten ihren jeweiligen Umfang. Keine physische Eingabe oder menschliche Abnahme.
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T00:05:16.235520+00:00"
+  at: "2026-10-30T01:29:51Z"
 sources:
+- id: site-replan-guide
+  resource: guides/replan-building-sites.md
+  title: Begonnenen Bauplatz mit erhaltener Arbeit und Material umplanen
+- id: site-replan-proof
+  resource: evidence/site-replan-test.json
+  title: Finale SiteReplan3-Nachweise mit 79 nativen Tests, gerendertem Kaltstart und bekannter UI2-Kopiermigration
 - id: order-ui
   resource: evidence/earthworks-ui-test.json
   title: Neue Baustellenleiste und echte Slate-Eingabe im normalen UI2-Spiel
@@ -116,6 +126,24 @@ sources:
 
 # Prüfstand und offene Tests
 
+## Begonnene Bauplätze umplanen: Format 9 und bekannter UI2-Stand
+
+**Der begrenzte erste Umplanungs-Slice ist abgeschlossen.** [Bedienfolge](guides/replan-building-sites.md) und [bereinigter Beleg](evidence/site-replan-test.json) gehören zur neuen **SiteReplan3**-Fassung. Der Bauplatz bleibt am selben Ort; alte Rodung, ausgeführte Bodenabschnitte und physische Materialkonten bleiben erhalten. Ein vorhandenes Haus ist geschützt. Höchstens 16 frühere Planabschnitte sind vorgesehen. Bestätigung pausiert Arbeit und Transport und bewegt keine Erde. Allgemeines Verschieben, unbekannte fremde Gelände-/Generatoränderungen und echte Straßenwerkzeuge gehören nicht zu diesem Slice.[^site-replan-guide][^site-replan-proof]
+
+Editor- und Gamebuild sowie ein frischer vollständiger Cook/Stage/Archive bestehen: **79,82 s**, null Fehler und sechs geerbte Level-Blueprint-Warnungen. Die finale native Suite enthält **79 bestandene Tests**, davon 77 sauber und zwei mit bekannten Warnungen; alle acht neuen Tests sind sauber. Die neue Komponentenregression prüft die unveränderliche absolute Höhenreferenz an **290 Positionen**. Der Beleg bindet das geprüfte Paket, Inhaltsprofil, die 366 Pakete und 16 Terrainquellen samt begrenztem Migrationsrezept.[^site-replan-proof]
+
+Der gerenderte Create-Lauf besteht **17 Checks in 33,07 s**, Exit 0. Er hält echte Teilrodung beim ersten Umplanen und die ausgeführte Bodenarbeit beim anschließenden Wechsel von Abtrag zu Auffüllung fest. Der gespeicherte pausierte Fahrtcheckpoint enthält **3 t Lkw-Ladung bei 300 von 8.850 cm Route**, **1,5 t Puffer**, **200 t Lager**, **4,5 t bisherigen Abtrag**, zwei erhaltene Planabschnitte und **0 g Bilanzfehler**. Alle 21 eingefrorenen Bäume sind gerodet. Unabhängige Kollisionsspuren an **1.089 Positionen im 50-cm-Abstand** bestehen drei stabile Durchgänge je geprüfter Revisionsphase, maximal **0,840576 cm** Abweichung bei unverändertem 5-cm-Gate. Die unveränderte **888 × 500**-SHOWUI-Aufnahme dieses pausierten Zustands wurde vom Agenten visuell geprüft.[^site-replan-proof]
+
+Der kalte zweite Prozess besteht **18 Resume-Checks in 412,86 s**, Exit 0. Alle acht vollständigen Nutzdatengruppen bleiben beim Start und nach **drei normalen Loads** exakt. Arbeit und Transport laufen danach wirklich bis **Bauplatz bereit** weiter; Lkw, Puffer und Reservierung sind leer. Die lokale Kollisionsprüfung besteht erneut an 1.089 Positionen in drei stabilen Durchgängen mit maximal **1,271766 cm** Abweichung. Die Endbilanz schließt exakt: **200.000.000 g Anfangsbestand + 4.500.000 g Abtrag = 109.729.993 g Lager + 94.770.007 g Einbau**, Fehler **0 g**.[^site-replan-proof]
+
+Die separate Kopie des tatsächlichen UI2-Spielerstands besteht **zehn Migrationschecks in 1,01 s**, Exit 0. Acht vollständige Nutzdatengruppen, Ursprünge und ursprünglicher Prozessnachweis sind unverändert; 14 gerodete Ressourcen und ein vorhandenes Haus bleiben erhalten. Unbekanntes Profil und bereits vorhandenes Ziel werden atomar abgewiesen. Das ausdrückliche Upgrade akzeptiert nur den bekannten v8-Ursprung, die unveränderte Asset-/Engine-/Vendor-/Shader-/Konfigurationsgrundlage und die acht fest begrenzten eigenen Änderungspfade. Normales Laden bleibt streng; die historische v7-Bridge benötigt ihre erhaltene passende Paketfassung.[^site-replan-proof]
+
+Der übernommene aktuelle Spielerstand besteht außerdem **vier plus zwei vollständige Rohdaten-Snapshots** über normale F5/F9-Funktionen und einen kalten zweiten Prozess. Beide gewöhnlichen Prozesse laufen jeweils 60 s, ohne CSV oder Controller-Verifikationsmodus, und enden regulär mit **Exit 0**. Alle acht Gruppen, ursprüngliche Quelle, Profil, alte Saves und Paket bleiben exakt. Dies prüft Controller-APIs und echte Produktionsabläufe; das normale Testpaar wird nicht als Fensterprobe ausgegeben.[^site-replan-proof]
+
+**Separater normaler sichtbarer Start bestanden:** Der freigegebene Launcher öffnet die exakte SiteReplan3-Anwendung auf SitePreparationLab mit richtigem GameMode und eigener SiteReplanDemoUser-Ablage. Der Fenster-/Prozessnachweis bestätigt ein antwortendes eigenes Hauptfenster, Start ohne Offscreen- oder Auditflags, vollständiges Kartenladen und keine Error-/Fatal-Meldung. Das ist ein eigenständiger Start- und Fensterbeleg; er bestätigt weder Pixel des normalen Fensters noch physische Eingaben oder eine menschliche Spielabnahme.[^site-replan-proof]
+
+Zwei Vorversuche bleiben fehlgeschlagen: Der erste Audit erwartete bei null Erdarbeitsschritten fälschlich keinen erhaltenen Vorabschnitt. Der zweite fand einen echten Wechsel der rechnerischen absoluten Höhenbasis auf frisch gerundete Restplanungsproben. Auditvertrag beziehungsweise Referenzwahl wurden korrigiert; historische Abschnitte behalten ihre ursprüngliche absolute Referenz und unveränderten Deltas. Finale native und gerenderte Wiederholung bestanden mit unveränderten Prüfgrenzen. Die **200 t Anfangsbestand gelten nur für die isolierte Testwelt**; der Spieler erhält kein Testmaterial. Die Grammgleichheit ist ein Modellnachweis, keine unabhängige Meshvolumenmessung. Weitere Rücklieferung während einer Auffüllfahrt ist nativ geprüft, aber nicht als zusätzlicher gerenderter Fall. Globale GPU-/Großweltfertigkeit bleibt außerhalb dieser örtlichen Probe.[^site-replan-proof]
+
 ## Neue Baustellenleiste und Tab-Fokus
 
 **Bestanden:** Editor-/Gamebuild und eigener vollständiger UI2-Cook, ein nativer Slate-Eingabetest, 38/38 + 40/40 reale Slate-Checks im normalen verpackten Spiel mit kaltem Neustart sowie zusätzlich der unveränderte aktuelle v8-Spielerstand über normale F5/F9-Funktionen und kalten zweiten Prozess. Alle acht vollständigen Recordgruppen, Terrainprofil und vorherigen Saves sind erhalten. Neue 1600 × 1000-Aufnahme vom Agenten visuell geprüft; physische menschliche Eingaben separat offen. Der frühere Tab-Fehler ist damit in der neuen Fassung korrigiert. [Anleitung](guides/site-preparation.md#neue-baustellenleiste), [bereinigter Bericht](evidence/earthworks-ui-test.json).
@@ -143,7 +171,7 @@ Vier Fehler bleiben als eigene fehlgeschlagene Vorversuche erhalten: ein nicht e
 
 Die neue Dichteauswahl nutzt ausdrücklich die blaue Biom-ID plus native Zellgrenzen. Höhen-/Hangregeln bleiben erhalten; roter Bodenwert GrassAlt ist keine zusätzliche Pflanzensperre. Der [Prüfbericht](evidence/site-preparation-test.json) erhält frühere Uncooked-/API-Erfolge und negative Cooked-Kontrollbaumdiagnosen separat; kein Übertragen alter Erfolge auf V2 und keine gelockerten Prüfgrenzen.
 
-Die [Untergrundansicht](guides/underground-view.md#freie-kamera-und-schnittfenster-neuer-entwurf) bleibt eine Darstellungsfunktion ohne physischen Aushub. Die aktuelle gemeinsame Controller-/Kamera-API wurde zusätzlich auf der erhaltenen EarthworksLab-Karte in 38 Checks mit drei visuell geprüften Editorbildern wiederholt. Frühere Nachweise bleiben historisch; der normale V2-Launcherstart hat den Fenster-/Kartennachweis bestanden. Physische Eingaben, menschliche Pixelbestätigung und verpackte Schnitt-/Innenraumpixelprüfungen bleiben offen. NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad; Holz und allgemeine Logistik folgen später.
+Die [Untergrundansicht](guides/underground-view.md#freie-kamera-und-schnittfenster-neuer-entwurf) bleibt eine Darstellungsfunktion ohne physischen Aushub. Die aktuelle gemeinsame Controller-/Kamera-API wurde zusätzlich auf der erhaltenen EarthworksLab-Karte in 38 Checks mit drei visuell geprüften Editorbildern wiederholt. Frühere Nachweise bleiben historisch; der normale V2-Launcherstart hat den Fenster-/Kartennachweis bestanden. Physische Eingaben, menschliche Pixelbestätigung und verpackte Schnitt-/Innenraumpixelprüfungen bleiben offen. Die damals geprüfte V2-Fassung besitzt noch keinen expliziten Replanpfad nach begonnener Rodung. Der neue begrenzte Format-9-Pfad ist oben separat geprüft; eine allgemeine Übernahme unbekannter externer Terrainänderungen ist damit nicht bestätigt. Holz und allgemeine Logistik folgen später.
 
 ## Slice B: Ebnen auf absolute Höhe, Uncooked und frisch verpackt bestanden
 
@@ -389,6 +417,8 @@ Gemessen wurde die **synchrone Game-Thread-Warte-/Aufrufzeit** einschließlich P
 Der frühere Startfehler durch einen Ground-Klassennamefilter lieferte vor Readiness/Messung **keine Werte** und wurde durch die Auswahl genau eines **GenerateCollision=true**-Actors korrigiert. Die jetzt gewonnenen Werte stammen ausschließlich aus dem anschließenden erfolgreichen Lauf. Eine Optimierung ist noch offen: volle Pufferdurchläufe reduzieren, ohne externen Restore, Regeneration, Indexwechsel und den gesonderten Kollisionsnachlauf zu verlieren; danach denselben Versuch wiederholen.
 
 ## Nächste Abnahmen für den City Builder
+
+Der nächste beauftragte eigenständige Slice sind **richtige Bau- und Straßenwerkzeuge mit Kurvenvorschau** nach der abgeschlossenen begrenzten Umplanung. Diese Werkzeuge sind noch nicht umgesetzt; die folgenden älteren offenen Themen bleiben daneben erhalten.
 
 1. Nach bestandenem cooked Baugrubenabschluss und begrenzten normalen Schaltflächen-/Restore-/Autosave-Proben die übrigen Tastatur-/Fokusfälle gezielt prüfen; F5 und vollständige physische Eingaben bleiben offen. Die jetzt gemessenen vollen Rodungspool-Durchläufe gezielt optimieren und denselben isolierten Benchmark wiederholen, ohne Restore-/Kollisionsverträge zu verlieren. Die fünf Foundations-Biomprofile im vollständigen Spielbild vergleichen und Rodungsverwaltung mit großen Beständen messen; Einzelrodung und echte Regeneration sind jetzt im begrenzten Labor geprüft.
 2. Manuelle F-/Mausbedienung des Laufmodus, weitere Fahrzeugprofile und speicherbare Tunnel.

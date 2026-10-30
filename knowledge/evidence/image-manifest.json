@@ -517,6 +517,16 @@
       "modified": false,
       "bytes": 3051587,
       "sha256": "de6dbd948a1614312e6ef08b33e251fe0ac3794d0110f636ec7da005114f4e29"
+    },
+    {
+      "file": "assets/images/site-replan-paused.png",
+      "origin": "Unveraenderte native SHOWUI-Aufnahme des eigenen verpackten SiteReplan3-Labors nach zwei bestaetigten Zielhoehenrevisionen. Koordinierender Agent visuell geprueft: Auftragsleiste, Umplanen-Knopf, Baufeld, Bagger und Lkw sichtbar; pausierter Zustand vor Fortsetzung. Keine menschliche Bedienabnahme.",
+      "captured_date": "2026-10-30",
+      "sha256": "438142d98b1e70bfea4a3aa7a5a0d4aba851b3ab57eff65e5ba7c1119071d6cd",
+      "width": 888,
+      "height": 500,
+      "modified": false,
+      "bytes": 1239588
     }
   ]
 }

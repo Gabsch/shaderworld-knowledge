@@ -8,13 +8,21 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T00:05:16.235520+00:00"
+  at: "2026-10-30T01:30:33Z"
+verified:
+  by: codex/gpt-6
+  at: "2026-10-30T01:30:33Z"
+  scope: Format-9-Ergänzung gegen gelesene Projektverträge, getrennte Create-/Resume-/Migrationsberichte und normalen Spieler-F5/F9-/Kaltstartbericht geprüft; historische Nachweise ihren Fassungen zugeordnet. Normaler sichtbarer Fenster-/Kartenstart separat bestätigt; keine physischen Eingaben oder menschliche Abnahme.
 evidence_scope:
   source: Gelesener Projektvertrag für getrennte Inhaltsprüfung und erhaltene Spielstandskennungen; kein mitgelieferter Quellcode.
   cpu: Früherer Profilstand mit 70 nativen Tests, davon 68 sauber und 2 bekannte Warnungen; 7 Datei-Kopie-Ablehnungstests im früheren und erneut 7 im korrigierten Profilstand bestanden.
   runtime: Drei bekannte Checkpoints je 16 Bridge-, 30 B2- und 30 C2-Checks bestanden; strenge physische C2-Fortsetzung, getrennte Nutzermigration und normales No-CSV-Speicher-/Lade-/Kaltstartpaar bestanden; sichtbarer normaler Start durch Betriebssystemfenster und Kartenlog belegt.
+  current_v9_player_lifecycle: Getrennte Format-9-Ergänzung besteht normalen aktuellen Spieler-F5/F9-/Kaltstart mit vier plus zwei vollständigen Rohdaten-Snapshots und acht exakt gleichen Gruppen; zwei reguläre Exits 0 ohne CSV oder Controller-Verifikationsmodus.
   limit: Bekannte Format-7-Stände der SitePreparation-V2-Karte; Herkunftsflags bleiben begrenzt. Normale Controller-APIs geprüft, keine physische Tasten- oder menschliche Pixelabnahme.
 sources:
+  - id: replan-guide
+    resource: replan-building-sites.md
+    title: Begrenzte Format-9-Umplanung mit Create-, Resume- und bekannter UI2-Migrationsprüfung
   - id: binding-contract
     resource: "Gelesene eigene Projektimplementierung zum SaveGame, zum expliziten Upgrade, zum Inhaltsprofil und zur geschützten Übernahme des ursprünglichen Kennungsraums; Projektquellen nicht im Bundle enthalten"
     title: Savebindung als gelesener Implementierungsvertrag
@@ -40,9 +48,11 @@ Deine Rodung, bewegte Erde, Lkw-Ladung und das Haus sollen nach einer neuen Pake
 
 **Aktueller Stand: Die begrenzte Savebindung ist abgenommen.** Drei bekannte Referenzstände bestehen je 16 Bridge-, 30 B2- und 30 C2-Checks in zwei neuen vollständigen Cooks. Die gesonderte physische Fortsetzung endet mit 21 entfernten Bäumen, erhaltenem Kontrollbaum, passendem Boden, genau einem physisch getroffenen Haus, 176,4 t Lager und drei weiteren Loads. Der normale Nutzerstand wurde getrennt übernommen. Auch Speichern und Laden über die normalen Controller-APIs und ein frischer Prozess ohne CSV bestehen: sechs Snapshots mit acht vollständigen Laufzeit-Datengruppen exakt gleich, beide Prozesse Exit 0. Der normale neue Start zeigt ein antwortendes eigenes Fenster und die richtige Karte. Menschliche Pixelbestätigung und physische Tasteneingaben bleiben offen.[^evidence]
 
+**Neuer Format-9-Nachweis getrennt:** Die [Umplanungsanleitung](replan-building-sites.md) beschreibt die begrenzte neue Umplanung und die bekannte UI2-Format-8-Kopiermigration in einen neuen Ziel-Slot. Die tatsächliche Spielerquellkopie besteht zehn Migrationschecks: acht vollständige Nutzdatengruppen, Ursprünge und ursprünglicher Prozessnachweis exakt erhalten, unbekanntes Profil und vorhandenes Ziel atomar abgewiesen. Die isolierte neue Baustelle besteht außerdem 17/18 gerenderte Create-/Resume-Checks mit kaltem Start und drei normalen Loads. Der übernommene aktuelle Spielerstand besteht normale F5/F9-Funktionen und einen kalten zweiten Prozess: vier plus zwei vollständige Rohdaten-Snapshots mit acht exakt gleichen Gruppen, beide regulär Exit 0 ohne CSV oder Verifikationsmodus. Ursprüngliche Quelle, Profil, alte Spielstände und geprüftes Paket bleiben unverändert. Der normale sichtbare SiteReplan3-Start ist zusätzlich und getrennt mit antwortendem eigenem Fenster, richtiger Karte und neuer Datenablage bestätigt; er ist kein Pixel- oder physischer Eingabenachweis. Die auf dieser Seite geprüfte historische Format-7-Bridge bleibt ihren erhaltenen Paketfassungen zugeordnet; das neue Inhaltsprofil gibt sie nicht frei. Alte Pakete und zugehörige Quelldaten bleiben als Rückweg erhalten. Keine dieser Prüfungen erweitert den Konverter auf unbekannte Stände oder andere Assets.[^replan-guide]
+
 ## Ziel und Geltungsbereich
 
-Der erste Ausbau gilt für **`/Game/Maps/ShaderWorldSitePreparationLab`**, unsere getrennte V2-Bauplatzkarte. Hier schreibt die neue Implementierung Format 8. Andere Labore behalten ihren bisherigen Schreibvertrag. Es gibt keinen allgemeinen Konverter für beliebige alte Welten, andere Seeds, geänderte Assets oder neuere Plugin-Versionen.[^binding-contract]
+Der erste Ausbau gilt für **`/Game/Maps/ShaderWorldSitePreparationLab`**, unsere getrennte V2-Bauplatzkarte. Die hier historisch geprüfte Implementierung schreibt Format 8. Andere Labore behalten ihren bisherigen Schreibvertrag. Es gibt keinen allgemeinen Konverter für beliebige alte Welten, andere Seeds, geänderte Assets oder neuere Plugin-Versionen.[^binding-contract]
 
 Das neue **Inhaltsprofil** prüft die tatsächliche Grundlage der Welt. Die ursprünglichen Kennungen des Spielstands halten ihre Geschichte zusammen: bereits entfernte Bäume, Bauaufträge, Materialkonten und festgehaltene Arbeitsreihenfolgen. Diese Kennungen bleiben erhalten.[^binding-contract]
 

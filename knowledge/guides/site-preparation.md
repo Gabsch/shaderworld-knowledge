@@ -8,14 +8,22 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T00:04:42.385587+00:00"
+  at: "2026-10-30T01:30:33Z"
+verified:
+  by: codex/gpt-6
+  at: "2026-10-30T01:30:33Z"
+  scope: Format-9-Ergänzung gegen gelesene Projektverträge, getrennte Create-/Resume-/Migrationsberichte und normalen Spieler-F5/F9-/Kaltstartbericht geprüft; historische Nachweise ihren Fassungen zugeordnet. Normaler sichtbarer Fenster-/Kartenstart separat bestätigt; keine physischen Eingaben oder menschliche Abnahme.
 evidence_scope:
   source: Neue Auftragskarten und auf das aktive Spiel begrenzter Tab-Prozessor; getrennte V2-Laborkarte mit BlueAndBounds1-Biomkopien und eigenem Slot eingerichtet; aktueller Controller- und Setupvertrag gelesen. Altassets und bisherige Spielstände bleiben erhalten.
   prior_verification: Vorheriger Quellstand bestand Uncooked-Neustartpaar, native 60er-Suite und normale Controller-/Kamera-API. Diese Ergebnisse und Bilder sind historisch genau diesem Stand zugeordnet.
   runtime: V2-Einrichtung mit elf neuen Assets und unveränderten Legacydateien geprüft; native V2-Suite und wiederholte Einrichtung bestanden; vollständige Uncooked-/Cooked-Neustartpaare bestanden; normale V2-Startdaten exakt wiederhergestellt; separate normale Prozesse ohne CSV-Instrumentierung sauber beendet. CSV-instrumentierter Exit bleibt fehlgeschlagen; passender Demo-Startspielstand und sechs Paketdateien versiegelt vorbereitet; normaler Launcherstart mit reagierendem eigenem Fenster und korrekter Spielkarte bestanden; physische Eingaben und menschliche Pixelabnahme offen. Historische Nachweise gelten ihrer früheren Sourcebasis.
   ui_runtime: UI2 mit einem nativen Eingabetest, 38 plus 40 echten Slate-Checks und vier plus zwei exakten normalen Nutzerstand-Snapshots geprüft; beide UI-Originalbilder vom Agenten visuell geprüft.
-  limit: Keine globale GPU-/Bewuchs-Fertiggarantie, keine physische Eingabe- oder menschliche Abnahme. Holz und allgemeine Logistik offen; NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad.
+  replan_player_lifecycle: Übernommener aktueller Format-9-Spielerstand über normale F5/F9-Funktionen und kalten zweiten Prozess geprüft; vier plus zwei vollständige Rohdaten-Snapshots mit acht exakt gleichen Gruppen, zwei reguläre Exits 0 ohne CSV oder Verifikationsmodus.
+  limit: Keine globale GPU-/Bewuchs-Fertiggarantie, keine physische Eingabe- oder menschliche Abnahme. Holz und allgemeine Logistik offen; die hier geprüfte UI2-Fassung besitzt noch keinen expliziten Replanpfad nach begonnener Rodung. Format 9 besitzt einen getrennten Umplanungsnachweis mit 17/18 gerenderten Checks und zehn bekannten UI2-Migrationschecks; frühere UI2-Nachweise bleiben historisch.
 sources:
+  - id: replan-guide
+    resource: replan-building-sites.md
+    title: Begrenzte Format-9-Umplanung mit Create-, Resume- und bekannter UI2-Migrationsprüfung
   - id: ui-proof
     resource: ../evidence/earthworks-ui-test.json
     title: Neue Auftragsleiste, tatsächliche Slate-Ereignisse und unveränderter Nutzerstand über Neustart
@@ -57,6 +65,8 @@ sources:
 
 Im getrennten **SitePreparationLab** bereitest du einen Bauplatz als zusammenhängenden Auftrag vor: **planen → roden → Erde bewegen → Boden prüfen → Testhaus setzen**. Die neue Karte hat eigene Biomkopien und einen eigenen Spielstand. Einrichtung, native Tests und vollständige Uncooked- sowie Development-Cooked-Neustartpaare dieser V2-Fassung sind geprüft. Die aktuelle gemeinsame Controller-/Kamera-API ist separat auf der erhaltenen EarthworksLab-Karte geprüft. Die normalen Startdaten werden korrekt geladen; getrennte normale Starts ohne CSV-Instrumentierung enden sauber. Ein später Exitfehler des CSV-Prüflaufs bleibt offen. Ein passender Startspielstand und die versiegelte Demo sind vorbereitet. Der normale Launcherstart mit reagierendem eigenem Fenster und korrekter Spielkarte ist ebenfalls bestanden. Die Anleitung ist für diesen begrenzten PoC **stable**; physische Eingaben und menschliche Pixelabnahme stehen separat aus.[^v2-biome-contract][^proof]
 
+**Neuer Format-9-Ausbau getrennt geprüft:** [Einen begonnenen Bauplatz umplanen](replan-building-sites.md) erhält feste Fläche, Rodung, ausgeführte Erde und Material. Die neue Fassung besteht 17 Create- und 18 Resume-Checks samt kaltem Start und drei normalen Loads. Die ausdrückliche bekannte UI2-Kopiermigration in ein neues Ziel besteht zehn Checks. Die folgenden V2-/UI2-Nachweise bestätigen weiterhin ihre jeweiligen früheren Fassungen.[^replan-guide]
+
 ## Voraussetzungen
 
 Benötigt werden CityLab mit Unreal **5.8.4**, ShaderWorld **4.1**, dem aktuellen Projektmodul und **/Game/Maps/ShaderWorldSitePreparationLab**. Öffne diese vorbereitete Karte und starte **Play**. Das öffentliche Wissensbundle enthält Anleitung und Nachweise; Karte, Projektquellen und lizenzierte Assets liegen im ursprünglichen Projekt.
@@ -65,9 +75,11 @@ Die neue Karte verwendet **CityLabSitePreparation** als normalen Speicher-Slot. 
 
 **Wichtig für alte Spielstände:** Alte Quelle und passende Paketfassung gemeinsam erhalten. Die bisherige Demo bleibt ihrer Format-7-Fassung zugeordnet. Die [ausdrückliche Übernahme bekannter V2-Stände nach Format 8](stable-save-binding.md) ist nativ über zwei neue vollständige Cooks, mit strenger physischer Wiederaufnahme und mit normalem Speicher-/Lade-/Kaltstartpaar bestanden. Der neue normale C2-Start zeigt ein antwortendes eigenes Fenster und die richtige Karte. Frühere Fehler bleiben im Beleg; menschliche Pixelbestätigung und physische Tasten sind separat offen. Der normale Ladebefehl konvertiert Altstände nicht stillschweigend.
 
-## Aktuelle stabile Demo starten
+## Geprüfte Fassungen und neuer Startpfad
 
-Für den übernommenen eigenen Stand startet **Tools/launch_stable_site_preparation_demo.ps1** die geprüfte UI2-Fassung mit unveränderter eigener Datenablage **Saved/SaveBindingDemoUser**. Mit **-PreviousBuild** bleibt die bewahrte C2-Fassung erreichbar. Sie setzt den einmalig übernommenen Arbeitsstand fort und besät vorhandenen Fortschritt nicht neu. **F5** speichert und **F9** lädt; für einen kalten Neustart denselben Launcher erneut verwenden. Die [Speicheranleitung](stable-save-binding.md) erklärt Übernahme, Prüfungen und Rückweg zur bewahrten alten Fassung.
+**Der gewöhnliche Format-9-Spieler-Lebenszyklus ist bestanden:** Normale F5/F9-Funktionen und ein kalter zweiter Prozess erhalten alle acht vollständigen Gruppen in vier plus zwei Snapshots exakt; beide Prozesse enden regulär mit Exit 0. Der sichtbare normale Fensterstart ist separat mit antwortendem Hauptfenster, richtiger Karte und eigener neuer Datenablage bestanden; Pixel des normalen Fensters, physische Eingaben und menschliche Spielabnahme werden daraus nicht abgeleitet. **Tools/launch_stable_site_preparation_demo.ps1** wählt die neue **SiteReplan3**-Fassung mit ihrem geprüften eigenen Abschlussbeleg und der übernommenen Format-9-Datei in **Saved/SiteReplanDemoUser**. Ohne diesen Beleg gibt der Startpfad die neue Fassung nicht frei. Ein vorhandener Stand wird nicht neu besät.[^replan-guide]
+
+Die bisherige UI2-Fassung verwendet weiter **Saved/SaveBindingDemoUser** und bleibt über **-PreviousUiBuild** erreichbar. **-PreviousBuild** behält die bewahrte C2-Fassung. **F5** speichert und **F9** lädt; für einen kalten Neustart denselben zur jeweiligen Fassung gehörenden Startpfad verwenden. Die [Speicheranleitung](stable-save-binding.md) erklärt die historischen Übernahmen und den Rückweg; die [Umplanungsanleitung](replan-building-sites.md) grenzt die neue bekannte UI2-Übernahme ab.
 
 ## Historische vorgeplante Format-7-Demo starten
 
@@ -95,7 +107,7 @@ Die neue Leiste ist im verpackten Spiel über echte Slate-Ereignisse geprüft. E
 6. Für den gewählten Auftrag **Arbeit starten [Space]**, danach **Transport anfordern [H]** verwenden. Erneutes Betätigen pausiert die Arbeit beziehungsweise stoppt den Transport. Zuerst wird gerodet; der Transportwunsch wird währenddessen vorgemerkt. Erst nach vollständiger Rodung folgt die Erdarbeit mit Lager, Puffer und Lkw. Es gibt einen gemeinsamen Maschinenzug; andere Aufträge warten.
 7. Auf **Bauplatz bereit** und die lokale Bodenfreigabe warten. Dann **Haus auf fertigen Bauplatz setzen [B]** wählen. Die Schaltfläche ist nur bei freigegebenem ausgewähltem Bauplatz verfügbar. Boden und freier Hausbereich werden erneut geprüft; wiederholtes Auslösen erzeugt kein zweites Haus.[^own-site-model]
 
-**Speichern [F5]** und **Laden [F9]** gelten für die gemeinsame Kette. Erfolgreiche Plan- und Schalteraktionen speichern ebenfalls; geänderter Fortschritt wird ungefähr alle zwei Sekunden automatisch gesichert. Vor einem gezielten Neustart ausdrücklich speichern. Die Überarbeitung ändert weder SaveGameformat noch Kompatibilitätsprofil oder Erdarbeitsmodell.[^own-site-model][^ui-proof]
+**Speichern [F5]** und **Laden [F9]** gelten für die gemeinsame Kette. Erfolgreiche Plan- und Schalteraktionen speichern ebenfalls; geänderter Fortschritt wird ungefähr alle zwei Sekunden automatisch gesichert. Vor einem gezielten Neustart ausdrücklich speichern. Die hier geprüfte UI2-Überarbeitung ändert weder SaveGameformat noch Kompatibilitätsprofil oder Erdarbeitsmodell.[^own-site-model][^ui-proof]
 
 
 | Phase | Bedeutung |

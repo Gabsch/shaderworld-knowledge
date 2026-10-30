@@ -1,0 +1,766 @@
+{
+  "schema": "citylab.site-replan-test.v1",
+  "complete": true,
+  "tested_at": "2026-10-30T01:24:43.304301+00:00",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "archive": "SiteReplan3",
+  "world": "/Game/Maps/ShaderWorldSitePreparationLab",
+  "save_format": 9,
+  "earthwork_snapshot": 3,
+  "actual_compatibility_profile": "CityLabSemantic-v1|B45419E120BE0B21A1B6B83B1E531BB2EE10DB22",
+  "content_sha256": "787f26447c15f227e8cc353af5306dc034a1f7aed7712a2ea0a9cb6f316dbe63",
+  "profile_manifest_sha256": "d44173a9b2f661bd21e074442727343af063bc7416aa80892ef46131990cbbbd",
+  "bounded_ui2_recipe_sha256": "bf033618859ef0b24026d3fccfbc022a4256cdbab23d56c0e86ed0d795189ee4",
+  "asset_package_count": 366,
+  "native_source_count": 16,
+  "known_native_change_paths": [
+    "Source/UnrealMcpTest/CityLabEarthworks.cpp",
+    "Source/UnrealMcpTest/CityLabEarthworks.h",
+    "Source/UnrealMcpTest/CityLabEarthworksModel.cpp",
+    "Source/UnrealMcpTest/CityLabEarthworksModel.h",
+    "Source/UnrealMcpTest/CityLabSitePreparation.cpp",
+    "Source/UnrealMcpTest/CityLabSitePreparation.h",
+    "Source/UnrealMcpTest/CityLabSitePreparationModel.cpp",
+    "Source/UnrealMcpTest/CityLabSitePreparationModel.h"
+  ],
+  "build": {
+    "editor": "passed",
+    "game": "passed",
+    "fresh_cook_stage_archive": "passed",
+    "cook_errors": 0,
+    "inherited_level_blueprint_warnings": 6,
+    "cook_stage_archive_seconds": 79.82
+  },
+  "native": {
+    "counts": {
+      "succeeded": 77,
+      "succeededWithWarnings": 2,
+      "failed": 0,
+      "notRun": 0,
+      "inProcess": 0
+    },
+    "test_count": 79,
+    "new_test_count": 8,
+    "new_tests": [
+      {
+        "test": "CityLab.Earthworks.Replan.AtomicCapacityIdentityAndCorruptionGuards",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.Earthworks.Replan.ComponentReferenceAnchorsSurviveCollisionQuantization",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.Earthworks.Replan.LoadedCutAndFillPreservePhysicalState",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.Earthworks.Replan.NeedsReplanBoundedHistoryAndCompletedReopen",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.Earthworks.Replan.UnusedFillCargoAndBufferReturnWithoutEarth",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.SaveBinding.KnownUi2RecipeRejectsUnknownSourceAndContentChanges",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.SaveBinding.V9ReplanEnvelopePreservesV8AndRejectsLegacySmuggling",
+        "state": "Success"
+      },
+      {
+        "test": "CityLab.SitePreparation.StartedReplanKeepsClearing",
+        "state": "Success"
+      }
+    ],
+    "private_result_sha256": "1049a717c8f962dd250b40cce0e17538a3c79f73471504c9427c4b1b77f1adaf",
+    "component_absolute_height_regression_positions": 290
+  },
+  "rendered_create": {
+    "success": true,
+    "check_count": 17,
+    "checks": {
+      "guid_owned_isolated_user_dir": true,
+      "normal_rendered_cooked_controller": true,
+      "fresh_empty_fixture_before_declared_starting_stock": true,
+      "declared_isolated_fixture_starting_stock": true,
+      "normal_controller_confirms_real_site": true,
+      "actual_frozen_tree_manifest": true,
+      "real_partial_clearing_before_replan": true,
+      "normal_controller_replans_partial_clearing": true,
+      "partial_clearing_prefix_order_and_physical_accounts_unchanged": true,
+      "partial_clearing_replan_three_50cm_collision_passes_within_5cm": true,
+      "normal_controller_replans_midcut_with_loaded_truck_and_buffer": true,
+      "midcut_cargo_route_grams_clearing_and_executed_geometry_preserved": true,
+      "executed_partial_cut_is_retained_as_immutable_history": true,
+      "midcut_replan_three_50cm_collision_passes_within_5cm": true,
+      "normal_controller_saves_paused_v9_checkpoint": true,
+      "saved_all_eight_arrays_exact": true,
+      "paused_revised_site_showui_png_complete_after_two_frames": true
+    },
+    "seconds": 33.06530440226197,
+    "exit_code": 0,
+    "native_report_sha256": "0e90077975fa4cc93d361fb740debc17766ded2b4258918e907b1b824379e464",
+    "ledger_observations": 173,
+    "ground_batches": [
+      {
+        "phase": "partial_clearing_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0,
+        "stable_passes": 1
+      },
+      {
+        "phase": "partial_clearing_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0,
+        "stable_passes": 2
+      },
+      {
+        "phase": "partial_clearing_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0,
+        "stable_passes": 3
+      },
+      {
+        "phase": "midcut_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "midcut_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "midcut_replan",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      }
+    ],
+    "fixture_initial_stock_g": 200000000,
+    "repeated_load_count": 0,
+    "checkpoint": {
+      "logical_sha256": "be30fb317f2ca02b123ce317e7ccce65b36bb5d240f2973beeb7c0e8016dbd40",
+      "format_version": 9,
+      "binding_schema": 1,
+      "compatibility_profile": "CityLabSemantic-v1|B45419E120BE0B21A1B6B83B1E531BB2EE10DB22",
+      "counts": {
+        "Pads": 0,
+        "Roads": 0,
+        "Lots": 0,
+        "WorldEdits": 0,
+        "ClearedResources": 21,
+        "ConstructionJobs": 0,
+        "EarthworksStates": 1,
+        "SitePreparationRecords": 1
+      },
+      "array_sha256": {
+        "Pads": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "Roads": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "Lots": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "WorldEdits": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "ClearedResources": "1fa3bb30596a87e219ed081bd9bb28694e8a010e27182b4fbe4a9b66729d3ed5",
+        "ConstructionJobs": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "EarthworksStates": "7d1427c2cdb946761e0fee10b41884779ef59ec3c087c96810b99ac45247eaf9",
+        "SitePreparationRecords": "400a18453785e4e735e265ecb86ef1733c0243993ed5b65e94082fa63e1e8999"
+      },
+      "earthworks": [
+        {
+          "version": 3,
+          "initial_warehouse_g": 200000000,
+          "warehouse_g": 200000000,
+          "buffer_g": 1500000,
+          "truck_g": 3000000,
+          "reserved_g": 90270007,
+          "excavated_g": 4500000,
+          "placed_g": 0,
+          "balance_error_g": 0,
+          "step_count": 3,
+          "geometry_revision": 3,
+          "truck_phase": 2,
+          "truck_route_distance_cm": 300,
+          "jobs": [
+            {
+              "plan_revision": 3,
+              "execution_history_count": 2,
+              "target_height_cm": 325,
+              "route_length_cm": 8850
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "rendered_resume": {
+    "success": true,
+    "check_count": 18,
+    "checks": {
+      "guid_owned_isolated_user_dir": true,
+      "normal_rendered_cooked_controller": true,
+      "cold_restart_distinct_process": true,
+      "cold_autoload_all_eight_arrays_exact": true,
+      "cold_resume_preserves_inflight_cargo_and_buffer": true,
+      "cold_resume_collision_three_50cm_collision_passes_within_5cm": true,
+      "cold_resume_collision_wait_does_not_change_payload": true,
+      "normal_controller_repeated_load": true,
+      "repeat_load_1_three_50cm_collision_passes_within_5cm": true,
+      "repeat_load_1_all_eight_arrays_exact": true,
+      "repeat_load_2_three_50cm_collision_passes_within_5cm": true,
+      "repeat_load_2_all_eight_arrays_exact": true,
+      "repeat_load_3_three_50cm_collision_passes_within_5cm": true,
+      "repeat_load_3_all_eight_arrays_exact": true,
+      "three_normal_controller_loads_preserve_all_eight_arrays_and_collision": true,
+      "completed_opposite_fill_three_50cm_collision_passes_within_5cm": true,
+      "real_cut_to_fill_completion_with_exact_material_conservation": true,
+      "normal_controller_saves_completed_replan": true
+    },
+    "seconds": 412.859467998147,
+    "exit_code": 0,
+    "native_report_sha256": "72465b7d72af9abbe440eeaa533a86cb5273af8a733b14a566929a407ea8c4ef",
+    "ledger_observations": 2117,
+    "ground_batches": [
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "repeat_load_1",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "repeat_load_1",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "repeat_load_1",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "repeat_load_2",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "repeat_load_2",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "repeat_load_2",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "cold_resume_collision",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "repeat_load_3",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 1
+      },
+      {
+        "phase": "repeat_load_3",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 2
+      },
+      {
+        "phase": "repeat_load_3",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 0.840576483526263,
+        "stable_passes": 3
+      },
+      {
+        "phase": "completed_opposite_fill",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 1.2717656907320816,
+        "stable_passes": 1
+      },
+      {
+        "phase": "completed_opposite_fill",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 1.2717656907320816,
+        "stable_passes": 2
+      },
+      {
+        "phase": "completed_opposite_fill",
+        "accepted": true,
+        "samples": 1089,
+        "hits": 1089,
+        "maximum_error_cm": 1.2717656907320816,
+        "stable_passes": 3
+      }
+    ],
+    "fixture_initial_stock_g": 200000000,
+    "repeated_load_count": 3,
+    "completed": {
+      "logical_sha256": "e2caf777c8367c7c20f1d18297a0df37757e0f886d4b26dab358066ec1e73169",
+      "format_version": 9,
+      "binding_schema": 1,
+      "compatibility_profile": "CityLabSemantic-v1|B45419E120BE0B21A1B6B83B1E531BB2EE10DB22",
+      "counts": {
+        "Pads": 0,
+        "Roads": 0,
+        "Lots": 0,
+        "WorldEdits": 0,
+        "ClearedResources": 21,
+        "ConstructionJobs": 0,
+        "EarthworksStates": 1,
+        "SitePreparationRecords": 1
+      },
+      "array_sha256": {
+        "Pads": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "Roads": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "Lots": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "WorldEdits": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "ClearedResources": "1fa3bb30596a87e219ed081bd9bb28694e8a010e27182b4fbe4a9b66729d3ed5",
+        "ConstructionJobs": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "EarthworksStates": "a73a727f06e2c20ac60f21d55e0f23aae645be25d2d3a49af94b37cbdfa994df",
+        "SitePreparationRecords": "e62b591fb52bc5f73dc7edd8ebccfacd3ab598a90c786ec6a665101cd4d2b2b6"
+      },
+      "earthworks": [
+        {
+          "version": 3,
+          "initial_warehouse_g": 200000000,
+          "warehouse_g": 109729993,
+          "buffer_g": 0,
+          "truck_g": 0,
+          "reserved_g": 0,
+          "excavated_g": 4500000,
+          "placed_g": 94770007,
+          "balance_error_g": 0,
+          "step_count": 644,
+          "geometry_revision": 67,
+          "truck_phase": 4,
+          "truck_route_distance_cm": 0,
+          "jobs": [
+            {
+              "plan_revision": 3,
+              "execution_history_count": 2,
+              "target_height_cm": 325,
+              "route_length_cm": 8850
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cold_process_distinct": true,
+  "all_preexisting_runtime_saves_unchanged": true,
+  "known_ui2_migration": {
+    "success": true,
+    "check_count": 10,
+    "checks": {
+      "guid_owned_isolated_user_dir": true,
+      "normal_rendered_cooked_controller": true,
+      "copied_ui2_source_readable": true,
+      "source_is_actual_v8": true,
+      "negative_slots_new_and_private": true,
+      "unknown_v8_profile_rejected_atomically": true,
+      "explicit_known_ui2_upgrade": true,
+      "all_eight_arrays_and_origins_exact_except_declared_envelope": true,
+      "existing_destination_rejected_atomically": true,
+      "copied_source_and_existing_destination_bytes_unchanged": true
+    },
+    "seconds": 1.007623601704836,
+    "exit_code": 0,
+    "native_report_sha256": "2c20b741c858363ed4ca23d1f27dc8d8cd41949a926981b3fe2a9b889d8d1a56",
+    "ledger_observations": 1,
+    "all_eight_arrays_equal": true,
+    "source_format": 8,
+    "target_format": 9,
+    "source_counts": {
+      "Pads": 0,
+      "Roads": 0,
+      "Lots": 0,
+      "WorldEdits": 0,
+      "ClearedResources": 14,
+      "ConstructionJobs": 0,
+      "EarthworksStates": 1,
+      "SitePreparationRecords": 1
+    },
+    "target_counts": {
+      "Pads": 0,
+      "Roads": 0,
+      "Lots": 0,
+      "WorldEdits": 0,
+      "ClearedResources": 14,
+      "ConstructionJobs": 0,
+      "EarthworksStates": 1,
+      "SitePreparationRecords": 1
+    },
+    "original_origins_and_writer_preserved": true
+  },
+  "normal_current_player_lifecycle": {
+    "success": true,
+    "all_eight_full_raw_native_records_equal": true,
+    "source_and_profile_unchanged": true,
+    "all_preexisting_saves_unchanged": true,
+    "package_unchanged": true,
+    "private_result_sha256": "144067ed2750b682f52408d9279a58552de64ba6d8f31341c775c15579d67dfa",
+    "phases": [
+      {
+        "phase": "save-load",
+        "exit_code": 0,
+        "elapsed_seconds": 69.60899999999674,
+        "seconds": 60.0,
+        "graceful_seconds_exit": true,
+        "log_closed": true,
+        "csv_capture_requested": false,
+        "controller_verification_mode": false,
+        "save_calls": 1,
+        "load_calls": 1,
+        "snapshots": [
+          {
+            "frame": 600,
+            "normal_controller": true,
+            "saved_process_id": 55320,
+            "save_game_objects": 1,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Anheben/Absenken/Ebnen planen. Arbeit und Transport sind ausdrueckliche Schalter."
+          },
+          {
+            "frame": 690,
+            "normal_controller": true,
+            "saved_process_id": 12628,
+            "save_game_objects": 2,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Erdauftraege, Ladungen und ausgefuehrter Boden gespeichert."
+          },
+          {
+            "frame": 780,
+            "normal_controller": true,
+            "saved_process_id": 12628,
+            "save_game_objects": 3,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Auftraege geladen. Bodenkollision wird wieder aufgebaut."
+          },
+          {
+            "frame": 80,
+            "normal_controller": true,
+            "saved_process_id": 12628,
+            "save_game_objects": 3,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Auftraege geladen. Bodenkollision wird wieder aufgebaut."
+          }
+        ],
+        "complete_raw_runtime_exports_equal": true
+      },
+      {
+        "phase": "cold-restart",
+        "exit_code": 0,
+        "elapsed_seconds": 66.04699999999139,
+        "seconds": 60.0,
+        "graceful_seconds_exit": true,
+        "log_closed": true,
+        "csv_capture_requested": false,
+        "controller_verification_mode": false,
+        "save_calls": 0,
+        "load_calls": 0,
+        "snapshots": [
+          {
+            "frame": 600,
+            "normal_controller": true,
+            "saved_process_id": 12628,
+            "save_game_objects": 1,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Anheben/Absenken/Ebnen planen. Arbeit und Transport sind ausdrueckliche Schalter."
+          },
+          {
+            "frame": 900,
+            "normal_controller": true,
+            "saved_process_id": 12628,
+            "save_game_objects": 1,
+            "full_runtime_export_sha256": {
+              "Pads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Roads": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "Lots": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "WorldEdits": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "ClearedResources": "ce05d36496e8cf6ec75700ab590142219b18fa2ad426cd49b7f309dceeabad71",
+              "ConstructionJobs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "EarthworksStates": "a05ed68735cf5849ffaa7030e5fe40a85ec0ab9c097471fed10166d6642fd422",
+              "SitePreparationRecords": "3a8f6bc29b861d0dcb7a86ac2ad0237e165b2397ae8a081b32a47e9221453315"
+            },
+            "runtime_record_counts": {
+              "Pads": 0,
+              "Roads": 0,
+              "Lots": 0,
+              "WorldEdits": 0,
+              "ClearedResources": 14,
+              "ConstructionJobs": 0,
+              "EarthworksStates": 1,
+              "SitePreparationRecords": 1
+            },
+            "house_count": 1,
+            "balance_error_g": 0,
+            "status_message": "Anheben/Absenken/Ebnen planen. Arbeit und Transport sind ausdrueckliche Schalter."
+          }
+        ],
+        "complete_raw_runtime_exports_equal": true
+      }
+    ]
+  },
+  "image": {
+    "file": "assets/images/site-replan-paused.png",
+    "sha256": "438142d98b1e70bfea4a3aa7a5a0d4aba851b3ab57eff65e5ba7c1119071d6cd",
+    "unmodified": true,
+    "agent_visually_checked": true,
+    "width": 888,
+    "height": 500
+  },
+  "failed_attempts": [
+    {
+      "archive": "SiteReplan1",
+      "stage": 3,
+      "cause": "Audit incorrectly expected zero new history segments during clearing; model intentionally retains every confirmed revision, including zero-work segments.",
+      "resolution": "Audit now requires one exact retained prior segment; physical checks unchanged."
+    },
+    {
+      "archive": "SiteReplan2",
+      "stage": 8,
+      "cause": "CPU absolute expected-height base switched to freshly quantized residual reference while historical deltas remained unchanged.",
+      "resolution": "Absolute-height interpolation and fallback use the immutable original revision; fresh measured residual samples remain intact. New component regression and final strict rendered rerun cover the correction."
+    }
+  ],
+  "limits": [
+    "Declared isolated fixture starts with200t; actual player receives no test stock.",
+    "Exact gram conservation belongs to the model; physical height samples are not an independent mesh-volume survey.",
+    "Normal controller APIs and production ticks; no physical keyboard/mouse or human acceptance claim.",
+    "1089 local50cm positions, three passes,5cm collision tolerance; no global GPU completion guarantee.",
+    "Mid-fill surplus return is covered by native model tests, not this rendered cut-to-fill scenario.",
+    "Fixed footprint and at most16 prior revisions; built house protected. General moving/rebuilding, unknown external terrain/generator migration and real road-planning tools remain outside this slice.",
+    "Known UI2v8 copy upgrade only; legacy v7 bridge requires its preserved old package."
+  ],
+  "normal_visible_handoff": {
+    "success": true,
+    "utc": "2026-10-30T01:29:23.431262+00:00",
+    "responding": true,
+    "windowed": true,
+    "offscreen": false,
+    "audit_mode": false,
+    "map_load_complete": true,
+    "old_ui2_save_unchanged": true,
+    "computer_use_used": false,
+    "scope": "Native process/window and startup-log confirmation; not human pixel or physical input acceptance."
+  }
+}

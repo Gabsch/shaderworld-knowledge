@@ -14,6 +14,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Einen begonnenen Bauplatz umplanen](guides/replan-building-sites.md) – feste Fläche und neue Zielhöhe mit erhaltener Rodung/Erde; 79 native Tests, gerenderte 17/18 Checks mit kalten drei Loads und bekannte UI2-Migration mit zehn Checks bestanden. Format 9; aktueller Spielerstand über F5/F9 und kalten Start in vier plus zwei vollständigen Snapshots exakt, normaler sichtbarer Fenster-/Kartenstart separat bestanden. Frühere v7-/UI2-Nachweise bleiben ihren eigenen Fassungen zugeordnet.
+
 - [Bauplatz nach einem neuen Build weiterbauen](guides/stable-save-binding.md) – bekannte A7-Stände ausdrücklich nach Format 8 übernehmen; drei Checkpoints je 16/30/30 native Checks über zwei neue Cooks, strenge physische Fortsetzung, normales Speicher-/Lade-/Kaltstartpaar und normaler Fenster-/Kartenstart bestanden. Historische Herkunftsgrenzen und weiterhin offene menschliche Eingabenprüfung erklärt.
 
 - [Grundstück durch Rodung und Erdarbeit vorbereiten](guides/site-preparation.md) – neue anklickbare Auftragskarten, deutlich gewählter Auftrag und Tab/Shift+Tab repariert; native Slate-Suite, 38/38 + 40/40 echte Spiel-UI-Checks und zusätzlicher aktueller Nutzerstand über F5/F9/kalten Neustart bestanden. Höhenvorschau trennt Abtrag und Auffüllung; physische menschliche Eingaben separat offen.
