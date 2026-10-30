@@ -1,13 +1,13 @@
 {
   "schema": "citylab.road-construction-test.v1",
   "complete": true,
-  "status": "bounded_road_construction_slice_accepted_and_visible_demo_handed_off",
-  "updated_at": "2026-10-30T04:52:21.882496+00:00",
+  "status": "bounded_automated_acceptance_preserved_normal_ui_defects_open",
+  "updated_at": "2026-10-30T12:09:52.279035+00:00",
   "engine_version": "5.8.4",
   "shaderworld_version": "4.1",
   "world": "/Game/Maps/ShaderWorldRoadConstructionLab",
   "slot": "CityLabRoadConstruction",
-  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim.",
+  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim. Follow-up 30 October: normal physical F5 debug-binding conflict observed, persistent red preview reported/retested without resolved native gate, and graded T-cap visual step identified by source/state. Prior automated evidence remains historical; no fix/new build acceptance.",
   "native": {
     "success": true,
     "completed_utc": "2026-10-30T04:24:14.508785+00:00",
@@ -1854,5 +1854,60 @@
     },
     "check_count": 10,
     "scope": "Independent one-time demo copy of completed own lab. Native visible normal window, exact executable/map/GameMode/UserDir, completed load and no Error/Fatal log verified. No Offscreen/Audit/Computer Use, no user physical input or final-demo pixel inspection inferred. Reviewed complete image is from the separate successful normal cold process."
+  },
+  "normal_ui_followup_2026_10_30": {
+    "recorded_utc": "2026-10-30T12:09:52.279035+00:00",
+    "complete": false,
+    "fix_implemented": false,
+    "new_build_or_package_tested": false,
+    "provenance": {
+      "user_report": "Three supplied normal-play images and report: graded T appears elevated, preview remains red and confirmation disabled despite resting camera. Images are not copied into this public bundle.",
+      "agent_observation": "Parent agent reported physical F5 in the existing normal RoadConstruction6; live log Set new viewmode: ShaderComplexity. F3 restored Lit, visually inspected by parent. V/manual retry left current preview blocked. This documentation agent performed only source/file reads.",
+      "source_read": "UE 5.8 Engine/Config/BaseInput.ini DebugExecBindings; own CityLabRoadConstructionGameMode.cpp RunFullPreview/PlayerTick/SetupInputComponent, CityLabRoadConstructionAudit.cpp Tick, CityLabRoadConstruction.cpp StageCandidate/MakeSurfaceOutputs, CityLabRoadConstructionPanel.cpp buttons. Licensed/own source files not included. UE 5.8 Engine/Private/UserInterface/PlayerInput.cpp debug-command-line guard reported by parent source inspection."
+    },
+    "debug_binding_conflict": {
+      "engine_bindings": {
+        "F3": "viewmode lit",
+        "F5": "viewmode shadercomplexity",
+        "F9": "shot showui"
+      },
+      "physical_f5_shadercomplexity_observed": true,
+      "physical_f3_lit_restore_observed": true,
+      "physical_f9_not_claimed": true,
+      "workaround_by_source": "Use K/L or direct Save/Load buttons; K/L are not physically tested here.",
+      "prior_automated_f5_f9_scope": "Controller-function calls, not physical keys through Engine debug bindings.",
+      "f5_save_also_occurred_not_excluded": true,
+      "possible_launch_workaround_not_applied": {
+        "argument": "-NoDebugExecBindings",
+        "source": "UE 5.8 Engine/Private/UserInterface/PlayerInput.cpp gates DebugExecBindings on this command-line flag.",
+        "applied": false,
+        "verified_in_game": false
+      }
+    },
+    "preview_readiness": {
+      "source_defect": "RunFullPreview clears bFullPreviewPending before StageCandidate checks readiness. After a transient false result, camera settling alone does not automatically retry.",
+      "manual_v_retry_cleared_current_live_block": false,
+      "exact_remaining_live_native_gate_identified": false,
+      "audit_coverage_gap": "Production audit explicitly pre-waits IsPlanningReady before planning. The normal UI first-attempt timing case is not covered.",
+      "marker_meaning": "Green indicates graph snap; white free endpoint is permitted and not by itself invalid.",
+      "proposed_fix_not_implemented": "Keep a transient readiness wait pending with bounded retry; retain native guards and distinguish real invalid plans."
+    },
+    "graded_t_visual": {
+      "source_defect": "All convex T-cap vertices use one node height instead of graded connected-arm surface heights.",
+      "node_z_cm": 330,
+      "asphalt_cap_offset_cm": 5,
+      "comparison_distance_cm": 650,
+      "branch_curve_z_at_comparison_cm": 304,
+      "branch_surface_offset_cm": 3,
+      "cap_z_cm": 335,
+      "branch_surface_z_cm": 307,
+      "derived_vertical_step_cm": 28,
+      "source_state_calculation_only": true,
+      "independent_pixel_measurement": false,
+      "cap_collision": "NoCollision",
+      "existing_collision_tests_do_not_validate_visible_seam": true
+    },
+    "preserved_evidence": "Previous native99, production35/61 and normal4+2 receipts, counts, balances, original images and scoped results are unchanged. New observations do not claim a repaired game or a repeated acceptance run.",
+    "remaining": "Known defects remain unresolved: identify the live preview gate and correct retry/debug binding/T-cap behavior, then verify real input and graded junctions. No implementation, new build or new acceptance run was performed in this follow-up."
   }
 }

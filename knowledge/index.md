@@ -14,7 +14,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
-- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – neuer spielbarer RoadConstruction6-Ablauf: Gerade/Kurve/Griffe/T, Maschinenfahrt/Rodung/Erde/Kies/Asphalt, Hauszufahrt und Haus. **99 native Tests, 35/61 gerenderte Checks, normales F5/F9-/Kaltstartpaar und sichtbarer Demo-Start bestanden**; 0 g Materialbilanzfehler, zwei Originalbilder. Eigene Karte/Slot, endlicher Bestand; alte Labore bleiben getrennt. Physische Eingabe-/POM-Nahsicht-/Großweltprüfung separat offen.
+- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – **aktuelle normale Bedienfehler offen, Anleitung wieder draft:** F5/F9-Debugkonflikt, blockierte Vorschau und schwebende geneigte T-Kappe. [Bekannte Fehler und Ausweichbedienung](guides/road-construction-tools.md#bekannte-fehler-im-normalen-spiel). Frühere 99 native Tests, 35/61 gerenderte Controllerprüfungen, normales Funktions-/Kaltstartpaar und 0-g-Bilanzen bleiben als begrenzte historische Nachweise erhalten; kein neuer Fix/Build.
 
 - [Einen begonnenen Bauplatz umplanen](guides/replan-building-sites.md) – feste Fläche und neue Zielhöhe mit erhaltener Rodung/Erde; 79 native Tests, gerenderte 17/18 Checks mit kalten drei Loads und bekannte UI2-Migration mit zehn Checks bestanden. Format 9; aktueller Spielerstand über F5/F9 und kalten Start in vier plus zwei vollständigen Snapshots exakt, normaler sichtbarer Fenster-/Kartenstart separat bestanden. Frühere v7-/UI2-Nachweise bleiben ihren eigenen Fassungen zugeordnet.
 

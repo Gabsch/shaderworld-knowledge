@@ -2,13 +2,13 @@
 type: Playbook
 title: Straßen zeichnen und von Maschinen bauen lassen
 description: Im getrennten Straßenlabor Gerade, Kurve, Hauszufahrt und endliche Baustofflieferungen schrittweise bedienen.
-status: stable
+status: draft
 tags: [shaderworld, citylab, roads, construction, logistics, savegame]
 engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T04:54:11Z"
+  at: "2026-10-30T12:09:52.279035+00:00"
 verified:
   by: codex/gpt-6
   at: "2026-10-30T04:54:11Z"
@@ -18,6 +18,9 @@ evidence_scope:
   cpu: Finaler nativer 99er-Rerun nach stabiler Abschnitts-ID-Korrektur bestanden; 97 sauber, zwei bekannte Warnungen, alle 20 neuen Straßentests sauber, 114,922 s/Exit 0. Editor12/Game7 ebenfalls bestanden. Frühere Quellfassungen bleiben historisch.
   runtime: Eigene Kartenübernahme, finaler Cook6 und gerendertes Create35/35 plus kaltes Resume61/61 mit drei normalen Loads und fertiger Straßen-/Hauskette bestanden. Normales F5/F9-Paar mit vier plus zwei vollständigen ExportText-Snapshots, zwei Originalbilder und separater sichtbarer Demo-Start belegt. Frühere Fehler und Fassungen bleiben getrennt.
 sources:
+  - id: normal-ui-followup
+    resource: "Nachprüfung vom 30. Oktober 2026: Nutzerbilder einer blockierten roten Vorschau und sichtbarer T-Stufe; Agentenbeobachtung des Elternagenten im normalen RoadConstruction6 mit Logeintrag Set new viewmode: ShaderComplexity nach physischem F5 und Rückkehr zu Lit mit F3. Gelesen: UE 5.8 Engine/Config/BaseInput.ini DebugExecBindings, Engine/Private/UserInterface/PlayerInput.cpp sowie eigene CityLabRoadConstructionGameMode.cpp, CityLabRoadConstructionAudit.cpp und CityLabRoadConstruction.cpp/MakeSurfaceOutputs. Keine dieser Quellen wird mitgeliefert; keine Korrektur implementiert oder neu gebaut."
+    title: Aktuelle Bedienfehler, normaler Tastenkonflikt und getrennte Quellbefunde
   - id: terrain-readiness
     resource: "Gelesener eigener CityLabRoadTerrainActor.h/.cpp, CityLabRoadConstruction/IsVegetationIdle und IsPlanningReady sowie CityLabRoadTerrainActorTests.cpp. Primärbefund aus separat lizenziertem ShaderWorld 4.1 ShaderWorldActor.h/IsProductionIdle und Private/Actor/ShaderWorldActor_Rings.cpp: vollständig verborgene Ringe überspringen den Exportpfad vor dem Zurücksetzen der Exportabsicht. Quellen nicht im öffentlichen Bundle enthalten. Eigene Unterklasse/Kartenübernahme, native Regression, finales Create/Resume und normales Kaltstartpaar bestanden. Keine Engine-/Pluginänderung und keine globale GPU-Fertigstellungszusage."
     title: Begrenzte lesende Bereitschaftsprüfung, native Regression und abgegrenzte erste Laufzeitbelege
@@ -50,6 +53,16 @@ sources:
     title: Historische Bauplatz-Savebindung und ausdrücklich begrenzte Migration
 ---
 # Straßen zeichnen und von Maschinen bauen lassen
+
+**Aktueller Stand vom 30. Oktober 2026: Bedienfehler im normalen RoadConstruction6 offen.** Die Anleitung ist deshalb wieder **draft**. Die früheren automatisierten Bau-, Bilanz- und Neustartnachweise bleiben für ihren damaligen Umfang gültig; sie sind keine Abnahme der nachfolgend gefundenen physischen Bedienung oder der T-Naht.
+
+## Bekannte Fehler im normalen Spiel
+
+- **F5/F9 kollidieren mit Unreal-Debugtasten.** UE 5.8 bindet F5 an `viewmode shadercomplexity`, F9 an `shot showui` und F3 an `viewmode lit`. Der Elternagent drückte im laufenden Spiel F5; das Log bestätigte `Set new viewmode: ShaderComplexity`. F3 stellte die normale Lit-Ansicht sichtbar wieder her. Daraus folgt nicht, dass F5 niemals zugleich gespeichert hat; bestätigt ist der zusätzliche Ansichtswechsel. Für diese Demo vorerst **K zum Speichern**, **L zum Laden** oder die direkten Schaltflächen **Speichern/Laden** verwenden. K/L und die Schaltflächen rufen laut eigenem Code die Speicherfunktionen auf; ihre physischen Tastendrücke wurden hier nicht geprüft. Die alten F5/F9-Automationen riefen Controllerfunktionen auf und konnten diesen Engine-Tastenkonflikt deshalb nicht erkennen. `-NoDebugExecBindings` könnte laut `PlayerInput.cpp` die Engine-Debugbindungen beim Start unterdrücken; das wurde hier weder angewendet noch geprüft.[^normal-ui-followup]
+- **Rote Vorschau kann nach einer frühen Prüfung hängenbleiben.** Die UI versucht die volle Boden-/Bewuchsprüfung einmal nach dem Loslassen und löscht dabei schon ihren Ausstehend-Zustand. War ShaderWorld gerade beschäftigt, genügt späteres Stillhalten allein nicht. **V / Erneut prüfen** stößt einen neuen Versuch an, ist aber keine belegte Reparatur: Im aktuellen Live-Versuch blieb die Vorschau auch danach blockiert. Welches native Bereitschaftsgate dort weiter offen ist, wurde im laufenden Frame nicht ermittelt. Der Bauaudit wartet vor Planung ausdrücklich auf Bereitschaft und deckt diesen Bedienfall nicht ab. Ein grüner Griff bedeutet nur eingerasteter Netzanschluss; ein freies Ende darf weiß bleiben.[^normal-ui-followup]
+- **Die T-Abdeckung folgt der Steigung noch nicht.** Sie wird im eigenen Darstellungs-Code als flache Fläche auf Knoten-Z + 5 cm gelegt. Im gemeldeten Beispiel ergibt der Quell-/Zustandsvergleich am 6,5 m entfernten Anschlussrand ungefähr 335 cm für die Abdeckung gegenüber 307 cm für die Fahrbahn: **rund 28 cm sichtbare Stufe**. Diese Werte sind ein Quellen-/Zustandsbefund, keine unabhängige Pixelmessung. Die Abdeckung hat `NoCollision`; erfolgreiche Terrain-Kollisionsproben beweisen daher keine passende sichtbare T-Naht.[^normal-ui-followup]
+
+Für diese drei Befunde sind **noch keine Codekorrektur und kein neu gebautes Spielpaket** belegt. Die nachstehenden Bedienfolgen und historischen Belege müssen zusammen mit diesen Einschränkungen gelesen werden.[^evidence]
 
 **Der begrenzte Straßenablauf ist mit Speichern und kaltem Neustart geprüft.** Straße planen, Griffe bearbeiten, bestätigen, Maschinen bereitstellen, Material holen und abschnittsweise bauen lassen; anschließend Hauszufahrt, Grundstück und Testhaus. Die finale Fassung besteht **99 native Tests**, einen frischen Cook und **35/35 + 61/61 gerenderte Produktionsprüfungen**. Dazu kommt das normale F5-/F9-/Kaltstartpaar mit vier plus zwei vollständigen Zustandsaufnahmen. Diese Anleitung gilt für **RoadConstruction6** und seinen eigenen Spielstand. Sie beschreibt die Bedienung nach Quellcode und geprüften Produktions-Controller-APIs; eine physische Maus-/Tasten- oder menschliche Spielabnahme wird daraus nicht abgeleitet.[^evidence] Frühere [RoadLab-Straßen](runtime-roads.md) und [Bauplatz-Spielstände](stable-save-binding.md) behalten ihre eigenen Nachweise.[^controls-source][^runtime-source]
 
@@ -150,7 +163,7 @@ Der Modellansatz ist **20 cm Kies bei 1.800 kg/m³** und **10 cm Asphalt bei 2.3
 
 ## Speichern, Laden und Neustart
 
-**Speichern [F5]** schreibt nur den neuen Straßen-Slot. **Laden [F9]** stellt dessen gespeicherten Zustand wieder her. Bestätigte Planungen sowie wichtige Bedienaktionen speichern ebenfalls; laufende geänderte Arbeitszustände werden regelmäßig gesichert. Vor einem gezielten Neustart trotzdem F5 verwenden und die Erfolgsmeldung prüfen.[^runtime-source]
+**K** beziehungsweise die direkte Schaltfläche **Speichern** ruft die Speicherfunktion für den neuen Straßen-Slot auf; **L** beziehungsweise **Laden** die Ladefunktion. Das ist der gelesene Controller-/Panel-Vertrag, keine neue physische K/L-Abnahme. **F5/F9 derzeit wegen des oben beschriebenen Engine-Debugkonflikts meiden**; die Beschriftungen der Schaltflächen nennen diese Tasten noch. Bestätigte Planungen und wichtige Bedienaktionen speichern ebenfalls, laufende geänderte Arbeitszustände regelmäßig. Vor einem gezielten Neustart ausdrücklich speichern und die Erfolgsmeldung prüfen.[^runtime-source][^normal-ui-followup]
 
 Gespeichert werden bestätigte Straßen und Kurven, ihre stabilen Netzkennungen und T-Aufteilungen, Auftragsauswahl, Haus-/Zufahrtspläne, Rodung, bereits ausgeführter Boden, Phasenmengen, getrennte Lager-/Puffer-/Lkw-Konten, tatsächliche Routen und Fahrzeugfortschritt sowie Kamerapose. **Eine noch unbestätigte Mausgeste wird nicht gespeichert.** Nach dem Laden gibt es daher keine halbfertige Griffbearbeitung, wohl aber einen bestätigten ungearbeiteten Plan.
 
@@ -243,3 +256,5 @@ Der hier beschriebene erste Ablauf ist für die unveränderte RoadConstruction6-
 [^terrain-readiness]: Gelesene native und eigene Bereitschaftsprüfung; Quellenobjekt `terrain-readiness`, tatsächliche verworfene Versuche im [bereinigten Straßennachweis](../evidence/road-construction-test.json).
 
 [^image-origin]: [Bildmanifest mit Herkunft, Originalgröße und SHA-256](../evidence/image-manifest.json).
+
+[^normal-ui-followup]: [Nachtrag zu aktuellen Bedienfehlern im Straßennachweis](../evidence/road-construction-test.json), Abschnitt `normal_ui_followup_2026_10_30`; Nutzerbericht, begrenzte Agentenbeobachtung und gelesene Quellen getrennt.
