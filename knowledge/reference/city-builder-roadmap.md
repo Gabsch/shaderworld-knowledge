@@ -8,13 +8,19 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T01:29:51Z"
+  at: "2026-10-30T04:55:47Z"
 verified:
   by: codex/gpt-6
-  at: "2026-10-30T01:29:51Z"
-  scope: Neue Format-9-Umplanung gegen bereinigte native, Cook-, Create-/Resume-, bekannte UI2-Migrations-, normale Spieler-Lebenszyklus- und getrennte Fenster-/Kartennachweise geprüft; frühere Belege behalten ihren jeweiligen Umfang. Keine physische Eingabe oder menschliche Abnahme.
-evidence_scope: Aktueller begrenzter Umplanungs-Slice mit 79 nativen Tests, frischem SiteReplan3-Cook, 17/18 gerenderten Create-/Resume-Checks, zehn bekannten UI2-Migrationschecks und normalem aktuellem Spieler-F5/F9-/Kaltstart abgeschlossen. Frühere Maschinen-/Savebindungsbelege bleiben ihren Fassungen zugeordnet. Physische Eingaben, menschliche Prüfung und der nächste Straßenwerkzeug-Slice sind separat.
+  at: "2026-10-30T04:55:47Z"
+  scope: Neue begrenzte Straßenkette gegen native 99, Cook6, gerendertes35/61-Paar, normales F5/F9-Kaltstartpaar und getrennten Fensterbeleg geprüft; frühere Umplanung/Altbelege behalten ihre Fassung. Keine physischen Eingaben oder menschliche Abnahme.
+evidence_scope: Neuer begrenzter RoadConstruction6-Slice mit native 99/Cook6/Produktions35/61/normalem F5/F9-Kaltstartpaar und separater sichtbarer Übergabe abgeschlossen. Frühere Format-9-Umplanung und Maschinen-/Savebindungsbelege behalten ihre eigenen Fassungen. Physische Eingaben, gezielte POM-Nahsicht und größere Welten separat offen.
 sources:
+  - id: road-construction-guide
+    resource: ../guides/road-construction-tools.md
+    title: Abgenommener begrenzter RoadConstruction6-Ablauf mit normalen Neustart- und getrennten Fensterbelegen
+  - id: road-construction-plan
+    resource: road-construction-work-plan.md
+    title: Beauftragter erster Straßenwerkzeug-Slice mit Baufront, endlichen Lieferungen und vorhandenen Assets
   - id: site-replan-guide
     resource: ../guides/replan-building-sites.md
     title: Abgeschlossener begrenzter erster Slice für begonnene Bauplätze
@@ -85,7 +91,9 @@ sources:
 
 [Begonnene Bauplätze sicher umplanen](../guides/replan-building-sites.md) ist für die feste Fläche und neue Zielhöhe abgenommen: Rodung, geleistete Bodenarbeit und Material bleiben erhalten; Bestätigung startet pausiert. Die finale Suite besteht **79 native Tests**, der frische SiteReplan3-Cook und **17/18 gerenderte Create-/Resume-Checks** einschließlich kaltem Start und drei normalen Loads. Die begrenzte bekannte UI2-v8-Kopiermigration besteht **zehn Checks**; der aktuelle übernommene Spielerstand bleibt über normale F5/F9-Funktionen und kalten zweiten Prozess in vier plus zwei vollständigen Rohdaten-Snapshots exakt. Historische UI2-Datei und passendes Archiv bleiben erhalten. Der normale sichtbare Start ist separat mit antwortendem eigenem Fenster, passender Karte und eigener neuer Datenablage bestätigt; daraus wird keine Pixel- oder physische Eingabeabnahme abgeleitet.[^site-replan-proof]
 
-**Als Nächstes richtige Bau- und Straßenwerkzeuge:** Straßenplanung mit **Kurvenvorschau** und vollständigem Werkzeugablauf ist der nächste eigenständige Slice. Diese Werkzeuge sind noch nicht umgesetzt. Allgemeines Verschieben, unbekannte Gelände-/Generatorwechsel, Holzbilanz und breite Logistik sind ebenfalls keine Ergebnisse der begrenzten Umplanung.[^site-replan-guide]
+**Vereinbarter Umfang der Straßenwerkzeuge.** Der [Straßenarbeitsplan](road-construction-work-plan.md) hält den inzwischen begrenzt geprüften Umfang fest: 8 m breite zweispurige Bodenstraßen, Geraden/kubische Kurven, verschiebbare Entwürfe, Endpunkt-/T-Anschlüsse, stabiles Netz, Hauszufahrten und Maschinen-Bauplätze. Rodung → Abtrag → Auffüllung → Kies → Asphalt nutzt endliche Soil-/Gravel-/Asphalt-Bestände mit echter Lagerabholung und begrenzten Lkw/Puffern. Fahrzeuge starten im Depot; nur fertige oder freigegebene Kiesrouten erweitern die erreichbare Baufront. Vorhandene RCP-/Material-/Fahrzeugassets sind inventarisiert und für den unten belegten Ablauf integriert. Brücken, Tunnel, allgemeine Offroad-Wege, Fahrspur-KI und Umbau arbeitender Straßen folgen später. Historische Prüfaussagen behalten ihre jeweilige Fassung.[^road-construction-plan][^site-replan-guide]
+
+**Straßen-Slice abgeschlossen:** [RoadConstruction6-Anleitung und zwei Originalbilder](../guides/road-construction-tools.md) erklären Straße/Kurve/Griffe/T, Karte → J → Leertaste → H, echte Depot-/Lagerbelieferung und Hauszufahrt/Pad/Haus. Eigene Karte/Slot, endliche 100/400/200-t-Anlage und passende versiegelte Buildfassung. **99 native Tests, frischer Cook, gerendertes35/61-Paar, normales F5/F9-/Kaltstartpaar mit 4+2 Snapshots und separate sichtbare Übergabe bestanden**. Endstand 16 Rodungen/ein Haus; drei fertige Aufträge/zwei stornierte Testentwürfe, leere Lkw/Puffer, alle drei Materialbilanzen 0 g. Beladene Innenfahrt nach kaltem Neustart und drei normalen Loads exakt, dann gesamte Kette fortgesetzt. Physische Eingaben, gezielte POM-/Naht-Nahsicht und große Netze bleiben offen. Unbegonnene/ungeteilte Formbearbeitung begrenzt; begonnene Straße/innere T-Knoten geschützt. Straßenumbau/4-Wege/Brücken/Tunnel/Verkehrs-KI sind spätere eigenständige Aufgaben.[^road-construction-guide]
 
 ## Historischer Stand und damaliger Folgeschritt, 29. Oktober 2026
 
@@ -185,3 +193,7 @@ Die [Hybridkammer](../guides/underground-hybrid-probe.md) besitzt inzwischen ihr
 [^construction-proof]: [Bereinigter Baugrubenbericht](../evidence/construction-lab-test.json): 22 native Tests sowie cooked Create 14/14 in 24,705998 s und Resume 15/15 in 113,845061 s; exakte Modellbilanz und begrenzter physischer Höhennachweis. Historischer 2-cm-Fehlversuch bleibt separat.
 [^navigation-proof]: [Gerenderter Navigationsbericht](../evidence/terrain-navigation-test.json): 11/11 Checks mit tatsächlichen Höhen; zusätzliche bewusste Harness-Wartezeit bleibt Teil des Nachweises.
 [^clearing-benchmark]: [Bereinigter CPU-Rodungsbenchmark](../evidence/clearing-performance-test.json): acht cooked Messfenster, echte Slot-/Livezahlen und vollständiger visueller CPU-Restore; explizit kein GPU-/FPS-Leistungsnachweis.
+
+[^road-construction-plan]: [Vereinbarter und begrenzt geprüfter Straßen-Slice](road-construction-work-plan.md); Umfang, vorhandene Assets, Abnahme und spätere Ausbaustufen.
+
+[^road-construction-guide]: [Geprüften begrenzten Straßenablauf bedienen](../guides/road-construction-tools.md).

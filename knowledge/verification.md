@@ -12,13 +12,19 @@ engine_version: 5.8.4
 plugin_version: '4.1'
 verified:
   by: codex/gpt-6
-  at: "2026-10-30T01:29:51Z"
-  scope: Neue Format-9-Umplanung gegen bereinigte native, Cook-, Create-/Resume-, bekannte UI2-Migrations-, normale Spieler-Lebenszyklus- und getrennte Fenster-/Kartennachweise geprüft; frühere Belege behalten ihren jeweiligen Umfang. Keine physische Eingabe oder menschliche Abnahme.
+  at: "2026-10-30T04:55:47Z"
+  scope: Neuen begrenzten RoadConstruction6-Ablauf gegen native 99, Cook6, Produktions35/61, normales F5/F9-Kaltstartpaar und separaten Fensterbeleg geprüft. Frühere Format-9-Umplanung und ältere Belege behalten ihre eigenen Fassungen; keine physischen Eingaben oder menschliche Abnahme.
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T01:29:51Z"
+  at: "2026-10-30T04:55:47Z"
 sources:
+- id: road-construction-native
+  resource: evidence/road-construction-test.json
+  title: Finale native 99-/Cook6-/Produktions35/61-/Normal-/Fensterbelege und erhaltene Fehlschläge
+- id: road-construction-guide
+  resource: guides/road-construction-tools.md
+  title: Geprüfter begrenzter Straßenablauf mit Bedienung und Neustart
 - id: site-replan-guide
   resource: guides/replan-building-sites.md
   title: Begonnenen Bauplatz mit erhaltener Arbeit und Material umplanen
@@ -125,6 +131,22 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## Neue Straßenwerkzeuge: begrenzter Ablauf mit Neustart abgenommen
+
+Die [finale 99er-Suite nach Abschnitts-ID-Korrektur](evidence/road-construction-test.json) besteht **97 saubere Tests und zwei bekannte Warnungen**, Exit 0 in **114,922 s**. Alle **20 neuen Straßentests** (sechs Netz/sechs Bau/acht Terrain/Bereitschaft) sind sauber; normale Saves und geschützte Quellen unverändert. Editor12/Game7 bestehen in **58,97/73,27 s**, frischer **Cook6 in 81,55 s** mit null Fehlern/sieben geerbten Warnungen/Exit 0. Frühere 98er-/99er-Suiten und Cooks bleiben ihrer Quellfassung zugeordnet.
+
+Die eigene Straßenkarten-Unterklasse ist mit rekursiv gleichem Boden-/Peer-Zustand, Pose und gespeichertem Readback übernommen: **1.066 geschützte Dateien, 329 normale Saves und altes Profil unverändert**, Manifest mit **411 Paketen**. Die [Anleitung](guides/road-construction-tools.md) ist für den begrenzten **RoadConstruction6**-Ablauf stable. Vollständiges Produktionspaar, normales F5/F9-/Kaltstartpaar und getrennte sichtbare Demo-Übergabe sind bestanden; alte Labore/Saves bleiben getrennt.
+
+**Gerendertes Produktionspaar: Create35/35 + Resume61/61 bestanden**, reguläre Exits 0 in **91,123/962,462 s**. Vorschau/T-/kubische Trasse, gespeicherte Griffänderung/Verschieben mit erhaltenen IDs/Konten, Stornierung und atomarer Nichtstart unverbundener Straße geprüft. Echte Depotfahrt/Teilrodung/Abtrag bis pausierter beladener Innenfahrt; kalter zweiter Prozess und **drei normale Loads** erhalten sämtliche Gruppen einschließlich Ladung exakt. Danach tatsächliche Baufront und Boden-/Kies-/Asphaltarbeit, Hauszufahrt, separater Hausplatz und ein echtes Haus fertig. Normale Lagerbestände/Raten, kein beschleunigtes Prüfprofil. Insgesamt **2.706 Bilanzbeobachtungen**, **39 akzeptierte Batches/382.173 wiederholte lokale 50-cm-Kollisionsproben**, maximal **2,431767 cm** bei unverändertem 5-cm-Gate. Keine unabhängige Mesh-Volumenmessung.
+
+**Endstand und Bilanz:** 16 gerodete Bäume/ein Haus, leere Puffer und Lkw. Fünf Auftragsrecords sind drei abgeschlossene Aufträge plus zwei stornierte Testentwürfe. Erde **100.000.000 g Anfang + 126.188.650 g Abtrag = 201.541.839 g Lager + 24.646.811 g Einbau**; Kies **400.000.000 = 330.423.820 + 69.576.180 g**; Asphalt **200.000.000 = 155.548.552 + 44.451.448 g**. Pro Material **0 g Fehler**. Zwei unveränderte originale 1600×1000-SHOWUI-Bilder visuell geprüft: pausierter Abtrag und abgeschlossener Zustand im zweiten normalen Prozess, beide mit Herkunft/Hash.
+
+**Normales Speicher-/Ladepaar:** zwei getrennte reguläre Prozesse mit je 45 s Laufzeit, beide Exit 0. Normale F5/F9-Funktionen und kalter Start liefern vier plus zwei vollständige native ExportText-Aufnahmen. Netz/Baustellenmodell/Bodensites/Rodungen/Häuser und übrige Metadaten exakt; Kameratoleranz 1e-8. Eingabe-/Ausgabedatei derselbe SHA; alte Saves und versiegeltes Paket unverändert. Keine physische Tasteneingabe oder höhere Genauigkeit als Textexport behauptet.
+
+**Demo-Übergabe separat bestanden:** abgeschlossene Welt genau einmal in eigene Demo-Ablage kopiert. Normales sichtbares antwortendes Hauptfenster, richtige Anwendung/Karte/GameMode/UserDir, vollständiges Kartenladen, kein Offscreen/Audit und keine Error-/Fatal-Meldung; zehn native Checks. Computer Use unbenutzt. Das ist kein menschlicher Pixel-/Eingabenachweis. Physische Bedienung, gezielte POM-/Naht-Nahsicht und Großweltleistung bleiben zusätzliche Prüfungen.
+
+**Frühere Fehlversuche bleiben erhalten:** Anfänglicher echter Zwei-Snap-Fehler, drei Readiness-Versuche, zwei frühe Kartenübernahmen, vierter Spielversuch mit korrekt abgewiesener ungültiger Testkurve und fünfter Versuch mit echtem Abschnitts-ID-Fehler. Der letzte Produktionsfix erhält die IDs überlebender unbegonnener Abschnittsordinalen vor Rasterversiegelung; begonnene Historie bleibt geschützt. Die finale Create-Prüfung besteht danach ihre unveränderten Identitäts-/Kontengates. Alle acht Fehl-/Stoppversuche und früheren erfolgreichen Suiten/Cooks sind im [bereinigten Beleg](evidence/road-construction-test.json) abgegrenzt; keine stillen Prüfgrenzenänderungen.
 
 ## Begonnene Bauplätze umplanen: Format 9 und bekannter UI2-Stand
 

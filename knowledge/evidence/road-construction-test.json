@@ -1,0 +1,1858 @@
+{
+  "schema": "citylab.road-construction-test.v1",
+  "complete": true,
+  "status": "bounded_road_construction_slice_accepted_and_visible_demo_handed_off",
+  "updated_at": "2026-10-30T04:52:21.882496+00:00",
+  "engine_version": "5.8.4",
+  "shaderworld_version": "4.1",
+  "world": "/Game/Maps/ShaderWorldRoadConstructionLab",
+  "slot": "CityLabRoadConstruction",
+  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim.",
+  "native": {
+    "success": true,
+    "completed_utc": "2026-10-30T04:24:14.508785+00:00",
+    "exit_code": 0,
+    "counts": {
+      "succeeded": 97,
+      "succeededWithWarnings": 2,
+      "failed": 0,
+      "notRun": 0,
+      "inProcess": 0
+    },
+    "test_count": 99,
+    "road_tests": [
+      {
+        "test": "CityLab.RoadBuild.AccessClearingArrivalAndPausedCommit",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadBuild.FiniteBufferWarehouseAndMissingTypedStockStall",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadBuild.HousePadUsesSameTypedWarehouseAndNoAutoStart",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadBuild.InFlightNativeRestoreAndNoRouteReassignment",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadBuild.TypedConservationSequentialFrontierAndExplicitStart",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadBuild.UnstartedReplacementCancellationIdentityAndOverflow",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.BoundsCrossingsAndInvalidCurvesAreAtomic",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.ExactSplitStableAlignmentAndSaveRoundTrip",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.HeightAwareEndpointAndTJunctionSnaps",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.OnlyUnbuiltIncidentAlignmentsCanMove",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.RoutesUseOnlyConnectedAllowedCurrentAlignments",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadNetwork.TwoSnapsOnOneEdgeCommitAtomically",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.ArcLengthSectionsKeepCompletedPrefixAtNextStand",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.CompletedSectionsPartitionWholeCurveWithoutTruncation",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.FingerprintsBoundsAndMalformedSamples",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.FlatAndSlopedSourcesKeepIndependentCutAndFill",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.HiddenExportsRespectVisibilityAndProducerWork",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.PreviouslyWorkedReferenceAndPartialProgressSurviveCopy",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.SignClippedTriangleMassAndShaderDiagonal",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "test": "CityLab.RoadTerrain.ZeroBoundariesSupportAndAtomicPlanningFailures",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0
+      }
+    ],
+    "known_warning_allowances": {
+      "CityLab.BuildQueries.BoundedCitizenDetour": 1,
+      "CityLab.WorldEdits.BackendMigration": 1
+    },
+    "failed_test_exclusions": [],
+    "elapsed_seconds": 114.922,
+    "normal_saves_unchanged": true,
+    "protected_sources_unchanged": true,
+    "native_module_sha256": "44aabc2a9b76e1da3995f742e8ff0d26a928fcfccac2e1dd1bb6ac48a20c86c6",
+    "runner_sha256": "db1cc040abee0b99aa6fd84b70416c1ce549da40dca441c4449602cf094e54fb",
+    "new_road_test_count": 20,
+    "private_result_sha256": "8c123c3b1957dbb3b2c649a417db12d7450e630a0e4e52a32aaae85af60cefb6",
+    "native_report_sha256": "9787569070795cb8a4baa0a1c4185e26a8fa00832c9de5b4ddacd323b9673c46",
+    "native_log_sha256": "68d20c8d28cbc29b7a644d982357a7ee2e2bb1d728ac1a1d25f00c717f6ca2c4",
+    "coordinator_reported_sealed_source_identity_sha256": "e0aad3c0a7bbec07ab07119b891dc2cebcdff11de33a50100c9f6f654b481331",
+    "limit": "Final e0aad3-seal NullRHI suite after stable pristine-section identity correction. Rendered create is a separate result; complete resume/normal lifecycle and human input are not established by this suite."
+  },
+  "final_build": {
+    "status": "accepted_final_editor12_game7_native99_cook6_production_pair_normal_lifecycle",
+    "coordinator_reported_sealed_source_identity_sha256": "e0aad3c0a7bbec07ab07119b891dc2cebcdff11de33a50100c9f6f654b481331",
+    "editor": {
+      "success": true,
+      "result": "Succeeded",
+      "execution_seconds": 58.97,
+      "private_log_sha256": "6d2227ba7d793f7a873e541f2eec865eec94a01c15687e3acb560498f3334205"
+    },
+    "game": {
+      "success": true,
+      "result": "Succeeded",
+      "execution_seconds": 73.27,
+      "private_log_sha256": "1738c2f8d538c453756b365b9016694c40b6fc4459a5281b2a3f78735daff72d"
+    },
+    "accepted_archive": "RoadConstruction6",
+    "fresh_cook": {
+      "archive": "RoadConstruction6",
+      "success": true,
+      "exit_code": 0,
+      "build_cook_run_seconds": 81.55,
+      "errors": 0,
+      "warnings": 7,
+      "warning_scope": "Inherited Level Blueprint actor-reference warnings, not resolved.",
+      "private_log_sha256": "e5d55f2e9704c412114bc578ef3eb052b399ef3d4482e1471c901078af0c20bb"
+    }
+  },
+  "rendered_create": {
+    "status": "passed_as_part_of_complete_production_pair",
+    "success": true,
+    "archive": "RoadConstruction6",
+    "coordinator_reported_exit_code": 0,
+    "check_count": 35,
+    "passed_check_count": 35,
+    "checks": {
+      "guid_owned_isolated_user_dir": true,
+      "actual_cooked_rendered_map": true,
+      "every_observed_typed_ledger_and_snapshot_valid": true,
+      "ordinary_new_lab_declares_stock_without_work": true,
+      "ordinary_production_stock_and_rates_unmodified": true,
+      "normal_graph_creates_t_branch": true,
+      "normal_three_full_previews_valid": true,
+      "preview_does_not_change_any_saved_state": true,
+      "normal_commit_creates_paused_work_only": true,
+      "confirmed_actual_curved_alignment": true,
+      "confirmed_plan_has_zero_work_and_two_frozen_sections": true,
+      "confirmation_keeps_actual_terrain_within_5cm": true,
+      "curved_corridor_full_preview": true,
+      "curved_draft_committed_inert": true,
+      "curve_confirmation_creates_no_material_or_motion": true,
+      "saved_curve_edit_source_available": true,
+      "public_saved_curve_controls_prepare_valid_preview": true,
+      "public_saved_curve_edit_full_preview_ready": true,
+      "saved_curve_control_edit_keeps_identity_and_accounts": true,
+      "unstarted_curve_endpoint_moves_and_refreezes": true,
+      "draft_move_preserves_identity_and_all_physical_accounts": true,
+      "unstarted_curve_cancellation_removes_graph_and_sites": true,
+      "disconnected_draft_can_be_saved_without_work": true,
+      "disconnected_start_rejected_atomically_no_grass_shortcut": true,
+      "disconnected_unstarted_draft_cancelled": true,
+      "explicit_main_job_start_stays_paused": true,
+      "actual_frozen_trees_and_depot_machine_before_work": true,
+      "normal_work_and_transport_controls_enabled": true,
+      "pause_real_loaded_interior_soil_haul": true,
+      "real_machine_travel_and_partial_clearing_observed": true,
+      "unknown_binding_origin_mass_and_orphans_rejected": true,
+      "started_alignment_move_rejected_without_physical_change": true,
+      "normal_controller_f5_function_saves_checkpoint": true,
+      "saved_full_native_snapshot_matches_live_state": true,
+      "paused_showui_png_complete_after_two_frames": true
+    },
+    "elapsed_seconds": 91.12297359853983,
+    "ledger_observations": 124,
+    "machine_travel_observed": true,
+    "partial_clearing_observed": true,
+    "frontier_observed": false,
+    "repeated_load_count": 0,
+    "checkpoint": {
+      "group_sha256": {
+        "network": "92a329b7bfbc49a8f5e84b643d2b10b49c5a334bdaaa856c02cdf0f0a75e2c66",
+        "build": "48b7966f9e593cd6f78d115ee8ef49c6967b7e43b5ed6d9af27bdee8f687501a",
+        "sites": "68a55d4d37a1e979a492f2a9828e742817c0f53bc1daf40de14e21232fbad728",
+        "cleared_trees": "acb7ab766c20ada6d236709c4262aab3fb86f687a6dc8cc25a551f8dfc3f8fc6",
+        "houses": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "envelope_camera_selection": "ffdc078e24048f2a797f3665b0e1962ee5bf814375e7ec7abf7d59c278f8d906"
+      },
+      "full_native_sha256": "2e03742ab4b1cdf540452c4435a21d5659793dc2883cbb4cd1570a30ea54e9bf",
+      "world_package": "/Game/Maps/ShaderWorldRoadConstructionLab",
+      "content_binding": "12E3A2F42189B48D1C9D33955C3C70EC620DF3A8",
+      "version": 1,
+      "jobs": 3,
+      "sites": 10,
+      "cleared_trees": 12,
+      "houses": 0,
+      "step_count": 65,
+      "geometry_revision": 23,
+      "surface_revision": 0,
+      "section_index": 0,
+      "truck_g": 12000000,
+      "buffer_g": 5250000,
+      "truck_distance_cm": 2400.00000000227,
+      "truck_route_length_cm": 3000.00000000227,
+      "excavated_soil_g": 17250000,
+      "initial_stock": {
+        "soil_g": 100000000,
+        "gravel_g": 400000000,
+        "asphalt_g": 200000000
+      },
+      "warehouse": {
+        "soil_g": 100000000,
+        "gravel_g": 400000000,
+        "asphalt_g": 200000000
+      },
+      "placed": {
+        "soil_g": 0,
+        "gravel_g": 0,
+        "asphalt_g": 0
+      },
+      "balance_error": {
+        "soil_g": 0,
+        "gravel_g": 0,
+        "asphalt_g": 0
+      }
+    },
+    "checkpoint_file_sha256": "08836583fbc538c183a6844ef8a1966f1e17edd8a57f56666ba953f1783f6e24",
+    "ground_batches": [
+      {
+        "label": "confirmation_no_instant_terrain",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "confirmation_no_instant_terrain",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "confirmation_no_instant_terrain",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "saved_curve_edit_no_instant_terrain",
+        "samples": 11987,
+        "hits": 11987,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "saved_curve_edit_no_instant_terrain",
+        "samples": 11987,
+        "hits": 11987,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "saved_curve_edit_no_instant_terrain",
+        "samples": 11987,
+        "hits": 11987,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "paused_midhaul_ground",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "paused_midhaul_ground",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "paused_midhaul_ground",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      }
+    ],
+    "accepted_ground_sample_count": 91347,
+    "maximum_ground_error_cm": 0.9996024492809283,
+    "ground_gate_cm": 5,
+    "private_native_create_sha256": "b70602051577af7e29e09552a8d1844b5d76991e88b30f30a40ceefffdd57f71",
+    "private_create_validation_seal_sha256": "b19a2ec372892da0cd37da50ac938500e0906c33f05383df749fdf136b4d803b",
+    "source_identity": {
+      "legacy_profile_sha256": "d44173a9b2f661bd21e074442727343af063bc7416aa80892ef46131990cbbbd",
+      "road_profile_sha256": "4dbc741170b318ada0b71a60590e8ecc0f645e3c50d13deec1dbaff3efeb1182",
+      "native_config_sha256": "e0aad3c0a7bbec07ab07119b891dc2cebcdff11de33a50100c9f6f654b481331",
+      "build_id_header_sha256": "65cc8a0a1a61d96e048938ecfb53815f745ad42b847c4c75f41453923eb2f46b",
+      "package_sha256": "3c6e156bc0ee338dceea97dfba46af256e7dbf2fbb7761abbf59c0e01a4d45b7",
+      "package_file_count": 41,
+      "content_binding": "12e3a2f42189b48d1c9d33955c3c70ec620df3a8"
+    },
+    "scope": "Own isolated cooked production manager/controller API create at ordinary lab stocks/rates: previews/T/cubic, stable edits/moves/cancels, disconnected-start rejection, real machine travel/partial clearing, paused loaded interior soil haul, negative snapshot validation, normal F5 function and exact saved snapshot, original SHOWUI. Not physical mouse/keyboard/human input, finished road/house or complete restart acceptance.",
+    "exit_code": 0,
+    "native_log_sha256": "1bb327b700b40c97f43a78ed45174961794457538dcafa30a2cc3742cfa39c9c"
+  },
+  "rendered_resume": {
+    "status": "passed_full_cold_resume_three_normal_loads_and_completion",
+    "success": true,
+    "archive": "RoadConstruction6",
+    "exit_code": 0,
+    "check_count": 61,
+    "passed_check_count": 61,
+    "checks": {
+      "guid_owned_isolated_user_dir": true,
+      "actual_cooked_rendered_map": true,
+      "cold_restart_distinct_process": true,
+      "every_observed_typed_ledger_and_snapshot_valid": true,
+      "cold_autoload_complete_snapshot_exact": true,
+      "cold_autoload_complete_snapshot_exact_network": true,
+      "cold_autoload_complete_snapshot_exact_build": true,
+      "cold_autoload_complete_snapshot_exact_sites": true,
+      "cold_autoload_complete_snapshot_exact_cleared_trees": true,
+      "cold_autoload_complete_snapshot_exact_houses": true,
+      "cold_autoload_complete_snapshot_exact_envelope_camera_selection": true,
+      "cold_autoload_complete_snapshot_exact_source_file_unchanged": true,
+      "cold_loaded_interior_haul_preserved": true,
+      "cold_ground_wait_keeps_complete_snapshot": true,
+      "cold_ground_wait_keeps_complete_snapshot_network": true,
+      "cold_ground_wait_keeps_complete_snapshot_build": true,
+      "cold_ground_wait_keeps_complete_snapshot_sites": true,
+      "cold_ground_wait_keeps_complete_snapshot_cleared_trees": true,
+      "cold_ground_wait_keeps_complete_snapshot_houses": true,
+      "cold_ground_wait_keeps_complete_snapshot_envelope_camera_selection": true,
+      "cold_ground_wait_keeps_complete_snapshot_source_file_unchanged": true,
+      "normal_controller_f9_function_load": true,
+      "repeat_load_1_exact": true,
+      "repeat_load_1_exact_network": true,
+      "repeat_load_1_exact_build": true,
+      "repeat_load_1_exact_sites": true,
+      "repeat_load_1_exact_cleared_trees": true,
+      "repeat_load_1_exact_houses": true,
+      "repeat_load_1_exact_envelope_camera_selection": true,
+      "repeat_load_1_exact_source_file_unchanged": true,
+      "repeat_load_2_exact": true,
+      "repeat_load_2_exact_network": true,
+      "repeat_load_2_exact_build": true,
+      "repeat_load_2_exact_sites": true,
+      "repeat_load_2_exact_cleared_trees": true,
+      "repeat_load_2_exact_houses": true,
+      "repeat_load_2_exact_envelope_camera_selection": true,
+      "repeat_load_2_exact_source_file_unchanged": true,
+      "repeat_load_3_exact": true,
+      "repeat_load_3_exact_network": true,
+      "repeat_load_3_exact_build": true,
+      "repeat_load_3_exact_sites": true,
+      "repeat_load_3_exact_cleared_trees": true,
+      "repeat_load_3_exact_houses": true,
+      "repeat_load_3_exact_envelope_camera_selection": true,
+      "repeat_load_3_exact_source_file_unchanged": true,
+      "three_normal_loads_preserve_every_group_and_collision": true,
+      "normal_controls_resume_exact_saved_intent": true,
+      "frontier_extends_only_after_completed_gravel": true,
+      "real_frontier_machine_and_clearing_completed": true,
+      "road_completes_with_empty_convoy_and_exact_typed_conservation": true,
+      "normal_house_plan_adds_driveway_and_pad_without_work": true,
+      "house_and_road_share_one_unchanged_finite_warehouse": true,
+      "house_build_and_pad_access_rejected_before_prepared_driveway": true,
+      "explicit_driveway_job_runs_from_shared_convoy": true,
+      "driveway_never_auto_starts_separate_pad": true,
+      "explicit_pad_job_reuses_actual_machine_and_typed_stock": true,
+      "normal_house_build_requires_actual_completed_pad": true,
+      "house_actor_does_not_create_or_transmute_material": true,
+      "actual_house_actor_and_all_three_material_balances_complete": true,
+      "normal_final_save_preserves_house_and_all_jobs": true
+    },
+    "elapsed_seconds": 962.4616231024265,
+    "ledger_observations": 2582,
+    "repeated_load_count": 3,
+    "stage": 107,
+    "machine_travel_observed": true,
+    "partial_clearing_observed": true,
+    "frontier_observed": true,
+    "road_completed": {
+      "group_sha256": {
+        "network": "92a329b7bfbc49a8f5e84b643d2b10b49c5a334bdaaa856c02cdf0f0a75e2c66",
+        "build": "8131f92c9b65332cc40f80b2af5ee5def5c7268bcd87886268b45efcfd28cf16",
+        "sites": "74f22462d8df6bc39bce113814146ad8356973a416a8b21928ebc5e3a854beb1",
+        "cleared_trees": "acb7ab766c20ada6d236709c4262aab3fb86f687a6dc8cc25a551f8dfc3f8fc6",
+        "houses": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "envelope_camera_selection": "ffdc078e24048f2a797f3665b0e1962ee5bf814375e7ec7abf7d59c278f8d906"
+      },
+      "full_native_sha256": "b55b455e44cfc145b63bff75d7a33ada567f27e19e33209e3d31146043311683",
+      "world_package": "/Game/Maps/ShaderWorldRoadConstructionLab",
+      "content_binding": "12E3A2F42189B48D1C9D33955C3C70EC620DF3A8",
+      "version": 1,
+      "jobs": 3,
+      "sites": 10,
+      "cleared_trees": 12,
+      "houses": 0,
+      "step_count": 780,
+      "geometry_revision": 148,
+      "surface_revision": 98,
+      "section_index": -1,
+      "truck_g": 0,
+      "buffer_g": 0,
+      "truck_distance_cm": 0,
+      "truck_route_length_cm": 3758.5133240837968,
+      "excavated_soil_g": 110839506,
+      "initial_stock": {
+        "soil_g": 100000000,
+        "gravel_g": 400000000,
+        "asphalt_g": 200000000
+      },
+      "warehouse": {
+        "soil_g": 210839506,
+        "gravel_g": 356343820,
+        "asphalt_g": 172108552
+      },
+      "placed": {
+        "soil_g": 0,
+        "gravel_g": 43656180,
+        "asphalt_g": 27891448
+      },
+      "balance_error": {
+        "soil_g": 0,
+        "gravel_g": 0,
+        "asphalt_g": 0
+      },
+      "job_status_counts": {
+        "Completed": 1,
+        "Cancelled": 2
+      }
+    },
+    "completed": {
+      "group_sha256": {
+        "network": "5539c318a5994a5e02427f0a60edb4bf55223a3878c0c3b8f6d5f368a66655b6",
+        "build": "122afcb5cc3878febfdb2ac9d59763de23d13888d55e8f72a1acd6705eb986cf",
+        "sites": "099678fbd60b231684ec95076a6b2ef6ca558dace3b6c8bf9058963883b4f36d",
+        "cleared_trees": "daf1f028aed22b7458cc7a62456c5edf7f80c28d28bbcba3a5a97d2a743e0a9f",
+        "houses": "a1da27227a869b27f49016c5d22a8ee0692c3e0d10040c9d3ad4923e0dd1413e",
+        "envelope_camera_selection": "6034af870a7d9242c871afb5c3e31efcfd06953706dce89a2b6e8665544a336e"
+      },
+      "full_native_sha256": "a51537e821749aa3a5e1d949d45a030053410097f11db44dc5dff2c86dd0880e",
+      "world_package": "/Game/Maps/ShaderWorldRoadConstructionLab",
+      "content_binding": "12E3A2F42189B48D1C9D33955C3C70EC620DF3A8",
+      "version": 1,
+      "jobs": 5,
+      "sites": 13,
+      "cleared_trees": 16,
+      "houses": 1,
+      "step_count": 1390,
+      "geometry_revision": 205,
+      "surface_revision": 158,
+      "section_index": -1,
+      "truck_g": 0,
+      "buffer_g": 0,
+      "truck_distance_cm": 0,
+      "truck_route_length_cm": 5419.360101809376,
+      "excavated_soil_g": 126188650,
+      "initial_stock": {
+        "soil_g": 100000000,
+        "gravel_g": 400000000,
+        "asphalt_g": 200000000
+      },
+      "warehouse": {
+        "soil_g": 201541839,
+        "gravel_g": 330423820,
+        "asphalt_g": 155548552
+      },
+      "placed": {
+        "soil_g": 24646811,
+        "gravel_g": 69576180,
+        "asphalt_g": 44451448
+      },
+      "balance_error": {
+        "soil_g": 0,
+        "gravel_g": 0,
+        "asphalt_g": 0
+      },
+      "job_status_counts": {
+        "Completed": 3,
+        "Cancelled": 2
+      }
+    },
+    "ground_batches": [
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_1",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_1",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_1",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_2",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_2",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_2",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "cold_resume_collision",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_3",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_3",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "repeat_load_3",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.9996024492809283,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "completed_two_section_road",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 1.9282532925717533,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "completed_two_section_road",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 1.9282532925717533,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "completed_two_section_road",
+        "samples": 9231,
+        "hits": 9231,
+        "spacing_cm": 50,
+        "maximum_error_cm": 1.9282532925717533,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "completed_driveway",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "completed_driveway",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "completed_driveway",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "completed_house_pad",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "completed_house_pad",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "completed_house_pad",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 3,
+        "accepted": true
+      },
+      {
+        "label": "built_house_final_collision",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 1,
+        "accepted": true
+      },
+      {
+        "label": "built_house_final_collision",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 2,
+        "accepted": true
+      },
+      {
+        "label": "built_house_final_collision",
+        "samples": 10775,
+        "hits": 10775,
+        "spacing_cm": 50,
+        "maximum_error_cm": 2.4317661225941265,
+        "pass": 3,
+        "accepted": true
+      }
+    ],
+    "accepted_ground_sample_count": 290826,
+    "maximum_ground_error_cm": 2.4317661225941265,
+    "ground_gate_cm": 5,
+    "private_native_resume_sha256": "a8c32d5614dc0bf017af12833ad0722a5cc4da698b44013417211079a71c42e0",
+    "native_log_sha256": "bcbdee5cea4f71a5e6552360a88030c60c6f8c7a1db21a16325d916292bda3dc",
+    "scope": "Actual cold process restores loaded interior soil haul and every complete state group; three normal F9 function loads remain exact. Resume then executes remaining clearing/soil/gravel/asphalt from reachable frontier, explicitly builds driveway and pad with same finite warehouse/convoy, places one actual house and saves. Five job records means three completed plus two cancelled test drafts. No physical keyboard/mouse or human-input claim."
+  },
+  "normal_lifecycle": {
+    "status": "passed_two_distinct_normal_cold_processes_f5_f9_functions",
+    "success": true,
+    "private_result_sha256": "d4da2c968c8e3a3b7f81ec1be5187d4d2ab58c2fc0ccd3d970f5ff5eb30f558f",
+    "source_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+    "source_bytes": 208155,
+    "seconds_per_process": 45.0,
+    "groups": [
+      "Network",
+      "Build",
+      "Sites",
+      "ClearedTrees",
+      "Houses"
+    ],
+    "all_other_snapshot_fields": "exact",
+    "camera_tolerance": "1e-8",
+    "all_five_groups_and_metadata_exact_across_f5_f9_and_cold_restart": true,
+    "protected_inputs_unchanged": true,
+    "all_preexisting_saves_unchanged": true,
+    "sealed_executable_and_containers_unchanged": true,
+    "phases": [
+      {
+        "phase": "save-load",
+        "exit_code": 0,
+        "elapsed_seconds": 54.235000000015134,
+        "input_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+        "output_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+        "seconds": 45.0,
+        "graceful_seconds_exit": true,
+        "source_copy_intact_at_initial_snapshot": true,
+        "ke_calls": {
+          "SaveRoadConstruction": 1,
+          "LoadRoadConstruction": 1
+        },
+        "all_non_camera_fields_exact": true,
+        "camera_component_tolerance": "1e-8",
+        "log_sha256": "5386ae4b9bd9a84f6662aa25df30be4a22189403a05d0c1cf2df2ce785136c1b",
+        "complete_export_snapshot_count": 4,
+        "complete_export_snapshots": [
+          {
+            "frame": 450,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          },
+          {
+            "frame": 540,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          },
+          {
+            "frame": 810,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          },
+          {
+            "frame": 990,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          }
+        ],
+        "private_phase_result_sha256": "2b373a6ead97764ca4c5a3a14b5523ab42f415589e460a8752bf4f55347e1309",
+        "screenshot": {
+          "bytes": 4144242,
+          "sha256": "1816b3db09a1415a4d97093c104decd81ab35a4ac5447b1ef24551da7e1d1e6b",
+          "width": 1600,
+          "height": 1000,
+          "complete_png_chunks": 508,
+          "native_command": "Shot showui",
+          "human_pixel_reviewed": false
+        }
+      },
+      {
+        "phase": "cold-restart",
+        "exit_code": 0,
+        "elapsed_seconds": 50.953000000008615,
+        "input_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+        "output_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+        "seconds": 45.0,
+        "graceful_seconds_exit": true,
+        "source_copy_intact_at_initial_snapshot": true,
+        "ke_calls": {
+          "SaveRoadConstruction": 0,
+          "LoadRoadConstruction": 0
+        },
+        "all_non_camera_fields_exact": true,
+        "camera_component_tolerance": "1e-8",
+        "log_sha256": "211319a02af77e4e527213e7c432fe7364485e84106c74436387896533bce971",
+        "complete_export_snapshot_count": 2,
+        "complete_export_snapshots": [
+          {
+            "frame": 450,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          },
+          {
+            "frame": 630,
+            "normal_manager_last_error": "",
+            "stable_ground_passes": 3,
+            "group_native_export_sha256": {
+              "Network": "01036e8d0208a62c4e5c63caf9d722c0fc9e4826a73fb8c245f07c0544fd986b",
+              "Build": "6b5862f49759e7ca6f925b26dd653545c1f214856d1c092148b42d3d2a5e58be",
+              "Sites": "3d770faa0cebde6c97c9814cebe047a4b3d74505240f448b480d256491913962",
+              "ClearedTrees": "d1ef68056de2a85a2533fdc33ef8c235e17bbab5c2e93b9c4f3a15cee6c3a6f6",
+              "Houses": "c07beb3f2ccb9d9eb451b9c2cf5da0ddee39b3c48f53a9a98cea33edc4aadf97"
+            },
+            "all_non_camera_snapshot_sha256": "8bbb7fd7b892c10529e6e6c8cd99b6eadbfed577ed52c63e922f1903705c0613"
+          }
+        ],
+        "private_phase_result_sha256": "93690b2b563c287f7013d0e3c5ecdb7532dec3edf95347fec2f57daa8831695d",
+        "screenshot": {
+          "bytes": 4142808,
+          "sha256": "1a3c3df2746e5d2849b0b3c5abc6399c9a1f30f61a41d66dff95c14f8bbeec92",
+          "width": 1600,
+          "height": 1000,
+          "complete_png_chunks": 507,
+          "native_command": "Shot showui",
+          "human_pixel_reviewed": false
+        }
+      }
+    ],
+    "scope": "Normal non-audit game: four plus two complete native ExportText snapshots across F5/F9 functions and distinct cold process. Five groups and non-camera metadata exact; camera component tolerance1e-8. Exact input/output save hashes, ordinary saves and sealed executable/containers preserved. Text-serialization scope, no binary floating precision, OS physical input or human verification claim."
+  },
+  "image": {
+    "file": "assets/images/road-construction-paused-cut.png",
+    "captured_date": "2026-10-30",
+    "modified": false,
+    "width": 1600,
+    "height": 1000,
+    "bytes": 4144367,
+    "sha256": "cbb1ac443486b4258bd24c723860ce1f7cce97b790961c99041c3d83496aad52",
+    "revision_scope": "Finaler e0aad3-Quellstand und RoadConstruction6, Create35/35. Pausierter Abtrags-Checkpoint vor späterer Fortsetzung; keine neu fertig gebaute Straße im Bild. Vollständiges Resume/Normalpaar separat belegt."
+  },
+  "failed_attempts": [
+    {
+      "kind": "native_same_edge_snap",
+      "success": false,
+      "completed_utc": "2026-10-30T02:38:37.914725+00:00",
+      "exit_code": 0,
+      "counts": {
+        "succeeded": 95,
+        "succeededWithWarnings": 2,
+        "failed": 1,
+        "notRun": 0,
+        "inProcess": 0
+      },
+      "test_count": 98,
+      "test": "CityLab.RoadNetwork.TwoSnapsOnOneEdgeCommitAtomically",
+      "observation": "The initial native test for two snaps on the same existing edge reported a road-centerline intersection without a shared endpoint. The defect was fixed and the full suite rerun; this failed attempt remains recorded.",
+      "normal_saves_unchanged": true,
+      "protected_sources_unchanged": true,
+      "private_result_sha256": "8fc5cfdc66befbb3bd06b56fe6640b7388d2fd0ef5bae0d432d57742eb9cf52c",
+      "native_report_sha256": "cda0e038bfcfb633ba5ba6298d1b211acb27ba6ed5731beeb0d1c6435f475a1d",
+      "native_log_sha256": "30b88662b219ba89e6c2c208f19cea4e6bd029f954f2c232db737b980851ae64"
+    },
+    {
+      "kind": "cooked_preview_readiness",
+      "archive": "RoadConstruction1",
+      "success": false,
+      "status": "failed_native_create_check",
+      "stage": 0,
+      "failed_check": "normal_three_full_previews_valid",
+      "error": "normal_three_full_previews_valid: Terrain, Bewuchs und Bodenkollision werden noch vorbereitet. Kamera kurz ruhen lassen und Vorschau erneut pruefen.",
+      "elapsed_seconds": 16.02159270271659,
+      "checks": {
+        "guid_owned_isolated_user_dir": true,
+        "actual_cooked_rendered_map": true,
+        "every_observed_typed_ledger_and_snapshot_valid": true,
+        "ordinary_new_lab_declares_stock_without_work": true,
+        "ordinary_production_stock_and_rates_unmodified": true,
+        "normal_graph_creates_t_branch": true,
+        "normal_three_full_previews_valid": false
+      },
+      "private_native_create_sha256": "0ccb5951d641f0abb5ba55a59e1b2fc0aac1f5ee4b74b201460ad69c2c353538",
+      "observation": "The initial camera relocation left the planning path busy. Actual terrain readiness alone did not authorize planning while foliage readiness was pending. The check failed; this is not accepted runtime evidence."
+    },
+    {
+      "kind": "cooked_hidden_ring_readiness",
+      "archive": "RoadConstruction2",
+      "success": false,
+      "status": "owned_test_stopped_without_acceptance",
+      "reason": "Stage0 readiness did not settle after more than 180s; stop own test to add diagnostics. No native pass/timeout claimed.",
+      "private_debug_stop_sha256": "37385de51b0d16157e78cf44367a1459156b34af1c58764bdfb805f460ecbe50",
+      "native_completion_or_timeout_claimed": false,
+      "observation": "Stopped for diagnosis, not passed. Native production readiness stayed false; later inspection identified pending export intent on fully hidden rings despite ready ground and empty relevant foliage work queues."
+    },
+    {
+      "kind": "cooked_hidden_ring_readiness",
+      "archive": "RoadConstruction3",
+      "success": false,
+      "status": "owned_test_stopped_without_acceptance",
+      "reason": "Diagnostics show stable ground+empty tree queues but production=0 after >100s. Stop own test for native reflected ring diagnosis; no pass claimed.",
+      "private_debug_stop_sha256": "c29ad83ac6500b45b6a06908a09a9d84611225de2295e01593ff1f33796337ff",
+      "native_completion_or_timeout_claimed": false,
+      "observation": "Stopped for diagnosis, not passed. Native production readiness stayed false; later inspection identified pending export intent on fully hidden rings despite ready ground and empty relevant foliage work queues."
+    },
+    {
+      "kind": "owned_map_terrain_subtype_upgrade",
+      "success": false,
+      "status": "not_accepted",
+      "reason": "RuntimeError: Transferred terrain state differs: peers",
+      "completed_utc": "2026-10-30T04:02:08.762386+00:00",
+      "private_result_sha256": "d9dd40822dd6bec95f96e0bb55ea7cebcec7063abe239e7f1e63c550c2109236",
+      "protected_files_unchanged": true,
+      "ordinary_saves_unchanged": true,
+      "normal_save_operations": false,
+      "engine_plugin_modified": false,
+      "saved_owned_map_bytes_unchanged": true,
+      "road_manifest_bytes_unchanged": true
+    },
+    {
+      "kind": "owned_map_terrain_subtype_upgrade",
+      "success": false,
+      "status": "not_accepted",
+      "reason": "RuntimeError: Start this one-time upgrade on Engine Entry",
+      "completed_utc": "2026-10-30T03:58:54.134468+00:00",
+      "private_result_sha256": "1efb1774aa615565aefdb3bf8e7b12e13c3249958aeeebd6eef5da5cab4ec35a",
+      "protected_files_unchanged": true,
+      "ordinary_saves_unchanged": true,
+      "normal_save_operations": false,
+      "engine_plugin_modified": false
+    },
+    {
+      "kind": "cooked_saved_curve_edit_fixture",
+      "archive": "RoadConstruction4",
+      "success": false,
+      "status": "failed_invalid_test_fixture",
+      "stage": 20,
+      "failed_check": "public_saved_curve_controls_prepare_valid_preview",
+      "elapsed_seconds": 17.76571660116315,
+      "passed_check_count": 16,
+      "failed_check_count": 1,
+      "checks": {
+        "guid_owned_isolated_user_dir": true,
+        "actual_cooked_rendered_map": true,
+        "every_observed_typed_ledger_and_snapshot_valid": true,
+        "ordinary_new_lab_declares_stock_without_work": true,
+        "ordinary_production_stock_and_rates_unmodified": true,
+        "normal_graph_creates_t_branch": true,
+        "normal_three_full_previews_valid": true,
+        "preview_does_not_change_any_saved_state": true,
+        "normal_commit_creates_paused_work_only": true,
+        "confirmed_actual_curved_alignment": true,
+        "confirmed_plan_has_zero_work_and_two_frozen_sections": true,
+        "confirmation_keeps_actual_terrain_within_5cm": true,
+        "curved_corridor_full_preview": true,
+        "curved_draft_committed_inert": true,
+        "curve_confirmation_creates_no_material_or_motion": true,
+        "saved_curve_edit_source_available": true,
+        "public_saved_curve_controls_prepare_valid_preview": false
+      },
+      "private_native_create_sha256": "d6ba5498243bf2d25e810bc8e8d369ff8807bd88d63c635f4513283225d3b3b8",
+      "confirmation_no_instant_terrain": {
+        "accepted_passes": 3,
+        "samples_per_pass": 9231,
+        "total_samples": 27693,
+        "spacing_cm": 50,
+        "maximum_error_cm": 0.011032273061573505,
+        "gate_cm": 5
+      },
+      "observation": "Readiness, real full previews, T branch, actual cubic confirmation and inert terrain/material checks passed. The stage20 saved-curve edit source was available. The audit gesture was correctly rejected by the unchanged minimum-radius production gate.",
+      "coordinator_reviewed_fixture": {
+        "old_p1_offset_cm": [
+          0,
+          0,
+          0
+        ],
+        "old_p2_offset_cm": [
+          50,
+          -50,
+          0
+        ],
+        "old_minimum_radius_m": 9.40274441,
+        "required_minimum_radius_m": 12,
+        "corrected_p1_offset_cm": [
+          0,
+          -50,
+          0
+        ],
+        "corrected_p2_offset_cm": [
+          0,
+          50,
+          0
+        ],
+        "corrected_minimum_radius_m_at_least": 14.769,
+        "independent_review_reported": true
+      },
+      "audit_only_correction": "Change only the intended handle fixture/expected assertions and evaluate the edit condition before obtaining its error text. The earlier C++ argument-evaluation-order preview text is not evidence that CanEdit failed. Production gates and rates remain unchanged.",
+      "limit": "Failed overall, not accepted create/resume, machine/haul, house or normal lifecycle evidence."
+    },
+    {
+      "kind": "cooked_pristine_curve_edit_section_identity",
+      "archive": "RoadConstruction5",
+      "success": false,
+      "status": "failed_real_production_identity_bug",
+      "stage": 21,
+      "elapsed_seconds": 18.755860298871994,
+      "failed_check": "saved_curve_control_edit_keeps_identity_and_accounts",
+      "passed_check_count": 18,
+      "failed_check_count": 1,
+      "checks": {
+        "guid_owned_isolated_user_dir": true,
+        "actual_cooked_rendered_map": true,
+        "every_observed_typed_ledger_and_snapshot_valid": true,
+        "ordinary_new_lab_declares_stock_without_work": true,
+        "ordinary_production_stock_and_rates_unmodified": true,
+        "normal_graph_creates_t_branch": true,
+        "normal_three_full_previews_valid": true,
+        "preview_does_not_change_any_saved_state": true,
+        "normal_commit_creates_paused_work_only": true,
+        "confirmed_actual_curved_alignment": true,
+        "confirmed_plan_has_zero_work_and_two_frozen_sections": true,
+        "confirmation_keeps_actual_terrain_within_5cm": true,
+        "curved_corridor_full_preview": true,
+        "curved_draft_committed_inert": true,
+        "curve_confirmation_creates_no_material_or_motion": true,
+        "saved_curve_edit_source_available": true,
+        "public_saved_curve_controls_prepare_valid_preview": true,
+        "public_saved_curve_edit_full_preview_ready": true,
+        "saved_curve_control_edit_keeps_identity_and_accounts": false
+      },
+      "private_native_create_sha256": "445eda1cd652e8656f92c153d6e53ead20ac2a094b5a30097d6b7e0c214e663c",
+      "observation": "Valid public curve controls and full preview passed, then the stable-identity assertion failed. MakeSites minted new Section GUIDs for a pristine replan; this is a production defect, not the prior invalid-fixture issue.",
+      "production_correction": "Before freezing the raster, reuse the existing queued, never-started alignment section ID for every surviving ordinal. Only extra new ordinals receive new IDs; removed untouched ordinals disappear. Started history remains immutable; house pad start retains its Site ID. No production gates, rates or audit assertions were relaxed.",
+      "review": "Coordinator reported independent model-agent source review without a blocking finding; current source was read for the bounded ID reuse rule.",
+      "limit": "Failed overall; retained. The later final-seal rendered create separately passes stable edit/move/cancel identity/account assertions."
+    }
+  ],
+  "limits": [
+    "Bounded two-lane ground-road, pristine curve editing, connected-frontier work, typed finite stocks, driveway/pad and one-house prototype accepted for the exact final RoadConstruction6 build.",
+    "Agent-reviewed images and native controller/Slate-function paths do not claim physical human input or human verification.",
+    "Old lab saves remain separate; no compatibility with arbitrary future builds, started-road rebuilding, bridges/tunnels/four-way traffic or large-world performance is established.",
+    "All failed/stopped attempts and prior successful source-seal receipts remain historical; no gates were lowered to turn failures into passes.",
+    "No private save files, personal user paths, licensed raw assets or raw project sources are included."
+  ],
+  "readiness_fix_source": {
+    "status": "final_native99_own_map_upgrade_full_rendered_pair_and_normal_lifecycle_passed",
+    "project_terrain_class": "/Script/UnrealMcpTest.CityLabRoadTerrainActor",
+    "primary_plugin_sources": "ShaderWorld 4.1 ShaderWorldActor.h/IsProductionIdle and Private/Actor/ShaderWorldActor_Rings.cpp export loop; source read, not redistributed.",
+    "native_observation": "The hidden-ring branch continues before the export-intent flag is cleared; native IsProductionIdle treats every pending ClipMapToUpdate entry as busy.",
+    "bounded_rule": "Only pending ring export intent is ignored, and only when both actual SectionVisibility and desired SectionVisibility_SegmentedCache contain exactly six false entries. Missing/malformed arrays, visible or becoming-visible sections and unmatched indices fail closed.",
+    "native_flags_mutated": false,
+    "retains_native_producer_deferred_and_rebuild_conditions": true,
+    "separate_gates": "IsPlanningReady also requires initialized stable local ground and idle relevant vegetation density/readback/work/collision/HISM queues.",
+    "scope": "Own RoadConstruction terrain subtype and explicitly upgraded new owned map only; no engine/plugin-source fix or legacy-map upgrade.",
+    "new_native_regression": {
+      "test": "CityLab.RoadTerrain.HiddenExportsRespectVisibilityAndProducerWork",
+      "status": "passed_in_final_seal_native99_rerun"
+    },
+    "limits": "Readonly ring readiness interpretation, not a global GPU fence, a hidden-ring regeneration bypass, or permission to plan against unfinished ground/vegetation."
+  },
+  "native_history": [
+    {
+      "success": true,
+      "completed_utc": "2026-10-30T02:49:19.620778+00:00",
+      "exit_code": 0,
+      "counts": {
+        "succeeded": 96,
+        "succeededWithWarnings": 2,
+        "failed": 0,
+        "notRun": 0,
+        "inProcess": 0
+      },
+      "test_count": 98,
+      "new_road_test_count": 19,
+      "road_tests": [
+        {
+          "test": "CityLab.RoadBuild.AccessClearingArrivalAndPausedCommit",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.FiniteBufferWarehouseAndMissingTypedStockStall",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.HousePadUsesSameTypedWarehouseAndNoAutoStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.InFlightNativeRestoreAndNoRouteReassignment",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.TypedConservationSequentialFrontierAndExplicitStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.UnstartedReplacementCancellationIdentityAndOverflow",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.BoundsCrossingsAndInvalidCurvesAreAtomic",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.ExactSplitStableAlignmentAndSaveRoundTrip",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.HeightAwareEndpointAndTJunctionSnaps",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.OnlyUnbuiltIncidentAlignmentsCanMove",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.RoutesUseOnlyConnectedAllowedCurrentAlignments",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.TwoSnapsOnOneEdgeCommitAtomically",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ArcLengthSectionsKeepCompletedPrefixAtNextStand",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.CompletedSectionsPartitionWholeCurveWithoutTruncation",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FingerprintsBoundsAndMalformedSamples",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FlatAndSlopedSourcesKeepIndependentCutAndFill",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.PreviouslyWorkedReferenceAndPartialProgressSurviveCopy",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.SignClippedTriangleMassAndShaderDiagonal",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ZeroBoundariesSupportAndAtomicPlanningFailures",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        }
+      ],
+      "known_warning_allowances": {
+        "CityLab.BuildQueries.BoundedCitizenDetour": 1,
+        "CityLab.WorldEdits.BackendMigration": 1
+      },
+      "failed_test_exclusions": [],
+      "elapsed_seconds": 79.484,
+      "normal_saves_unchanged": true,
+      "protected_sources_unchanged": true,
+      "private_result_sha256": "243b254e0230bfa6754a30ce1be1d54049b6457560e5230007d9cb5658bd9603",
+      "native_report_sha256": "33bf9c9e570667efe0da9bac36ca8cd6738b259a8951b1544c87f0604dd88e08",
+      "native_log_sha256": "2357d5ac1b9d1fafaad436957e590629e412502b3f715ae1bb245e040aaf3907",
+      "native_module_sha256": "89bfff0fad89c7ad14b350b7b9a5adb918fb463be11f2692494ded9dad54ac62",
+      "runner_sha256": "57596e3d0e0e6dcdc55a01040a7c72565492ea8ef7ebd5b62bc3e609cfbe9eb1",
+      "limit": "This receipt predates the final curve-edit UI changes. It cannot prove the later final binary, fresh cook, visible interface, physical controls or runtime terrain."
+    },
+    {
+      "success": true,
+      "completed_utc": "2026-10-30T04:01:17.933441+00:00",
+      "exit_code": 0,
+      "counts": {
+        "succeeded": 97,
+        "succeededWithWarnings": 2,
+        "failed": 0,
+        "notRun": 0,
+        "inProcess": 0
+      },
+      "test_count": 99,
+      "road_tests": [
+        {
+          "test": "CityLab.RoadBuild.AccessClearingArrivalAndPausedCommit",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.FiniteBufferWarehouseAndMissingTypedStockStall",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.HousePadUsesSameTypedWarehouseAndNoAutoStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.InFlightNativeRestoreAndNoRouteReassignment",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.TypedConservationSequentialFrontierAndExplicitStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.UnstartedReplacementCancellationIdentityAndOverflow",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.BoundsCrossingsAndInvalidCurvesAreAtomic",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.ExactSplitStableAlignmentAndSaveRoundTrip",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.HeightAwareEndpointAndTJunctionSnaps",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.OnlyUnbuiltIncidentAlignmentsCanMove",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.RoutesUseOnlyConnectedAllowedCurrentAlignments",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.TwoSnapsOnOneEdgeCommitAtomically",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ArcLengthSectionsKeepCompletedPrefixAtNextStand",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.CompletedSectionsPartitionWholeCurveWithoutTruncation",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FingerprintsBoundsAndMalformedSamples",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FlatAndSlopedSourcesKeepIndependentCutAndFill",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.HiddenExportsRespectVisibilityAndProducerWork",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.PreviouslyWorkedReferenceAndPartialProgressSurviveCopy",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.SignClippedTriangleMassAndShaderDiagonal",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ZeroBoundariesSupportAndAtomicPlanningFailures",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        }
+      ],
+      "known_warning_allowances": {
+        "CityLab.BuildQueries.BoundedCitizenDetour": 1,
+        "CityLab.WorldEdits.BackendMigration": 1
+      },
+      "failed_test_exclusions": [],
+      "elapsed_seconds": 104.297,
+      "normal_saves_unchanged": true,
+      "protected_sources_unchanged": true,
+      "native_module_sha256": "2a2ad9c5ab24859f57a94892fcb4b6d1976e9b129067a05508e274afe9f3ce0c",
+      "runner_sha256": "db1cc040abee0b99aa6fd84b70416c1ce549da40dca441c4449602cf094e54fb",
+      "new_road_test_count": 20,
+      "private_result_sha256": "b0065f1d532f433f0d4341473e40c62f79cc3c4f597797e45166dc18a3655459",
+      "native_report_sha256": "c20c8b7b21795fc9d8db42483848c35fe0b4111a7d2c73358f6bb5544811a4cb",
+      "native_log_sha256": "ff78b305db21cb74bc72321710c029a716b38df7cee8b8d0eba90e7280d8194b",
+      "coordinator_reported_sealed_source_identity_sha256": "f49de0436dc26de838ff77a53f21a784a92a01daff0ad791658369e4e56648f4",
+      "limit": "Earlier successful native99 build before the audit-only curve fixture correction; historical evidence, not the final source seal."
+    },
+    {
+      "success": true,
+      "completed_utc": "2026-10-30T04:16:08.315487+00:00",
+      "exit_code": 0,
+      "counts": {
+        "succeeded": 97,
+        "succeededWithWarnings": 2,
+        "failed": 0,
+        "notRun": 0,
+        "inProcess": 0
+      },
+      "test_count": 99,
+      "road_tests": [
+        {
+          "test": "CityLab.RoadBuild.AccessClearingArrivalAndPausedCommit",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.FiniteBufferWarehouseAndMissingTypedStockStall",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.HousePadUsesSameTypedWarehouseAndNoAutoStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.InFlightNativeRestoreAndNoRouteReassignment",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.TypedConservationSequentialFrontierAndExplicitStart",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadBuild.UnstartedReplacementCancellationIdentityAndOverflow",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.BoundsCrossingsAndInvalidCurvesAreAtomic",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.ExactSplitStableAlignmentAndSaveRoundTrip",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.HeightAwareEndpointAndTJunctionSnaps",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.OnlyUnbuiltIncidentAlignmentsCanMove",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.RoutesUseOnlyConnectedAllowedCurrentAlignments",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadNetwork.TwoSnapsOnOneEdgeCommitAtomically",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ArcLengthSectionsKeepCompletedPrefixAtNextStand",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.CompletedSectionsPartitionWholeCurveWithoutTruncation",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FingerprintsBoundsAndMalformedSamples",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.FlatAndSlopedSourcesKeepIndependentCutAndFill",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.HiddenExportsRespectVisibilityAndProducerWork",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.PreviouslyWorkedReferenceAndPartialProgressSurviveCopy",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.SignClippedTriangleMassAndShaderDiagonal",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "test": "CityLab.RoadTerrain.ZeroBoundariesSupportAndAtomicPlanningFailures",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0
+        }
+      ],
+      "known_warning_allowances": {
+        "CityLab.BuildQueries.BoundedCitizenDetour": 1,
+        "CityLab.WorldEdits.BackendMigration": 1
+      },
+      "failed_test_exclusions": [],
+      "elapsed_seconds": 116.438,
+      "normal_saves_unchanged": true,
+      "protected_sources_unchanged": true,
+      "native_module_sha256": "c1ed9dca964dc673112dc2b8f0b5e095e2570d0547bffc9880e95be6a7a9ecca",
+      "runner_sha256": "db1cc040abee0b99aa6fd84b70416c1ce549da40dca441c4449602cf094e54fb",
+      "new_road_test_count": 20,
+      "private_result_sha256": "791b75711e024e43ee531815fa68e3d1f8c46fc775036645529f4fb976f2add1",
+      "native_report_sha256": "50fc178585bd5f736164b0e895d6b0b134449714699818ffe4eb499f45cb9639",
+      "native_log_sha256": "2f038efad7eb834cc6f73a8638bf11d5eb69a093c6570bbfa22a409937be6130",
+      "coordinator_reported_sealed_source_identity_sha256": "826b26926ab77fa85f171e037998d3dca60ceb90a671fcc8d38797396f10e2f9",
+      "limit": "Historical successful native99 suite before the later production fix for stable pristine-section identities; not the final e0aad3 source seal."
+    }
+  ],
+  "build_history": [
+    {
+      "status": "historical_editor10_game5_before_audit_fixture_correction",
+      "editor": {
+        "success": true,
+        "result": "Succeeded",
+        "execution_seconds": 62.89,
+        "private_log_sha256": "3b60d4f1ec3bd4ac815469ab940e7679b1b1949ff2fd3fab848f0e7c6114132d"
+      },
+      "game": {
+        "success": true,
+        "result": "Succeeded",
+        "execution_seconds": 63.6,
+        "private_log_sha256": "02bfff1117296b8959caf2131a3dc1ae9a8aa0eb8ef328bcdf416cc2a878ba97"
+      }
+    },
+    {
+      "status": "historical_editor11_game6_before_production_section_identity_fix",
+      "coordinator_reported_sealed_source_identity_sha256": "826b26926ab77fa85f171e037998d3dca60ceb90a671fcc8d38797396f10e2f9",
+      "editor": {
+        "success": true,
+        "result": "Succeeded",
+        "execution_seconds": 61.63,
+        "private_log_sha256": "fe6d7ed75fd5be2236744c5c7158a5d91390dee4ed78f8ab747fe96e06439790"
+      },
+      "game": {
+        "success": true,
+        "result": "Succeeded",
+        "execution_seconds": 73.16,
+        "private_log_sha256": "8beaf5f998e19e3aa27fd5cfb76916611995929f1f02c0fce7ba716d3aac4006"
+      }
+    }
+  ],
+  "owned_map_upgrade": {
+    "complete": true,
+    "completed_utc": "2026-10-30T04:05:32.369948+00:00",
+    "map": "/Game/Maps/ShaderWorldRoadConstructionLab",
+    "from_class": "/Script/ShaderWorld.ShaderWorldActor",
+    "to_class": "/Script/UnrealMcpTest.CityLabRoadTerrainActor",
+    "normal_save_operations": false,
+    "engine_plugin_modified": false,
+    "backups_verified": true,
+    "owned_map_saved": true,
+    "saved_map_readback": true,
+    "protected_file_count": 1066,
+    "ordinary_save_count": 329,
+    "protected_files_unchanged": true,
+    "ordinary_saves_unchanged": true,
+    "source_map_sha256": "7d3d293561c84a2bf17c8779c63f9d90d4e0b30f6db534cbe26a40c0303e855d",
+    "old_profile_sha256": "d44173a9b2f661bd21e074442727343af063bc7416aa80892ef46131990cbbbd",
+    "map_sha256_after": "29afebeffbfa3b67aaf67cffb03d1850323b70b173bcfc25ace3839f62f972aa",
+    "road_manifest_sha256_after": "4dbc741170b318ada0b71a60590e8ecc0f645e3c50d13deec1dbaff3efeb1182",
+    "success": true,
+    "coordinator_reported_exit_code": 0,
+    "private_result_sha256": "eb279215f6faf1e3bd1e5f3496b07f137d299464d5d99a85478000dcee70928b",
+    "private_transfer_comparison_sha256": "12d5e5ff74ec741da3f49d309081eef435f9315f40a105d7ef151b549c64deb1",
+    "transferred_and_saved_readback_equal": true,
+    "recursive_transfer_equalities": {
+      "ground_settings": true,
+      "ground_transform": true,
+      "peers": true,
+      "terrain_count": true
+    },
+    "source_manifest": {
+      "sha256": "4dbc741170b318ada0b71a60590e8ecc0f645e3c50d13deec1dbaff3efeb1182",
+      "package_count": 411,
+      "sidecar_count": 0,
+      "content_sha256": "19f75d351cb12fa296a71210c927cc9f9462d622cd442968e5414b3fdfcb186b",
+      "old_profile_sha256": "d44173a9b2f661bd21e074442727343af063bc7416aa80892ef46131990cbbbd"
+    },
+    "canonicalization": "Only the exact former ground object reference in typed DataSource is canonicalized across native actor to project subclass; recursive settings, peer settings, pose and independent saved-map readback remain equal.",
+    "limit": "Owned new road map and its authoring manifest only; no gameplay or GPU acceptance."
+  },
+  "cook_history": [
+    {
+      "archive": "RoadConstruction4",
+      "success": true,
+      "exit_code": 0,
+      "build_cook_run_seconds": 76.12,
+      "errors": 0,
+      "warnings": 7,
+      "warning_scope": "Inherited Level Blueprint actor-reference warnings; not declared resolved.",
+      "private_log_sha256": "d7ed2104b9f08b56ec161cb73a34a6e2c0c5debfbe52d67e5029dbf145221381",
+      "limit": "Successful full cook before audit-only fixture correction. Its rendered create attempt failed; this is not the accepted final archive."
+    },
+    {
+      "archive": "RoadConstruction5",
+      "success": true,
+      "exit_code": 0,
+      "build_cook_run_seconds": 83.16,
+      "errors": 0,
+      "warnings": 7,
+      "warning_scope": "Inherited Level Blueprint actor-reference warnings, not resolved.",
+      "private_log_sha256": "af5416eff892e46b9a84ca9eee2050eb4a5a3a49d0186f2eebf604cf7b0bcb96",
+      "limit": "Successful cook before the stable section-identity production fix. Its rendered create failed, so not the accepted final archive."
+    }
+  ],
+  "production_pair": {
+    "success": true,
+    "archive": "RoadConstruction6",
+    "create_check_count": 35,
+    "resume_check_count": 61,
+    "private_result_sha256": "3a95018b49dcb5e8a029af484aaa277aaa92d15a1635584b6f6b74d63dcf8771",
+    "normal_slots_unchanged": true,
+    "source_profile_package_unchanged": true,
+    "source_identity": {
+      "legacy_profile_sha256": "d44173a9b2f661bd21e074442727343af063bc7416aa80892ef46131990cbbbd",
+      "road_profile_sha256": "4dbc741170b318ada0b71a60590e8ecc0f645e3c50d13deec1dbaff3efeb1182",
+      "native_config_sha256": "e0aad3c0a7bbec07ab07119b891dc2cebcdff11de33a50100c9f6f654b481331",
+      "build_id_header_sha256": "65cc8a0a1a61d96e048938ecfb53815f745ad42b847c4c75f41453923eb2f46b",
+      "package_sha256": "3c6e156bc0ee338dceea97dfba46af256e7dbf2fbb7761abbf59c0e01a4d45b7",
+      "package_file_count": 41,
+      "content_binding": "12e3a2f42189b48d1c9d33955c3c70ec620df3a8"
+    },
+    "total_ledger_observations": 2706,
+    "accepted_ground_sample_count": 382173,
+    "accepted_ground_batches": 39,
+    "maximum_ground_error_cm": 2.4317661225941265,
+    "ground_gate_cm": 5,
+    "limit": "Local repeated 50cm collision queries and exact model gram accounts, not unique global positions, whole-world GPU fence or independent mesh-volume mass measurement."
+  },
+  "images": [
+    {
+      "file": "assets/images/road-construction-paused-cut.png",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4144367,
+      "sha256": "cbb1ac443486b4258bd24c723860ce1f7cce97b790961c99041c3d83496aad52",
+      "revision_scope": "Finaler e0aad3-Quellstand und RoadConstruction6, Create35/35. Pausierter Abtrags-Checkpoint vor späterer Fortsetzung; keine neu fertig gebaute Straße im Bild. Vollständiges Resume/Normalpaar separat belegt."
+    },
+    {
+      "file": "assets/images/road-construction-completed-reloaded.png",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4142808,
+      "sha256": "1a3c3df2746e5d2849b0b3c5abc6399c9a1f30f61a41d66dff95c14f8bbeec92",
+      "revision_scope": "Finaler e0aad3-Quellstand/RoadConstruction6; normaler zweiter kalter Prozess mit exaktem abgeschlossenen Straßen-/Zufahrts-/Hausstand. Bild ist qualitative Agentenansicht; Bilanz/Kollision/Savegenauigkeit stammen aus separaten Berichten."
+    }
+  ],
+  "demo_handoff": {
+    "success": true,
+    "archive": "RoadConstruction6",
+    "prepared_utc": "2026-10-30T04:49:29.331448+00:00",
+    "checked_utc": "2026-10-30T04:50:26.7343282Z",
+    "private_demo_receipt_sha256": "7d7da1bc70055cb0dc1e77ebbb5210c5d7d327b5388953999421fd1f5c887e6e",
+    "private_visible_launch_sha256": "fdfdbd27ee7dc8e3f8d7e0e8d8cf9577e9b7b318bdb9977468fdd7e662a8afd4",
+    "package_files_sealed": 6,
+    "archive_files_sealed": 41,
+    "seed_sha256": "aa80ed9534ad6348991a0376020807d340bc95c0f13d7bb3e767c062baddc6b8",
+    "seed_bytes": 208155,
+    "seed_exact_once": true,
+    "all_jobs_completed_or_cancelled": true,
+    "protected_sources_unchanged": true,
+    "all_preexisting_saves_unchanged": true,
+    "responding": true,
+    "checks": {
+      "exact_executable": true,
+      "exact_user_dir": true,
+      "own_map": true,
+      "own_game_mode": true,
+      "windowed": true,
+      "no_offscreen_or_audit": true,
+      "responding": true,
+      "main_window_handle": true,
+      "load_map_complete": true,
+      "no_logged_error_or_fatal": true
+    },
+    "check_count": 10,
+    "scope": "Independent one-time demo copy of completed own lab. Native visible normal window, exact executable/map/GameMode/UserDir, completed load and no Error/Fatal log verified. No Offscreen/Audit/Computer Use, no user physical input or final-demo pixel inspection inferred. Reviewed complete image is from the separate successful normal cold process."
+  }
+}

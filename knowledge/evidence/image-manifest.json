@@ -527,6 +527,28 @@
       "height": 500,
       "modified": false,
       "bytes": 1239588
+    },
+    {
+      "file": "assets/images/road-construction-paused-cut.png",
+      "origin": "Unveränderte native 1600×1000-SHOWUI-Aufnahme aus erfolgreichem Development-Cooked-Create des eigenen RoadConstruction6-Labors. Koordinierender und Dokumentationsagent haben das Original visuell geprüft: lesbare Straßenleiste, aktiver Abtragsauftrag mit Arbeit/Transport pausiert, gelbe Baustellenfahrzeuge an vorhandener Startstraße, Wald/Strand. Native Berichtsdaten belegen beladene Innenfahrt; Pixel allein messen keine Masse. Keine physische Eingabe oder menschliche Prüfung.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4144367,
+      "sha256": "cbb1ac443486b4258bd24c723860ce1f7cce97b790961c99041c3d83496aad52",
+      "revision_scope": "Finaler e0aad3-Quellstand und RoadConstruction6, Create35/35. Pausierter Abtrags-Checkpoint vor späterer Fortsetzung; keine neu fertig gebaute Straße im Bild. Vollständiges Resume/Normalpaar separat belegt."
+    },
+    {
+      "file": "assets/images/road-construction-completed-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten regulären kalten RoadConstruction6-Prozess nach abgeschlossener Straßen-/Hauskette. Koordinierender und Dokumentationsagent haben das Original visuell geprüft: lesbare linke Straßenleiste mit fertigen Aufträgen, fertiger T-/Straßenanschluss und Hauszufahrt, Haus, gelber Radlader und blauer Platzhalter-Lkw im Küstenwald. Eigenes getrenntes Labor; kein Privatdesktop. Normale F5/F9-Funktionen und vollständige Zustandsvergleiche separat belegt, keine physischen Eingaben oder menschliche Abnahme.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4142808,
+      "sha256": "1a3c3df2746e5d2849b0b3c5abc6399c9a1f30f61a41d66dff95c14f8bbeec92",
+      "revision_scope": "Finaler e0aad3-Quellstand/RoadConstruction6; normaler zweiter kalter Prozess mit exaktem abgeschlossenen Straßen-/Zufahrts-/Hausstand. Bild ist qualitative Agentenansicht; Bilanz/Kollision/Savegenauigkeit stammen aus separaten Berichten."
     }
   ]
 }

@@ -14,6 +14,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
+- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – neuer spielbarer RoadConstruction6-Ablauf: Gerade/Kurve/Griffe/T, Maschinenfahrt/Rodung/Erde/Kies/Asphalt, Hauszufahrt und Haus. **99 native Tests, 35/61 gerenderte Checks, normales F5/F9-/Kaltstartpaar und sichtbarer Demo-Start bestanden**; 0 g Materialbilanzfehler, zwei Originalbilder. Eigene Karte/Slot, endlicher Bestand; alte Labore bleiben getrennt. Physische Eingabe-/POM-Nahsicht-/Großweltprüfung separat offen.
+
 - [Einen begonnenen Bauplatz umplanen](guides/replan-building-sites.md) – feste Fläche und neue Zielhöhe mit erhaltener Rodung/Erde; 79 native Tests, gerenderte 17/18 Checks mit kalten drei Loads und bekannte UI2-Migration mit zehn Checks bestanden. Format 9; aktueller Spielerstand über F5/F9 und kalten Start in vier plus zwei vollständigen Snapshots exakt, normaler sichtbarer Fenster-/Kartenstart separat bestanden. Frühere v7-/UI2-Nachweise bleiben ihren eigenen Fassungen zugeordnet.
 
 - [Bauplatz nach einem neuen Build weiterbauen](guides/stable-save-binding.md) – bekannte A7-Stände ausdrücklich nach Format 8 übernehmen; drei Checkpoints je 16/30/30 native Checks über zwei neue Cooks, strenge physische Fortsetzung, normales Speicher-/Lade-/Kaltstartpaar und normaler Fenster-/Kartenstart bestanden. Historische Herkunftsgrenzen und weiterhin offene menschliche Eingabenprüfung erklärt.
@@ -45,6 +47,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Nachschlagen
 
+- [Straßenwerkzeuge, Bauphasen und endliche Lieferungen](reference/road-construction-work-plan.md) – vereinbarter und begrenzt abgenommener erster Straßen-Slice: 8-m-Geraden/Kurven, Netzanschlüsse, Hauszufahrten und endlicher Soil-/Gravel-/Asphalt-Kreislauf; vorhandene Assets, Nachweise und spätere Ausbaustufen.
 - [Scaping als Maschinenaufträge: vereinbarter Ausbau](reference/scaping-machine-work-plan.md) – erster Anheben-/Absenken-Slice nativ, uncooked und verpackt geprüft; gemischtes Ebnen nativ, uncooked, frisch verpackt und mit sichtbarer Demo geprüft; historische Bauvorbereitungs-/API-Nachweise erhalten; getrennte SitePreparation-V2-Map mit eigenem Slot und expliziten Biomregeln eingerichtet; Uncooked- und Cooked-Neustarts bestanden, normaler V2-Launcherstart mit antwortendem Fenster und korrektem Kartennachweis bestanden; physische Eingaben und menschliche Pixelbestätigung offen. Physische Eingaben und Oberflächenarbeit folgen.
 - [ShaderWorld-Datenlayer und Spielstand](reference/shaderworld-data-and-persistence.md) – räumliche Terrain-Daten, Mapassets und dauerhafte Zustände unterscheiden; Quellbefund zu unvollständigen Speicherfunktionen in 4.1.
 - [Bauarbeit, Gelände und Material](reference/construction-and-terrain-architecture.md) – gesetzte Designregeln, geprüfter kleiner Baugrubenkreislauf und Vorschläge für weitere Maschinen-/Materialarbeit.
