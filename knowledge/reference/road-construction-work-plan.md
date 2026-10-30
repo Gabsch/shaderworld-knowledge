@@ -8,7 +8,7 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T04:55:47Z"
+  at: "2026-10-30T17:19:23+00:00"
 evidence_scope: Vereinbarter begrenzter erster Slice umgesetzt; native 99, Editor12/Game7, Cook6, gerendertes Produktionspaar 35/61, normales F5/F9-Kaltstartpaar und separate sichtbare Übergabe bestanden. Zwei Originalbilder visuell geprüft; alte Fassungen/Fehlversuche getrennt. Physische Eingabe, gezielte POM-Nahsicht und Großweltprüfung offen.
 sources:
   - id: road-native-evidence
@@ -51,6 +51,8 @@ sources:
 
 # Straßen als gespeicherte Bau- und Transportaufträge
 
+**Aktuelle Abgrenzung, 30. Oktober 2026:** Die volle Fahrzeugflotte mit einem tatsächlichen Depot, Disposition und allgemeiner fahrzeugabhängiger Wegsuche ist weiter ein **vereinbartes offenes Ziel**. Der PoC belegt begrenzte Start-/Lagerrouten und Materialübergaben, nicht bereits diesen gesamten Depotbetrieb. Historische Prüfbezeichnungen wie „Depotfahrt“ dürfen damit nicht gleichgesetzt werden. Der Nutzer vertagt die gemeldete Schwierigkeit, während eines Baus eine zweite Straße anzulegen; derzeit folgt die [RCP-Funktionsbesprechung und Integrationsplanung](road-creator-pro-runtime-plan.md), keine weitere Umsetzung. Die darunterstehenden 4.1-/RoadConstruction6-Nachweise behalten ihren damaligen Umfang; der aktuelle 4.2-Schnellstart steht in der [Straßenanleitung](../guides/road-construction-tools.md).
+
 **Dieser erste Straßen-Slice ist umgesetzt und für den begrenzten RoadConstruction6-Ablauf abgenommen.** Straße zeichnen, Entwurf korrigieren, bestätigen, Material abholen und abschnittsweise bauen lassen; anschließend Hauszufahrt und Grundstück aus denselben gespeicherten Netz-/Arbeitszuständen. Diese Seite bewahrt den vereinbarten Vertrag und trennt die tatsächliche Abnahme von späterem Ausbau. Der vorhandene [RoadLab-Prototyp](../guides/runtime-roads.md) behält seinen eigenen engeren Prüfstand.[^runtime-roads]
 
 Die [Straßenanleitung](../guides/road-construction-tools.md) erklärt Gerade/Kurve, Griffe, Bestätigen und Karte → **J → Leertaste → H**, eigene Karte/Slot, endliche Anfangsbestände und strenge passende Buildfassung. Bestätigte ungearbeitete Aufträge werden gespeichert; offene Maus-/Griffgesten bleiben transient. Die begrenzte Formbearbeitung ändert nur Griffe unbegonnener ungeteilter Straßen bei festen Endanschlüssen und gleichen Auftrags-/Abschnittskennungen. T-geteilte/begonnene Trassen sind geschützt. Produktions-Controllerpfade sind praktisch geprüft, physische Mausereignisse nicht behauptet.
@@ -67,7 +69,7 @@ Voraussetzung ist das eigene UnrealMcpTest mit Unreal **5.8.4**, ShaderWorld **4
 | Netz | Dauerhafte Knoten-, Kanten-, Anschluss- und Auftragskennungen; sichtbare Meshstücke werden aus diesem Zustand aufgebaut. |
 | Häuser | Hauszufahrt an das Straßennetz anbinden; zugehörigen Bauplatz als Maschinenauftrag vorbereiten. |
 | Arbeit | Rodung, Abtrag, Auffüllung, Kies und Asphalt als gespeicherte, abhängige Phasen. |
-| Logistik | Depot, tatsächliche Lagerabholung, begrenzte Lkw-Ladung und Baustellenpuffer; getrennte Materialarten **Soil**, **Gravel**, **Asphalt**. |
+| Logistik | Begrenzte Start-/Lagerrouten, tatsächliche Lagerabholung, begrenzte Lkw-Ladung und Baustellenpuffer; getrennte Materialarten **Soil**, **Gravel**, **Asphalt**. Vollständiger Depotbetrieb bleibt offen. |
 | Wiederaufnahme | Entwurf, Netz, geleisteter Boden, Phasenfortschritt, Bestand, Reservierungen und beladene Fahrten nach kaltem Neustart erhalten. |
 
 Brücken, Tunnel, freie Offroad-Wege, allgemeine Fahrspur-KI und Umbau bereits arbeitender oder fertiger Straßen folgen später. Verschiebbare Entwürfe erlauben in diesem Slice kein nachträgliches Verschieben ausgeführter Erde oder fertiger Straßen. Die vorhandene begrenzte [Bauplatz-Umplanung](../guides/replan-building-sites.md) behält ihren eigenen Vertrag.[^site-replan]
@@ -107,7 +109,7 @@ Die ausgeführte Bodengeschichte bleibt erhalten: Ein neuer Abschnitt nimmt den 
 
 ## Depot, Lager und erreichbare Baufront
 
-**Fahrzeuge beginnen im Depot mit gespeicherter Identität und leerer Ladung.** Benötigtes Material wird am tatsächlichen Lager abgeholt. Die erste Laborwelt erhält ausdrücklich deklarierte **endliche** Anfangsbestände und eine vorhandene, freigegebene Verbindung zwischen Depot und Lager. Weder ein spontaner voller Lkw noch ein unendliches Lager löst die Anfahrtsfrage.
+**Vereinbarte Zielregel, noch kein vollständiger Depotnachweis: Fahrzeuge beginnen im Depot mit gespeicherter Identität und leerer Ladung.** Benötigtes Material wird am tatsächlichen Lager abgeholt. Die erste Laborwelt erhält ausdrücklich deklarierte **endliche** Anfangsbestände und eine vorhandene, freigegebene Verbindung zwischen Depot und Lager. Weder ein spontaner voller Lkw noch ein unendliches Lager löst die Anfahrtsfrage.
 
 Normale Straßen-Lkw fahren nur über fertiggestellte Straßen oder ausdrücklich als vorbereitet und befahrbar freigegebene Kiesabschnitte. Eine gezeichnete Linie, nur gerodeter Korridor oder blanke Planie ist keine solche Route. Sie fahren nicht automatisch über die Wiese zum nächsten Auftrag. Fehlt eine Verbindung, wartet der Auftrag mit angezeigtem Grund.
 
