@@ -13,8 +13,11 @@ plugin_version: '4.1'
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T21:24:47.578582+00:00"
+  at: "2026-10-30T00:05:16.235520+00:00"
 sources:
+- id: order-ui
+  resource: evidence/earthworks-ui-test.json
+  title: Neue Baustellenleiste und echte Slate-Eingabe im normalen UI2-Spiel
 - id: stable-save-guide
   resource: guides/stable-save-binding.md
   title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
@@ -112,6 +115,11 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## Neue Baustellenleiste und Tab-Fokus
+
+**Bestanden:** Editor-/Gamebuild und eigener vollständiger UI2-Cook, ein nativer Slate-Eingabetest, 38/38 + 40/40 reale Slate-Checks im normalen verpackten Spiel mit kaltem Neustart sowie zusätzlich der unveränderte aktuelle v8-Spielerstand über normale F5/F9-Funktionen und kalten zweiten Prozess. Alle acht vollständigen Recordgruppen, Terrainprofil und vorherigen Saves sind erhalten. Neue 1600 × 1000-Aufnahme vom Agenten visuell geprüft; physische menschliche Eingaben separat offen. Der frühere Tab-Fehler ist damit in der neuen Fassung korrigiert. [Anleitung](guides/site-preparation.md#neue-baustellenleiste), [bereinigter Bericht](evidence/earthworks-ui-test.json).
+
 
 ## Stabile Savebindung: bekannte A7-Stände, zwei neue Cooks und normale Fortsetzung
 

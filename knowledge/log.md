@@ -1,5 +1,10 @@
 # Änderungen an der Wissensbasis
 
+## 2026-10-30
+
+- [Baustellenleiste](guides/site-preparation.md#neue-baustellenleiste) mit anklickbaren Auftragskarten, klarer Auswahl, eigener Neuplanung und eingeklappten Nebenreglern umgesetzt. Tab/Shift+Tab vor Slate-Navigation begrenzt, relative Höhenvorgaben und getrennte Abtrags-/Einbaumengen erklärt. Finales UI2-Paket: ein nativer Slate-Test, 38/38 + 40/40 tatsächliche Spiel-UI-Checks einschließlich F5/F9 und kaltem Neustart bestanden; zusätzliche exakte Kopie des bestehenden Nutzerstands über normale Speicher-/Ladefunktionen und zweiten Prozess geprüft. Alle acht Recordgruppen und normalen Originalstände erhalten; Terrainprofil unverändert. Ein originales SHOWUI-Bild mit Herkunft/SHA aufgenommen und visuell geprüft. Frühere Fokus-/Prüfversuche bleiben abgegrenzt; keine menschliche physische Eingabeabnahme. [Bericht](evidence/earthworks-ui-test.json).
+
+
 ## 2026-10-29
 
 - [Tab-Fokusfehler der Bauplatzleiste](guides/site-preparation.md#bekannter-eingabefehler-tab-landet-auf-den-kamerareglern) vom Nutzer gemeldet und im Controller-/Slatepfad lesend eingeordnet: Tab kann Kameraregler fokussieren; der UI-Schutz blockiert danach Weltkürzel. Auswahlmarkierung `>` und direkter Mausweg über **Naechsten waehlen**, Arbeit, Transport und Haus beschrieben. Mehrere Pläne sind vorgesehen; ein Maschinenzug arbeitet nacheinander. Kein neuer Build, keine physische Eingabeprüfung und kein ausgelieferter Fix behauptet; laufendes Nutzerspiel unverändert.

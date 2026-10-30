@@ -8,7 +8,7 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T21:24:47.578582+00:00"
+  at: "2026-10-30T00:05:16.235520+00:00"
 evidence_scope:
   source: Gelesener Projektvertrag für getrennte Inhaltsprüfung und erhaltene Spielstandskennungen; kein mitgelieferter Quellcode.
   cpu: Früherer Profilstand mit 70 nativen Tests, davon 68 sauber und 2 bekannte Warnungen; 7 Datei-Kopie-Ablehnungstests im früheren und erneut 7 im korrigierten Profilstand bestanden.
@@ -60,7 +60,7 @@ Die Übernahme ist zunächst ein Werkzeug für die Projektbetreuung, noch kein K
 
 1. **Im alten Spiel speichern und schließen.** `F5` ist der bestehende Speicherbefehl. Erst nach Ende der Sitzung wird die Quelle unveränderlich gesichert. Auch die passende alte Anwendung bleibt erhalten.
 2. **Die Übernahme abwarten.** Das Werkzeug läuft getrennt mit Kopien der passenden alten Cook-Inhalte. Es prüft den alten Stand und schreibt ausschließlich einen neuen Format-8-Slot. Ein normaler Ladeversuch führt keine stille Konvertierung aus.
-3. **Nach Freigabe die neue Demo öffnen.** Dafür dient `Tools/launch_stable_site_preparation_demo.ps1`; der geprüfte Start verwendet das abschließende C2-Paket. Der Startpfad benutzt eine eigene Datenablage und verweigert den Start, solange seine erforderlichen echten Abschlussbelege fehlen. Der bisherige Startpfad bleibt der alten passenden Demo zugeordnet.
+3. **Nach Freigabe die neue Demo öffnen.** Dafür dient `Tools/launch_stable_site_preparation_demo.ps1`; der aktuelle geprüfte Start verwendet die [überarbeitete UI2-Fassung](site-preparation.md#neue-baustellenleiste) bei unverändertem Terrainprofil. Der C2-Nachweis bleibt die erhaltene Migrations-/Physikgrundlage; **-PreviousBuild** startet diese bewahrte Fassung. Die neue UI2-Abnahme bestätigt zusätzlich alle acht vollständigen Recordgruppen des bestehenden v8-Nutzerstands über normale F5/F9-Funktionen und kalten Neustart. Der Startpfad benutzt eine eigene Datenablage und verweigert den Start, solange seine erforderlichen echten Abschlussbelege fehlen. Der bisherige Startpfad bleibt der alten passenden Demo zugeordnet.
 4. **Den Zustand vergleichen.** Stimmen Arbeitsfortschritt, verbleibende Bäume, Ladung, Lager und Haus mit dem gesicherten Ausgangspunkt überein? Bei Teilrodung muss nur die Restarbeit übrig sein. Ein beladener Lkw darf seine Ladung nicht verlieren.
 5. **Weiterbauen, speichern und neu starten.** Arbeit und Transport wie in der [Bauplatzanleitung](site-preparation.md) starten. Mit `F5` speichern, das Spiel schließen und über denselben neuen Startpfad erneut öffnen. `F9` ist der bestehende Ladebefehl innerhalb der laufenden Sitzung.[^binding-contract][^site-guide]
 

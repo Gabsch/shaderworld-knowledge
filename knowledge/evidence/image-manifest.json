@@ -509,6 +509,14 @@
       "bytes": 1889815,
       "sha256": "315051c0cd295d18e922ac92c2a0e8838cd965402b2d2b5c569384e10aeea7bc",
       "revision_scope": "Finaler gespeicherter Materialvergleich nach eigener Lichtprioritätskorrektur; Übersicht und drei Detailansichten, keine geometrischen Einzelsteine oder Fahrzeugfüllungsintegration."
+    },
+    {
+      "file": "assets/images/site-preparation-order-cards.png",
+      "origin": "Unmodified native SHOWUI capture from own packaged EarthworksUi2 game after real Slate event routing; two paused test orders, not player data",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "bytes": 3051587,
+      "sha256": "de6dbd948a1614312e6ef08b33e251fe0ac3794d0110f636ec7da005114f4e29"
     }
   ]
 }

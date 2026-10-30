@@ -8,16 +8,20 @@ engine_version: "5.8.4"
 plugin_version: "4.1"
 generated:
   by: codex/gpt-6
-  at: "2026-10-29T22:16:30.241841+00:00"
+  at: "2026-10-30T00:04:42.385587+00:00"
 evidence_scope:
-  source: Getrennte V2-Laborkarte mit BlueAndBounds1-Biomkopien und eigenem Slot eingerichtet; aktueller Controller- und Setupvertrag gelesen. Altassets und bisherige Spielstände bleiben erhalten.
+  source: Neue Auftragskarten und auf das aktive Spiel begrenzter Tab-Prozessor; getrennte V2-Laborkarte mit BlueAndBounds1-Biomkopien und eigenem Slot eingerichtet; aktueller Controller- und Setupvertrag gelesen. Altassets und bisherige Spielstände bleiben erhalten.
   prior_verification: Vorheriger Quellstand bestand Uncooked-Neustartpaar, native 60er-Suite und normale Controller-/Kamera-API. Diese Ergebnisse und Bilder sind historisch genau diesem Stand zugeordnet.
   runtime: V2-Einrichtung mit elf neuen Assets und unveränderten Legacydateien geprüft; native V2-Suite und wiederholte Einrichtung bestanden; vollständige Uncooked-/Cooked-Neustartpaare bestanden; normale V2-Startdaten exakt wiederhergestellt; separate normale Prozesse ohne CSV-Instrumentierung sauber beendet. CSV-instrumentierter Exit bleibt fehlgeschlagen; passender Demo-Startspielstand und sechs Paketdateien versiegelt vorbereitet; normaler Launcherstart mit reagierendem eigenem Fenster und korrekter Spielkarte bestanden; physische Eingaben und menschliche Pixelabnahme offen. Historische Nachweise gelten ihrer früheren Sourcebasis.
+  ui_runtime: UI2 mit einem nativen Eingabetest, 38 plus 40 echten Slate-Checks und vier plus zwei exakten normalen Nutzerstand-Snapshots geprüft; beide UI-Originalbilder vom Agenten visuell geprüft.
   limit: Keine globale GPU-/Bewuchs-Fertiggarantie, keine physische Eingabe- oder menschliche Abnahme. Holz und allgemeine Logistik offen; NeedsReplan nach externer Terrainänderung während Rodung besitzt noch keinen expliziten Replanpfad.
 sources:
+  - id: ui-proof
+    resource: ../evidence/earthworks-ui-test.json
+    title: Neue Auftragsleiste, tatsächliche Slate-Ereignisse und unveränderter Nutzerstand über Neustart
   - id: tab-focus
     resource: "Nutzermeldung mit blau fokussiertem Kameraregler am 29. Oktober 2026; eigener gelesener Source/UnrealMcpTest/CityLabEarthworksGameMode.cpp: SCityLabEarthworksPanel, BlocksKeys, KeysAllowed, SetupInputComponent, SelectNextJob und QueueText; Unreal Slate NavigationConfig und SlateApplication. Private Aufnahme und separat lizenzierte Quellen nicht im Bundle enthalten"
-    title: Gemeldeter Tab-Fokusfehler und gelesener Maus-Workaround, noch kein Fix
+    title: Historischer gemeldeter Tab-Fokusfehler und damaliger Maus-Workaround
   - id: stable-save-guide
     resource: stable-save-binding.md
     title: Bekannte Referenzstände ausdrücklich übernehmen und über neue Cooks laden
@@ -63,7 +67,7 @@ Die neue Karte verwendet **CityLabSitePreparation** als normalen Speicher-Slot. 
 
 ## Aktuelle stabile Demo starten
 
-Für den übernommenen eigenen Stand startet **Tools/launch_stable_site_preparation_demo.ps1** die geprüfte C2-Fassung mit eigener Datenablage **Saved/SaveBindingDemoUser**. Sie setzt den einmalig übernommenen Arbeitsstand fort und besät vorhandenen Fortschritt nicht neu. **F5** speichert und **F9** lädt; für einen kalten Neustart denselben Launcher erneut verwenden. Die [Speicheranleitung](stable-save-binding.md) erklärt Übernahme, Prüfungen und Rückweg zur bewahrten alten Fassung.
+Für den übernommenen eigenen Stand startet **Tools/launch_stable_site_preparation_demo.ps1** die geprüfte UI2-Fassung mit unveränderter eigener Datenablage **Saved/SaveBindingDemoUser**. Mit **-PreviousBuild** bleibt die bewahrte C2-Fassung erreichbar. Sie setzt den einmalig übernommenen Arbeitsstand fort und besät vorhandenen Fortschritt nicht neu. **F5** speichert und **F9** lädt; für einen kalten Neustart denselben Launcher erneut verwenden. Die [Speicheranleitung](stable-save-binding.md) erklärt Übernahme, Prüfungen und Rückweg zur bewahrten alten Fassung.
 
 ## Historische vorgeplante Format-7-Demo starten
 
@@ -71,18 +75,28 @@ Im Projektordner startet **Tools/launch_site_preparation_demo.ps1** die vorberei
 
 In dieser Demo ist **ein Bauplatz bereits geplant und pausiert**: **Arbeit starten [Space]**, danach **Transport an [H]** verwenden. Zuerst wird gerodet, dann Erde bewegt. Sobald **Bauplatz bereit** erscheint, mit **B** das Haus setzen. **7** brauchst du erst für einen neuen Standort. Die Demo verwendet das ausdrücklich beschleunigte Prüfprofil; das ist keine realistische Maschinenleistung.
 
+## Neue Baustellenleiste
+
+**+ Neuen Bauplatz planen [7]** erzeugt einen neuen Entwurf. Die **anklickbaren Auftragskarten** wählen vorhandene Pläne; **AUSGEWAEHLT** und die farbige Karte zeigen das Ziel für Arbeit, Transport und Hausbau. Darunter stehen Phase, Restarbeit und der nächste Schritt. Kameraregler, Untergrund und technische Auftragsdetails sind anfangs eingeklappt.[^ui-proof]
+
+![Neue Auftragskarten mit genau einem ausgewählten Auftrag](../assets/images/site-preparation-order-cards.png)
+
+Das unveränderte Originalbild zeigt zwei pausierte Absenk-Testaufträge im neuen verpackten Spiel. Beide ursprünglichen 1600 × 1000-Aufnahmen wurden vom Agenten visuell geprüft.[^ui-proof]
+
 ## Einen eigenen Bauplatz vorbereiten
 
-Die Knopfbezeichnungen und Kürzel stammen aus der aktuellen Controllerintegration. Eine vollständige physische Tasten-/Mausprüfung wird daraus nicht abgeleitet.[^own-site-model]
+Die neue Leiste ist im verpackten Spiel über echte Slate-Ereignisse geprüft. Einzelne Höhenvorgaben sind zusätzlich als Quellvertrag beschrieben; physische menschliche Bedienung bleibt eine getrennte Abnahme.[^ui-proof]
 
-1. Karte öffnen, **Play** starten und fertigen Boden abwarten. Links **Bauplatz: Roden > Ebnen > Haus [7]** wählen. Der Testhaus-Bauplatz hat einen festen **12 × 12 m** großen ebenen Kern.
-2. Den Mauszeiger außerhalb der Werkzeugleiste auf geeigneten Boden bewegen. Ein kurzer linker Klick fixiert den Standort. Mit **Hoehe − / Hoehe +** beziehungsweise **Bild ab / Bild auf** die absolute Zielhöhe in **0,25-m-Schritten** ändern. Die Vorschau nennt Bäume einschließlich der Zufahrt und getrennte Aushub-/Einbaumengen. Kurz stillhalten, bis die Baumerfassung stabil ist.
-3. **Plan bestaetigen + speichern [Enter]** wählen. Der Auftrag erscheint in der Warteschlange; Bäume und Erde bleiben zunächst unverändert. Danach ist die Vorschau inaktiv. Für eine neue Planung das Werkzeug erneut wählen; **Vorschau verwerfen [Esc]** beendet nur die Vorschau.
-4. Den gewünschten Auftrag mit der Maus über **Naechsten waehlen [Tab]** auswählen und **Arbeit starten / Pause [Space]** anklicken. Ein **`>`** vor der Listenzeile markiert die Auswahl. Tab besitzt aktuell den unten beschriebenen Fokusfehler. Erst jetzt entfernt die Rodung schrittweise die gespeicherten Bäume. Erneutes Betätigen pausiert und erhält den Fortschritt.
-5. Für denselben gestarteten Bauplatz **Transport an / aus [H]** einschalten. Während der Rodung wird der Wunsch nur vorgemerkt. Erst nach vollständiger Rodung beginnt die Erdarbeit mit dem gemeinsamen Lager, begrenztem Puffer und Lkw. Aushub braucht Lagerplatz; zusätzlicher Einbau braucht echten vorhandenen Bestand.[^flatten]
-6. Auf **Bauplatz bereit** warten. Dafür müssen Erdarbeit und lokale Kollisionsprüfung abgeschlossen sein. Dann **Haus auf fertigen Bauplatz setzen [B]** wählen. Der Boden und freie Hausbereich werden erneut geprüft. Wiederholtes Auslösen baut kein zweites Haus.[^own-site-model]
+1. **+ Neuen Bauplatz planen [7]** wählen. Den Mauszeiger außerhalb der Leiste auf geeigneten Boden bewegen und den Ort mit einem kurzen Linksklick fixieren. Der Testhaus-Bauplatz hat einen festen **12 × 12 m** großen ebenen Kern.
+2. Die Zielhöhe wählen. **Auf Bodenhoehe**, **50 cm tiefer**, **1 m tiefer** und **50 cm hoeher** beziehen sich auf die Bodenhöhe am fixierten Klickpunkt. **Hoehe − 25 cm / Hoehe + 25 cm** beziehungsweise **Bild ab / Bild auf** erlauben weitere Schritte. Die Zielhöhe bleibt eine feste Höhe für den gesamten ebenen Kern.
+3. Vorschau lesen: **ABTRAGEN** und **AUFFUELLEN** nennen getrennte Volumen- und Massenmengen; zusätzlicher Lagerbedarf und nutzbarer Bestand stehen daneben. Kurz stillhalten, bis die Baumerfassung einschließlich Zufahrt stabil ist. Ein ebener Bauplatz benötigt keine tiefe Grube: An einem Hang können Abtrag und Einbau zusammen nötig sein; nahezu passender Boden kann nur wenig Erdbewegung erfordern.
+4. **Plan bestaetigen + speichern [Enter]** wählen. Eine Auftragskarte erscheint, der Entwurf endet und der neue Auftrag ist gewählt. Bestätigen speichert zunächst die Absicht; Bäume, Boden und Materialkonten werden dadurch noch nicht bearbeitet. **Entwurf verwerfen [Esc]** beendet nur den Entwurf.
+5. Die gewünschte Auftragskarte anklicken und auf **AUSGEWAEHLT** achten. Alternativ ist **Tab** für den nächsten und **Shift+Tab** für den vorherigen vorhandenen Auftrag vorgesehen. Auch fertige Aufträge bleiben auswählbar. **Tab erstellt keinen neuen Bauplatz.** Für einen weiteren Standort wieder oben **+ Neuen Bauplatz planen [7]** verwenden.
+6. Für den gewählten Auftrag **Arbeit starten [Space]**, danach **Transport anfordern [H]** verwenden. Erneutes Betätigen pausiert die Arbeit beziehungsweise stoppt den Transport. Zuerst wird gerodet; der Transportwunsch wird währenddessen vorgemerkt. Erst nach vollständiger Rodung folgt die Erdarbeit mit Lager, Puffer und Lkw. Es gibt einen gemeinsamen Maschinenzug; andere Aufträge warten.
+7. Auf **Bauplatz bereit** und die lokale Bodenfreigabe warten. Dann **Haus auf fertigen Bauplatz setzen [B]** wählen. Die Schaltfläche ist nur bei freigegebenem ausgewähltem Bauplatz verfügbar. Boden und freier Hausbereich werden erneut geprüft; wiederholtes Auslösen erzeugt kein zweites Haus.[^own-site-model]
 
-**Speichern [F5]** und **Laden [F9]** sichern beziehungsweise laden die gemeinsame Kette. Erfolgreiche Plan- und Schalteraktionen speichern ebenfalls; geänderter Fortschritt wird ungefähr alle zwei Sekunden automatisch gesichert. Vor einem gezielten Neustart ausdrücklich speichern. Die Kürzel gelten außerhalb der linken Leiste; die sichtbaren Knöpfe sind der einfachste Einstieg.
+**Speichern [F5]** und **Laden [F9]** gelten für die gemeinsame Kette. Erfolgreiche Plan- und Schalteraktionen speichern ebenfalls; geänderter Fortschritt wird ungefähr alle zwei Sekunden automatisch gesichert. Vor einem gezielten Neustart ausdrücklich speichern. Die Überarbeitung ändert weder SaveGameformat noch Kompatibilitätsprofil oder Erdarbeitsmodell.[^own-site-model][^ui-proof]
+
 
 | Phase | Bedeutung |
 | --- | --- |
@@ -95,13 +109,13 @@ Die Knopfbezeichnungen und Kürzel stammen aus der aktuellen Controllerintegrati
 
 ## Bekannter Eingabefehler: Tab landet auf den Kamerareglern
 
-Am 29. Oktober 2026 meldete der Nutzer, dass **Tab** die unteren Kameraregler blau fokussiert, statt den nächsten Auftrag zu wählen. Der gelesene Controllerpfad erklärt das Verhalten: Die Regler dürfen Tastaturfokus erhalten, die Auftragsauswahl ist dagegen ein nachgelagerter Spielbefehl. Slate kann Tab vorher als UI-Navigation behandeln; ein fokussierter Regler sperrt anschließend über den vorgesehenen UI-Schutz weitere Weltkürzel. Das ist ein Eingabefehler, keine Grenze auf einen Bauplatz.[^tab-focus]
+Die Meldung vom 29. Oktober 2026 gilt der früheren Oberfläche. Sie war ein Fokusfehler und keine Begrenzung auf einen Bauplatz. Die Korrektur behandelt **Tab / Shift+Tab** vor der Slate-Navigation im eigenen aktiven Spiel, wählt genau einmal pro Druck und stellt danach den Weltfokus wieder her. Gehaltenes Tab schaltet nicht mehrfach. Andere Fenster und beabsichtigte Reglerbedienung behalten ihre eigene Navigation.[^ui-proof]
 
-**Ohne Tastaturkürzel weiterarbeiten:** Links zur **Auftragswarteschlange** hochscrollen und **Naechsten waehlen [Tab]** mit der Maus anklicken. Das **`>`** wandert zur nächsten vorhandenen Zeile; auch fertige Aufträge werden durchlaufen. Danach die Knöpfe **Arbeit starten / Pause**, **Transport an / aus** und bei fertigem Bauplatz **Haus auf fertigen Bauplatz setzen** benutzen. Ein weiterer Bauplatz entsteht über das erneut gewählte Bauplatzwerkzeug, einen anderen Ort und **Plan bestaetigen + speichern**. Je Bauplatz ist ein Haus vorgesehen; der einzelne Maschinenzug arbeitet die Aufträge nacheinander ab. Tab erstellt keinen neuen Plan.
-
-Der Mausweg ist durch die gelesenen direkten Button-Callbacks belegt; eine neue physische Bedienprobe wurde dafür nicht ausgeführt. Die vorhandenen Zustands- und API-Prüfungen sind kein Test der tatsächlichen Tab-Weiterleitung. **Noch nicht korrigiert oder neu ausgeliefert:** Ein gezielter Fix muss Tab vor der UI-Navigation im eigenen Spielfenster behandeln und anschließend den Weltfokus wiederherstellen, ohne Editorfenster oder beabsichtigte Reglerbedienung zu verändern. Dafür ist eine echte Slate-Eingabeprüfung mit mehreren Aufträgen und fokussierten Reglern erforderlich. Das laufende Nutzerspiel wurde für diesen Befund nicht bedient oder neu gestartet.
+Im neuen Paket **EarthworksUi2** bestanden ein nativer Slate-Test sowie **38 + 40 Checks** in zwei normalen gerenderten Spielprozessen: echte Kartenklicks, Tab aus beiden fokussierten Kamerareglern, Shift+Tab, Wiederholung, neuer Entwurf per Knopf und 7, Escape, F5/F9 und kalter Neustart. Eine separate Kopie des tatsächlich erhaltenen Spielerstands bestand zusätzlich normales Speichern/Laden und einen kalten zweiten Prozess mit allen acht vollständigen Recordgruppen. Die Originalstände bleiben unverändert. Das ist eine programmatisch geroutete Slate-Abnahme; eine menschliche physische Tastenprüfung wird daraus nicht abgeleitet.[^ui-proof]
 
 ## Aktuelle Werkzeugleiste im normalen verpackten Spiel
+
+**Historisches Bild:** Der folgende Beleg zeigt die frühere Format-7-Leiste. Für die neue Oberfläche gilt das Bild der Auftragskarten oben.
 
 Diese unveränderte **888 × 500-SHOWUI-Aufnahme** zeigt den normalen V2-Controller mit einem bereits geplanten, pausierten Bauplatz im Wald. Acht native Snapshots bestätigten separat den exakten ungearbeiteten Ready-Zustand. Der grüne Framezähler gehört zur CSV-Prüfung; deren später Exitfehler bleibt offen. Ein getrennter normaler Start desselben Builds mit demselben Save, ohne CSV, endete sauber. Das Bild belegt keine physischen Eingaben.[^proof]
 
@@ -145,6 +159,8 @@ Nach dem Laden kann **Bewuchs nach Laden: native Neuberechnung abwarten** ersche
 
 ## Stand der aktuellen Prüfung
 
+**Neue UI2-Abnahme:** ein nativer Slate-Test, 38/38 + 40/40 tatsächliche Slate-Checks, zusätzliche 4 + 2 vollständige normale Nutzerstand-Snapshots und eigenes antwortendes Spielfenster bestanden. Die folgenden V2-Terrain- und Maschinenbelege sind die erhaltene frühere Prüfbasis.[^ui-proof]
+
 Die Einrichtung mit elf neuen Assets, native V2-Suite und Wiederholung ohne neue Assets sind bestanden. **Uncooked und Development-Cooked bestanden jeweils mit zwei frischen Prozessen:** Teilrodung und beladene Fahrt wurden exakt fortgesetzt; beide Pfade endeten mit 21 gerodeten Ressourcen, erhaltenem Kontrollbaum, genau einem Haus, 176,4 t Lager und 0 g Bilanzfehler. Drei weitere Loads erzeugten keine Duplikate. Die aktuelle gemeinsame Controller-/Kamera-API bestand separat 38 Checks auf der erhaltenen EarthworksLab-Karte. Die normale V2-Startprüfung bestätigt zusätzlich acht vollständig gleiche native Snapshots des ungearbeiteten Plans. Dennoch liefert der Prozess nach sauber protokollierter CSV-Finalisierung einen späten Nichtnull-Exit; dasselbe passiert mit dem passenden alten Archivpaket. Das ist kein vollständiger normaler Demo-PASS. Drei getrennte normale Starts ohne CSV-Instrumentierung bestanden inzwischen mit Exit 0: neue V2-Karte mit demselben Ready-Save, passende alte Foundations-Karte und leere Entry-Karte. Sie bestätigen saubere normale Prozessbeendigung; die instrumentierten Fehlversuche bleiben erhalten. Die versiegelte Demo mit identischer privater Ready-Datei ist vorbereitet: 106 Quelldateien und sechs Paketdateien geprüft, 170 zuvor vorhandene Save-Dateien unverändert; genau eine neue private Startdatei hinzugefügt. Der tatsächliche normale Launcherstart bestand anschließend die begrenzte Fenster-/Kartenprüfung mit unveränderter Seed- und Manifestbindung. Physische Eingaben, Computer-Use-Bedienung und menschliche Pixelabnahme bleiben offen; der Start ergänzt keinen weiteren Exitnachweis.[^proof]
 
 Der [Prüfbericht](../evidence/site-preparation-test.json) erhält die früheren Erfolge, die gescheiterten Kontrollbaumversuche und deren Diagnose getrennt. Diese historischen Ergebnisse und Bilder werden nicht auf V2 übertragen. Boden- und Baumgates bleiben streng; keine Ersatzbäume, zusätzlichen Rodungsbuchungen oder nachträglich angepassten Savebindungen.
@@ -173,4 +189,6 @@ Es gibt weiterhin **einen Maschinenzug**, feste geprüfte Wege und ein Erdmateri
 
 [^build-bound-save-source]: Gelesene native PreSave-Versionierung und eigene Terrainidentität gemäß Quellenbeschreibung; keine Änderung am Vendorcode oder nachträgliche Save-Normalisierung.
 
-[^tab-focus]: Direkte Nutzermeldung und unabhängige lesende Prüfung des aktuellen Controllers und Slate-Routingpfads; kein neuer Build, kein physischer Eingabetest und keine ausgelieferte Korrektur.
+[^tab-focus]: Historische Nutzermeldung und lesende Prüfung der damaligen Tab-/Slider-Navigation. Der aktuelle Fix und seine getrennte Eingabeabnahme stehen im neuen UI-Prüfbericht.
+
+[^ui-proof]: [Prüfbericht zur neuen Oberfläche mit getrenntem nativen Test, tatsächlichem Slate-Spielpfad und normalem Nutzerstand-Neustart](../evidence/earthworks-ui-test.json).
