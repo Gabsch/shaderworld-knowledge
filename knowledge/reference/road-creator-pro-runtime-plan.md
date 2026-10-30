@@ -9,11 +9,11 @@ plugin_version: "4.2"
 rcp_local_version: unbekannt
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T17:21:47.484583+00:00"
+  at: "2026-10-30T20:47:06.231484+00:00"
 evidence_scope:
   manual: Das Agententeam hat das vollständige offizielle 90-seitige RCP-Handbuch einschließlich relevanter Abbildungen und Roadmap gelesen; Herstellerfähigkeiten sind keine Laufzeitabnahme.
-  local: Getrennte lesende Bestandszählung im vorhandenen Projekt; keine gesicherte RCP-Versionsnummer und kein Nachweis eines vollständigen aktuellen Imports.
-  runtime: Reiner Entwurf. Kein neuer Spawn-, Materialwechsel-, Komponentenlebenszyklus-, Leistungs- oder Neustarttest für die hier geplante breite RCP-Integration.
+  local: Aktualisierter Bestand mit 907 Paketen, 18 eigenen vorbereiteten Meshkopien, tatsächlicher Klassenreflexion und statischen Tunnel-/Brückengeometriemessungen; Releasekennung und Vollständigkeit des neuesten Releases bleiben ungeklärt.
+  runtime: Gekochter Deferred-Spawn ist belegt. Alle 20 direkten UCS-Neuaufbauzyklen sind fehlgeschlagen. Nach behobener innerer Kollisionsnaht besteht der eigene Adapter alle 20 gekochten Lebenszykluszyklen mit 300 Szene- und 300 Bodytreffern; keine normale Spiel-/Neustartabnahme. Native2 bleibt getrennt mit 128 Modell-/API-Tests, keine vollständige RCP- oder normale Spielabnahme.
 sources:
   - id: rcp-manual
     resource: https://drive.google.com/file/d/1NYQA6k-qZHusso1npgAfEgGpnieeDRxt/view
@@ -25,8 +25,8 @@ sources:
     resource: https://forums.unrealengine.com/t/lyoshko-road-creator-pro/2418882
     title: Offizieller Produktthread mit Autorenantworten zu Kreuzungen, Verkehr und Bearbeitungskosten
   - id: local-inventory
-    resource: "Lesende projektlokale Bestandsaufnahme vom 30. Oktober 2026: 673 RCP-Inhaltspakete, davon 671 uasset und zwei umap. Gruppen: 49 Blueprints, 251 Meshes, 188 Materialien, 162 Texturen, 18 Demopakete und fünf Soundpakete. Ein Haupt-RoadCreator-Blueprint; Content-Assetpack, kein eigenes RCP-Plugin. Inventar, lizenzierte Assets und Blueprintquellen werden nicht öffentlich mitgeliefert. Versionsstand unbekannt; fehlende neuere Namen sind kein gesicherter Release-Zeitstempel."
-    title: Lokaler RCP-Bestand, getrennt vom aktuellen Herstellerhandbuch
+    resource: ../evidence/rcp-toolkit-stage1.json
+    title: Bereinigter Stage1-Beleg mit 907 Paketen, nativer Klassenreflexion, 18 vorbereiteten Kopien, Geometriemessungen und getrennten Native2-Tests
   - id: ue-construction
     resource: https://dev.epicgames.com/documentation/en-us/unreal-engine/construction-script-in-unreal-engine
     title: Epic UE5.8 Construction Script
@@ -54,7 +54,7 @@ sources:
 ---
 # Road Creator Pro fast vollständig zur Spielzeit nutzen
 
-**Ziel ist ein umfangreiches Straßenwerkzeug im Spiel:** RCP-Straßentypen, Kurven, Gehwege, Markierungen, Ausstattung, Kreuzungen, Brücken und Tunnel sollen sich planen, bauen und dauerhaft weiterverwenden lassen. Die Bedienung folgt unserem City Builder; den Editor-3D-Gizmo wollen wir nicht nachbauen. Diese Seite hält den Vorschlag zur Besprechung fest. Sie startet keine Implementierung.
+**Ziel ist ein umfangreiches Straßenwerkzeug im Spiel:** RCP-Straßentypen, Kurven, Gehwege, Markierungen, Ausstattung, Kreuzungen, Brücken und Tunnel sollen sich planen, bauen und dauerhaft weiterverwenden lassen. Die Bedienung folgt unserem City Builder; den Editor-3D-Gizmo wollen wir nicht nachbauen. Der Nutzer hat die Umsetzung inzwischen in vier Stufen beauftragt. Diese Seite hält Architektur, aktuellen Bestand und offene Abnahmen fest; sie ist noch keine Anleitung für vollständig verfügbare Spielfunktionen.
 
 **CityLab bleibt die maßgebliche Datenquelle.** RCP liefert Assets und geeignete geprüfte Funktionen für die Darstellung. ShaderWorld erzeugt Gelände, Bewuchs und Bodenkollision. Unsere Spielregeln bestimmen, was geplant, erreichbar, bezahlt, geliefert und tatsächlich gebaut ist. Der [bestehende Prototyp](../guides/road-construction-tools.md) ist ein begrenzter Ausgangspunkt, keine Bestätigung sämtlicher nachfolgender Funktionen.
 
@@ -62,9 +62,42 @@ sources:
 
 Die Handbuchrecherche umfasst **alle 90 Seiten** im Agententeam. Seitenverweise in dieser Planung beziehen sich auf genau diese Ausgabe: PDF-Metadaten vom 29. Oktober 2026, Aktualisierungsliste bis Oktober 2026, abgerufen am 30. Oktober. SHA-256 der untersuchten PDF: `b588d729f04def350b37f31a9860d54f6a010e9e870cdeb91d4ca3dd06f001e2`. Original-PDF, Vendor-Screenshots und lizenzierte Assets werden nicht in dieses öffentliche Repository kopiert.[^rcp-manual]
 
-Die **lokale Bestandszählung** ist ein anderer Nachweis: **673 Pakete**, davon **671 `.uasset` und zwei `.umap`**. Erfasst wurden 49 Blueprint-, 251 Mesh-, 188 Material-, 162 Textur-, 18 Demo- und fünf Soundpakete. Darunter liegt ein Haupt-RoadCreator-Blueprint. RCP ist hier ein **Content-Assetpack und kein eigenes RCP-Plugin**.[^local-inventory]
+Nach dem vom Nutzer durchgeführten Update enthält der **lokale Bestand 907 Pakete: 905 `.uasset` und zwei `.umap`**. Der frühere 673-Paket-Bestand bleibt die historische Ausgangszählung. Die Gruppen sind Verzeichnisse und enthalten beispielsweise auch Enums und Strukturen; 80 Blueprintpakete bedeuten daher nicht 80 Actor-Klassen. Ein Haupt-`BP_Road_Creator` ist vorhanden. RCP liegt hier als **Content-Assetpack ohne eigenes RCP-Plugin** vor.[^local-inventory]
 
-Mehrere im heutigen Handbuch beschriebene neuere Helfer, Parking-Area-, Map-Backdrop-, Utility-Poles-, Low-Poly-, Mirage- und Gebäude-Bausteine fehlen im lokalen Bestand namentlich. Das kann ein älterer Bestand oder eine unvollständige Migration sein. **Die lokale RCP-Version ist unbekannt.** Aus der Engine-Serializer-Version eines Assets lässt sich das RCP-Release nicht zuverlässig datieren. Deshalb zuerst Bestand und Abhängigkeiten mit der verfügbaren lizenzierten Distribution abgleichen; keine automatische Aktualisierung aus dieser Planung ableiten.
+| Ordnergruppe | Vor dem Update | Aktuell |
+| --- | ---: | ---: |
+| Blueprints und zugehörige Typen | 49 | 80 |
+| Meshes | 251 | 352 |
+| Materialien | 188 | 241 |
+| Texturen | 162 | 209 |
+| Demo | 18 | 18 |
+| Sound | 5 | 7 |
+| Gesamt | 673 | 907 |
+
+Nun sind Helper, Tape Measure, Parking Area, Map Backdrop, Utility Poles/Transmission Line, LowPoly-/Mirage-Materialfunktionen und das Gebäudeset namentlich vorhanden. Das korrigiert die frühere Fehlstellenliste. **Die genaue RCP-Releasekennung und ein vollständig aktueller Import sind weiter nicht belegt.** Im Bridge-Ordner liegen neun Meshes; die im neueren Handbuch beschriebenen vielen auswählbaren Stützen lassen sich daraus nicht vollständig bestätigen. Ein vorhandener Name ist außerdem noch kein funktionierendes Laufzeitfeature. Die Engine-Serializer-Version eines Assets datiert das RCP-Release nicht.[^local-inventory]
+
+### Was die echte Bestandsprüfung zusätzlich zeigt
+
+Die AssetRegistry meldet **sechs nicht vorhandene Paketverweise in sechs Materialpaketen**: vier Texturpfade aus `Street_Props`, einen aus `Backyard_Pool` und einen aus `Restroom_Basic_Pack`. Der [bereinigte Beleg](../evidence/rcp-toolkit-stage1.json) nennt die genauen relativen Assetpfade. Die unmittelbaren `/Game`-Abhängigkeiten des Haupt-RoadCreator-Blueprints sind dagegen vorhanden. Das ist keine Entwarnung für sämtliche transitiven Zubehörmaterialien und noch kein beobachteter Fehler im verpackten Bild. Vor Nutzung betroffene Materialien zuordnen und ausdrücklich reparieren oder durch eigene Varianten ersetzen; keine stillen Änderungen am Vendorbestand.[^local-inventory]
+
+Die geladene Klasse besitzt **196 Vendor-Eigenschaften und 47 Vendor-Funktionen**. Darunter ist `UserConstructionScript` ohne Parameter. Keine dieser Eigenschaften oder Funktionen trägt ein `EditorOnly`-Flag. Gerade auch Landscape-/Editorhelfer zeigen, warum dies allein keine Laufzeitzusage erlaubt: indirekte Aufrufe müssen im verpackten Spiel geprüft werden. Im Klassenstandard ist `Road Settings.RoadMesh` noch `None`; die Zuordnung des Straßentyps erfolgt durch eine Funktion. Der Katalog darf sie deshalb erst nach tatsächlichem Komponentenaufbau als Laufzeitmapping bestätigen.[^local-inventory]
+
+Am Haupt-Asphaltmaterial wurden **37 statische Schalter, 57 skalare und fünf Vektorparameter** gelesen. `MI_Asphalt_MAIN_Reflective_Mirage` ist als eigene vorhandene Variante für Retroreflexion und Mirage identifiziert. Statische Schalter werden nicht als frei schaltbare Laufzeitregler ausgegeben: Die passenden Varianten müssen gekocht sein, dynamische Werte und tatsächliche Materialzuweisung bleiben separat zu prüfen.[^local-inventory][^ue-materials]
+
+Die lokalen Basismeshes ergeben geometrische Breiten von rund **5 / 9 / 13 / 17 / 20 m** für ein-, zwei-, drei-, vier- und geteilt vierspurig; der Kiesweg misst rund **5,977 m**. Die geraden Elemente sind etwa 12 m lang. Das sind gemessene Meshgrenzen, keine nutzbaren Fahrspurbreiten oder bereits bestätigten Runtime-Skalierungen. Der Adapter muss Profil, Randteile und Bodenziel daran gemeinsam ausrichten; der bisherige 8-m-Prototyp ist kein universeller RCP-Querschnitt.[^local-inventory]
+
+### Eigene vorbereitete Meshes und gemessene Bauwerksgeometrie
+
+Für den eigenen Adapter wurden **18 getrennte Meshkopien** vorbereitet und CPU-Zugriff an diesen Kopien zurückgelesen: sechs Straßenprofile, fünf Brückentypen, Tunnel und Portal, eine Stütze sowie vier Ausstattungsteile. Die untersuchten Vendor-Meshes bleiben unverändert und besitzen weiterhin deaktivierten CPU-Zugriff. Diese Vorbereitung ist kein Beleg für später korrekt gekochte Spline-Kollision.[^local-inventory]
+
+Die statische Geometriemessung begrenzt bereits wichtige Annahmen:
+
+- Im Tunnel wurde ein mittiger **8 m breiter und 4 m hoher Korridor** an 729 Proben bestätigt. Sein lokaler Boden liegt bei +10 cm, der untersuchte innere Dachbereich mindestens bei rund +527,38 cm. Das beweist weder das gesamte Gewölbe noch massive Boden-/Wandstärke, Kollision oder eine Durchfahrt.
+- Das Portal besitzt einen anderen lokalen Bodenbezug, hier 0 cm. Wir richten Fahrbahn und Öffnung nach dokumentierten Bezugshöhen aus; die jeweilige Bounding Box genügt dafür nicht.
+- Am zweispurigen Brückenchassis fanden 81 zentrale Proben keine Fläche auf oder über der lokalen Z=0-Ebene. Aus dessen Umhüllung wird daher keine geschlossene Fahrbahnplatte abgeleitet: Fahrbahn und nötige deckende/kollidierende Hülle müssen separat erhalten und geprüft werden.
+- Eine große rechteckige AirPocket um das ganze Tunnelgewölbe ist noch nicht freigegeben. Sie kann über die Rundung in offene Bereiche reichen; vollständige Geländeabdeckung, Portalabschluss, Wasserbild und Neustart sind eigene Tests.
+
+Es wurden nur Messzusammenfassungen übernommen. Lizenzierte Meshes, OBJ-Exporte, vollständige Geometrie und Vendorquellcode bleiben außerhalb dieses öffentlichen Bundles.[^local-inventory]
 
 ## Was RCP für uns liefert
 
@@ -143,7 +176,11 @@ Der vorhandene begrenzte Maschinenzug und seine geprüfte Baufront sind keine al
 
 Der Nutzer meldet außerdem ein **UI-Problem beim Arbeiten mit mehreren Aufträgen**. Es ist ausdrücklich vertagt und wird durch diese Recherche weder behoben noch als getestet markiert. Bei der späteren Bedienung müssen Werkzeugwahl, Entwurf, bestätigter Auftrag und aktiver Maschinenauftrag klar erkennbar sein.
 
-## Sinnvolle Reihenfolge zur Besprechung
+## Beauftragte Stufen und ursprüngliche Reihenfolge
+
+Die Umsetzung ist in **vier abgegrenzte Arbeitspakete** gebündelt: zuerst Inventar und tatsächlicher RCP-Laufzeitpfad; dann Profile und mehrere gespeicherte Planungen; danach Anschlüsse/Knoten/Kreisverkehr; schließlich Brücken und Tunnel mit Wasser-, Material- und Neustartprüfung. Der bestehende geprüfte Starter bleibt RoadConstruction11, bis eine neue Abnahme einen Wechsel rechtfertigt. Der isolierte erste Cook erhält keine pauschale Freigabe alter Saveprofile.
+
+Die folgende ausführlichere Reihenfolge bleibt die fachliche Orientierung:
 
 1. **Bestand und kleinsten Laufzeitpfad klären.** Fehlende aktuelle Assetgruppen und Abhängigkeiten feststellen. In einem getrennten gekochten Versuch einen RCP-Actor beziehungsweise geeigneten Builder spawnen, Geometrie/Material ändern, mehrfach rekonstruieren und vollständig entfernen. Komponentenanzahl, Kollision, Ladehänger und Speicher über Wiederholungen prüfen. Erst danach Wiederverwendung des ganzen Actors zusagen.
 2. **Profile, Darstellung und Speicherung erweitern.** Zunächst vorhandene gerade und gekrümmte Straße über denselben Asset-/Teileadapter erzeugen. Gehwege und Markierungen als erste sichtbare Erweiterung; Soll/Ist unverändert erhalten. Kalter Neustart rekonstruiert denselben Zustand ohne doppelte Teile, Kosten oder Lagerbestände.
@@ -152,13 +189,23 @@ Der Nutzer meldet außerdem ein **UI-Problem beim Arbeiten mit mehreren Aufträg
 5. **Brücken und Tunnel als Bauwerke aufbauen.** Anschlüsse, Stützen/Portale, Durchfahrten, eigene Tunnelhülle und AirPocket. Gespeicherte Bauphasen und Materialversorgung; echter Tunnelvortrieb bleibt eine eigene Ausbauetappe.
 6. **Dichte, Wiederaufbau und große Netze messen.** Instanzierung, Straßen-/Teilequalität, Materialvarianten, Lichtbudget, Streaming und Ladezeiten anhand unseres Spiels entscheiden. Herstellerangaben zu Performance sind keine gemessene CityLab-Leistung.
 
-Diese Reihenfolge ist ein Vorschlag, keine Freigabe für einen großen Gesamtumbau. Als erste praktische Abnahme zählt ein kleiner gekochter Versuch mit tatsächlichem Laufzeitaufbau, Stilwechsel und sauberem Komponentenlebenszyklus. Danach legen wir den nächsten sichtbaren Spielfunktions-Slice gemeinsam fest.
+Als erste praktische Abnahme zählt der getrennte gekochte Versuch mit tatsächlichem Laufzeitaufbau, Stilwechsel und sauberem Komponentenlebenszyklus. Mindestens 20 echte Umbau-/Abbauzyklen müssen tatsächliche registrierte Instanzen, Straßenkollision, Profil/Ausstattung/Material sowie Komponentenabbau prüfen. Fehler bleiben Fehler, auch wenn die übrigen Zyklen für die Diagnose weiterlaufen. Prozessspeicher wird gemessen; Engine- und Assetcaches erlauben daraus allein keine Leakfreiheit abzuleiten.
 
 ## Prüfstatus und offene Entscheidungen
 
-**Erledigt:** vollständige Handbuchrecherche im Team, getrennte lokale Bestandszählung und dieser Integrationsentwurf. **Nicht erfolgt:** breite RCP-Runtime-Integration, neue gekochte RCP-Actor-/Lifecycle-Abnahme, Leistungsnachweis, Save-Migration oder Nutzerabnahme der geplanten Funktionen.
+**Belegt:** vollständige 90-Seiten-Handbuchrecherche, neuer 907-Paket-Bestand mit unveränderten Vendorbytes und Saves während der Prüfung, echte Klassen-/Materialreflexion, 18 vorbereitete eigene Kopien und abgegrenzte statische Geometriemessungen. Native2 besteht **128 CityLab-Modell-/API-Tests: 126 sauber, zwei bekannte Warnungen, null Fehler**. Das sind keine 128 verpackten RCP-Actor- oder Fahrtests.[^local-inventory]
 
-Noch festzulegen sind der zu vervollständigende lizenzierte RCP-Bestand, das erste Profilset, der gewünschte Umfang freier Kreuzungsformen und die Grenze zwischen reiner Ausstattung und echter Verkehrs-/Versorgungssimulation. Das bestehende Straßenlabor und seine Spielstände behalten ihren eigenen [begrenzten Prüfstand](../guides/road-construction-tools.md).
+**Gekochter Rohversuch:** Der frische isolierte Cook und ein Deferred-Spawn des Haupt-Blueprints funktionieren. Die anschließenden **20 direkten `UserConstructionScript`-Aufrufzyklen sind fehlgeschlagen**: Im ersten Actor wuchsen registrierte Komponenten von 7 über 10 auf 19, während nur zwei tatsächliche Zweispur-Meshinstanzen verblieben. Der angeforderte Profil-/Material-/Zubehörwechsel wurde nicht dargestellt; alle drei realen Szene- und Body-Rays verfehlten die Straße. Die Splineform änderte sich, und nach Destroy/GC blieben in allen Zyklen null eigene schwache Objektreferenzen übrig. Es gab keine Engine-Fehlerzeilen; Vendorpakete, Probequellen, gekochte Dateien und alle 362 vorhandenen Spielstände blieben unverändert. Das ist ein negatives Ergebnis für **diese direkte UCS-Aufrufroute**, keine Behauptung, Construction Scripts oder sämtliche RCP-Laufzeitpfade könnten grundsätzlich nicht funktionieren.[^local-inventory]
+
+**Eigener Adapter, erster Versuch:** Die separat gebaute native Surface-/Accessories-Route führt alle 20 Zyklen aus. Tatsächliche Profil-/Material-/Zubehöridentitäten, wiederholter Neuaufbau, Clear und vollständige Destroy/GC-Bereinigung passen. Der Lauf scheitert jedoch ehrlich an einer physischen Naht: Beim geraden 60-m-Stück mit sechs Slices verfehlt der unveränderte mittlere Messstrahl genau den inneren Stoß; Szene und Body liefern dort jeweils nur 2/3 Treffer. Der gekrümmte Neuaufbau trifft 3/3. Die begrenzte gemeinsame Render-/Kollisionsüberlappung an inneren Slices ist im Produktionscode korrigiert und im zweiten getrennten Cook bestanden. Die Messpunkte und Treffergates blieben unverändert. An Splinepunkten ist dies eine höchstens 0,5 cm weite Fortsetzung des jeweiligen Segmentpolynoms, keine Gleichheitsbehauptung für unterschiedliche Nachbarkurven. Eigenständige 8-m-Outputactor-Grenzen brauchen zusätzlich einen expliziten Anschlussvertrag und eigene Nahtproben.[^local-inventory]
+
+Der erste eigene Prüfläufer schrieb außerdem seine Berichte versehentlich unter `Tools/runs` und verletzte damit seinen Quell-/Werkzeugschutz. Dieser fehlgeschlagene Nachweis bleibt erhalten; der korrigierte Läufer schreibt ausschließlich unter `Saved`. Kein Schutz wurde dafür ausgeklammert.
+
+**Eigener Adapter, zweite Abnahme bestanden:** Alle **20 gekochten Zyklen** bestehen ohne Beobachtungsfehler: Zweispur → Vierspur, Kurve/Höhe, exakter Main-/ReflectiveMirage-Materialwechsel, Leitplanken, wiederholter Aufbau, Clear und Neuaufbau. Die fünf befüllten Zustände pro Zyklus ergeben **300 echte Szene- und 300 Bodytreffer**, einschließlich des unveränderten mittleren Nahtstrahls. Registrierte Komponenten bleiben bei 9 für die gerade Straße und 21 mit Leitplanken; Clear lässt nur drei Fixturekomponenten zurück. Nach Destroy/vollständigem GC sind alle eigenen schwachen Referenzen in jedem Zyklus ungültig. Der konkrete Leitplanken-Materialoverride ist für diese isolierte Probe Beton, keine Abnahme aller Vendor-Metallmaterialien. Vendor-/eigene Pakete, Quellen/Werkzeuge, Konfigurationshashes, gekochte Dateien und alle 362 vorhandenen Saves blieben während der Probe exakt unverändert. Native Laufzeit 58,67 s; Speicher- und Einzelbauzeiten stehen im [Beleg](../evidence/rcp-toolkit-stage1.json). Prozessspeicher einschließlich Engine-/Assetcaches ist kein eigenständiger Leak- oder Stadtleistungsnachweis.[^local-inventory]
+
+**Noch offen:** weitere Profil-/Kollisions-/Leistungsgrenzen, Nähte zwischen eigenständigen Outputactoren, die weiteren drei Stufen und ihre normale Bedienung sowie Speichern-/Laden-/Neustarttests. Vorhandene Funktionen und Spielstände behalten ihren eigenen [begrenzten Prüfstand](../guides/road-construction-tools.md).
+
+Die Herkunft aller benötigten optionalen Materialien, der vollständige aktuelle Vendorumfang und die Grenze zwischen Ausstattung und Simulation bleiben ausdrücklich zu klären. Depotflotte, allgemeine Fahrzeugsuche und das vertagte Mehrfachauftragsproblem sind durch Stage1 nicht erledigt.
 
 [^local-inventory]: Getrennte lesende lokale Bestandsaufnahme; Details und Aussagegrenzen im Quellenobjekt `local-inventory`.
 [^ue-construction]: [Epic: Construction Script](https://dev.epicgames.com/documentation/en-us/unreal-engine/construction-script-in-unreal-engine).

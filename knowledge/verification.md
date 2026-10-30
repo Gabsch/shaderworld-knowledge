@@ -17,8 +17,11 @@ verified:
 evidence_scope: Zusammenfassung der vorhandenen Nachweise mit getrennten offenen Tests
 generated:
   by: codex/gpt-6
-  at: "2026-10-30T16:44:51.030465+00:00"
+  at: "2026-10-30T20:47:06.231484+00:00"
 sources:
+- id: rcp-stage1
+  resource: evidence/rcp-toolkit-stage1.json
+  title: RCP-Inventar, negative Raw20-Route und bestandene begrenzte Eigenadapter20-Probe
 - id: road-construction-native
   resource: evidence/road-construction-test.json
   title: Aktuelle 4.2-Native108-/UI40-/T-/Kaltstart-/Starterbelege und historische 4.1-Nachweise
@@ -131,6 +134,16 @@ sources:
 
 
 # Prüfstand und offene Tests
+
+## RCP-Stage1: eigener gekochter Adapter begrenzt bestanden
+
+Die [Stage1-Auswertung](evidence/rcp-toolkit-stage1.json) trennt den neuen 907-Paket-Bestand, 18 eigene CPU-lesbare Meshkopien, statische Geometrie und 128 native Modell-/API-Tests (126 sauber, zwei bekannte Warnungen) von den gekochten Versuchen. Installierte RCP-Releasekennung weiterhin unbekannt.
+
+Der Haupt-Blueprint spawnt im isolierten Cook. Seine geprüfte direkte UCS-Neuaufbauroute schlägt jedoch in allen 20 Zyklen fehl: anwachsende registrierte leere Komponenten, nicht angewandte Stilwechsel und keine Straßentreffer. Dies ist kein grundsätzliches Construction-Script-Laufzeitverbot. Der erste eigene Adapterversuch scheiterte an einer realen inneren Kollisionsnaht; sein versehentlicher Tools-Ausgabeort verletzte zusätzlich den Quellschutz. Beide Fehlversuche bleiben erhalten.
+
+Nach begrenzter gemeinsamer Render-/Kollisionsüberlappung und Saved-Ausgabekorrektur besteht die zweite frisch gekochte Eigenadapterprobe **20/20 Zyklen ohne Beobachtungsfehler**. Zweispur/Vierspur, Kurve/Höhe, tatsächlicher Main-/ReflectiveMirage-Slotwechsel, explizite Beton-Leitplanken, Clear/Neuaufbau und vollständige Destroy/GC-Bereinigung sind geprüft. Unveränderte Strahlen treffen **300/300 in der Szene und 300/300 am Body**. Ausgaben bleiben stabil; sechs Schutzgruppen einschließlich aller 362 vorhandenen Spielstände sind während der Probe exakt unverändert. Einzelbauzeiten und Prozessspeicher sind diagnostische Messungen, keine Stadtleistungs- oder Leakfreiheitsgarantie.
+
+**Offen:** unabhängige Outputactor-Nähte, weitere Profile/Zubehörmaterialien, normale Bedienung, ShaderWorld-Terrain/Maschinenintegration, vier Ressourcen, Knoten/Bauwerke sowie Speichern und Kaltstart des neuen Baukastens. Diese Probe ersetzt weder den geprüften alten Straßenstarter noch dessen begrenzte Savefreigaben. Sie liefert den positiven eigenen Aufbaupfad für die folgenden Stufen.[^rcp-stage1]
 
 ## Neue Straßenwerkzeuge: begrenzter Ablauf mit Neustart abgenommen
 
@@ -471,3 +484,5 @@ Neue Versuche ergänzen die jeweilige Anleitung und ihren Beleg. Die Anleitung [
 [^clearing-benchmark]: [Bereinigter CPU-Rodungsbenchmark](evidence/clearing-performance-test.json): acht erfolgreiche isolierte cooked Fenster und CPU-Restore mit klar getrennten Frame-/GPU-/Eingabegrenzen.
 
 [^camera-tree]: [Bereinigter Kamerabaum-Bericht](evidence/camera-tree-test.json): aktuelle 25er-Suite, Build-/Repackageerfolg und historische Fixturekorrektur; normale ConstructionLab-Wiederherstellung separat bestätigt; keine neue physische oder cooked Kamerabedienabnahme.
+
+[^rcp-stage1]: Bereinigter Stage1-Beleg mit getrennten Artefakt-Hashes und Prüfumfängen im Quellenobjekt `rcp-stage1`.
