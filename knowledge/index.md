@@ -14,7 +14,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
-- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – **aktuelle normale Bedienfehler offen, Anleitung wieder draft:** F5/F9-Debugkonflikt, blockierte Vorschau und schwebende geneigte T-Kappe. [Bekannte Fehler und Ausweichbedienung](guides/road-construction-tools.md#bekannte-fehler-im-normalen-spiel). Frühere 99 native Tests, 35/61 gerenderte Controllerprüfungen, normales Funktions-/Kaltstartpaar und 0-g-Bilanzen bleiben als begrenzte historische Nachweise erhalten; kein neuer Fix/Build.
+- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – **RoadConstruction8-Fix begrenzt abgenommen:** automatische Vorschau, F5/F9 ohne Debugansicht und geneigte T-Fläche/Kollision; Native107, Editor5/Game4, Cook8 sowie 32/32 echte Slate-/Bauchecks mit endlichen Lieferungen und 0 g Bilanzfehler. T-/Hauszustand und tatsächlich neu gebaute Straße jeweils im kalten 4+2-Paar exakt; `Start CityLab.cmd` öffnet die geprüfte T-Demo. Historische RoadConstruction6-Belege und verworfene Versuche bleiben getrennt; menschliche Abnahme und vollständige RCP-Integration offen.
 
 - [Einen begonnenen Bauplatz umplanen](guides/replan-building-sites.md) – feste Fläche und neue Zielhöhe mit erhaltener Rodung/Erde; 79 native Tests, gerenderte 17/18 Checks mit kalten drei Loads und bekannte UI2-Migration mit zehn Checks bestanden. Format 9; aktueller Spielerstand über F5/F9 und kalten Start in vier plus zwei vollständigen Snapshots exakt, normaler sichtbarer Fenster-/Kartenstart separat bestanden. Frühere v7-/UI2-Nachweise bleiben ihren eigenen Fassungen zugeordnet.
 
@@ -58,6 +58,8 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 - [Prüfstand und offene Tests](verification.md) – begrenzte Format-8-Savebindung mit CPU-, B2/C2-, physischer Fortsetzungs- und normaler Lebenszyklusabnahme; Fenster-/Kartenstart belegt. Frühere Berichte behalten ihre jeweilige Fassung; menschliche Eingabenprüfung bleibt offen.
 
 ## Wissensbasis pflegen
+
+- [CityLab-Quellen mit Git absichern](reference/citylab-source-control-plan.md) – Entwurf für ein eigenes privates Quellrepository, getrennte Assetinstallation und öffentliches OKF; noch keine Einrichtung oder Veröffentlichung des Projekts.
 
 - [Neue Erkenntnisse eintragen](maintenance.md) – Metadaten, Quellen, Prüfstatus und technische Dokuprüfung.
 - [Änderungsverlauf](log.md) – inhaltliche Aktualisierungen nach Datum.

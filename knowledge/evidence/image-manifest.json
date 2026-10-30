@@ -549,6 +549,17 @@
       "bytes": 4142808,
       "sha256": "1a3c3df2746e5d2849b0b3c5abc6399c9a1f30f61a41d66dff95c14f8bbeec92",
       "revision_scope": "Finaler e0aad3-Quellstand/RoadConstruction6; normaler zweiter kalter Prozess mit exaktem abgeschlossenen Straßen-/Zufahrts-/Hausstand. Bild ist qualitative Agentenansicht; Bilanz/Kollision/Savegenauigkeit stammen aus separaten Berichten."
+    },
+    {
+      "file": "assets/images/road-construction8-junction-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten normalen kalten RoadConstruction8-Prozess mit dem ausdrücklich übernommenen T-/Hauszustand. Koordinierender Agent und weitere Agenten einschließlich Dokumentationsagent haben das Original visuell geprüft: asphaltierter T-Anschluss mit durchgehender Straßenfläche, Hauszufahrt, Testhaus, Radlader und Platzhalter-Lkw im Küstenwald; keine private Desktopoberfläche. Die Weitansicht ist eine qualitative Sichtprüfung. Subzentimeter-Naht, Kollision und Speicheridentität sind durch getrennte Messungen belegt, nicht aus Pixeln abgeleitet. Keine menschliche Abnahme oder physische Eingabe daraus behauptet.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4289179,
+      "sha256": "90684b6dae2056c6757c83bd7fad635f29dd67f33b2e0d856732260bcf3dee19",
+      "revision_scope": "Quellstand 650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510/RoadConstruction8. Normales kaltes Funktionspaar mit vier+zwei vollständigen Zustandsaufnahmen und vier erfolgreichen T-Messdurchgängen. Neuer Straßenbau/volle Spiel-UI-Freigabe separat."
     }
   ]
 }

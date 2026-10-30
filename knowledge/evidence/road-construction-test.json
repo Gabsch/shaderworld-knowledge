@@ -1,13 +1,13 @@
 {
   "schema": "citylab.road-construction-test.v1",
   "complete": true,
-  "status": "bounded_automated_acceptance_preserved_normal_ui_defects_open",
-  "updated_at": "2026-10-30T12:09:52.279035+00:00",
+  "status": "historical_road6_acceptance_preserved_road8_bounded_fix_accepted",
+  "updated_at": "2026-10-30T13:38:59.152428+00:00",
   "engine_version": "5.8.4",
   "shaderworld_version": "4.1",
   "world": "/Game/Maps/ShaderWorldRoadConstructionLab",
   "slot": "CityLabRoadConstruction",
-  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim. Follow-up 30 October: normal physical F5 debug-binding conflict observed, persistent red preview reported/retested without resolved native gate, and graded T-cap visual step identified by source/state. Prior automated evidence remains historical; no fix/new build acceptance.",
+  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim. Follow-up 30 October: normal physical F5 debug-binding conflict observed, persistent red preview reported/retested without resolved native gate, and graded T-cap visual step identified by source/state. Prior automated evidence remains historical. A separate RoadConstruction8 source/build/native/migration follow-up is in progress below; its runtime success is not yet claimed.",
   "native": {
     "success": true,
     "completed_utc": "2026-10-30T04:24:14.508785+00:00",
@@ -1909,5 +1909,423 @@
     },
     "preserved_evidence": "Previous native99, production35/61 and normal4+2 receipts, counts, balances, original images and scoped results are unchanged. New observations do not claim a repaired game or a repeated acceptance run.",
     "remaining": "Known defects remain unresolved: identify the live preview gate and correct retry/debug binding/T-cap behavior, then verify real input and graded junctions. No implementation, new build or new acceptance run was performed in this follow-up."
+  },
+  "current_followup_complete": true,
+  "road_build_fix_2026_10_30": {
+    "updated_utc": "2026-10-30T13:56:01.301093+00:00",
+    "complete": true,
+    "fix_implemented": true,
+    "archive": "RoadConstruction8",
+    "source": {
+      "native_config_sha256": "650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510",
+      "source_count": 155
+    },
+    "builds": {
+      "editor": {
+        "success": true,
+        "label": "Editor5",
+        "seconds": 74.26
+      },
+      "game": {
+        "success": true,
+        "label": "Game4",
+        "seconds": 73.51
+      },
+      "cook": {
+        "success": true,
+        "label": "Cook8",
+        "build_cook_run_seconds": 93.15,
+        "uat_seconds_approx": 95,
+        "exit_code": 0,
+        "log_sha256": "d09acb7a5c64734c808b14c1389a2595a059adabd2723dc1516da3d63e9a2f53"
+      }
+    },
+    "native": {
+      "success": true,
+      "tests": 107,
+      "counts": {
+        "succeeded": 105,
+        "succeededWithWarnings": 2,
+        "failed": 0,
+        "notRun": 0,
+        "inProcess": 0
+      },
+      "elapsed_seconds": 118.11,
+      "no_excluded_failures": true,
+      "normal_saves_unchanged": true,
+      "protected_sources_unchanged": true,
+      "scope": "NullRHI automation; no rendered-input or junction-pixel claim."
+    },
+    "implementation": {
+      "keys": "Scoped road-controller Slate F5/F9 before engine debug commands; exact instance-only conflicting bindings removed; K/L and buttons retained.",
+      "preview": "Same released candidate remains pending during transient terrain/foliage readiness; readiness-only retry at0.5s; no automatic acceptance of invalid geometry.",
+      "junction": "Trimmed RCP approaches plus graded cap, per-port exposed layer, matching complex collider; output-only projection preserves frozen terrain rasters and material accounts."
+    },
+    "identity_copy_migration": {
+      "success": true,
+      "predecessor_native_config_sha256": "e0aad3c0a7bbec07ab07119b891dc2cebcdff11de33a50100c9f6f654b481331",
+      "target_native_config_sha256": "650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510",
+      "all_nonidentity_native_fields_exact": true,
+      "normal_strict_load_exact": true,
+      "source_unchanged": true,
+      "source_and_all_preexisting_saves_unchanged": true,
+      "source_package_unchanged": true,
+      "scope": "Explicit RoadConstruction6 source only, unchanged authored asset profiles; identity-only copy into a new GUID UserDir. No general future-build migration, collision settling, cold restart or physical work claim."
+    },
+    "preserved_failed_attempts": [
+      {
+        "archive": "RoadConstruction7",
+        "passed_as_final": false,
+        "observed": "Normal test found ten geometrically correct cap vertices but0/9 cap centroid hits and3/6 near-seam hits; user reported visible sand.",
+        "source_cause": "Cap triangle order opposed UE reference rectangle/renderer clockwise front face and physics flip convention.",
+        "correction": "Clockwise triangle fan with upward shading normals; new native engine-reference regression. The separate accepted RoadConstruction8 normal pair supplies the rendered proof."
+      },
+      {
+        "archive": "RoadConstruction8",
+        "fixture": "Initial normal UI fixture before coordinated mouse stillness",
+        "passed_as_final": false,
+        "observed": "Physical cursor moved outside the target game window while the fixture was routing its pointer gesture.",
+        "scope": "Initial input fixture failure retained. The later coordinated rerun separately passes all 32 normal Slate/ordinary-road checks; the initial failed attempt is not relabelled as passed."
+      },
+      {
+        "archive": "RoadConstruction8",
+        "fixture": "First completed-road normal lifecycle parser attempt",
+        "passed_as_final": false,
+        "observed": "The native process exited 0, but the private driver failed while parsing an empty root Houses array exported as Houses=, by UE FArrayProperty.",
+        "correction": "Private parser now accepts this empty-field spelling only for the three typed root arrays Houses, Sites and ClearedTrees before an actual delimiter. Seven negative malformed/truncated cases remain rejected.",
+        "scope": "Private test-driver correction only; unchanged game/native/config/cook source seal. Retrospective exact snapshots remain diagnostic; a separate fresh normal 4+2-snapshot lifecycle rerun now supplies the accepted completed-road cold proof."
+      },
+      {
+        "archive": "RoadConstruction8",
+        "fixture": "First root-starter environment attempt",
+        "passed_as_final": false,
+        "observed": "Unqualified PowerShell executable was unavailable in the launcher environment.",
+        "correction": "Explicit SystemRoot WindowsPowerShell executable path.",
+        "scope": "Launcher wrapper only; no game/native/config/cook source change."
+      },
+      {
+        "archive": "RoadConstruction8",
+        "fixture": "Launcher hash-module environment attempt",
+        "passed_as_final": false,
+        "observed": "Get-FileHash module was unavailable in the restricted launcher environment.",
+        "correction": "Scoped .NET SHA-256 computation preserves the same sealed-file comparison.",
+        "scope": "Launcher wrapper only; no security policy change. Separate final visible launch and duplicate guard are accepted."
+      }
+    ],
+    "runtime": {
+      "junction": {
+        "success": true,
+        "normal_processes": 2,
+        "total_probe_passes": 4,
+        "each_pass": {
+          "caps": 1,
+          "matching_vertices": 10,
+          "centroid_hits": 9,
+          "centroid_queries": 9,
+          "seam_hits": 6,
+          "seam_queries": 6,
+          "ground_hits": 25,
+          "ground_queries": 25
+        },
+        "maxima_cm": {
+          "vertex_error": 0.0,
+          "collider_error": 0.000237,
+          "seam_residual": 0.000233,
+          "raw_seam_delta": 0.03929,
+          "ground_above_surface": -31.763833
+        },
+        "unchanged_gates_cm": {
+          "vertex": 0.01,
+          "collision": 0.1,
+          "ground_above_surface": 3.0
+        },
+        "source": "Four accepted CITYLAB_ROAD_JUNCTION_PROBE log records in normal save/load and cold-restart processes; repeated samples of one scene, not four different junctions.",
+        "visual_review": {
+          "agent_reviewed": true,
+          "human_reviewed": false,
+          "image": "assets/images/road-construction8-junction-reloaded.png",
+          "scope": "Continuous asphalt T qualitative wide view; measured seam is established by probes, not pixels."
+        }
+      },
+      "actual_slate_input": {
+        "success": true,
+        "checks_passed": 32,
+        "checks_total": 32,
+        "exit_code": 0,
+        "native_elapsed_seconds": 602.9214489981532,
+        "runner_elapsed_seconds": 615.844000000001,
+        "checks": {
+          "explicit_fresh_guid_owned_normal_cooked_window": true,
+          "fresh_fixture_has_no_jobs": true,
+          "starter_road_available": true,
+          "normal_camera_pawn_exists": true,
+          "projected_start_is_in_actual_game_viewport": true,
+          "mouse_down_started_normal_pointer_drag": true,
+          "actual_slate_mouse_drag_to_free_endpoint": true,
+          "snapped_start_and_free_white_end_form_valid_graph": true,
+          "normal_baseline_save_before_restore_redraw": true,
+          "real_restore_triggers_native_terrain_redraw": true,
+          "real_pointer_release_keeps_unready_preview_pending": true,
+          "unconfirmed_preview_keeps_entire_authoritative_snapshot_exact": true,
+          "automatic_wait_keeps_exact_released_candidate": true,
+          "automatic_retry_reaches_confirmable_preview_without_recheck": true,
+          "observed_actual_native_sw_work_during_wait": true,
+          "free_white_endpoint_stays_valid_after_settle": true,
+          "real_enter_commits_exactly_one_inert_queued_road": true,
+          "initial_game_viewmode_is_lit": true,
+          "actual_f5_saved_complete_exact_snapshot": true,
+          "actual_f5_does_not_change_viewmode": true,
+          "actual_f9_restores_complete_exact_snapshot": true,
+          "actual_f9_keeps_lit_view": true,
+          "actual_f9_does_not_trigger_debug_screenshot": true,
+          "actual_j_starts_selected_reachable_job_paused": true,
+          "actual_space_enables_production_work": true,
+          "actual_h_enables_real_lorry_transport": true,
+          "all_observed_production_material_balances_zero_grams": true,
+          "observed_real_progress_and_loaded_interior_haul_at_ordinary_rates": true,
+          "completed_actual_road_passes_unchanged_ground_height_gate": true,
+          "observed_real_truck_and_site_buffer_remain_bounded": true,
+          "one_real_road_completed_with_empty_truck_and_buffer": true,
+          "actual_f5_preserves_complete_finished_road_for_cold_resume": true
+        },
+        "events": [
+          {
+            "action": "initial_cursor_and_native_focus_ready",
+            "elapsed_seconds": 12.248727399855852
+          },
+          {
+            "action": "actual_slate_mouse_down",
+            "elapsed_seconds": 12.27129239961505
+          },
+          {
+            "action": "normal_load_while_mouse_is_held",
+            "elapsed_seconds": 12.779246099293232
+          },
+          {
+            "action": "actual_slate_mouse_up_during_redraw",
+            "elapsed_seconds": 12.823114898055792
+          },
+          {
+            "action": "pending_preview_before_automatic_retry",
+            "elapsed_seconds": 13.038564000278711
+          },
+          {
+            "action": "automatic_preview_ready",
+            "elapsed_seconds": 14.576703198254108
+          },
+          {
+            "action": "actual_slate_enter_confirms",
+            "elapsed_seconds": 14.749695498496294
+          },
+          {
+            "action": "actual_slate_f5_save",
+            "elapsed_seconds": 15.306656900793314
+          },
+          {
+            "action": "actual_slate_f9_load",
+            "elapsed_seconds": 15.73253669962287
+          },
+          {
+            "action": "normal_ui_complete",
+            "elapsed_seconds": 18.784428000450134
+          },
+          {
+            "action": "actual_slate_j_prepare_construction",
+            "elapsed_seconds": 18.962866697460413
+          },
+          {
+            "action": "actual_slate_space_starts_work",
+            "elapsed_seconds": 19.302572898566723
+          },
+          {
+            "action": "actual_slate_h_starts_transport",
+            "elapsed_seconds": 19.646023999899626
+          },
+          {
+            "action": "actual_slate_f5_saves_completed_road",
+            "elapsed_seconds": 602.516016099602
+          },
+          {
+            "action": "normal_ui_and_ordinary_road_construction_complete",
+            "elapsed_seconds": 602.8713157996535
+          }
+        ],
+        "automatic_retry": {
+          "observed_release_to_ready_seconds": 1.7535883001983166,
+          "observed_pending_to_ready_seconds": 1.538139197975397,
+          "same_candidate_exact": true,
+          "no_manual_recheck": true,
+          "scope": "One observed redraw case, not a fixed readiness latency guarantee."
+        },
+        "f5_f9": {
+          "actual_slate_events": true,
+          "lit_view_preserved": true,
+          "f9_debug_screenshot_not_triggered": true,
+          "no_global_debug_binding_suppression_argument": true
+        },
+        "all_other_save_files_unchanged": true,
+        "sources_and_package_unchanged": true,
+        "scope": "Real Slate mouse down/move/up and key down/up in normal cooked native foreground window; no OS input automation. Actual LoadState redraw between mouse down and release. No planning-readiness prewait during the preview retry, no Recheck call or simulation acceleration. Optional build phase uses real Slate J/Space/H and ordinary production, material and collision gates; completed-road claim requires those explicit extra checks. Fresh GUID-owned slot; no player save touched.",
+        "human_reviewed": false,
+        "receipt_sha256": "372fe93ad72ce37a8410ff91c29b84d4ad22987d51a2509e558f47c152291549"
+      },
+      "completed_road": {
+        "success": true,
+        "normal_rates": true,
+        "started_by_actual_slate_j_space_h": true,
+        "production_ledger_observations": 2230,
+        "maximum_truck_grams": 12000000,
+        "maximum_buffer_grams": 18000000,
+        "final_soil_balance_error_grams": 0,
+        "final_gravel_balance_error_grams": 0,
+        "final_asphalt_balance_error_grams": 0,
+        "completed_with_empty_truck_and_buffer": true,
+        "unchanged_ground_height_gate_cm": 5,
+        "completed_road_passed_ground_gate": true,
+        "final_actual_slate_f5_exact": true,
+        "scope": "One actual road in a fresh isolated normal cooked world through ordinary production and transport; accounts are model grams, not independent mesh-volume metrology. Separate normal lifecycle pair now verifies its complete finished state after cold restart."
+      },
+      "cold_restart": {
+        "success": true,
+        "scene": "Explicitly migrated known T/driveway/house scene",
+        "processes": 2,
+        "distinct_process_ids": true,
+        "exit_codes": [
+          0,
+          0
+        ],
+        "elapsed_seconds": [
+          53.34400000000096,
+          53.0
+        ],
+        "complete_native_export_snapshots": [
+          4,
+          2
+        ],
+        "groups": [
+          "Network",
+          "Build",
+          "Sites",
+          "ClearedTrees",
+          "Houses"
+        ],
+        "all_other_snapshot_fields_exact": true,
+        "camera_component_tolerance": "1e-8",
+        "controller_function_calls": [
+          {
+            "SaveRoadConstruction": 1,
+            "LoadRoadConstruction": 1
+          },
+          {
+            "SaveRoadConstruction": 0,
+            "LoadRoadConstruction": 0
+          }
+        ],
+        "all_five_groups_and_metadata_exact": true,
+        "protected_inputs_unchanged": true,
+        "all_preexisting_saves_unchanged": true,
+        "sealed_executable_and_containers_unchanged": true,
+        "scope": "Normal controller Save/Load functions and cold second process; not actual Slate/OS F5/F9 input. Newly completed-road cold check remains separate."
+      },
+      "demo_launcher": {
+        "success": true,
+        "prepared_receipt_sha256": "4019b570c44b99a1f8b006791afa6254a0e56fd9a99e89181194d708c42752b9",
+        "visible_launch_receipt_sha256": "2b35dffd13df2268b9a026f2db43c5f7e4f7a803d00a60e8cbdc3fecc41645f6",
+        "archive": "RoadConstruction8",
+        "native_config_sha256": "650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510",
+        "native_acceptance": true,
+        "normal_lifecycle": true,
+        "separate_user_dir": "Saved/RoadConstructionFixedDemoUser",
+        "seed": {
+          "source": "Accepted known T/driveway/house scene after its normal cold second process",
+          "sha256": "ee28fad419c6ab619fd78034a7091c0874b7338453ec5541c2b05b89e40ede11",
+          "bytes": 208155,
+          "exact_once": true,
+          "all_jobs_completed_or_cancelled": true,
+          "graded_T_junction_retained": true
+        },
+        "protected_sources_unchanged": true,
+        "all_preexisting_saves_unchanged": true,
+        "visible_launch": {
+          "responding": true,
+          "map_loaded": true,
+          "game_mode_loaded": true,
+          "correct_fixed_user": true,
+          "normal_window": true,
+          "no_error_or_fatal": true,
+          "duplicate_guard_passed": true,
+          "duplicate_exit_code": 1,
+          "root_starter": "Start CityLab.cmd"
+        },
+        "launcher_default": "Start CityLab.cmd and Tools/launch_road_construction_demo.ps1 select accepted RoadConstruction8; -PreviousBuild explicitly selects retained RoadConstruction6.",
+        "visual_agent_review": {
+          "reviewed": true,
+          "human_reviewed": false,
+          "scope": "Parent agent activated exactly the returned window and reviewed the normal T/house/completed-job scene. No construction gestures in this final demo; normal Slate construction is proved separately."
+        },
+        "scope": "Accepted one-time separate T-scene seed plus sealed-program/package checks and actual normal visible root-starter launch. Launcher never re-seeds a save, changes identity or terminates another process. Duplicate start is rejected. Human input remains separate."
+      },
+      "completed_road_cold_restart": {
+        "success": true,
+        "receipt_sha256": "262af647ef09f3a8bd4966391b2d978c5ca8c99736ee849ca3eceb8635025912",
+        "source": "Actual completed road from the accepted 32-check normal Slate/production run",
+        "source_initial_payload_hash": "6435BE85EAA16818406243DF14A9C54DEE83244E",
+        "processes": 2,
+        "distinct_process_ids": true,
+        "exit_codes": [
+          0,
+          0
+        ],
+        "elapsed_seconds": [
+          52.09400000000096,
+          51.06200000000172
+        ],
+        "complete_native_export_snapshots": [
+          4,
+          2
+        ],
+        "groups": [
+          "Network",
+          "Build",
+          "Sites",
+          "ClearedTrees",
+          "Houses"
+        ],
+        "all_other_snapshot_fields_exact": true,
+        "camera_component_tolerance": "1e-8",
+        "controller_function_calls": [
+          {
+            "SaveRoadConstruction": 1,
+            "LoadRoadConstruction": 1
+          },
+          {
+            "SaveRoadConstruction": 0,
+            "LoadRoadConstruction": 0
+          }
+        ],
+        "all_five_groups_and_metadata_exact": true,
+        "protected_inputs_unchanged": true,
+        "all_preexisting_saves_unchanged": true,
+        "sealed_executable_and_containers_unchanged": true,
+        "scope": "Normal controller Save/Load calls and cold second process preserve all five groups and metadata, including the empty Houses root array. Actual Slate F5/F9 are established separately by the accepted UI run, not inferred from this function-driven pair."
+      }
+    },
+    "remaining": [],
+    "historical_evidence_preserved": "RoadConstruction6 native99, production35/61, normal4+2, original images and diagnosis follow-up remain unchanged and scoped to their original source.",
+    "images": [
+      {
+        "file": "assets/images/road-construction8-junction-reloaded.png",
+        "bytes": 4289179,
+        "sha256": "90684b6dae2056c6757c83bd7fad635f29dd67f33b2e0d856732260bcf3dee19",
+        "width": 1600,
+        "height": 1000,
+        "modified": false,
+        "agent_reviewed": true,
+        "human_reviewed": false
+      }
+    ],
+    "known_ui_limits": [
+      "After J, the current WaitingAccess display can still say Zufahrt fehlt during actual machine approach until bMachineArrived; do not diagnose a missing road connection from this label alone."
+    ]
   }
 }
