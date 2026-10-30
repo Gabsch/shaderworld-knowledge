@@ -560,6 +560,17 @@
       "bytes": 4289179,
       "sha256": "90684b6dae2056c6757c83bd7fad635f29dd67f33b2e0d856732260bcf3dee19",
       "revision_scope": "Quellstand 650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510/RoadConstruction8. Normales kaltes Funktionspaar mit vier+zwei vollständigen Zustandsaufnahmen und vier erfolgreichen T-Messdurchgängen. Neuer Straßenbau/volle Spiel-UI-Freigabe separat."
+    },
+    {
+      "file": "assets/images/road-construction11-fresh-t-reloaded.png",
+      "origin": "Unveränderte native Shot showui-Aufnahme aus dem zweiten normalen kalten RoadConstruction11-Prozess unter ShaderWorld 4.2. Koordinierender Agent und Dokumentationsagent haben das originale 1600×1000-Bild visuell geprüft: durchgehend asphaltierter frischer T-Anschluss, gelbe Baumaschine, blauer Lkw und ausgewählter fertiger Straßenauftrag mit 0 t Restmengen im bewaldeten Gelände. Keine private Desktopoberfläche, keine Bildbearbeitung. Die Weitansicht bestätigt das sichtbare Gesamtbild; Naht-/Kollisionsgenauigkeit, Materialkonten und Speicheridentität stammen aus getrennten Messungen/Reports. Keine menschliche Eingabenabnahme.",
+      "captured_date": "2026-10-30",
+      "modified": false,
+      "width": 1600,
+      "height": 1000,
+      "bytes": 4305881,
+      "sha256": "106a57245ed0413cfbd479f6bfbea17fc95a1de99cd159a9b5cd10fc9689f38b",
+      "revision_scope": "ShaderWorld 4.2, Quellbindung 14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c/RoadConstruction11. Frischer echter Slate-/Maschinen-T-Bau 40/40; dasselbe fertige Save besteht normales 4+2-Kaltpaar und vier T-Messdurchgänge. Einmalige neue Demo und normaler sichtbarer Starterstart separat nativ bestanden; dieses Bild stammt weiterhin aus dem Kaltpaar, nicht aus dem finalen Livefenster."
     }
   ]
 }

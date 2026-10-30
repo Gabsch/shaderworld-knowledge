@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # ShaderWorld für den City Builder lernen
 
-Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und ShaderWorld **4.1**. Beginne mit Einrichtung und Beispielwelten. Danach kannst du einzelne Rezepte unabhängig durcharbeiten.
+Diese Wissensbasis begleitet konkrete Versuche mit Unreal **5.8.4**. Der aktuelle Straßenprüfstand verwendet **ShaderWorld 4.2**; frühere Themen behalten ausdrücklich ihre **4.1**-Nachweise. Beginne mit Einrichtung und Beispielwelten und beachte je Anleitung Version und Prüfumfang.
 
 ## Einstieg
 
@@ -14,7 +14,7 @@ Diese Wissensbasis begleitet konkrete Editor-Versuche mit Unreal **5.8.4** und S
 
 ## Ausprobieren und bauen
 
-- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – **RoadConstruction8-Fix begrenzt abgenommen:** automatische Vorschau, F5/F9 ohne Debugansicht und geneigte T-Fläche/Kollision; Native107, Editor5/Game4, Cook8 sowie 32/32 echte Slate-/Bauchecks mit endlichen Lieferungen und 0 g Bilanzfehler. T-/Hauszustand und tatsächlich neu gebaute Straße jeweils im kalten 4+2-Paar exakt; `Start CityLab.cmd` öffnet die geprüfte T-Demo. Historische RoadConstruction6-Belege und verworfene Versuche bleiben getrennt; menschliche Abnahme und vollständige RCP-Integration offen.
+- [Straßen zeichnen und von Maschinen bauen lassen](guides/road-construction-tools.md) – **`Start CityLab.cmd` öffnet die geprüfte RoadConstruction11-Demo unter ShaderWorld 4.2.** Frischer Asphalt-T-Anschluss vorhanden; R/C ziehen → Enter → Auftrag/J → Leertaste/H. Native108, tatsächliche Kamera-/Slate-/T-Bauprüfung 40/40, endliche 12-t-Lkw/18-t-Puffer und drei 0-g-Bilanzen bestanden. Derselbe fertige T-Save besteht 4+2 exakte Kaltaufnahmen/vier T-Proben; getrennte Demo und sichtbarer Starterstart nativ bestätigt. Originalbild agentenseitig geprüft; Anleitung stable für diesen begrenzten Umfang, alte 4.1-Belege und Fehlversuche erhalten.
 
 - [Einen begonnenen Bauplatz umplanen](guides/replan-building-sites.md) – feste Fläche und neue Zielhöhe mit erhaltener Rodung/Erde; 79 native Tests, gerenderte 17/18 Checks mit kalten drei Loads und bekannte UI2-Migration mit zehn Checks bestanden. Format 9; aktueller Spielerstand über F5/F9 und kalten Start in vier plus zwei vollständigen Snapshots exakt, normaler sichtbarer Fenster-/Kartenstart separat bestanden. Frühere v7-/UI2-Nachweise bleiben ihren eigenen Fassungen zugeordnet.
 

@@ -1,13 +1,13 @@
 {
   "schema": "citylab.road-construction-test.v1",
   "complete": true,
-  "status": "historical_road6_acceptance_preserved_road8_bounded_fix_accepted",
-  "updated_at": "2026-10-30T13:38:59.152428+00:00",
+  "status": "shaderworld42_roadconstruction11_bounded_native_ui40_t_cold_demo_starter_passed",
+  "updated_at": "2026-10-30T16:44:51.030465+00:00",
   "engine_version": "5.8.4",
-  "shaderworld_version": "4.1",
+  "shaderworld_version": "4.2",
   "world": "/Game/Maps/ShaderWorldRoadConstructionLab",
   "slot": "CityLabRoadConstruction",
-  "scope": "Sanitized final e0aad3 native99, Editor12/Game7, Cook6, rendered production35/61, normal F5/F9/cold lifecycle and separate native visible-demo handoff passed. Two unchanged original game images visually inspected. Bounded first road/driveway/pad/material/house slice only; no physical mouse/keyboard/human input, arbitrary future save migration, big-world or full traffic-AI claim. Follow-up 30 October: normal physical F5 debug-binding conflict observed, persistent red preview reported/retested without resolved native gate, and graded T-cap visual step identified by source/state. Prior automated evidence remains historical. A separate RoadConstruction8 source/build/native/migration follow-up is in progress below; its runtime success is not yet claimed.",
+  "scope": "Current ShaderWorld4.2/RoadConstruction11 bounded road acceptance: Native108, actual camera/Slate/ordinary-machine T-build40/40, exact same completed save normal cold4+2, four T probes, separate once-seeded demo and native visible starter launch passed. Earlier RoadConstruction6/8 records below remain historical ShaderWorld4.1 evidence, including their separate scope and failures. No human/OS-input/full-tool/big-world/general-save-migration acceptance.",
   "native": {
     "success": true,
     "completed_utc": "2026-10-30T04:24:14.508785+00:00",
@@ -2167,7 +2167,8 @@
         "sources_and_package_unchanged": true,
         "scope": "Real Slate mouse down/move/up and key down/up in normal cooked native foreground window; no OS input automation. Actual LoadState redraw between mouse down and release. No planning-readiness prewait during the preview retry, no Recheck call or simulation acceleration. Optional build phase uses real Slate J/Space/H and ordinary production, material and collision gates; completed-road claim requires those explicit extra checks. Fresh GUID-owned slot; no player save touched.",
         "human_reviewed": false,
-        "receipt_sha256": "372fe93ad72ce37a8410ff91c29b84d4ad22987d51a2509e558f47c152291549"
+        "receipt_sha256": "372fe93ad72ce37a8410ff91c29b84d4ad22987d51a2509e558f47c152291549",
+        "camera_scope": "Accepted fixture uses its established camera; no real camera-move collision-tail regression was part of these 32 checks. The separate later camera-tail failure remains open."
       },
       "completed_road": {
         "success": true,
@@ -2327,5 +2328,532 @@
     "known_ui_limits": [
       "After J, the current WaitingAccess display can still say Zufahrt fehlt during actual machine approach until bMachineArrived; do not diagnose a missing road connection from this label alone."
     ]
-  }
+  },
+  "road_camera_collision_followup_2026_10_30": {
+    "updated_utc": "2026-10-30T16:44:51.030465+00:00",
+    "complete": true,
+    "affected_archive": "RoadConstruction8",
+    "affected_native_config_sha256": "650423c774f4a821ad0eda9892f8114e66956dfdce3f6ce0759f67acf6f41510",
+    "user_report": "Preview remained yellow beyond 40 seconds despite waiting; prior short redraw retry proof did not cover this camera-induced tail.",
+    "delegated_live_diagnostic": {
+      "reported_by": "Parent implementation agent in the same CityLab session",
+      "terrain_and_production_idle": true,
+      "tree_work_queues": "0/0/0/2",
+      "tree_pending_collision_entries": 2,
+      "tree_source_ring": 0,
+      "tree_last_ring": 1,
+      "no_active_reads_or_async_processing": true,
+      "scope": "Live native diagnostic recorded during the actual player preview, not inferred from pixels alone."
+    },
+    "delegated_source_diagnosis": {
+      "reported_by": "Parent and implementation agent source inspection",
+      "camera_proximity_enqueues_native_tree_collision_work": true,
+      "only_normal_collision_update_call_is_under_general_work_queue_guard": true,
+      "cause": "Real pending native collision work can be left without a servicing caller after camera movement once the general work queue is empty.",
+      "scope": "Licensed ShaderWorld source was inspected locally and is not redistributed. This is actual work to finish, not a stale flag to ignore."
+    },
+    "correction_in_preparation": {
+      "location": "Own CityLab road terrain subclass",
+      "intent": "Continue legitimate native collision processing via its existing budget and HISM rebuild path until pending work is serviced.",
+      "readiness_gates_preserved": true,
+      "plugin_source_changed": false,
+      "scope": "Implemented own-subclass native-budget continuation; full actual4.2 camera/Slate/ordinary-machine T-build40/40, same completed save normal cold4+2 and separate demo/native visible starter passed. Earlier failed fixtures remain separate; no real queued work ignored and no readiness gate relaxed.",
+      "camera_subtest_success_claimed": true,
+      "whole_runtime_success_claimed": true
+    },
+    "required_next_proofs": [],
+    "historical_proofs_preserved": "RoadConstruction8 Native107, fixed-camera UI32/ordinary road completion, T probes, both cold pairs and launcher remain evidence for their exact earlier cases; they do not prove camera-induced collision tails are serviced.",
+    "candidate_source": {
+      "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+      "source_count": 155,
+      "archive": "RoadConstruction11",
+      "delta_from_previous_candidate": "Audit-only fresh actual cursor query and explicit manual-ready precondition; no production camera or readiness-gate relaxation.",
+      "scope": "Frozen own-source identity bound to fresh4.2 Editor/Game/Cook11/Native108, actual40/40 camera/Slate/ordinary-T-build, same-save normal cold4+2, four T probes and separate once-seeded demo/native visible starter acceptance."
+    },
+    "registered_test_inventory": {
+      "registered_total": 108,
+      "registered_road_model_tests": 21,
+      "registered_road_terrain_tests": 9,
+      "executed_success_claimed": true,
+      "scope": "Source registration inventory, not an executed passing test count. Earlier RoadConstruction8 Native107 and its road-model count belong to that old source."
+    },
+    "preacceptance_fixture_history": [
+      {
+        "stage": "Editor scheduler-regression link attempt",
+        "success": false,
+        "cause": "The test directly constructed a plugin FSpawnableMesh whose destructor is not exported for the project module.",
+        "correction": "The test fixture now creates and destroys the reflected plugin container through Unreal reflection.",
+        "scope": "Test-fixture construction change only; no extra actor-behavior change from this adjustment, no passing build or runtime claim."
+      },
+      {
+        "stage": "RoadConstruction9 normal camera/Slate/T fixture",
+        "success": false,
+        "accepted_as_runtime": false,
+        "receipt_sha256": "90d291ada07b0e4c7958d07c71937ea4324e9ec56f2060b1cca463ce980910e2",
+        "exit_code": 0,
+        "runner_elapsed_seconds": 523.9370000000017,
+        "native_elapsed_seconds": 511.5377438031137,
+        "failed_phase": 1,
+        "failed_waypoint": 0,
+        "reported_camera_travel_cm": 2612.4503413588245,
+        "native_tree_grid_cm": 25200,
+        "proximity_changed": false,
+        "collision_tail_wakes_before": 0,
+        "collision_tail_wakes_after": 0,
+        "production_ledger_observations": 0,
+        "outside_saves_unchanged": true,
+        "source_and_package_unchanged": true,
+        "cause": "The real-camera fixture did not cross its actual native tree-proximity grid within the first waypoint timeout; readiness queues stayed idle and no collision-tail wake was triggered.",
+        "scope": "Failure to reproduce the required camera-induced work; no road-input/build phase occurred. Reported distance is a diagnostic accumulator, not an accepted ordinary-W travel metric. Exit0 does not turn native success=false into a pass."
+      },
+      {
+        "stage": "RoadConstruction10 normal UI fixture after passing camera subtest",
+        "success": false,
+        "accepted_as_whole_runtime": false,
+        "receipt_sha256": "4834a78bae56ff557b4a2b89ff5dada780177a6ee205032fd145902595729f17",
+        "native_config_sha256": "b63bfa972da06eed3851d524da32df58250171f6698da1dcc99a477b6e20c112",
+        "exit_code": 0,
+        "runner_elapsed_seconds": 37.18699999999808,
+        "native_elapsed_seconds": 26.62182579934597,
+        "first_failed_check": "mouse_down_started_normal_pointer_drag",
+        "message": "Bodenabfrage läuft. Maus kurz auf dem Ziel ruhen lassen und erneut ziehen.",
+        "production_ledger_observations": 0,
+        "outside_saves_unchanged": true,
+        "source_and_package_unchanged": true,
+        "cause": "Parent diagnosis found cached old cursor readiness across fixture window setup; the subsequent audit-only change queries the actual current target and adds a manual-ready precondition.",
+        "scope": "Camera subtest passed, whole UI failed before construction; product ground/readiness gates remain unchanged."
+      },
+      {
+        "stage": "RoadConstruction11 manual-start precondition timeout",
+        "success": false,
+        "accepted_as_whole_runtime": false,
+        "receipt_sha256": "447825c2f318fad53316b088ee18a92aaa74e3b677183395447035d0de718f01",
+        "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+        "exit_code": 0,
+        "runner_elapsed_seconds": 613.905999999999,
+        "native_elapsed_seconds": 600.0460890009999,
+        "stage_index": 0,
+        "manual_ready_observed": false,
+        "final_input_state": {
+          "slate_application_active": false,
+          "native_foreground": false,
+          "viewport_has_focus": true,
+          "world_input_allowed": false
+        },
+        "camera_diagnostic_samples": 0,
+        "production_ledger_observations": 0,
+        "outside_saves_unchanged": true,
+        "source_and_package_unchanged": true,
+        "scope": "Fixture never passed its normal manual-start/foreground/native-input precondition and exercised no camera/road/build actions. This is a separate failed start prerequisite, not an exercised new product failure. Exit0 does not establish audit success."
+      }
+    ],
+    "builds": {
+      "editor5": {
+        "success": true,
+        "seconds": 126.23
+      },
+      "game5": {
+        "success": true,
+        "seconds": 132.19
+      },
+      "cook11": {
+        "success": true,
+        "build_cook_run_seconds": 104.25,
+        "exit_code": 0,
+        "log_sha256": "2b7ab222ee02529065669541ea8b49d53eaeea16c6475b99e3e780a99ee44928"
+      }
+    },
+    "approved_plugin_upgrade": {
+      "target_plugin_version": "4.2",
+      "user_approved": true,
+      "new_baseline_required": true,
+      "historical_plugin_version": "4.1",
+      "historical_archives_and_saves_retained": true,
+      "previous_profiles_backed_up": true,
+      "baseline_success_claimed": true,
+      "scope": "Explicit new 4.2 lab baseline and separate fresh T-scene, not a retargeted old save or old migration."
+    },
+    "planned_normal_ui_regression": {
+      "expected_checks": 40,
+      "success_claimed": true,
+      "camera_collision_tail": "Actual normal camera movement induced native collision-only work before preview; full native processing and unchanged readiness gates passed. Horizontal distance is accumulated in normal movement/settling phases; framing reset excluded.",
+      "fresh_junction": "Actual Slate planning plus normal machines, real typed soil/gravel/asphalt and bounded transport in the new 4.2 world.",
+      "cold_restart": "The exact actually completed new T-scene save passed normal cold validation with four+two full snapshots and four T-probe passes.",
+      "old_migration_used": false,
+      "house_promised_for_new_scene": false
+    },
+    "installation_race_before_new_baseline": {
+      "plugin_installed_version": "4.2",
+      "installation_changed_utc": "2026-10-30T14:47:59Z",
+      "precompiled_manifest_changed_utc": "2026-10-30T14:48:03Z",
+      "observed_raw_native_tests": 108,
+      "observed_clean": 106,
+      "observed_known_warnings": 2,
+      "accepted_as_new_4_2_baseline": false,
+      "accepted_as_final_4_1_baseline": false,
+      "scope": "Plugin installation changed during the earlier build/test preparation and the bound Ocean material changed. Those mixed-installation results do not establish a consistent dependency baseline."
+    },
+    "preliminary_4_2_source_verification": {
+      "archive": "RoadConstruction9",
+      "native_config_sha256": "42b8babbeffb7a70910190abcff88d3047e928c446620b7a0ce1e1a06751d24f",
+      "profiles": {
+        "profile_sha256": "2662b11e42de9e1fa3c7ed057628607acbe7feca7b6ee652e5c9c7986b6a7134",
+        "road_profile_sha256": "f84689de07029032414c2b26ea936bab483a87384dac823328fe2558030ff6e8",
+        "content_binding": "bbe05077db90a9b0f48dbfba9a6398dafa6ffaff"
+      },
+      "native": {
+        "success": true,
+        "tests": 108,
+        "road_model_tests": 21,
+        "counts": {
+          "succeeded": 106,
+          "succeededWithWarnings": 2,
+          "failed": 0,
+          "notRun": 0,
+          "inProcess": 0
+        },
+        "elapsed_seconds": 32.078,
+        "exit_code": 0,
+        "failed_test_exclusions": [],
+        "missing_tests": [],
+        "unexpected_tests": [],
+        "normal_saves_unchanged": true,
+        "protected_sources_unchanged": true,
+        "receipt_sha256": "be6a09bb7ccf1fa4228b4dfe984e9011efe51ca98a687dc1c56ca555c51cb125",
+        "scope": "Fresh stable ShaderWorld4.2 NullRHI regression result; no rendered camera-move/input/T-building acceptance."
+      },
+      "builds": {
+        "editor3": {
+          "success": true,
+          "seconds": 177.02
+        },
+        "game3": {
+          "success": true,
+          "seconds": 115.36
+        },
+        "cook9": {
+          "success": true,
+          "build_cook_run_seconds": 131.82,
+          "uat_seconds_approx": 133,
+          "exit_code": 0,
+          "errors": 0,
+          "known_warnings": 7,
+          "log_sha256": "b028250f4b43b59bb9ea39bf69ff27dbb438675cd7bdce7d101918b0cd7fb84b"
+        }
+      },
+      "scope": "Consistent preliminary source/profile/build/cook evidence is separate from the failed normal camera fixture and from the later audit-diagnostic source candidate."
+    },
+    "latest_4_2_source_verification": {
+      "archive": "RoadConstruction11",
+      "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+      "native": {
+        "success": true,
+        "tests": 108,
+        "road_model_tests": 21,
+        "counts": {
+          "succeeded": 106,
+          "succeededWithWarnings": 2,
+          "failed": 0,
+          "notRun": 0,
+          "inProcess": 0
+        },
+        "elapsed_seconds": 81.64,
+        "exit_code": 0,
+        "failed_test_exclusions": [],
+        "missing_tests": [],
+        "unexpected_tests": [],
+        "report_sha256": "763dc6290d4c204c480368c40553be567bc9de99cafcaeb46a13e8669b4212f3",
+        "receipt_sha256": "648efa436f5abcd808d88f9b7e1ea85b57d6b7396393e77648c81a44dc530bc4",
+        "normal_saves_unchanged": true,
+        "protected_sources_unchanged": true,
+        "scope": "Strict fresh NullRHI inventory; no normal cooked input or final T/road acceptance inferred."
+      },
+      "builds": {
+        "editor5": {
+          "success": true,
+          "seconds": 126.23
+        },
+        "game5": {
+          "success": true,
+          "seconds": 132.19
+        },
+        "cook11": {
+          "success": true,
+          "build_cook_run_seconds": 104.25,
+          "exit_code": 0,
+          "log_sha256": "2b7ab222ee02529065669541ea8b49d53eaeea16c6475b99e3e780a99ee44928"
+        }
+      },
+      "scope": "Fresh source-bound Editor/Game/Cook11/Native108 evidence. Separate actual40-check camera/Slate/T-build, same-save normal cold/T-probe and demo/native visible starter proofs below complete only the described bounded flow."
+    },
+    "camera_collision_subtest": {
+      "success": true,
+      "archive": "RoadConstruction10",
+      "native_config_sha256": "b63bfa972da06eed3851d524da32df58250171f6698da1dcc99a477b6e20c112",
+      "whole_ui_fixture_success": false,
+      "receipt_sha256": "4834a78bae56ff557b4a2b89ff5dada780177a6ee205032fd145902595729f17",
+      "camera_regression_complete": true,
+      "native_proximity_changed": true,
+      "native_grid_cm": 25200,
+      "reported_camera_distance_accumulator_cm": 8463.813908677774,
+      "distance_scope": "Horizontal movement accumulated in normal movement/settling phases; framing reset excluded. Not a straight-line displacement or an OS-input proof.",
+      "tail_wakes_before": 0,
+      "tail_wakes_after": 1,
+      "tail_elements_before": 0,
+      "tail_elements_after": 1,
+      "real_slate_w_cell_transition": true,
+      "real_native_collision_only_work": true,
+      "tail_fully_drained_and_full_planning_gate_recovered": true,
+      "entire_authoritative_world_snapshot_exact": true,
+      "scope": "Actual camera-induced collision work completed through the native path with full readiness recovered. Only this subtest passed; the later road click failed. No completed-road/cold/demo proof follows."
+    },
+    "current_normal_ui_run": {
+      "state": "passed_40_checks_same_save_normal_cold_t_and_separate_demo_starter",
+      "archive": "RoadConstruction11",
+      "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+      "result_available": true,
+      "success": true,
+      "manual_ready_observed": true,
+      "normal_cold_pair_available": true,
+      "new_demo_available": true,
+      "stable_default_archive": "RoadConstruction11",
+      "scope": "Completed current normal Slate/actual-T-build proof, same completed save normal cold4+2 with T probes, separate once-seeded demo and native visible starter acceptance. Earlier fixture failures remain preserved separately; no human/OS-input or general migration claim."
+    },
+    "actual_slate_input_4_2": {
+      "success": true,
+      "archive": "RoadConstruction11",
+      "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+      "receipt_sha256": "52d6cfd44cebbf1f78bffd356448800c9ad2533ed94232876743fcb6f975cdb0",
+      "checks_passed": 40,
+      "checks_total": 40,
+      "checks": {
+        "explicit_fresh_guid_owned_normal_cooked_window": true,
+        "fresh_fixture_has_no_jobs": true,
+        "starter_road_available": true,
+        "normal_camera_pawn_exists": true,
+        "real_tree_proximity_grid_has_bounded_scale": true,
+        "real_tree_proximity_cells_exist_before_movement": true,
+        "actual_slate_w_moves_normal_camera_across_native_proximity_cell": true,
+        "real_native_collision_only_tail_scheduled_by_normal_camera_movement": true,
+        "native_collision_tail_drains_and_full_planning_gate_recovers": true,
+        "camera_movement_keeps_entire_authoritative_world_snapshot_exact": true,
+        "projected_start_is_in_actual_game_viewport": true,
+        "mouse_down_started_normal_pointer_drag": true,
+        "actual_slate_mouse_drag_to_free_endpoint": true,
+        "snapped_start_and_free_white_end_form_valid_graph": true,
+        "junction_start_uses_interior_starter_snap": true,
+        "normal_baseline_save_before_restore_redraw": true,
+        "real_restore_triggers_native_terrain_redraw": true,
+        "real_pointer_release_keeps_unready_preview_pending": true,
+        "unconfirmed_preview_keeps_entire_authoritative_snapshot_exact": true,
+        "automatic_wait_keeps_exact_released_candidate": true,
+        "automatic_retry_reaches_confirmable_preview_without_recheck": true,
+        "observed_actual_native_sw_work_during_wait": true,
+        "free_white_endpoint_stays_valid_after_settle": true,
+        "real_enter_commits_exactly_one_inert_queued_road": true,
+        "real_enter_creates_exact_three_arm_t_graph": true,
+        "initial_game_viewmode_is_lit": true,
+        "actual_f5_saved_complete_exact_snapshot": true,
+        "actual_f5_does_not_change_viewmode": true,
+        "actual_f9_restores_complete_exact_snapshot": true,
+        "actual_f9_keeps_lit_view": true,
+        "actual_f9_does_not_trigger_debug_screenshot": true,
+        "actual_j_starts_selected_reachable_job_paused": true,
+        "actual_space_enables_production_work": true,
+        "actual_h_enables_real_lorry_transport": true,
+        "all_observed_production_material_balances_zero_grams": true,
+        "observed_real_progress_and_loaded_interior_haul_at_ordinary_rates": true,
+        "completed_actual_road_passes_unchanged_ground_height_gate": true,
+        "observed_real_truck_and_site_buffer_remain_bounded": true,
+        "one_real_road_completed_with_empty_truck_and_buffer": true,
+        "actual_f5_preserves_complete_finished_road_for_cold_resume": true
+      },
+      "exit_code": 0,
+      "native_elapsed_seconds": 433.5658656992018,
+      "runner_elapsed_seconds": 506.875,
+      "manual_ready_observed": true,
+      "start_query": {
+        "fresh_query_ready": true,
+        "matches_projected_start": true,
+        "probe_count": 9,
+        "stable_passes": 21,
+        "cursor_stable_seconds": 0.21681270003318787
+      },
+      "camera": {
+        "regression_complete": true,
+        "native_proximity_changed": true,
+        "native_grid_cm": 25200,
+        "reported_distance_accumulator_cm": 8342.49427213546,
+        "distance_scope": "Horizontal movement accumulated in normal movement/settling phases; framing reset excluded. Not a straight-line displacement or an OS-input proof.",
+        "tail_wakes_before": 0,
+        "tail_wakes_after": 1,
+        "tail_elements_before": 0,
+        "tail_elements_after": 1,
+        "tail_drained_and_full_planning_gate_recovered": true,
+        "authoritative_world_snapshot_exact": true
+      },
+      "outside_saves_unchanged": true,
+      "source_and_package_unchanged": true,
+      "human_reviewed": false,
+      "scope": "Real Slate held W moves the ordinary camera across real tree proximity cells before first road pointer input; actual native collision-only tail scheduling and unchanged full planning readiness recovery are required. Then real Slate mouse down/move/up and key down/up in normal cooked native foreground window; no OS input automation. Actual LoadState redraw between mouse down and release. No planning-readiness prewait during the preview retry, no Recheck call or simulation acceleration. Optional junction flag aims at the existing starter midpoint and commits an exact new three-arm T graph through normal pointer input; it never imports an old save or pre-completes work. Optional build phase uses real Slate J/Space/H and ordinary production, material and collision gates; completed-road claim requires those explicit extra checks. Fresh GUID-owned slot; no player save touched."
+    },
+    "completed_fresh_t": {
+      "success": true,
+      "from_same_actual_slate_run": true,
+      "graph_nodes": 4,
+      "graph_edges": 3,
+      "degree_three_nodes": 1,
+      "branch_grade_ratio": 0.020016153896150305,
+      "branch_grade_percent": 2.0016153896150306,
+      "normal_production_rates": true,
+      "ledger_observations": 1554,
+      "maximum_truck_grams": 12000000,
+      "maximum_buffer_grams": 18000000,
+      "final_soil_balance_error_grams": 0,
+      "final_gravel_balance_error_grams": 0,
+      "final_asphalt_balance_error_grams": 0,
+      "empty_truck_and_buffer_at_completion": true,
+      "unchanged_ground_height_gate_cm": 5,
+      "ground_gate_passed": true,
+      "actual_f5_exact_finished_payload": "4B86E499CD61354203E92EE3E2FB8A9345135512",
+      "old_migration_used": false,
+      "house_promised": false,
+      "scope": "Fresh T genuinely planned by Slate and built by ordinary machines/typed materials in the new4.2 world. The same completed save now passes the separate normal cold pair and T probes; no old migration and no house promised."
+    },
+    "normal_cold_t_4_2": {
+      "success": true,
+      "receipt_sha256": "166d09ed4478e296763518336c70d718d70d30a42d02fe16fc5ad9957865549b",
+      "source_completed_ui_payload": "4B86E499CD61354203E92EE3E2FB8A9345135512",
+      "source_save_sha256": "f534e8710fac6b69190c611dd8b8f9e3abf316eaf9ddc3c459221193f0aa96aa",
+      "processes": 2,
+      "distinct_process_ids": true,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "elapsed_seconds": [
+        52.88999999999942,
+        51.06199999999808
+      ],
+      "complete_native_export_snapshots": [
+        4,
+        2
+      ],
+      "groups": [
+        "Network",
+        "Build",
+        "Sites",
+        "ClearedTrees",
+        "Houses"
+      ],
+      "all_other_snapshot_fields_exact": true,
+      "camera_component_tolerance": "1e-8",
+      "all_five_groups_and_metadata_exact": true,
+      "controller_function_calls": [
+        {
+          "SaveRoadConstruction": 1,
+          "LoadRoadConstruction": 1
+        },
+        {
+          "SaveRoadConstruction": 0,
+          "LoadRoadConstruction": 0
+        }
+      ],
+      "protected_inputs_unchanged": true,
+      "all_preexisting_saves_unchanged": true,
+      "sealed_executable_and_containers_unchanged": true,
+      "scope": "Normal controller Save/Load calls and a distinct cold second process on the exact actual40-check completed fresh T save. Actual Slate keys are proved separately by the40-check run, not inferred from this function pair."
+    },
+    "fresh_t_junction_probes_4_2": {
+      "success": true,
+      "total_probe_passes": 4,
+      "normal_processes": 2,
+      "each_pass": {
+        "caps": 1,
+        "matching_vertices": 10,
+        "centroid_hits": 9,
+        "centroid_queries": 9,
+        "seam_hits": 6,
+        "seam_queries": 6,
+        "ground_hits": 25,
+        "ground_queries": 25
+      },
+      "maxima_cm": {
+        "vertex_error": 0.0,
+        "collider_error": 1.8e-05,
+        "seam_residual": 3.5e-05,
+        "raw_seam_delta": 0.020049,
+        "ground_above_surface": -32.802383
+      },
+      "unchanged_gates_cm": {
+        "vertex": 0.01,
+        "collision": 0.1,
+        "ground_above_surface": 3.0
+      },
+      "source": "Four accepted normal junction-probe records on the same newly built T across the save/load and cold processes; not four different scenes.",
+      "visual_review": {
+        "agent_reviewed": true,
+        "human_reviewed": false,
+        "image": "assets/images/road-construction11-fresh-t-reloaded.png",
+        "scope": "Original wide view shows continuous asphalt T, vehicles and completed Road1 with zero remaining tonnes. Numerical seam/collider/ground results come from probes, not pixel measurement."
+      }
+    },
+    "images": [
+      {
+        "file": "assets/images/road-construction11-fresh-t-reloaded.png",
+        "width": 1600,
+        "height": 1000,
+        "bytes": 4305881,
+        "sha256": "106a57245ed0413cfbd479f6bfbea17fc95a1de99cd159a9b5cd10fc9689f38b",
+        "modified": false,
+        "agent_reviewed": true,
+        "human_reviewed": false
+      }
+    ],
+    "demo_launcher_4_2": {
+      "success": true,
+      "complete": true,
+      "preparation_receipt_sha256": "1e9eb7fd57def60a4b365d41f1b8ece4bedef5a6a683b7551064662658b8a1eb",
+      "visible_launch_receipt_sha256": "e61dfec6700e0cc44739b5be1f9cdd7bf5b081bc47039e5068814c65ebaab54e",
+      "archive": "RoadConstruction11",
+      "native_config_sha256": "14ab8c8df6f4e8bfe6c911b02c40d324eb80639d90e02df6700092c494d92d2c",
+      "map": "/Game/Maps/ShaderWorldRoadConstructionLab",
+      "own_user_directory": "Saved/RoadConstructionCameraDemoUser",
+      "root_starter": "Start CityLab.cmd",
+      "default_archive": "RoadConstruction11",
+      "retained_script_switches": {
+        "PreviousBuild": "RoadConstruction6",
+        "Build8": "RoadConstruction8"
+      },
+      "cmd_forwards_switches": false,
+      "seed": {
+        "sha256": "069c9e7e2fb6562b947149797ea8d5b97b7ad185b20c8214c54a89f96d05c7b9",
+        "bytes": 159627,
+        "exact_once": true,
+        "all_jobs_completed_or_cancelled": true,
+        "fresh_T_junction_built_by_ordinary_machines": true,
+        "old_save_migration_used": false,
+        "house_seeded": false
+      },
+      "protected_sources_unchanged": true,
+      "all_preexisting_saves_unchanged": true,
+      "old_profiles_and_demo_receipts_retained": true,
+      "visible_native_checks": {
+        "responding": true,
+        "map_loaded": true,
+        "game_mode_loaded": true,
+        "correct_camera_demo_user": true,
+        "normal_window": true,
+        "no_audit_or_offscreen": true,
+        "no_error_or_fatal": true,
+        "duplicate_guard_passed": true,
+        "owned_process_count_after": 1
+      },
+      "created_utc": "2026-10-30T16:36:15.4292504Z",
+      "human_reviewed": false,
+      "final_live_window_pixel_reviewed": false,
+      "scope": "Exact completed fresh4.2 T save from the same accepted cold pair copied once to a distinct demo UserDir. No old-save retargeting, no house seed, no automatic reseed or overwrite. Actual stable CMD starts the normal responding correct program/map/game mode/UserDir and rejects duplicate launch. Final live window confirmed natively only, not activated or inspected by computer use; separate original cold PNG was visually reviewed by agents. No human/OS-input acceptance."
+    }
+  },
+  "historical_initial_shaderworld_version": "4.1"
 }
